@@ -1201,6 +1201,90 @@ Error generating stack: `+i.message+`
     if(ict) ict.textContent = isBG ? 'Организирано от ИКТ Клъстер — Варна' : 'Organized by ICT Cluster — Varna';
     var lb = document.getElementById('bstf-lang');
     if(lb){ lb.textContent = isBG ? 'EN' : 'BG'; lb.title = isBG ? 'Switch to English' : 'Превключи на Български'; }
+
+    // Fix GSAP word-span headings (hero h1 & ThreeDayArc h2)
+    fixWordSpanH1(isBG);
+    fixWordSpanThreeDayH2(isBG);
+  }
+
+  // ─── GSAP word-span heading fixers ────────────────────────
+  // Hero h1: 4 spans → "7th‑generation technologies without borders."
+  var _heroH1BG = ['Технологии', 'без', 'граници.', ''];
+  var _heroH1ENFallback = ['7th\u2011generation', 'technologies', 'without', 'borders.'];
+  var _heroH1EN = null;
+  function fixWordSpanH1(isBG) {
+    var hero = document.querySelector('section.z-10');
+    if(!hero) return;
+    var h1 = hero.querySelector('h1');
+    if(!h1) return;
+    var ws = h1.querySelectorAll('span.word');
+    if(!ws.length) return;
+    // Only store EN originals if they actually contain Latin characters
+    if(!_heroH1EN){
+      var en = Array.from(ws).map(function(s){ return s.textContent; });
+      if(en.some(function(t){ return /[a-zA-Z]/.test(t); })) _heroH1EN = en;
+    }
+    ws.forEach(function(span, i){
+      if(isBG){
+        var bg = _heroH1BG[i] !== undefined ? _heroH1BG[i] : '';
+        span.textContent = bg;
+        span.style.visibility = bg ? '' : 'hidden';
+      } else {
+        var enV = (_heroH1EN || _heroH1ENFallback);
+        if(enV[i] !== undefined) span.textContent = enV[i];
+        span.style.visibility = '';
+      }
+    });
+  }
+
+  // ThreeDayArc h2: 8 spans → "Three days. One story: from challenge to action."
+  var _arcH2BG = ['Три', 'дни.', 'Една', 'история:', 'от', 'предизвикателство', 'към', 'действие.'];
+  var _arcH2ENFallback = ['Three', 'days.', 'One', 'story:', 'from', 'challenge', 'to', 'action.'];
+  var _arcH2EN = null;
+  function fixWordSpanThreeDayH2(isBG) {
+    var found = null;
+    document.querySelectorAll('h2').forEach(function(el){
+      if(found) return;
+      var ws = el.querySelectorAll('span.word');
+      if(ws.length >= 7){
+        var txt = Array.from(ws).map(function(s){ return s.textContent; }).join(' ');
+        if(/Three|days\.|Три|дни\./.test(txt)) found = el;
+      }
+    });
+    if(!found) return;
+    var ws = found.querySelectorAll('span.word');
+    if(!_arcH2EN){
+      var en2 = Array.from(ws).map(function(s){ return s.textContent; });
+      if(en2.some(function(t){ return /[a-zA-Z]/.test(t); })) _arcH2EN = en2;
+    }
+    ws.forEach(function(span, i){
+      if(isBG){
+        var bg = _arcH2BG[i] !== undefined ? _arcH2BG[i] : span.textContent;
+        span.textContent = bg;
+      } else {
+        var enV2 = (_arcH2EN || _arcH2ENFallback);
+        if(enV2[i] !== undefined) span.textContent = enV2[i];
+      }
+    });
+  }
+
+  // ─── Persistent GSAP reset guard for hero h1 ──────────────
+  function setupWordSpanGuard() {
+    var hero = document.querySelector('section.z-10');
+    if(!hero){ setTimeout(setupWordSpanGuard, 600); return; }
+    var h1 = hero.querySelector('h1');
+    if(!h1){ setTimeout(setupWordSpanGuard, 600); return; }
+    var guard = new MutationObserver(function(){
+      if(lang !== 'bg') return;
+      var ws = h1.querySelectorAll('span.word');
+      var needsFix = false;
+      ws.forEach(function(s){ if(/[a-zA-Z]/.test(s.textContent)) needsFix = true; });
+      if(needsFix) requestAnimationFrame(function(){ fixWordSpanH1(true); });
+    });
+    guard.observe(h1, { characterData: true, childList: true, subtree: true });
+    setTimeout(function(){ guard.disconnect(); }, 20000);
+    window._bstfH1Guard = guard;
+    if(lang === 'bg') fixWordSpanH1(true);
   }
 
   // ─── Init ─────────────────────────────────────────────────
@@ -1210,6 +1294,7 @@ Error generating stack: `+i.message+`
     initTicketCards();
     initMobCta();
     applyTranslations();
+    setupWordSpanGuard();
     // Run translations multiple times to catch dynamically rendered content
     setTimeout(applyTranslations, 500);
     setTimeout(applyTranslations, 1000);
@@ -1414,6 +1499,96 @@ Error generating stack: `+i.message+`
     });
   });
 
+})();
+</script>
+
+<!-- Program section: remove inner scroll, use normal page scroll -->
+<style id="bstf-program-css">
+/* Allow section to grow beyond 100vh */
+#program {
+  overflow: visible !important;
+  height: auto !important;
+}
+/* Content wrapper: take out of absolute, flow normally */
+#program > div[class*="flex-col"] {
+  position: relative !important;
+  inset: unset !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+}
+/* Remove the inner scroll container */
+#program [class~="flex-1"] {
+  flex: none !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+#program [class~="overflow-y-auto"] {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+/* Sticky table header now sticks to viewport top (nav = ~72px) */
+#program [class~="sticky"] {
+  top: 72px !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+</style>
+<script id="bstf-program-fix">
+(function(){
+  function getST(){
+    if(window.ScrollTrigger && window.ScrollTrigger.getAll) return window.ScrollTrigger;
+    if(window.gsap){
+      if(typeof window.gsap.getPlugin === 'function'){
+        try { var p = window.gsap.getPlugin('ScrollTrigger'); if(p && p.getAll) return p; } catch(e){}
+      }
+      if(window.gsap.plugins && window.gsap.plugins.scrollTrigger){
+        var sp = window.gsap.plugins.scrollTrigger;
+        if(sp.getAll) return sp;
+      }
+    }
+    return null;
+  }
+
+  function fixProgram(){
+    var sec = document.getElementById('program');
+    if(!sec) return;
+
+    // Kill GSAP ScrollTrigger scrub (end:"+=140%", scrub:.7) — no longer needed
+    try {
+      var ST = getST();
+      if(ST){
+        (ST.getAll() || []).forEach(function(t){
+          try {
+            var trig = t.vars && t.vars.trigger;
+            if(trig && (trig === sec || sec.contains(trig))){ t.kill(); }
+          } catch(e){}
+        });
+      }
+    } catch(e){}
+
+    // Also clear via globalTimeline if above didn't catch it
+    try {
+      if(window.gsap && window.gsap.globalTimeline){
+        window.gsap.globalTimeline.getChildren(true, false, true).forEach(function(tl){
+          try {
+            var st = tl.scrollTrigger;
+            if(st){
+              var trig = st.vars && st.vars.trigger;
+              if(trig && (trig === sec || sec.contains(trig))){ st.kill(); tl.kill(); }
+            }
+          } catch(e){}
+        });
+      }
+    } catch(e){}
+
+    // Clear any GSAP inline opacity/transform on children (so they show without animating in)
+    try {
+      if(window.gsap) window.gsap.set('#program *', {clearProps: 'opacity,transform,y,scaleX'});
+    } catch(e){}
+  }
+
+  setTimeout(fixProgram, 1200);
 })();
 </script>
 
