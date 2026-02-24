@@ -98,6 +98,173 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .section-pinned [class*="hero-bg"],
 .section-pinned [class*="bg-cover"] { transform: unset !important; }
 
+/* Smooth scroll reveal animations - higher specificity to override GSAP */
+body .reveal-element,
+.reveal-element {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+body .reveal-element.revealed,
+.reveal-element.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger animation delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Scale reveal effect - higher specificity */
+body .reveal-scale,
+.reveal-scale {
+  opacity: 0 !important;
+  transform: scale(0.9) !important;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  will-change: opacity, transform;
+}
+body .reveal-scale.revealed,
+.reveal-scale.revealed {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Fade in from left/right - higher specificity */
+body .reveal-left,
+.reveal-left {
+  opacity: 0 !important;
+  transform: translateX(-40px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+body .reveal-left.revealed,
+.reveal-left.revealed {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+body .reveal-right,
+.reveal-right {
+  opacity: 0 !important;
+  transform: translateX(40px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+body .reveal-right.revealed,
+.reveal-right.revealed {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Smooth section transitions */
+section {
+  transition: opacity 0.3s ease;
+}
+
+/* Parallax background effect */
+.parallax-bg {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* Navigation scroll effect */
+nav.fixed {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Smooth hover transitions */
+a, button {
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Card hover effects */
+[class*="card"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+[class*="card"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image zoom on hover */
+img {
+  transition: transform 0.4s ease;
+}
+[class*="hover-zoom"]:hover img,
+[class*="card"]:hover img {
+  transform: scale(1.05);
+}
+
+/* Button pulse animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 229, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+}
+.cta-button, [class*="cta"] {
+  animation: pulse 2s infinite;
+}
+
+/* Text reveal line by line */
+@keyframes textReveal {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.text-reveal {
+  animation: textReveal 0.8s ease-out forwards;
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-text {
+  background: linear-gradient(90deg, #00e5ff, #fff, #00e5ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00e5ff, #00ffff);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
 /* T8: Ticket card selection */
 .bstf-card-wrap { transition:opacity .25s; }
 /* Active card: bright cyan border + outline */
@@ -197,9 +364,55 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 }
 #bstf-form-inner { display:block; }
 
+/* Increase base font size for readability */
+body {
+  font-size: 1.0625rem;
+}
+
+/* Slightly smaller text for labels and secondary info */
+.text-xs, .text-sm, label {
+  font-size: 0.9375rem;
+}
+
     </style>
   </head>
   <body>
+    <!-- Landing Page Loader -->
+    <div id="bstf-landing" style="position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s ease;">
+      <div style="text-align: center; padding: 2rem;">
+        <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.02em;"><span style="color: #22d3ee;">BSTF</span>2026</h1>
+      </div>
+    </div>
+    <style>
+      #bstf-landing.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    </style>
+    <script>
+      (function() {
+        // Hide landing page after page loads and translations are applied
+        function hideLanding() {
+          var landing = document.getElementById('bstf-landing');
+          if (landing) {
+            landing.classList.add('hidden');
+            setTimeout(function() {
+              landing.style.display = 'none';
+            }, 600);
+          }
+        }
+        
+        // Hide after 2.5 seconds (enough for React and translations to load)
+        setTimeout(hideLanding, 2500);
+        
+        // Also hide on window load as backup
+        window.addEventListener('load', function() {
+          setTimeout(hideLanding, 1000);
+        });
+      })();
+    </script>
+    
     <div id="root"></div>
     <script type="module">
 (function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const c of document.querySelectorAll('link[rel="modulepreload"]'))l(c);new MutationObserver(c=>{for(const o of c)if(o.type==="childList")for(const f of o.addedNodes)f.tagName==="LINK"&&f.rel==="modulepreload"&&l(f)}).observe(document,{childList:!0,subtree:!0});function s(c){const o={};return c.integrity&&(o.integrity=c.integrity),c.referrerPolicy&&(o.referrerPolicy=c.referrerPolicy),c.crossOrigin==="use-credentials"?o.credentials="include":c.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function l(c){if(c.ep)return;c.ep=!0;const o=s(c);fetch(c.href,o)}})();var Ad={exports:{}},qc={};var N1;function av(){if(N1)return qc;N1=1;var h=Symbol.for("react.transitional.element"),a=Symbol.for("react.fragment");function s(l,c,o){var f=null;if(o!==void 0&&(f=""+o),c.key!==void 0&&(f=""+c.key),"key"in c){o={};for(var d in c)d!=="key"&&(o[d]=c[d])}else o=c;return c=o.ref,{$$typeof:h,type:l,key:f,ref:c!==void 0?c:null,props:o}}return qc.Fragment=a,qc.jsx=s,qc.jsxs=s,qc}var w1;function iv(){return w1||(w1=1,Ad.exports=av()),Ad.exports}var x=iv(),Ed={exports:{}},Tt={};var D1;function lv(){if(D1)return Tt;D1=1;var h=Symbol.for("react.transitional.element"),a=Symbol.for("react.portal"),s=Symbol.for("react.fragment"),l=Symbol.for("react.strict_mode"),c=Symbol.for("react.profiler"),o=Symbol.for("react.consumer"),f=Symbol.for("react.context"),d=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),g=Symbol.for("react.memo"),y=Symbol.for("react.lazy"),v=Symbol.for("react.activity"),S=Symbol.iterator;function b(E){return E===null||typeof E!="object"?null:(E=S&&E[S]||E["@@iterator"],typeof E=="function"?E:null)}var N={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},T=Object.assign,D={};function G(E,q,I){this.props=E,this.context=q,this.refs=D,this.updater=I||N}G.prototype.isReactComponent={},G.prototype.setState=function(E,q){if(typeof E!="object"&&typeof E!="function"&&E!=null)throw Error("takes an object of state variables to update or a function which returns an object of state variables.");this.updater.enqueueSetState(this,E,q,"setState")},G.prototype.forceUpdate=function(E){this.updater.enqueueForceUpdate(this,E,"forceUpdate")};function L(){}L.prototype=G.prototype;function Z(E,q,I){this.props=E,this.context=q,this.refs=D,this.updater=I||N}var U=Z.prototype=new L;U.constructor=Z,T(U,G.prototype),U.isPureReactComponent=!0;var X=Array.isArray;function F(){}var j={H:null,A:null,T:null,S:null},W=Object.prototype.hasOwnProperty;function J(E,q,I){var tt=I.ref;return{$$typeof:h,type:E,key:q,ref:tt!==void 0?tt:null,props:I}}function $(E,q){return J(E.type,q,E.props)}function ft(E){return typeof E=="object"&&E!==null&&E.$$typeof===h}function P(E){var q={"=":"=0",":":"=2"};return"$"+E.replace(/[=:]/g,function(I){return q[I]})}var St=/\/+/g;function yt(E,q){return typeof E=="object"&&E!==null&&E.key!=null?P(""+E.key):q.toString(36)}function xt(E){switch(E.status){case"fulfilled":return E.value;case"rejected":throw E.reason;default:switch(typeof E.status=="string"?E.then(F,F):(E.status="pending",E.then(function(q){E.status==="pending"&&(E.status="fulfilled",E.value=q)},function(q){E.status==="pending"&&(E.status="rejected",E.reason=q)})),E.status){case"fulfilled":return E.value;case"rejected":throw E.reason}}throw E}function C(E,q,I,tt,ct){var ht=typeof E;(ht==="undefined"||ht==="boolean")&&(E=null);var pt=!1;if(E===null)pt=!0;else switch(ht){case"bigint":case"string":case"number":pt=!0;break;case"object":switch(E.$$typeof){case h:case a:pt=!0;break;case y:return pt=E._init,C(pt(E._payload),q,I,tt,ct)}}if(pt)return ct=ct(E),pt=tt===""?"."+yt(E,0):tt,X(ct)?(I="",pt!=null&&(I=pt.replace(St,"$&/")+"/"),C(ct,q,I,"",function(Nn){return Nn})):ct!=null&&(ft(ct)&&(ct=$(ct,I+(ct.key==null||E&&E.key===ct.key?"":(""+ct.key).replace(St,"$&/")+"/")+pt)),q.push(ct)),1;pt=0;var Kt=tt===""?".":tt+":";if(X(E))for(var Ct=0;Ct<E.length;Ct++)tt=E[Ct],ht=Kt+yt(tt,Ct),pt+=C(tt,q,I,ht,ct);else if(Ct=b(E),typeof Ct=="function")for(E=Ct.call(E),Ct=0;!(tt=E.next()).done;)tt=tt.value,ht=Kt+yt(tt,Ct++),pt+=C(tt,q,I,ht,ct);else if(ht==="object"){if(typeof E.then=="function")return C(xt(E),q,I,tt,ct);throw q=String(E),Error("Objects are not valid as a React child (found: "+(q==="[object Object]"?"object with keys {"+Object.keys(E).join(", ")+"}":q)+"). If you meant to render a collection of children, use an array instead.")}return pt}function V(E,q,I){if(E==null)return E;var tt=[],ct=0;return C(E,tt,"","",function(ht){return q.call(I,ht,ct++)}),tt}function et(E){if(E._status===-1){var q=E._result;q=q(),q.then(function(I){(E._status===0||E._status===-1)&&(E._status=1,E._result=I)},function(I){(E._status===0||E._status===-1)&&(E._status=2,E._result=I)}),E._status===-1&&(E._status=0,E._result=q)}if(E._status===1)return E._result.default;throw E._result}var dt=typeof reportError=="function"?reportError:function(E){if(typeof window=="object"&&typeof window.ErrorEvent=="function"){var q=new window.ErrorEvent("error",{bubbles:!0,cancelable:!0,message:typeof E=="object"&&E!==null&&typeof E.message=="string"?String(E.message):String(E),error:E});if(!window.dispatchEvent(q))return}else if(typeof process=="object"&&typeof process.emit=="function"){process.emit("uncaughtException",E);return}console.error(E)},M={map:V,forEach:function(E,q,I){V(E,function(){q.apply(this,arguments)},I)},count:function(E){var q=0;return V(E,function(){q++}),q},toArray:function(E){return V(E,function(q){return q})||[]},only:function(E){if(!ft(E))throw Error("React.Children.only expected to receive a single React element child.");return E}};return Tt.Activity=v,Tt.Children=M,Tt.Component=G,Tt.Fragment=s,Tt.Profiler=c,Tt.PureComponent=Z,Tt.StrictMode=l,Tt.Suspense=m,Tt.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=j,Tt.__COMPILER_RUNTIME={__proto__:null,c:function(E){return j.H.useMemoCache(E)}},Tt.cache=function(E){return function(){return E.apply(null,arguments)}},Tt.cacheSignal=function(){return null},Tt.cloneElement=function(E,q,I){if(E==null)throw Error("The argument must be a React element, but you passed "+E+".");var tt=T({},E.props),ct=E.key;if(q!=null)for(ht in q.key!==void 0&&(ct=""+q.key),q)!W.call(q,ht)||ht==="key"||ht==="__self"||ht==="__source"||ht==="ref"&&q.ref===void 0||(tt[ht]=q[ht]);var ht=arguments.length-2;if(ht===1)tt.children=I;else if(1<ht){for(var pt=Array(ht),Kt=0;Kt<ht;Kt++)pt[Kt]=arguments[Kt+2];tt.children=pt}return J(E.type,ct,tt)},Tt.createContext=function(E){return E={$$typeof:f,_currentValue:E,_currentValue2:E,_threadCount:0,Provider:null,Consumer:null},E.Provider=E,E.Consumer={$$typeof:o,_context:E},E},Tt.createElement=function(E,q,I){var tt,ct={},ht=null;if(q!=null)for(tt in q.key!==void 0&&(ht=""+q.key),q)W.call(q,tt)&&tt!=="key"&&tt!=="__self"&&tt!=="__source"&&(ct[tt]=q[tt]);var pt=arguments.length-2;if(pt===1)ct.children=I;else if(1<pt){for(var Kt=Array(pt),Ct=0;Ct<pt;Ct++)Kt[Ct]=arguments[Ct+2];ct.children=Kt}if(E&&E.defaultProps)for(tt in pt=E.defaultProps,pt)ct[tt]===void 0&&(ct[tt]=pt[tt]);return J(E,ht,ct)},Tt.createRef=function(){return{current:null}},Tt.forwardRef=function(E){return{$$typeof:d,render:E}},Tt.isValidElement=ft,Tt.lazy=function(E){return{$$typeof:y,_payload:{_status:-1,_result:E},_init:et}},Tt.memo=function(E,q){return{$$typeof:g,type:E,compare:q===void 0?null:q}},Tt.startTransition=function(E){var q=j.T,I={};j.T=I;try{var tt=E(),ct=j.S;ct!==null&&ct(I,tt),typeof tt=="object"&&tt!==null&&typeof tt.then=="function"&&tt.then(F,dt)}catch(ht){dt(ht)}finally{q!==null&&I.types!==null&&(q.types=I.types),j.T=q}},Tt.unstable_useCacheRefresh=function(){return j.H.useCacheRefresh()},Tt.use=function(E){return j.H.use(E)},Tt.useActionState=function(E,q,I){return j.H.useActionState(E,q,I)},Tt.useCallback=function(E,q){return j.H.useCallback(E,q)},Tt.useContext=function(E){return j.H.useContext(E)},Tt.useDebugValue=function(){},Tt.useDeferredValue=function(E,q){return j.H.useDeferredValue(E,q)},Tt.useEffect=function(E,q){return j.H.useEffect(E,q)},Tt.useEffectEvent=function(E){return j.H.useEffectEvent(E)},Tt.useId=function(){return j.H.useId()},Tt.useImperativeHandle=function(E,q,I){return j.H.useImperativeHandle(E,q,I)},Tt.useInsertionEffect=function(E,q){return j.H.useInsertionEffect(E,q)},Tt.useLayoutEffect=function(E,q){return j.H.useLayoutEffect(E,q)},Tt.useMemo=function(E,q){return j.H.useMemo(E,q)},Tt.useOptimistic=function(E,q){return j.H.useOptimistic(E,q)},Tt.useReducer=function(E,q,I){return j.H.useReducer(E,q,I)},Tt.useRef=function(E){return j.H.useRef(E)},Tt.useState=function(E){return j.H.useState(E)},Tt.useSyncExternalStore=function(E,q,I){return j.H.useSyncExternalStore(E,q,I)},Tt.useTransition=function(){return j.H.useTransition()},Tt.version="19.2.3",Tt}var C1;function mh(){return C1||(C1=1,Ed.exports=lv()),Ed.exports}var at=mh(),zd={exports:{}},Yc={},Md={exports:{}},Nd={};var O1;function sv(){return O1||(O1=1,(function(h){function a(C,V){var et=C.length;C.push(V);t:for(;0<et;){var dt=et-1>>>1,M=C[dt];if(0<c(M,V))C[dt]=V,C[et]=M,et=dt;else break t}}function s(C){return C.length===0?null:C[0]}function l(C){if(C.length===0)return null;var V=C[0],et=C.pop();if(et!==V){C[0]=et;t:for(var dt=0,M=C.length,E=M>>>1;dt<E;){var q=2*(dt+1)-1,I=C[q],tt=q+1,ct=C[tt];if(0>c(I,et))tt<M&&0>c(ct,I)?(C[dt]=ct,C[tt]=et,dt=tt):(C[dt]=I,C[q]=et,dt=q);else if(tt<M&&0>c(ct,et))C[dt]=ct,C[tt]=et,dt=tt;else break t}}return V}function c(C,V){var et=C.sortIndex-V.sortIndex;return et!==0?et:C.id-V.id}if(h.unstable_now=void 0,typeof performance=="object"&&typeof performance.now=="function"){var o=performance;h.unstable_now=function(){return o.now()}}else{var f=Date,d=f.now();h.unstable_now=function(){return f.now()-d}}var m=[],g=[],y=1,v=null,S=3,b=!1,N=!1,T=!1,D=!1,G=typeof setTimeout=="function"?setTimeout:null,L=typeof clearTimeout=="function"?clearTimeout:null,Z=typeof setImmediate<"u"?setImmediate:null;function U(C){for(var V=s(g);V!==null;){if(V.callback===null)l(g);else if(V.startTime<=C)l(g),V.sortIndex=V.expirationTime,a(m,V);else break;V=s(g)}}function X(C){if(T=!1,U(C),!N)if(s(m)!==null)N=!0,F||(F=!0,P());else{var V=s(g);V!==null&&xt(X,V.startTime-C)}}var F=!1,j=-1,W=5,J=-1;function $(){return D?!0:!(h.unstable_now()-J<W)}function ft(){if(D=!1,F){var C=h.unstable_now();J=C;var V=!0;try{t:{N=!1,T&&(T=!1,L(j),j=-1),b=!0;var et=S;try{e:{for(U(C),v=s(m);v!==null&&!(v.expirationTime>C&&$());){var dt=v.callback;if(typeof dt=="function"){v.callback=null,S=v.priorityLevel;var M=dt(v.expirationTime<=C);if(C=h.unstable_now(),typeof M=="function"){v.callback=M,U(C),V=!0;break e}v===s(m)&&l(m),U(C)}else l(m);v=s(m)}if(v!==null)V=!0;else{var E=s(g);E!==null&&xt(X,E.startTime-C),V=!1}}break t}finally{v=null,S=et,b=!1}V=void 0}}finally{V?P():F=!1}}}var P;if(typeof Z=="function")P=function(){Z(ft)};else if(typeof MessageChannel<"u"){var St=new MessageChannel,yt=St.port2;St.port1.onmessage=ft,P=function(){yt.postMessage(null)}}else P=function(){G(ft,0)};function xt(C,V){j=G(function(){C(h.unstable_now())},V)}h.unstable_IdlePriority=5,h.unstable_ImmediatePriority=1,h.unstable_LowPriority=4,h.unstable_NormalPriority=3,h.unstable_Profiling=null,h.unstable_UserBlockingPriority=2,h.unstable_cancelCallback=function(C){C.callback=null},h.unstable_forceFrameRate=function(C){0>C||125<C?console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported"):W=0<C?Math.floor(1e3/C):5},h.unstable_getCurrentPriorityLevel=function(){return S},h.unstable_next=function(C){switch(S){case 1:case 2:case 3:var V=3;break;default:V=S}var et=S;S=V;try{return C()}finally{S=et}},h.unstable_requestPaint=function(){D=!0},h.unstable_runWithPriority=function(C,V){switch(C){case 1:case 2:case 3:case 4:case 5:break;default:C=3}var et=S;S=C;try{return V()}finally{S=et}},h.unstable_scheduleCallback=function(C,V,et){var dt=h.unstable_now();switch(typeof et=="object"&&et!==null?(et=et.delay,et=typeof et=="number"&&0<et?dt+et:dt):et=dt,C){case 1:var M=-1;break;case 2:M=250;break;case 5:M=1073741823;break;case 4:M=1e4;break;default:M=5e3}return M=et+M,C={id:y++,callback:V,priorityLevel:C,startTime:et,expirationTime:M,sortIndex:-1},et>dt?(C.sortIndex=et,a(g,C),s(m)===null&&C===s(g)&&(T?(L(j),j=-1):T=!0,xt(X,et-dt))):(C.sortIndex=M,a(m,C),N||b||(N=!0,F||(F=!0,P()))),C},h.unstable_shouldYield=$,h.unstable_wrapCallback=function(C){var V=S;return function(){var et=S;S=V;try{return C.apply(this,arguments)}finally{S=et}}}})(Nd)),Nd}var R1;function cv(){return R1||(R1=1,Md.exports=sv()),Md.exports}var wd={exports:{}},fn={};var j1;function rv(){if(j1)return fn;j1=1;var h=mh();function a(m){var g="https://react.dev/errors/"+m;if(1<arguments.length){g+="?args[]="+encodeURIComponent(arguments[1]);for(var y=2;y<arguments.length;y++)g+="&args[]="+encodeURIComponent(arguments[y])}return"Minified React error #"+m+"; visit "+g+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}function s(){}var l={d:{f:s,r:function(){throw Error(a(522))},D:s,C:s,L:s,m:s,X:s,S:s,M:s},p:0,findDOMNode:null},c=Symbol.for("react.portal");function o(m,g,y){var v=3<arguments.length&&arguments[3]!==void 0?arguments[3]:null;return{$$typeof:c,key:v==null?null:""+v,children:m,containerInfo:g,implementation:y}}var f=h.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;function d(m,g){if(m==="font")return"";if(typeof g=="string")return g==="use-credentials"?g:""}return fn.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=l,fn.createPortal=function(m,g){var y=2<arguments.length&&arguments[2]!==void 0?arguments[2]:null;if(!g||g.nodeType!==1&&g.nodeType!==9&&g.nodeType!==11)throw Error(a(299));return o(m,g,null,y)},fn.flushSync=function(m){var g=f.T,y=l.p;try{if(f.T=null,l.p=2,m)return m()}finally{f.T=g,l.p=y,l.d.f()}},fn.preconnect=function(m,g){typeof m=="string"&&(g?(g=g.crossOrigin,g=typeof g=="string"?g==="use-credentials"?g:"":void 0):g=null,l.d.C(m,g))},fn.prefetchDNS=function(m){typeof m=="string"&&l.d.D(m)},fn.preinit=function(m,g){if(typeof m=="string"&&g&&typeof g.as=="string"){var y=g.as,v=d(y,g.crossOrigin),S=typeof g.integrity=="string"?g.integrity:void 0,b=typeof g.fetchPriority=="string"?g.fetchPriority:void 0;y==="style"?l.d.S(m,typeof g.precedence=="string"?g.precedence:void 0,{crossOrigin:v,integrity:S,fetchPriority:b}):y==="script"&&l.d.X(m,{crossOrigin:v,integrity:S,fetchPriority:b,nonce:typeof g.nonce=="string"?g.nonce:void 0})}},fn.preinitModule=function(m,g){if(typeof m=="string")if(typeof g=="object"&&g!==null){if(g.as==null||g.as==="script"){var y=d(g.as,g.crossOrigin);l.d.M(m,{crossOrigin:y,integrity:typeof g.integrity=="string"?g.integrity:void 0,nonce:typeof g.nonce=="string"?g.nonce:void 0})}}else g==null&&l.d.M(m)},fn.preload=function(m,g){if(typeof m=="string"&&typeof g=="object"&&g!==null&&typeof g.as=="string"){var y=g.as,v=d(y,g.crossOrigin);l.d.L(m,y,{crossOrigin:v,integrity:typeof g.integrity=="string"?g.integrity:void 0,nonce:typeof g.nonce=="string"?g.nonce:void 0,type:typeof g.type=="string"?g.type:void 0,fetchPriority:typeof g.fetchPriority=="string"?g.fetchPriority:void 0,referrerPolicy:typeof g.referrerPolicy=="string"?g.referrerPolicy:void 0,imageSrcSet:typeof g.imageSrcSet=="string"?g.imageSrcSet:void 0,imageSizes:typeof g.imageSizes=="string"?g.imageSizes:void 0,media:typeof g.media=="string"?g.media:void 0})}},fn.preloadModule=function(m,g){if(typeof m=="string")if(g){var y=d(g.as,g.crossOrigin);l.d.m(m,{as:typeof g.as=="string"&&g.as!=="script"?g.as:void 0,crossOrigin:y,integrity:typeof g.integrity=="string"?g.integrity:void 0})}else l.d.m(m)},fn.requestFormReset=function(m){l.d.r(m)},fn.unstable_batchedUpdates=function(m,g){return m(g)},fn.useFormState=function(m,g,y){return f.H.useFormState(m,g,y)},fn.useFormStatus=function(){return f.H.useHostTransitionStatus()},fn.version="19.2.3",fn}var k1;function uv(){if(k1)return wd.exports;k1=1;function h(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>"u"||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!="function"))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(h)}catch(a){console.error(a)}}return h(),wd.exports=rv(),wd.exports}var H1;function ov(){if(H1)return Yc;H1=1;var h=cv(),a=mh(),s=uv();function l(t){var e="https://react.dev/errors/"+t;if(1<arguments.length){e+="?args[]="+encodeURIComponent(arguments[1]);for(var n=2;n<arguments.length;n++)e+="&args[]="+encodeURIComponent(arguments[n])}return"Minified React error #"+t+"; visit "+e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}function c(t){return!(!t||t.nodeType!==1&&t.nodeType!==9&&t.nodeType!==11)}function o(t){var e=t,n=t;if(t.alternate)for(;e.return;)e=e.return;else{t=e;do e=t,(e.flags&4098)!==0&&(n=e.return),t=e.return;while(t)}return e.tag===3?n:null}function f(t){if(t.tag===13){var e=t.memoizedState;if(e===null&&(t=t.alternate,t!==null&&(e=t.memoizedState)),e!==null)return e.dehydrated}return null}function d(t){if(t.tag===31){var e=t.memoizedState;if(e===null&&(t=t.alternate,t!==null&&(e=t.memoizedState)),e!==null)return e.dehydrated}return null}function m(t){if(o(t)!==t)throw Error(l(188))}function g(t){var e=t.alternate;if(!e){if(e=o(t),e===null)throw Error(l(188));return e!==t?null:t}for(var n=t,i=e;;){var r=n.return;if(r===null)break;var u=r.alternate;if(u===null){if(i=r.return,i!==null){n=i;continue}break}if(r.child===u.child){for(u=r.child;u;){if(u===n)return m(r),t;if(u===i)return m(r),e;u=u.sibling}throw Error(l(188))}if(n.return!==i.return)n=r,i=u;else{for(var p=!1,_=r.child;_;){if(_===n){p=!0,n=r,i=u;break}if(_===i){p=!0,i=r,n=u;break}_=_.sibling}if(!p){for(_=u.child;_;){if(_===n){p=!0,n=u,i=r;break}if(_===i){p=!0,i=u,n=r;break}_=_.sibling}if(!p)throw Error(l(189))}}if(n.alternate!==i)throw Error(l(190))}if(n.tag!==3)throw Error(l(188));return n.stateNode.current===n?t:e}function y(t){var e=t.tag;if(e===5||e===26||e===27||e===6)return t;for(t=t.child;t!==null;){if(e=y(t),e!==null)return e;t=t.sibling}return null}var v=Object.assign,S=Symbol.for("react.element"),b=Symbol.for("react.transitional.element"),N=Symbol.for("react.portal"),T=Symbol.for("react.fragment"),D=Symbol.for("react.strict_mode"),G=Symbol.for("react.profiler"),L=Symbol.for("react.consumer"),Z=Symbol.for("react.context"),U=Symbol.for("react.forward_ref"),X=Symbol.for("react.suspense"),F=Symbol.for("react.suspense_list"),j=Symbol.for("react.memo"),W=Symbol.for("react.lazy"),J=Symbol.for("react.activity"),$=Symbol.for("react.memo_cache_sentinel"),ft=Symbol.iterator;function P(t){return t===null||typeof t!="object"?null:(t=ft&&t[ft]||t["@@iterator"],typeof t=="function"?t:null)}var St=Symbol.for("react.client.reference");function yt(t){if(t==null)return null;if(typeof t=="function")return t.$$typeof===St?null:t.displayName||t.name||null;if(typeof t=="string")return t;switch(t){case T:return"Fragment";case G:return"Profiler";case D:return"StrictMode";case X:return"Suspense";case F:return"SuspenseList";case J:return"Activity"}if(typeof t=="object")switch(t.$$typeof){case N:return"Portal";case Z:return t.displayName||"Context";case L:return(t._context.displayName||"Context")+".Consumer";case U:var e=t.render;return t=t.displayName,t||(t=e.displayName||e.name||"",t=t!==""?"ForwardRef("+t+")":"ForwardRef"),t;case j:return e=t.displayName||null,e!==null?e:yt(t.type)||"Memo";case W:e=t._payload,t=t._init;try{return yt(t(e))}catch{}}return null}var xt=Array.isArray,C=a.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,V=s.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,et={pending:!1,data:null,method:null,action:null},dt=[],M=-1;function E(t){return{current:t}}function q(t){0>M||(t.current=dt[M],dt[M]=null,M--)}function I(t,e){M++,dt[M]=t.current,t.current=e}var tt=E(null),ct=E(null),ht=E(null),pt=E(null);function Kt(t,e){switch(I(ht,e),I(ct,t),I(tt,null),e.nodeType){case 9:case 11:t=(t=e.documentElement)&&(t=t.namespaceURI)?$m(t):0;break;default:if(t=e.tagName,e=e.namespaceURI)e=$m(e),t=Pm(e,t);else switch(t){case"svg":t=1;break;case"math":t=2;break;default:t=0}}q(tt),I(tt,t)}function Ct(){q(tt),q(ct),q(ht)}function Nn(t){t.memoizedState!==null&&I(pt,t);var e=tt.current,n=Pm(e,t.type);e!==n&&(I(ct,t),I(tt,n))}function je(t){ct.current===t&&(q(tt),q(ct)),pt.current===t&&(q(pt),kc._currentValue=et)}var Xe,Bt;function Wt(t){if(Xe===void 0)try{throw Error()}catch(n){var e=n.stack.trim().match(/\n( *(at )?)/);Xe=e&&e[1]||"",Bt=-1<n.stack.indexOf(`
@@ -291,9 +504,15 @@ Error generating stack: `+i.message+`
     'Standard':'Стандартен',
     'VIP / All Access':'VIP / Пълен достъп',
 
+    'Day':'Ден',
     'Day 1':'Ден 1',
     'Day 2':'Ден 2',
     'Day 3':'Ден 3',
+    'Main Track +':'Основна програма +',
+    'Sector Topics':'Секторни теми',
+    'running in parallel.':'работещи паралелно.',
+    'Horizontal tech.':'Хоризонтални технологии.',
+    'Vertical sectors.':'Вертикални сектори.',
 
     'Organizers':'Организатори',
     'All rights reserved.':'Всички права запазени.',
@@ -307,7 +526,346 @@ Error generating stack: `+i.message+`
 
     // Additional common UI strings that appear in the page
     'Close':'Затвори',
-    'Selected':'Избрано'
+    'Selected':'Избрано',
+
+    // Additional missing translations
+    '7th‑generation technologies without borders.':'Технологии от седмо поколение без граници.',
+
+    // Split text translations for 7th-generation
+    '7th‑generation':'7-мо поколение',
+    'technologies':'технологии',
+    'without':'без',
+    'borders':'граници',
+    '7th‑generation technologies':'Технологии от 7-мо поколение',
+    'technologies without borders':'технологии без граници',
+    '7th-gen':'7-мо поколение',
+    '7th-gen technologies without borders':'Технологии от 7-мо поколение без граници',
+    'Horizontal tech + vertical sectors':'Хоризонтални технологии + вертикални сектори',
+    'Expo hall, startup zone & side events':'Изложбена зала, зона за стартиращи компании и съпътстващи събития',
+    'Challenges, growth, sustainability':'Предизвикателства, растеж, устойчивост',
+    'What & How?':'Какво и как?',
+    "What's next?":'Какво следва?',
+    'Halls A, B, C. Horizontal tech.':'Зали A, B, C. Хоризонтални технологии.',
+    'Halls A, B, C. Horizontal tech. Vertical sectors.':'Зали A, B, C. Хоризонтални технологии. Вертикални сектори.',
+    'Halls A, B, C. Horizontal tech. Вертикални сектори.':'Зали A, B, C. Хоризонтални технологии. Вертикални сектори.',
+    'Hall A covers cross-cutting topics—AI, IoT, robotics, cybersecurity. Hall B hosts the expo and startup zone. Hall C dives into sector deep-dives.':'Зала А покрива хоризонтални теми—AI, IoT, роботика, киберсигурност. Зала Б е за изложението и зоната за стартиращи компании. Зала В е за дълбоки дискусии по сектори.',
+    'Hall A':'Зала А',
+    'Hall B':'Зала Б',
+    'Hall C':'Зала В',
+    'Horizontal topics':'Хоризонтални теми',
+    'Expo + startups':'Изложение + стартиращи компании',
+    'Vertical sectors':'Вертикални сектори',
+    '3-Day Programme':'3-дневна програма',
+    'Main Track + Sector Topics running in parallel.':'Основна програма + Секторни теми, работещи паралелно.',
+    'Main Track + Секторни теми running in parallel.':'Основна програма + Секторни теми, работещи паралелно.',
+    'Choose between the main programme (keynotes, panels) or specialized sector sessions based on your interests.':'Изберете между основната програма (ключови изказвания, панели) или специализирани секторни сесии според вашите интереси.',
+    'Side events that turn contacts into collaborations.':'Съпътстващи събития, които превръщат контактите в сътрудничества.',
+    'See the expo':'Вижте изложението',
+    'Practitioners, researchers, policymakers— on one stage.':'Практици, изследователи, политически лидери—на една сцена.',
+    'Speaker applications open':'Кандидатури за лектори са отворени',
+    "We're assembling an exceptional lineup of practitioners, researchers, and policymakers from across the Black Sea region and beyond. Speaker announcements will be made in the coming weeks.":'Събираме изключителен набор от практици, изследователи и политически лидери от региона на Черно море и отвъд. Обявяването на лекторите ще бъде направено в следващите седмици.',
+    'Meet solution providers across AI, robotics, IoT, and vertical sectors.':'Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори.',
+    'Request a brochure':'Поискайте брошура',
+    'Congress Center':'Конгресен център',
+    'Airport 15 min':'Летище 15 мин',
+    'Hotels nearby':'Хотели наблизо',
+    'Public transit':'Обществен транспорт',
+    'Accessibility':'Достъпност',
+    'Save 30%':'Спестете 30%',
+    'Regular':'Редовен',
+    'Full access':'Пълен достъп',
+    'Valid ID required':'Изисква се валидна лична карта',
+    'Networking app access':'Достъп до приложение за нетуъркинг',
+    "What's included":'Какво е включено',
+    'All sessions + expo':'Всички сесии + изложение',
+    'Lunch & coffee breaks':'Обед и кафе паузи',
+    'Side events (RSVP required)':'Съпътстващи събития (изисква се RSVP)',
+    'Digital materials':'Дигитални материали',
+    'All sessions + expo access':'Достъп до всички сесии и изложението',
+    'Valid student card required':'Изисква се валидна студентска карта',
+    '3 дни':'3 дни',
+    'of panels, demos & networking':'панели, демонстрации и нетуъркинг',
+    '3‑Day Програмаme':'3-дневна програма',
+    'TechnoStart Motivator':'TechnoStart Motivator',
+    'Oct 7 morning':'7 октомври сутрин',
+    'Women & Tech':'Жени и технологии',
+    'Oct 8':'8 октомври',
+    'Party & Gala':'Парти и гала',
+    'Oct 7–8 evenings':'7–8 октомври вечери',
+    'Tours':'Обиколки',
+    'Oct 9':'9 октомври',
+    '7–9 Oct 2026':'7–9 окт 2026',
+    'Congress Center Varna':'Конгресен център Варна',
+    'Digitalization, digital processes, AI':'Дигитализация, цифрови процеси, AI',
+    'Smart city, logistics, tourism, maritime':'Умен град, логистика, туризъм, морски сектор',
+    'Future planning, partnerships, action':'Планиране на бъдещето, партньорства, действие',
+    // More missing translations
+    'VARNA, BULGARIA':'ВАРНА, БЪЛГАРИЯ',
+    '3days':'3дни',
+    '70+sessions':'70+сесии',
+    '120+speakers':'120+лектори',
+    'View all side events':'Виж всички съпътстващи събития',
+    'Coming Soon':'Очаквайте скоро',
+    'speakers':'лектори',
+    'sessions':'сесии',
+    'Startups get a dedicated zone + pitch slots.':'Стартиращите компании получават специална зона + време за представяне.',
+    'Exhibit or pitch':'Изложение или представяне',
+    'Booth packages & sponsorship tiers':'Пакети за щандове и нива на спонсорство',
+    'Startup pitch applications open':'Кандидатури за представяне на стартиращи компании са отворени',
+    'Investor meeting hours':'Часове за срещи с инвеститори',
+    'Black Sea meets deep tech.':'Черно море се среща с дълбоките технологии.',
+    'Black Sea meets deep tech':'Черно море се среща с дълбоките технологии',
+    'Where the Black Sea':'Където Черно море',
+    'Where':'Където',
+    'Where ':'Където ',
+    'Varna. Where':'Варна. Където',
+    '. Where':'. Където',
+    'Varna. Where':'Варна. Където',
+    'the Black Sea':'Черно море',
+    'meets deep tech':'се среща с дълбоките технологии',
+    'Varna. Where the Black Sea meets deep tech.':'Варна. Където Черно море се среща с дълбоките технологии.',
+    'Varna. Where the Black Sea meets deep tech':'Варна. Където Черно море се среща с дълбоките технологии.',
+    'Halls A, B, C.':'Зали A, B, C.',
+    'Halls A, B, C. Horizontal tech.':'Зали A, B, C. Хоризонтални технологии.',
+    'Halls A, B, C. Horizontal tech. Vertical sectors.':'Зали A, B, C. Хоризонтални технологии. Вертикални сектори.',
+    'Main Track + Sector Topics running in parallel.':'Основна програма + Секторни теми, работещи паралелно.',
+    'Main Track + Секторни теми running in parallel.':'Основна програма + Секторни теми, работещи паралелно.',
+    'Expo floor. Зона за стартиращи компании. Live demos.':'Изложбена площ. Зона за стартиращи компании. Живи демонстрации.',
+    'Expo':'Изложение',
+    ' floor':' площ',
+    ' floor.':' площ.',
+    'floor':'площ',
+    'floor.':'площ.',
+    'Изложение floor':'Изложбена площ',
+    'Изложение floor.':'Изложбена площ.',
+    'Expo floor':'Изложбена площ',
+    'Expo floor.':'Изложбена площ.',
+    'Side events':'Съпътстващи събития',
+    ' turn ':' превръщат ',
+    ' turn':' превръщат',
+    'turn ':'превръщат ',
+    'turn':'превръщат',
+    'that turn':'които превръщат',
+    'that ':'които ',
+    ' които':' които',
+    'contacts':'контактите',
+    'into':'в',
+    'collaborations':'сътрудничества',
+    'collaborations.':'сътрудничества.',
+    'into collaborations':'в сътрудничества',
+    'contacts into collaborations':'контактите в сътрудничества',
+    'turn contacts into collaborations':'превръщат контактите в сътрудничества',
+    'Side events that':'Съпътстващи събития, които',
+    'events that turn':'съпътстващи събития, които превръщат',
+    'turn contacts':'превръщат контакти',
+    'Side events that turn contacts into collaborations':'Съпътстващи събития, които превръщат контактите в сътрудничества',
+    'Side events that turn contacts into collaborations.':'Съпътстващи събития, които превръщат контактите в сътрудничества.',
+    'Practitioners':'Практици',
+    'researchers':'изследователи',
+    'policymakers':'политически лидери',
+    'on one stage':'на една сцена',
+    'Practitioners, researchers, policymakers':'Практици, изследователи, политически лидери',
+    'Practitioners, researchers, policymakers— on one stage':'Практици, изследователи, политически лидери—на една сцена',
+    'Practitioners, researchers, policymakers— on one stage.':'Практици, изследователи, политически лидери—на една сцена.',
+    'Three days':'Три дни',
+    'One story':'Една история',
+    'from challenge':'от предизвикателство',
+    'to action':'към действие',
+    'to action.':'към действие.',
+    'from challenge to action':'от предизвикателство към действие',
+    'from challenge to action.':'от предизвикателство към действие.',
+    'One story: from challenge to action':'Една история: от предизвикателство към действие',
+    'One story: from challenge to action.':'Една история: от предизвикателство към действие.',
+    'days. One story':'дни. Една история',
+    'days. One story:':'дни. Една история:',
+    'days. One':'дни. Една',
+    'Three days.':'Три дни.',
+    'story: from challenge':'история: от предизвикателство',
+    'story: from challenge to':'история: от предизвикателство към',
+    'story: from':'история: от',
+    'story: from challenge':'история: от предизвикателство',
+    'to':'към',
+    ' a ':' ',
+    ' the ':' ',
+    'challenge to action':'предизвикателство към действие',
+    'challenge to action.':'предизвикателство към действие.',
+    'Three':'Три',
+    'days':'дни',
+    'days.':'дни.',
+    'One':'Една',
+    'story':'история',
+    'story:':'история:',
+    'from':'от',
+    'challenge':'предизвикателство',
+    'action':'действие',
+    'action.':'действие.',
+    'Three days':'Три дни',
+    'Three days.':'Три дни.',
+    'Three days. One':'Три дни. Една',
+    'Three days. One story':'Три дни. Една история',
+    'Three days. One story:':'Три дни. Една история:',
+    'Three days. One story: from':'Три дни. Една история: от',
+    'Three days. One story: from challenge':'Три дни. Една история: от предизвикателство',
+    'Three days. One story: from challenge to':'Три дни. Една история: от предизвикателство към',
+    'Three days. One story: from challenge to action':'Три дни. Една история: от предизвикателство към действие',
+    'Three days. One story: from challenge to action.':'Три дни. Една история: от предизвикателство към действие.',
+    'See you':'Ще се видим',
+    'in Varna':'във Варна',
+    'in Varna.':'във Варна.',
+    ' in ':' в ',
+    'in ':'в ',
+    'See you in':'Ще се видим в ',
+    'See you in Varna':'Ще се видим във Варна',
+    'See you in Varna.':'Ще се видим във Варна.',
+    'you in Varna':'се видим във Варна',
+    'you in Varna.':'се видим във Варна.',
+    'Varna':'Варна',
+    'Varna.':'Варна.',
+    '. Varna':'. Варна',
+    'Bulgaria':'България',
+    'Get directions':'Насоки за пристигане',
+    'Student':'Студент',
+    'Side events (RSVP where noted)':'Съпътстващи събития (RSVP където е отбелязано)',
+    'Lunch & coffee':'Обед и кафе',
+    'Group tickets':'Групови билети',
+    'Can I get a refund?':'Мога ли да получа възстановяване?',
+    'Do I need to RSVP for side events?':'Трябва ли да потвърдя присъствие за съпътстващите събития?',
+    'Are group discounts available?':'Налични ли са групови отстъпки?',
+    'See you in Varna.':'Ще се видим във Варна.',
+    'Download prospectus':'Изтегли брошура',
+    'Event':'Събитие',
+    'Legal':'Правни',
+    'Privacy Policy':'Политика за поверителност',
+    'Terms of Service':'Условия за ползване',
+    'Code of Conduct':'Кодекс за поведение',
+    'Contact':'Контакт',
+    'Black Sea Technology Forum':'Черноморски технологичен форум',
+    'First Name':'Собствено име',
+    'Last Name':'Фамилно име',
+    'Email':'Имейл',
+    'Phone':'Телефон',
+    'Ticket Type':'Тип билет',
+    'Submit':'Регистрирай се',
+    'Close':'Затвори',
+    'Cancel':'Отказ',
+    'Save':'Запази',
+    'Why attend?':'Защо да присъствате?',
+    'View program':'Вижте програмата',
+    'Time':'Час',
+    'Main programme':'Основна програма',
+    'Sector topics':'Секторни теми',
+    'Opening':'Официално откриване',
+    'Keynote':'Ключово изказване',
+    'Coffee break':'Кафе пауза',
+    'Short break / Panel prep':'Кратка пауза / Подготовка за панел',
+    'Closing panel (Day recap)':'Обобщаващ панел (Обзор на деня)',
+    'Party':'Парти',
+    'AI & Data':'AI и Данни',
+    'Cybersecurity':'Киберсигурност',
+    'Maritime':'Морски сектор',
+    'Biotech':'Биотехнологии',
+    'Smart Agriculture':'Умно земеделие',
+    ' exhibitors':' изложители',
+    'Startup zone':'Зона за стартиращи компании',
+    'Investor hours':'Часове за инвеститори',
+    'IoT, robotics, smart systems':'IoT, роботика, интелигентни системи',
+    'Digitalization, digital processes, AI':'Дигитализация, цифрови процеси, изкуствен интелект',
+    'Smart city, logistics, tourism, maritime':'Умен град, логистика, туризъм, морски сектор',
+    'Future planning, partnerships, action':'Планиране на бъдещето, партньорства, действие',
+    'Why?':'Защо?',
+    'Challenges, growth, sustainability':'Предизвикателства, растеж, устойчивост',
+    'Focus:':'Фокус:',
+    'Three days. One story: from challenge to action.':'Три дни. Една история: от предизвикателство към действие.',
+    'Roadmaps, deals, next steps':'Пътни карти, сделки, следващи стъпки',
+    'Expo floor. Startup zone. Live demos.':'Изложбена площ. Зона за стартиращи компании. Живи демонстрации.',
+    'exhibitors':'изложители',
+    'Choose the pass that fits your goals.':'Изберете пропуска, който отговаря на вашите цели.',
+    'Common questions':'Често задавани въпроси',
+    'See you in Varna':'Ще се видим във Варна',
+    // Schedule/Day 1
+    'Official Opening':'Официално откриване',
+    'Keynote':'Ключово изказване',
+    'Borderless Technologies for Sustainable Growth in a Dynamic Environment':'Технологии без граници за устойчив растеж в динамична среда',
+    'Coffee Break':'Кафе пауза',
+    'AI & Automation as Answers to Rising Costs and Resource Shortages':'AI и автоматизация като отговор на нарастващите разходи и недостига на ресурси',
+    'Industrial AI applications':'Индустриални AI приложения',
+    'Building AI & Data ecosystems':'Изграждане на AI и данни екосистеми',
+    'Vision for the modern enterprise':'Визия за модерното предприятие',
+    'Productivity-boosting practices':'Практики за повишаване на продуктивността',
+    'Lunch / Networking':'Обед / Нетуъркинг',
+    'From Strategy to Execution – How Companies Deploy AI Sustainably':'От стратегия към изпълнение – Как компаниите внедряват AI устойчиво',
+    'Real AI projects with measurable ROI':'Реални AI проекти с измерима възвръщаемост',
+    'Typical implementation mistakes & risks':'Типични грешки при внедряване и рискове',
+    'Change-management tools':'Инструменти за управление на промяната',
+    'Energy- and tax-sustainability strategies':'Стратегии за енергийна и данъчна устойчивост',
+    'Maritime Economy & PortTech':'Морска икономика и пристанищни технологии',
+    'Blue/Marine economy':'Синя/Морска икономика',
+    'Smart maritime logistics':'Умна морска логистика',
+    'Autonomous vessels':'Автономни плавателни съдове',
+    'Cybersecurity of marine infrastructure':'Киберсигурност на морската инфраструктура',
+    'Secure Data, Resilient Supply Chains & Cyber-Resilient Business':'Сигурни данни, устойчиви вериги на доставки и кибер-устойчив бизнес',
+    'AI-assisted planning in supply-chain':'AI-помощно планиране във веригата на доставки',
+    'Sovereignty over corporate data':'Суверенитет над корпоративните данни',
+    'Strengthening cybersecurity for critical systems':'Укрепване на киберсигурността за критични системи',
+    'Biotechnologies, Health & Sustainable Industries':'Биотехнологии, здравеопазване и устойчиви индустрии',
+    'Biotech & health':'Биотехнологии и здравеопазване',
+    'Biotech start-ups & market rollout':'Биотех стартиращи компании и пазарно разпространение',
+    'Biotech + AI – from data to product (models, validation, IP)':'Биотех + AI – от данни към продукт (модели, валидация, интелектуална собственост)',
+    'Short Pause / Panel Prep':'Кратка пауза / Подготовка за панел',
+    'Summary Panel (Day recap)':'Обобщаващ панел (Обзор на деня)',
+    'TechStart Motivator (inspirational session)':'TechStart Motivator (вдъхновяваща сесия)',
+    'Party':'Парти',
+    // Day 2
+    'Opening & Recap of Day 1':'Откриване и обзор на Ден 1',
+    'Contemporary Challenges and New Business Models':'Съвременни предизвикателства и нови бизнес модели',
+    'Data-Driven Management: IoT + Logistics':'Управление базирано на данни: IoT + Логистика',
+    'Smart cities & IoT platforms':'Умни градове и IoT платформи',
+    'Future transport & sustainable solutions':'Бъдещ транспорт и устойчиви решения',
+    'Smart tourism':'Умен туризъм',
+    'Digital Twin for traffic, waste and energy management':'Дигитален близнак за управление на трафик, отпадъци и енергия',
+    'Industry':'Индустрия',
+    '(topic to be confirmed)':'(темата ще бъде потвърдена)',
+    'Robotics':'Роботика',
+    'Latest robotic technologies':'Най-нови роботични технологии',
+    'Integration with AI & automated production lines':'Интеграция с AI и автоматизирани производствени линии',
+    'Collaborative robots and benefits for various sectors':'Колаборативни роботи и ползи за различни сектори',
+    'Tourism':'Туризъм',
+    'Financing, Export, New Markets':'Финансиране, експорт, нови пазари',
+    'Access to financing instruments':'Достъп до инструменти за финансиране',
+    'Strategies for entering foreign markets':'Стратегии за навлизане на чуждестранни пазари',
+    'Risk management in international trade':'Управление на риска в международната търговия',
+    'Smart Agriculture':'Умно земеделие',
+    'GreenTech solutions & automation':'GreenTech решения и автоматизация',
+    'Agro & climate':'Агро и климат',
+    'AI in the agri-sector':'AI в агро-сектора',
+    'Data, subsidies and ROI':'Данни, субсидии и възвръщаемост',
+    'Gentle Power – Women & Technology (discussion + stories from women in tech)':'Gentle Power – Жени и технологии (дискусия + истории от жени в технологиите)',
+    'Gala Cocktail':'Гала коктейл',
+    // Day 3
+    'Opening & Recap of Day 2':'Откриване и обзор на Ден 2',
+    "What's Next?":'Какво следва?',
+    'Look at upcoming technology trends':'Поглед към предстоящите технологични тенденции',
+    'Preparing organisations for imminent changes':'Подготовка на организациите за непосредствени промени',
+    'Concrete roadmap for post-conference action':'Конкретна пътна карта за действие след конференцията',
+    'Closing Panel & Wrap-up: "The Future of the Black Sea Region Through the Lens of Modern Technologies"':'Закриващ панел и обобщение: "Бъдещето на региона на Черно море през призмата на модерните технологии"',
+    'Success School – Hands-on workshops, mentorship and training for participants':'Success School – Практически работилници, менторство и обучение за участници',
+    'No separate sector sessions on Day 3':'Няма отделни секторни сесии на Ден 3',
+    'All attendees join the main programme.':'Всички участници се присъединяват към основната програма.',
+    'Time':'Час',
+    'Main Програмаme':'Основна програма',
+    'Sector Topics':'Секторни теми',
+
+    // Hero section - remaining English text
+    '7–9 OCT 2026':'7–9 ОКТ 2026',
+    'Why attend?':'Защо да присъствате?',
+    '3 days':'3 дни',
+    'See the program':'Вижте програмата',
+
+    // Fix spacing issues
+    '3 days':'3 дни',
+    '70+ sessions':'70+ сесии',
+    '120+ speakers':'120+ лектори',
+    'Three days. One story: from challenge to action.':'Три дни. Една история: от предизвикателството към действието.'
   };
 
   // ─── Modal ────────────────────────────────────────────────
@@ -561,22 +1119,53 @@ Error generating stack: `+i.message+`
     while((n = walker.nextNode())) nodes.push(n);
 
     nodes.forEach(function(node){
-      if(!origMap.has(node)) origMap.set(node, node.textContent);
-      var orig = origMap.get(node);
-      var trimmed = orig.trim();
+      // Store original English text only on first encounter
+      if(!origMap.has(node)){
+        var currentText = node.textContent;
+        // Only store if it's English (contains Latin characters)
+        if(/[a-zA-Z]/.test(currentText)){
+          origMap.set(node, currentText);
+        }
+      }
+      var orig = origMap.get(node) || node.textContent;
+      var current = node.textContent;
+      var trimmed = current.trim();
+      
       if(!isBG){
-        node.textContent = orig;
+        // Restore original English
+        if(origMap.has(node)){
+          node.textContent = origMap.get(node);
+        }
         return;
       }
+      
+      // Try exact match on current text first
       if(dict[trimmed] !== undefined){
         node.textContent = dict[trimmed];
-      } else {
-        var t = orig;
-        Object.keys(dict).forEach(function(k){
-          if(k.length > 4 && t.indexOf(k) !== -1) t = t.split(k).join(dict[k]);
-        });
-        node.textContent = t;
+        return;
       }
+      // Try normalized match (remove extra whitespace)
+      var normalized = trimmed.replace(/\s+/g, ' ');
+      if(dict[normalized] !== undefined){
+        node.textContent = dict[normalized];
+        return;
+      }
+      // Partial replacement for longer phrases - work on current text
+      var t = current;
+      // Sort keys by length (longest first) to ensure longer phrases are replaced before shorter ones
+      var sortedKeys = Object.keys(dict).sort(function(a, b){ return b.length - a.length; });
+      sortedKeys.forEach(function(k){
+        if(k.length > 2){
+          // Try exact match
+          if(t.indexOf(k) !== -1) t = t.split(k).join(dict[k]);
+          // Try with normalized whitespace
+          var kNormalized = k.replace(/\s+/g, ' ');
+          if(kNormalized !== k && t.indexOf(kNormalized) !== -1){
+            t = t.split(kNormalized).join(dict[k]);
+          }
+        }
+      });
+      node.textContent = t;
     });
 
     // Modal static texts
@@ -616,7 +1205,209 @@ Error generating stack: `+i.message+`
     initTicketCards();
     initMobCta();
     applyTranslations();
+    // Run translations multiple times to catch dynamically rendered content
+    setTimeout(applyTranslations, 500);
+    setTimeout(applyTranslations, 1000);
+    setTimeout(applyTranslations, 2000);
+    setTimeout(applyTranslations, 3000);
+    setTimeout(applyTranslations, 5000);
   }, 750);
+
+  // Re-apply translations when React renders new content
+  var transObserver;
+  var transTimeout;
+  var isTranslating = false;
+  function debouncedTranslate(){
+    clearTimeout(transTimeout);
+    transTimeout = setTimeout(function(){
+      if(lang === 'bg' && !isTranslating){
+        isTranslating = true;
+        applyTranslations();
+        isTranslating = false;
+      }
+    }, 150);
+  }
+  transObserver = new MutationObserver(function(mutations){
+    var shouldTranslate = false;
+    mutations.forEach(function(mutation){
+      if(mutation.type === 'childList' && mutation.addedNodes.length > 0){
+        shouldTranslate = true;
+      }
+    });
+    if(shouldTranslate) debouncedTranslate();
+  });
+  transObserver.observe(document.body, { childList: true, subtree: true });
+
+  // ─── Smooth scroll reveal animations ─────────────────────
+  function initScrollAnimations(){
+    // Add reveal classes to elements
+    var sections = document.querySelectorAll('section');
+    var allRevealElements = [];
+    
+    sections.forEach(function(section, idx){
+      var headings = section.querySelectorAll('h1, h2, h3');
+      var paragraphs = section.querySelectorAll('p');
+      var cards = section.querySelectorAll('.card, [class*="card"]');
+      var lists = section.querySelectorAll('ul, ol');
+      
+      headings.forEach(function(el, i){
+        el.classList.add('reveal-element');
+        if(i % 3 === 0) el.classList.add('reveal-delay-1');
+        else if(i % 3 === 1) el.classList.add('reveal-delay-2');
+        else el.classList.add('reveal-delay-3');
+        allRevealElements.push(el);
+      });
+      
+      paragraphs.forEach(function(el, i){
+        el.classList.add('reveal-element');
+        if(i % 4 === 0) el.classList.add('reveal-delay-2');
+        else if(i % 4 === 1) el.classList.add('reveal-delay-3');
+        else if(i % 4 === 2) el.classList.add('reveal-delay-4');
+        else el.classList.add('reveal-delay-5');
+        allRevealElements.push(el);
+      });
+      
+      cards.forEach(function(el, i){
+        el.classList.add('reveal-scale');
+        if(i % 3 === 0) el.classList.add('reveal-delay-1');
+        else if(i % 3 === 1) el.classList.add('reveal-delay-2');
+        else el.classList.add('reveal-delay-3');
+        allRevealElements.push(el);
+      });
+      
+      lists.forEach(function(el){
+        el.classList.add('reveal-element');
+        el.classList.add('reveal-delay-3');
+        allRevealElements.push(el);
+      });
+    });
+    
+    // Immediately reveal elements that are already in viewport
+    var windowHeight = window.innerHeight;
+    allRevealElements.forEach(function(el){
+      var rect = el.getBoundingClientRect();
+      if(rect.top < windowHeight && rect.bottom > 0){
+        // Element is visible, add revealed class with small stagger based on position
+        var delay = Math.max(0, rect.top / windowHeight) * 500;
+        setTimeout(function(){
+          el.classList.add('revealed');
+        }, delay);
+      }
+    });
+    
+    // Intersection Observer for reveal animations on scroll
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: '50px 0px -30px 0px'
+    });
+    
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal-element, .reveal-scale, .reveal-left, .reveal-right').forEach(function(el){
+      revealObserver.observe(el);
+    });
+  }
+  
+  // Initialize scroll animations immediately and after delays
+  initScrollAnimations();
+  setTimeout(initScrollAnimations, 500);
+  setTimeout(initScrollAnimations, 1000);
+  setTimeout(initScrollAnimations, 2000);
+  
+  // ─── Parallax scroll effects ──────────────────────────────
+  function initParallax(){
+    var parallaxElements = document.querySelectorAll('[class*="bg-cover"], [class*="section-bg"], [class*="hero-bg"]');
+    
+    window.addEventListener('scroll', function(){
+      var scrollY = window.scrollY;
+      
+      parallaxElements.forEach(function(el){
+        var rect = el.getBoundingClientRect();
+        var speed = 0.5; // Adjust for more/less parallax
+        var yPos = -(rect.top * speed);
+        
+        if(rect.top < window.innerHeight && rect.bottom > 0){
+          el.style.transform = 'translateY(' + yPos + 'px) scale(1.1)';
+        }
+      });
+    }, { passive: true });
+  }
+  
+  // ─── Navigation scroll effect ──────────────────────────────
+  function initNavScroll(){
+    var nav = document.querySelector('nav.fixed');
+    if(!nav) return;
+    
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 100){
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
+  
+  // Initialize effects
+  setTimeout(initParallax, 500);
+  setTimeout(initNavScroll, 500);
+  
+  // ─── Scroll progress indicator ────────────────────────────
+  function initScrollProgress(){
+    var progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', function(){
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + '%';
+    }, { passive: true });
+  }
+  
+  setTimeout(initScrollProgress, 100);
+  
+  // ─── Smooth scroll with easing for anchor links ───────────
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      var targetId = this.getAttribute('href');
+      if(targetId === '#') return;
+      
+      var targetElement = document.querySelector(targetId);
+      if(targetElement){
+        e.preventDefault();
+        var targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        var startPosition = window.scrollY;
+        var distance = targetPosition - startPosition;
+        var duration = 1000;
+        var startTime = null;
+        
+        function animation(currentTime){
+          if(startTime === null) startTime = currentTime;
+          var timeElapsed = currentTime - startTime;
+          var progress = Math.min(timeElapsed / duration, 1);
+          
+          // Ease in-out cubic
+          var ease = progress < 0.5 
+            ? 4 * progress * progress * progress 
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+          
+          window.scrollTo(0, startPosition + distance * ease);
+          
+          if(timeElapsed < duration){
+            requestAnimationFrame(animation);
+          }
+        }
+        
+        requestAnimationFrame(animation);
+      }
+    });
+  });
 
 })();
 </script>
