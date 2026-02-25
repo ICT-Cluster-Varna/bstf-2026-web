@@ -41,7 +41,8 @@ nav.fixed > div > div a {
 body { overflow-x: hidden; }
 
 /* T7: Smooth scroll + anchor offset */
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+#program, #speakers, #tickets, #venue, #expo { scroll-margin-top: 84px; }
 
 /* T4: ICT Cluster info */
 .ict-cluster-info {
@@ -455,9 +456,9 @@ Error generating stack: `+i.message+`
       <div class="fg">
         <label for="bstf-ticket" id="lbl-ticket">Ticket Type</label>
         <select id="bstf-ticket">
-          <option value="early-bird">Ранен билет</option>
-          <option value="standard">Стандартен</option>
-          <option value="vip">VIP / Пълен достъп</option>
+          <option value="early-bird" data-en="Early Bird" data-bg="Ранен билет">Early Bird</option>
+          <option value="standard" data-en="Standard" data-bg="Стандартен">Standard</option>
+          <option value="vip" data-en="VIP / All Access" data-bg="VIP / Пълен достъп">VIP / All Access</option>
         </select>
       </div>
       <button class="msub-btn" id="bstf-submit">Register now</button>
@@ -874,8 +875,17 @@ Error generating stack: `+i.message+`
   var successDiv = document.getElementById('bstf-success');
   var ticketSel = document.getElementById('bstf-ticket');
 
+  function updateModalLang(){
+    if(!ticketSel) return;
+    Array.from(ticketSel.options).forEach(function(opt){
+      var txt = opt.getAttribute('data-' + lang);
+      if(txt) opt.textContent = txt;
+    });
+  }
+
   function openModal(ticketType) {
     ticketType = ticketType || selectedTicket;
+    updateModalLang();
     if(ticketSel) ticketSel.value = ticketType;
     formInner.style.display = 'block';
     successDiv.classList.remove('show');
@@ -890,7 +900,7 @@ Error generating stack: `+i.message+`
   }
 
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
-  document.querySelector('#bstf-modal .mclose').addEventListener('click', closeModal);
+  document.querySelector('#bstf-modal .mclose').addEventListener('click', function(e){ e.stopPropagation(); closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
 
   document.getElementById('bstf-submit').addEventListener('click', function(){
@@ -904,6 +914,9 @@ Error generating stack: `+i.message+`
 
   // ─── Intercept nav Register now clicks (button OR link) ───
   document.addEventListener('click', function(e){
+    // Never intercept clicks inside the modal
+    if(e.target.closest('#bstf-overlay')) return;
+
     var el = e.target.closest('nav button, nav a');
     if(!el) return;
 
@@ -921,10 +934,13 @@ Error generating stack: `+i.message+`
 
   // Hero Register now button (section with z-10 class)
   document.addEventListener('click', function(e){
+    // Never intercept clicks inside the modal
+    if(e.target.closest('#bstf-overlay')) return;
+
     var heroSec = e.target.closest('section');
     if(heroSec && /\bz-10\b/.test(heroSec.className)){
       var btn = e.target.closest('button');
-      if(btn && /registers*now|регистрирайs*се/i.test(btn.textContent)){
+      if(btn && /register\s*now|регистрирай\s*се/i.test(btn.textContent)){
         e.stopImmediatePropagation();
         e.preventDefault();
         openModal(selectedTicket);
@@ -1003,6 +1019,9 @@ Error generating stack: `+i.message+`
     }
     if(cards.length < 2) return;
 
+    // Skip if already initialized (check for badge)
+    if(cards[0].querySelector('.bstf-selected-badge')) return;
+
     cards.forEach(function(card, i){
       card.classList.add('bstf-card-wrap');
       card.style.position = 'relative';
@@ -1024,6 +1043,7 @@ Error generating stack: `+i.message+`
       if(ctaBtn){
         ctaBtn.addEventListener('click', function(e){
           e.stopPropagation();
+          selectCard(cards, i);
           var tmap = ['early-bird','standard','vip'];
           openModal(tmap[i] || 'early-bird');
         });
@@ -1032,6 +1052,20 @@ Error generating stack: `+i.message+`
 
     selectCard(cards, 0);
     window._bstfCards = cards;
+
+    // Watch for React re-renders that may replace card DOM nodes
+    if(!window._bstfCardObserver){
+      window._bstfCardObserver = new MutationObserver(function(){
+        var sec2 = document.getElementById('tickets');
+        if(!sec2) return;
+        var existing = sec2.querySelectorAll('.bstf-card-wrap');
+        if(existing.length < 2){
+          // Cards were replaced by React re-render — reinitialize
+          initTicketCards();
+        }
+      });
+      window._bstfCardObserver.observe(sec, { childList: true, subtree: true });
+    }
   }
 
   function selectCard(cards, idx){
@@ -1091,6 +1125,7 @@ Error generating stack: `+i.message+`
       localStorage.setItem('bstf-lang', lang);
       btn.textContent = lang === 'bg' ? 'EN' : 'BG';
       applyTranslations();
+      updateModalLang();
     });
   }
 
@@ -1107,6 +1142,8 @@ Error generating stack: `+i.message+`
         if(!p) return NodeFilter.FILTER_REJECT;
         var tag = p.tagName;
         if(tag==='SCRIPT'||tag==='STYLE'||tag==='NOSCRIPT') return NodeFilter.FILTER_REJECT;
+        // Skip entire modal — it has its own translation logic
+        if(p.closest && p.closest('#bstf-overlay')) return NodeFilter.FILTER_REJECT;
         if(p.id && p.id.startsWith('bstf-') && p.id!=='bstf-mob-btn') return NodeFilter.FILTER_SKIP;
         var txt = node.textContent.trim();
         if(!txt) return NodeFilter.FILTER_SKIP;
@@ -1189,6 +1226,8 @@ Error generating stack: `+i.message+`
       var el = document.getElementById(id);
       if(el) el.textContent = mm[id];
     });
+    // updateModalLang() is called only from openModal() and language switcher click
+    // NOT here, to avoid interfering with native <select> popup
     var smsg = document.getElementById('success-msg');
     if(smsg) smsg.innerHTML = isBG
       ? 'Получихме вашата регистрация.<br>Ще се свържем с вас скоро на предоставения имейл адрес.'
@@ -1288,13 +1327,38 @@ Error generating stack: `+i.message+`
   }
 
   // ─── Init ─────────────────────────────────────────────────
+  // Retry helper: waits for a DOM condition before calling cb
+  function waitForDOM(testFn, cb, maxMs){
+    var start = Date.now();
+    function check(){
+      if(testFn()){ cb(); return; }
+      if(Date.now() - start > (maxMs || 8000)) { cb(); return; } // fallback: run anyway
+      setTimeout(check, 150);
+    }
+    check();
+  }
+
   setTimeout(function(){
     insertLangSwitcher();
     insertICTCluster();
-    initTicketCards();
-    initMobCta();
     applyTranslations();
     setupWordSpanGuard();
+
+    // Wait for #tickets section with cards before initializing ticket card selection
+    waitForDOM(
+      function(){
+        var sec = document.getElementById('tickets');
+        if(!sec) return false;
+        var cards = sec.querySelectorAll('[class*="glass-panel"]');
+        return cards.length >= 2;
+      },
+      function(){
+        initTicketCards();
+        initMobCta();
+      },
+      8000
+    );
+
     // Run translations multiple times to catch dynamically rendered content
     setTimeout(applyTranslations, 500);
     setTimeout(applyTranslations, 1000);
@@ -1321,6 +1385,8 @@ Error generating stack: `+i.message+`
     var shouldTranslate = false;
     mutations.forEach(function(mutation){
       if(mutation.type === 'childList' && mutation.addedNodes.length > 0){
+        // Ignore mutations inside the modal (select options, badges, etc.)
+        if(mutation.target.closest && mutation.target.closest('#bstf-overlay')) return;
         shouldTranslate = true;
       }
     });
