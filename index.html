@@ -46,7 +46,7 @@ nav.main-nav .nav-links a:hover::after{width:100%}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;background:var(--navy)}
 .hero-bg{position:absolute;inset:0;background:url('images/Varna2.png') center/cover no-repeat;opacity:0.5}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,57,84,0.55) 0%,rgba(44,166,179,0.40) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,57,84,0.45) 0%,rgba(44,166,179,0.30) 100%)}
 .hero-content{position:relative;z-index:2;display:flex;align-items:center;gap:60px;padding:120px 48px 80px 48px;width:100%;max-width:1400px;margin:0 auto}
 .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:50px;color:var(--white);font-size:0.875rem;font-weight:500;margin-bottom:24px}
 .hero h1{font-size:3.5rem;font-weight:700;color:var(--white);margin-bottom:20px;line-height:1.1}
@@ -87,7 +87,7 @@ nav.main-nav .nav-links a:hover::after{width:100%}
 .schedule-table th{text-align:left;padding:14px 16px;background:var(--navy);color:var(--white);font-size:0.85rem;font-weight:600}
 .schedule-table th:first-child{border-radius:var(--radius-sm) 0 0 0}.schedule-table th:last-child{border-radius:0 var(--radius-sm) 0 0}
 .schedule-table td{padding:14px 16px;border-bottom:1px solid var(--light-gray);font-size:0.9rem}
-.schedule-table tr:hover{background:var(--light-blue)}
+.schedule-table tr:hover{background:var(--light-blue)}.schedule-table tbody tr:nth-child(even){background:rgba(44,166,179,0.04)}@media(max-width:768px){.schedule-table{font-size:0.8rem}.schedule-table th,.schedule-table td{padding:10px 8px}.schedule-table .time-cell{width:80px;font-size:0.75rem}}
 .time-cell{font-weight:600;color:var(--teal);white-space:nowrap;width:120px}
 .speakers-section{padding:80px 0;background:var(--light-gray)}
 .speakers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
@@ -144,9 +144,9 @@ nav.main-nav .nav-links a:hover::after{width:100%}
 .venue-details p{font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:16px}
 .venue-info-list{display:flex;flex-direction:column;gap:12px}
 .venue-info-item{display:flex;align-items:center;gap:10px;font-size:0.9rem;color:rgba(255,255,255,0.9)}
-.prefooter-cta{padding:80px 0;background:var(--light-blue);text-align:center}
-.prefooter-cta h2{font-size:2.25rem;color:var(--navy);margin-bottom:12px}
-.prefooter-cta p{color:var(--text-light);margin-bottom:32px;font-size:1.1rem}
+.prefooter-cta{padding:80px 0;background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);text-align:center}
+.prefooter-cta h2{font-size:2.25rem;color:var(--white);margin-bottom:12px}
+.prefooter-cta p{color:rgba(255,255,255,0.8);margin-bottom:32px;font-size:1.1rem}
 .prefooter-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .sponsors-section{padding:48px 0;background:var(--light-gray);text-align:center}
 .sponsors-label{font-size:0.85rem;color:var(--text-light);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px}
@@ -307,10 +307,10 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
         <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:480px" data-bg="Зала А покрива хоризонтални теми — AI, IoT, роботика, киберсигурност. Зала Б е за изложението и зоната за стартиращи компании. Зала C е за дълбоки дискусии по сектори." data-en="Hall A covers cross-cutting topics — AI, IoT, robotics, cybersecurity. Hall B hosts the expo and startup zone. Hall C dives into sector deep-dives.">Зала А покрива хоризонтални теми — AI, IoT, роботика, киберсигурност. Зала Б е за изложението и зоната за стартиращи компании. Зала C е за дълбоки дискусии по сектори.</p>
         <div class="animate-on-scroll">
           <div style="background:var(--light-gray);border:2px dashed rgba(44,166,179,0.3);border-radius:var(--radius);padding:48px 32px;max-width:480px">
-            <img src="images/hall_map.png" alt="Hall Map" style="max-width:100%;border-radius:var(--radius)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" loading="lazy">
-            <div style="display:none;text-align:center">
-              <div style="font-size:2.5rem;margin-bottom:10px">&#x1F5FA;</div>
-              <p style="color:var(--text-light);font-size:0.95rem" data-bg="Карта на залите — очаквайте скоро" data-en="Hall map — coming soon">Карта на залите — очаквайте скоро</p>
+            <div style="text-align:center;padding:32px 20px;background:var(--light-blue);border-radius:var(--radius);border:2px dashed rgba(44,166,179,0.3)">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
+              <p style="color:var(--navy);font-size:0.95rem;font-weight:600;margin:0 0 4px 0" data-bg="3 зали &bull; 3 тематични направления" data-en="3 halls &bull; 3 thematic tracks">3 зали &bull; 3 тематични направления</p>
+              <p style="color:var(--text-light);font-size:0.85rem;margin:0" data-bg="Конгресен център Варна" data-en="Congress Center Varna">Конгресен център Варна</p>
             </div>
           </div>
         </div>
@@ -436,7 +436,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 </section>
 
 <!-- SECTION 6: Side Events -->
-<section class="side-events-section">
+<section class="side-events-section" style="border-top:1px solid rgba(44,166,179,0.12)">
   <div class="container">
     <h2 class="section-title text-center" data-bg="Съпътстващи събития, които превръщат контактите в сътрудничества." data-en="Side events that turn contacts into collaborations.">Съпътстващи събития, които превръщат контактите в сътрудничества.</h2>
     <div class="events-grid">
@@ -462,7 +462,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
       </div>
     </div>
     <div style="text-align:center;margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a href="#program" class="btn btn-outline" data-bg="Виж всички съпътстващи събития" data-en="View all side events">Виж всички съпътстващи събития</a>
+      <a href="#program" class="btn btn-primary" data-bg="Виж всички съпътстващи събития" data-en="View all side events">Виж всички съпътстващи събития</a>
       <a href="#expo" class="btn btn-outline" data-bg="Вижте изложението" data-en="See the expo">Вижте изложението</a>
     </div>
   </div>
@@ -483,8 +483,8 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
           </div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a href="speakers.html" class="btn btn-white" data-bg="Виж всички участници" data-en="See all participants">Виж всички участници</a>
-          <button class="btn btn-outline open-speaker-modal" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Кандидатствай като лектор" data-en="Apply as speaker">Кандидатствай като лектор</button>
+          <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор" data-en="Apply as speaker">Кандидатствай като лектор</button>
+          <a href="speakers.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж всички участници" data-en="See all participants">Виж всички участници</a>
         </div>
       </div>
 
@@ -498,7 +498,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
     <div style="display:flex;gap:60px;align-items:flex-start">
       <!-- Left side: Title + Description + Stats -->
       <div style="flex:1">
-        <h2 class="section-title animate-on-scroll" data-bg="Експо зона.<br>Зона за стартъпи.<br>Live demos." data-en="Expo Zone.<br>Startup Zone.<br>Live demos.">Експо зона.<br>Зона за стартъпи.<br>Live demos.</h2>
+        <h2 class="section-title animate-on-scroll" data-bg="Експо зона.<br>Зона за стартиращи компании.<br>Live demos." data-en="Expo Zone.<br>Startup Zone.<br>Live demos.">Експо зона.<br>Зона за стартиращи компании.<br>Live demos.</h2>
         <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:460px" data-bg="Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне." data-en="Meet solution providers in AI, robotics, IoT and vertical sectors. Startups get a dedicated zone + pitch time.">Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне.</p>
         <div style="display:flex;gap:40px;margin-bottom:32px">
           <div><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">80+</span><br><span style="font-size:0.85rem;color:var(--text-light)" data-bg="изложители" data-en="exhibitors">изложители</span></div>
@@ -508,26 +508,13 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
       </div>
       <!-- Right side: Feature cards stacked -->
       <div style="flex:1;display:flex;flex-direction:column;gap:20px">
-        <div class="animate-on-scroll" style="background:var(--white);border-radius:var(--radius);padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--teal)">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
-            <div style="width:44px;height:44px;background:var(--light-blue);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-            <h3 style="font-size:1.05rem;color:var(--navy);margin:0" data-bg="Пакети за щандове и спонсорство" data-en="Booth packages and sponsorship">Пакети за щандове и спонсорство</h3>
-          </div>
-          <p style="color:var(--text-light);font-size:0.9rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Различни размери от 6 до 36 кв.м. Включена електричество и интернет." data-en="Various sizes from 6 to 36 sq.m. Electricity and internet included.">Различни размери от 6 до 36 кв.м. Включена електричество и интернет.</p>
-        </div>
-        <div class="animate-on-scroll" style="background:var(--white);border-radius:var(--radius);padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--teal)">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
-            <div style="width:44px;height:44px;background:var(--light-blue);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <h3 style="font-size:1.05rem;color:var(--navy);margin:0" data-bg="Startup Pitch — кандидатури отворени" data-en="Startup Pitch — applications open">Startup Pitch — кандидатури отворени</h3>
-          </div>
-          <p style="color:var(--text-light);font-size:0.9rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Питч пред жури от инвеститори. Награден фонд 10 000 EUR." data-en="Pitch to a jury of investors. Prize pool 10,000 EUR.">Питч пред жури от инвеститори. Награден фонд 10 000 EUR.</p>
-        </div>
-        <div class="animate-on-scroll" style="background:var(--white);border-radius:var(--radius);padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--teal)">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
-            <div style="width:44px;height:44px;background:var(--light-blue);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h3 style="font-size:1.05rem;color:var(--navy);margin:0" data-bg="B2B срещи с инвеститори" data-en="B2B investor meetings">B2B срещи с инвеститори</h3>
-          </div>
-          <p style="color:var(--text-light);font-size:0.9rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Организирани B2B срещи с потенциални клиенти и партньори." data-en="Organized B2B meetings with potential clients and partners.">Организирани B2B срещи с потенциални клиенти и партньори.</p>
+        <div class="animate-on-scroll" style="background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--teal)">
+          <h3 style="font-size:1.15rem;color:var(--navy);margin:0 0 16px 0" data-bg="Изложение или представяне" data-en="Exhibition or presentation">Изложение или представяне</h3>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.95rem;color:var(--text);line-height:1.5"><span style="color:var(--teal);font-weight:700;flex-shrink:0">&#x2713;</span><span data-bg="Пакети за щандове и нива на спонсорство" data-en="Booth packages and sponsorship levels">Пакети за щандове и нива на спонсорство</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.95rem;color:var(--text);line-height:1.5"><span style="color:var(--teal);font-weight:700;flex-shrink:0">&#x2713;</span><span data-bg="Кандидатури за представяне на стартиращи компании са отворени" data-en="Applications for startup presentations are open">Кандидатури за представяне на стартиращи компании са отворени</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:0.95rem;color:var(--text);line-height:1.5"><span style="color:var(--teal);font-weight:700;flex-shrink:0">&#x2713;</span><span data-bg="Часове за срещи с инвеститори" data-en="Investor meeting hours">Часове за срещи с инвеститори</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -543,7 +530,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:60px;flex:1">
       <!-- Left: Title -->
       <div style="flex:1;padding-top:20px">
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0" data-bg="Варна.<br>Където <span style='color:var(--white)'>Черно море</span><br>се среща с дълбоките<br>технологии." data-en="Varna.<br>Where the <span style='color:var(--white)'>Black Sea</span><br>meets deep tech.">Варна.<br>Където <span style="color:var(--white)">Черно море</span><br>се среща с дълбоките<br>технологии.</h2>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0;text-shadow:0 1px 3px rgba(255,255,255,0.25)" data-bg="Варна.<br>Където <span style='color:var(--white)'>Черно море</span><br>се среща с дълбоките<br>технологии." data-en="Varna.<br>Where the <span style='color:var(--white)'>Black Sea</span><br>meets deep tech.">Варна.<br>Където <span style="color:var(--white)">Черно море</span><br>се среща с дълбоките<br>технологии.</h2>
       </div>
       <!-- Right: Combined info card -->
       <div style="flex:0 0 380px;margin-top:20px">
@@ -602,9 +589,9 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
         <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>Early Bird</h3>
         <div class="ticket-price">&euro;199</div>
-        <div class="ticket-period" data-bg="Март — Април" data-en="March — April">Март — Април</div>
+        <div class="ticket-period" data-bg="Валидна до края на април" data-en="Valid until end of April">Валидна до края на април</div>
         <ul class="ticket-features">
-          <li data-bg="Всички лекции и сцени" data-en="All lectures and stages">Всички лекции и сцени</li>
+          <li style="color:var(--teal);font-weight:600" data-bg="2 на цената на 1" data-en="2 for the price of 1">2 на цената на 1</li><li data-bg="Всички лекции и сцени" data-en="All lectures and stages">Всички лекции и сцени</li>
           <li data-bg="Изложение и партньорски зони" data-en="Exhibition and partner zones">Изложение и партньорски зони</li>
           <li data-bg="Съпътстващи събития" data-en="Side events">Съпътстващи събития</li>
           <li data-bg="Дигитални материали" data-en="Digital materials">Дигитални материали</li>
@@ -653,14 +640,14 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
           <li data-bg="VIP обяд с лектори" data-en="VIP lunch with speakers">VIP обяд с лектори</li>
           <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Достъп до Networking Party</li>
         </ul>
-        <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="регистрирай се" data-en="Register now">Регистрирай се</button>
+        <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SECTION 11: FAQ -->
-<section class="faq-section">
+<section class="faq-section" style="border-top:1px solid var(--light-gray)">
   <div class="container">
     <h2 class="section-title text-center" data-bg="Често задавани въпроси" data-en="FAQ">Често задавани въпроси</h2>
     <div class="faq-list">
@@ -687,7 +674,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
     <p data-bg="7-9 окт 2026 • BSTF2026" data-en="7-9 Oct 2026 • BSTF2026">7-9 окт 2026 • BSTF2026</p>
     <div class="prefooter-buttons">
       <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
-      <button class="btn btn-outline" style="border-color:var(--navy);color:var(--navy)" data-bg="Стани изложител" data-en="Become an exhibitor" onclick="document.getElementById('exhibitor-modal').classList.add('open')">Стани изложител</button>
+      <button class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител" data-en="Become an exhibitor" onclick="document.getElementById('exhibitor-modal').classList.add('open')">Стани изложител</button>
     </div>
   </div>
 </section>
@@ -705,8 +692,11 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
         <h4 data-bg="Събитие" data-en="Event">Събитие</h4>
         <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
         <a href="#speakers" data-bg="Лектори" data-en="Speakers">Лектори</a>
-        <a href="#expo" data-bg="Изложение" data-en="Expo">Изложение</a>
+        <a href="#expo" data-bg="За изложители" data-en="For Exhibitors">За изложители</a>
         <a href="#venue" data-bg="Място" data-en="Venue">Място</a>
+        <a href="#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
+        <a href="#" data-bg="Спонсори" data-en="Sponsors">Спонсори</a>
+        <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
       </div>
       <div class="footer-col">
         <h4 data-bg="Правни" data-en="Legal">Правни</h4>
@@ -716,6 +706,11 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
       <div class="footer-col">
         <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
         <a href="mailto:hello@bstf2026.bg">hello@bstf2026.bg</a>
+        <div style="display:flex;gap:12px;margin-top:16px">
+          <a href="#" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--white)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" aria-label="Facebook" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--white)"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" aria-label="X" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--white)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
