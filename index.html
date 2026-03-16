@@ -210,6 +210,17 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 .why-attend li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.9);font-size:1rem}
 .why-attend .check{color:var(--teal);font-size:1.2rem;flex-shrink:0}
 
+/* === Booth types grid === */
+.booth-types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.booth-card{background:var(--white);border-radius:var(--radius);padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.06);display:flex;flex-direction:column;align-items:center;text-align:center;transition:var(--transition)}
+.booth-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.booth-badge{display:inline-block;padding:6px 16px;border-radius:20px;font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+.booth-price{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.booth-area{font-size:0.9rem;color:var(--text-light);margin-bottom:16px}
+.booth-features{list-style:none;padding:0;margin:0 0 20px 0;display:flex;flex-direction:column;gap:6px}
+.booth-features li{font-size:0.85rem;color:var(--text-light)}
+.booth-features li::before{content:'\2713';color:var(--teal);margin-right:6px;font-weight:700}
+
 /* === RESPONSIVE: Mobile fixes for custom sections === */
 @media(max-width:768px){
 .halls-section .container>div[style*="display:flex"]{flex-direction:column!important;gap:32px!important}
@@ -238,6 +249,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 .lang-toggle button{padding:4px 10px!important;font-size:12px!important}
 footer{padding-bottom:70px!important}
 .footer-bottom{padding-right:0!important;margin-bottom:8px!important}
+.booth-types-grid{grid-template-columns:1fr 1fr!important;gap:12px!important}
 }
 </style>
 </head>
@@ -253,7 +265,7 @@ footer{padding-bottom:70px!important}
       <a href="#expo" data-bg="За изложители" data-en="For Exhibitors">За изложители</a>
       <a href="#venue" data-bg="Място" data-en="Venue">Място</a>
       <a href="#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
-      <a href="#sponsors" data-bg="Спонсори" data-en="Sponsors">Спонсори</a>
+      <a href="sponsors.html" data-bg="Спонсори" data-en="Sponsors">Спонсори</a>
       <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
     </div>
     <div class="nav-right">
@@ -276,7 +288,7 @@ footer{padding-bottom:70px!important}
   <a href="#expo" data-bg="За изложители" data-en="For Exhibitors">За изложители</a>
   <a href="#venue" data-bg="Място" data-en="Venue">Място</a>
   <a href="#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
-  <a href="#sponsors" data-bg="Спонсори" data-en="Sponsors">Спонсори</a>
+  <a href="sponsors.html" data-bg="Спонсори" data-en="Sponsors">Спонсори</a>
   <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
   <button class="btn btn-primary open-register-modal" style="width:100%;margin-top:16px" data-bg="Регистрация" data-en="Register now">Регистрация</button>
 </div>
@@ -335,15 +347,6 @@ footer{padding-bottom:70px!important}
       <div style="flex:1">
         <h2 class="section-title animate-on-scroll" data-bg="Зали A, B, C.<br>Хоризонтални технологии.<br>Вертикални сектори." data-en="Halls A, B, C.<br>Horizontal tech.<br>Vertical sectors.">Зали A, B, C.<br>Хоризонтални технологии.<br>Вертикални сектори.</h2>
         <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:480px" data-bg="Зала А покрива хоризонтални теми — AI, IoT, роботика, киберсигурност. Зала Б е за изложението и зоната за стартиращи компании. Зала C е за дълбоки дискусии по сектори." data-en="Hall A covers cross-cutting topics — AI, IoT, robotics, cybersecurity. Hall B hosts the expo and startup zone. Hall C dives into sector deep-dives.">Зала А покрива хоризонтални теми — AI, IoT, роботика, киберсигурност. Зала Б е за изложението и зоната за стартиращи компании. Зала C е за дълбоки дискусии по сектори.</p>
-        <div class="animate-on-scroll">
-          <div style="background:var(--light-gray);border:2px dashed rgba(44,166,179,0.3);border-radius:var(--radius);padding:48px 32px;max-width:480px">
-            <div style="text-align:center;padding:32px 20px;background:var(--light-blue);border-radius:var(--radius);border:2px dashed rgba(44,166,179,0.3)">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
-              <p style="color:var(--navy);font-size:0.95rem;font-weight:600;margin:0 0 4px 0" data-bg="3 зали &bull; 3 тематични направления" data-en="3 halls &bull; 3 thematic tracks">3 зали &bull; 3 тематични направления</p>
-              <p style="color:var(--text-light);font-size:0.85rem;margin:0" data-bg="Конгресен център Варна" data-en="Congress Center Varna">Конгресен център Варна</p>
-            </div>
-          </div>
-        </div>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;gap:24px">
         <div class="animate-on-scroll" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
@@ -491,10 +494,6 @@ footer{padding-bottom:70px!important}
         <p data-bg="Обиколки и посещения на забележителности във Варна и околността." data-en="Tours and visits to landmarks in Varna and the area.">Обиколки и посещения на забележителности във Варна и околността.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a href="#program" class="btn btn-primary" data-bg="Виж всички съпътстващи събития" data-en="View all side events">Виж всички съпътстващи събития</a>
-      <a href="#expo" class="btn btn-outline" data-bg="Вижте изложението" data-en="See the expo">Вижте изложението</a>
-    </div>
   </div>
 </section>
 
@@ -526,15 +525,11 @@ footer{padding-bottom:70px!important}
 <section class="expo-section" id="expo" style="padding:80px 0;background:var(--light-blue)">
   <div class="container">
     <div style="display:flex;gap:60px;align-items:flex-start">
-      <!-- Left side: Title + Description + Stats -->
+      <!-- Left side: Title + Description -->
       <div style="flex:1">
         <h2 class="section-title animate-on-scroll" data-bg="Експо зона.<br>Зона за стартиращи компании.<br>Live demos." data-en="Expo Zone.<br>Startup Zone.<br>Live demos.">Експо зона.<br>Зона за стартиращи компании.<br>Live demos.</h2>
         <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:460px" data-bg="Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне." data-en="Meet solution providers in AI, robotics, IoT and vertical sectors. Startups get a dedicated zone + pitch time.">Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне.</p>
-        <div style="display:flex;gap:40px;margin-bottom:32px">
-          <div><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">80+</span><br><span style="font-size:0.85rem;color:var(--text-light)" data-bg="изложители" data-en="exhibitors">изложители</span></div>
-          <div><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">10K</span><br><span style="font-size:0.85rem;color:var(--text-light)" data-bg="EUR награден фонд" data-en="EUR prize pool">EUR награден фонд</span></div>
-        </div>
-        <button class="btn btn-primary open-exhibitor-modal" data-bg="Поискайте брошура" data-en="Request brochure">Поискайте брошура</button>
+        <a href="expo.html" class="btn btn-primary" data-bg="Виж щандовете" data-en="View booths">Виж щандовете</a>
       </div>
       <!-- Right side: Feature cards stacked -->
       <div style="flex:1;display:flex;flex-direction:column;gap:20px">
