@@ -35,7 +35,7 @@ nav.main-nav .nav-links a{font-size:0.9rem;font-weight:500;color:var(--text);tra
 nav.main-nav .nav-links a:hover{color:var(--teal)}
 nav.main-nav .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--teal);transition:var(--transition)}
 nav.main-nav .nav-links a:hover::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:16px;margin-left:24px}
+.nav-right{display:flex;align-items:center;gap:16px;margin-left:32px}
 .lang-toggle{display:flex;border:1px solid #ddd;border-radius:var(--radius-sm);overflow:hidden}
 .lang-toggle button{padding:6px 12px;font-size:0.8rem;font-weight:600;transition:var(--transition);background:var(--white);color:var(--text)}
 .lang-toggle button.active{background:var(--navy);color:var(--white)}
@@ -192,6 +192,9 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 #bstf-btt{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;z-index:100;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:var(--shadow)}
 #bstf-btt.visible{opacity:1;visibility:visible}
 #bstf-btt:hover{background:var(--teal);transform:translateY(-2px)}
+@keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
+body{animation:pageFadeIn 0.2s ease-out}
+body.page-exit{opacity:0;transition:opacity 0.15s ease-in}
 #bstf-mob-cta{position:fixed;bottom:0;left:0;right:0;background:var(--teal);padding:12px 20px;z-index:100;display:flex;align-items:center;justify-content:center;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -2px 12px rgba(0,0,0,0.15)}
 #bstf-mob-cta.visible{transform:translateY(0)}
 #bstf-mob-cta .mob-cta-text{display:none}
@@ -953,7 +956,16 @@ footer{padding-bottom:70px!important}
       }
     });
   });
-  
+
+  // === Handle hash on page load (from external links like sponsors.html → index.html#program) ===
+  if (window.location.hash && window.location.hash.length > 1) {
+    var initHash = window.location.hash;
+    setTimeout(function() {
+      var el = document.querySelector(initHash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 600);
+  }
+
   // === Day Tabs ===
   document.querySelectorAll('.day-tab').forEach(function(tab) {
     tab.addEventListener('click', function() {
@@ -1077,6 +1089,18 @@ footer{padding-bottom:70px!important}
       openModal('register-modal');
     });
   }  
+  // === Smooth page transitions ===
+  document.querySelectorAll('a[href]').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+    link.addEventListener('click', function(e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      document.body.classList.add('page-exit');
+      setTimeout(function() { window.location.href = href; }, 150);
+    });
+  });
+
   // === Back to Top Button ===
   var btt = document.getElementById('bstf-btt');
   if (btt) {
