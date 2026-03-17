@@ -7,7 +7,8 @@
 <meta name="description" content="Black Sea Technology Forum 2026 - Speakers">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{--navy:#0B3954;--teal:#2CA6B3;--light-blue:#EDF7FA;--white:#FFFFFF;--light-gray:#F5F7F9;--dark:#1a1a2e;--text:#333;--text-light:#666;--radius:12px;--radius-sm:8px;--transition:0.3s ease;--shadow:0 4px 20px rgba(0,0,0,0.08);--shadow-lg:0 8px 40px rgba(0,0,0,0.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -93,9 +94,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 #bstf-btt{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;z-index:100;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:var(--shadow)}
 #bstf-btt.visible{opacity:1;visibility:visible}
 #bstf-btt:hover{background:var(--teal);transform:translateY(-2px)}
-@keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
-body{animation:pageFadeIn 0.2s ease-out}
-body.page-exit{opacity:0;transition:opacity 0.15s ease-in}
+body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){
   .nav-links{display:none !important}
@@ -387,7 +386,7 @@ body.page-exit{opacity:0;transition:opacity 0.15s ease-in}
       if (e.ctrlKey || e.metaKey || e.shiftKey) return;
       e.preventDefault();
       document.body.classList.add('page-exit');
-      setTimeout(function() { window.location.href = href; }, 150);
+      setTimeout(function() { window.location.href = href; }, 120);
     });
   });
 
