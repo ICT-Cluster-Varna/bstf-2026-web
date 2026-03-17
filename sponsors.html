@@ -115,14 +115,6 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 .comparison-table .no{color:#ccc}
 .comparison-table .cat-row td{background:var(--light-gray);font-weight:700;color:var(--navy);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.5px}
 
-/* Tickets included */
-.tickets-included{padding:0 0 80px}
-.tickets-included h2{text-align:center;margin-bottom:32px}
-.tickets-included-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.ticket-inc-card{background:var(--light-blue);border-radius:var(--radius);padding:24px;text-align:center}
-.ticket-inc-card .t-name{font-weight:700;color:var(--navy);margin-bottom:4px}
-.ticket-inc-card .t-price{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--teal)}
-.ticket-inc-card .t-desc{font-size:0.8rem;color:var(--text-light);margin-top:8px}
 
 @media(max-width:1024px){
   .sponsor-cards{grid-template-columns:repeat(3,1fr)}
@@ -138,7 +130,6 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
   .comparison-table{font-size:0.75rem}
   .comparison-table thead th{padding:8px 6px;font-size:0.7rem}
   .comparison-table tbody td{padding:8px 6px}
-  .tickets-included-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
   #bstf-btt{bottom:2rem}
@@ -352,35 +343,6 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
           <tr><td data-bg="One Day Pass — &euro;99" data-en="One Day Pass — &euro;99">One Day Pass — &euro;99</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</section>
-
-<!-- Tickets Included Info -->
-<section class="tickets-included">
-  <div class="container">
-    <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:32px" data-bg="Типове билети" data-en="Ticket Types">Типове билети</h2>
-    <div class="tickets-included-grid">
-      <div class="ticket-inc-card">
-        <div class="t-name">ULTRA VIP</div>
-        <div class="t-price">&euro;749</div>
-        <div class="t-desc" data-bg="Гала вечеря, 2 обяда, Networking Party" data-en="Gala dinner, 2 lunches, Networking Party">Гала вечеря, 2 обяда, Networking Party</div>
-      </div>
-      <div class="ticket-inc-card">
-        <div class="t-name">VIP</div>
-        <div class="t-price">&euro;399</div>
-        <div class="t-desc" data-bg="Достъп до VIP зона, VIP обяд с лектори" data-en="VIP zone access, VIP lunch with speakers">Достъп до VIP зона, VIP обяд с лектори</div>
-      </div>
-      <div class="ticket-inc-card">
-        <div class="t-name">Full Event</div>
-        <div class="t-price">&euro;199</div>
-        <div class="t-desc" data-bg="Достъп до всички зали, 3 дни" data-en="Access to all halls, 3 days">Достъп до всички зали, 3 дни</div>
-      </div>
-      <div class="ticket-inc-card">
-        <div class="t-name">One Day Pass</div>
-        <div class="t-price">&euro;99</div>
-        <div class="t-desc" data-bg="Еднодневен достъп" data-en="Single day access">Еднодневен достъп</div>
-      </div>
     </div>
   </div>
 </section>
