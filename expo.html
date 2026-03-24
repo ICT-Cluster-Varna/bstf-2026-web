@@ -180,46 +180,15 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <!-- Booth Types -->
 <section class="booth-section">
   <div class="container">
-    <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:8px" data-bg="Типове щандове" data-en="Booth Types">Типове щандове</h2>
-    <p class="text-center" style="color:var(--text-light);font-size:0.95rem;margin-bottom:32px" data-bg="Изберете подходящия за вас тип щанд и изпратете запитване." data-en="Choose the right booth type and send an inquiry.">Изберете подходящия за вас тип щанд и изпратете запитване.</p>
-    <div class="booth-types-grid">
+    <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:8px" data-bg="Експо щанд" data-en="Expo Booth">Експо щанд</h2>
+    <p class="text-center" style="color:var(--text-light);font-size:0.95rem;margin-bottom:32px" data-bg="Заявете своето присъствие на изложението." data-en="Reserve your spot at the exhibition.">Заявете своето присъствие на изложението.</p>
+    <div style="max-width:360px;margin:0 auto">
       <div class="booth-card">
-        <div class="booth-badge" style="background:#FFD700" data-bg="ТОП Премиум" data-en="Top Premium">ТОП Премиум</div>
-        <div class="booth-price">&euro;4,500</div>
-        <div class="booth-area">12 <span data-bg="кв.м." data-en="m&sup2;">кв.м.</span></div>
-        <ul class="booth-features">
-          <li data-bg="Премиум позиция" data-en="Premium location">Премиум позиция</li>
-          <li data-bg="Включена в спонсорски пакети" data-en="Included in sponsor packages">Включена в спонсорски пакети</li>
-        </ul>
-        <button class="btn btn-primary btn-sm open-exhibitor-modal" data-bg="Запитване" data-en="Inquire">Запитване</button>
-      </div>
-      <div class="booth-card">
-        <div class="booth-badge" style="background:#C0C0C0" data-bg="Премиум" data-en="Premium">Премиум</div>
-        <div class="booth-price">&euro;4,000</div>
-        <div class="booth-area">12 <span data-bg="кв.м." data-en="m&sup2;">кв.м.</span></div>
-        <ul class="booth-features">
-          <li data-bg="Отлична видимост" data-en="Excellent visibility">Отлична видимост</li>
-          <li data-bg="Включена в спонсорски пакети" data-en="Included in sponsor packages">Включена в спонсорски пакети</li>
-        </ul>
-        <button class="btn btn-primary btn-sm open-exhibitor-modal" data-bg="Запитване" data-en="Inquire">Запитване</button>
-      </div>
-      <div class="booth-card">
-        <div class="booth-badge" style="background:var(--teal);color:var(--white)" data-bg="ЕКСПО" data-en="Expo">ЕКСПО</div>
-        <div class="booth-price">&euro;2,700</div>
-        <div class="booth-area">9 <span data-bg="кв.м." data-en="m&sup2;">кв.м.</span></div>
-        <ul class="booth-features">
-          <li data-bg="Стандартен щанд" data-en="Standard booth">Стандартен щанд</li>
-          <li data-bg="Достъпна за Expo пакет" data-en="Available with Expo package">Достъпна за Expo пакет</li>
-        </ul>
-        <button class="btn btn-primary btn-sm open-exhibitor-modal" data-bg="Запитване" data-en="Inquire">Запитване</button>
-      </div>
-      <div class="booth-card">
-        <div class="booth-badge" style="background:var(--navy);color:var(--white)" data-bg="Стартъп" data-en="Startup">Стартъп</div>
+        <div class="booth-badge" style="background:var(--teal);color:var(--white)" data-bg="Експо щанд" data-en="Expo Booth">Експо щанд</div>
         <div class="booth-price">&euro;1,200</div>
-        <div class="booth-area">4 <span data-bg="кв.м." data-en="m&sup2;">кв.м.</span></div>
         <ul class="booth-features">
-          <li data-bg="Компактен формат" data-en="Compact format">Компактен формат</li>
-          <li data-bg="Достъпна за Expo пакет" data-en="Available with Expo package">Достъпна за Expo пакет</li>
+          <li data-bg="Брандиран с логото на фирмата" data-en="Branded with company logo">Брандиран с логото на фирмата</li>
+          <li data-bg="Включен в Expo спонсорски пакет" data-en="Included in Expo sponsor package">Включен в Expo спонсорски пакет</li>
         </ul>
         <button class="btn btn-primary btn-sm open-exhibitor-modal" data-bg="Запитване" data-en="Inquire">Запитване</button>
       </div>
@@ -286,10 +255,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" required></div>
       <div class="form-group"><label data-bg="Тип щанд" data-en="Booth Type">Тип щанд</label>
         <select>
-          <option data-bg="ТОП Премиум — 12 кв.м. — &euro;4,500" data-en="Top Premium — 12 m&sup2; — &euro;4,500">ТОП Премиум — 12 кв.м. — &euro;4,500</option>
-          <option data-bg="Премиум — 12 кв.м. — &euro;4,000" data-en="Premium — 12 m&sup2; — &euro;4,000">Премиум — 12 кв.м. — &euro;4,000</option>
-          <option data-bg="ЕКСПО — 9 кв.м. — &euro;2,700" data-en="Expo — 9 m&sup2; — &euro;2,700">ЕКСПО — 9 кв.м. — &euro;2,700</option>
-          <option data-bg="Стартъп — 4 кв.м. — &euro;1,200" data-en="Startup — 4 m&sup2; — &euro;1,200">Стартъп — 4 кв.м. — &euro;1,200</option>
+          <option data-bg="Експо щанд — &euro;1,200" data-en="Expo Booth — &euro;1,200">Експо щанд — &euro;1,200</option>
         </select>
       </div>
       <div class="form-group"><label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label><textarea rows="3"></textarea></div>
