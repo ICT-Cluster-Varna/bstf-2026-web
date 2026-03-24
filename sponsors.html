@@ -90,10 +90,8 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .sponsor-packages{padding:80px 0;background:var(--white)}
 .sponsor-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:64px}
 .sponsor-card{background:var(--white);border-radius:var(--radius);padding:28px 20px;border:2px solid var(--light-gray);display:flex;flex-direction:column;align-items:center;text-align:center;transition:var(--transition);position:relative;overflow:hidden}
-.sponsor-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.sponsor-card.highlighted{border-color:var(--teal);box-shadow:0 4px 24px rgba(44,166,179,0.15)}
-.sponsor-card.selected{border-color:var(--teal);box-shadow:0 4px 24px rgba(44,166,179,0.15)}
-.sponsor-card .tier-name{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.sponsor-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.sponsor-card .tier-badge{text-transform:uppercase}
 .sponsor-card .tier-price{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--teal);margin-bottom:4px}
 .sponsor-card .tier-spots{font-size:0.8rem;color:var(--text-light);margin-bottom:20px}
 .sponsor-card .tier-divider{width:100%;height:1px;background:var(--light-gray);margin-bottom:16px}
@@ -102,20 +100,21 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .sponsor-card .benefit-list li .icon-yes{color:var(--teal);font-weight:700;flex-shrink:0}
 .sponsor-card .benefit-list li .icon-no{color:#ccc;flex-shrink:0}
 .sponsor-card .benefit-list li.disabled{color:#bbb}
-.sponsor-card .btn{margin-top:auto}
+.sponsor-card .btn{margin-top:auto;transition:var(--transition)}
+.sponsor-card .btn:hover{opacity:0.85;transform:translateY(-2px);box-shadow:var(--shadow)}
 
 /* Comparison table */
 .comparison-section{padding:0 0 80px;background:var(--white)}
 .comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .comparison-table{width:100%;border-collapse:collapse;font-size:0.85rem}
-.comparison-table thead th{position:sticky;top:0;background:var(--navy);color:var(--white);padding:12px 10px;font-weight:600;text-align:center;white-space:nowrap}
-.comparison-table thead th:first-child{text-align:left;min-width:240px}
+.comparison-table thead th{position:sticky;top:0;background:var(--navy);color:var(--white);padding:14px 10px;font-weight:600;text-align:center;white-space:nowrap;font-size:0.85rem;width:15%}
+.comparison-table thead th:first-child{text-align:left;min-width:240px;width:25%}
 .comparison-table tbody td{padding:10px;border-bottom:1px solid var(--light-gray);text-align:center;vertical-align:middle}
 .comparison-table tbody td:first-child{text-align:left;color:var(--text);font-weight:500}
 .comparison-table tbody tr:hover{background:var(--light-blue)}
 .comparison-table .yes{color:var(--teal);font-weight:700}
 .comparison-table .no{color:#ccc}
-.comparison-table .cat-row td{background:var(--light-gray);font-weight:700;color:var(--navy);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.5px}
+.comparison-table .cat-row td{background:#d9e8f0;color:var(--navy);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.8px;padding:14px 10px;border-left:4px solid var(--teal)}
 
 
 @media(max-width:1024px){
@@ -194,86 +193,93 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <div class="sponsor-cards">
 
       <!-- Institution -->
-      <div class="sponsor-card highlighted">
-        <div class="tier-name">Institution</div>
+      <div class="sponsor-card" style="border-top:4px solid #1F4E78">
+        <div class="tier-badge" style="background:#1F4E78;color:#fff;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;margin-bottom:12px">INSTITUTION</div>
         <div class="tier-price">&euro;30,000</div>
-        <div class="tier-spots" data-bg="2 места" data-en="2 spots">2 места</div>
+        <div class="tier-spots" data-bg="3 места" data-en="3 spots">3 места</div>
         <div class="tier-divider"></div>
         <ul class="benefit-list">
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Съорганизатор на събитието" data-en="Event co-organizer">Съорганизатор на събитието</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Откриващо приветствие" data-en="Opening address">Откриващо приветствие</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Брандиране на основната сцена" data-en="Main stage branding">Брандиране на основната сцена</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на баджове, връзки и торбички" data-en="Logo on badges, lanyards &amp; bags">Лого на баджове, връзки и торбички</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в хедъра на сайта" data-en="Logo in website header">Лого в хедъра на сайта</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="ТОП Премиум щанд (12 кв.м.)" data-en="Top Premium booth (12 m&sup2;)">ТОП Премиум щанд (12 кв.м.)</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Keynote Speech" data-en="Keynote Speech">Keynote Speech</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="ULTRA VIP билети" data-en="ULTRA VIP tickets">ULTRA VIP билети</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Брандиране на сцена и зала" data-en="Stage &amp; hall branding">Брандиране на сцена и зала</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="10 мин. Keynote" data-en="10 min Keynote">10 мин. Keynote</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Premium щанд" data-en="Premium booth">Premium щанд</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="2 ULTRA VIP + 4 VIP + 6 Full Event" data-en="2 ULTRA VIP + 4 VIP + 6 Full Event">2 ULTRA VIP + 4 VIP + 6 Full Event</span></li>
         </ul>
-        <a href="mailto:hello@bstf2026.bg?subject=Institution%20Package" class="btn btn-primary btn-sm" data-bg="Заявете" data-en="Inquire">Заявете</a>
+        <a href="mailto:bstf@ictclustervarna.com?subject=Institution%20Package" class="btn btn-sm" style="background:#1F4E78;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</a>
       </div>
 
       <!-- Stage -->
-      <div class="sponsor-card">
-        <div class="tier-name">Stage</div>
-        <div class="tier-price">&euro;20,000</div>
+      <div class="sponsor-card" style="border-top:4px solid #8064A2">
+        <div class="tier-badge" style="background:#8064A2;color:#fff;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;margin-bottom:12px">STAGE</div>
+        <div class="tier-price">&euro;18,000</div>
         <div class="tier-spots" data-bg="2 места" data-en="2 spots">2 места</div>
         <div class="tier-divider"></div>
         <ul class="benefit-list">
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Брандиране на основната сцена" data-en="Main stage branding">Брандиране на основната сцена</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на LED екраните" data-en="Logo on LED screens">Лого на LED екраните</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Имиджов клип при смяна на лектори" data-en="Video clip between speakers">Имиджов клип при смяна на лектори</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в сайта на събитието" data-en="Logo on event website">Лого в сайта на събитието</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Премиум щанд (12 кв.м.)" data-en="Premium booth (12 m&sup2;)">Премиум щанд (12 кв.м.)</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Keynote Speech" data-en="Keynote Speech">Keynote Speech</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Именуване на сцена" data-en="Stage naming rights">Именуване на сцена</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Брандиране във VIP зала" data-en="VIP hall branding">Брандиране във VIP зала</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Брандиран панел / фирмена сесия" data-en="Branded panel / company session">Брандиран панел / фирмена сесия</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на LED екрани и дисплеи" data-en="Logo on LED screens &amp; displays">Лого на LED екрани и дисплеи</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="5 мин. Speaking slot" data-en="5 min Speaking slot">5 мин. Speaking slot</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Premium щанд" data-en="Premium booth">Premium щанд</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 ULTRA VIP + 2 VIP + 4 Full Event" data-en="1 ULTRA VIP + 2 VIP + 4 Full Event">1 ULTRA VIP + 2 VIP + 4 Full Event</span></li>
         </ul>
-        <a href="mailto:hello@bstf2026.bg?subject=Stage%20Package" class="btn btn-primary btn-sm" data-bg="Заявете" data-en="Inquire">Заявете</a>
+        <a href="mailto:bstf@ictclustervarna.com?subject=Stage%20Package" class="btn btn-sm" style="background:#8064A2;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</a>
       </div>
 
       <!-- Gold -->
-      <div class="sponsor-card">
-        <div class="tier-name">Gold</div>
-        <div class="tier-price">&euro;15,000</div>
-        <div class="tier-spots" data-bg="6 места" data-en="6 spots">6 места</div>
+      <div class="sponsor-card" style="border-top:4px solid #BF9000">
+        <div class="tier-badge" style="background:#BF9000;color:#fff;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;margin-bottom:12px">GOLD</div>
+        <div class="tier-price">&euro;12,000</div>
+        <div class="tier-spots" data-bg="4 места" data-en="4 spots">4 места</div>
         <div class="tier-divider"></div>
         <ul class="benefit-list">
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на ЕКСПО зона" data-en="Logo in Expo zone">Лого на ЕКСПО зона</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на баджове и програма" data-en="Logo on badges &amp; program">Лого на баджове и програма</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Брандиран панел" data-en="Branded panel">Брандиран панел</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="ЕКСПО щанд (9 кв.м.)" data-en="Expo booth (9 m&sup2;)">ЕКСПО щанд (9 кв.м.)</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Keynote Speech" data-en="Keynote Speech">Keynote Speech</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на LED екрани и дисплеи" data-en="Logo on LED screens &amp; displays">Лого на LED екрани и дисплеи</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в сайта на събитието" data-en="Logo on event website">Лого в сайта на събитието</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в програма и материали" data-en="Logo in program &amp; materials">Лого в програма и материали</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Панелно участие" data-en="Panel participation">Панелно участие</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Участие на Startup / Recruitment сцена" data-en="Startup / Recruitment stage">Участие на Startup / Recruitment сцена</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Premium щанд" data-en="Premium booth">Premium щанд</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 VIP + 4 Full Event билети" data-en="1 VIP + 4 Full Event tickets">1 VIP + 4 Full Event билети</span></li>
         </ul>
-        <a href="mailto:hello@bstf2026.bg?subject=Gold%20Package" class="btn btn-primary btn-sm" data-bg="Заявете" data-en="Inquire">Заявете</a>
+        <a href="mailto:bstf@ictclustervarna.com?subject=Gold%20Package" class="btn btn-sm" style="background:#BF9000;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</a>
       </div>
 
       <!-- Silver -->
-      <div class="sponsor-card">
-        <div class="tier-name">Silver</div>
-        <div class="tier-price">&euro;9,500</div>
-        <div class="tier-spots" data-bg="8 места" data-en="8 spots">8 места</div>
+      <div class="sponsor-card" style="border-top:4px solid #7F7F7F">
+        <div class="tier-badge" style="background:#7F7F7F;color:#fff;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;margin-bottom:12px">SILVER</div>
+        <div class="tier-price">&euro;7,500</div>
+        <div class="tier-spots" data-bg="6 места" data-en="6 spots">6 места</div>
         <div class="tier-divider"></div>
         <ul class="benefit-list">
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на дигитален дисплей" data-en="Logo on digital display">Лого на дигитален дисплей</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на картата на изложението" data-en="Logo on expo map">Лого на картата на изложението</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Участие на стартъп сцена" data-en="Startup stage access">Участие на стартъп сцена</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="ЕКСПО щанд (9 кв.м.)" data-en="Expo booth (9 m&sup2;)">ЕКСПО щанд (9 кв.м.)</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Рекламни материали" data-en="Marketing materials">Рекламни материали</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на LED екрани и дисплеи" data-en="Logo on LED screens &amp; displays">Лого на LED екрани и дисплеи</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в сайта на събитието" data-en="Logo on event website">Лого в сайта на събитието</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в програма и материали" data-en="Logo in program &amp; materials">Лого в програма и материали</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Участие на Startup / Recruitment сцена" data-en="Startup / Recruitment stage">Участие на Startup / Recruitment сцена</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Expo щанд" data-en="Expo booth">Expo щанд</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 e-mail включване" data-en="1 email inclusion">1 e-mail включване</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 VIP + 3 Full Event билети" data-en="1 VIP + 3 Full Event tickets">1 VIP + 3 Full Event билети</span></li>
         </ul>
-        <a href="mailto:hello@bstf2026.bg?subject=Silver%20Package" class="btn btn-primary btn-sm" data-bg="Заявете" data-en="Inquire">Заявете</a>
+        <a href="mailto:bstf@ictclustervarna.com?subject=Silver%20Package" class="btn btn-sm" style="background:#7F7F7F;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</a>
       </div>
 
       <!-- Expo -->
-      <div class="sponsor-card">
-        <div class="tier-name">Expo</div>
-        <div class="tier-price">&euro;1,200</div>
-        <div class="tier-spots" data-bg="34 места" data-en="34 spots">34 места</div>
+      <div class="sponsor-card" style="border-top:4px solid #548235">
+        <div class="tier-badge" style="background:#548235;color:#fff;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;margin-bottom:12px">EXPO</div>
+        <div class="tier-price">&euro;1,700</div>
+        <div class="tier-spots" data-bg="20 места" data-en="20 spots">20 места</div>
         <div class="tier-divider"></div>
         <ul class="benefit-list">
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на дигитален дисплей" data-en="Logo on digital display">Лого на дигитален дисплей</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого на картата на изложението" data-en="Logo on expo map">Лого на картата на изложението</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Участие на стартъп сцена" data-en="Startup stage access">Участие на стартъп сцена</span></li>
-          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Стартъп щанд (4 кв.м.)" data-en="Startup booth (4 m&sup2;)">Стартъп щанд (4 кв.м.)</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в сайта на събитието" data-en="Logo on event website">Лого в сайта на събитието</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Лого в програма и материали" data-en="Logo in program &amp; materials">Лого в програма и материали</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Expo щанд" data-en="Expo booth">Expo щанд</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="Listing в matchmaking апликация" data-en="Listing in matchmaking app">Listing в matchmaking апликация</span></li>
+          <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 Full Event билет" data-en="1 Full Event ticket">1 Full Event билет</span></li>
         </ul>
-        <a href="mailto:hello@bstf2026.bg?subject=Expo%20Package" class="btn btn-primary btn-sm" data-bg="Заявете" data-en="Inquire">Заявете</a>
+        <a href="mailto:bstf@ictclustervarna.com?subject=Expo%20Package" class="btn btn-sm" style="background:#548235;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</a>
       </div>
 
     </div>
@@ -288,66 +294,54 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <table class="comparison-table">
         <thead>
           <tr>
-            <th data-bg="Бенефит" data-en="Benefit">Бенефит</th>
-            <th>Institution<br>&euro;30,000</th>
-            <th>Stage<br>&euro;20,000</th>
-            <th>Gold<br>&euro;15,000</th>
-            <th>Silver<br>&euro;9,500</th>
-            <th>Expo<br>&euro;1,200</th>
+            <th data-bg="Какво получавате" data-en="What you get">Какво получавате</th>
+            <th style="background:#1F4E78">Institution<br>&euro;30,000</th>
+            <th style="background:#8064A2">Stage<br>&euro;18,000</th>
+            <th style="background:#BF9000">Gold<br>&euro;12,000</th>
+            <th style="background:#7F7F7F">Silver<br>&euro;7,500</th>
+            <th style="background:#548235">Expo<br>&euro;1,700</th>
           </tr>
         </thead>
         <tbody>
           <tr class="cat-row"><td colspan="6" data-bg="Брандиране и видимост" data-en="Branding &amp; Visibility">Брандиране и видимост</td></tr>
           <tr><td data-bg="Съорганизатор на събитието" data-en="Event co-organizer">Съорганизатор на събитието</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Откриващо приветствие" data-en="Opening address">Откриващо приветствие</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Брандиране на основната сцена" data-en="Main stage branding">Брандиране на основната сцена</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Брандиране във VIP зона" data-en="VIP zone branding">Брандиране във VIP зона</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого на LED екраните" data-en="Logo on LED screens">Лого на LED екраните</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Имиджов клип при смяна на лектори" data-en="Video clip between speakers">Имиджов клип при смяна на лектори</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Откриващо приветствие на събитието" data-en="Opening address">Откриващо приветствие на събитието</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Лого на баджове, връзки и торбички" data-en="Logo on badges, lanyards &amp; bags">Лого на баджове, връзки и торбички</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
           <tr><td data-bg="Лого в хедъра на сайта" data-en="Logo in website header">Лого в хедъра на сайта</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого в сайта на събитието" data-en="Logo on event website">Лого в сайта на събитието</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-
-          <tr class="cat-row"><td colspan="6" data-bg="Лого позициониране" data-en="Logo Placement">Лого позициониране</td></tr>
-          <tr><td data-bg="Лого на основна сцена (винил)" data-en="Main stage logo (vinyl)">Лого на основна сцена (винил)</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого в паралелна зала" data-en="Logo in parallel hall">Лого в паралелна зала</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого в ЕКСПО част" data-en="Logo in Expo area">Лого в ЕКСПО част</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого на дигитален дисплей" data-en="Logo on digital display">Лого на дигитален дисплей</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td></tr>
-          <tr><td data-bg="Лого на връзките за баджове" data-en="Logo on badge lanyards">Лого на връзките за баджове</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого на баджове" data-en="Logo on badges">Лого на баджове</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого на програмата" data-en="Logo on program">Лого на програмата</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого на картата на изложението" data-en="Logo on expo map">Лого на картата на изложението</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td></tr>
-          <tr><td data-bg="Лого на торбичките с рекламни материали" data-en="Logo on swag bags">Лого на торбичките с рекламни материали</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Лого на печатни и дигитални материали" data-en="Logo on print &amp; digital materials">Лого на печатни и дигитални материали</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td></tr>
+          <tr><td data-bg="Брандиране на основната сцена" data-en="Main stage branding">Брандиране на основната сцена</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Брандиране на зала" data-en="Hall branding">Брандиране на зала</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Именуване на сцена" data-en="Stage naming">Именуване на сцена</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Брандиране във VIP зала" data-en="VIP hall branding">Брандиране във VIP зала</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Брандиран панел / фирмена сесия" data-en="Branded panel / company session">Брандиран панел / фирмена сесия</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Лого на LED екрани и дигитални дисплеи" data-en="Logo on LED screens &amp; digital displays">Лого на LED екрани и дигитални дисплеи</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Лого в сайта на събитието" data-en="Logo on event website">Лого в сайта на събитието</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td></tr>
+          <tr><td data-bg="Лого в програма, карта и материали" data-en="Logo in program, map &amp; materials">Лого в програма, карта и материали</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td></tr>
 
           <tr class="cat-row"><td colspan="6" data-bg="Участие и представяне" data-en="Participation &amp; Speaking">Участие и представяне</td></tr>
-          <tr><td data-bg="Брандинг на зала" data-en="Hall branding">Брандинг на зала</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Брандиран панел" data-en="Branded panel">Брандиран панел</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="15 мин Keynote Speech" data-en="15 min Keynote Speech">15 мин Keynote Speech</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Keynote / Speaking slot" data-en="Keynote / Speaking slot">Keynote / Speaking slot</td><td style="font-size:0.75rem;font-weight:600" data-bg="10 мин. keynote" data-en="10 min keynote">10 мин. keynote</td><td style="font-size:0.75rem;font-weight:600" data-bg="5 мин. slot" data-en="5 min slot">5 мин. slot</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
           <tr><td data-bg="Панелно участие" data-en="Panel participation">Панелно участие</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Участие на стартъп сцена" data-en="Startup stage access">Участие на стартъп сцена</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td></tr>
+          <tr><td data-bg="Участие на Startup / Recruitment сцена" data-en="Startup / Recruitment stage">Участие на Startup / Recruitment сцена</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Matchmaking апликация" data-en="Matchmaking app">Matchmaking апликация</td><td style="font-size:0.75rem;font-weight:600">Premium branding</td><td style="font-size:0.75rem;font-weight:600">Premium branding</td><td style="font-size:0.75rem;font-weight:600">Enhanced profile</td><td style="font-size:0.75rem;font-weight:600">Standard profile</td><td style="font-size:0.75rem;font-weight:600">Listing</td></tr>
 
           <tr class="cat-row"><td colspan="6" data-bg="Щандове" data-en="Booths">Щандове</td></tr>
-          <tr><td data-bg="ТОП Премиум щанд (12 кв.м.) — &euro;4,500" data-en="Top Premium booth (12 m&sup2;) — &euro;4,500">ТОП Премиум щанд (12 кв.м.) — &euro;4,500</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Премиум щанд (12 кв.м.) — &euro;4,000" data-en="Premium booth (12 m&sup2;) — &euro;4,000">Премиум щанд (12 кв.м.) — &euro;4,000</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="ЕКСПО щанд (9 кв.м.) — &euro;2,700" data-en="Expo booth (9 m&sup2;) — &euro;2,700">ЕКСПО щанд (9 кв.м.) — &euro;2,700</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td></tr>
-          <tr><td data-bg="Стартъп щанд (4 кв.м.) — &euro;1,200" data-en="Startup booth (4 m&sup2;) — &euro;1,200">Стартъп щанд (4 кв.м.) — &euro;1,200</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="yes">&#x2713;</td></tr>
+          <tr><td data-bg="Тип включен щанд" data-en="Included booth type">Тип включен щанд</td><td style="font-size:0.75rem;font-weight:600">Premium</td><td style="font-size:0.75rem;font-weight:600">Premium</td><td style="font-size:0.75rem;font-weight:600">Premium</td><td style="font-size:0.75rem;font-weight:600">Expo</td><td style="font-size:0.75rem;font-weight:600">Expo</td></tr>
 
           <tr class="cat-row"><td colspan="6" data-bg="Маркетинг и промоция" data-en="Marketing &amp; Promotion">Маркетинг и промоция</td></tr>
-          <tr><td data-bg="Брандиране в Matchmaking апликация" data-en="Matchmaking app branding">Брандиране в Matchmaking апликация</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Позициониране в e-mail кампании" data-en="Email campaign placement">Позициониране в e-mail кампании</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Индивидуален рекламен клип" data-en="Individual promo video">Индивидуален рекламен клип</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Индивидуален рекламен клип" data-en="Individual promo video">Индивидуален рекламен клип</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td data-bg="Позициониране в e-mail кампании" data-en="Email campaign placement">Позициониране в e-mail кампании</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td style="font-size:0.75rem;font-weight:600" data-bg="1 включване" data-en="1 inclusion">1 включване</td><td class="no">&mdash;</td></tr>
           <tr><td data-bg="Дистрибуция на рекламни материали" data-en="Promo materials distribution">Дистрибуция на рекламни материали</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
 
           <tr class="cat-row"><td colspan="6" data-bg="Включени билети" data-en="Included Tickets">Включени билети</td></tr>
-          <tr><td data-bg="ULTRA VIP — &euro;749" data-en="ULTRA VIP — &euro;749">ULTRA VIP — &euro;749</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="VIP — &euro;399" data-en="VIP — &euro;399">VIP — &euro;399</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="Full Event — &euro;199" data-en="Full Event — &euro;199">Full Event — &euro;199</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
-          <tr><td data-bg="One Day Pass — &euro;99" data-en="One Day Pass — &euro;99">One Day Pass — &euro;99</td><td class="yes">&#x2713;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td>ULTRA VIP (&euro;749)</td><td class="yes">2</td><td class="yes">1</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+          <tr><td>VIP (&euro;399)</td><td class="yes">4</td><td class="yes">2</td><td class="yes">1</td><td class="yes">1</td><td class="no">&mdash;</td></tr>
+          <tr><td>Full Event (&euro;199)</td><td class="yes">6</td><td class="yes">4</td><td class="yes">4</td><td class="yes">3</td><td class="yes">1</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
+
+<div style="text-align:center;padding:16px 24px 0;color:var(--text-light);font-size:0.85rem;font-style:italic" data-bg="* Всички цени са без ДДС." data-en="* All prices are VAT excluded.">* Всички цени са без ДДС.</div>
 
 <!-- Pre-footer CTA -->
 <section class="prefooter-cta">
@@ -355,7 +349,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <h2 data-bg="Станете спонсор на BSTF 2026" data-en="Become a BSTF 2026 Sponsor">Станете спонсор на BSTF 2026</h2>
     <p data-bg="Свържете се с нас за персонализирано предложение." data-en="Contact us for a customized proposal.">Свържете се с нас за персонализирано предложение.</p>
     <div class="prefooter-buttons">
-      <a href="mailto:hello@bstf2026.bg?subject=Sponsorship%20Inquiry" class="btn btn-white" data-bg="Свържете се с нас" data-en="Contact us">Свържете се с нас</a>
+      <a href="mailto:bstf@ictclustervarna.com?subject=Sponsorship%20Inquiry" class="btn btn-white" data-bg="Свържете се с нас" data-en="Contact us">Свържете се с нас</a>
       <a href="index.html#expo" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж изложението" data-en="View exhibition">Виж изложението</a>
     </div>
   </div>
@@ -384,7 +378,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       </div>
       <div class="footer-col">
         <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-        <a href="mailto:hello@bstf2026.bg">hello@bstf2026.bg</a>
+        <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
         <a href="tel:+35952123456">+359 52 123 456</a>
         <p style="margin-top:8px;font-size:0.8rem" data-bg="Варна, България" data-en="Varna, Bulgaria">Варна, България</p>
       </div>

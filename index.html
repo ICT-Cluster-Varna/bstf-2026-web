@@ -47,16 +47,27 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);border-bottom:1px solid rgba(0,0,0,0.06);padding:24px;z-index:199}
 .mobile-nav.open{display:block}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;background:var(--navy)}
-.hero-bg{position:absolute;inset:0;background:url('images/Varna2.png') center/cover no-repeat;opacity:0.5}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,57,84,0.45) 0%,rgba(44,166,179,0.30) 100%)}
-.hero-content{position:relative;z-index:2;display:flex;align-items:center;gap:60px;padding:120px 48px 80px 48px;width:100%;max-width:1400px;margin:0 auto}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:50px;color:var(--white);font-size:0.875rem;font-weight:500;margin-bottom:24px}
-.hero h1{font-size:3.5rem;font-weight:700;color:var(--white);margin-bottom:20px;line-height:1.1}
-.hero h1 .accent{color:var(--teal);display:block}
-.hero-desc{font-size:1.25rem;color:rgba(255,255,255,0.85);margin-bottom:16px;max-width:650px}
-.hero-date{font-size:1.125rem;color:var(--teal);font-weight:600;margin-bottom:32px}
-.hero-buttons{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap}.cta-banner{background:var(--teal);padding:48px 24px;text-align:center}
+.hero{position:relative;height:auto;display:flex;flex-direction:column;overflow:hidden;background:var(--white);padding-top:72px}
+.hero-bg,.hero-overlay{display:none}
+.hero-inner{display:flex;flex-direction:column;justify-content:flex-start;width:100%;margin:0 auto;padding:44px 80px 0}
+.hero-content{display:grid;grid-template-columns:0.9fr 1.4fr 0.8fr;align-items:start;gap:0;max-width:100%;margin:0 auto;width:100%}
+.hero-left{position:relative;z-index:2}
+.hero-left h1{font-size:3.8rem;font-weight:700;line-height:1;color:var(--navy);margin:0;text-transform:uppercase;letter-spacing:-0.01em}
+.hero-left h1 .title-light{color:var(--teal);font-weight:300;font-size:3.8rem;display:block;margin-bottom:8px;text-transform:none;letter-spacing:0.01em;font-style:italic}
+.hero-center{display:flex;align-items:flex-start;justify-content:center;position:relative;margin:-20px -40px 0}
+.hero-center img{width:80%;max-width:none;height:auto}
+.hero-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px;position:relative;z-index:2}
+.hero-date-lg{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:700;color:var(--teal);line-height:1.2}
+.hero-location{font-size:1.05rem;color:var(--text);font-weight:500;margin-bottom:16px}
+.hero-logos{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-top:8px}
+.hero-logos img{height:56px;width:auto}
+.hero-logos .logo-bsmepa{height:44px}
+.sponsor-placeholder{font-size:0.58rem;color:var(--text-light);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;line-height:1.3;text-align:right}
+.hero-bottom{padding:18px 0 34px;max-width:100%;margin:0 auto;width:100%;margin-top:24px}
+.hero-topics{font-size:1.05rem;color:var(--teal);font-weight:500;margin-bottom:4px;letter-spacing:0.02em}
+.hero-tagline{font-family:'Space Grotesk',sans-serif;font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1.2}
+.hero-tagline sup{font-size:0.55em;vertical-align:super}
+.hero-badge,.hero-desc,.hero-date,.hero-buttons{display:none}.cta-banner{background:var(--teal);padding:48px 24px;text-align:center}
 .cta-banner h2{font-size:1.75rem;color:var(--white);margin-bottom:8px}
 .cta-banner p{color:rgba(255,255,255,0.9);margin-bottom:24px}
 .about-section{padding:80px 0;background:var(--white)}
@@ -139,7 +150,7 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .expo-feature h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:4px}
 .expo-feature p{font-size:0.85rem;color:var(--text-light)}
 .venue-section{padding:100px 0 80px;background:var(--white);position:relative;overflow:hidden}
-.venue-bg{position:absolute;inset:0;background:url('images/varna_seaside_bg.jpg') center/cover no-repeat;opacity:0.55}
+.venue-bg{position:absolute;inset:-12px;background:url('images/varna_seaside_bg.jpg') center/cover no-repeat;opacity:0.45;filter:blur(8px)}
 .venue-overlay{position:absolute;inset:0;background:none}
 .venue-grid{display:grid;grid-template-columns:1fr;gap:32px;position:relative;z-index:2}
 .venue-image{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
@@ -182,16 +193,6 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 .success-icon{width:64px;height:64px;border-radius:50%;background:var(--light-blue);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2rem;color:var(--teal)}
 .modal-success h3{font-size:1.25rem;color:var(--navy);margin-bottom:8px}
 .modal-success p{font-size:0.9rem;color:var(--text-light)}
-.faq-section{padding:60px 0;background:var(--light-gray)}
-.faq-list{max-width:700px;margin:0 auto}
-.faq-item{background:var(--white);border-radius:var(--radius-sm);margin-bottom:8px;overflow:hidden}
-.faq-question{width:100%;text-align:left;padding:18px 20px;font-size:0.95rem;font-weight:500;color:var(--navy);display:flex;justify-content:space-between;align-items:center}
-.faq-question:hover{color:var(--teal)}
-.faq-arrow{transition:var(--transition);font-size:0.8rem}
-.faq-item.open .faq-arrow{transform:rotate(180deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
-.faq-item.open .faq-answer{max-height:500px}
-.faq-answer-inner{padding:0 20px 18px;font-size:0.9rem;color:var(--text-light);line-height:1.7}
 #bstf-btt{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;z-index:100;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:var(--shadow)}
 #bstf-btt.visible{opacity:1;visibility:visible}
 #bstf-btt:hover{background:var(--teal);transform:translateY(-2px)}
@@ -205,14 +206,9 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
 .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.streams-grid{grid-template-columns:repeat(3,1fr)}.speakers-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero h1{font-size:2.25rem}.hero-desc{font-size:1rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}.hero-content{flex-direction:column;text-align:center}.hero-left{text-align:center}.hero-buttons{justify-content:center}.why-attend{flex:none;width:100%}}
+@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:100vh}.hero-inner{padding:0 20px}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:center;gap:24px}.hero-left{text-align:center}.hero-center img{max-width:280px;margin:0 auto}.hero-right{text-align:center;align-items:center}.hero-date-lg{font-size:1.3rem}.hero-bottom{text-align:center;padding:16px 20px 32px}.hero-tagline{font-size:1.4rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}}
 @media(min-width:769px){#bstf-mob-cta{display:none !important}}
-.hero-left{flex:1;text-align:left}
-.why-attend{flex:0 0 420px;text-align:left;background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:28px 32px;margin-left:auto}
-.why-attend h3{font-size:1.3rem;color:var(--white);margin-bottom:16px}
-.why-attend ul{list-style:none;display:flex;flex-direction:column;gap:12px}
-.why-attend li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.9);font-size:1rem}
-.why-attend .check{color:var(--teal);font-size:1.2rem;flex-shrink:0}
+.hero-left{text-align:left}
 
 /* === Booth types grid === */
 .booth-types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -254,7 +250,14 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 footer{padding-bottom:70px!important}
 .footer-bottom{padding-right:0!important;margin-bottom:8px!important}
 .booth-types-grid{grid-template-columns:1fr 1fr!important;gap:12px!important}
+.hero-cta-wrap{min-height:auto!important}
 }
+.hall-card{transition:transform 0.3s ease,box-shadow 0.3s ease,border-left-width 0.3s ease;cursor:default}
+.hall-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 8px 24px rgba(44,166,179,0.15);border-left-width:6px}
+.stream-card{background:var(--light-gray)}
+.stream-card:hover{background:var(--light-blue);transform:translateY(-4px);box-shadow:0 6px 20px rgba(44,166,179,0.12)}
+.stream-card img{transition:transform 0.3s ease}
+.stream-card:hover img{transform:scale(1.1)}
 </style>
 </head>
 <body>
@@ -297,52 +300,49 @@ footer{padding-bottom:70px!important}
   <button class="btn btn-primary open-register-modal" style="width:100%;margin-top:16px" data-bg="Регистрация" data-en="Register now">Регистрация</button>
 </div>
 
+<div class="hero-cta-wrap" style="min-height:100vh;display:flex;flex-direction:column">
 <!-- SECTION 1: Hero -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-left">
-    <div class="hero-badge" data-bg="5-7 октомври 2026 | Варна, България" data-en="5-7 October 2026 | Varna, Bulgaria">5-7 октомври 2026 | Варна, България</div>
-    <p class="ict-cluster-info" style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin-bottom:12px" data-bg="Организиран от ИКТ Клъстер — Варна" data-en="Organized by ICT Cluster — Varna">Организиран от ИКТ Клъстер — Варна</p>
-    <h1 data-bg="Черноморски<br><span class='accent'>Технологичен Форум</span>" data-en="Black Sea<br><span class='accent'>Technology Forum</span>">Черноморски<br><span class="accent">Технологичен Форум</span></h1>
-    <p class="hero-desc" data-bg="Технологии от 7-мо поколение без граници." data-en="7th-generation technologies without borders.">Технологии от 7-мо поколение без граници.</p>
-    <p class="hero-date" data-bg="5-7 октомври 2026 | Варна, България" data-en="5-7 October 2026 | Varna, Bulgaria">5-7 октомври 2026 | Варна, България</p>
-    <div class="hero-buttons">
-      <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
-    </div>
-    <div class="hero-stats" style="display:flex;gap:32px;align-items:center;margin-top:28px">
-      <div style="text-align:center">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--white)" data-bg="3" data-en="3">3</span>
-        <span style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-left:4px" data-bg="дни" data-en="days">дни</span>
+<section class="hero" style="flex:1">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <!-- Left: Title -->
+      <div class="hero-left">
+        <h1>
+          <span class="title-light" data-bg="Черноморски" data-en="Black Sea">Black Sea</span>
+          <span data-bg="ТЕХНОЛОГИЧЕН" data-en="TECHNOLOGY">TECHNOLOGY</span><br>
+          <span data-bg="ФОРУМ" data-en="FORUM">FORUM</span>
+        </h1>
       </div>
-      <div style="width:1px;height:36px;background:rgba(255,255,255,0.25)"></div>
-      <div style="text-align:center">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--white)" data-bg="70+" data-en="70+">70+</span>
-        <span style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-left:4px" data-bg="сесии" data-en="sessions">сесии</span>
+      <!-- Center: 3D Visual -->
+      <div class="hero-center">
+        <img src="images/hero_3d.png" alt="BSTF 2026 Visual">
       </div>
-      <div style="width:1px;height:36px;background:rgba(255,255,255,0.25)"></div>
-      <div style="text-align:center">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--white)" data-bg="120+" data-en="120+">120+</span>
-        <span style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-left:4px" data-bg="лектори" data-en="speakers">лектори</span>
+      <!-- Right: Date, Location, Logos -->
+      <div class="hero-right">
+        <div class="hero-date-lg" data-bg="7 – 9 ОКТОМВРИ 2026" data-en="7 – 9 OCTOBER 2026">7 – 9 OCTOBER 2026</div>
+        <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
+        <div class="hero-logos">
+          <img src="images/ict_cluster_logo.png" alt="ICT Cluster Varna">
+        </div>
       </div>
     </div>
-    </div>
-    <div class="why-attend">
-      <h3 data-bg="Защо да присъствате?" data-en="Why attend?">Защо да присъствате?</h3>
-      <ul>
-        <li><span class="check">✓</span><span data-bg="3 дни панели, демонстрации и нетуъркинг" data-en="3 days of panels, demos &amp; networking">3 дни панели, демонстрации и нетуъркинг</span></li>
-        <li><span class="check">✓</span><span data-bg="Хоризонтални технологии + вертикални сектори" data-en="Horizontal tech + vertical sectors">Хоризонтални технологии + вертикални сектори</span></li>
-        <li><span class="check">✓</span><span data-bg="Изложбена зала, зона за стартиращи компании и съпътстващи събития" data-en="Expo hall, startup zone &amp; side events">Изложбена зала, зона за стартиращи компании и съпътстващи събития</span></li>
-      </ul>
-      <a href="#program" class="btn btn-outline" style="margin-top:24px;border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Вижте програмата" data-en="View the program">Вижте програмата</a>
+    <!-- Bottom: Tagline -->
+    <div class="hero-bottom">
+      <p class="hero-topics" data-bg="Изкуствен интелект | Умен град | Транспорт на бъдещето" data-en="Artificial Intelligence | Smart City | Transport Of The Future">Artificial Intelligence | Smart City | Transport Of The Future</p>
+      <p class="hero-tagline" data-bg="Технологии от 7<sup>-мо</sup> поколение без граници" data-en="7<sup>th</sup> Generation Technologies Without Borders">7<sup>th</sup> Generation Technologies Without Borders</p>
     </div>
   </div>
-
 </section>
 
-
-
+<!-- CTA Banner -->
+<section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
+  <div style="max-width:800px;margin:0 auto">
+    <button onclick="openModal('register-modal','early-bird')" class="btn btn-primary" style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block" data-bg="КУПИ БИЛЕТ (EARLY BIRD)" data-en="BUY TICKET (EARLY BIRD)">КУПИ БИЛЕТ (EARLY BIRD)</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--navy);margin-bottom:16px" data-bg="Там, където Изтокът среща Западните иновации." data-en="Where East Meets Western Innovation.">Там, където Изтокът среща Западните иновации.</h2>
+    <p style="font-size:1.05rem;color:var(--text-light);line-height:1.7;margin:0" data-bg="3 дни, 10 тематични направления, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни градове." data-en="3 days, 10 thematic streams, 30+ countries.<br>Don't miss the future of AI, Marine Tech, and Smart Cities.">3 дни, 10 тематични направления, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни градове.</p>
+  </div>
+</section>
+</div><!-- end hero-cta-wrap -->
 
 <!-- SECTION 4: Halls -->
 <section class="halls-section">
@@ -353,27 +353,77 @@ footer{padding-bottom:70px!important}
         <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:480px" data-bg="Зала &bdquo;България&ldquo; е основната сцена за хоризонтални технологии — AI, IoT, роботика, киберсигурност. Зала &bdquo;Черно море&ldquo; и фоайето са домакин на изложението и стартъп зоната. Зала &bdquo;Варна&ldquo; приема паралелната програма със секторни теми." data-en="Hall Bulgaria is the main stage for horizontal technologies — AI, IoT, robotics, cybersecurity. Hall Cherno More and the foyer host the expo and startup zone. Hall Varna runs the parallel programme with sector topics.">Зала „България" е основната сцена за хоризонтални технологии — AI, IoT, роботика, киберсигурност. Зала „Черно море" и фоайето са домакин на изложението и стартъп зоната. Зала „Варна" приема паралелната програма със секторни теми.</p>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;gap:24px">
-        <div class="animate-on-scroll" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+        <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
             <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
             <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;България&ldquo; — хоризонтални сцени" data-en="Hall Bulgaria — Horizontal Stages">Зала „България" — хоризонтални сцени</h3>
           </div>
           <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Основна сцена за технологии с широко приложение — AI &amp; данни, IoT, роботика и киберсигурност." data-en="Main stage for broad-application technologies — AI &amp; data, IoT, robotics and cybersecurity.">Основна сцена за технологии с широко приложение — AI &amp; данни, IoT, роботика и киберсигурност.</p>
         </div>
-        <div class="animate-on-scroll" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+        <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
             <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
             <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Черно море&ldquo; и фоайе — изложение и стартъпи" data-en="Hall Cherno More &amp; Foyer — Expo and Startups">Зала „Черно море" и фоайе — изложение и стартъпи</h3>
           </div>
           <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Бизнес зона за демонстрации, изложители и стартиращи компании — контакти и партньорства." data-en="Business zone for demos, exhibitors and startups — contacts and partnerships.">Бизнес зона за демонстрации, изложители и стартиращи компании — контакти и партньорства.</p>
         </div>
-        <div class="animate-on-scroll" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+        <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
             <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
             <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Варна&ldquo; — паралелна програма / секторни теми" data-en="Hall Varna — Parallel Programme / Sector Topics">Зала „Варна" — паралелна програма / секторни теми</h3>
           </div>
           <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Задълбочени дискусии за конкретни индустрии — морска, биотех, туризъм, публичен сектор." data-en="Deep-dive discussions for specific industries — maritime, biotech, tourism, public sector.">Задълбочени дискусии за конкретни индустрии — морска, биотех, туризъм, публичен сектор.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: Streams -->
+<section style="padding:72px 0;background:var(--light-gray)">
+  <div class="container" style="text-align:center">
+    <h2 class="section-title text-center" style="font-style:italic" data-bg="10 направления. 3 дни. Максимална стойност." data-en="10 Streams. 3 Days. Maximum Value.">10 направления. 3 дни. Максимална стойност.</h2>
+    <p class="section-subtitle text-center" data-bg="Изберете тема и вижте съответните акценти от програмата." data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от програмата.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1000px;margin:0 auto">
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/ai.png" alt="AI" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/transport.png" alt="Transport" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето" data-en="Future of Transport">Транспорт на бъдещето</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/smart_city.png" alt="Smart City" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/cybersecurity.png" alt="Cybersecurity" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/blockchain.png" alt="Blockchain" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Блокчейн" data-en="Blockchain">Блокчейн</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/cloud.png" alt="Cloud" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Облачни технологии" data-en="Cloud Technologies">Облачни технологии</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/automation.png" alt="Automation" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация" data-en="Automation">Автоматизация</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/agritech.png" alt="AgriTech" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/marine_tech.png" alt="Marine Tech" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</div>
+      </div>
+      <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
+        <img src="images/streams/biotech.png" alt="BioTech" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech</div>
       </div>
     </div>
   </div>
@@ -386,9 +436,9 @@ footer{padding-bottom:70px!important}
     <p class="section-subtitle text-center" data-bg="Основна програма + Секторни теми, работещи паралелно." data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.</p>
 
     <div class="day-tabs">
-      <button class="day-tab active" data-day="1" data-bg="Ден 1" data-en="Day 1">Ден 1</button>
-      <button class="day-tab" data-day="2" data-bg="Ден 2" data-en="Day 2">Ден 2</button>
-      <button class="day-tab" data-day="3" data-bg="Ден 3" data-en="Day 3">Ден 3</button>
+      <button class="day-tab active" data-day="1" data-bg="7 октомври" data-en="7 October">7 октомври</button>
+      <button class="day-tab" data-day="2" data-bg="8 октомври" data-en="8 October">8 октомври</button>
+      <button class="day-tab" data-day="3" data-bg="9 октомври" data-en="9 October">9 октомври</button>
     </div>
 
     <!-- Day 1 -->
@@ -511,8 +561,8 @@ footer{padding-bottom:70px!important}
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;margin-bottom:24px">
           <p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.8;margin:0 0 24px 0" data-bg="Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него. Очаквайте официалното обявяване на лекторите в следващите седмици." data-en="We are assembling an exceptional lineup of practitioners, researchers, and policymakers from across the Black Sea region and beyond. Speaker announcements will be made in the coming weeks.">Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него. Очаквайте официалното обявяване на лекторите в следващите седмици.</p>
           <div style="display:flex;gap:32px">
-            <div style="text-align:center"><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">120+</span><br><span style="font-size:0.85rem;color:rgba(255,255,255,0.6)" data-bg="лектори" data-en="speakers">лектори</span></div>
-            <div style="text-align:center"><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">70+</span><br><span style="font-size:0.85rem;color:rgba(255,255,255,0.6)" data-bg="сесии" data-en="sessions">сесии</span></div>
+            <div style="text-align:center"><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">100+</span><br><span style="font-size:0.85rem;color:rgba(255,255,255,0.6)" data-bg="лектори" data-en="speakers">лектори</span></div>
+            <div style="text-align:center"><span style="font-size:2.5rem;font-weight:700;color:var(--teal)">30+</span><br><span style="font-size:0.85rem;color:rgba(255,255,255,0.6)" data-bg="панела" data-en="panels">панела</span></div>
           </div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
@@ -675,26 +725,6 @@ footer{padding-bottom:70px!important}
   </div>
 </section>
 
-<!-- SECTION 11: FAQ -->
-<section class="faq-section" style="border-top:1px solid var(--light-gray)">
-  <div class="container">
-    <h2 class="section-title text-center" data-bg="Често задавани въпроси" data-en="FAQ">Често задавани въпроси</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question"><span data-bg="Мога ли да получа възстановяване?" data-en="Can I get a refund?">Мога ли да получа възстановяване?</span><span class="faq-arrow">&#x25BC;</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-bg="Пълно възстановяване до 30 дни преди събитието. 50% до 14 дни преди." data-en="Full refunds available up to 30 days before the event. 50% refund up to 14 days before.">Пълно възстановяване до 30 дни преди събитието. 50% до 14 дни преди.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question"><span data-bg="Трябва ли да потвърдя присъствие за съпътстващите събития?" data-en="Do I need to RSVP for side events?">Трябва ли да потвърдя присъствие за съпътстващите събития?</span><span class="faq-arrow">&#x25BC;</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-bg="Някои съпътстващи събития имат ограничен капацитет и изискват потвърждение. Подробности ще бъдат изпратени след регистрация." data-en="Some side events have limited capacity and require RSVP. Details will be sent after registration.">Някои съпътстващи събития имат ограничен капацитет и изискват потвърждение. Подробности ще бъдат изпратени след регистрация.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question"><span data-bg="Налични ли са групови отстъпки?" data-en="Are group discounts available?">Налични ли са групови отстъпки?</span><span class="faq-arrow">&#x25BC;</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-bg="Да, групи от 5+ получават 15% отстъпка. Свържете се с нас за корпоративни пакети." data-en="Yes, groups of 5+ receive 15% off. Contact us for corporate packages.">Да, групи от 5+ получават 15% отстъпка. Свържете се с нас за корпоративни пакети.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SECTION 12: Pre-footer CTA -->
 <section class="prefooter-cta">
@@ -734,11 +764,9 @@ footer{padding-bottom:70px!important}
       </div>
       <div class="footer-col">
         <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-        <a href="mailto:hello@bstf2026.bg">hello@bstf2026.bg</a>
+        <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
         <div style="display:flex;gap:12px;margin-top:16px">
           <a href="#" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--white)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="#" aria-label="Facebook" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--white)"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="#" aria-label="X" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--white)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
     </div>
@@ -978,15 +1006,6 @@ footer{padding-bottom:70px!important}
       if (content) content.classList.add('active');
     });
   });  
-  // === FAQ Accordion ===
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(fi) { fi.classList.remove('open'); });
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
   
   // === Ticket Card Selection ===
   document.querySelectorAll('.ticket-card').forEach(function(card) {
