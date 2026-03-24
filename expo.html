@@ -402,6 +402,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     });
   }
 })();
+window.addEventListener('pageshow',function(e){if(e.persisted)window.location.reload();});
 </script>
 </body>
 </html>
