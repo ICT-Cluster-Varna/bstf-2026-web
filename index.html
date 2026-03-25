@@ -99,9 +99,11 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .day-tab.active{background:var(--navy);color:var(--white)}
 .day-tab:hover:not(.active){background:var(--light-blue);color:var(--navy)}
 .day-content{display:none !important}.day-content.active{display:block !important}
-.schedule-table{width:100%;border-collapse:collapse;margin-top:16px}
-.schedule-table th{text-align:left;padding:14px 16px;background:var(--navy);color:var(--white);font-size:0.85rem;font-weight:600}
-.schedule-table th:first-child{border-radius:var(--radius-sm) 0 0 0}.schedule-table th:last-child{border-radius:0 var(--radius-sm) 0 0}
+.day-subtitle-row{background:var(--navy) !important;color:var(--white);font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;text-align:center;padding:14px 16px;border-radius:var(--radius) var(--radius) 0 0}
+.schedule-table td[colspan="2"]{text-align:center;color:var(--text-light);font-style:italic}
+.schedule-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:16px;border-radius:var(--radius);overflow:hidden}
+.schedule-table th{text-align:center;padding:14px 16px;background:#1a5c7a;color:var(--white);font-size:0.85rem;font-weight:600}
+.schedule-table th:first-child{border-radius:0}.schedule-table th:last-child{border-radius:0}
 .schedule-table td{padding:14px 16px;border-bottom:1px solid var(--light-gray);font-size:0.9rem}
 .schedule-table tr:hover{background:var(--light-blue)}.schedule-table tbody tr:nth-child(even){background:rgba(44,166,179,0.04)}
 .schedule-table{table-layout:fixed}.schedule-table th:first-child,.schedule-table td:first-child{width:110px}
@@ -438,86 +440,89 @@ footer{padding-bottom:70px!important}
     <p class="section-subtitle text-center" data-bg="Основна програма + Секторни теми, работещи паралелно." data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.</p>
 
     <div class="day-tabs">
-      <button class="day-tab active" data-day="1" data-bg="Ден 1" data-en="Day 1">Ден 1</button>
-      <button class="day-tab" data-day="2" data-bg="Ден 2" data-en="Day 2">Ден 2</button>
-      <button class="day-tab" data-day="3" data-bg="Ден 3" data-en="Day 3">Ден 3</button>
+      <button class="day-tab active" data-day="1" data-bg="5 октомври" data-en="5 October">5 октомври</button>
+      <button class="day-tab" data-day="2" data-bg="6 октомври" data-en="6 October">6 октомври</button>
+      <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
     </div>
 
-    <!-- Day 1 -->
+    <!-- Day 1 – Защо? -->
     <div class="day-content active" data-day="1">
       <table class="schedule-table">
         <thead>
+          <tr><th colspan="3" class="day-subtitle-row" data-bg="Ден 1 – Защо?" data-en="Day 1 – Why?">Ден 1 – Защо?</th></tr>
           <tr>
             <th data-bg="Час" data-en="Time">Час</th>
-            <th data-bg="Основна програма" data-en="Main Programme">Основна програма</th>
-            <th data-bg="Секторни теми" data-en="Sector Topics">Секторни теми</th>
+            <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
+            <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="time-cell">10:00-10:30</td><td data-bg="Официално откриване" data-en="Official Opening">Официално откриване</td><td>—</td></tr>
-          <tr><td class="time-cell">10:30-11:00</td><td data-bg="Ключова лекция: „Технологии без граници за устойчив растеж в динамична среда“" data-en='Keynote: "Borderless Technologies for Sustainable Growth in a Dynamic Environment"'>Ключова лекция: „Технологии без граници за устойчив растеж в динамична среда“</td><td>—</td></tr>
-          <tr><td class="time-cell">11:00-11:15</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">11:15-12:20</td><td data-bg="AI и автоматизация като отговор на нарастващите разходи и недостига на ресурси" data-en="AI &amp; Automation as Answers to Rising Costs and Resource Shortages">AI и автоматизация като отговор на нарастващите разходи и недостига на ресурси</td><td>—</td></tr>
-          <tr><td class="time-cell">12:20-13:30</td><td data-bg="Обед / Нетуъркинг" data-en="Lunch / Networking">Обед / Нетуъркинг</td><td>—</td></tr>
-          <tr><td class="time-cell">13:30-14:50</td><td data-bg="От стратегия към изпълнение – Как компаниите внедряват AI устойчиво" data-en="From Strategy to Execution – How Companies Deploy AI Sustainably">От стратегия към изпълнение – Как компаниите внедряват AI устойчиво</td><td data-bg="Морска икономика и пристанищни технологии" data-en="Maritime Economy &amp; PortTech">Морска икономика и пристанищни технологии</td></tr>
-          <tr><td class="time-cell">14:50-15:20</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">15:20-16:10</td><td data-bg="Сигурни данни, устойчиви вериги на доставки и кибер-устойчив бизнес" data-en="Secure Data, Resilient Supply Chains &amp; Cyber-Resilient Business">Сигурни данни, устойчиви вериги на доставки и кибер-устойчив бизнес</td><td data-bg="Биотехнологии, здравеопазване и устойчиви индустрии" data-en="Biotechnologies, Health &amp; Sustainable Industries">Биотехнологии, здравеопазване и устойчиви индустрии</td></tr>
-          <tr><td class="time-cell">16:10-16:30</td><td data-bg="Кратка пауза / Подготовка за панел" data-en="Short Pause / Panel Prep">Кратка пауза / Подготовка за панел</td><td>—</td></tr>
-          <tr><td class="time-cell">16:30-17:00</td><td data-bg="Обобщаващ панел (Обзор на деня)" data-en="Summary Panel (Day recap)">Обобщаващ панел (Обзор на деня)</td><td>—</td></tr>
-          <tr><td class="time-cell">17:30-20:00</td><td data-bg="TechStart Motivator (вдъхновяваща сесия)" data-en="TechStart Motivator (inspirational session)">TechStart Motivator (вдъхновяваща сесия)</td><td>—</td></tr>
-          <tr><td class="time-cell">20:00-22:00</td><td data-bg="Гала коктейл" data-en="Gala Cocktail">Гала коктейл</td><td>—</td></tr>
+          <tr><td class="time-cell">13:00 – 13:30</td><td data-bg="Официално откриване" data-en="Official Opening">Официално откриване</td><td>—</td></tr>
+          <tr><td class="time-cell">13:30 – 14:00</td><td data-bg="Keynote – Технологии без граници за устойчив растеж в динамична среда" data-en="Keynote – Borderless Technologies for Sustainable Growth in a Dynamic Environment">Keynote – Технологии без граници за устойчив растеж в динамична среда</td><td>—</td></tr>
+          <tr><td class="time-cell">14:00 – 14:10</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">14:10 – 15:30</td><td data-bg="Блок 1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси" data-en="Block 1 (80 min) – AI &amp; Automation as Answers to Rising Costs and Resource Shortages">Блок 1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси</td><td data-bg="Регионални политики за иновации" data-en="Regional Innovation Policies">Регионални политики за иновации</td></tr>
+          <tr><td class="time-cell">15:30 – 15:45</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">15:45 – 17:05</td><td data-bg="Блок 2 (80 мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво" data-en="Block 2 (80 min) – From Strategy to Execution: How Companies Deploy AI Sustainably">Блок 2 (80 мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво</td><td data-bg="Регионални политики за иновации" data-en="Regional Innovation Policies">Регионални политики за иновации</td></tr>
+          <tr><td class="time-cell">17:05 – 17:15</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">17:15 – 17:45</td><td data-bg="Обобщаващ панел" data-en="Summary Panel">Обобщаващ панел</td><td>—</td></tr>
+          <tr><td class="time-cell">18:00 – 20:00</td><td data-bg="Техностарт Мотиватор" data-en="TechStart Motivator">Техностарт Мотиватор</td><td>—</td></tr>
+          <tr><td class="time-cell">20:00 – 22:00</td><td data-bg="Гала коктейл – ресторант х-л „Черно море“" data-en="Gala Cocktail – Hotel Cherno More restaurant">Гала коктейл – ресторант х-л „Черно море“</td><td>—</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Day 2 -->
+    <!-- Day 2 – Какво и как? -->
     <div class="day-content" data-day="2">
       <table class="schedule-table">
         <thead>
+          <tr><th colspan="3" class="day-subtitle-row" data-bg="Ден 2 – Какво и как?" data-en="Day 2 – What and how?">Ден 2 – Какво и как?</th></tr>
           <tr>
             <th data-bg="Час" data-en="Time">Час</th>
-            <th data-bg="Основна програма" data-en="Main Programme">Основна програма</th>
-            <th data-bg="Секторни теми" data-en="Sector Topics">Секторни теми</th>
+            <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
+            <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="time-cell">09:30-09:50</td><td data-bg="Откриване и обзор на Ден 1" data-en="Opening &amp; Recap of Day 1">Откриване и обзор на Ден 1</td><td>—</td></tr>
-          <tr><td class="time-cell">09:50-10:15</td><td data-bg="Ключова лекция: „Съвременни предизвикателства и нови бизнес модели“" data-en='Keynote: "Contemporary Challenges and New Business Models"'>Ключова лекция: „Съвременни предизвикателства и нови бизнес модели“</td><td>—</td></tr>
-          <tr><td class="time-cell">10:15-10:30</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">10:30-11:50</td><td data-bg="Управление, базирано на данни: IoT + Логистика" data-en="Data-Driven Management: IoT + Logistics">Управление, базирано на данни: IoT + Логистика</td><td data-bg="Индустрия (тема предстои)" data-en="Industry (topic TBC)">Индустрия (тема предстои)</td></tr>
-          <tr><td class="time-cell">11:50-13:00</td><td data-bg="Обед / Нетуъркинг" data-en="Lunch / Networking">Обед / Нетуъркинг</td><td>—</td></tr>
-          <tr><td class="time-cell">13:00-14:20</td><td data-bg="Роботика" data-en="Robotics">Роботика</td><td data-bg="Туризъм (тема предстои)" data-en="Tourism (topic TBC)">Туризъм (тема предстои)</td></tr>
-          <tr><td class="time-cell">14:20-15:00</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">15:00-16:05</td><td data-bg="Финансиране, експорт, нови пазари" data-en="Financing, Export, New Markets">Финансиране, експорт, нови пазари</td><td data-bg="Умно земеделие" data-en="Smart Agriculture">Умно земеделие</td></tr>
-          <tr><td class="time-cell">16:05-16:20</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">16:20-17:00</td><td data-bg="Обобщаващ панел (Обзор на деня)" data-en="Summary Panel (Day recap)">Обобщаващ панел (Обзор на деня)</td><td>—</td></tr>
-          <tr><td class="time-cell">17:30-19:30</td><td data-bg="Gentle Power — Жени и технологии" data-en="Gentle Power — Women &amp; Technology">Gentle Power — Жени и технологии</td><td>—</td></tr>
-          <tr><td class="time-cell">20:00-22:00</td><td data-bg="Парти" data-en="Party">Парти</td><td>—</td></tr>
+          <tr><td class="time-cell">09:30 – 09:50</td><td data-bg="Откриване и обобщение от Ден 1" data-en="Opening &amp; Day 1 Recap">Откриване и обобщение от Ден 1</td><td>—</td></tr>
+          <tr><td class="time-cell">09:50 – 10:15</td><td data-bg="Keynote – Съвременни предизвикателства и новите бизнес модели" data-en="Keynote – Contemporary Challenges and New Business Models">Keynote – Съвременни предизвикателства и новите бизнес модели</td><td>—</td></tr>
+          <tr><td class="time-cell">10:15 – 10:30</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">10:30 – 11:50</td><td data-bg="Блок 1 (80 мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес" data-en="Block 1 (80 min) – Secure Data, Resilient Chains &amp; Cyber-Resilient Business">Блок 1 (80 мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес</td><td data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</td></tr>
+          <tr><td class="time-cell">11:50 – 13:00</td><td data-bg="Пауза / Обяд / Networking" data-en="Break / Lunch / Networking" colspan="2">Пауза / Обяд / Networking</td></tr>
+          <tr><td class="time-cell">13:00 – 14:20</td><td data-bg="Блок 2 (80 мин) – Управление с данни: IoT + логистика" data-en="Block 2 (80 min) – Data-Driven Management: IoT + Logistics">Блок 2 (80 мин) – Управление с данни: IoT + логистика</td><td data-bg="Биотехнологии, здраве и устойчиви индустрии" data-en="Biotechnologies, Health &amp; Sustainable Industries">Биотехнологии, здраве и устойчиви индустрии</td></tr>
+          <tr><td class="time-cell">14:20 – 15:00</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">15:00 – 16:05</td><td data-bg="Блок 3 (65 мин) – Роботика" data-en="Block 3 (65 min) – Robotics">Блок 3 (65 мин) – Роботика</td><td data-bg="Туризъм" data-en="Tourism">Туризъм</td></tr>
+          <tr><td class="time-cell">16:05 – 16:20</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">16:20 – 16:50</td><td data-bg="Обобщаващ панел" data-en="Summary Panel">Обобщаващ панел</td><td>—</td></tr>
+          <tr><td class="time-cell">17:30 – 19:30</td><td data-bg="Нежна сила: жени &amp; технологии" data-en="Gentle Power: Women &amp; Technology">Нежна сила: жени &amp; технологии</td><td>—</td></tr>
+          <tr><td class="time-cell">20:00 – 22:00</td><td data-bg="Парти – ресторант х-л „Черно море“" data-en="Party – Hotel Cherno More restaurant">Парти – ресторант х-л „Черно море“</td><td>—</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Day 3 -->
+    <!-- Day 3 – Какво следва? -->
     <div class="day-content" data-day="3">
       <table class="schedule-table">
         <thead>
+          <tr><th colspan="3" class="day-subtitle-row" data-bg="Ден 3 – Какво следва?" data-en="Day 3 – What's next?">Ден 3 – Какво следва?</th></tr>
           <tr>
             <th data-bg="Час" data-en="Time">Час</th>
-            <th data-bg="Основна програма" data-en="Main Programme">Основна програма</th>
-            <th data-bg="Секторни теми" data-en="Sector Topics">Секторни теми</th>
+            <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
+            <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="time-cell">09:30-09:50</td><td data-bg="Откриване и обзор на Ден 2" data-en="Opening &amp; Recap of Day 2">Откриване и обзор на Ден 2</td><td>—</td></tr>
-          <tr><td class="time-cell">09:50-10:15</td><td data-bg="Ключова лекция (тема предстои)" data-en="Keynote (topic TBC)">Ключова лекция (тема предстои)</td><td>—</td></tr>
-          <tr><td class="time-cell">10:15-10:30</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">10:30-11:50</td><td data-bg="Какво следва?" data-en="What's Next?">Какво следва?</td><td>—</td></tr>
-          <tr><td class="time-cell">11:50-12:00</td><td data-bg="Кафе пауза" data-en="Coffee Break">Кафе пауза</td><td>—</td></tr>
-          <tr><td class="time-cell">12:00-12:30</td><td data-bg="Заключителен панел: „Бъдещето на Черноморския регион през призмата на съвременните технологии“" data-en='Closing Panel: "The Future of the Black Sea Region Through the Lens of Modern Technologies"'>Заключителен панел: „Бъдещето на Черноморския регион през призмата на съвременните технологии“</td><td>—</td></tr>
-          <tr><td class="time-cell">13:00-18:00</td><td data-bg="Училище за успех — практически уъркшопи, менторство и обучение" data-en="Success School — hands-on workshops, mentorship and training">Училище за успех — практически уъркшопи, менторство и обучение</td><td>—</td></tr>
+          <tr><td class="time-cell">09:30 – 09:50</td><td data-bg="Откриване и обобщение от Ден 2" data-en="Opening &amp; Day 2 Recap">Откриване и обобщение от Ден 2</td><td>—</td></tr>
+          <tr><td class="time-cell">09:50 – 10:15</td><td data-bg="Keynote – Какво следва?" data-en="Keynote – What’s Next?">Keynote – Какво следва?</td><td>—</td></tr>
+          <tr><td class="time-cell">10:15 – 10:30</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">10:30 – 11:50</td><td data-bg="Блок 1 (80 мин) – Финансиране, износ, нови пазари" data-en="Block 1 (80 min) – Financing, Export, New Markets">Блок 1 (80 мин) – Финансиране, износ, нови пазари</td><td data-bg="Образование" data-en="Education">Образование</td></tr>
+          <tr><td class="time-cell">11:50 – 13:00</td><td data-bg="Пауза / Обяд / Networking" data-en="Break / Lunch / Networking" colspan="2">Пауза / Обяд / Networking</td></tr>
+          <tr><td class="time-cell">13:00 – 14:20</td><td data-bg="Блок 2 (80 мин) – Индустрия" data-en="Block 2 (80 min) – Industry">Блок 2 (80 мин) – Индустрия</td><td data-bg="Образование" data-en="Education">Образование</td></tr>
+          <tr><td class="time-cell">14:20 – 15:00</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">15:00 – 16:05</td><td data-bg="Блок 3 (65 мин) – Нови хоризонти…" data-en="Block 3 (65 min) – New Horizons…">Блок 3 (65 мин) – Нови хоризонти…</td><td data-bg="Умно земеделие" data-en="Smart Agriculture">Умно земеделие</td></tr>
+          <tr><td class="time-cell">16:05 – 16:20</td><td data-bg="Пауза" data-en="Break" colspan="2">Пауза</td></tr>
+          <tr><td class="time-cell">16:20 – 17:00</td><td data-bg="Закриване на Черноморски технологичен форум Варна 2026" data-en="Closing of Black Sea Technology Forum Varna 2026">Закриване на Черноморски технологичен форум Варна 2026</td><td>—</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:16px;font-size:0.9rem;color:var(--text-light);text-align:center;font-style:italic" data-bg="На Ден 3 няма отделни секторни сесии. Всички участници се присъединяват към основната програма." data-en="No separate sector sessions on Day 3. All attendees join the main programme.">На Ден 3 няма отделни секторни сесии. Всички участници се присъединяват към основната програма.</p>
     </div>
 
 
