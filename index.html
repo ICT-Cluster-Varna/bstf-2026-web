@@ -56,14 +56,16 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .hero-left h1 .title-light{color:var(--teal);font-weight:300;font-size:3.8rem;display:block;margin-bottom:8px;text-transform:none;letter-spacing:0.01em;font-style:italic}
 .hero-center{display:flex;align-items:flex-start;justify-content:center;position:relative;margin:-20px -40px 0}
 .hero-center img{width:80%;max-width:none;height:auto}
-.hero-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px;position:relative;z-index:2}
+.hero-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;position:relative;z-index:2;height:100%}
+.hero-right-top{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.hero-right-top .logo-ict{height:200px;width:auto;margin-top:-65px;margin-right:-10px}
 .hero-date-lg{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:700;color:var(--teal);line-height:1.2}
-.hero-location{font-size:1.05rem;color:var(--text);font-weight:500;margin-bottom:16px}
-.hero-logos{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-top:8px}
-.hero-logos img{height:56px;width:auto}
-.hero-logos .logo-bsmepa{height:44px}
-.sponsor-placeholder{font-size:0.58rem;color:var(--text-light);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;line-height:1.3;text-align:right}
-.hero-bottom{padding:18px 0 34px;max-width:100%;margin:0 auto;width:100%;margin-top:24px}
+.hero-location{font-size:1.05rem;color:var(--text);font-weight:500}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;padding:18px 0 34px;max-width:100%;margin:0 auto;width:100%;margin-top:24px}
+.hero-bottom-left{flex:1}
+.hero-bottom-logos{display:flex;flex-direction:column;align-items:center;gap:14px;flex-shrink:0}
+.hero-bottom-logos .logo-varna{height:80px;width:auto}
+.hero-bottom-logos .logo-bsmepa{height:80px;width:auto}
 .hero-topics{font-size:1.05rem;color:var(--teal);font-weight:500;margin-bottom:4px;letter-spacing:0.02em}
 .hero-tagline{font-family:'Space Grotesk',sans-serif;font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1.2}
 .hero-tagline sup{font-size:0.55em;vertical-align:super}
@@ -96,13 +98,15 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .day-tab{padding:12px 28px;border-radius:var(--radius);font-weight:600;font-size:0.95rem;transition:var(--transition);background:var(--light-gray);color:var(--text)}
 .day-tab.active{background:var(--navy);color:var(--white)}
 .day-tab:hover:not(.active){background:var(--light-blue);color:var(--navy)}
-.day-content{display:none}.day-content.active{display:block}
+.day-content{display:none !important}.day-content.active{display:block !important}
 .schedule-table{width:100%;border-collapse:collapse;margin-top:16px}
 .schedule-table th{text-align:left;padding:14px 16px;background:var(--navy);color:var(--white);font-size:0.85rem;font-weight:600}
 .schedule-table th:first-child{border-radius:var(--radius-sm) 0 0 0}.schedule-table th:last-child{border-radius:0 var(--radius-sm) 0 0}
 .schedule-table td{padding:14px 16px;border-bottom:1px solid var(--light-gray);font-size:0.9rem}
-.schedule-table tr:hover{background:var(--light-blue)}.schedule-table tbody tr:nth-child(even){background:rgba(44,166,179,0.04)}@media(max-width:768px){.schedule-table{font-size:0.8rem}.schedule-table th,.schedule-table td{padding:10px 8px}.schedule-table .time-cell{width:80px;font-size:0.75rem}}
-.time-cell{font-weight:600;color:var(--teal);white-space:nowrap;width:120px}
+.schedule-table tr:hover{background:var(--light-blue)}.schedule-table tbody tr:nth-child(even){background:rgba(44,166,179,0.04)}
+.schedule-table{table-layout:fixed}.schedule-table th:first-child,.schedule-table td:first-child{width:110px}
+.time-cell{font-weight:600;color:var(--teal);white-space:nowrap;width:110px}
+@media(max-width:768px){.schedule-table{font-size:0.78rem;table-layout:auto}.schedule-table th,.schedule-table td{padding:8px 6px;word-break:break-word}.schedule-table .time-cell{width:72px;font-size:0.72rem}.day-tabs{flex-wrap:wrap}.day-tab{padding:10px 16px;font-size:0.85rem}.program-section{padding:48px 0}.program-section .container{padding:0 12px}}
 .speakers-section{padding:80px 0;background:var(--light-gray)}
 .speakers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .speaker-card{background:var(--white);border-radius:var(--radius);overflow:hidden;transition:var(--transition)}
@@ -206,7 +210,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
 .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.streams-grid{grid-template-columns:repeat(3,1fr)}.speakers-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:100vh}.hero-inner{padding:0 20px}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:center;gap:24px}.hero-left{text-align:center}.hero-center img{max-width:280px;margin:0 auto}.hero-right{text-align:center;align-items:center}.hero-date-lg{font-size:1.3rem}.hero-bottom{text-align:center;padding:16px 20px 32px}.hero-tagline{font-size:1.4rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}}
+@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:100vh}.hero-inner{padding:0 20px}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:center;gap:24px}.hero-left{text-align:center}.hero-center img{max-width:280px;margin:0 auto}.hero-right{text-align:center;align-items:center}.hero-date-lg{font-size:1.3rem}.hero-bottom{flex-direction:column;align-items:center;text-align:center;padding:16px 20px 32px}.hero-bottom-logos{align-items:center;margin-top:16px}.hero-tagline{font-size:1.4rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}}
 @media(min-width:769px){#bstf-mob-cta{display:none !important}}
 .hero-left{text-align:left}
 
@@ -319,17 +323,23 @@ footer{padding-bottom:70px!important}
       </div>
       <!-- Right: Date, Location, Logos -->
       <div class="hero-right">
-        <div class="hero-date-lg" data-bg="5 – 7 ОКТОМВРИ 2026" data-en="5 – 7 OCTOBER 2026">5 – 7 OCTOBER 2026</div>
-        <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
-        <div class="hero-logos">
-          <img src="images/ict_cluster_logo.png" alt="ICT Cluster Varna">
+        <div class="hero-right-top">
+          <div class="hero-date-lg" data-bg="5 – 7 ОКТОМВРИ 2026" data-en="5 – 7 OCTOBER 2026">5 – 7 OCTOBER 2026</div>
+          <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
+          <img src="images/ict_cluster_logo.png" alt="ICT Cluster Varna" class="logo-ict">
         </div>
       </div>
     </div>
-    <!-- Bottom: Tagline -->
+    <!-- Bottom: Tagline + Logos -->
     <div class="hero-bottom">
-      <p class="hero-topics" data-bg="Изкуствен интелект | Умен град | Транспорт на бъдещето" data-en="Artificial Intelligence | Smart City | Transport Of The Future">Artificial Intelligence | Smart City | Transport Of The Future</p>
-      <p class="hero-tagline" data-bg="Технологии от 7<sup>-мо</sup> поколение без граници" data-en="7<sup>th</sup> Generation Technologies Without Borders">7<sup>th</sup> Generation Technologies Without Borders</p>
+      <div class="hero-bottom-left">
+        <p class="hero-topics" data-bg="Изкуствен интелект | Умен град | Транспорт на бъдещето" data-en="Artificial Intelligence | Smart City | Transport Of The Future">Artificial Intelligence | Smart City | Transport Of The Future</p>
+        <p class="hero-tagline" data-bg="Технологии от 7<sup>-мо</sup> поколение без граници" data-en="7<sup>th</sup> Generation Technologies Without Borders">7<sup>th</sup> Generation Technologies Without Borders</p>
+      </div>
+      <div class="hero-bottom-logos">
+        <img src="images/varna_coat.png" alt="Община Варна" class="logo-varna">
+        <img src="images/bsmepa_logo.png" alt="ИАНМСП" class="logo-bsmepa">
+      </div>
     </div>
   </div>
 </section>
@@ -356,23 +366,23 @@ footer{padding-bottom:70px!important}
         <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
             <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;България&ldquo; — хоризонтални сцени" data-en="Hall Bulgaria — Horizontal Stages">Зала „България" — хоризонтални сцени</h3>
+            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;България&ldquo; — хоризонтални теми" data-en="Hall Bulgaria — Horizontal Topics">Зала „България" — хоризонтални теми</h3>
           </div>
-          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Основна сцена за технологии с широко приложение — AI &amp; данни, IoT, роботика и киберсигурност." data-en="Main stage for broad-application technologies — AI &amp; data, IoT, robotics and cybersecurity.">Основна сцена за технологии с широко приложение — AI &amp; данни, IoT, роботика и киберсигурност.</p>
+          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение." data-en="AI, IoT, robotics, cybersecurity and other broad-application technologies.">AI, IoT, роботизация, киберсигурност и други технологии с широко приложение.</p>
         </div>
         <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
             <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Черно море&ldquo; и фоайе — изложение и стартъпи" data-en="Hall Cherno More &amp; Foyer — Expo and Startups">Зала „Черно море" и фоайе — изложение и стартъпи</h3>
+            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Черно море&ldquo; + фоайе — експо зона" data-en="Hall Cherno More + Foyer — Expo Zone">Зала „Черно море" + фоайе — експо зона</h3>
           </div>
-          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Бизнес зона за демонстрации, изложители и стартиращи компании — контакти и партньорства." data-en="Business zone for demos, exhibitors and startups — contacts and partnerships.">Бизнес зона за демонстрации, изложители и стартиращи компании — контакти и партньорства.</p>
+          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Фирми изложители и секция за стартъпи — демонстрации, контакти и партньорства." data-en="Company exhibitors and startup section — demos, contacts and partnerships.">Фирми изложители и секция за стартъпи — демонстрации, контакти и партньорства.</p>
         </div>
         <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
             <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Варна&ldquo; — паралелна програма / секторни теми" data-en="Hall Varna — Parallel Programme / Sector Topics">Зала „Варна" — паралелна програма / секторни теми</h3>
+            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Варна&ldquo; — вертикални теми (секторна специализация)" data-en="Hall Varna — Vertical Topics (Sector Specialization)">Зала „Варна" — вертикални теми (секторна специализация)</h3>
           </div>
-          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Задълбочени дискусии за конкретни индустрии — морска, биотех, туризъм, публичен сектор." data-en="Deep-dive discussions for specific industries — maritime, biotech, tourism, public sector.">Задълбочени дискусии за конкретни индустрии — морска, биотех, туризъм, публичен сектор.</p>
+          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство." data-en="Marine technologies, biotechnologies, smart agriculture, tourism, industry/manufacturing.">Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство.</p>
         </div>
       </div>
     </div>
@@ -428,9 +438,9 @@ footer{padding-bottom:70px!important}
     <p class="section-subtitle text-center" data-bg="Основна програма + Секторни теми, работещи паралелно." data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.</p>
 
     <div class="day-tabs">
-      <button class="day-tab active" data-day="1" data-bg="5 октомври" data-en="5 October">5 октомври</button>
-      <button class="day-tab" data-day="2" data-bg="6 октомври" data-en="6 October">6 октомври</button>
-      <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
+      <button class="day-tab active" data-day="1" data-bg="Ден 1" data-en="Day 1">Ден 1</button>
+      <button class="day-tab" data-day="2" data-bg="Ден 2" data-en="Day 2">Ден 2</button>
+      <button class="day-tab" data-day="3" data-bg="Ден 3" data-en="Day 3">Ден 3</button>
     </div>
 
     <!-- Day 1 -->
@@ -538,6 +548,11 @@ footer{padding-bottom:70px!important}
         <h3 data-bg="Парти" data-en="Party">Парти</h3>
         <p class="event-meta" data-bg="6 октомври вечер" data-en="Oct 6 evening">6 октомври вечер</p>
         <p data-bg="Парти за нетуъркинг и забавление." data-en="Party for networking and fun.">Парти за нетуъркинг и забавление.</p>
+      </div>
+      <div class="event-card animate-on-scroll">
+        <h3 data-bg="Училище за успех" data-en="Success School">Училище за успех</h3>
+        <p class="event-meta" data-bg="7 октомври" data-en="Oct 7">7 октомври</p>
+        <p data-bg="Практически уъркшопи, менторство и обучение." data-en="Hands-on workshops, mentorship and training.">Практически уъркшопи, менторство и обучение.</p>
       </div>
     </div>
   </div>
