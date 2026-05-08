@@ -1138,27 +1138,32 @@ footer{padding-bottom:70px!important}
   // === Active Nav Link (scroll spy) ===
   (function() {
     var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    var sections = [];
+    var linkMap = {};
     navLinks.forEach(function(link) {
       var id = link.getAttribute('href').substring(1);
-      var sec = document.getElementById(id);
-      if (sec) sections.push({ el: sec, link: link });
+      linkMap[id] = link;
     });
-    if (sections.length) {
-      window.addEventListener('scroll', function() {
-        var scrollPos = window.scrollY + 120;
-        var active = null;
-        sections.forEach(function(s) {
-          if (s.el.offsetTop <= scrollPos) active = s;
-        });
-        navLinks.forEach(function(l) { l.classList.remove('active'); });
-        document.querySelectorAll('.nav-links a').forEach(function(l) {
-          if (!l.getAttribute('href').startsWith('#')) l.classList.remove('active');
-        });
-        if (active) active.link.classList.add('active');
-      });
-      window.dispatchEvent(new Event('scroll'));
+    function setActive(id) {
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      if (linkMap[id]) linkMap[id].classList.add('active');
     }
+    var sectionIds = Object.keys(linkMap);
+    if (!sectionIds.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+    // Fallback: at bottom of page activate last section
+    window.addEventListener('scroll', function() {
+      if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 10) {
+        setActive(sectionIds[sectionIds.length - 1]);
+      }
+    }, { passive: true });
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
   })();
 
   var btt = document.getElementById('bstf-btt');
