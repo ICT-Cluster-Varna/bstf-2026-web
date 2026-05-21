@@ -68,6 +68,8 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .hero-bottom-logos{display:flex;flex-direction:column;align-items:center;gap:14px;flex-shrink:0}
 .hero-bottom-logos .logo-varna{height:80px;width:auto}
 .hero-bottom-logos .logo-bsmepa{height:80px;width:auto}
+.hero-right-coorg{display:flex;flex-direction:column;align-items:flex-end;gap:14px}.logo-brainpp-mob,.logo-arcfund-mob{display:none}
+.hero-right-coorg .logo-brainpp{height:38px;width:auto;max-width:240px}.hero-right-coorg .logo-arcfund{height:23px;width:auto;max-width:200px}
 .hero-topics{font-size:1.05rem;color:var(--teal);font-weight:500;margin-bottom:4px;letter-spacing:0.02em}
 .hero-tagline{font-family:'Space Grotesk',sans-serif;font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1.2}
 .hero-tagline sup{font-size:0.55em;vertical-align:super}
@@ -217,7 +219,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
 .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.streams-grid{grid-template-columns:repeat(3,1fr)}.speakers-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:auto}.hero-inner{padding:20px 20px 0;position:relative}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:left;gap:8px}.hero-left{text-align:left;order:1;padding-right:90px}.hero-right{order:2;text-align:left;align-items:flex-start;height:auto;position:static}.hero-right-top{align-items:flex-start;gap:2px}.hero-right-top .logo-ict{position:absolute;top:20px;right:20px;height:120px;width:auto;margin:0;display:block}.hero-date-lg{font-size:1.2rem}.hero-center{order:3;margin:0 -20px}.hero-center img{max-width:100%;width:100%;margin:0 auto}.hero-bottom{flex-direction:column;align-items:flex-start;text-align:left;padding:10px 20px 20px;margin-top:0}.hero-bottom-logos{flex-direction:row;align-items:center;margin-top:12px;gap:16px}.hero-bottom-logos .logo-varna{height:44px}.hero-bottom-logos .logo-bsmepa{height:36px}.hero-tagline{font-size:1.3rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}}
+@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:auto}.hero-inner{padding:20px 20px 0;position:relative}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:left;gap:8px}.hero-left{text-align:left;order:1;padding-right:90px}.hero-right{order:2;text-align:left;align-items:flex-start;height:auto;position:static}.hero-right-top{align-items:flex-start;gap:2px}.hero-right-top .logo-ict{position:absolute;top:20px;right:20px;height:120px;width:auto;margin:0;display:block}.hero-right-coorg{display:none}.logo-brainpp-mob{display:block;height:22px;width:auto}.logo-arcfund-mob{display:block;height:14px;width:auto}.hall-row{flex-direction:column;gap:8px;align-items:stretch}.hall-row>div{flex:none}.hall-row>div>p{text-align:center}.hero-date-lg{font-size:1.2rem}.hero-center{order:3;margin:0 -20px}.hero-center img{max-width:100%;width:100%;margin:0 auto}.hero-bottom{flex-direction:column;align-items:flex-start;text-align:left;padding:10px 20px 20px;margin-top:0}.hero-bottom-logos{flex-direction:row;align-items:center;margin-top:12px;gap:16px}.hero-bottom-logos .logo-varna{height:44px}.hero-bottom-logos .logo-bsmepa{height:36px}.hero-tagline{font-size:1.3rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}.streams-inner-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}#cta-banner h2{font-size:1.5rem!important;line-height:1.3}#speakers h2{font-size:1.75rem!important}.venue-inner-content{padding:0 20px!important;min-height:auto!important}.hero-left{padding-right:110px!important}.hero h1{font-size:2.1rem!important}.hero-right-top .logo-ict{height:100px!important}}
 @media(min-width:769px){#bstf-mob-cta{display:none !important}}
 .hero-left{text-align:left}
 
@@ -334,6 +336,10 @@ footer{padding-bottom:70px!important}
           <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
           <img src="images/ict_cluster_logo.png" alt="ICT Cluster Varna" class="logo-ict">
         </div>
+        <div class="hero-right-coorg">
+          <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp">
+          <img src="images/ARCF_logo.svg" alt="ARC Fund" class="logo-arcfund">
+        </div>
       </div>
     </div>
     <!-- Bottom: Tagline + Logos -->
@@ -343,6 +349,8 @@ footer{padding-bottom:70px!important}
         <p class="hero-tagline" data-bg="Технологии от 7<sup>-мо</sup> поколение без граници" data-en="7<sup>th</sup> Generation Technologies Without Borders">7<sup>th</sup> Generation Technologies Without Borders</p>
       </div>
       <div class="hero-bottom-logos">
+        <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp-mob">
+        <img src="images/ARCF_logo.svg" alt="ARC Fund" class="logo-arcfund-mob">
         <img src="images/varna_coat.png" alt="Община Варна" class="logo-varna">
         <img src="images/bsmepa_logo.png" alt="ИАНМСП" class="logo-bsmepa">
       </div>
@@ -363,32 +371,48 @@ footer{padding-bottom:70px!important}
 <!-- SECTION 4: Halls -->
 <section class="halls-section">
   <div class="container">
-    <div style="display:flex;gap:60px;align-items:flex-start">
-      <div style="flex:1">
-        <h2 class="section-title animate-on-scroll" data-bg="Три зали. Три направления." data-en="Three halls. Three tracks.">Три зали. Три направления.</h2>
-        <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:480px" data-bg="Зала &bdquo;България&ldquo; е основната сцена за хоризонтални технологии — AI, IoT, роботика, киберсигурност. Зала &bdquo;Черно море&ldquo; и фоайето са домакин на изложението и стартъп зоната. Зала &bdquo;Варна&ldquo; приема паралелната програма със секторни теми." data-en="Hall Bulgaria is the main stage for horizontal technologies — AI, IoT, robotics, cybersecurity. Hall Cherno More and the foyer host the expo and startup zone. Hall Varna runs the parallel programme with sector topics.">Зала „България" е основната сцена за хоризонтални технологии — AI, IoT, роботика, киберсигурност. Зала „Черно море" и фоайето са домакин на изложението и стартъп зоната. Зала „Варна" приема паралелната програма със секторни теми.</p>
+    <h2 class="section-title animate-on-scroll" data-bg="Три зали. Три направления." data-en="Three halls. Three tracks.">Три зали. Три направления.</h2>
+    <div style="display:flex;flex-direction:column;gap:24px;margin-top:32px">
+      <div class="hall-row" style="display:flex;gap:60px;align-items:center">
+        <div style="flex:1">
+          <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px" data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала „България"</p>
+          <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0" data-bg="Основната сцена за хоризонтални технологии — AI, IoT, роботика, киберсигурност." data-en="The main stage for horizontal technologies — AI, IoT, robotics, cybersecurity.">Основната сцена за хоризонтални технологии — AI, IoT, роботика, киберсигурност.</p>
+        </div>
+        <div style="flex:1">
+          <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+            <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
+              <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            </div>
+            <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center" data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение." data-en="AI, IoT, robotics, cybersecurity and other broad-application technologies.">AI, IoT, роботизация, киберсигурност и други технологии с широко приложение.</p>
+          </div>
+        </div>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:24px">
-        <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
-            <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;България&ldquo; — хоризонтални теми" data-en="Hall Bulgaria — Horizontal Topics">Зала „България" — хоризонтални теми</h3>
-          </div>
-          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение." data-en="AI, IoT, robotics, cybersecurity and other broad-application technologies.">AI, IoT, роботизация, киберсигурност и други технологии с широко приложение.</p>
+      <div class="hall-row" style="display:flex;gap:60px;align-items:center">
+        <div style="flex:1">
+          <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px" data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала „Черно море"</p>
+          <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0" data-bg="Заедно с фоайето — домакин на изложението и стартъп зоната." data-en="Together with the foyer — hosting the expo and startup zone.">Заедно с фоайето — домакин на изложението и стартъп зоната.</p>
         </div>
-        <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
-            <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Черно море&ldquo; + фоайе — експо зона" data-en="Hall Cherno More + Foyer — Expo Zone">Зала „Черно море" + фоайе — експо зона</h3>
+        <div style="flex:1">
+          <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+            <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
+              <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            </div>
+            <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center" data-bg="Фирми изложители и секция за стартъпи — демонстрации, контакти и партньорства." data-en="Company exhibitors and startup section — demos, contacts and partnerships.">Фирми изложители и секция за стартъпи — демонстрации, контакти и партньорства.</p>
           </div>
-          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Фирми изложители и секция за стартъпи — демонстрации, контакти и партньорства." data-en="Company exhibitors and startup section — demos, contacts and partnerships.">Фирми изложители и секция за стартъпи — демонстрации, контакти и партньорства.</p>
         </div>
-        <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
-            <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0" data-bg="Зала &bdquo;Варна&ldquo; — вертикални теми (секторна специализация)" data-en="Hall Varna — Vertical Topics (Sector Specialization)">Зала „Варна" — вертикални теми (секторна специализация)</h3>
+      </div>
+      <div class="hall-row" style="display:flex;gap:60px;align-items:center">
+        <div style="flex:1">
+          <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px" data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</p>
+          <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0" data-bg="Паралелната програма със секторни и вертикални теми." data-en="The parallel programme with sector and vertical topics.">Паралелната програма със секторни и вертикални теми.</p>
+        </div>
+        <div style="flex:1">
+          <div class="animate-on-scroll hall-card" style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+            <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
+              <div style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            </div>
+            <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center" data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство." data-en="Marine technologies, biotechnologies, smart agriculture, tourism, industry/manufacturing.">Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство.</p>
           </div>
-          <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;padding-left:58px" data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство." data-en="Marine technologies, biotechnologies, smart agriculture, tourism, industry/manufacturing.">Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство.</p>
         </div>
       </div>
     </div>
@@ -400,7 +424,7 @@ footer{padding-bottom:70px!important}
   <div class="container" style="text-align:center">
     <h2 class="section-title text-center" style="font-style:italic" data-bg="8 направления. 3 дни. Максимална стойност." data-en="8 Streams. 3 Days. Maximum Value.">8 направления. 3 дни. Максимална стойност.</h2>
     <p class="section-subtitle text-center" data-bg="Изберете тема и вижте съответните акценти от програмата." data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от програмата.</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:0 auto">
+    <div class="streams-inner-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:0 auto">
       <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
         <img src="images/streams/ai.png" alt="AI" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
         <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</div>
@@ -614,7 +638,7 @@ footer{padding-bottom:70px!important}
 <section class="venue-section" id="venue">
   <div class="venue-bg"></div>
   <div class="venue-overlay"></div>
-  <div style="position:relative;z-index:2;padding:0 48px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between">
+  <div class="venue-inner-content" style="position:relative;z-index:2;padding:0 48px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between">
     <!-- Top row: Title left, Info card right -->
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:60px;flex:1">
       <!-- Left: Title -->
