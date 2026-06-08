@@ -61,14 +61,15 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .hero-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;position:relative;z-index:2;height:100%}
 .hero-right-top{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .hero-right-top .logo-ict{height:200px;width:auto;margin-top:-65px;margin-right:-10px}
+.hero-right-top .logo-mobility-partner{max-width:220px;height:auto;border-radius:8px;margin-top:-55px; margin-right:-20px}
 .hero-date-lg{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:700;color:var(--teal);line-height:1.2}
 .hero-location{font-size:1.05rem;color:var(--text);font-weight:500}
 .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;padding:18px 0 34px;max-width:100%;margin:0 auto;width:100%;margin-top:24px}
 .hero-bottom-left{flex:1}
-.hero-bottom-logos{display:flex;flex-direction:column;align-items:center;gap:14px;flex-shrink:0}
+.hero-bottom-logos{display:flex;flex-direction:column;align-items:center;gap:20px;flex-shrink:0}
 .hero-bottom-logos .logo-varna{height:80px;width:auto}
 .hero-bottom-logos .logo-bsmepa{height:80px;width:auto}
-.hero-right-coorg{display:flex;flex-direction:column;align-items:flex-end;gap:14px}.logo-brainpp-mob,.logo-arcfund-mob{display:none}
+.hero-right-coorg{display:flex;flex-direction:column;align-items:flex-end;gap:55px}.logo-brainpp-mob,.logo-arcfund-mob,.logo-mobility-partner-mob{display:none}
 .hero-right-coorg .logo-brainpp{height:38px;width:auto;max-width:240px}.hero-right-coorg .logo-arcfund{height:23px;width:auto;max-width:200px}
 .hero-topics{font-size:1.05rem;color:var(--teal);font-weight:500;margin-bottom:4px;letter-spacing:0.02em}
 .hero-tagline{font-family:'Space Grotesk',sans-serif;font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1.2}
@@ -134,18 +135,22 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .hall-card h3{font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:8px}
 .hall-card p{font-size:0.9rem;color:var(--text-light)}
 .tickets-section{padding:80px 0;background:var(--light-blue)}
-.tickets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.ticket-card{background:var(--white);border-radius:var(--radius);padding:32px;text-align:center;transition:var(--transition);border:2px solid transparent;position:relative;display:flex;flex-direction:column}
-.ticket-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-
-.ticket-card.active{border-color:var(--teal);box-shadow:0 0 0 3px rgba(44,166,179,0.2)}
-.ticket-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--white);padding:4px 16px;border-radius:50px;font-size:0.75rem;font-weight:600}
-.ticket-card h3{font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:8px}
-.ticket-price{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--teal);margin-bottom:4px}
-.ticket-period{font-size:0.85rem;color:var(--text-light);margin-bottom:20px}
+.tickets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.ticket-card{background:var(--white);border-radius:var(--radius);padding:32px 28px 28px;text-align:center;transition:var(--transition);border:1px solid rgba(44,166,179,0.15);position:relative;display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(11,57,84,0.09)}
+.ticket-card:hover{transform:translateY(-6px);box-shadow:0 14px 48px rgba(11,57,84,0.16)}
+.ticket-card[data-ticket="early-bird"],.ticket-card[data-ticket="vip"]{border:2px solid var(--teal);box-shadow:0 6px 32px rgba(44,166,179,0.18)}
+.ticket-card[data-ticket="early-bird"]:hover,.ticket-card[data-ticket="vip"]:hover{box-shadow:0 16px 52px rgba(44,166,179,0.32)}
+.ticket-card.active{border-color:var(--teal);box-shadow:0 0 0 4px rgba(44,166,179,0.22)}
+.ticket-card:has(.ticket-badge){padding-top:46px}
+.ticket-badge{position:absolute;top:0;left:0;right:0;width:auto;transform:none;background:linear-gradient(90deg,var(--teal) 0%,#1a8a96 100%);color:var(--white);padding:8px 16px 8px 50px;font-size:0.67rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;text-align:center;border-radius:calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;z-index:2;box-shadow:none}
+.ticket-ribbon-corner{position:absolute;top:0;left:0;width:82px;height:82px;overflow:hidden;border-radius:var(--radius) 0 0 0;pointer-events:none;z-index:3}
+.ticket-ribbon-corner span{position:absolute;top:20px;left:-22px;width:110px;background:var(--navy);color:var(--white);font-size:0.58rem;font-weight:700;text-align:center;padding:5px 0;transform:rotate(-45deg);letter-spacing:0.07em;text-transform:uppercase;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
+.ticket-card h3{font-size:1.25rem;font-weight:700;color:var(--navy);margin-top:22px;margin-bottom:6px}
+.ticket-price{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700;color:var(--teal);margin-bottom:4px}
+.ticket-period{font-size:0.82rem;color:var(--text-light);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--light-gray)}
 .ticket-features{text-align:left;margin-bottom:24px;flex:1}
-.ticket-features li{padding:8px 0;font-size:0.9rem;color:var(--text);border-bottom:1px solid var(--light-gray);display:flex;align-items:center;gap:8px}
-.ticket-features li::before{content:'\2713';color:var(--teal);font-weight:700}
+.ticket-features li{padding:7px 0;font-size:0.88rem;color:var(--text);border-bottom:1px solid var(--light-gray);display:flex;align-items:center;gap:8px}
+.ticket-features li::before{content:'\2713';color:var(--teal);font-weight:700;flex-shrink:0}
 .selected-badge{display:none;position:absolute;top:16px;right:16px;background:var(--teal);color:var(--white);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:600}
 .ticket-card.active .selected-badge{display:block}
 .side-events-section{padding:80px 0;background:var(--white)}
@@ -219,7 +224,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
 .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.streams-grid{grid-template-columns:repeat(3,1fr)}.speakers-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:auto}.hero-inner{padding:20px 20px 0;position:relative}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:left;gap:8px}.hero-left{text-align:left;order:1;padding-right:90px}.hero-right{order:2;text-align:left;align-items:flex-start;height:auto;position:static}.hero-right-top{align-items:flex-start;gap:2px}.hero-right-top .logo-ict{position:absolute;top:20px;right:20px;height:120px;width:auto;margin:0;display:block}.hero-right-coorg{display:none}.logo-brainpp-mob{display:block;height:22px;width:auto}.logo-arcfund-mob{display:block;height:14px;width:auto}.hall-row{flex-direction:column;gap:8px;align-items:stretch}.hall-row>div{flex:none}.hall-row>div>p{text-align:center}.hero-date-lg{font-size:1.2rem}.hero-center{order:3;margin:0 -20px}.hero-center img{max-width:100%;width:100%;margin:0 auto}.hero-bottom{flex-direction:column;align-items:flex-start;text-align:left;padding:10px 20px 20px;margin-top:0}.hero-bottom-logos{flex-direction:row;align-items:center;margin-top:12px;gap:16px}.hero-bottom-logos .logo-varna{height:44px}.hero-bottom-logos .logo-bsmepa{height:36px}.hero-tagline{font-size:1.3rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}.streams-inner-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}#cta-banner h2{font-size:1.5rem!important;line-height:1.3}#speakers h2{font-size:1.75rem!important}.venue-inner-content{padding:0 20px!important;min-height:auto!important}.hero-left{padding-right:110px!important}.hero h1{font-size:2.1rem!important}.hero-right-top .logo-ict{height:100px!important}}
+@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:auto}.hero-inner{padding:20px 20px 0;position:relative}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:left;gap:8px}.hero-left{text-align:left;order:1;padding-right:90px}.hero-right{order:2;text-align:left;align-items:flex-start;height:auto;position:static}.hero-right-top{align-items:flex-start;gap:2px}.hero-right-top .logo-ict{position:absolute;top:20px;right:20px;height:120px;width:auto;margin:0;display:block}.hero-right-coorg{display:none}.logo-brainpp-mob{display:block;height:22px;width:auto}.logo-arcfund-mob{display:block;height:14px;width:auto}.hall-row{flex-direction:column;gap:8px;align-items:stretch}.hall-row>div{flex:none}.hall-row>div>p{text-align:center}.hero-date-lg{font-size:1.2rem}.hero-center{order:3;margin:0 -20px}.hero-center img{max-width:100%;width:100%;margin:0 auto}.hero-bottom{flex-direction:column;align-items:flex-start;text-align:left;padding:10px 20px 20px;margin-top:0}.logo-mobility-partner{display:none}.logo-mobility-partner-mob{display:block;height:36px;width:auto}.hero-bottom-logos{flex-direction:row;align-items:center;margin-top:12px;gap:12px;flex-wrap:wrap;justify-content:flex-start}.hero-bottom-logos .logo-varna{height:44px}.hero-bottom-logos .logo-bsmepa{height:36px}.hero-tagline{font-size:1.3rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}.streams-inner-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}#cta-banner h2{font-size:1.5rem!important;line-height:1.3}#speakers h2{font-size:1.75rem!important}.venue-inner-content{padding:0 20px!important;min-height:auto!important}.hero-left{padding-right:110px!important}.hero h1{font-size:2.1rem!important}.hero-right-top .logo-ict{height:100px!important}}
 @media(min-width:769px){#bstf-mob-cta{display:none !important}}
 .hero-left{text-align:left}
 
@@ -335,6 +340,7 @@ footer{padding-bottom:70px!important}
           <div class="hero-date-lg" data-bg="5 – 7 ОКТОМВРИ 2026" data-en="5 – 7 OCTOBER 2026">5 – 7 OCTOBER 2026</div>
           <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
           <img src="images/ict_cluster_logo.png" alt="ICT Cluster Varna" class="logo-ict">
+          <img src="images/mobility-partner.png" alt="Mobility Partner" class="logo-mobility-partner">
         </div>
         <div class="hero-right-coorg">
           <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp">
@@ -351,6 +357,7 @@ footer{padding-bottom:70px!important}
       <div class="hero-bottom-logos">
         <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp-mob">
         <img src="images/ARCF_logo.svg" alt="ARC Fund" class="logo-arcfund-mob">
+        <img src="images/mobility-partner.png" alt="Mobility Partner" class="logo-mobility-partner-mob">
         <img src="images/varna_coat.png" alt="Община Варна" class="logo-varna">
         <img src="images/bsmepa_logo.png" alt="ИАНМСП" class="logo-bsmepa">
       </div>
@@ -698,6 +705,7 @@ footer{padding-bottom:70px!important}
     <div class="tickets-grid" style="grid-template-columns:repeat(4,1fr)">
       <!-- Early Bird -->
       <div class="ticket-card animate-on-scroll" data-ticket="early-bird">
+        <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-badge" data-bg="Най-изгоден" data-en="Best Value">Най-изгоден</div>
         <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>Early Bird</h3>
@@ -714,6 +722,7 @@ footer{padding-bottom:70px!important}
 
       <!-- Standard (Full Event) -->
       <div class="ticket-card animate-on-scroll" data-ticket="standard">
+        <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>Standard (Full Event)</h3>
         <div class="ticket-price">&euro;199</div>
@@ -728,6 +737,7 @@ footer{padding-bottom:70px!important}
 
       <!-- VIP -->
       <div class="ticket-card animate-on-scroll" data-ticket="vip">
+        <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-badge" data-bg="Популярен" data-en="Popular">Популярен</div>
         <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>VIP</h3>
@@ -743,6 +753,7 @@ footer{padding-bottom:70px!important}
 
       <!-- ULTRA VIP -->
       <div class="ticket-card animate-on-scroll" data-ticket="ultra-vip">
+        <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>ULTRA VIP</h3>
         <div class="ticket-price">&euro;749</div>
