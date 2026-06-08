@@ -58,17 +58,17 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .hero-left h1 .title-light{color:var(--teal);font-weight:300;font-size:3.8rem;display:block;margin-bottom:8px;text-transform:none;letter-spacing:0.01em;font-style:italic}
 .hero-center{display:flex;align-items:flex-start;justify-content:center;position:relative;margin:-20px -40px 0}
 .hero-center img{width:70%;max-width:none;height:auto}
-.hero-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;position:relative;z-index:2;height:100%}
+.hero-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;position:relative;z-index:2;height:100%}
 .hero-right-top{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .hero-right-top .logo-ict{height:200px;width:auto;margin-top:-65px;margin-right:-10px}
-.hero-right-top .logo-mobility-partner{max-width:220px;height:auto;border-radius:8px;margin-top:-55px; margin-right:-20px}
-.hero-date-lg{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:700;color:var(--teal);line-height:1.2}
+.hero-bottom-logos .logo-mobility-partner{max-width:220px;height:auto;border-radius:8px;}
+  .hero-date-lg{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:700;color:var(--teal);line-height:1.2}
 .hero-location{font-size:1.05rem;color:var(--text);font-weight:500}
-.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;padding:18px 0 34px;max-width:100%;margin:0 auto;width:100%;margin-top:24px}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:flex-start;padding:18px 0 34px;max-width:100%;margin:0 auto;width:100%;margin-top:24px}
 .hero-bottom-left{flex:1}
 .hero-bottom-logos{display:flex;flex-direction:column;align-items:center;gap:20px;flex-shrink:0}
-.hero-bottom-logos .logo-varna{height:80px;width:auto}
-.hero-bottom-logos .logo-bsmepa{height:80px;width:auto}
+.hero-bottom-logos .logo-varna{height:80px;width:auto; margin-left:60px}
+.hero-bottom-logos .logo-bsmepa{height:80px;width:auto; margin-left:60px}
 .hero-right-coorg{display:flex;flex-direction:column;align-items:flex-end;gap:55px}.logo-brainpp-mob,.logo-arcfund-mob,.logo-mobility-partner-mob{display:none}
 .hero-right-coorg .logo-brainpp{height:38px;width:auto;max-width:240px}.hero-right-coorg .logo-arcfund{height:23px;width:auto;max-width:200px}
 .hero-topics{font-size:1.05rem;color:var(--teal);font-weight:500;margin-bottom:4px;letter-spacing:0.02em}
@@ -224,7 +224,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
 .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.streams-grid{grid-template-columns:repeat(3,1fr)}.speakers-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:auto}.hero-inner{padding:20px 20px 0;position:relative}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:left;gap:8px}.hero-left{text-align:left;order:1;padding-right:90px}.hero-right{order:2;text-align:left;align-items:flex-start;height:auto;position:static}.hero-right-top{align-items:flex-start;gap:2px}.hero-right-top .logo-ict{position:absolute;top:20px;right:20px;height:120px;width:auto;margin:0;display:block}.hero-right-coorg{display:none}.logo-brainpp-mob{display:block;height:22px;width:auto}.logo-arcfund-mob{display:block;height:14px;width:auto}.hall-row{flex-direction:column;gap:8px;align-items:stretch}.hall-row>div{flex:none}.hall-row>div>p{text-align:center}.hero-date-lg{font-size:1.2rem}.hero-center{order:3;margin:0 -20px}.hero-center img{max-width:100%;width:100%;margin:0 auto}.hero-bottom{flex-direction:column;align-items:flex-start;text-align:left;padding:10px 20px 20px;margin-top:0}.logo-mobility-partner{display:none}.logo-mobility-partner-mob{display:block;height:36px;width:auto}.hero-bottom-logos{flex-direction:row;align-items:center;margin-top:12px;gap:12px;flex-wrap:wrap;justify-content:flex-start}.hero-bottom-logos .logo-varna{height:44px}.hero-bottom-logos .logo-bsmepa{height:36px}.hero-tagline{font-size:1.3rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}.streams-inner-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}#cta-banner h2{font-size:1.5rem!important;line-height:1.3}#speakers h2{font-size:1.75rem!important}.venue-inner-content{padding:0 20px!important;min-height:auto!important}.hero-left{padding-right:110px!important}.hero h1{font-size:2.1rem!important}.hero-right-top .logo-ict{height:100px!important}}
+@media(max-width:768px){.nav-links{display:none !important}.mobile-menu-btn{display:flex}.hero{height:auto;min-height:auto}.hero-inner{padding:20px 20px 0;position:relative}.hero h1{font-size:2.5rem}.hero-left h1 .title-light{font-size:1.6rem}.hero-content{grid-template-columns:1fr;text-align:left;gap:8px}.hero-left{text-align:left;order:1;padding-right:90px}.hero-right{order:2;text-align:left;align-items:flex-start;height:auto;position:static}.hero-right-top{align-items:flex-start;gap:2px}.hero-right-top .logo-ict{position:absolute;top:20px;right:20px;height:120px;width:auto;margin:0;display:block}.hero-right-coorg{display:none}.logo-brainpp-mob{display:block;height:22px;width:auto}.logo-arcfund-mob{display:block;height:14px;width:auto}.hall-row{flex-direction:column;gap:8px;align-items:stretch}.hall-row>div{flex:none}.hall-row>div>p{text-align:center}.hero-date-lg{font-size:1.2rem}.hero-center{order:3;margin:0 -20px}.hero-center img{max-width:100%;width:100%;margin:0 auto}.hero-bottom{flex-direction:column;align-items:flex-start;text-align:left;padding:10px 20px 20px;margin-top:0}.logo-mobility-partner{display:none}.logo-mobility-partner-mob{display:block;height:36px;width:auto}.hero-bottom-logos{flex-direction:row;align-items:center;margin-top:12px;width:100%;justify-content:space-evenly;flex-wrap:nowrap;gap:0}.hero-bottom-logos .logo-varna{height:44px;margin-left:0}.hero-bottom-logos .logo-bsmepa{height:36px;margin-left:0}.hero-tagline{font-size:1.3rem}.section-title{font-size:1.75rem}.about-grid,.eco-grid,.expo-grid,.venue-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.streams-grid{grid-template-columns:repeat(2,1fr)}.speakers-grid{grid-template-columns:repeat(2,1fr)}.halls-grid{grid-template-columns:1fr}.tickets-grid{grid-template-columns:1fr}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}#bstf-btt{bottom:5rem}.streams-inner-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}#cta-banner h2{font-size:1.5rem!important;line-height:1.3}#speakers h2{font-size:1.75rem!important}.venue-inner-content{padding:0 20px!important;min-height:auto!important}.hero-left{padding-right:110px!important}.hero h1{font-size:2.1rem!important}.hero-right-top .logo-ict{height:100px!important}}
 @media(min-width:769px){#bstf-mob-cta{display:none !important}}
 .hero-left{text-align:left}
 
@@ -340,11 +340,18 @@ footer{padding-bottom:70px!important}
           <div class="hero-date-lg" data-bg="5 – 7 ОКТОМВРИ 2026" data-en="5 – 7 OCTOBER 2026">5 – 7 OCTOBER 2026</div>
           <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
           <img src="images/ict_cluster_logo.png" alt="ICT Cluster Varna" class="logo-ict">
-          <img src="images/mobility-partner.png" alt="Mobility Partner" class="logo-mobility-partner">
         </div>
         <div class="hero-right-coorg">
           <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp">
           <img src="images/ARCF_logo.svg" alt="ARC Fund" class="logo-arcfund">
+        </div>
+        <div class="hero-bottom-logos" style="margin-top:60px">
+          <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp-mob">
+          <img src="images/ARCF_logo.svg" alt="ARC Fund" class="logo-arcfund-mob">
+          <img src="images/varna_coat.png" alt="Община Варна" class="logo-varna">
+          <img src="images/bsmepa_logo.png" alt="ИАНМСП" class="logo-bsmepa">
+          <img src="images/mobility-partner.png" alt="Mobility Partner" class="logo-mobility-partner-mob">
+          <img src="images/mobility-partner.png" alt="Mobility Partner" class="logo-mobility-partner">
         </div>
       </div>
     </div>
@@ -353,13 +360,6 @@ footer{padding-bottom:70px!important}
       <div class="hero-bottom-left">
         <p class="hero-topics" data-bg="Изкуствен интелект | Умен град | Транспорт на бъдещето" data-en="Artificial Intelligence | Smart City | Transport Of The Future">Artificial Intelligence | Smart City | Transport Of The Future</p>
         <p class="hero-tagline" data-bg="Технологии от 7<sup>-мо</sup> поколение без граници" data-en="7<sup>th</sup> Generation Technologies Without Borders">7<sup>th</sup> Generation Technologies Without Borders</p>
-      </div>
-      <div class="hero-bottom-logos">
-        <img src="images/Brain++_logo.svg" alt="Brain++" class="logo-brainpp-mob">
-        <img src="images/ARCF_logo.svg" alt="ARC Fund" class="logo-arcfund-mob">
-        <img src="images/mobility-partner.png" alt="Mobility Partner" class="logo-mobility-partner-mob">
-        <img src="images/varna_coat.png" alt="Община Варна" class="logo-varna">
-        <img src="images/bsmepa_logo.png" alt="ИАНМСП" class="logo-bsmepa">
       </div>
     </div>
   </div>
