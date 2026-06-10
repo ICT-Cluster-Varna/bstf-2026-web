@@ -151,8 +151,6 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .ticket-features{text-align:left;margin-bottom:24px;flex:1}
 .ticket-features li{padding:7px 0;font-size:0.88rem;color:var(--text);border-bottom:1px solid var(--light-gray);display:flex;align-items:center;gap:8px}
 .ticket-features li::before{content:'\2713';color:var(--teal);font-weight:700;flex-shrink:0}
-.selected-badge{display:none;position:absolute;top:16px;right:16px;background:var(--teal);color:var(--white);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:600}
-.ticket-card.active .selected-badge{display:block}
 .side-events-section{padding:80px 0;background:var(--white)}
 .events-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .event-card{background:var(--light-gray);border-radius:var(--radius);padding:32px;transition:var(--transition)}
@@ -728,7 +726,6 @@ footer{padding-bottom:70px!important}
       <div class="ticket-card animate-on-scroll" data-ticket="early-bird">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-badge" data-bg="Най-изгоден" data-en="Best Value">Най-изгоден</div>
-        <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>Early Bird</h3>
         <div class="ticket-price">&euro;199</div>
         <div class="ticket-period" data-bg="Валидна до края на април" data-en="Valid until end of April">Валидна до края на април</div>
@@ -744,7 +741,6 @@ footer{padding-bottom:70px!important}
       <!-- Standard (Full Event) -->
       <div class="ticket-card animate-on-scroll" data-ticket="standard">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
-        <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>Standard (Full Event)</h3>
         <div class="ticket-price">&euro;199</div>
         <div class="ticket-period" data-bg="Стандартна цена" data-en="Standard price">Стандартна цена</div>
@@ -760,7 +756,6 @@ footer{padding-bottom:70px!important}
       <div class="ticket-card animate-on-scroll" data-ticket="vip">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-badge" data-bg="Популярен" data-en="Popular">Популярен</div>
-        <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>VIP</h3>
         <div class="ticket-price">&euro;399</div>
         <div class="ticket-period" data-bg="Ограничен брой" data-en="Limited availability">Ограничен брой</div>
@@ -775,7 +770,6 @@ footer{padding-bottom:70px!important}
       <!-- ULTRA VIP -->
       <div class="ticket-card animate-on-scroll" data-ticket="ultra-vip">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
-        <div class="selected-badge" data-bg="Избрано" data-en="Selected">Избрано</div>
         <h3>ULTRA VIP</h3>
         <div class="ticket-price">&euro;749</div>
         <div class="ticket-period" data-bg="Ограничен брой" data-en="Limited availability">Ограничен брой</div>
