@@ -2275,24 +2275,47 @@
       const img = new Image();
       img.onload = () => {
         const cw = 512, ch = 512;
-        const cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
-        const ctx = cv.getContext('2d');
-        ctx.fillStyle = '#071629'; ctx.fillRect(0, 0, cw, ch);
-        ctx.strokeStyle = '#1a6bd0'; ctx.lineWidth = 6; ctx.strokeRect(4, 4, cw - 8, ch - 8);
-        const lh = 360;
-        const lw = Math.round(lh / img.height * img.width);
-        ctx.drawImage(img, (cw - Math.min(lw, cw - 16)) / 2, 70, Math.min(lw, cw - 16), lh);
-        const tex = new THREE.CanvasTexture(cv);
-        tex.anisotropy = 16;
-        tex.needsUpdate = true;
-        const mat = new THREE.MeshLambertMaterial({
-          map: tex, emissiveMap: tex,
-          color: 0xffffff,
-          emissive: new THREE.Color(.04, .10, .22), emissiveIntensity: 1.1,
-          roughness: .2, metalness: 0.1
-        });
+        function makeLogoCv(rotRad) {
+          const cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
+          const ctx = cv.getContext('2d');
+          ctx.fillStyle = '#071629'; ctx.fillRect(0, 0, cw, ch);
+          ctx.strokeStyle = '#1a6bd0'; ctx.lineWidth = 6; ctx.strokeRect(4, 4, cw - 8, ch - 8);
+          const lh = 360;
+          const lw = Math.round(lh / img.height * img.width);
+          if (rotRad) {
+            ctx.save();
+            ctx.translate(cw / 2, ch / 2);
+            ctx.rotate(rotRad);
+            ctx.translate(-cw / 2, -ch / 2);
+          }
+          ctx.drawImage(img, (cw - Math.min(lw, cw - 16)) / 2, 70, Math.min(lw, cw - 16), lh);
+          if (rotRad) ctx.restore();
+          return cv;
+        }
+        function makeMat(cv) {
+          const tex = new THREE.CanvasTexture(cv);
+          tex.anisotropy = 16; tex.needsUpdate = true;
+          return new THREE.MeshLambertMaterial({
+            map: tex, emissiveMap: tex, color: 0xffffff,
+            emissive: new THREE.Color(.04, .10, .22), emissiveIntensity: 1.1,
+            roughness: .2, metalness: 0.1
+          });
+        }
+        const mat = makeMat(makeLogoCv(0));
+        const matTopLeft  = makeMat(makeLogoCv(Math.PI / 2));   // stands 27-32: face left
+        const matTopRight = makeMat(makeLogoCv(-Math.PI / 2));  // stands 20-23, 33-35: face right
+        const TOP_LEFT  = new Set([27, 28, 29, 30, 31, 32]);
+        const TOP_RIGHT = new Set([20, 21, 22, 23, 33, 34, 35]);
         for (const m of freeMeshes) {
-          m.material = mat;
+          const n = m.userData.n;
+          if (TOP_LEFT.has(n)) {
+            // BoxGeometry face order: +X, -X, +Y(top), -Y, +Z, -Z
+            m.material = [mat, mat, matTopLeft, mat, mat, mat];
+          } else if (TOP_RIGHT.has(n)) {
+            m.material = [mat, mat, matTopRight, mat, mat, mat];
+          } else {
+            m.material = mat;
+          }
           if (m.userData.sprite) m.userData.sprite.visible = false;
         }
         markDirty();
@@ -2399,7 +2422,14 @@
       if (multiSel.has(m)) return SEL_EMI;
       return (STATUS_COLORS[m.userData.status] || STATUS_COLORS.free).emi;
     }
-    function repaint() { for (const m of standMeshes) m.material.emissive.setHex(emiFor(m)); markDirty(); }
+    function repaint() {
+      for (const m of standMeshes) {
+        const hex = emiFor(m);
+        if (Array.isArray(m.material)) { for (const mt of m.material) mt.emissive.setHex(hex); }
+        else m.material.emissive.setHex(hex);
+      }
+      markDirty();
+    }
     function select(m) { selected = m; repaint(); showSel(); }
 
     // ---- undo (Ctrl+Z): snapshot positions + scale before each move ----
