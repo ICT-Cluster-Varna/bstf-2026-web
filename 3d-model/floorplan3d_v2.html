@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -820,17 +820,17 @@
 
     <h2>Layers</h2>
     <label><input type="checkbox" id="t_wall" checked><span class="sw" style="background:#d7dde4"></span>Walls</label>
-    <label><input type="checkbox" id="t_env"><span class="sw" style="background:#4fd0c0"></span>Outer envelope</label>
+    <label><input type="checkbox" id="t_env" checked><span class="sw" style="background:#4fd0c0"></span>Outer envelope</label>
     <label><input type="checkbox" id="t_col" checked><span class="sw" style="background:#aeb6c2"></span>Columns</label>
     <label><input type="checkbox" id="t_glaz" checked><span class="sw" style="background:#7fc9ff"></span>Glazing</label>
     <label><input type="checkbox" id="t_furn"><span class="sw" style="background:#c9b58a"></span>Furniture</label>
     <label><input type="checkbox" id="t_strs"><span class="sw" style="background:#c2b39a"></span>Stairs</label>
     <label><input type="checkbox" id="t_door"><span class="sw" style="background:#c98a5e"></span>Doors</label>
-    <label><input type="checkbox" id="t_grid" checked><span class="sw" style="background:#4a6b8a"></span>Grid</label>
+    <label><input type="checkbox" id="t_grid"><span class="sw" style="background:#4a6b8a"></span>Grid</label>
     <label><input type="checkbox" id="t_label"><span class="sw" style="background:#ffe08a"></span>Room labels</label>
     <label><input type="checkbox" id="t_halls" checked><span class="sw" style="background:#00c896"></span>Hall
       names</label>
-    <label><input type="checkbox" id="t_ghostzones" checked><span class="sw"
+    <label><input type="checkbox" id="t_ghostzones"><span class="sw"
         style="background:rgba(209,213,219,0.45);border:1px solid #9ca3af"></span>Призрачни зони</label>
 
     <h2>Избор на стени</h2>
@@ -1470,15 +1470,23 @@
 
     const groups = {};
     groups.wall = wallMeshGroup(clip(DATA.segments.wall), 0, 3.0);
+    // Hide broken wall stubs inside restaurant table zone (world coords: wx -51..-17, wz 1..21.5)
+    for (const m of wallSegMeshes) {
+      const { ax, az, bx, bz } = m.userData;
+      const mx = (ax + bx) * 0.5, mz = (az + bz) * 0.5;
+      if (mx > -44 && mx < -13 && mz > 1.5 && mz < 21) { m.visible = false; }
+    }
+    buildWallDisplayMeshes();
+
     groups.glaz = wallMesh(clip(DATA.segments.glaz), 0, 2.8, new THREE.MeshStandardMaterial({ color: 0x90d8ff, roughness: 0.05, metalness: 0.25, transparent: true, opacity: 0.20, side: THREE.DoubleSide }));
     groups.furn = wallMesh(clip(DATA.segments.furn || []), 0, 0.85, new THREE.MeshStandardMaterial({ color: 0x3a4d60, roughness: 0.70, metalness: 0.10 }));
     groups.strs = wallMesh(clip(DATA.segments.strs), 0, 1.0, new THREE.MeshStandardMaterial({ color: 0x3d5570, roughness: 0.72, metalness: 0.05 }));
     groups.door = wallMesh(clip(DATA.segments.door), 0, 2.2, new THREE.MeshStandardMaterial({ color: 0x1a1208, roughness: 0.50, metalness: 0.18, transparent: true, opacity: 0.88, side: THREE.DoubleSide }));
-    groups.col = colMeshGroup(DATA.columns, 3.8);
+    groups.col = colMeshGroup(DATA.columns, 3.8); groups.col.visible = false;
     groups.env = wallMesh(clip(DATA.segments.env || []), 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, roughness: 0.1, metalness: 0.1, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
     [groups.wall, groups.glaz, groups.furn, groups.strs, groups.door, groups.col, groups.env].forEach(m => scene.add(m));
     groups.wall.visible = true;
-    groups.env.visible = false;
+    groups.env.visible = true;
     groups.furn.visible = false;
     groups.strs.visible = false;
     groups.door.visible = false;
@@ -1487,7 +1495,7 @@
       const pos = []; for (const [x1, y1, x2, y2] of clip(DATA.segments.grid)) pos.push(WX(x1), 0.02, WZ(y1), WX(x2), 0.02, WZ(y2));
       const gg = new THREE.BufferGeometry(); gg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
       groups.grid = new THREE.LineSegments(gg, new THREE.LineBasicMaterial({ color: 0x2a5a9a, transparent: true, opacity: 0.55 }));
-      groups.grid.visible = true; scene.add(groups.grid);
+      groups.grid.visible = false; scene.add(groups.grid);
     }
 
     groups.label = new THREE.Group();
@@ -1733,10 +1741,10 @@
         [-43.1, 5.8, 0.15], [-39.6, 6.3, 0.09], [-36.0, 5.7, 0.05],
         [-32.5, 6.2, -0.04], [-29.0, 5.9, -0.13], [-25.4, 6.4, -0.17], [-21.9, 5.8, -0.09], [-18.8, 6.1, -0.04],
         // row 3
-        [-44.8, 9.2, 0.10], [-41.3, 9.7, 0.06], [-37.7, 9.1, -0.03],
+        [-41.3, 9.7, 0.06], [-37.7, 9.1, -0.03],
         [-34.2, 9.6, 0.08], [-30.6, 9.3, 0.13], [-27.1, 9.8, -0.09], [-23.5, 9.2, -0.14], [-20.0, 9.6, -0.05],
         // row 4
-        [-45.8, 12.8, -0.11], [-42.3, 13.3, -0.07], [-38.8, 12.6, 0.04],
+        [-42.3, 13.3, -0.07], [-38.8, 12.6, 0.04],
         [-35.3, 13.1, 0.10], [-31.8, 12.8, 0.14], [-28.3, 13.3, -0.06],
         [-24.8, 12.9, -0.12], [-21.3, 12.5, -0.05], [-19.6, 13.0, 0.08],
         // row 5
@@ -2172,7 +2180,7 @@
           groups.halls.add(glabel);
         }
       }
-      groups.ghostzones.visible = true;
+      groups.ghostzones.visible = false;
       scene.add(groups.ghostzones);
     })();
 
@@ -3385,3 +3393,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
