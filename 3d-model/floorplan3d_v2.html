@@ -15,7 +15,12 @@
       font-family: system-ui, sans-serif
     }
 
-    #ui, #uiPin, #coordsHud, #meta { display: none !important; }
+    #ui,
+    #uiPin,
+    #coordsHud,
+    #meta {
+      display: none !important;
+    }
 
     #ui {
       position: fixed;
@@ -328,103 +333,326 @@
 
     /* -- Stand popup / side drawer -- */
     #standPopup {
-      position: fixed; top: 0; right: -340px; width: 320px; height: 100%;
-      background: rgba(8,12,22,.96); backdrop-filter: blur(14px);
-      border-left: 1px solid rgba(255,255,255,.10);
-      z-index: 45; transition: right .25s ease;
-      overflow-y: auto; padding: 24px 20px; box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      right: -340px;
+      width: 320px;
+      height: 100%;
+      background: rgba(8, 12, 22, .96);
+      backdrop-filter: blur(14px);
+      border-left: 1px solid rgba(255, 255, 255, .10);
+      z-index: 45;
+      transition: right .25s ease;
+      overflow-y: auto;
+      padding: 24px 20px;
+      box-sizing: border-box;
     }
-    #standPopup.open { right: 0 }
+
+    #standPopup.open {
+      right: 0
+    }
+
     #popupClose {
-      position: absolute; top: 14px; right: 16px;
-      background: none; border: none; color: #8fa1b3;
-      font-size: 22px; cursor: pointer; line-height: 1;
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: #8fa1b3;
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
     }
-    #popupClose:hover { color: #fff }
+
+    #popupClose:hover {
+      color: #fff
+    }
+
     #popup-logo-wrap {
-      width: 100%; min-height: 48px; display: flex;
-      align-items: center; justify-content: center; margin-bottom: 14px;
+      width: 100%;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
     }
-    #popup-stand-num { font-size: 11px; color: #6a8aaa; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px }
-    #popup-name { font-size: 18px; font-weight: 700; color: #e8eef5; margin-bottom: 8px }
-    #popup-desc { font-size: 13px; color: #8fa1b3; line-height: 1.55; margin: 10px 0 }
-    #popup-dims { font-size: 11px; color: #4a6a8a; margin-bottom: 16px }
+
+    #popup-stand-num {
+      font-size: 11px;
+      color: #6a8aaa;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 4px
+    }
+
+    #popup-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e8eef5;
+      margin-bottom: 8px
+    }
+
+    #popup-desc {
+      font-size: 13px;
+      color: #8fa1b3;
+      line-height: 1.55;
+      margin: 10px 0
+    }
+
+    #popup-dims {
+      font-size: 11px;
+      color: #4a6a8a;
+      margin-bottom: 16px
+    }
+
     #popup-cta {
-      display: block; text-align: center; padding: 10px;
-      border-radius: 8px; color: #fff; text-decoration: none;
-      font-size: 13px; font-weight: 600; margin-top: 6px;
+      display: block;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 6px;
     }
-    #popup-cta:hover { opacity: .85 }
+
+    #popup-cta:hover {
+      opacity: .85
+    }
 
     /* -- Floating enter walkthrough button -- */
     #floatEnterWT {
-      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
-      z-index: 20; display: flex; align-items: center; gap: 10px;
-      background: rgba(11,57,84,0.92); border: 1px solid rgba(44,166,179,0.55);
-      backdrop-filter: blur(10px); border-radius: 50px;
-      padding: 13px 32px; cursor: pointer; color: #ffffff;
-      font-size: 14px; font-weight: 600; font-family: system-ui, sans-serif;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(11, 57, 84, 0.92);
+      border: 1px solid rgba(44, 166, 179, 0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 13px 32px;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: system-ui, sans-serif;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     #floatEnterWT:hover {
-      background: rgba(44,166,179,0.92);
+      background: rgba(44, 166, 179, 0.92);
       transform: translateX(-50%) translateY(-3px);
-      box-shadow: 0 8px 32px rgba(44,166,179,0.3);
+      box-shadow: 0 8px 32px rgba(44, 166, 179, 0.3);
     }
-    #floatEnterWT svg { flex-shrink: 0 }
+
+    #floatEnterWT svg {
+      flex-shrink: 0
+    }
 
     /* -- Walkthrough -- */
     #wtExit {
-      display: none; position: fixed; top: 16px; right: 16px; z-index: 60;
-      align-items: center; gap: 8px;
-      background: rgba(10,14,22,.92); border: 1px solid rgba(255,255,255,.15);
-      backdrop-filter: blur(8px); border-radius: 8px;
-      padding: 9px 16px; cursor: pointer; color: #e8eef5;
-      font-size: 13px; font-weight: 600;
+      display: none;
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 60;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 14, 22, .92);
+      border: 1px solid rgba(255, 255, 255, .15);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      padding: 9px 16px;
+      cursor: pointer;
+      color: #e8eef5;
+      font-size: 13px;
+      font-weight: 600;
     }
-    #wtExit:hover { background: rgba(30,40,60,.95) }
+
+    #wtExit:hover {
+      background: rgba(30, 40, 60, .95)
+    }
+
     #wtReticle {
-      display: none; position: fixed;
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 22px; height: 22px; pointer-events: none; z-index: 55;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 22px;
+      height: 22px;
+      pointer-events: none;
+      z-index: 55;
     }
-    #wtReticle::before, #wtReticle::after {
-      content: ''; position: absolute; background: rgba(255,255,255,.7);
+
+    #wtReticle::before,
+    #wtReticle::after {
+      content: '';
+      position: absolute;
+      background: rgba(255, 255, 255, .7);
       border-radius: 2px;
     }
-    #wtReticle::before { width: 2px; height: 100%; left: 50%; transform: translateX(-50%) }
-    #wtReticle::after  { width: 100%; height: 2px; top: 50%;  transform: translateY(-50%) }
-    #btnEnterWT {
-      display: block; width: 100%; margin-top: 8px;
-      background: #1a4a6a; border-color: #2a6a9a; color: #7fd4ff;
+
+    #wtReticle::before {
+      width: 2px;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%)
     }
-    #btnEnterWT:hover { background: #1f5a80 }
-    #wtHint { margin-top:8px; font-size:11px; color:#8fa1b3; line-height:1.5; display:none }
+
+    #wtReticle::after {
+      width: 100%;
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    #btnEnterWT {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      background: #1a4a6a;
+      border-color: #2a6a9a;
+      color: #7fd4ff;
+    }
+
+    #btnEnterWT:hover {
+      background: #1f5a80
+    }
+
+    #wtHint {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #8fa1b3;
+      line-height: 1.5;
+      display: none
+    }
 
     /* -- Legend -- */
     #standLegend {
-      position: fixed; bottom: 36px; right: 16px; z-index: 10;
-      background: rgba(8,12,22,.88); backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,.10); border-radius: 8px;
-      padding: 8px 12px; font-size: 11px; color: #c0d4e8;
+      position: fixed;
+      bottom: 36px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(8, 12, 22, .88);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 11px;
+      color: #c0d4e8;
     }
-    .leg-row { display: flex; align-items: center; gap: 7px; margin: 4px 0 }
-    .leg-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0 }
-    #furnStatus { font-size: 10px; color: #4fd0c0; min-height: 14px; margin-top: 3px; text-align: center }
-    #btnFurnPlace.on { background: #7c3aed; border-color: #7c3aed; color: #fff }
-    #furnType { width: 100%; background: #1d2733; color: #cfe3f2; border: 1px solid rgba(255,255,255,.12); border-radius: 6px; padding: 6px 8px; font-size: 12px; margin-top: 4px; cursor: pointer }
-    #furnType:focus { outline: none; border-color: #6fd3ff }
+
+    .leg-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 4px 0
+    }
+
+    .leg-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    #furnStatus {
+      font-size: 10px;
+      color: #4fd0c0;
+      min-height: 14px;
+      margin-top: 3px;
+      text-align: center
+    }
+
+    #btnFurnPlace.on {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: #fff
+    }
+
+    #furnType {
+      width: 100%;
+      background: #1d2733;
+      color: #cfe3f2;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 12px;
+      margin-top: 4px;
+      cursor: pointer
+    }
+
+    #furnType:focus {
+      outline: none;
+      border-color: #6fd3ff
+    }
 
     /* -- Loading overlay -- */
-    #loadOverlay { position: fixed; inset: 0; z-index: 100; background: linear-gradient(135deg, #0B3954 0%, #10516f 55%, #2CA6B3 170%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; transition: opacity .5s ease; }
-    #loadOverlay.done { opacity: 0; pointer-events: none; }
-    #loadOverlay .lo-logo { font-family: system-ui, sans-serif; font-size: 30px; font-weight: 800; color: #fff; letter-spacing: .02em; }
-    #loadOverlay .lo-logo span { color: #6fd3ff; }
-    #loadOverlay .lo-sub { font-size: 13px; color: rgba(255, 255, 255, .78); }
-    #loadOverlay .lo-spin { width: 42px; height: 42px; border: 3px solid rgba(255, 255, 255, .25); border-top-color: #fff; border-radius: 50%; animation: loSpin .9s linear infinite; }
-    @keyframes loSpin { to { transform: rotate(360deg); } }
-    #loadOverlay .lo-err { display: none; font-size: 13px; color: #ffd3d3; max-width: 300px; text-align: center; line-height: 1.5; }
+    #loadOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, #0B3954 0%, #10516f 55%, #2CA6B3 170%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      transition: opacity .5s ease;
+    }
+
+    #loadOverlay.done {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #loadOverlay .lo-logo {
+      font-family: system-ui, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+
+    #loadOverlay .lo-logo span {
+      color: #6fd3ff;
+    }
+
+    #loadOverlay .lo-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    #loadOverlay .lo-spin {
+      width: 42px;
+      height: 42px;
+      border: 3px solid rgba(255, 255, 255, .25);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: loSpin .9s linear infinite;
+    }
+
+    @keyframes loSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #loadOverlay .lo-err {
+      display: none;
+      font-size: 13px;
+      color: #ffd3d3;
+      max-width: 300px;
+      text-align: center;
+      line-height: 1.5;
+    }
   </style>
 </head>
 
@@ -453,10 +681,14 @@
     <label><input type="checkbox" id="t_snum" checked><span class="sw" style="background:#fff"></span>Show
       numbers</label>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;margin-top:5px;font-size:11px;color:#8fa1b3">
-      <span><span style="display:inline-block;width:9px;height:9px;background:#2ECC71;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Свободен</span>
-      <span><span style="display:inline-block;width:9px;height:9px;background:#7F8C8D;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Зает</span>
-      <span><span style="display:inline-block;width:9px;height:9px;background:#F39C12;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Резервиран</span>
-      <span><span style="display:inline-block;width:9px;height:9px;background:#1F618D;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Свободен</span>
+      <span><span
+          style="display:inline-block;width:9px;height:9px;background:#2ECC71;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Свободен</span>
+      <span><span
+          style="display:inline-block;width:9px;height:9px;background:#7F8C8D;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Зает</span>
+      <span><span
+          style="display:inline-block;width:9px;height:9px;background:#F39C12;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Резервиран</span>
+      <span><span
+          style="display:inline-block;width:9px;height:9px;background:#1F618D;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Свободен</span>
     </div>
     <div class="row"><button id="sMinus">� all</button><span id="scaleVal">100%</span><button id="sPlus">+ all</button>
     </div>
@@ -530,7 +762,8 @@
     <div class="box">
       <div style="font-weight:700;margin-bottom:6px">Stand positions (copy this back to me)</div>
       <div style="font-size:12px;color:#8fa1b3;margin-bottom:8px">Also copied to clipboard &amp; downloaded as
-        <b>stands_export.json</b>.</div>
+        <b>stands_export.json</b>.
+      </div>
       <textarea id="modalTxt" readonly></textarea>
       <div class="r"><button id="copyBtn">Copy again</button><button id="closeBtn">Close</button></div>
     </div>
@@ -566,7 +799,13 @@
   <!-- Walkthrough overlays -->
   <div id="wtExit">⬅ Изход от разходката</div>
   <button id="floatEnterWT">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l-3 3"/><path d="M9 10h6"/><path d="M15 13l3 3"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="5" r="2" />
+      <path d="M12 7v6l-3 3" />
+      <path d="M9 10h6" />
+      <path d="M15 13l3 3" />
+    </svg>
     Разгледай залата 3D
   </button>
   <div id="wtReticle"></div>
@@ -577,7 +816,7 @@
     padding:5px 14px;font:12px/1.6 monospace;color:#6fd3ff;z-index:20;
     pointer-events:none;display:none">X: � &nbsp; Y: �</div>
 
-<script id="furnSave" type="application/json">[]</script>
+  <script id="furnSave" type="application/json">[]</script>
   <script src="bsmepa_logo.js"></script>
   <script src="toprentacar_logo.js"></script>
   <script type="importmap">
@@ -661,8 +900,8 @@
     fill.position.set(-W * 0.4, MAXWD * 0.4, -D * 0.3); scene.add(fill);
 
     // Chandelier point lights (added to scene + ceiling fixture discs when ceiling is ready)
-    const _chandelierPts = [[0,0],[W*0.28,0],[-W*0.28,0],[W*0.10,D*0.22],[-W*0.10,D*0.22],[W*0.10,-D*0.22],[-W*0.10,-D*0.22]];
-    _chandelierPts.forEach(([px,pz]) => {
+    const _chandelierPts = [[0, 0], [W * 0.28, 0], [-W * 0.28, 0], [W * 0.10, D * 0.22], [-W * 0.10, D * 0.22], [W * 0.10, -D * 0.22], [-W * 0.10, -D * 0.22]];
+    _chandelierPts.forEach(([px, pz]) => {
       const pl = new THREE.PointLight(0xffd080, 0.85, MAXWD * 0.75);
       pl.position.set(px, 2.55, pz); scene.add(pl);
     });
@@ -672,50 +911,50 @@
     // -- Spill-pattern rug floor texture ---------------------------------
     // Topographic contour carpet � superposed sine-wave height field
     // produces flowing elevation-line pattern matching the real venue carpet.
-    (function(){
-      const SZ=1024;
-      const fc=document.createElement('canvas'); fc.width=fc.height=SZ;
-      const ctx=fc.getContext('2d');
-      function hf(x,y){
-        const nx=x/SZ, ny=y/SZ;
-        return Math.sin(nx*6.28+ny*2.51+0.70)*0.30
-              +Math.sin(nx*3.14-ny*5.65+1.40)*0.24
-              +Math.sin(nx*9.42+ny*4.71+2.80)*0.17
-              +Math.sin(nx*1.88+ny*8.48+0.35)*0.13
-              +Math.sin(nx*7.54-ny*1.26+4.20)*0.10
-              +Math.sin(nx*4.40+ny*3.30+1.05)*0.06;
+    (function () {
+      const SZ = 1024;
+      const fc = document.createElement('canvas'); fc.width = fc.height = SZ;
+      const ctx = fc.getContext('2d');
+      function hf(x, y) {
+        const nx = x / SZ, ny = y / SZ;
+        return Math.sin(nx * 6.28 + ny * 2.51 + 0.70) * 0.30
+          + Math.sin(nx * 3.14 - ny * 5.65 + 1.40) * 0.24
+          + Math.sin(nx * 9.42 + ny * 4.71 + 2.80) * 0.17
+          + Math.sin(nx * 1.88 + ny * 8.48 + 0.35) * 0.13
+          + Math.sin(nx * 7.54 - ny * 1.26 + 4.20) * 0.10
+          + Math.sin(nx * 4.40 + ny * 3.30 + 1.05) * 0.06;
       }
-      const img=ctx.createImageData(SZ,SZ); const pd=img.data;
-      const CONT=20, LTHK=0.11;
-      for(let y=0;y<SZ;y++) for(let x=0;x<SZ;x++){
-        const v=(hf(x,y)+1)*0.5;
-        const band=(v*CONT)%1.0;
-        const isLine=band<LTHK;
-        const i=(y*SZ+x)*4;
-        if(isLine){
-          pd[i]=32;pd[i+1]=16;pd[i+2]=5;pd[i+3]=225;
+      const img = ctx.createImageData(SZ, SZ); const pd = img.data;
+      const CONT = 20, LTHK = 0.11;
+      for (let y = 0; y < SZ; y++) for (let x = 0; x < SZ; x++) {
+        const v = (hf(x, y) + 1) * 0.5;
+        const band = (v * CONT) % 1.0;
+        const isLine = band < LTHK;
+        const i = (y * SZ + x) * 4;
+        if (isLine) {
+          pd[i] = 32; pd[i + 1] = 16; pd[i + 2] = 5; pd[i + 3] = 225;
         } else {
-          const b=210+Math.round((band/(1-LTHK))*16);
-          pd[i]=b; pd[i+1]=Math.round(b*0.921); pd[i+2]=Math.round(b*0.748); pd[i+3]=255;
+          const b = 210 + Math.round((band / (1 - LTHK)) * 16);
+          pd[i] = b; pd[i + 1] = Math.round(b * 0.921); pd[i + 2] = Math.round(b * 0.748); pd[i + 3] = 255;
         }
       }
-      ctx.putImageData(img,0,0);
-      const rugTex=new THREE.CanvasTexture(fc);
-      rugTex.wrapS=rugTex.wrapT=THREE.RepeatWrapping;
-      rugTex.repeat.set(4,3);
-      const FLOOR_POLYS=[[[27630,700],[102430,700],[103130,-39500],[38030,-39500],[34930,-42800],[35430,-43500],[30430,-43500],[29330,-42400],[29330,-39200],[26230,-36100],[-1270,-36300],[-1270,-9000],[2230,-8900],[5430,-5300],[20030,-5500],[20830,-4700],[23530,-4700],[27530,-1575],[27630,700]],[[-3225,-8575],[32050,-8575],[32050,-45225],[-3225,-45225]]];
-      const floorMat=new THREE.MeshLambertMaterial({map:rugTex,color:0xffffff,emissive:new THREE.Color(0.07,0.055,0.035),side:THREE.DoubleSide});
-      FLOOR_POLYS.forEach((poly,idx)=>{
-        const shape=new THREE.Shape();
-        shape.moveTo(WX(poly[0][0]),-WZ(poly[0][1]));
-        for(let i=1;i<poly.length;i++) shape.lineTo(WX(poly[i][0]),-WZ(poly[i][1]));
+      ctx.putImageData(img, 0, 0);
+      const rugTex = new THREE.CanvasTexture(fc);
+      rugTex.wrapS = rugTex.wrapT = THREE.RepeatWrapping;
+      rugTex.repeat.set(4, 3);
+      const FLOOR_POLYS = [[[27630, 700], [102430, 700], [103130, -39500], [38030, -39500], [34930, -42800], [35430, -43500], [30430, -43500], [29330, -42400], [29330, -39200], [26230, -36100], [-1270, -36300], [-1270, -9000], [2230, -8900], [5430, -5300], [20030, -5500], [20830, -4700], [23530, -4700], [27530, -1575], [27630, 700]], [[-3225, -8575], [32050, -8575], [32050, -45225], [-3225, -45225]]];
+      const floorMat = new THREE.MeshLambertMaterial({ map: rugTex, color: 0xffffff, emissive: new THREE.Color(0.07, 0.055, 0.035), side: THREE.DoubleSide });
+      FLOOR_POLYS.forEach((poly, idx) => {
+        const shape = new THREE.Shape();
+        shape.moveTo(WX(poly[0][0]), -WZ(poly[0][1]));
+        for (let i = 1; i < poly.length; i++) shape.lineTo(WX(poly[i][0]), -WZ(poly[i][1]));
         shape.closePath();
-        const geo=new THREE.ShapeGeometry(shape);
-        const uvAttr=geo.attributes.uv;
-        for(let i=0;i<uvAttr.count;i++) uvAttr.setXY(i,(uvAttr.getX(i)+W/2)/W,(uvAttr.getY(i)+D/2)/D);
-        geo.rotateX(-Math.PI/2);
-        const flr=new THREE.Mesh(geo,floorMat);
-        flr.position.y=(idx===0?-0.075:-0.076); flr.receiveShadow=true; scene.add(flr);
+        const geo = new THREE.ShapeGeometry(shape);
+        const uvAttr = geo.attributes.uv;
+        for (let i = 0; i < uvAttr.count; i++) uvAttr.setXY(i, (uvAttr.getX(i) + W / 2) / W, (uvAttr.getY(i) + D / 2) / D);
+        geo.rotateX(-Math.PI / 2);
+        const flr = new THREE.Mesh(geo, floorMat);
+        flr.position.y = (idx === 0 ? -0.075 : -0.076); flr.receiveShadow = true; scene.add(flr);
       });
 
       // -- Ceiling: same footprint, shown only during walkthrough --
@@ -757,10 +996,10 @@
       const c = document.createElement('canvas'); c.width = SZ; c.height = SZ;
       const ctx = c.getContext('2d');
       const grad = ctx.createLinearGradient(0, 0, SZ, 0);
-      grad.addColorStop(0,   '#7B5035');
+      grad.addColorStop(0, '#7B5035');
       grad.addColorStop(0.3, '#8C6342');
       grad.addColorStop(0.6, '#6B4428');
-      grad.addColorStop(1,   '#7B5035');
+      grad.addColorStop(1, '#7B5035');
       ctx.fillStyle = grad; ctx.fillRect(0, 0, SZ, SZ);
       for (let i = 0; i < 70; i++) {
         const x0 = i * (SZ / 70) + (Math.random() * 6 - 3);
@@ -777,9 +1016,9 @@
       for (let i = 0; i < 10; i++) {
         const x = Math.random() * SZ;
         const g2 = ctx.createLinearGradient(x, 0, x + 8, SZ);
-        g2.addColorStop(0,   'rgba(255,200,130,0)');
+        g2.addColorStop(0, 'rgba(255,200,130,0)');
         g2.addColorStop(0.5, 'rgba(255,200,130,0.06)');
-        g2.addColorStop(1,   'rgba(255,200,130,0)');
+        g2.addColorStop(1, 'rgba(255,200,130,0)');
         ctx.fillStyle = g2; ctx.fillRect(x, 0, 8, SZ);
       }
       // T2: horizontal panel joints at 1/3 and 2/3 — creates 3 distinct plank rows
@@ -809,42 +1048,42 @@
       const ctx = c.getContext('2d');
       // warm cream base gradient
       const grad = ctx.createLinearGradient(0, 0, 0, SZ);
-      grad.addColorStop(0,   '#F6EFE1');
+      grad.addColorStop(0, '#F6EFE1');
       grad.addColorStop(0.5, '#F1E9D6');
-      grad.addColorStop(1,   '#EBE1CB');
+      grad.addColorStop(1, '#EBE1CB');
       ctx.fillStyle = grad; ctx.fillRect(0, 0, SZ, SZ);
       // subtle lateral warmth variation
       const grad2 = ctx.createLinearGradient(0, 0, SZ, 0);
-      grad2.addColorStop(0,   'rgba(215,205,185,0.14)');
-      grad2.addColorStop(0.45,'rgba(255,250,238,0.07)');
-      grad2.addColorStop(1,   'rgba(210,200,180,0.12)');
+      grad2.addColorStop(0, 'rgba(215,205,185,0.14)');
+      grad2.addColorStop(0.45, 'rgba(255,250,238,0.07)');
+      grad2.addColorStop(1, 'rgba(210,200,180,0.12)');
       ctx.fillStyle = grad2; ctx.fillRect(0, 0, SZ, SZ);
       // marble veining — Bezier diagonal wisps
       [
-        [10, 55, 170,115, 330, 75, 510,160, 0.08, 1.4],
-        [0, 195, 130,258, 285,218, 512,292, 0.10, 1.0],
-        [55,345, 195,398, 375,375, 512,418, 0.07, 0.9],
-        [95,  8, 155, 98, 218,175, 295,248, 0.09, 1.2],
-        [395, 25, 418,148, 458,298, 478,512, 0.06, 0.8],
-        [0, 448,  98,468, 248,455, 398,512, 0.08, 1.1],
-      ].forEach(([x1,y1,cx1,cy1,cx2,cy2,x2,y2,alpha,lw]) => {
+        [10, 55, 170, 115, 330, 75, 510, 160, 0.08, 1.4],
+        [0, 195, 130, 258, 285, 218, 512, 292, 0.10, 1.0],
+        [55, 345, 195, 398, 375, 375, 512, 418, 0.07, 0.9],
+        [95, 8, 155, 98, 218, 175, 295, 248, 0.09, 1.2],
+        [395, 25, 418, 148, 458, 298, 478, 512, 0.06, 0.8],
+        [0, 448, 98, 468, 248, 455, 398, 512, 0.08, 1.1],
+      ].forEach(([x1, y1, cx1, cy1, cx2, cy2, x2, y2, alpha, lw]) => {
         ctx.beginPath(); ctx.moveTo(x1, y1);
         ctx.bezierCurveTo(cx1, cy1, cx2, cy2, x2, y2);
         ctx.strokeStyle = `rgba(138,122,98,${alpha})`; ctx.lineWidth = lw; ctx.stroke();
         // faint echo vein
-        ctx.beginPath(); ctx.moveTo(x1+5, y1+3);
-        ctx.bezierCurveTo(cx1+4, cy1+2, cx2+5, cy2+1, x2+4, y2+2);
-        ctx.strokeStyle = `rgba(155,140,115,${alpha*0.45})`; ctx.lineWidth = 0.5; ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(x1 + 5, y1 + 3);
+        ctx.bezierCurveTo(cx1 + 4, cy1 + 2, cx2 + 5, cy2 + 1, x2 + 4, y2 + 2);
+        ctx.strokeStyle = `rgba(155,140,115,${alpha * 0.45})`; ctx.lineWidth = 0.5; ctx.stroke();
       });
       // panel grid lines — vertical at x=256, horizontal at y=256
       function joint(x1, y1, x2, y2, horiz) {
         ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
         ctx.strokeStyle = '#BAB1A2'; ctx.lineWidth = 3; ctx.stroke();
         const [sx, sy] = horiz ? [0, -1] : [-1, 0];
-        ctx.beginPath(); ctx.moveTo(x1+sx, y1+sy); ctx.lineTo(x2+sx, y2+sy);
+        ctx.beginPath(); ctx.moveTo(x1 + sx, y1 + sy); ctx.lineTo(x2 + sx, y2 + sy);
         ctx.strokeStyle = 'rgba(158,148,132,0.90)'; ctx.lineWidth = 1; ctx.stroke();
         const [hx, hy] = horiz ? [0, 3] : [3, 0];
-        ctx.beginPath(); ctx.moveTo(x1+hx, y1+hy); ctx.lineTo(x2+hx, y2+hy);
+        ctx.beginPath(); ctx.moveTo(x1 + hx, y1 + hy); ctx.lineTo(x2 + hx, y2 + hy);
         ctx.strokeStyle = 'rgba(255,253,247,0.88)'; ctx.lineWidth = 1.5; ctx.stroke();
       }
       joint(256, 0, 256, SZ, false);
@@ -873,11 +1112,11 @@
     // -----------------------------------------------------------------------
 
     // Pendant chandelier point lights � warm amber at ~2.55 m (brass fixtures)
-    [[0,0],[W*0.28,0],[-W*0.28,0],[W*0.10,D*0.22],[-W*0.10,D*0.22],
-     [W*0.10,-D*0.22],[-W*0.10,-D*0.22]
-    ].forEach(([px,pz])=>{
-      const pl=new THREE.PointLight(0xffd080,0.85,MAXWD*0.75);
-      pl.position.set(px,2.55,pz); scene.add(pl);
+    [[0, 0], [W * 0.28, 0], [-W * 0.28, 0], [W * 0.10, D * 0.22], [-W * 0.10, D * 0.22],
+    [W * 0.10, -D * 0.22], [-W * 0.10, -D * 0.22]
+    ].forEach(([px, pz]) => {
+      const pl = new THREE.PointLight(0xffd080, 0.85, MAXWD * 0.75);
+      pl.position.set(px, 2.55, pz); scene.add(pl);
     });
 
     function wallMesh(segs, h0, h1, mat) {
@@ -899,19 +1138,19 @@
     // UV scale constants: texture tiles per metre (uScale horizontal, vScale vertical)
     // Wood:   1 tile = 1.5 m wide × 1.5 m tall  →  3 plank rows of ~0.5 m
     // Marble: 1 tile = 1.2 m wide × 1.8 m tall  →  2 panels of 0.6 m × 0.9 m
-    const _WUS = 1/1.5, _WVS = 1/1.5;
-    const _MUS = 1/1.2, _MVS = 1/1.8;
+    const _WUS = 1 / 1.5, _WVS = 1 / 1.5;
+    const _MUS = 1 / 1.2, _MVS = 1 / 1.8;
     function _wQuad(ax, h0, az, bx, h1, bz, posArr, uvArr, us, vs) {
-      const len = Math.sqrt((bx-ax)*(bx-ax) + (bz-az)*(bz-az));
+      const len = Math.sqrt((bx - ax) * (bx - ax) + (bz - az) * (bz - az));
       const u1 = len * us, v0 = h0 * vs, v1 = h1 * vs;
-      posArr.push(ax,h0,az, bx,h0,bz, bx,h1,bz, ax,h0,az, bx,h1,bz, ax,h1,az);
-      uvArr.push( 0,v0, u1,v0, u1,v1,  0,v0, u1,v1,  0,v1);
+      posArr.push(ax, h0, az, bx, h0, bz, bx, h1, bz, ax, h0, az, bx, h1, bz, ax, h1, az);
+      uvArr.push(0, v0, u1, v0, u1, v1, 0, v0, u1, v1, 0, v1);
     }
     function _wMesh(pos, uv, mat) {
       if (!pos.length) return null;
       const gg = new THREE.BufferGeometry();
       gg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-      gg.setAttribute('uv',       new THREE.Float32BufferAttribute(uv,  2));
+      gg.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
       gg.computeVertexNormals();
       const m = new THREE.Mesh(gg, mat); wallDisplayGrp.add(m); return m;
     }
@@ -920,29 +1159,29 @@
         if (m) { wallDisplayGrp.remove(m); m.geometry.dispose(); }
       });
       wallDisplayBase = wallDisplayLower = wallDisplayUpper = wallDisplayRail = wallDisplayBoard = wallDisplayHi = null;
-      const lPos=[], lUV=[];  // wood lower (0.12 → 1.13)
-      const uPos=[], uUV=[];  // marble upper (1.17 → 3.0)
-      const rPos=[], rUV=[];  // gold rail (1.13 → 1.17)
-      const bPos=[], bUV=[];  // dark baseboard (0 → 0.12)
-      const hPos=[], hUV=[];  // selection highlight
+      const lPos = [], lUV = [];  // wood lower (0.12 → 1.13)
+      const uPos = [], uUV = [];  // marble upper (1.17 → 3.0)
+      const rPos = [], rUV = [];  // gold rail (1.13 → 1.17)
+      const bPos = [], bUV = [];  // dark baseboard (0 → 0.12)
+      const hPos = [], hUV = [];  // selection highlight
       for (const m of wallSegMeshes) {
         if (!m.visible) continue;
         const { ax, az, bx, bz } = m.userData;
         if (wallSelSet.has(m)) {
-          _wQuad(ax, 0,    az, bx, 3.0,  bz, hPos, hUV, _WUS, _WVS);
+          _wQuad(ax, 0, az, bx, 3.0, bz, hPos, hUV, _WUS, _WVS);
         } else {
-          _wQuad(ax, 0,    az, bx, 0.12, bz, bPos, bUV, 4,    10  );
+          _wQuad(ax, 0, az, bx, 0.12, bz, bPos, bUV, 4, 10);
           _wQuad(ax, 0.12, az, bx, 1.13, bz, lPos, lUV, _WUS, _WVS);
-          _wQuad(ax, 1.13, az, bx, 1.17, bz, rPos, rUV, 4,    10  );
-          _wQuad(ax, 1.17, az, bx, 3.0,  bz, uPos, uUV, _MUS, _MVS);
+          _wQuad(ax, 1.13, az, bx, 1.17, bz, rPos, rUV, 4, 10);
+          _wQuad(ax, 1.17, az, bx, 3.0, bz, uPos, uUV, _MUS, _MVS);
         }
       }
       wallDisplayBoard = _wMesh(bPos, bUV, wallBaseboardMat);
       wallDisplayLower = _wMesh(lPos, lUV, wallWoodMat);
-      wallDisplayRail  = _wMesh(rPos, rUV, goldRailMat);
+      wallDisplayRail = _wMesh(rPos, rUV, goldRailMat);
       wallDisplayUpper = _wMesh(uPos, uUV, wallMarbleMat);
-      wallDisplayHi    = _wMesh(hPos, hUV, wallHiMat);
-      wallDisplayBase  = wallDisplayLower;
+      wallDisplayHi = _wMesh(hPos, hUV, wallHiMat);
+      wallDisplayBase = wallDisplayLower;
     }
     function wallMeshGroup(segs, h0, h1) {
       for (let i = 0; i < segs.length; i++) {
@@ -1111,10 +1350,10 @@
       { x: 95500, y: -26500, bg: '#a06aff', bg2: 'ЧЕРНО МОРЕ', en: 'Cherno More' },
       { x: 20000, y: -29000, bg: '#ffb850', bg2: 'РЕСТОРАНТ', en: 'Restaurant' },
       { x: 18065, y: -10000, bg: '#e8823a', bg2: 'КУХНЯ', en: 'Kitchen' },
-      { x: 82000, y: -4000,  bg: '#dbeafe', bg2: 'VIP 1', en: 'Зала Галата' },
+      { x: 82000, y: -4000, bg: '#dbeafe', bg2: 'VIP 1', en: 'Зала Галата' },
       { x: 39000, y: -27000, bg: '#dbeafe', bg2: 'VIP 2', en: 'Conference Room' },
       { x: 94870, y: -16000, bg: '#dbeafe', bg2: 'VIP 3', en: 'Conference Room' },
-      { x: 1000,  y: -29000, bg: '#dbeafe', bg2: 'VIP 4', en: 'Conference Room' },
+      { x: 1000, y: -29000, bg: '#dbeafe', bg2: 'VIP 4', en: 'Conference Room' },
     ];
     groups.halls = new THREE.Group();
     for (const h of HALLS) {
@@ -1135,6 +1374,11 @@
       const RX = WX(70000);        // right interior edge
       const BZ = WZ(-36200);       // back (south) wall
       const hallCZ = (FZ + BZ) / 2;
+      // Symmetric seating: cap front section to match back depth
+      const _backDepth = (BZ - 2.06) - (hallCZ + 1.6);
+      const aF = Math.min(hallCZ - 1.1, (FZ + 0.7) + _backDepth);
+      const aB = hallCZ + 1.1;
+      const screenCZ = (aF + aB) / 2; // stage/screen centre aligned to symmetric seating
 
       // -- CONNEXUS Screen -- centered on hall Z axis --
       // SW capped so screen + plants always fit inside the 12.2m hall depth
@@ -1181,7 +1425,7 @@
       // frame
       const frMat = new THREE.MeshLambertMaterial({ color: 0x060c18, roughness: .3, metalness: .7 });
       const fr = new THREE.Mesh(new THREE.BoxGeometry(SW + .6, SH + .6, .35), frMat);
-      fr.position.set(LX + .18, SY, hallCZ); fr.rotation.y = Math.PI / 2; grp.add(fr);
+      fr.position.set(LX + .18, SY, screenCZ); fr.rotation.y = Math.PI / 2; grp.add(fr);
 
       // screen panel (emissive so it glows)
       const scMat = new THREE.MeshLambertMaterial({
@@ -1189,22 +1433,22 @@
         emissive: new THREE.Color(.04, .12, .25), emissiveIntensity: 1.4, roughness: .05, metalness: 0
       });
       const sc = new THREE.Mesh(new THREE.BoxGeometry(SW, SH, .06), scMat);
-      sc.position.set(LX + .39, SY, hallCZ); sc.rotation.y = Math.PI / 2; grp.add(sc);
+      sc.position.set(LX + .39, SY, screenCZ); sc.rotation.y = Math.PI / 2; grp.add(sc);
 
       // LED strip above screen
       const ledMat = new THREE.MeshLambertMaterial({ color: 0x1060ff, emissive: 0x1060ff, emissiveIntensity: 4 });
       const led = new THREE.Mesh(new THREE.BoxGeometry(SW + 1.4, .07, .14), ledMat);
-      led.position.set(LX + .1, SY + SH / 2 + .12, hallCZ); led.rotation.y = Math.PI / 2; grp.add(led);
+      led.position.set(LX + .1, SY + SH / 2 + .12, screenCZ); led.rotation.y = Math.PI / 2; grp.add(led);
 
       // screen light
-      const sl = new THREE.PointLight(0x2060ff, 5, 22); sl.position.set(LX + 2.2, SY, hallCZ); grp.add(sl);
+      const sl = new THREE.PointLight(0x2060ff, 5, 22); sl.position.set(LX + 2.2, SY, screenCZ); grp.add(sl);
       // ambient hall fill
       const hl = new THREE.PointLight(0x0d2050, 1.4, 32); hl.position.set(CX, 5, hallCZ); grp.add(hl);
 
       // -- Podium ---------------------------------------
       const podMat = new THREE.MeshLambertMaterial({ color: 0x0b1a2b, roughness: .5, metalness: .4 });
       const pod = new THREE.Mesh(new THREE.BoxGeometry(4, .28, 2), podMat);
-      pod.position.set(LX + 2.4, .14, hallCZ); grp.add(pod);
+      pod.position.set(LX + 2.4, .14, screenCZ); grp.add(pod);
 
       // -- Plants ---------------------------------------
       function addPlant(px, pz) {
@@ -1218,15 +1462,14 @@
         const pot = new THREE.Mesh(new THREE.CylinderGeometry(.22, .18, .38, 10), pM);
         pot.position.set(px, .19, pz); grp.add(pot);
       }
-      addPlant(LX + .6, hallCZ - SW / 2 + 0.5);
-      addPlant(LX + .6, hallCZ + SW / 2 - 0.5);
+      addPlant(LX + .6, screenCZ - SW / 2 + 0.5);
+      addPlant(LX + .6, screenCZ + SW / 2 - 0.5);
 
       // -- Chairs (InstancedMesh) ------------------------
       const SEATW = .52, SEATD = .50, SEATH = .10;
       const BACKW = .52, BACKD = .08, BACKH = .52;
       const CY_S = .44, CY_B = .44 + SEATH / 2 + BACKH / 2 + .02;
-      const rowStart = LX + 1.8, rowSp = 1.2, nRows = 40, colSp = .78;
-      const aF = hallCZ - 1.1, aB = hallCZ + 1.1; // aisle
+      const rowStart = LX + 4.2, rowSp = 1.2, nRows = 40, colSp = .78; // 2 left cols removed for stage clearance
 
       const pos = [];
       for (let r = 0; r < nRows; r++) {
@@ -1255,17 +1498,17 @@
     (() => {
       const grp = new THREE.Group();
       // Tablecloth: alternating navy blue and warm beige (matching reference photo)
-      const mBlue  = new THREE.MeshLambertMaterial({color:0x1e3070, emissive:new THREE.Color(0.02,0.03,0.09)});
-      const mBeige = new THREE.MeshLambertMaterial({color:0xc8b490, emissive:new THREE.Color(0.07,0.06,0.04)});
+      const mBlue = new THREE.MeshLambertMaterial({ color: 0x1e3070, emissive: new THREE.Color(0.02, 0.03, 0.09) });
+      const mBeige = new THREE.MeshLambertMaterial({ color: 0xc8b490, emissive: new THREE.Color(0.07, 0.06, 0.04) });
       // Chairs: blue-grey upholstery + dark metal frame legs
-      const mSeat  = new THREE.MeshLambertMaterial({color:0x8494a8, emissive:new THREE.Color(0.03,0.04,0.06)});
-      const mFrame = new THREE.MeshLambertMaterial({color:0x5a6a78});
+      const mSeat = new THREE.MeshLambertMaterial({ color: 0x8494a8, emissive: new THREE.Color(0.03, 0.04, 0.06) });
+      const mFrame = new THREE.MeshLambertMaterial({ color: 0x5a6a78 });
 
-      const gTop   = new THREE.CylinderGeometry(0.87, 0.87, 0.025, 24);
-      const gSkirt = new THREE.CylinderGeometry(0.87, 0.82, 0.67,  24);
-      const gSeat  = new THREE.BoxGeometry(0.52, 0.07, 0.46);
-      const gBack  = new THREE.BoxGeometry(0.50, 0.44, 0.08);
-      const gLeg   = new THREE.CylinderGeometry(0.022, 0.022, 0.43, 6);
+      const gTop = new THREE.CylinderGeometry(0.87, 0.87, 0.025, 24);
+      const gSkirt = new THREE.CylinderGeometry(0.87, 0.82, 0.67, 24);
+      const gSeat = new THREE.BoxGeometry(0.52, 0.07, 0.46);
+      const gBack = new THREE.BoxGeometry(0.50, 0.44, 0.08);
+      const gLeg = new THREE.CylinderGeometry(0.022, 0.022, 0.43, 6);
 
       let ti = 0;
       function addTable(tx, tz, rot) {
@@ -1273,12 +1516,12 @@
         const cloth = (ti++ % 2 === 0) ? mBlue : mBeige;
 
         // Tablecloth top disc + draping skirt
-        const top  = new THREE.Mesh(gTop,   cloth); top.position.set(tx, 0.762, tz); grp.add(top);
+        const top = new THREE.Mesh(gTop, cloth); top.position.set(tx, 0.762, tz); grp.add(top);
         const skrt = new THREE.Mesh(gSkirt, cloth); skrt.position.set(tx, 0.415, tz); grp.add(skrt);
 
         // 6 chairs at 60� intervals, 1.14 m from centre
         for (let k = 0; k < 6; k++) {
-          const a  = rot + (k / 6) * Math.PI * 2;
+          const a = rot + (k / 6) * Math.PI * 2;
           const CR = 1.14;
           const cx = tx + Math.sin(a) * CR, cz = tz + Math.cos(a) * CR;
           const ca = Math.cos(a), sa = Math.sin(a);
@@ -1303,25 +1546,25 @@
       // 48 tables � 6 staggered rows, positions match the restaurant polygon
       [
         // row 1
-        [-40.9, 2.3, 0.12],[-38.0, 2.7, 0.07],[-34.6, 2.1, 0.04],
-        [-31.2, 2.6,-0.06],[-27.7, 2.2,-0.10],[-24.3, 2.8,-0.14],[-20.8, 2.4,-0.06],
+        [-40.9, 2.3, 0.12], [-38.0, 2.7, 0.07], [-34.6, 2.1, 0.04],
+        [-31.2, 2.6, -0.06], [-27.7, 2.2, -0.10], [-24.3, 2.8, -0.14], [-20.8, 2.4, -0.06],
         // row 2
-        [-43.1, 5.8, 0.15],[-39.6, 6.3, 0.09],[-36.0, 5.7, 0.05],
-        [-32.5, 6.2,-0.04],[-29.0, 5.9,-0.13],[-25.4, 6.4,-0.17],[-21.9, 5.8,-0.09],[-18.8, 6.1,-0.04],
+        [-43.1, 5.8, 0.15], [-39.6, 6.3, 0.09], [-36.0, 5.7, 0.05],
+        [-32.5, 6.2, -0.04], [-29.0, 5.9, -0.13], [-25.4, 6.4, -0.17], [-21.9, 5.8, -0.09], [-18.8, 6.1, -0.04],
         // row 3
-        [-44.8, 9.2, 0.10],[-41.3, 9.7, 0.06],[-37.7, 9.1,-0.03],
-        [-34.2, 9.6, 0.08],[-30.6, 9.3, 0.13],[-27.1, 9.8,-0.09],[-23.5, 9.2,-0.14],[-20.0, 9.6,-0.05],
+        [-44.8, 9.2, 0.10], [-41.3, 9.7, 0.06], [-37.7, 9.1, -0.03],
+        [-34.2, 9.6, 0.08], [-30.6, 9.3, 0.13], [-27.1, 9.8, -0.09], [-23.5, 9.2, -0.14], [-20.0, 9.6, -0.05],
         // row 4
-        [-45.8,12.8,-0.11],[-42.3,13.3,-0.07],[-38.8,12.6, 0.04],
-        [-35.3,13.1, 0.10],[-31.8,12.8, 0.14],[-28.3,13.3,-0.06],
-        [-24.8,12.9,-0.12],[-21.3,12.5,-0.05],[-19.6,13.0, 0.08],
+        [-45.8, 12.8, -0.11], [-42.3, 13.3, -0.07], [-38.8, 12.6, 0.04],
+        [-35.3, 13.1, 0.10], [-31.8, 12.8, 0.14], [-28.3, 13.3, -0.06],
+        [-24.8, 12.9, -0.12], [-21.3, 12.5, -0.05], [-19.6, 13.0, 0.08],
         // row 5
-        [-47.8,16.3,-0.13],[-44.3,16.8,-0.08],[-40.8,16.2, 0.04],
-        [-37.3,16.7, 0.11],[-33.8,16.4, 0.15],[-30.3,16.9,-0.07],
-        [-26.8,16.5,-0.11],[-23.3,16.1,-0.16],[-21.5,16.6, 0.05],
+        [-47.8, 16.3, -0.13], [-44.3, 16.8, -0.08], [-40.8, 16.2, 0.04],
+        [-37.3, 16.7, 0.11], [-33.8, 16.4, 0.15], [-30.3, 16.9, -0.07],
+        [-26.8, 16.5, -0.11], [-23.3, 16.1, -0.16], [-21.5, 16.6, 0.05],
         // row 6
-        [-49.3,19.5,-0.12],[-45.3,20.0,-0.07],[-41.3,19.6, 0.05],
-        [-37.3,20.1, 0.09],[-33.3,19.7, 0.14],[-29.3,19.3,-0.05],[-25.3,19.8,-0.10],
+        [-49.3, 19.5, -0.12], [-45.3, 20.0, -0.07], [-41.3, 19.6, 0.05],
+        [-37.3, 20.1, 0.09], [-33.3, 19.7, 0.14], [-29.3, 19.3, -0.05], [-25.3, 19.8, -0.10],
       ].forEach(([wx, wz, rot]) => addTable(wx, wz, rot));
 
       scene.add(grp);
@@ -1331,47 +1574,47 @@
     {
       const _furnSaveEl = document.getElementById('furnSave');
       let _savedData = [];
-      try { _savedData = JSON.parse(_furnSaveEl.textContent || '[]'); } catch(e) {}
+      try { _savedData = JSON.parse(_furnSaveEl.textContent || '[]'); } catch (e) { }
 
       const _furnGroup = new THREE.Group();
       scene.add(_furnGroup);
 
       // shared materials
       const _fM = {
-        top:  new THREE.MeshLambertMaterial({color:0x7a4f2b}),
-        base: new THREE.MeshLambertMaterial({color:0x3a2010}),
-        seat: new THREE.MeshLambertMaterial({color:0xc8903a,emissive:new THREE.Color(0x3a2800),emissiveIntensity:.2}),
-        back: new THREE.MeshLambertMaterial({color:0x1e1206}),
+        top: new THREE.MeshLambertMaterial({ color: 0x7a4f2b }),
+        base: new THREE.MeshLambertMaterial({ color: 0x3a2010 }),
+        seat: new THREE.MeshLambertMaterial({ color: 0xc8903a, emissive: new THREE.Color(0x3a2800), emissiveIntensity: .2 }),
+        back: new THREE.MeshLambertMaterial({ color: 0x1e1206 }),
       };
       // shared geometries
       const _fG = {
-        cTop: new THREE.CylinderGeometry(.65,.65,.06,16),
-        ped:  new THREE.CylinderGeometry(.06,.06,.68,8),
-        foot: new THREE.CylinderGeometry(.30,.30,.04,12),
-        seat: new THREE.BoxGeometry(.48,.08,.46),
-        back: new THREE.BoxGeometry(.48,.42,.07),
-        rTop: new THREE.BoxGeometry(1.2,.06,.8),
-        leg:  new THREE.BoxGeometry(.06,.72,.06),
-        hit:  new THREE.CylinderGeometry(1.4,1.4,1.2,20), // hit proxy � wide enough for easy clicking
+        cTop: new THREE.CylinderGeometry(.65, .65, .06, 16),
+        ped: new THREE.CylinderGeometry(.06, .06, .68, 8),
+        foot: new THREE.CylinderGeometry(.30, .30, .04, 12),
+        seat: new THREE.BoxGeometry(.48, .08, .46),
+        back: new THREE.BoxGeometry(.48, .42, .07),
+        rTop: new THREE.BoxGeometry(1.2, .06, .8),
+        leg: new THREE.BoxGeometry(.06, .72, .06),
+        hit: new THREE.CylinderGeometry(1.4, 1.4, 1.2, 20), // hit proxy � wide enough for easy clicking
       };
 
       // selection ring � glowing torus that appears under the selected item
       const _ring = new THREE.Mesh(
-        new THREE.TorusGeometry(1.55,.055,8,40),
-        new THREE.MeshBasicMaterial({color:0x6fd3ff,transparent:true,opacity:.9,depthTest:false})
+        new THREE.TorusGeometry(1.55, .055, 8, 40),
+        new THREE.MeshBasicMaterial({ color: 0x6fd3ff, transparent: true, opacity: .9, depthTest: false })
       );
-      _ring.rotation.x = Math.PI/2; _ring.position.y = .02; _ring.visible = false;
+      _ring.rotation.x = Math.PI / 2; _ring.position.y = .02; _ring.visible = false;
       scene.add(_ring);
 
       const _furnItems = []; // [{grp, hitMesh, data}]
-      let _sel       = null;   // selected item
-      let _placing   = false;  // placement mode active
-      let _dragging  = false;
-      const _floorPl = new THREE.Plane(new THREE.Vector3(0,1,0),0);
-      const _fRay    = new THREE.Raycaster();
-      const _fNdc    = new THREE.Vector2();
-      const _fHit    = new THREE.Vector3();
-      const _fOff    = new THREE.Vector3(); // cursor offset from item centre at drag start
+      let _sel = null;   // selected item
+      let _placing = false;  // placement mode active
+      let _dragging = false;
+      const _floorPl = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+      const _fRay = new THREE.Raycaster();
+      const _fNdc = new THREE.Vector2();
+      const _fHit = new THREE.Vector3();
+      const _fOff = new THREE.Vector3(); // cursor offset from item centre at drag start
 
       // -- build one furniture item ------------------------------------------
       function _build(d) {
@@ -1380,33 +1623,33 @@
         g.rotation.y = d.rot || 0;
 
         if (d.type === 't4') {
-          const top = new THREE.Mesh(_fG.cTop, _fM.top); top.position.y=.75; g.add(top);
-          const ped = new THREE.Mesh(_fG.ped,  _fM.base); ped.position.y=.38; g.add(ped);
-          const ft  = new THREE.Mesh(_fG.foot, _fM.base); ft.position.y=.02;  g.add(ft);
-          [[0,-1],[0,1],[-1,0],[1,0]].forEach(([dx,dz])=>{
-            const sx=dx*1.05,sz=dz*1.05;
-            const s=new THREE.Mesh(_fG.seat,_fM.seat); s.position.set(sx,.46,sz); g.add(s);
-            const b=new THREE.Mesh(_fG.back,_fM.back);
-            b.position.set(sx+dx*.2,.73,sz+dz*.2); b.rotation.y=Math.atan2(dx,dz); g.add(b);
+          const top = new THREE.Mesh(_fG.cTop, _fM.top); top.position.y = .75; g.add(top);
+          const ped = new THREE.Mesh(_fG.ped, _fM.base); ped.position.y = .38; g.add(ped);
+          const ft = new THREE.Mesh(_fG.foot, _fM.base); ft.position.y = .02; g.add(ft);
+          [[0, -1], [0, 1], [-1, 0], [1, 0]].forEach(([dx, dz]) => {
+            const sx = dx * 1.05, sz = dz * 1.05;
+            const s = new THREE.Mesh(_fG.seat, _fM.seat); s.position.set(sx, .46, sz); g.add(s);
+            const b = new THREE.Mesh(_fG.back, _fM.back);
+            b.position.set(sx + dx * .2, .73, sz + dz * .2); b.rotation.y = Math.atan2(dx, dz); g.add(b);
           });
         } else {
-          const top = new THREE.Mesh(_fG.rTop, _fM.top); top.position.y=.75; g.add(top);
-          [[-0.5,-.35],[.5,-.35],[-.5,.35],[.5,.35]].forEach(([lx,lz])=>{
-            const l=new THREE.Mesh(_fG.leg,_fM.base); l.position.set(lx,.38,lz); g.add(l);
+          const top = new THREE.Mesh(_fG.rTop, _fM.top); top.position.y = .75; g.add(top);
+          [[-0.5, -.35], [.5, -.35], [-.5, .35], [.5, .35]].forEach(([lx, lz]) => {
+            const l = new THREE.Mesh(_fG.leg, _fM.base); l.position.set(lx, .38, lz); g.add(l);
           });
-          [[0,-1],[0,1]].forEach(([dx,dz])=>{
-            const sx=dx*.85,sz=dz*.85;
-            const s=new THREE.Mesh(_fG.seat,_fM.seat); s.position.set(sx,.46,sz); g.add(s);
-            const b=new THREE.Mesh(_fG.back,_fM.back);
-            b.position.set(sx+dx*.2,.73,sz+dz*.2); b.rotation.y=Math.atan2(dx,dz); g.add(b);
+          [[0, -1], [0, 1]].forEach(([dx, dz]) => {
+            const sx = dx * .85, sz = dz * .85;
+            const s = new THREE.Mesh(_fG.seat, _fM.seat); s.position.set(sx, .46, sz); g.add(s);
+            const b = new THREE.Mesh(_fG.back, _fM.back);
+            b.position.set(sx + dx * .2, .73, sz + dz * .2); b.rotation.y = Math.atan2(dx, dz); g.add(b);
           });
         }
         // invisible hit-proxy centred on the item, easy to click from any angle
         const hm = new THREE.Mesh(_fG.hit,
-          new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));
+          new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
         hm.position.y = .6; g.add(hm);
 
-        const item = {grp:g, hitMesh:hm, data:d};
+        const item = { grp: g, hitMesh: hm, data: d };
         _furnItems.push(item); _furnGroup.add(g);
         return item;
       }
@@ -1420,7 +1663,7 @@
         _ring.visible = !!item;
         if (item) { _ring.position.x = item.grp.position.x; _ring.position.z = item.grp.position.z; }
         const has = !!item;
-        ['btnFurnDel','btnFurnRotL','btnFurnRotR'].forEach(id=>{
+        ['btnFurnDel', 'btnFurnRotL', 'btnFurnRotR'].forEach(id => {
           document.getElementById(id).disabled = !has;
         });
         markDirty();
@@ -1433,7 +1676,7 @@
       }
       function _rotate(dir) {
         if (!_sel) return;
-        _sel.data.rot = (_sel.data.rot||0) + dir*Math.PI/12; // 15� steps
+        _sel.data.rot = (_sel.data.rot || 0) + dir * Math.PI / 12; // 15� steps
         _sel.grp.rotation.y = _sel.data.rot;
         markDirty();
       }
@@ -1444,18 +1687,18 @@
         document.getElementById('btnFurnPlace').classList.toggle('on', on);
         document.getElementById('furnStatus').textContent = on
           ? 'Кликни върху пода, за да поставиш мебел · ESC спира · Q/E завърта' : '';
-        dom.style.cursor = on ? 'crosshair' : (mode==='top'?'crosshair':'');
+        dom.style.cursor = on ? 'crosshair' : (mode === 'top' ? 'crosshair' : '');
       }
 
       // -- grid snap (auto-adjust) --------------------------------------------
       const SNAP = 0.5; // metres
-      function _snap(v) { return Math.round(v/SNAP)*SNAP; }
+      function _snap(v) { return Math.round(v / SNAP) * SNAP; }
 
       // -- raycasting helpers -------------------------------------------------
       function _setNdc(ev) {
         const r = dom.getBoundingClientRect();
-        _fNdc.x = ((ev.clientX-r.left)/r.width)*2-1;
-        _fNdc.y = -((ev.clientY-r.top)/r.height)*2+1;
+        _fNdc.x = ((ev.clientX - r.left) / r.width) * 2 - 1;
+        _fNdc.y = -((ev.clientY - r.top) / r.height) * 2 + 1;
       }
       function _floorPt() { // world point on y=0 plane
         return _fRay.ray.intersectPlane(_floorPl, _fHit) ? _fHit.clone() : null;
@@ -1471,7 +1714,7 @@
           const pt = _floorPt();
           if (pt) {
             const type = document.getElementById('furnType').value;
-            const d = {type, wx:_snap(pt.x), wz:_snap(pt.z), rot:0};
+            const d = { type, wx: _snap(pt.x), wz: _snap(pt.z), rot: 0 };
             _select(_build(d));
           }
           ev.stopPropagation(); ev.preventDefault();
@@ -1479,15 +1722,15 @@
         }
 
         // - normal mode: hit-test all furniture items -
-        const hits = _fRay.intersectObjects(_furnItems.map(it=>it.hitMesh), false);
+        const hits = _fRay.intersectObjects(_furnItems.map(it => it.hitMesh), false);
         if (hits.length) {
-          const item = _furnItems.find(it=>it.hitMesh===hits[0].object);
+          const item = _furnItems.find(it => it.hitMesh === hits[0].object);
           _select(item);
 
           // start drag � works in both 3D and top-view
           const pt = _floorPt();
           if (pt && item) {
-            _fOff.set(item.grp.position.x-pt.x, 0, item.grp.position.z-pt.z);
+            _fOff.set(item.grp.position.x - pt.x, 0, item.grp.position.z - pt.z);
             _dragging = true;
             ctrl.enabled = false;
             dom.setPointerCapture(ev.pointerId);
@@ -1507,8 +1750,8 @@
         const nx = _snap(pt.x + _fOff.x);
         const nz = _snap(pt.z + _fOff.z);
         _sel.grp.position.x = nx; _sel.grp.position.z = nz;
-        _sel.data.wx = nx;        _sel.data.wz = nz;
-        _ring.position.x = nx;    _ring.position.z = nz;
+        _sel.data.wx = nx; _sel.data.wz = nz;
+        _ring.position.x = nx; _ring.position.z = nz;
         markDirty();
       });
 
@@ -1519,17 +1762,17 @@
 
       // -- keyboard shortcuts ------------------------------------------------
       window.addEventListener('keydown', ev => {
-        if (ev.key==='Escape')                              { _setPlacing(false); _select(null); }
-        if ((ev.key==='Delete'||ev.key==='Backspace')&&_sel){ ev.preventDefault(); _delete(); }
-        if (ev.key==='q'||ev.key==='Q')                     _rotate(-1);
-        if (ev.key==='e'||ev.key==='E')                     _rotate(1);
+        if (ev.key === 'Escape') { _setPlacing(false); _select(null); }
+        if ((ev.key === 'Delete' || ev.key === 'Backspace') && _sel) { ev.preventDefault(); _delete(); }
+        if (ev.key === 'q' || ev.key === 'Q') _rotate(-1);
+        if (ev.key === 'e' || ev.key === 'E') _rotate(1);
       });
 
       // -- UI buttons --------------------------------------------------------
-      document.getElementById('btnFurnPlace').onclick  = () => _setPlacing(!_placing);
-      document.getElementById('btnFurnDel').onclick    = _delete;
-      document.getElementById('btnFurnRotL').onclick   = () => _rotate(-1);
-      document.getElementById('btnFurnRotR').onclick   = () => _rotate(1);
+      document.getElementById('btnFurnPlace').onclick = () => _setPlacing(!_placing);
+      document.getElementById('btnFurnDel').onclick = _delete;
+      document.getElementById('btnFurnRotL').onclick = () => _rotate(-1);
+      document.getElementById('btnFurnRotR').onclick = () => _rotate(1);
 
       // -- save: bake furniture into HTML and download -----------------------
       document.getElementById('btnFurnSave').onclick = () => {
@@ -1537,19 +1780,19 @@
         st.textContent = 'Записване...';
         try {
           _furnSaveEl.textContent = JSON.stringify(
-            _furnItems.map(it=>({
+            _furnItems.map(it => ({
               type: it.data.type,
               wx: +it.data.wx.toFixed(3),
               wz: +it.data.wz.toFixed(3),
-              rot: +((it.data.rot||0).toFixed(3)),
+              rot: +((it.data.rot || 0).toFixed(3)),
             }))
           );
-          const blob = new Blob(['<!DOCTYPE html>\n'+document.documentElement.outerHTML],
-            {type:'text/html;charset=utf-8'});
-          const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download='floorplan3d_v2.html'; a.click();
+          const blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML],
+            { type: 'text/html;charset=utf-8' });
+          const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'floorplan3d_v2.html'; a.click();
           st.textContent = 'Запазване успешно!';
-          setTimeout(()=>{st.textContent='';}, 5000);
-        } catch(e) { st.textContent = 'Грешка: '+e.message; }
+          setTimeout(() => { st.textContent = ''; }, 5000);
+        } catch (e) { st.textContent = 'Грешка: ' + e.message; }
       };
     }
 
@@ -1682,8 +1925,8 @@
           hideLabel: true,
           hatch: true,
         },
-        { x: 57500, y: -7000,  w: 15,  d: 5,   label: 'ТОАЛЕТНИ' },
-        { x: 63500, y: -7000,  w: 12,  d: 5,   label: 'ТОАЛЕТНИ' },
+        { x: 57500, y: -7000, w: 15, d: 5, label: 'ТОАЛЕТНИ' },
+        { x: 63500, y: -7000, w: 12, d: 5, label: 'ТОАЛЕТНИ' },
 
       ];
       // Hatch texture for restricted zones
@@ -1755,18 +1998,18 @@
     // ---- exhibitor data ----
     // Add companies here: standNumber ? { company, logo (URL or relative path, "" for initials) }
     const EXHIBITORS = {
-      6:  { company: 'Top-Rent-A-Car',          logo: 'Logos/toprentacar.webp',            status: 'partner',  website: '', description: '' },
-      12: { company: 'Девиа България',         logo: 'Logos/deviaLogoBG.png',            status: 'occupied', website: '', description: '' },
+      6: { company: 'Top-Rent-A-Car', logo: 'Logos/toprentacar.webp', status: 'partner', website: '', description: '' },
+      12: { company: 'Девиа България', logo: 'Logos/deviaLogoBG.png', status: 'occupied', website: '', description: '' },
     };
 
     const STATUS_COLORS = {
-      free:     { col: 0x2ECC71, emi: 0x082e12 },
+      free: { col: 0x2ECC71, emi: 0x082e12 },
       occupied: { col: 0x7F8C8D, emi: 0x1c2122 },
       reserved: { col: 0xF39C12, emi: 0x3d2a03 },
-      partner:  { col: 0x1F618D, emi: 0x071422 },
+      partner: { col: 0x1F618D, emi: 0x071422 },
     };
     const STATUS_LABELS = { free: 'Свободен', occupied: 'Зает', reserved: 'Резервиран', partner: 'Партньор' };
-    const STATUS_HEX    = { free: '#2ECC71',  occupied: '#7F8C8D', reserved: '#F39C12',  partner: '#1F618D' };
+    const STATUS_HEX = { free: '#2ECC71', occupied: '#7F8C8D', reserved: '#F39C12', partner: '#1F618D' };
 
     const OCC_COL = 0x7F8C8D, OCC_EMI = 0x1c2122;
 
@@ -1829,9 +2072,11 @@
       }
       const sp = occ ? companySprite(s.n, occ.company) : numSprite(String(s.n));
       sp.position.set(mesh.position.x, STAND_H + 1.0, mesh.position.z);
-      mesh.userData = { n: s.n, color: s.color, baseW: bw, baseD: bd, sprite: sp, occ,
-                        status: _st, company: occ?.company||'', logo: occ?.logo||'',
-                        website: occ?.website||'', description: occ?.description||'' };
+      mesh.userData = {
+        n: s.n, color: s.color, baseW: bw, baseD: bd, sprite: sp, occ,
+        status: _st, company: occ?.company || '', logo: occ?.logo || '',
+        website: occ?.website || '', description: occ?.description || ''
+      };
       standMeshes.push(mesh); groups.stand.add(mesh); groups.snum.add(sp);
     }
     scene.add(groups.stand); scene.add(groups.snum);
@@ -2051,7 +2296,7 @@
         if (u.logo) { _ttLogo.src = u.logo; _ttLogo.style.display = 'block'; }
         else _ttLogo.style.display = 'none';
         const label = STATUS_LABELS[u.status] || u.status;
-        const hex   = STATUS_HEX[u.status]    || '#fff';
+        const hex = STATUS_HEX[u.status] || '#fff';
         _ttBadge.innerHTML = `<span class="tt-badge" style="background:${hex}22;color:${hex};border:1px solid ${hex}55">${label}</span><br><span style="font-size:10px;color:#4a6a8a;margin-top:4px;display:block">Задръж за подробности</span>`;
         const px = ev.clientX + 16, py = ev.clientY - 12;
         _tooltip.style.left = Math.min(px, window.innerWidth - 270) + 'px';
@@ -2086,7 +2331,7 @@
       document.getElementById('popup-desc').textContent = u.description || '';
       document.getElementById('popup-desc').style.display = u.description ? 'block' : 'none';
       const bw = Math.round(u.baseW * sizeScale), bd = Math.round(u.baseD * sizeScale);
-      document.getElementById('popup-dims').textContent = `${(bw/1000).toFixed(1)}m � ${(bd/1000).toFixed(1)}m`;
+      document.getElementById('popup-dims').textContent = `${(bw / 1000).toFixed(1)}m � ${(bd / 1000).toFixed(1)}m`;
       const logoWrap = document.getElementById('popup-logo-wrap');
       logoWrap.innerHTML = '';
       if (u.logo) {
@@ -2111,7 +2356,7 @@
       _popup.classList.add('open');
     }
     function initialsDiv(name, hex) {
-      const ini = (name||'?').split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase();
+      const ini = (name || '?').split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
       return `<div style="width:64px;height:64px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;background:${hex}33">${ini}</div>`;
     }
 
@@ -2155,55 +2400,55 @@
 
 
     // Black poseur / cocktail tables � main hall & foyer (conical pedestal)
-    (function(){
-      const bMat=new THREE.MeshLambertMaterial({color:0x0e0e0e});
-      const tMat=new THREE.MeshLambertMaterial({color:0x1c1c1c,emissive:new THREE.Color(0.02,0.02,0.02)});
-      function poseur(px,pz){
-        const c=new THREE.Mesh(new THREE.CylinderGeometry(0.07,0.26,0.93,10),bMat);
-        c.position.set(px,0.465,pz); scene.add(c);
-        const f=new THREE.Mesh(new THREE.CylinderGeometry(0.26,0.26,0.03,10),bMat);
-        f.position.set(px,0.015,pz); scene.add(f);
-        const t=new THREE.Mesh(new THREE.CylinderGeometry(0.33,0.33,0.04,14),tMat);
-        t.position.set(px,0.96,pz); scene.add(t);
+    (function () {
+      const bMat = new THREE.MeshLambertMaterial({ color: 0x0e0e0e });
+      const tMat = new THREE.MeshLambertMaterial({ color: 0x1c1c1c, emissive: new THREE.Color(0.02, 0.02, 0.02) });
+      function poseur(px, pz) {
+        const c = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.26, 0.93, 10), bMat);
+        c.position.set(px, 0.465, pz); scene.add(c);
+        const f = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.03, 10), bMat);
+        f.position.set(px, 0.015, pz); scene.add(f);
+        const t = new THREE.Mesh(new THREE.CylinderGeometry(0.33, 0.33, 0.04, 14), tMat);
+        t.position.set(px, 0.96, pz); scene.add(t);
       }
-      [[-W*0.18,-D*0.28],[W*0.0,-D*0.28],[W*0.18,-D*0.28],
-       [-W*0.18, D*0.08],
-       [-W*0.35,-D*0.10],[W*0.35,-D*0.10]
-      ].forEach(([px,pz])=>poseur(px,pz));
+      [[-W * 0.18, -D * 0.28], [W * 0.0, -D * 0.28], [W * 0.18, -D * 0.28],
+      [-W * 0.18, D * 0.08],
+      [-W * 0.35, -D * 0.10], [W * 0.35, -D * 0.10]
+      ].forEach(([px, pz]) => poseur(px, pz));
     })();
 
     // ---- emerald lounge — between stand 1 and stand 2 ----
-    (function(){
-      const sofaMat=new THREE.MeshLambertMaterial({color:0x1f6b3a,emissive:new THREE.Color(0.02,0.10,0.04),emissiveIntensity:1});
-      const marbleMat=new THREE.MeshLambertMaterial({color:0x7a5a38,emissive:new THREE.Color(0.08,0.05,0.02),emissiveIntensity:1});
-      const legMat=new THREE.MeshLambertMaterial({color:0x111111});
-      const grp=new THREE.Group();
-      const LX=WX(75037), LZ=WZ(-19225);
-      const seatGeo=new THREE.BoxGeometry(0.88,0.24,0.72);
-      const backGeo=new THREE.BoxGeometry(0.88,0.46,0.25);
-      const armGeo =new THREE.BoxGeometry(0.24,0.62,0.74);
-      function mod(x,z,rotY,bDx,bDz){
-        const s=new THREE.Mesh(seatGeo,sofaMat); s.position.set(x,0.44,z); s.rotation.y=rotY; grp.add(s);
-        const b=new THREE.Mesh(backGeo,sofaMat); b.position.set(x+bDx*0.37,0.73,z+bDz*0.37); b.rotation.y=rotY; grp.add(b);
+    (function () {
+      const sofaMat = new THREE.MeshLambertMaterial({ color: 0x1f6b3a, emissive: new THREE.Color(0.02, 0.10, 0.04), emissiveIntensity: 1 });
+      const marbleMat = new THREE.MeshLambertMaterial({ color: 0x7a5a38, emissive: new THREE.Color(0.08, 0.05, 0.02), emissiveIntensity: 1 });
+      const legMat = new THREE.MeshLambertMaterial({ color: 0x111111 });
+      const grp = new THREE.Group();
+      const LX = WX(75037), LZ = WZ(-19225);
+      const seatGeo = new THREE.BoxGeometry(0.88, 0.24, 0.72);
+      const backGeo = new THREE.BoxGeometry(0.88, 0.46, 0.25);
+      const armGeo = new THREE.BoxGeometry(0.24, 0.62, 0.74);
+      function mod(x, z, rotY, bDx, bDz) {
+        const s = new THREE.Mesh(seatGeo, sofaMat); s.position.set(x, 0.44, z); s.rotation.y = rotY; grp.add(s);
+        const b = new THREE.Mesh(backGeo, sofaMat); b.position.set(x + bDx * 0.37, 0.73, z + bDz * 0.37); b.rotation.y = rotY; grp.add(b);
       }
-      for(let i=-1;i<=1;i++) mod(LX+i*0.80, LZ+1.20, Math.PI, 0, 1);
-      mod(LX+1.60, LZ+1.20, -Math.PI*0.75, 0.707, 0.707);
-      mod(LX-1.60, LZ+1.20, Math.PI*0.75, -0.707, 0.707);
-      for(let j=0;j<2;j++) mod(LX+2.00, LZ+0.40-j*0.80, -Math.PI/2, 1, 0);
-      for(let j=0;j<2;j++) mod(LX-2.00, LZ+0.40-j*0.80, Math.PI/2, -1, 0);
-      const aL=new THREE.Mesh(armGeo,sofaMat); aL.position.set(LX+2.00,0.49,LZ-0.50); aL.rotation.y=-Math.PI/2; grp.add(aL);
-      const aR=new THREE.Mesh(armGeo,sofaMat); aR.position.set(LX-2.00,0.49,LZ-0.50); aR.rotation.y=-Math.PI/2; grp.add(aR);
-      const topGeo=new THREE.CylinderGeometry(0.35,0.35,0.04,20);
-      const legGeo=new THREE.CylinderGeometry(0.015,0.015,0.40,6);
-      function table(tx,tz){
-        const top=new THREE.Mesh(topGeo,marbleMat); top.position.set(tx,0.44,tz); grp.add(top);
-        for(let a=0;a<3;a++){
-          const ang=a/3*Math.PI*2;
-          const lg=new THREE.Mesh(legGeo,legMat); lg.position.set(tx+Math.cos(ang)*0.20,0.20,tz+Math.sin(ang)*0.20); grp.add(lg);
+      for (let i = -1; i <= 1; i++) mod(LX + i * 0.80, LZ + 1.20, Math.PI, 0, 1);
+      mod(LX + 1.60, LZ + 1.20, -Math.PI * 0.75, 0.707, 0.707);
+      mod(LX - 1.60, LZ + 1.20, Math.PI * 0.75, -0.707, 0.707);
+      for (let j = 0; j < 2; j++) mod(LX + 2.00, LZ + 0.40 - j * 0.80, -Math.PI / 2, 1, 0);
+      for (let j = 0; j < 2; j++) mod(LX - 2.00, LZ + 0.40 - j * 0.80, Math.PI / 2, -1, 0);
+      const aL = new THREE.Mesh(armGeo, sofaMat); aL.position.set(LX + 2.00, 0.49, LZ - 0.50); aL.rotation.y = -Math.PI / 2; grp.add(aL);
+      const aR = new THREE.Mesh(armGeo, sofaMat); aR.position.set(LX - 2.00, 0.49, LZ - 0.50); aR.rotation.y = -Math.PI / 2; grp.add(aR);
+      const topGeo = new THREE.CylinderGeometry(0.35, 0.35, 0.04, 20);
+      const legGeo = new THREE.CylinderGeometry(0.015, 0.015, 0.40, 6);
+      function table(tx, tz) {
+        const top = new THREE.Mesh(topGeo, marbleMat); top.position.set(tx, 0.44, tz); grp.add(top);
+        for (let a = 0; a < 3; a++) {
+          const ang = a / 3 * Math.PI * 2;
+          const lg = new THREE.Mesh(legGeo, legMat); lg.position.set(tx + Math.cos(ang) * 0.20, 0.20, tz + Math.sin(ang) * 0.20); grp.add(lg);
         }
       }
-      table(LX+0.80, LZ+0.25);
-      table(LX,      LZ+0.45);
+      table(LX + 0.80, LZ + 0.25);
+      table(LX, LZ + 0.45);
       scene.add(grp);
     })();
 
@@ -2335,8 +2580,8 @@
     });
 
     function setWallOpacity(v) {
-      wallWoodMat.opacity    = v; wallWoodMat.needsUpdate    = true;
-      wallMarbleMat.opacity  = v; wallMarbleMat.needsUpdate  = true;
+      wallWoodMat.opacity = v; wallWoodMat.needsUpdate = true;
+      wallMarbleMat.opacity = v; wallMarbleMat.needsUpdate = true;
       wallBaseboardMat.opacity = v; wallBaseboardMat.transparent = v < 1; wallBaseboardMat.needsUpdate = true;
       const pct = Math.round(v * 100);
       document.getElementById('wallOpVal').textContent = pct + '%';
@@ -2400,13 +2645,14 @@
       `Building ${W.toFixed(1)}m � ${D.toFixed(1)}m � ${(DATA.stands || []).length} expo stands � scale & drag in Top edit, then Export`;
 
     // -- Coordinate HUD ------------------------------------------------------
-    { const hud = document.getElementById('coordsHud');
+    {
+      const hud = document.getElementById('coordsHud');
       const _cRay = new THREE.Raycaster(), _cNdc = new THREE.Vector2();
-      const _cPl  = new THREE.Plane(new THREE.Vector3(0,1,0),0), _cHit = new THREE.Vector3();
+      const _cPl = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), _cHit = new THREE.Vector3();
       dom.addEventListener('mousemove', ev => {
         const r = dom.getBoundingClientRect();
-        _cNdc.x = ((ev.clientX-r.left)/r.width)*2-1;
-        _cNdc.y = -((ev.clientY-r.top)/r.height)*2+1;
+        _cNdc.x = ((ev.clientX - r.left) / r.width) * 2 - 1;
+        _cNdc.y = -((ev.clientY - r.top) / r.height) * 2 + 1;
         _cRay.setFromCamera(_cNdc, cam);
         if (_cRay.ray.intersectPlane(_cPl, _cHit)) {
           const dwgX = Math.round(IX(_cHit.x)), dwgY = Math.round(IY(_cHit.z));
@@ -2431,14 +2677,14 @@
 
     // --- State ---
     let isWalkthrough = false, wtAnimating = false;
-    const WT_TRANS   = 1000;
+    const WT_TRANS = 1000;
     let wtMoveDur = 500;
     const WT_FOV = 66, ORBIT_FOV = 50;
     let wtFovFrom = ORBIT_FOV, wtFovTo = WT_FOV;
-    const EYE_H      = 1.6;
+    const EYE_H = 1.6;
     let wtTransStart = 0, wtMoveStart2 = 0;
     const wtStartPos = new THREE.Vector3(), wtEndPos = new THREE.Vector3();
-    const wtStartQ   = new THREE.Quaternion(), wtEndQ = new THREE.Quaternion();
+    const wtStartQ = new THREE.Quaternion(), wtEndQ = new THREE.Quaternion();
     const wtMoveFrom = new THREE.Vector3(), wtMoveTo2 = new THREE.Vector3();
     let wtMoving = false;
     const wtEuler = new THREE.Euler(0, 0, 0, 'YXZ');
@@ -2613,7 +2859,7 @@
       _wtDist += Math.abs(dx) + Math.abs(dy);
       if (_wtDist > _WT_THRESH) {
         // Accumulate into inertia velocity
-        _wtYawVel   -= dx * 0.0025;
+        _wtYawVel -= dx * 0.0025;
         _wtPitchVel -= dy * 0.0025;
         markDirty();
       }
@@ -2657,7 +2903,7 @@
     // --- WASD movement ---
     const _wtKeys = {};
     window.addEventListener('keydown', ev => { if (isWalkthrough) _wtKeys[ev.code] = true; });
-    window.addEventListener('keyup',   ev => { _wtKeys[ev.code] = false; });
+    window.addEventListener('keyup', ev => { _wtKeys[ev.code] = false; });
 
     // --- Minimap camera (single renderer, setViewport/setScissor) ---
     const mapCam = new THREE.OrthographicCamera(-W / 2, W / 2, D / 2, -D / 2, 0.1, 200);
@@ -2671,17 +2917,17 @@
     scene.add(playerDot);
 
     // --- Cursor puck (Google Maps style � follows mouse on floor) ---
-    (function() {
+    (function () {
       const c = document.createElement('canvas'); c.width = 256; c.height = 256;
       const ctx = c.getContext('2d');
       // Outer glow ring
       ctx.shadowColor = '#4ab8ff'; ctx.shadowBlur = 28;
       ctx.strokeStyle = 'rgba(74,184,255,0.95)'; ctx.lineWidth = 7;
-      ctx.beginPath(); ctx.arc(128,128,104,0,Math.PI*2); ctx.stroke();
+      ctx.beginPath(); ctx.arc(128, 128, 104, 0, Math.PI * 2); ctx.stroke();
       // Inner fill
       ctx.shadowBlur = 0;
       ctx.fillStyle = 'rgba(74,184,255,0.13)';
-      ctx.beginPath(); ctx.arc(128,128,97,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(128, 128, 97, 0, Math.PI * 2); ctx.fill();
       // Bold chevron arrow pointing UP (= forward direction)
       ctx.shadowColor = 'rgba(74,184,255,0.7)'; ctx.shadowBlur = 18;
       ctx.fillStyle = 'rgba(255,255,255,0.97)';
@@ -2723,7 +2969,7 @@
         _cursorPuck.visible = false; return;
       }
       const dx = _h.x - cam.position.x, dz = _h.z - cam.position.z;
-      if (Math.sqrt(dx*dx + dz*dz) < 0.8) { _cursorPuck.visible = false; return; }
+      if (Math.sqrt(dx * dx + dz * dz) < 0.8) { _cursorPuck.visible = false; return; }
       _cursorPuckNavigable = _canMoveTo(_h.x, _h.z);
       _cursorPuck.visible = true;
       _cursorPuck.position.set(_h.x, 0.06, _h.z);
@@ -2744,7 +2990,7 @@
       if (!isWalkthrough || wtAnimating) return;
       const r = _mapEl.getBoundingClientRect();
       const u = (ev.clientX - r.left) / r.width;
-      const v = (ev.clientY - r.top)  / r.height;
+      const v = (ev.clientY - r.top) / r.height;
       const wx = (u - 0.5) * W;
       const wz = (v - 0.5) * D;
       if (_canMoveTo(wx, wz)) _wtMoveTo(new THREE.Vector3(wx, 0, wz));
@@ -2761,7 +3007,7 @@
       // -- Entry transition --
       if (wtAnimating) {
         const t = Math.min((now - wtTransStart) / WT_TRANS, 1);
-        const e = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+        const e = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         cam.position.lerpVectors(wtStartPos, wtEndPos, e);
         cam.quaternion.slerpQuaternions(wtStartQ, wtEndQ, e);
         cam.fov = wtFovFrom + (wtFovTo - wtFovFrom) * e; cam.updateProjectionMatrix();
@@ -2778,11 +3024,11 @@
 
       // -- Rotation inertia --
       if (isWalkthrough && !wtAnimating &&
-          (Math.abs(_wtYawVel) > 0.00005 || Math.abs(_wtPitchVel) > 0.00005)) {
+        (Math.abs(_wtYawVel) > 0.00005 || Math.abs(_wtPitchVel) > 0.00005)) {
         wtEuler.y += _wtYawVel;
-        wtEuler.x  = Math.max(-1.1, Math.min(1.1, wtEuler.x + _wtPitchVel));
+        wtEuler.x = Math.max(-1.1, Math.min(1.1, wtEuler.x + _wtPitchVel));
         cam.quaternion.setFromEuler(wtEuler);
-        _wtYawVel   *= _WT_DAMP;
+        _wtYawVel *= _WT_DAMP;
         _wtPitchVel *= _WT_DAMP;
         markDirty();
       }
@@ -2790,7 +3036,7 @@
       // -- Click-to-move animation --
       if (wtMoving) {
         const t = Math.min((now - wtMoveStart2) / wtMoveDur, 1);
-        const e = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+        const e = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         const nx = wtMoveFrom.x + (wtMoveTo2.x - wtMoveFrom.x) * e;
         const nz = wtMoveFrom.z + (wtMoveTo2.z - wtMoveFrom.z) * e;
         if (_canMoveTo(nx, nz)) { cam.position.x = nx; cam.position.z = nz; }
@@ -2802,15 +3048,15 @@
       if (isWalkthrough && !wtAnimating) {
         const spd = 6 * dt;
         const fy = -Math.sin(wtEuler.y), fz = -Math.cos(wtEuler.y);
-        const rx =  Math.cos(wtEuler.y), rz = -Math.sin(wtEuler.y);
+        const rx = Math.cos(wtEuler.y), rz = -Math.sin(wtEuler.y);
         const tryMove = (dx, dz) => {
           const nx = cam.position.x + dx, nz = cam.position.z + dz;
           if (_canMoveTo(nx, nz)) { cam.position.x = nx; cam.position.z = nz; markDirty(); }
         };
-        if (_wtKeys['KeyW'] || _wtKeys['ArrowUp'])   tryMove( fy*spd,  fz*spd);
-        if (_wtKeys['KeyS'] || _wtKeys['ArrowDown']) tryMove(-fy*spd, -fz*spd);
-        if (_wtKeys['KeyA'])                          tryMove(-rx*spd, -rz*spd);
-        if (_wtKeys['KeyD'])                          tryMove( rx*spd,  rz*spd);
+        if (_wtKeys['KeyW'] || _wtKeys['ArrowUp']) tryMove(fy * spd, fz * spd);
+        if (_wtKeys['KeyS'] || _wtKeys['ArrowDown']) tryMove(-fy * spd, -fz * spd);
+        if (_wtKeys['KeyA']) tryMove(-rx * spd, -rz * spd);
+        if (_wtKeys['KeyD']) tryMove(rx * spd, rz * spd);
       }
 
       // -- Player dot on minimap + nav pucks --
