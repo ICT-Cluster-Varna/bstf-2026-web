@@ -1470,11 +1470,12 @@
 
     const groups = {};
     groups.wall = wallMeshGroup(clip(DATA.segments.wall), 0, 3.0);
-    // Hide broken wall stubs inside restaurant table zone (world coords: wx -51..-17, wz 1..21.5)
+    // Hide short broken wall fragments inside restaurant zone only
     for (const m of wallSegMeshes) {
       const { ax, az, bx, bz } = m.userData;
       const mx = (ax + bx) * 0.5, mz = (az + bz) * 0.5;
-      if (mx > -44 && mx < -13 && mz > 1.5 && mz < 21) { m.visible = false; }
+      const len = Math.sqrt((bx - ax) ** 2 + (bz - az) ** 2);
+      if (mx > -51 && mx < -12 && mz > 1 && mz < 22 && len < 2.0) { m.visible = false; }
     }
     buildWallDisplayMeshes();
 
