@@ -2079,10 +2079,23 @@
     const OCC_COL = 0x7F8C8D, OCC_EMI = 0x1c2122;
 
     function companySprite(num, name) {
-      // Pre-measure text so canvas auto-fits the full company name
+      // Max text-area width — caps sprite at ~480*0.019 = 9.1 Three.js units regardless of name length
+      const MAX_TEXT_W = 480;
       const _tm = document.createElement('canvas').getContext('2d');
-      _tm.font = '700 36px "Segoe UI",system-ui,sans-serif';
-      const cW = 124 + Math.ceil(_tm.measureText(name).width) + 20;
+      // Auto-shrink font from 36px down to 20px until text fits
+      let fs = 36;
+      while (fs > 20) {
+        _tm.font = `700 ${fs}px "Segoe UI",system-ui,sans-serif`;
+        if (_tm.measureText(name).width <= MAX_TEXT_W) break;
+        fs -= 2;
+      }
+      _tm.font = `700 ${fs}px "Segoe UI",system-ui,sans-serif`;
+      // Truncate with ellipsis only if name still overflows at minimum font
+      let label = name;
+      while (_tm.measureText(label).width > MAX_TEXT_W && label.length > 2) label = label.slice(0, -1);
+      if (label !== name) label = label.slice(0, -1) + '…';
+      const textW = Math.ceil(_tm.measureText(label).width);
+      const cW = 116 + textW + 20;
       const c = document.createElement('canvas'); c.width = cW; c.height = 140;
       const ctx = c.getContext('2d');
       const r = 14;
@@ -2100,11 +2113,8 @@
       ctx.font = '800 50px "Segoe UI",system-ui,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.lineWidth = 8; ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.strokeText(String(num), 58, 70);
       ctx.fillStyle = '#fff'; ctx.fillText(String(num), 58, 70);
-      // company name — canvas is sized to fit via pre-measurement above
-      ctx.textAlign = 'left'; ctx.font = '700 36px "Segoe UI",system-ui,sans-serif';
-      let label = name;
-      while (ctx.measureText(label).width > (cW - 144) && label.length > 2) label = label.slice(0, -1);
-      if (label !== name) label = label.slice(0, -1) + '...';
+      // company name at auto-fitted font size
+      ctx.textAlign = 'left'; ctx.font = `700 ${fs}px "Segoe UI",system-ui,sans-serif`;
       ctx.lineWidth = 7; ctx.strokeStyle = 'rgba(0,0,0,0.65)'; ctx.strokeText(label, 124, 70);
       ctx.fillStyle = '#e8f4ff'; ctx.fillText(label, 124, 70);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
