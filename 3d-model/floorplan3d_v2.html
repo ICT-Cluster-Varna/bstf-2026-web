@@ -744,7 +744,7 @@
         for (let i = 0; i < uvA.count; i++) uvA.setXY(i, uvA.getX(i) / 2.4, uvA.getY(i) / 2.4);
         geo.rotateX(-Math.PI / 2);
         const cm = new THREE.Mesh(geo, ceilMat);
-        cm.position.y = 3.05 + ceilGrp.children.length * 0.004;
+        cm.position.y = 5.0 + ceilGrp.children.length * 0.004;
         ceilGrp.add(cm);
       });
       ceilGrp.visible = false;
@@ -1031,7 +1031,8 @@
       ctx.strokeText(text, c.width / 2, c.height / 2 + 1);
       ctx.fillText(text, c.width / 2, c.height / 2 + 1);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
-      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: true, depthWrite: false }));
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
+      s.renderOrder = 999;
       s.scale.set(c.width * 0.016, c.height * 0.016, 1); return s;
     }
     function numSprite(text) {
@@ -1042,7 +1043,8 @@
       ctx.strokeText(text, 76, 80);
       ctx.fillStyle = '#ffffff'; ctx.fillText(text, 76, 80);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
-      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: true, depthWrite: false }));
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
+      s.renderOrder = 999;
       s.scale.set(2.6, 2.6, 1); return s;
     }
 
@@ -1099,7 +1101,8 @@
       ctx.strokeText(line2, c.width / 2, pad + fs1 + gap + fs2 / 2 + 4);
       ctx.fillText(line2, c.width / 2, pad + fs1 + gap + fs2 / 2 + 4);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
-      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: true, depthWrite: false }));
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
+      s.renderOrder = 999;
       const sc = 0.018; s.scale.set(c.width * sc, c.height * sc, 1); return s;
     }
     const HALLS = [
@@ -1133,8 +1136,11 @@
       const BZ = WZ(-36200);       // back (south) wall
       const hallCZ = (FZ + BZ) / 2;
 
-      // -- CONNEXUS Screen ------------------------------
-      const SW = 8, SH = 3.2, SY = SH / 2 + 1.3;
+      // -- CONNEXUS Screen -- centered on hall Z axis --
+      // SW capped so screen + plants always fit inside the 12.2m hall depth
+      const _hallDepth = Math.abs(BZ - FZ);
+      const SW = Math.min(7, _hallDepth * 0.55);   // ≤7m, ≤55% of hall depth
+      const SH = 3.2, SY = SH / 2 + 1.3;           // top at 4.5m, fits under 5m roof
 
       const cv = document.createElement('canvas');
       cv.width = 1200; cv.height = 480;
@@ -1212,8 +1218,8 @@
         const pot = new THREE.Mesh(new THREE.CylinderGeometry(.22, .18, .38, 10), pM);
         pot.position.set(px, .19, pz); grp.add(pot);
       }
-      addPlant(LX + .6, hallCZ - SW / 2 - 1);
-      addPlant(LX + .6, hallCZ + SW / 2 + 1);
+      addPlant(LX + .6, hallCZ - SW / 2 + 0.5);
+      addPlant(LX + .6, hallCZ + SW / 2 - 0.5);
 
       // -- Chairs (InstancedMesh) ------------------------
       const SEATW = .52, SEATD = .50, SEATH = .10;
@@ -1765,7 +1771,11 @@
     const OCC_COL = 0x7F8C8D, OCC_EMI = 0x1c2122;
 
     function companySprite(num, name) {
-      const c = document.createElement('canvas'); c.width = 400; c.height = 140;
+      // Pre-measure text so canvas auto-fits the full company name
+      const _tm = document.createElement('canvas').getContext('2d');
+      _tm.font = '700 36px "Segoe UI",system-ui,sans-serif';
+      const cW = 124 + Math.ceil(_tm.measureText(name).width) + 20;
+      const c = document.createElement('canvas'); c.width = cW; c.height = 140;
       const ctx = c.getContext('2d');
       const r = 14;
       ctx.fillStyle = 'rgba(6,12,26,0.92)';
@@ -1782,16 +1792,17 @@
       ctx.font = '800 50px "Segoe UI",system-ui,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.lineWidth = 8; ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.strokeText(String(num), 58, 70);
       ctx.fillStyle = '#fff'; ctx.fillText(String(num), 58, 70);
-      // company name
+      // company name — canvas is sized to fit via pre-measurement above
       ctx.textAlign = 'left'; ctx.font = '700 36px "Segoe UI",system-ui,sans-serif';
       let label = name;
-      while (ctx.measureText(label).width > 270 && label.length > 2) label = label.slice(0, -1);
-      if (label !== name) label = label.slice(0, -1) + '�';
+      while (ctx.measureText(label).width > (cW - 144) && label.length > 2) label = label.slice(0, -1);
+      if (label !== name) label = label.slice(0, -1) + '...';
       ctx.lineWidth = 7; ctx.strokeStyle = 'rgba(0,0,0,0.65)'; ctx.strokeText(label, 124, 70);
       ctx.fillStyle = '#e8f4ff'; ctx.fillText(label, 124, 70);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
-      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: true, depthWrite: false }));
-      s.scale.set(400 * 0.019, 140 * 0.019, 1); return s;
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
+      s.renderOrder = 999;
+      s.scale.set(cW * 0.019, 140 * 0.019, 1); return s;
     }
 
     // ---- stands (editable) ----
