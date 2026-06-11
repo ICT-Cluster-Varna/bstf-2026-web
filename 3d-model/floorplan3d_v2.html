@@ -336,7 +336,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,.45);
+      background: rgba(0,0,0,.32);
       z-index: 68;
       -webkit-tap-highlight-color: transparent;
     }
@@ -344,24 +344,33 @@
     #standPopup {
       position: fixed;
       z-index: 70;
-      background: linear-gradient(160deg,#0d1828 0%,#091220 100%);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(80,130,200,.18);
+      background: #0b1622;
       overflow-y: auto;
       box-sizing: border-box;
-      /* Desktop right-drawer */
-      top: 0; right: 0; bottom: 0; width: 340px;
-      border-left: 1px solid rgba(80,130,200,.22);
+      /* Desktop: starts at 56px to clear top action buttons */
+      top: 56px; right: 0; bottom: 0; width: 320px;
+      border-left: 1px solid rgba(80,130,200,.18);
+      border-top: 1px solid rgba(80,130,200,.15);
+      border-top-left-radius: 14px;
       transform: translateX(105%);
-      transition: transform .28s cubic-bezier(.4,0,.2,1);
+      transition: transform .26s cubic-bezier(.4,0,.2,1);
       padding: 0;
     }
     #standPopup.open { transform: translateX(0); }
 
+    /* Teal accent line at the top of the drawer */
+    #standPopup::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, #2CA6B3 0%, #1a73e8 100%);
+      border-top-left-radius: 14px;
+    }
+
     @media (max-width: 620px) {
       #standPopup {
         top: auto; left: 0; right: 0; bottom: 0; width: 100%;
-        max-height: 82vh;
+        max-height: 80vh;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         border-top: 1px solid rgba(80,130,200,.28);
@@ -369,111 +378,148 @@
         transform: translateY(105%);
       }
       #standPopup.open { transform: translateY(0); }
+      #standPopup::before { border-radius: 0; }
     }
 
     #popup-drag-handle {
       display: none;
-      width: 38px; height: 4px;
-      background: rgba(255,255,255,.16);
+      width: 36px; height: 4px;
+      background: rgba(255,255,255,.14);
       border-radius: 2px;
-      margin: 10px auto 0;
+      margin: 12px auto 0;
     }
     @media (max-width: 620px) { #popup-drag-handle { display: block; } }
 
     #popup-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
-      padding: 16px 16px 14px;
-      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: 16px 14px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
       position: sticky; top: 0;
-      background: linear-gradient(160deg,#0d1828 0%,#091220 100%);
+      background: #0b1622;
       z-index: 1;
     }
 
     #popup-logo-wrap {
       flex-shrink: 0;
-      width: 48px; height: 48px;
+      width: 52px; height: 52px;
       background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
 
-    #popup-header-text { flex: 1; min-width: 0; }
+    #popup-header-text { flex: 1; min-width: 0; padding-top: 2px; }
 
     #popup-stand-num {
       font-size: 10px;
-      color: #5a7a9a;
+      color: #4a6880;
       text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 2px;
+      letter-spacing: .1em;
+      margin-bottom: 4px;
     }
 
     #popup-name {
       font-size: 15px;
       font-weight: 700;
-      color: #e8eef5;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 1.3;
+      color: #dce8f5;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.35;
     }
 
     #popupClose {
       flex-shrink: 0;
-      width: 40px; height: 40px;
-      min-width: 40px;
+      width: 30px; height: 30px;
+      min-width: 30px;
       display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-      color: #a0b4c8;
-      font-size: 20px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 8px;
+      color: #6a8099;
+      font-size: 14px;
       cursor: pointer;
       line-height: 1;
-      transition: background .15s, color .15s;
+      margin-top: 2px;
+      transition: background .15s, color .15s, border-color .15s;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
-    #popupClose:hover, #popupClose:active { background: rgba(255,255,255,.18); color: #fff; }
+    #popupClose:hover { background: rgba(239,68,68,.14); color: #f87171; border-color: rgba(239,68,68,.3); }
+    #popupClose:active { transform: scale(.93); }
 
-    #popup-body { padding: 16px 18px 24px; }
+    #popup-body { padding: 14px 16px 28px; }
 
-    #popup-status-badge { display: inline-block; margin-bottom: 12px; }
+    #popup-status-badge { display: inline-block; margin-bottom: 14px; }
 
     #popup-desc {
       font-size: 13px;
-      color: #8fa1b3;
-      line-height: 1.6;
-      margin-bottom: 12px;
+      color: #7a90a8;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
     #popup-dims {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       font-size: 11px;
-      color: #4a6a8a;
-      margin-bottom: 4px;
+      color: #4a6880;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin-bottom: 6px;
     }
 
     #popup-cta {
       display: block;
       text-align: center;
-      padding: 13px 16px;
+      padding: 12px 16px;
       border-radius: 10px;
       color: #fff;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      margin-top: 16px;
-      transition: opacity .15s, transform .1s;
+      margin-top: 18px;
+      letter-spacing: .01em;
+      transition: filter .15s, transform .12s;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
-    #popup-cta:hover { opacity: .88; }
+    #popup-cta:hover { filter: brightness(1.12); }
     #popup-cta:active { transform: scale(.97); }
+    #popup-price {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #2CA6B3;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    #popup-premium-badge {
+      display: none;
+      margin-top: 8px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #1a6bd0 0%, #0d3d7a 100%);
+      color: #fff;
+      border: 1px solid rgba(44, 166, 179, 0.4);
+    }
+    #popup-premium-badge.show { display: inline-block; }
+
+
 
     /* -- Floating enter walkthrough button -- */
     @keyframes fwt-pulse {
@@ -868,6 +914,8 @@
       <div id="popup-status-badge"></div>
       <div id="popup-desc"></div>
       <div id="popup-dims"></div>
+      <div id="popup-price"></div>
+      <div id="popup-premium-badge"></div>
       <a id="popup-cta" href="#" target="_blank"></a>
     </div>
   </div>
@@ -2089,6 +2137,48 @@
       12: { company: 'Девиа България', logo: 'Logos/deviaLogoBG.png', status: 'occupied', website: '', description: '' },
     };
 
+
+    // ---- stand info (editable JSON) ----
+    // Edit description, price, and premium flag per stand here.
+    const STAND_INFO = {
+      // Stands 1-6: larger premium stands
+      1:  { description: 'Голям премиум щанд — идеален за максимална видимост и въздействие.', price: 1700, premium: true },
+      2:  { description: 'Голям премиум щанд — идеален за максимална видимост и въздействие.', price: 1700, premium: true },
+      3:  { description: 'Голям премиум щанд — идеален за максимална видимост и въздействие.', price: 1700, premium: true },
+      4:  { description: 'Голям премиум щанд — идеален за максимална видимост и въздействие.', price: 1700, premium: true },
+      5:  { description: 'Голям премиум щанд — идеален за максимална видимост и въздействие.', price: 1700, premium: true },
+      6:  { description: 'Голям премиум щанд — идеален за максимална видимост и въздействие.', price: 1700, premium: true },
+      // Stands 7-35: standard expo stands
+      7:  { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      8:  { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      9:  { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      10: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      11: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      12: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      13: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      14: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      15: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      16: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      17: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      18: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      19: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      20: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      21: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      22: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      23: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      24: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      25: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      26: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      27: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      28: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      29: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      30: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      31: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      32: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      33: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      34: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+      35: { description: 'Стандартен Expo щанд — отлична платформа за представяне на продукти и услуги.', price: 1700, premium: false },
+    };
     const STATUS_COLORS = {
       free: { col: 0x2ECC71, emi: 0x082e12 },
       occupied: { col: 0x7F8C8D, emi: 0x1c2122 },
@@ -2439,10 +2529,19 @@
       const badge = document.getElementById('popup-status-badge');
       badge.textContent = STATUS_LABELS[u.status] || u.status;
       badge.style.cssText = `display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.05em;background:${hex}22;color:${hex};border:1px solid ${hex}55`;
-      document.getElementById('popup-desc').textContent = u.description || '';
-      document.getElementById('popup-desc').style.display = u.description ? 'block' : 'none';
       const bw = Math.round(u.baseW * sizeScale), bd = Math.round(u.baseD * sizeScale);
       document.getElementById('popup-dims').textContent = `${(bw / 1000).toFixed(1)}m × ${(bd / 1000).toFixed(1)}m`;
+      const info = STAND_INFO[u.n] || { description: '', price: 1700, premium: false };
+      const priceEl = document.getElementById('popup-price');
+      if (priceEl) priceEl.textContent = '€' + info.price.toLocaleString('de-DE');
+      const premBadge = document.getElementById('popup-premium-badge');
+      if (premBadge) {
+        premBadge.textContent = 'ПРЕМИУМ — по-голям щанд';
+        premBadge.classList.toggle('show', !!info.premium);
+      }
+      const standDesc = u.description || info.description || '';
+      document.getElementById('popup-desc').textContent = standDesc;
+      document.getElementById('popup-desc').style.display = standDesc ? 'block' : 'none';
       const logoWrap = document.getElementById('popup-logo-wrap');
       logoWrap.innerHTML = '';
       if (u.logo) {

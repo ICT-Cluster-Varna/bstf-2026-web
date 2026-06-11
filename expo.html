@@ -156,8 +156,6 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <div class="nav-links">
       <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
       <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-      <a href="index.html#venue" data-bg="Място" data-en="Venue">Място</a>
-      <a href="index.html#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
       <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
       <a href="index.html#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
     </div>
@@ -166,7 +164,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
         <button class="active" data-lang="bg">BG</button>
         <button data-lang="en">EN</button>
       </div>
-      <button class="btn btn-primary btn-sm nav-register-btn" data-bg="Регистрирай се" data-en="Register">Регистрирай се</button>
+      <button class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
       <button class="mobile-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -178,11 +176,9 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <div class="mobile-nav" id="mobile-nav">
   <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
   <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-  <a href="index.html#venue" data-bg="Място" data-en="Venue">Място</a>
-  <a href="index.html#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
   <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
   <a href="index.html#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
-  <button class="btn btn-primary" style="width:100%;margin-top:16px" onclick="openModal('register-modal')" data-bg="Регистрирай се" data-en="Register">Регистрирай се</button>
+  <a href="index.html#tickets" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>
 </div>
 
 <!-- Page Hero -->
@@ -406,7 +402,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     btn.addEventListener('click', function() { openModal('exhibitor-modal'); });
   });
   var navRegBtn = document.querySelector('.nav-register-btn');
-  if (navRegBtn) { navRegBtn.addEventListener('click', function() { openModal('register-modal'); }); }
+  if (navRegBtn) { navRegBtn.addEventListener('click', function() { window.location.href = 'index.html#tickets'; }); }
 
   // Smooth page transitions
   document.querySelectorAll('a[href]').forEach(function(link) {

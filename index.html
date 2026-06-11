@@ -306,8 +306,6 @@ footer{padding-bottom:70px!important}
     <div class="nav-links">
       <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
       <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-      <a href="#venue" data-bg="Място" data-en="Venue">Място</a>
-      <a href="#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
       <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
       <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
     </div>
@@ -316,7 +314,7 @@ footer{padding-bottom:70px!important}
         <button class="active" data-lang="bg">BG</button>
         <button data-lang="en">EN</button>
       </div>
-      <button class="btn btn-primary btn-sm nav-register-btn" data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
+      <button class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
       <button class="mobile-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -328,11 +326,9 @@ footer{padding-bottom:70px!important}
 <div class="mobile-nav" id="mobile-nav">
   <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
   <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-  <a href="#venue" data-bg="Място" data-en="Venue">Място</a>
-  <a href="#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
   <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
   <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
-  <button class="btn btn-primary open-register-modal" style="width:100%;margin-top:16px" data-bg="Регистрация" data-en="Register now">Регистрация</button>
+  <a href="#tickets" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>
 </div>
 
 <div class="hero-cta-wrap" style="min-height:100vh;display:flex;flex-direction:column">
@@ -1163,9 +1159,10 @@ footer{padding-bottom:70px!important}
   var navRegBtn = document.querySelector('.nav-register-btn');
   if (navRegBtn) {
     navRegBtn.addEventListener('click', function() {
-      openModal('register-modal');
+      var t = document.getElementById('tickets');
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
     });
-  }  
+  }
   // === Smooth page transitions ===
   document.querySelectorAll('a[href]').forEach(function(link) {
     var href = link.getAttribute('href');
