@@ -331,95 +331,149 @@
       font-size: 12px
     }
 
-    /* -- Stand popup / side drawer -- */
+    /* -- Stand popup: right-drawer (desktop) / bottom-sheet (mobile) -- */
+    #popupBackdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 68;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     #standPopup {
       position: fixed;
-      top: 0;
-      right: -340px;
-      width: 320px;
-      height: 100%;
-      background: rgba(8, 12, 22, .96);
-      backdrop-filter: blur(14px);
-      border-left: 1px solid rgba(255, 255, 255, .10);
-      z-index: 45;
-      transition: right .25s ease;
+      z-index: 70;
+      background: linear-gradient(160deg,#0d1828 0%,#091220 100%);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(80,130,200,.18);
       overflow-y: auto;
-      padding: 24px 20px;
       box-sizing: border-box;
+      /* Desktop right-drawer */
+      top: 0; right: 0; bottom: 0; width: 340px;
+      border-left: 1px solid rgba(80,130,200,.22);
+      transform: translateX(105%);
+      transition: transform .28s cubic-bezier(.4,0,.2,1);
+      padding: 0;
+    }
+    #standPopup.open { transform: translateX(0); }
+
+    @media (max-width: 620px) {
+      #standPopup {
+        top: auto; left: 0; right: 0; bottom: 0; width: 100%;
+        max-height: 82vh;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-top: 1px solid rgba(80,130,200,.28);
+        border-left: none;
+        transform: translateY(105%);
+      }
+      #standPopup.open { transform: translateY(0); }
     }
 
-    #standPopup.open {
-      right: 0
+    #popup-drag-handle {
+      display: none;
+      width: 38px; height: 4px;
+      background: rgba(255,255,255,.16);
+      border-radius: 2px;
+      margin: 10px auto 0;
     }
+    @media (max-width: 620px) { #popup-drag-handle { display: block; } }
 
-    #popupClose {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      background: none;
-      border: none;
-      color: #8fa1b3;
-      font-size: 22px;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    #popupClose:hover {
-      color: #fff
+    #popup-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 16px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      position: sticky; top: 0;
+      background: linear-gradient(160deg,#0d1828 0%,#091220 100%);
+      z-index: 1;
     }
 
     #popup-logo-wrap {
-      width: 100%;
-      min-height: 48px;
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      overflow: hidden;
     }
 
+    #popup-header-text { flex: 1; min-width: 0; }
+
     #popup-stand-num {
-      font-size: 11px;
-      color: #6a8aaa;
+      font-size: 10px;
+      color: #5a7a9a;
       text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 4px
+      letter-spacing: .08em;
+      margin-bottom: 2px;
     }
 
     #popup-name {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 700;
       color: #e8eef5;
-      margin-bottom: 8px
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.3;
     }
+
+    #popupClose {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      min-width: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      color: #a0b4c8;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      transition: background .15s, color .15s;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    #popupClose:hover, #popupClose:active { background: rgba(255,255,255,.18); color: #fff; }
+
+    #popup-body { padding: 16px 18px 24px; }
+
+    #popup-status-badge { display: inline-block; margin-bottom: 12px; }
 
     #popup-desc {
       font-size: 13px;
       color: #8fa1b3;
-      line-height: 1.55;
-      margin: 10px 0
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
 
     #popup-dims {
       font-size: 11px;
       color: #4a6a8a;
-      margin-bottom: 16px
+      margin-bottom: 4px;
     }
 
     #popup-cta {
       display: block;
       text-align: center;
-      padding: 10px;
-      border-radius: 8px;
+      padding: 13px 16px;
+      border-radius: 10px;
       color: #fff;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      margin-top: 6px;
+      margin-top: 16px;
+      transition: opacity .15s, transform .1s;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
-
-    #popup-cta:hover {
-      opacity: .85
-    }
+    #popup-cta:hover { opacity: .88; }
+    #popup-cta:active { transform: scale(.97); }
 
     /* -- Floating enter walkthrough button -- */
     #floatEnterWT {
@@ -776,16 +830,24 @@
     <div id="tt-badge"></div>
   </div>
 
-  <!-- Stand popup / side drawer -->
+  <!-- Stand popup backdrop + drawer/sheet -->
+  <div id="popupBackdrop"></div>
   <div id="standPopup">
-    <button id="popupClose">�</button>
-    <div id="popup-logo-wrap"></div>
-    <div id="popup-stand-num"></div>
-    <div id="popup-name"></div>
-    <div id="popup-status-badge"></div>
-    <div id="popup-desc"></div>
-    <div id="popup-dims"></div>
-    <a id="popup-cta" href="#" target="_blank"></a>
+    <div id="popup-drag-handle"></div>
+    <div id="popup-header">
+      <div id="popup-logo-wrap"></div>
+      <div id="popup-header-text">
+        <div id="popup-stand-num"></div>
+        <div id="popup-name"></div>
+      </div>
+      <button id="popupClose" aria-label="Close">&#10005;</button>
+    </div>
+    <div id="popup-body">
+      <div id="popup-status-badge"></div>
+      <div id="popup-desc"></div>
+      <div id="popup-dims"></div>
+      <a id="popup-cta" href="#" target="_blank"></a>
+    </div>
   </div>
 
   <!-- Legend -->
@@ -2314,12 +2376,26 @@
     const _popup = document.getElementById('standPopup');
     dom.addEventListener('click', ev => {
       if (mode === 'top') return;
+      // If popup is open and user clicks empty canvas, just close (don't also trigger walkthrough move)
+      if (_popup.classList.contains('open')) { _closePopup(); ev.stopPropagation(); return; }
       setNdc(ev); ray.setFromCamera(ndc, cam);
       const hit = ray.intersectObjects(standMeshes, false)[0];
       if (hit) { openPopup(hit.object.userData); }
-      else { _popup.classList.remove('open'); }
     });
-    document.getElementById('popupClose').onclick = () => _popup.classList.remove('open');
+    const _backdrop = document.getElementById('popupBackdrop');
+    function _closePopup() {
+      _popup.classList.remove('open');
+      _backdrop.style.display = 'none';
+    }
+    function _openPopupShow() {
+      _popup.classList.add('open');
+      _backdrop.style.display = 'block';
+    }
+    document.getElementById('popupClose').addEventListener('click', ev => {
+      ev.stopPropagation(); _closePopup();
+    });
+    _backdrop.addEventListener('click', ev => { ev.stopPropagation(); _closePopup(); });
+    _backdrop.addEventListener('touchend', ev => { ev.preventDefault(); ev.stopPropagation(); _closePopup(); }, { passive: false });
 
     function openPopup(u) {
       document.getElementById('popup-stand-num').textContent = 'Щанд ' + u.n;
@@ -2331,13 +2407,13 @@
       document.getElementById('popup-desc').textContent = u.description || '';
       document.getElementById('popup-desc').style.display = u.description ? 'block' : 'none';
       const bw = Math.round(u.baseW * sizeScale), bd = Math.round(u.baseD * sizeScale);
-      document.getElementById('popup-dims').textContent = `${(bw / 1000).toFixed(1)}m � ${(bd / 1000).toFixed(1)}m`;
+      document.getElementById('popup-dims').textContent = `${(bw / 1000).toFixed(1)}m × ${(bd / 1000).toFixed(1)}m`;
       const logoWrap = document.getElementById('popup-logo-wrap');
       logoWrap.innerHTML = '';
       if (u.logo) {
         const img = document.createElement('img');
         img.src = u.logo; img.alt = u.company;
-        img.style.cssText = 'max-height:64px;max-width:100%;object-fit:contain';
+        img.style.cssText = 'max-height:44px;max-width:44px;object-fit:contain';
         img.onerror = () => { logoWrap.innerHTML = initialsDiv(u.company, hex); };
         logoWrap.appendChild(img);
       } else if (u.company) {
@@ -2353,7 +2429,7 @@
       } else {
         cta.style.display = 'none';
       }
-      _popup.classList.add('open');
+      _openPopupShow();
     }
     function initialsDiv(name, hex) {
       const ini = (name || '?').split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
