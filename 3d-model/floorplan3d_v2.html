@@ -979,31 +979,34 @@
       const ctx = fc.getContext('2d');
       function hf(x, y) {
         const nx = x / SZ, ny = y / SZ;
-        return Math.sin(nx * 6.28 + ny * 2.51 + 0.70) * 0.30
-          + Math.sin(nx * 3.14 - ny * 5.65 + 1.40) * 0.24
-          + Math.sin(nx * 9.42 + ny * 4.71 + 2.80) * 0.17
-          + Math.sin(nx * 1.88 + ny * 8.48 + 0.35) * 0.13
-          + Math.sin(nx * 7.54 - ny * 1.26 + 4.20) * 0.10
-          + Math.sin(nx * 4.40 + ny * 3.30 + 1.05) * 0.06;
+        // All multipliers are exact integers × 2π → f(0)===f(SZ) in both axes → zero-seam tiling
+        const T = Math.PI * 2;
+        return Math.sin(nx * T*1 + ny * T*1 + 0.70) * 0.28
+          + Math.sin(nx * T*2 - ny * T*1 + 1.40) * 0.22
+          + Math.sin(nx * T*1 + ny * T*3 + 2.80) * 0.16
+          + Math.sin(nx * T*3 + ny * T*2 + 0.35) * 0.12
+          + Math.sin(nx * T*2 + ny * T*3 + 4.20) * 0.09
+          + Math.sin(nx * T*3 - ny * T*2 + 1.05) * 0.05;
       }
       const img = ctx.createImageData(SZ, SZ); const pd = img.data;
-      const CONT = 20, LTHK = 0.11;
+      const CONT = 18, LTHK = 0.10;
       for (let y = 0; y < SZ; y++) for (let x = 0; x < SZ; x++) {
         const v = (hf(x, y) + 1) * 0.5;
         const band = (v * CONT) % 1.0;
         const isLine = band < LTHK;
         const i = (y * SZ + x) * 4;
         if (isLine) {
-          pd[i] = 32; pd[i + 1] = 16; pd[i + 2] = 5; pd[i + 3] = 225;
+          pd[i] = 30; pd[i + 1] = 15; pd[i + 2] = 4; pd[i + 3] = 220;
         } else {
-          const b = 210 + Math.round((band / (1 - LTHK)) * 16);
+          const b = 208 + Math.round((band / (1 - LTHK)) * 18);
           pd[i] = b; pd[i + 1] = Math.round(b * 0.921); pd[i + 2] = Math.round(b * 0.748); pd[i + 3] = 255;
         }
       }
       ctx.putImageData(img, 0, 0);
       const rugTex = new THREE.CanvasTexture(fc);
       rugTex.wrapS = rugTex.wrapT = THREE.RepeatWrapping;
-      rugTex.repeat.set(4, 3);
+      rugTex.anisotropy = 8;
+      rugTex.repeat.set(5, 4);
       const FLOOR_POLYS = [[[27630, 700], [102430, 700], [103130, -39500], [38030, -39500], [34930, -42800], [35430, -43500], [30430, -43500], [29330, -42400], [29330, -39200], [26230, -36100], [-1270, -36300], [-1270, -9000], [2230, -8900], [5430, -5300], [20030, -5500], [20830, -4700], [23530, -4700], [27530, -1575], [27630, 700]], [[-3225, -8575], [32050, -8575], [32050, -45225], [-3225, -45225]]];
       const floorMat = new THREE.MeshLambertMaterial({ map: rugTex, color: 0xffffff, emissive: new THREE.Color(0.07, 0.055, 0.035), side: THREE.DoubleSide });
       FLOOR_POLYS.forEach((poly, idx) => {
@@ -1964,7 +1967,7 @@
       const dm2 = new THREE.Object3D();
       pos2.forEach(([x, z], i) => {
         dm2.position.set(x, CY_S, z); dm2.updateMatrix(); sIM2.setMatrixAt(i, dm2.matrix);
-        dm2.position.set(x, CY_B, z - SEATD / 2 + BACKD / 2); dm2.updateMatrix(); bIM2.setMatrixAt(i, dm2.matrix);
+        dm2.position.set(x, CY_B, z + SEATD / 2 - BACKD / 2); dm2.updateMatrix(); bIM2.setMatrixAt(i, dm2.matrix);
       });
       sIM2.instanceMatrix.needsUpdate = true; bIM2.instanceMatrix.needsUpdate = true;
       grp.add(sIM2); grp.add(bIM2);
