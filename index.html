@@ -136,11 +136,12 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .hall-card p{font-size:0.9rem;color:var(--text-light)}
 .tickets-section{padding:80px 0;background:var(--light-blue)}
 .tickets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.ticket-card{background:var(--white);border-radius:var(--radius);padding:46px 28px 28px;text-align:center;transition:var(--transition);border:1px solid rgba(44,166,179,0.15);position:relative;display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(11,57,84,0.09)}
+.ticket-card{background:var(--white);border-radius:var(--radius);padding:46px 28px 28px;text-align:center;transition:var(--transition);border:1px solid rgba(44,166,179,0.15);position:relative;display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(11,57,84,0.09);cursor:pointer}
 .ticket-card:hover{transform:translateY(-6px);box-shadow:0 14px 48px rgba(11,57,84,0.16)}
 .ticket-card[data-ticket="early-bird"],.ticket-card[data-ticket="vip"]{border:2px solid var(--teal);box-shadow:0 6px 32px rgba(44,166,179,0.18)}
 .ticket-card[data-ticket="early-bird"]:hover,.ticket-card[data-ticket="vip"]:hover{box-shadow:0 16px 52px rgba(44,166,179,0.32)}
-.ticket-card.active{border-color:var(--teal);box-shadow:0 0 0 4px rgba(44,166,179,0.22)}
+.ticket-card.active{border:3px solid var(--teal)!important;background:var(--light-blue)!important;box-shadow:0 0 0 4px rgba(44,166,179,0.25),0 16px 48px rgba(44,166,179,0.2)!important;transform:translateY(-8px) scale(1.02)!important;z-index:2;position:relative}
+.ticket-card.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--teal);border-radius:0 0 calc(var(--radius) - 3px) calc(var(--radius) - 3px)}
 .ticket-badge{position:absolute;top:0;left:0;right:0;width:auto;transform:none;background:linear-gradient(90deg,var(--teal) 0%,#1a8a96 100%);color:var(--white);padding:8px 16px 8px 50px;font-size:0.67rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;text-align:center;border-radius:calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;z-index:2;box-shadow:none}
 .ticket-ribbon-corner{position:absolute;top:0;left:0;width:82px;height:82px;overflow:hidden;border-radius:var(--radius) 0 0 0;pointer-events:none;z-index:3}
 .ticket-ribbon-corner span{position:absolute;top:20px;left:-22px;width:110px;background:var(--navy);color:var(--white);font-size:0.58rem;font-weight:700;text-align:center;padding:5px 0;transform:rotate(-45deg);letter-spacing:0.07em;text-transform:uppercase;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
@@ -719,7 +720,7 @@ footer{padding-bottom:70px!important}
     <p class="section-subtitle text-center" data-bg="Изберете пропуска, който отговаря на вашите цели." data-en="Choose the pass that fits your goals.">Изберете пропуска, който отговаря на вашите цели.</p>
     <div class="tickets-grid" style="grid-template-columns:repeat(4,1fr)">
       <!-- Early Bird -->
-      <div class="ticket-card animate-on-scroll" data-ticket="early-bird">
+      <div class="ticket-card animate-on-scroll" data-ticket="early-bird" data-selected-label="Избран" data-selected-label-en="Selected">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-badge" data-bg="Най-изгоден" data-en="Best Value">Най-изгоден</div>
         <div class="ticket-header-row">
@@ -737,7 +738,7 @@ footer{padding-bottom:70px!important}
       </div>
 
       <!-- Standard (Full Event) -->
-      <div class="ticket-card animate-on-scroll" data-ticket="standard">
+      <div class="ticket-card animate-on-scroll" data-ticket="standard" data-selected-label="Избран" data-selected-label-en="Selected">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-header-row">
           <h3>Standard (Full Event)</h3>
@@ -753,7 +754,7 @@ footer{padding-bottom:70px!important}
       </div>
 
       <!-- VIP -->
-      <div class="ticket-card animate-on-scroll" data-ticket="vip">
+      <div class="ticket-card animate-on-scroll" data-ticket="vip" data-selected-label="Избран" data-selected-label-en="Selected">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-badge" data-bg="Популярен" data-en="Popular">Популярен</div>
         <div class="ticket-header-row">
@@ -770,7 +771,7 @@ footer{padding-bottom:70px!important}
       </div>
 
       <!-- ULTRA VIP -->
-      <div class="ticket-card animate-on-scroll" data-ticket="ultra-vip">
+      <div class="ticket-card animate-on-scroll" data-ticket="ultra-vip" data-selected-label="Избран" data-selected-label-en="Selected">
         <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
         <div class="ticket-header-row">
           <h3>ULTRA VIP</h3>
@@ -1071,7 +1072,7 @@ footer{padding-bottom:70px!important}
   // === Ticket Card Selection ===
   document.querySelectorAll('.ticket-card').forEach(function(card) {
     card.addEventListener('click', function(e) {
-      if (e.target.closest('.btn')) return; // let button clicks pass through
+      if (e.target.closest('.btn')) return;
       document.querySelectorAll('.ticket-card').forEach(function(c) { c.classList.remove('active'); });
       card.classList.add('active');
     });
