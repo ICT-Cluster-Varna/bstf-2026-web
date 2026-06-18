@@ -10,8 +10,10 @@ const DESC_EXPO   = _ul('Expo щанд (3×3 м)', 'Лого в сайта на 
 
 window.STANDS_DATA = {
   exhibitors: {
-    6:  { company: 'Top-Rent-A-Car', logo: 'Logos/toprentacar.webp', status: 'partner',  website: '', description: '' },
-    12: { company: 'Девиа България', logo: 'Logos/deviaLogoBG.png',  status: 'occupied', website: '', description: '' }
+    6:  { company: 'Top-Rent-A-Car', logo: 'Logos/toprentacar.webp',              status: 'partner',  website: '', description: '' },
+    12: { company: 'Девиа България', logo: 'Logos/deviaLogoBG.png',               status: 'occupied', website: '', description: '' },
+    13: { company: 'Electrohold',    logo: 'Logos/ElectroHold_Logo_Sales.svg',    status: 'occupied', website: '', description: '' },
+    16: { company: 'Netpeak',        logo: 'Logos/Netpeak_logo.svg',              status: 'occupied', website: '', description: '' }
   },
   stand_info: {
     1:  { tier: 'Stage Partner',  tierHex: '#8064A2', description: DESC_STAGE,  price: 18000, premium: true  },
