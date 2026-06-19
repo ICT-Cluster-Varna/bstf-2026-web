@@ -1456,7 +1456,7 @@
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
       const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
       s.renderOrder = 999;
-      s.scale.set(2.6, 2.6, 1); return s;
+      s.scale.set(1.4, 1.4, 1); return s;
     }
 
     const groups = {};
@@ -2191,48 +2191,46 @@
     const OCC_COL = 0x7F8C8D, OCC_EMI = 0x1c2122;
 
     function companySprite(num, name) {
-      // Max text-area width — caps sprite at ~480*0.019 = 9.1 Three.js units regardless of name length
-      const MAX_TEXT_W = 480;
-      const _tm = document.createElement('canvas').getContext('2d');
-      // Auto-shrink font from 36px down to 20px until text fits
-      let fs = 36;
-      while (fs > 20) {
-        _tm.font = `700 ${fs}px "Segoe UI",system-ui,sans-serif`;
-        if (_tm.measureText(name).width <= MAX_TEXT_W) break;
-        fs -= 2;
-      }
-      _tm.font = `700 ${fs}px "Segoe UI",system-ui,sans-serif`;
-      // Truncate with ellipsis only if name still overflows at minimum font
-      let label = name;
-      while (_tm.measureText(label).width > MAX_TEXT_W && label.length > 2) label = label.slice(0, -1);
-      if (label !== name) label = label.slice(0, -1) + '…';
-      const textW = Math.ceil(_tm.measureText(label).width);
-      const cW = 116 + textW + 20;
-      const c = document.createElement('canvas'); c.width = cW; c.height = 140;
+      const CW = 260, CH = 80, r = 14;
+      const c = document.createElement('canvas'); c.width = CW; c.height = CH;
       const ctx = c.getContext('2d');
-      const r = 14;
-      ctx.fillStyle = 'rgba(6,12,26,0.92)';
-      ctx.beginPath(); ctx.moveTo(r, 0); ctx.arcTo(c.width, 0, c.width, c.height, r);
-      ctx.arcTo(c.width, c.height, 0, c.height, r); ctx.arcTo(0, c.height, 0, 0, r);
-      ctx.arcTo(0, 0, c.width, 0, r); ctx.closePath(); ctx.fill();
-      ctx.strokeStyle = 'rgba(100,170,255,0.35)'; ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(r, 1); ctx.arcTo(c.width - 1, 1, c.width - 1, c.height - 1, r);
-      ctx.arcTo(c.width - 1, c.height - 1, 1, c.height - 1, r); ctx.arcTo(1, c.height - 1, 1, 1, r);
-      ctx.arcTo(1, 1, c.width - 1, 1, r); ctx.closePath(); ctx.stroke();
-      // blue circle with stand number
-      ctx.fillStyle = 'rgba(26,107,208,.9)';
-      ctx.beginPath(); ctx.arc(58, 70, 50, 0, Math.PI * 2); ctx.fill();
-      ctx.font = '800 50px "Segoe UI",system-ui,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.lineWidth = 8; ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.strokeText(String(num), 58, 70);
-      ctx.fillStyle = '#fff'; ctx.fillText(String(num), 58, 70);
-      // company name at auto-fitted font size
-      ctx.textAlign = 'left'; ctx.font = `700 ${fs}px "Segoe UI",system-ui,sans-serif`;
-      ctx.lineWidth = 7; ctx.strokeStyle = 'rgba(0,0,0,0.65)'; ctx.strokeText(label, 124, 70);
-      ctx.fillStyle = '#e8f4ff'; ctx.fillText(label, 124, 70);
+      // Background with gradient
+      const bg = ctx.createLinearGradient(0, 0, 0, CH);
+      bg.addColorStop(0, 'rgba(12,22,46,0.96)');
+      bg.addColorStop(1, 'rgba(6,12,30,0.96)');
+      ctx.fillStyle = bg;
+      ctx.beginPath(); ctx.moveTo(r,0); ctx.arcTo(CW,0,CW,CH,r); ctx.arcTo(CW,CH,0,CH,r);
+      ctx.arcTo(0,CH,0,0,r); ctx.arcTo(0,0,CW,0,r); ctx.closePath(); ctx.fill();
+      // Border glow
+      ctx.strokeStyle = 'rgba(80,160,255,0.45)'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(r,1); ctx.arcTo(CW-1,1,CW-1,CH-1,r); ctx.arcTo(CW-1,CH-1,1,CH-1,r);
+      ctx.arcTo(1,CH-1,1,1,r); ctx.arcTo(1,1,CW-1,1,r); ctx.closePath(); ctx.stroke();
+      // Number pill on the left
+      const pill = ctx.createLinearGradient(6, 0, 76, 0);
+      pill.addColorStop(0, 'rgba(30,120,220,0.95)');
+      pill.addColorStop(1, 'rgba(20,90,190,0.95)');
+      ctx.fillStyle = pill;
+      ctx.beginPath(); ctx.roundRect(6, 6, 70, CH-12, 10); ctx.fill();
+      ctx.font = '800 36px "Segoe UI",system-ui,sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#fff'; ctx.fillText(String(num), 41, CH/2);
+      // Separator
+      ctx.strokeStyle = 'rgba(80,160,255,0.25)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(82, 10); ctx.lineTo(82, CH-10); ctx.stroke();
+      // Company name — shrink to fit the right panel
+      const MAX_W = CW - 98;
+      let fs = 22;
+      ctx.font = `600 ${fs}px "Segoe UI",system-ui,sans-serif`;
+      while (fs > 13 && ctx.measureText(name).width > MAX_W) { fs -= 1; ctx.font = `600 ${fs}px "Segoe UI",system-ui,sans-serif`; }
+      let label = name;
+      while (ctx.measureText(label).width > MAX_W && label.length > 2) label = label.slice(0, -1);
+      if (label !== name) label = label.slice(0, -1) + '…';
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#deeeff'; ctx.fillText(label, 90, CH/2);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
       const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
       s.renderOrder = 999;
-      s.scale.set(cW * 0.019, 140 * 0.019, 1); return s;
+      s.scale.set(CW * 0.020, CH * 0.020, 1); return s;
     }
 
     // ---- stands (editable) ----
