@@ -988,6 +988,8 @@
   <script src="toprentacar_logo.js"></script>
   <script src="electrohold_logo.js"></script>
   <script src="netpeak_logo.js"></script>
+  <script src="researchmetrics_logo.js"></script>
+  <script src="nearshore_logo.js"></script>
   <script type="importmap">
 { "imports": {
   "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
@@ -2436,16 +2438,20 @@
       const cw = Math.min(1024, Math.round(ch * panelW / panelH));
       const logoMat = makeSignPanelMat(img, { bg, accent, cw, ch, company });
       const casingMat = new THREE.MeshLambertMaterial({ color: 0x111122, emissive: 0x050510, emissiveIntensity: 0.5, roughness: 0.5 });
-      const faceIdx = face === 'left' ? 1 : 4;
+      const faceIdx = { left: 1, right: 0, back: 5, front: 4 }[face] ?? 4;
       const mats = Array(6).fill(casingMat);
       mats[faceIdx] = logoMat;
-      // front panel: wide in X, thin in Z; left panel: thin in X, wide in Z
-      const geom = face === 'left'
+      const isLateral = face === 'left' || face === 'right';
+      const geom = isLateral
         ? new THREE.BoxGeometry(panelD, panelH, panelW)
         : new THREE.BoxGeometry(panelW, panelH, panelD);
       const panel = new THREE.Mesh(geom, mats);
       if (face === 'left') {
         panel.position.set(m.position.x - bw * S / 2 - panelD / 2, m.position.y, m.position.z);
+      } else if (face === 'right') {
+        panel.position.set(m.position.x + bw * S / 2 + panelD / 2, m.position.y, m.position.z);
+      } else if (face === 'back') {
+        panel.position.set(m.position.x, m.position.y, m.position.z - bd * S / 2 - panelD / 2);
       } else {
         panel.position.set(m.position.x, m.position.y, m.position.z + bd * S / 2 + panelD / 2);
       }
@@ -2501,6 +2507,32 @@
         markDirty();
       };
       img.src = window.NETPEAK_LOGO_SRC;
+    })();
+
+    // -- Stand 7 – ResearchMetrics (front + back) --
+    (() => {
+      const m7 = standMeshes.find(m => m.userData.n === 7);
+      if (!m7) return;
+      const img = new Image();
+      img.onload = () => {
+        groups.stand.add(makeSignPanel(m7, img, { face: 'front', company: 'ResearchMetrics' }));
+        groups.stand.add(makeSignPanel(m7, img, { face: 'back',  company: 'ResearchMetrics' }));
+        markDirty();
+      };
+      img.src = window.RESEARCHMETRICS_LOGO_SRC;
+    })();
+
+    // -- Stand 8 – ITRM Consult / Nearshore (front + back) --
+    (() => {
+      const m8 = standMeshes.find(m => m.userData.n === 8);
+      if (!m8) return;
+      const img = new Image();
+      img.onload = () => {
+        groups.stand.add(makeSignPanel(m8, img, { face: 'front', company: 'ITRM Consult' }));
+        groups.stand.add(makeSignPanel(m8, img, { face: 'back',  company: 'ITRM Consult' }));
+        markDirty();
+      };
+      img.src = window.NEARSHORE_LOGO_SRC;
     })();
 
 
@@ -2721,9 +2753,10 @@
       // ── CTA ──
       const cta = document.getElementById('popup-cta');
       const occupiedBanner = document.getElementById('popup-occupied-banner');
-      const isOccupied = u.status === 'occupied' || u.status === 'partner';
+      const isOccupied = u.status === 'occupied' || u.status === 'partner' || u.status === 'reserved';
       if (isOccupied) {
         cta.style.display = 'none';
+        occupiedBanner.textContent = u.status === 'reserved' ? 'Резервиран' : 'Щандът е зает';
         occupiedBanner.style.display = 'block';
       } else {
         occupiedBanner.style.display = 'none';
