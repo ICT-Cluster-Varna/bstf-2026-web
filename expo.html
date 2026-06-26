@@ -439,6 +439,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
     iframe = document.createElement('iframe');
     iframe.src = '3d-model/floorplan3d_v2.html';
     iframe.title = '3D Exhibition Floor Plan';
+    iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');
     stage.appendChild(iframe);
     stage.classList.add('active');
