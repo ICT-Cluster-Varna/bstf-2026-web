@@ -42,7 +42,7 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-menu-btn span{width:24px;height:2px;background:var(--navy);transition:var(--transition)}
 .mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);border-bottom:1px solid rgba(0,0,0,0.06);padding:24px;z-index:199}
 .mobile-nav.open{display:block}
-.mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}
+.mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}.mobile-nav a.btn-primary{color:var(--white)!important;border-bottom:none}
 .mobile-nav a.active{color:var(--teal)}
 .page-hero{position:relative;padding:140px 24px 80px;background:linear-gradient(135deg,rgba(11,57,84,0.95) 0%,rgba(44,166,179,0.88) 100%);text-align:center;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png') center/cover no-repeat;opacity:0.15;z-index:0}
@@ -145,6 +145,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   .fp-chip{font-size:0.7rem;padding:4px 10px}
   .fp-activate .fp-play{width:74px;height:74px;border-radius:14px}
 }
+@media(max-width:768px){#nav-cta-btn{display:none!important}}
 </style>
 </head>
 <body>
@@ -164,7 +165,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
         <button class="active" data-lang="bg">BG</button>
         <button data-lang="en">EN</button>
       </div>
-      <button class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
+      <button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
       <button class="mobile-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -401,7 +402,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   document.querySelectorAll('.open-exhibitor-modal').forEach(function(btn) {
     btn.addEventListener('click', function() { openModal('exhibitor-modal'); });
   });
-  var navRegBtn = document.querySelector('.nav-register-btn');
+  var navRegBtn = document.getElementById('nav-cta-btn');
   if (navRegBtn) { navRegBtn.addEventListener('click', function() { window.location.href = 'index.html#tickets'; }); }
 
   // Smooth page transitions
