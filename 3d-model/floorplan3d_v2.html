@@ -1146,7 +1146,7 @@
       rugTex.wrapS = rugTex.wrapT = THREE.RepeatWrapping;
       rugTex.anisotropy = 8;
       rugTex.repeat.set(5, 4);
-      const FLOOR_POLYS = [[[27630, 700], [102430, 700], [103130, -39500], [38030, -39500], [34930, -42800], [35430, -43500], [30430, -43500], [29330, -42400], [29330, -39200], [26230, -36100], [-1270, -36300], [-1270, -9000], [2230, -8900], [5430, -5300], [20030, -5500], [20830, -4700], [23530, -4700], [27530, -1575], [27630, 700]], [[-3225, -8575], [32050, -8575], [32050, -45225], [-3225, -45225]]];
+      const FLOOR_POLYS = [[[27630, 700], [102430, 700], [103130, -39500], [38030, -39500], [35825, -39500], [35825, -43980], [31825, -43980], [31825, -42450], [30430, -42450], [29330, -42400], [29330, -39200], [26230, -36100], [-1270, -36300], [-1270, -9000], [2230, -8900], [5430, -5300], [20030, -5500], [20830, -4700], [23530, -4700], [27530, -1575], [27630, 700]], [[-3225, -8575], [32050, -8575], [32050, -45225], [-3225, -45225]]];
       const floorMat = new THREE.MeshLambertMaterial({ map: rugTex, color: 0xffffff, emissive: new THREE.Color(0.07, 0.055, 0.035), side: THREE.DoubleSide });
       FLOOR_POLYS.forEach((poly, idx) => {
         const shape = new THREE.Shape();
@@ -1492,7 +1492,26 @@
     }
 
     const groups = {};
-    groups.wall = wallMeshGroup(clip(DATA.segments.wall), 0, 3.0);
+    // Open corridor between stand 12 (x≈52330) and stand 6 (x≈56344):
+    // 1. Remove short wall column segments in the gap
+    // 2. Clip long outer-wall segments whose left endpoint protrudes into the gap
+    const _wallSegs = clip(DATA.segments.wall)
+      .filter(([x1, y1, x2, y2]) => {
+        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+        const len = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+        // Short column/panel fragments in the gap (y outer-wall level)
+        if (mx > 51500 && mx < 55000 && my > -13700 && my < -12000 && len < 2000) return false;
+        // Vertical wall/partition running through the gap at any y (catches the ~3m tall wall at x=54240)
+        if (x1 > 53300 && x1 < 54700 && x2 > 53300 && x2 < 54700 && Math.abs(x1 - x2) < 300) return false;
+        return true;
+      })
+      .map(([x1, y1, x2, y2]) => {
+        const CLIP_X = 54581;
+        if (x1 < 54300 && x2 > CLIP_X && y1 > -12300 && y1 < -11800) return [CLIP_X, y1, x2, y2];
+        if (x2 < 54300 && x1 > CLIP_X && y2 > -12300 && y2 < -11800) return [x1, y1, CLIP_X, y2];
+        return [x1, y1, x2, y2];
+      });
+    groups.wall = wallMeshGroup(_wallSegs, 0, 3.0);
     // Hide short broken wall fragments inside restaurant zone only
     for (const m of wallSegMeshes) {
       const { ax, az, bx, bz } = m.userData;
@@ -1507,8 +1526,19 @@
     groups.strs = wallMesh(clip(DATA.segments.strs), 0, 1.0, new THREE.MeshStandardMaterial({ color: 0x3d5570, roughness: 0.72, metalness: 0.05 }));
     groups.door = wallMesh(clip(DATA.segments.door), 0, 2.2, new THREE.MeshStandardMaterial({ color: 0x1a1208, roughness: 0.50, metalness: 0.18, transparent: true, opacity: 0.88, side: THREE.DoubleSide }));
     groups.col = colMeshGroup(DATA.columns, 3.8); groups.col.visible = false;
-    groups.env = wallMesh(clip(DATA.segments.env || []), 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, roughness: 0.1, metalness: 0.1, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
-    [groups.wall, groups.glaz, groups.furn, groups.strs, groups.door, groups.col, groups.env].forEach(m => scene.add(m));
+    const _envSegsAll = clip(DATA.segments.env || []).filter(([x1, y1, x2, y2]) => {
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      return !(mx > 51500 && mx < 55000 && my > -12500 && my < -11900);
+    });
+    // Remove X-facing env segments in the identified problem zone (midX 50000–54500)
+    const _envFinal = _envSegsAll.filter(([x1,y1,x2,y2]) => {
+      const mx = (x1+x2)/2;
+      if (mx > 50000 && mx < 54500 && Math.abs(y2-y1) > Math.abs(x2-x1)) return false;
+      return true;
+    });
+    groups.env      = wallMesh(_envFinal, 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
+    groups.envRight = new THREE.Group();
+    [groups.wall, groups.glaz, groups.furn, groups.strs, groups.door, groups.col, groups.env, groups.envRight].forEach(m => scene.add(m));
     groups.wall.visible = true;
     groups.env.visible = true;
     groups.furn.visible = false;
@@ -2852,25 +2882,6 @@
       const t = document.getElementById('modalTxt'); t.select();
       if (navigator.clipboard) navigator.clipboard.writeText(t.value);
     };
-
-
-    // Black poseur / cocktail tables � main hall & foyer (conical pedestal)
-    (function () {
-      const bMat = new THREE.MeshLambertMaterial({ color: 0x0e0e0e });
-      const tMat = new THREE.MeshLambertMaterial({ color: 0x1c1c1c, emissive: new THREE.Color(0.02, 0.02, 0.02) });
-      function poseur(px, pz) {
-        const c = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.26, 0.93, 10), bMat);
-        c.position.set(px, 0.465, pz); scene.add(c);
-        const f = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.03, 10), bMat);
-        f.position.set(px, 0.015, pz); scene.add(f);
-        const t = new THREE.Mesh(new THREE.CylinderGeometry(0.33, 0.33, 0.04, 14), tMat);
-        t.position.set(px, 0.96, pz); scene.add(t);
-      }
-      [[-W * 0.18, -D * 0.28], [W * 0.0, -D * 0.28], [W * 0.18, -D * 0.28],
-      [-W * 0.18, D * 0.08],
-      [-W * 0.35, -D * 0.10], [W * 0.35, -D * 0.10]
-      ].forEach(([px, pz]) => poseur(px, pz));
-    })();
 
     // ---- emerald lounge — between stand 1 and stand 2 ----
     (function () {
