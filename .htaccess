@@ -1,0 +1,24 @@
+# === BSTF 2026 — cache policy ===
+# Problem this solves: after a deploy, browsers kept serving the OLD .html
+# from cache because the files had no cache headers (browser "heuristic"
+# caching). These rules force the browser to re-check the server for HTML on
+# every visit, so a fresh deploy shows up immediately.
+#
+# Apache only. On IIS / Nginx / static hosts this file is simply ignored
+# (no error). The <IfModule> guards mean it also can't break Apache if the
+# mod_headers / mod_expires modules aren't loaded.
+
+# --- HTML documents: never trust the cache, always revalidate ---
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html?)$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# --- Belt-and-suspenders if mod_expires is available ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
