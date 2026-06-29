@@ -1513,11 +1513,22 @@
       });
     groups.wall = wallMeshGroup(_wallSegs, 0, 3.0);
     // Hide short broken wall fragments inside restaurant zone only
+    // Plus three stray broken-wall clusters in the open floor near stands 9-11
+    // (scene coords): A = isolated pair behind the stand row, B = stub partition
+    // beside stand 9, C = X-braced angular cluster further left toward the railing.
+    const _brokenWallZones = [
+      { x0: -3.7,  x1: -2.3,  z0: -15.5, z1: -14.5 }, // A
+      { x0: -9.1,  x1: -8.6,  z0: -13.3, z1: -9.4  }, // B
+      { x0: -11.6, x1: -10.7, z0: -16.0, z1: -13.3 }, // C
+    ];
     for (const m of wallSegMeshes) {
       const { ax, az, bx, bz } = m.userData;
       const mx = (ax + bx) * 0.5, mz = (az + bz) * 0.5;
       const len = Math.sqrt((bx - ax) ** 2 + (bz - az) ** 2);
       if (mx > -51 && mx < -12 && mz > 1 && mz < 22 && len < 2.0) { m.visible = false; }
+      for (const z of _brokenWallZones) {
+        if (mx >= z.x0 && mx <= z.x1 && mz >= z.z0 && mz <= z.z1) { m.visible = false; break; }
+      }
     }
     buildWallDisplayMeshes();
 
@@ -1532,8 +1543,10 @@
     });
     // Remove X-facing env segments in the identified problem zone (midX 50000–54500)
     const _envFinal = _envSegsAll.filter(([x1,y1,x2,y2]) => {
-      const mx = (x1+x2)/2;
+      const mx = (x1+x2)/2, my = (y1+y2)/2;
       if (mx > 50000 && mx < 54500 && Math.abs(y2-y1) > Math.abs(x2-x1)) return false;
+      // Remove old terrace boundary env panels (now inside the new terrace perimeter)
+      if (mx > 29000 && mx < 33000 && my < -38000 && my > -46000) return false;
       return true;
     });
     groups.env      = wallMesh(_envFinal, 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
@@ -1541,6 +1554,17 @@
     [groups.wall, groups.glaz, groups.furn, groups.strs, groups.door, groups.col, groups.env, groups.envRight].forEach(m => scene.add(m));
     groups.wall.visible = true;
     groups.env.visible = true;
+
+    // ---- Terrace outer wall fix ----
+    // Missing solid right wall (x=35825, y=-39500→-42900; seg 3474 covers -42900→-43980)
+    scene.add(wallMesh([[35825, -39500, 35825, -42900]], 0, 3.8, wallBaseMat));
+    // Outer envelope glass panels to close the terrace perimeter
+    scene.add(wallMesh([
+      [35825, -39500, 35825, -43980],
+      [35825, -43980, 31825, -43980],
+      [31825, -43980, 31825, -42450],
+      [31825, -42450, 30430, -42450],
+    ], 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide })));
     groups.furn.visible = false;
     groups.strs.visible = false;
     groups.door.visible = false;
@@ -2236,6 +2260,7 @@
       }
       groups.ghostzones.visible = false;
       scene.add(groups.ghostzones);
+
     })();
 
     // ---- stand data from stands.js (edit that file to update) ----
@@ -3101,11 +3126,30 @@
     document.getElementById('btnReset').onclick = () => { localStorage.removeItem(SETTINGS_KEY); location.reload(); };
     // baked hidden elements (always applied, regardless of saved settings)
     const BAKED_HIDDEN_COLS = [49, 50, 75, 76, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 216, 217];
-    const BAKED_HIDDEN_WALLS = [1817, 1821];
+    const BAKED_HIDDEN_WALLS = [1817, 1821, 3467, 3469, 3471];
     BAKED_HIDDEN_COLS.forEach(i => { if (colSegMeshes[i]) colSegMeshes[i].visible = false; });
     BAKED_HIDDEN_WALLS.forEach(i => { if (wallSegMeshes[i]) wallSegMeshes[i].visible = false; });
     loadSettings();
     buildWallDisplayMeshes();
+    // ---- DEBUG: color visible stray walls in the terrace-entrance zone RED ----
+    // Zone (world coords): inner restaurant/terrace entrance — mx in [-21.0, -18.95], mz in [16.8, 21.5]
+    // Excludes outer boundary walls (left edge x≈29330, right edge x≈32050, bottom y≈-45225)
+    {
+      const _rMat = new THREE.MeshLambertMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+      for (const m of wallSegMeshes) {
+        const { ax, az, bx, bz } = m.userData;
+        const mx = (ax + bx) * 0.5, mz = (az + bz) * 0.5;
+        // Wider zone: DWG x≈29500-32200, y≈-37800 to -42500; exclude outer boundary at x≈29330 (mx<-21.5)
+        if (mx > -21.5 && mx < -18.8 && mz > 16.8 && mz < 21.5) {
+          const pos = [ax, 0, az, bx, 0, bz, bx, 3.0, bz, ax, 0, az, bx, 3.0, bz, ax, 3.0, az];
+          const g = new THREE.BufferGeometry();
+          g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+          g.computeVertexNormals();
+          scene.add(new THREE.Mesh(g, _rMat));
+        }
+      }
+    }
+    // ---- END DEBUG ----
 
     document.getElementById('meta').textContent =
       `Building ${W.toFixed(1)}m � ${D.toFixed(1)}m � ${(DATA.stands || []).length} expo stands � scale & drag in Top edit, then Export`;
