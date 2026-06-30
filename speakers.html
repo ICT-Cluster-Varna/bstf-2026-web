@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Лектори — BSTF 2026</title>
+<title>Лектори - BSTF 2026</title>
 <meta name="description" content="Black Sea Technology Forum 2026 - Speakers">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,11 +47,17 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-nav.open{display:block}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}.mobile-nav a.btn-primary{color:var(--white)!important;border-bottom:none}
 .mobile-nav a.active{color:var(--teal)}
-.page-hero{position:relative;padding:140px 24px 80px;background:linear-gradient(135deg,rgba(11,57,84,0.95) 0%,rgba(44,166,179,0.88) 100%);text-align:center;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png') center/cover no-repeat;opacity:0.15;z-index:0}
-.page-hero .container{position:relative;z-index:1}
-.page-hero h1{font-size:3rem;font-weight:700;color:var(--white);margin-bottom:16px}
-.page-hero p{font-size:1.2rem;color:rgba(255,255,255,0.85);max-width:650px;margin:0 auto}
+.page-hero{position:relative;background:var(--navy);padding:120px 0 80px;text-align:center}
+.hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:24px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';flex-shrink:0;width:24px;height:2px;background:var(--teal);display:block}
+.hero-inner h1{font-size:clamp(3rem,5.5vw,4.8rem);font-weight:700;color:var(--white);line-height:1.02;margin-bottom:20px;text-wrap:balance}
+.hero-desc{font-size:1.05rem;line-height:1.65;color:rgba(255,255,255,0.65);margin-bottom:48px}
+.hero-stats-strip{display:flex;justify-content:center;gap:0}
+.hero-stat{display:flex;flex-direction:column;gap:4px;padding:0 40px}
+.hero-stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--teal);line-height:1}
+.hero-stat-lbl{font-size:0.78rem;color:rgba(255,255,255,0.5);font-weight:500}
+.hero-stat-sep{width:1px;background:rgba(255,255,255,0.12);align-self:stretch;margin:4px 0}
 .coming-soon-section{padding:80px 0;background:var(--white)}
 .coming-soon-card{max-width:700px;margin:0 auto;text-align:center;padding:60px 32px;background:var(--light-gray);border-radius:var(--radius);border:1px solid rgba(0,0,0,0.04)}
 .coming-soon-icon{font-size:4rem;margin-bottom:24px;opacity:0.5}
@@ -62,6 +68,62 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .stat-item{text-align:center}
 .stat-number{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--teal);line-height:1}
 .stat-label{font-size:0.85rem;color:var(--text-light);margin-top:6px}
+/* === Speakers page === */
+.speakers-main{padding:64px 0 80px;background:var(--light-gray)}
+.track-jump-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:56px}
+.track-jump{padding:8px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;border:1.5px solid rgba(11,57,84,0.12);background:var(--white);color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:var(--transition)}
+.track-jump:hover{border-color:var(--teal);color:var(--teal)}
+.track-jump .tj-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.track-section{margin-bottom:72px;scroll-margin-top:100px}
+.track-section:last-of-type{margin-bottom:16px}
+.track-band{background:var(--navy);padding:20px 28px;border-radius:12px 12px 0 0;display:flex;align-items:center;border-left:5px solid transparent}
+.track-band[data-track="ai"]{border-left-color:var(--teal)}
+.track-band[data-track="smart-city"]{border-left-color:#4a9cc7}
+.track-band[data-track="cybersecurity"]{border-left-color:#e05252}
+.track-band[data-track="biotech"]{border-left-color:#4ec87a}
+.track-band[data-track="marine"]{border-left-color:#5a9ce6}
+.track-band-name{font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--white)}
+.track-band-sep{width:1px;height:18px;background:rgba(255,255,255,0.15);margin:0 16px;flex-shrink:0}
+.track-band-desc{font-size:0.78rem;color:rgba(255,255,255,0.4);flex:1}
+.track-band-count{display:flex;align-items:baseline;gap:5px;white-space:nowrap;margin-left:auto;padding-left:24px}
+.track-band-count-num{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;color:var(--teal);line-height:1}
+.track-band-count-lbl{font-size:0.68rem;color:rgba(255,255,255,0.35);font-weight:500;letter-spacing:0.06em;text-transform:uppercase}
+.spk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:0;padding-top:24px}
+.spk-card{background:var(--white);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(11,57,84,0.06),0 8px 28px rgba(11,57,84,0.1),0 20px 48px rgba(11,57,84,0.07);border:1.5px solid rgba(11,57,84,0.09);transition:transform 0.28s ease,box-shadow 0.28s ease}
+.spk-card:hover{transform:translateY(-8px);box-shadow:0 4px 12px rgba(11,57,84,0.08),0 16px 40px rgba(11,57,84,0.16),0 32px 72px rgba(11,57,84,0.12)}
+.spk-card.hidden{display:none}
+.spk-card[data-track="ai"]{border-color:rgba(44,166,179,0.25)}
+.spk-card[data-track="smart-city"]{border-color:rgba(74,156,199,0.25)}
+.spk-card[data-track="cybersecurity"]{border-color:rgba(180,50,50,0.25)}
+.spk-card[data-track="biotech"]{border-color:rgba(39,174,96,0.25)}
+.spk-card[data-track="marine"]{border-color:rgba(30,100,180,0.25)}
+.spk-photo{height:320px;position:relative;overflow:hidden;flex-shrink:0;background:var(--navy)}
+.spk-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform 0.4s ease}
+.spk-card:hover .spk-photo img{transform:scale(1.04)}
+.spk-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy) 0%,#1a5c7a 100%)}
+.spk-photo-placeholder svg{opacity:0.25}
+.spk-body{padding:18px 22px 22px;flex:1;display:flex;flex-direction:column;border-top:3px solid transparent}
+.spk-card[data-track="ai"] .spk-body{border-top-color:var(--teal)}
+.spk-card[data-track="smart-city"] .spk-body{border-top-color:#4a9cc7}
+.spk-card[data-track="cybersecurity"] .spk-body{border-top-color:#b43232}
+.spk-card[data-track="biotech"] .spk-body{border-top-color:#27ae60}
+.spk-card[data-track="marine"] .spk-body{border-top-color:#1e64b4}
+.spk-track{display:inline-block;padding:4px 11px;border-radius:50px;font-size:0.64rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;width:fit-content}
+.spk-name{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.25}
+.spk-role{font-size:0.82rem;color:var(--teal);font-weight:500;margin-bottom:14px;line-height:1.4}
+.spk-topic{background:var(--light-blue);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:11px 14px;font-size:0.83rem;color:var(--text);line-height:1.55;margin-top:auto}
+.spk-topic-label{font-size:0.61rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.spk-placeholder-card{background:var(--light-gray);border:2px dashed rgba(44,166,179,0.25);border-radius:var(--radius);padding:36px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px}
+.spk-placeholder-card .ph-icon{width:64px;height:64px;border-radius:50%;background:rgba(44,166,179,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.spk-coming-banner{background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);border-radius:var(--radius);padding:40px;text-align:center;margin-bottom:32px}
+.spk-coming-banner h3{font-size:1.5rem;color:var(--white);margin-bottom:8px}
+.spk-coming-banner p{color:rgba(255,255,255,0.75);font-size:0.95rem}
+.spk-stats-bar{display:flex;justify-content:center;gap:64px;padding:32px 0 48px;border-bottom:1px solid var(--light-gray);margin-bottom:48px}
+.spk-stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:var(--teal);line-height:1;display:block}
+.spk-stat-lbl{font-size:0.85rem;color:var(--text-light);margin-top:6px;display:block}
+@media(max-width:900px){.spk-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.track-jump-nav{gap:6px}.track-jump{padding:7px 14px;font-size:0.8rem}.track-band{padding:14px 18px}.track-band-sep,.track-band-desc{display:none}}
+@media(max-width:480px){.spk-grid{grid-template-columns:1fr}}
 .prefooter-cta{padding:80px 0;background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);text-align:center}
 .prefooter-cta h2{font-size:2.25rem;color:var(--white);margin-bottom:12px}
 .prefooter-cta p{color:rgba(255,255,255,0.8);margin-bottom:32px;font-size:1.1rem}
@@ -102,9 +164,10 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 @media(max-width:768px){
   .nav-links{display:none !important}
   .mobile-menu-btn{display:flex}
-  .page-hero h1{font-size:2rem}
-  .page-hero p{font-size:1rem}
-  .page-hero{padding:120px 24px 60px}
+  .page-hero{padding:90px 0 60px}
+  .hero-inner h1{font-size:2.2rem}
+  .hero-stat{padding:0 20px}
+  .hero-stat-num{font-size:1.8rem}
   .stats-row{flex-direction:column;gap:24px}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
@@ -152,31 +215,327 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h1 data-bg="Лектори" data-en="Speakers">Лектори</h1>
-    <p data-bg="Практици, учени и стратегически лидери &mdash; на една сцена." data-en="Practitioners, researchers, policymakers &mdash; on one stage.">Практици, учени и стратегически лидери &mdash; на една сцена.</p>
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-bg="BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ" data-en="BSTF 2026 · VARNA · OCT 5-7">BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ</p>
+      <h1 data-bg="Лектори" data-en="Speakers">Лектори</h1>
+      <p class="hero-desc" data-bg="Практици, учени и стратегически лидери от региона на Черно море и света - на една сцена." data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">Практици, учени и стратегически лидери от региона на Черно море и света - на една сцена.</p>
+      <div class="hero-stats-strip">
+        <div class="hero-stat">
+          <span class="hero-stat-num">20+</span>
+          <span class="hero-stat-lbl" data-bg="потвърдени лектори" data-en="confirmed speakers">потвърдени лектори</span>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">5</span>
+          <span class="hero-stat-lbl" data-bg="тематични трака" data-en="thematic tracks">тематични трака</span>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">3</span>
+          <span class="hero-stat-lbl" data-bg="дни форум" data-en="days of forum">дни форум</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Coming Soon -->
-<section class="coming-soon-section">
+<!-- Speakers Main Section -->
+<section class="speakers-main">
   <div class="container">
-    <div class="coming-soon-card">
-      <div class="coming-soon-icon">&#128100;</div>
-      <h2 data-bg="Очаквайте скоро" data-en="Coming Soon">Очаквайте скоро</h2>
-      <p class="desc" data-bg="Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него." data-en="We&apos;re assembling an exceptional lineup of practitioners, researchers, and policymakers from across the Black Sea region and beyond.">Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него.</p>
-      <p class="sub-desc" data-bg="Очаквайте официалното обявяване на лекторите в следващите седмици." data-en="Speaker announcements will be made in the coming weeks.">Очаквайте официалното обявяване на лекторите в следващите седмици.</p>
-      <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-number">100+</div>
-          <div class="stat-label" data-bg="лектори" data-en="speakers">лектори</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">30+</div>
-          <div class="stat-label" data-bg="панела" data-en="panels">панела</div>
+
+    <!-- Track filters -->
+    <div class="track-filters" id="track-filters">
+      <button class="track-filter active" data-track="all" data-bg="Всички" data-en="All">Всички</button>
+      <button class="track-filter" data-track="ai" data-bg="Изкуствен интелект" data-en="AI">Изкуствен интелект</button>
+      <button class="track-filter" data-track="smart-city" data-bg="Умен град" data-en="Smart City">Умен град</button>
+      <button class="track-filter" data-track="transport" data-bg="Транспорт" data-en="Transport">Транспорт</button>
+      <button class="track-filter" data-track="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</button>
+      <button class="track-filter" data-track="marine" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</button>
+      <button class="track-filter" data-track="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</button>
+      <button class="track-filter" data-track="biotech" data-bg="BioTech" data-en="BioTech">BioTech</button>
+    </div>
+
+    <!-- Speakers grid -->
+    <div class="spk-grid" id="spk-grid">
+
+      <!-- AI track -->
+      <div class="spk-card" data-track="ai">
+        <div class="spk-photo"><img src="images/speakers/alexander-minchev.jpg" alt="Alexander Minchev"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+          <div class="spk-name">Alexander Minchev</div>
+          <div class="spk-role">Founder &amp; MD @ AbsCloud / Abilix Soft</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Облачна инфраструктура, AI и киберсигурност" data-en="Cloud infrastructure, AI &amp; cybersecurity">Облачна инфраструктура, AI и киберсигурност</span>
+          </div>
         </div>
       </div>
-      <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатури за лектори са отворени" data-en="Speaker applications open">Кандидатури за лектори са отворени</button>
+
+      <div class="spk-card" data-track="ai">
+        <div class="spk-photo"><img src="images/speakers/elitza-stoilova.jpg" alt="Elitza Stoilova"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+          <div class="spk-name">Елица Стоилова</div>
+          <div class="spk-role">Co-founder &amp; CEO @ Umni | AI2B Zone</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="AI чатботи в туризма: реален бизнес ефект" data-en="AI chatbots in tourism: real business impact">AI чатботи в туризма: реален бизнес ефект</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="ai">
+        <div class="spk-photo"><img src="images/speakers/martin-kuvandzhiev.jpg" alt="Martin Kuvandzhiev"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+          <div class="spk-name">Мартин Кувандиев</div>
+          <div class="spk-role">Founder @ Encorp | Co-founder, Bitcoin Gold</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Blockchain, fintech и AI: следващата вълна на иновации" data-en="Blockchain, fintech &amp; AI: the next innovation wave">Blockchain, fintech и AI: следващата вълна на иновации</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="ai">
+        <div class="spk-photo"><img src="images/speakers/teade-punter.jpg" alt="Teade Punter"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+          <div class="spk-name">Dr. Teade Punter</div>
+          <div class="spk-role">Leading Professor, AI for Society @ Fontys University</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Интеграция на умни системи" data-en="Smart System Integration">Интеграция на умни системи</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart City track -->
+      <div class="spk-card" data-track="smart-city">
+        <div class="spk-photo"><img src="images/speakers/andrey-lilov.jpg" alt="Andrey Lilov"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
+          <div class="spk-name">Андрей Лилов</div>
+          <div class="spk-role">Co-founder &amp; CEO @ URBO Studio</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Дигитализация на туризма и събитийната индустрия" data-en="Digitalization of tourism &amp; events industry">Дигитализация на туризма и събитийната индустрия</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="smart-city">
+        <div class="spk-photo"><img src="images/speakers/cemile-usta.jpg" alt="Cemile Köseler Usta"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
+          <div class="spk-name">Cemile Köseler Usta</div>
+          <div class="spk-role">Innovation Specialist @ Istanbul Chamber of Industry</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Иновации и дигитална трансформация: турско-българско сътрудничество" data-en="Innovation &amp; digital transformation: Turkey-Bulgaria cooperation">Иновации и дигитална трансформация: турско-българско сътрудничество</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="smart-city">
+        <div class="spk-photo"><img src="images/speakers/kalina-tsolova.jpg" alt="Kalina Tsolova"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
+          <div class="spk-name">Калина Цолова</div>
+          <div class="spk-role">Expert @ ARC Fund</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Иновационни екосистеми и технологична устойчивост на градовете" data-en="Innovation ecosystems &amp; urban technology resilience">Иновационни екосистеми и технологична устойчивост на градовете</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="smart-city">
+        <div class="spk-photo"><img src="images/speakers/georgi-dobrev.jpg" alt="Georgi Dobrev"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
+          <div class="spk-name">Георги Добрев</div>
+          <div class="spk-role">Analyst @ ARC Fund</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Дигитализация на МСП: анализ и политики" data-en="SME digitalization: analysis &amp; policy">Дигитализация на МСП: анализ и политики</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="smart-city">
+        <div class="spk-photo"><img src="images/speakers/ruslan-stefanov.jpg" alt="Ruslan Stefanov"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
+          <div class="spk-name">Руслан Стефанов</div>
+          <div class="spk-role">Director Strategy &amp; Innovation @ ARC Fund</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="20 години Innovation.bg: картата на иновациите в България" data-en="20 years Innovation.bg: mapping Bulgaria's innovation landscape">20 години Innovation.bg: картата на иновациите в България</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cybersecurity track -->
+      <div class="spk-card" data-track="cybersecurity">
+        <div class="spk-photo"><img src="images/speakers/hristian-daskalov.jpg" alt="Hristian Daskalov"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+          <div class="spk-name">д-р Христиан Даскалов</div>
+          <div class="spk-role">Cybersecurity Compliance Director | Chair @ DIH Trakia</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Европейски портфейли за цифрова самоличност: възможности и рискове" data-en="European digital identity wallets: opportunities and risks">Европейски портфейли за цифрова самоличност: възможности и рискове</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="cybersecurity">
+        <div class="spk-photo"><img src="images/speakers/dragomir-vatkov.jpg" alt="Dragomir Vatkov"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+          <div class="spk-name">Dragomir Vatkov</div>
+          <div class="spk-role">Lead Cyber Security Architect, SABSA</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Невидимата архитектура: как основите на киберсигурността определят устойчивостта" data-en="The Invisible Architecture: How Cyber Security Foundations Determine Resilience">Невидимата архитектура: как основите на киберсигурността определят устойчивостта</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="cybersecurity">
+        <div class="spk-photo"><img src="images/speakers/yasen-tanev.jpg" alt="Yasen Tanev"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+          <div class="spk-name">Ясен Танев</div>
+          <div class="spk-role">Cybersecurity Expert @ DIH Trakia</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност" data-en="Help, Not Burden: How to Transform Regulatory Requirements into Real Cybersecurity">Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BioTech track -->
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/kristina-eskenazi.jpg" alt="Kristina Eskenazi"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">Кристина Ескенази</div>
+          <div class="spk-role">Chair @ Health &amp; Life Sciences Cluster Bulgaria</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Бъдещето на здравеопазването: от изследвания към мащабни иновации" data-en="Future of Health &amp; Life Sciences: from research to scalable innovation">Бъдещето на здравеопазването: от изследвания към мащабни иновации</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/dimitar-karlovski.jpg" alt="Dimitar Karlovski"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">Dimitar Karlovski</div>
+          <div class="spk-role">Founder @ Mitotopia</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Митохондриите като Chi: May the Force be with you" data-en="Mitochondria as Chi: May the Force be with you">Митохондриите като Chi: May the Force be with you</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/trifon-tsekov.jpg" alt="Trifon Tsekov"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">Трифон Цеков</div>
+          <div class="spk-role">CEO @ 3-Fi Medical</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI" data-en="From Data Silos to Clinical Evidence: Federated Learning for Medical AI">От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/anton-tonchev.jpg" alt="Anton Tonchev"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">проф. Антон Тончев</div>
+          <div class="spk-role">Professor &amp; Chair, Anatomy @ Medical University Varna</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Стволови клетки на мозъка: от изследвания към терапия" data-en="Brain stem cell niches: from research to therapy">Стволови клетки на мозъка: от изследвания към терапия</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/elitsa-encheva.jpg" alt="Elitsa Encheva"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">проф. Елица Енчева, д.м.</div>
+          <div class="spk-role">Head of Radiation Oncology @ Medical University Varna</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Радиационна онкология и медицинска иновация" data-en="Radiation oncology &amp; medical innovation">Радиационна онкология и медицинска иновация</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/krastena-nikolova.jpg" alt="Krastena Nikolova"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">проф. Кръстена Николова</div>
+          <div class="spk-role">Full Professor of Biophysics @ Medical University Varna</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Биофизика и оптични методи в медицината" data-en="Biophysics &amp; optical methods in medicine">Биофизика и оптични методи в медицината</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spk-card" data-track="biotech">
+        <div class="spk-photo"><img src="images/speakers/kristina-bliznakova.jpg" alt="Kristina Bliznakova"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+          <div class="spk-name">проф. Кристина Близнакова</div>
+          <div class="spk-role">Associate Professor @ TU Varna | Medical University Varna</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Биомедицинско инженерство и AI в диагностиката на рак" data-en="Biomedical engineering &amp; AI in cancer diagnostics">Биомедицинско инженерство и AI в диагностиката на рак</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marine track -->
+      <div class="spk-card" data-track="marine">
+        <div class="spk-photo"><img src="images/speakers/svetlin-stoyanov.jpg" alt="Svetlin Stoyanov"></div>
+        <div class="spk-body">
+          <span class="spk-track" style="background:rgba(30,100,180,0.12);color:#1e64b4" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</span>
+          <div class="spk-name">Светлин Стоянов</div>
+          <div class="spk-role">Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS</div>
+          <div class="spk-topic">
+            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
+            <span data-bg="Корабостроенето на Черно море: иновации и предизвикателства" data-en="Black Sea shipbuilding: innovation &amp; challenges">Корабостроенето на Черно море: иновации и предизвикателства</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Coming soon banner -->
+    <div class="spk-coming-banner">
+      <h3 data-bg="Официалното обявяване на лекторите предстои" data-en="Speaker announcements coming soon">Официалното обявяване на лекторите предстои</h3>
+      <p data-bg="Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него." data-en="We are assembling an exceptional lineup of practitioners, researchers, and policymakers from across the Black Sea region and beyond.">Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него.</p>
+    </div>
+
+    <!-- Apply CTA -->
+    <div style="text-align:center">
+      <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор" data-en="Apply as speaker">Кандидатствай като лектор</button>
+    </div>
+
   </div>
 </section>
 
@@ -225,7 +584,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     </div>
     <div class="footer-bottom">
       <span data-bg="&copy; 2026 Черноморски технологичен форум. Всички права запазени." data-en="&copy; 2026 Black Sea Technology Forum. All rights reserved.">&copy; 2026 Черноморски технологичен форум. Всички права запазени.</span>
-      <span data-bg="Организирано от ИКТ Клъстер — Варна" data-en="Organized by ICT Cluster — Varna">Организирано от ИКТ Клъстер — Варна</span>
+      <span data-bg="Организирано от ИКТ Клъстер - Варна" data-en="Organized by ICT Cluster - Varna">Организирано от ИКТ Клъстер - Варна</span>
     </div>
   </div>
 </footer>
@@ -242,10 +601,10 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <div class="form-group"><label data-bg="Телефон" data-en="Phone">Телефон</label><input type="tel" id="reg-phone" placeholder="+359 ..."></div>
       <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
         <select id="reg-ticket">
-          <option value="early-bird" data-bg="Early Bird — 199 EUR" data-en="Early Bird — 199 EUR">Early Bird — 199 EUR</option>
-          <option value="standard" data-bg="Full Event — 199 EUR" data-en="Full Event — 199 EUR">Full Event — 199 EUR</option>
-          <option value="vip" data-bg="VIP — 399 EUR" data-en="VIP — 399 EUR">VIP — 399 EUR</option>
-          <option value="ultra-vip" data-bg="ULTRA VIP — 749 EUR" data-en="ULTRA VIP — 749 EUR">ULTRA VIP — 749 EUR</option>
+          <option value="early-bird" data-bg="Early Bird - 199 EUR" data-en="Early Bird - 199 EUR">Early Bird - 199 EUR</option>
+          <option value="standard" data-bg="Full Event - 199 EUR" data-en="Full Event - 199 EUR">Full Event - 199 EUR</option>
+          <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
+          <option value="ultra-vip" data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR</option>
         </select>
       </div>
       <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се" data-en="Register">Регистрирай се</button>
@@ -396,6 +755,24 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       else { btt.classList.remove('visible'); }
     });
   }
+
+  // Track filter logic
+  var filterBtns = document.querySelectorAll('.track-filter');
+  var spkCards = document.querySelectorAll('#spk-grid .spk-card');
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var track = btn.getAttribute('data-track');
+      spkCards.forEach(function(card) {
+        if (track === 'all' || card.getAttribute('data-track') === track) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
 })();
 window.addEventListener('pageshow',function(e){if(e.persisted)window.location.reload();});
 </script>
