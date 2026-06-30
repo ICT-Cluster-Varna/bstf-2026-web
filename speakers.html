@@ -243,289 +243,254 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <section class="speakers-main">
   <div class="container">
 
-    <!-- Track filters -->
-    <div class="track-filters" id="track-filters">
-      <button class="track-filter active" data-track="all" data-bg="Всички" data-en="All">Всички</button>
-      <button class="track-filter" data-track="ai" data-bg="Изкуствен интелект" data-en="AI">Изкуствен интелект</button>
-      <button class="track-filter" data-track="smart-city" data-bg="Умен град" data-en="Smart City">Умен град</button>
-      <button class="track-filter" data-track="transport" data-bg="Транспорт" data-en="Transport">Транспорт</button>
-      <button class="track-filter" data-track="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</button>
-      <button class="track-filter" data-track="marine" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</button>
-      <button class="track-filter" data-track="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</button>
-      <button class="track-filter" data-track="biotech" data-bg="BioTech" data-en="BioTech">BioTech</button>
+        <!-- Track navigation -->
+    <nav class="track-jump-nav">
+      <a class="track-jump" href="#track-ai"><span class="tj-dot" style="background:#2CA6B3"></span><span data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span></a>
+      <a class="track-jump" href="#track-smart-city"><span class="tj-dot" style="background:#4a9cc7"></span><span data-bg="Умен град" data-en="Smart City">Умен град</span></a>
+      <a class="track-jump" href="#track-cybersecurity"><span class="tj-dot" style="background:#e05252"></span><span data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span></a>
+      <a class="track-jump" href="#track-biotech"><span class="tj-dot" style="background:#4ec87a"></span><span data-bg="BioTech" data-en="BioTech">BioTech</span></a>
+      <a class="track-jump" href="#track-marine"><span class="tj-dot" style="background:#5a9ce6"></span><span data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</span></a>
+    </nav>
+
+    <!-- AI Track -->
+    <div class="track-section" id="track-ai">
+      <div class="track-band" data-track="ai">
+        <span class="track-band-name" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+        <span class="track-band-sep"></span>
+        <span class="track-band-desc" data-bg="Машинно обучение, автоматизация и AI стратегии" data-en="Machine learning, automation &amp; AI strategies">Машинно обучение, автоматизация и AI стратегии</span>
+        <span class="track-band-count"><span class="track-band-count-num">4</span><span class="track-band-count-lbl" data-bg="лектора" data-en="speakers">лектора</span></span>
+      </div>
+      <div class="spk-grid">
+        <div class="spk-card" data-track="ai">
+          <div class="spk-photo"><img src="images/speakers/alexander-minchev.jpg" alt="Alexander Minchev"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+            <div class="spk-name">Alexander Minchev</div>
+            <div class="spk-role">Founder &amp; MD @ AbsCloud / Abilix Soft</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Облачна инфраструктура, AI и киберсигурност" data-en="Cloud infrastructure, AI &amp; cybersecurity">Облачна инфраструктура, AI и киберсигурност</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="ai">
+          <div class="spk-photo"><img src="images/speakers/elitza-stoilova.jpg" alt="Elitza Stoilova"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+            <div class="spk-name">Елица Стоилова</div>
+            <div class="spk-role">Co-founder &amp; CEO @ Umni | AI2B Zone</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="AI чатботи в туризма: реален бизнес ефект" data-en="AI chatbots in tourism: real business impact">AI чатботи в туризма: реален бизнес ефект</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="ai">
+          <div class="spk-photo"><img src="images/speakers/martin-kuvandzhiev.jpg" alt="Martin Kuvandzhiev"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+            <div class="spk-name">Мартин Кувандиев</div>
+            <div class="spk-role">Founder @ Encorp | Co-founder, Bitcoin Gold</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Blockchain, fintech и AI: следващата вълна на иновации" data-en="Blockchain, fintech &amp; AI: the next innovation wave">Blockchain, fintech и AI: следващата вълна на иновации</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="ai">
+          <div class="spk-photo"><img src="images/speakers/teade-punter.jpg" alt="Teade Punter"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
+            <div class="spk-name">Dr. Teade Punter</div>
+            <div class="spk-role">Leading Professor, AI for Society @ Fontys University</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Интеграция на умни системи" data-en="Smart System Integration">Интеграция на умни системи</span></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Speakers grid -->
-    <div class="spk-grid" id="spk-grid">
-
-      <!-- AI track -->
-      <div class="spk-card" data-track="ai">
-        <div class="spk-photo"><img src="images/speakers/alexander-minchev.jpg" alt="Alexander Minchev"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
-          <div class="spk-name">Alexander Minchev</div>
-          <div class="spk-role">Founder &amp; MD @ AbsCloud / Abilix Soft</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Облачна инфраструктура, AI и киберсигурност" data-en="Cloud infrastructure, AI &amp; cybersecurity">Облачна инфраструктура, AI и киберсигурност</span>
+    <!-- Smart City Track -->
+    <div class="track-section" id="track-smart-city">
+      <div class="track-band" data-track="smart-city">
+        <span class="track-band-name" data-bg="Умен град" data-en="Smart City">Умен град</span>
+        <span class="track-band-sep"></span>
+        <span class="track-band-desc" data-bg="Дигитализация, иновации и градски екосистеми" data-en="Digitalization, innovation &amp; urban ecosystems">Дигитализация, иновации и градски екосистеми</span>
+        <span class="track-band-count"><span class="track-band-count-num">5</span><span class="track-band-count-lbl" data-bg="лектора" data-en="speakers">лектора</span></span>
+      </div>
+      <div class="spk-grid">
+        <div class="spk-card" data-track="smart-city">
+          <div class="spk-photo"><img src="images/speakers/andrey-lilov.jpg" alt="Andrey Lilov"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(74,156,199,0.12);color:#4a9cc7" data-bg="Умен град" data-en="Smart City">Умен град</span>
+            <div class="spk-name">Андрей Лилов</div>
+            <div class="spk-role">Co-founder &amp; CEO @ URBO Studio</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Дигитализация на туризма и събитийната индустрия" data-en="Digitalization of tourism &amp; events industry">Дигитализация на туризма и събитийната индустрия</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="smart-city">
+          <div class="spk-photo"><img src="images/speakers/cemile-usta.jpg" alt="Cemile Köseler Usta"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(74,156,199,0.12);color:#4a9cc7" data-bg="Умен град" data-en="Smart City">Умен град</span>
+            <div class="spk-name">Cemile Köseler Usta</div>
+            <div class="spk-role">Innovation Specialist @ Istanbul Chamber of Industry</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Иновации и дигитална трансформация: турско-българско сътрудничество" data-en="Innovation &amp; digital transformation: Turkey-Bulgaria cooperation">Иновации и дигитална трансформация: турско-българско сътрудничество</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="smart-city">
+          <div class="spk-photo"><img src="images/speakers/kalina-tsolova.jpg" alt="Kalina Tsolova"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(74,156,199,0.12);color:#4a9cc7" data-bg="Умен град" data-en="Smart City">Умен град</span>
+            <div class="spk-name">Калина Цолова</div>
+            <div class="spk-role">Expert @ ARC Fund</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Иновационни екосистеми и технологична устойчивост на градовете" data-en="Innovation ecosystems &amp; urban technology resilience">Иновационни екосистеми и технологична устойчивост на градовете</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="smart-city">
+          <div class="spk-photo"><img src="images/speakers/georgi-dobrev.jpg" alt="Georgi Dobrev"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(74,156,199,0.12);color:#4a9cc7" data-bg="Умен град" data-en="Smart City">Умен град</span>
+            <div class="spk-name">Георги Добрев</div>
+            <div class="spk-role">Analyst @ ARC Fund</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Дигитализация на МСП: анализ и политики" data-en="SME digitalization: analysis &amp; policy">Дигитализация на МСП: анализ и политики</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="smart-city">
+          <div class="spk-photo"><img src="images/speakers/ruslan-stefanov.jpg" alt="Ruslan Stefanov"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(74,156,199,0.12);color:#4a9cc7" data-bg="Умен град" data-en="Smart City">Умен град</span>
+            <div class="spk-name">Руслан Стефанов</div>
+            <div class="spk-role">Director Strategy &amp; Innovation @ ARC Fund</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="20 години Innovation.bg: картата на иновациите в България" data-en="20 years Innovation.bg: mapping Bulgaria's innovation landscape">20 години Innovation.bg: картата на иновациите в България</span></div>
           </div>
         </div>
       </div>
-
-      <div class="spk-card" data-track="ai">
-        <div class="spk-photo"><img src="images/speakers/elitza-stoilova.jpg" alt="Elitza Stoilova"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
-          <div class="spk-name">Елица Стоилова</div>
-          <div class="spk-role">Co-founder &amp; CEO @ Umni | AI2B Zone</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="AI чатботи в туризма: реален бизнес ефект" data-en="AI chatbots in tourism: real business impact">AI чатботи в туризма: реален бизнес ефект</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="ai">
-        <div class="spk-photo"><img src="images/speakers/martin-kuvandzhiev.jpg" alt="Martin Kuvandzhiev"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
-          <div class="spk-name">Мартин Кувандиев</div>
-          <div class="spk-role">Founder @ Encorp | Co-founder, Bitcoin Gold</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Blockchain, fintech и AI: следващата вълна на иновации" data-en="Blockchain, fintech &amp; AI: the next innovation wave">Blockchain, fintech и AI: следващата вълна на иновации</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="ai">
-        <div class="spk-photo"><img src="images/speakers/teade-punter.jpg" alt="Teade Punter"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(44,166,179,0.12);color:var(--teal)" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span>
-          <div class="spk-name">Dr. Teade Punter</div>
-          <div class="spk-role">Leading Professor, AI for Society @ Fontys University</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Интеграция на умни системи" data-en="Smart System Integration">Интеграция на умни системи</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Smart City track -->
-      <div class="spk-card" data-track="smart-city">
-        <div class="spk-photo"><img src="images/speakers/andrey-lilov.jpg" alt="Andrey Lilov"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
-          <div class="spk-name">Андрей Лилов</div>
-          <div class="spk-role">Co-founder &amp; CEO @ URBO Studio</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Дигитализация на туризма и събитийната индустрия" data-en="Digitalization of tourism &amp; events industry">Дигитализация на туризма и събитийната индустрия</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="smart-city">
-        <div class="spk-photo"><img src="images/speakers/cemile-usta.jpg" alt="Cemile Köseler Usta"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
-          <div class="spk-name">Cemile Köseler Usta</div>
-          <div class="spk-role">Innovation Specialist @ Istanbul Chamber of Industry</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Иновации и дигитална трансформация: турско-българско сътрудничество" data-en="Innovation &amp; digital transformation: Turkey-Bulgaria cooperation">Иновации и дигитална трансформация: турско-българско сътрудничество</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="smart-city">
-        <div class="spk-photo"><img src="images/speakers/kalina-tsolova.jpg" alt="Kalina Tsolova"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
-          <div class="spk-name">Калина Цолова</div>
-          <div class="spk-role">Expert @ ARC Fund</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Иновационни екосистеми и технологична устойчивост на градовете" data-en="Innovation ecosystems &amp; urban technology resilience">Иновационни екосистеми и технологична устойчивост на градовете</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="smart-city">
-        <div class="spk-photo"><img src="images/speakers/georgi-dobrev.jpg" alt="Georgi Dobrev"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
-          <div class="spk-name">Георги Добрев</div>
-          <div class="spk-role">Analyst @ ARC Fund</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Дигитализация на МСП: анализ и политики" data-en="SME digitalization: analysis &amp; policy">Дигитализация на МСП: анализ и политики</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="smart-city">
-        <div class="spk-photo"><img src="images/speakers/ruslan-stefanov.jpg" alt="Ruslan Stefanov"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(11,57,84,0.12);color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен град</span>
-          <div class="spk-name">Руслан Стефанов</div>
-          <div class="spk-role">Director Strategy &amp; Innovation @ ARC Fund</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="20 години Innovation.bg: картата на иновациите в България" data-en="20 years Innovation.bg: mapping Bulgaria's innovation landscape">20 години Innovation.bg: картата на иновациите в България</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cybersecurity track -->
-      <div class="spk-card" data-track="cybersecurity">
-        <div class="spk-photo"><img src="images/speakers/hristian-daskalov.jpg" alt="Hristian Daskalov"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
-          <div class="spk-name">д-р Христиан Даскалов</div>
-          <div class="spk-role">Cybersecurity Compliance Director | Chair @ DIH Trakia</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Европейски портфейли за цифрова самоличност: възможности и рискове" data-en="European digital identity wallets: opportunities and risks">Европейски портфейли за цифрова самоличност: възможности и рискове</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="cybersecurity">
-        <div class="spk-photo"><img src="images/speakers/dragomir-vatkov.jpg" alt="Dragomir Vatkov"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
-          <div class="spk-name">Dragomir Vatkov</div>
-          <div class="spk-role">Lead Cyber Security Architect, SABSA</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Невидимата архитектура: как основите на киберсигурността определят устойчивостта" data-en="The Invisible Architecture: How Cyber Security Foundations Determine Resilience">Невидимата архитектура: как основите на киберсигурността определят устойчивостта</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="cybersecurity">
-        <div class="spk-photo"><img src="images/speakers/yasen-tanev.jpg" alt="Yasen Tanev"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
-          <div class="spk-name">Ясен Танев</div>
-          <div class="spk-role">Cybersecurity Expert @ DIH Trakia</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност" data-en="Help, Not Burden: How to Transform Regulatory Requirements into Real Cybersecurity">Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- BioTech track -->
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/kristina-eskenazi.jpg" alt="Kristina Eskenazi"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">Кристина Ескенази</div>
-          <div class="spk-role">Chair @ Health &amp; Life Sciences Cluster Bulgaria</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Бъдещето на здравеопазването: от изследвания към мащабни иновации" data-en="Future of Health &amp; Life Sciences: from research to scalable innovation">Бъдещето на здравеопазването: от изследвания към мащабни иновации</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/dimitar-karlovski.jpg" alt="Dimitar Karlovski"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">Dimitar Karlovski</div>
-          <div class="spk-role">Founder @ Mitotopia</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Митохондриите като Chi: May the Force be with you" data-en="Mitochondria as Chi: May the Force be with you">Митохондриите като Chi: May the Force be with you</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/trifon-tsekov.jpg" alt="Trifon Tsekov"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">Трифон Цеков</div>
-          <div class="spk-role">CEO @ 3-Fi Medical</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI" data-en="From Data Silos to Clinical Evidence: Federated Learning for Medical AI">От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/anton-tonchev.jpg" alt="Anton Tonchev"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">проф. Антон Тончев</div>
-          <div class="spk-role">Professor &amp; Chair, Anatomy @ Medical University Varna</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Стволови клетки на мозъка: от изследвания към терапия" data-en="Brain stem cell niches: from research to therapy">Стволови клетки на мозъка: от изследвания към терапия</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/elitsa-encheva.jpg" alt="Elitsa Encheva"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">проф. Елица Енчева, д.м.</div>
-          <div class="spk-role">Head of Radiation Oncology @ Medical University Varna</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Радиационна онкология и медицинска иновация" data-en="Radiation oncology &amp; medical innovation">Радиационна онкология и медицинска иновация</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/krastena-nikolova.jpg" alt="Krastena Nikolova"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">проф. Кръстена Николова</div>
-          <div class="spk-role">Full Professor of Biophysics @ Medical University Varna</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Биофизика и оптични методи в медицината" data-en="Biophysics &amp; optical methods in medicine">Биофизика и оптични методи в медицината</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="spk-card" data-track="biotech">
-        <div class="spk-photo"><img src="images/speakers/kristina-bliznakova.jpg" alt="Kristina Bliznakova"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
-          <div class="spk-name">проф. Кристина Близнакова</div>
-          <div class="spk-role">Associate Professor @ TU Varna | Medical University Varna</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Биомедицинско инженерство и AI в диагностиката на рак" data-en="Biomedical engineering &amp; AI in cancer diagnostics">Биомедицинско инженерство и AI в диагностиката на рак</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Marine track -->
-      <div class="spk-card" data-track="marine">
-        <div class="spk-photo"><img src="images/speakers/svetlin-stoyanov.jpg" alt="Svetlin Stoyanov"></div>
-        <div class="spk-body">
-          <span class="spk-track" style="background:rgba(30,100,180,0.12);color:#1e64b4" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</span>
-          <div class="spk-name">Светлин Стоянов</div>
-          <div class="spk-role">Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS</div>
-          <div class="spk-topic">
-            <div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>
-            <span data-bg="Корабостроенето на Черно море: иновации и предизвикателства" data-en="Black Sea shipbuilding: innovation &amp; challenges">Корабостроенето на Черно море: иновации и предизвикателства</span>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Coming soon banner -->
+    <!-- Cybersecurity Track -->
+    <div class="track-section" id="track-cybersecurity">
+      <div class="track-band" data-track="cybersecurity">
+        <span class="track-band-name" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+        <span class="track-band-sep"></span>
+        <span class="track-band-desc" data-bg="Кибер защита, регулации и цифрова идентичност" data-en="Cyber defence, regulations &amp; digital identity">Кибер защита, регулации и цифрова идентичност</span>
+        <span class="track-band-count"><span class="track-band-count-num">3</span><span class="track-band-count-lbl" data-bg="лектора" data-en="speakers">лектора</span></span>
+      </div>
+      <div class="spk-grid">
+        <div class="spk-card" data-track="cybersecurity">
+          <div class="spk-photo"><img src="images/speakers/hristian-daskalov.jpg" alt="Hristian Daskalov"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+            <div class="spk-name">д-р Христиан Даскалов</div>
+            <div class="spk-role">Cybersecurity Compliance Director | Chair @ DIH Trakia</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Европейски портфейли за цифрова самоличност: възможности и рискове" data-en="European digital identity wallets: opportunities and risks">Европейски портфейли за цифрова самоличност: възможности и рискове</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="cybersecurity">
+          <div class="spk-photo"><img src="images/speakers/dragomir-vatkov.jpg" alt="Dragomir Vatkov"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+            <div class="spk-name">Dragomir Vatkov</div>
+            <div class="spk-role">Lead Cyber Security Architect, SABSA</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Невидимата архитектура: как основите на киберсигурността определят устойчивостта" data-en="The Invisible Architecture: How Cyber Security Foundations Determine Resilience">Невидимата архитектура: как основите на киберсигурността определят устойчивостта</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="cybersecurity">
+          <div class="spk-photo"><img src="images/speakers/yasen-tanev.jpg" alt="Yasen Tanev"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(180,50,50,0.1);color:#b43232" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span>
+            <div class="spk-name">Ясен Танев</div>
+            <div class="spk-role">Cybersecurity Expert @ DIH Trakia</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност" data-en="Help, Not Burden: How to Transform Regulatory Requirements into Real Cybersecurity">Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BioTech Track -->
+    <div class="track-section" id="track-biotech">
+      <div class="track-band" data-track="biotech">
+        <span class="track-band-name" data-bg="BioTech" data-en="BioTech">BioTech</span>
+        <span class="track-band-sep"></span>
+        <span class="track-band-desc" data-bg="Медицинска наука, биоинженерство и здравни иновации" data-en="Medical science, bioengineering &amp; health innovation">Медицинска наука, биоинженерство и здравни иновации</span>
+        <span class="track-band-count"><span class="track-band-count-num">7</span><span class="track-band-count-lbl" data-bg="лектори" data-en="speakers">лектори</span></span>
+      </div>
+      <div class="spk-grid">
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/kristina-eskenazi.jpg" alt="Kristina Eskenazi"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">Кристина Ескенази</div>
+            <div class="spk-role">Chair @ Health &amp; Life Sciences Cluster Bulgaria</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Бъдещето на здравеопазването: от изследвания към мащабни иновации" data-en="Future of Health &amp; Life Sciences: from research to scalable innovation">Бъдещето на здравеопазването: от изследвания към мащабни иновации</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/dimitar-karlovski.jpg" alt="Dimitar Karlovski"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">Dimitar Karlovski</div>
+            <div class="spk-role">Founder @ Mitotopia</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Митохондриите като Chi: May the Force be with you" data-en="Mitochondria as Chi: May the Force be with you">Митохондриите като Chi: May the Force be with you</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/trifon-tsekov.jpg" alt="Trifon Tsekov"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">Трифон Цеков</div>
+            <div class="spk-role">CEO @ 3-Fi Medical</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI" data-en="From Data Silos to Clinical Evidence: Federated Learning for Medical AI">От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/anton-tonchev.jpg" alt="Anton Tonchev"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">проф. Антон Тончев</div>
+            <div class="spk-role">Professor &amp; Chair, Anatomy @ Medical University Varna</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Стволови клетки на мозъка: от изследвания към терапия" data-en="Brain stem cell niches: from research to therapy">Стволови клетки на мозъка: от изследвания към терапия</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/elitsa-encheva.jpg" alt="Elitsa Encheva"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">проф. Елица Енчева, д.м.</div>
+            <div class="spk-role">Head of Radiation Oncology @ Medical University Varna</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Радиационна онкология и медицинска иновация" data-en="Radiation oncology &amp; medical innovation">Радиационна онкология и медицинска иновация</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/krastena-nikolova.jpg" alt="Krastena Nikolova"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">проф. Кръстена Николова</div>
+            <div class="spk-role">Full Professor of Biophysics @ Medical University Varna</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Биофизика и оптични методи в медицината" data-en="Biophysics &amp; optical methods in medicine">Биофизика и оптични методи в медицината</span></div>
+          </div>
+        </div>
+        <div class="spk-card" data-track="biotech">
+          <div class="spk-photo"><img src="images/speakers/kristina-bliznakova.jpg" alt="Kristina Bliznakova"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(39,174,96,0.12);color:#27ae60" data-bg="BioTech" data-en="BioTech">BioTech</span>
+            <div class="spk-name">проф. Кристина Близнакова</div>
+            <div class="spk-role">Associate Professor @ TU Varna | Medical University Varna</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Биомедицинско инженерство и AI в диагностиката на рак" data-en="Biomedical engineering &amp; AI in cancer diagnostics">Биомедицинско инженерство и AI в диагностиката на рак</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marine Track -->
+    <div class="track-section" id="track-marine">
+      <div class="track-band" data-track="marine">
+        <span class="track-band-name" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</span>
+        <span class="track-band-sep"></span>
+        <span class="track-band-desc" data-bg="Корабостроене, морски иновации и Черноморски регион" data-en="Shipbuilding, marine innovation &amp; the Black Sea region">Корабостроене, морски иновации и Черноморски регион</span>
+        <span class="track-band-count"><span class="track-band-count-num">1</span><span class="track-band-count-lbl" data-bg="лектор" data-en="speaker">лектор</span></span>
+      </div>
+      <div class="spk-grid">
+        <div class="spk-card" data-track="marine">
+          <div class="spk-photo"><img src="images/speakers/svetlin-stoyanov.jpg" alt="Svetlin Stoyanov"></div>
+          <div class="spk-body">
+            <span class="spk-track" style="background:rgba(30,100,180,0.12);color:#1e64b4" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</span>
+            <div class="spk-name">Светлин Стоянов</div>
+            <div class="spk-role">Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS</div>
+            <div class="spk-topic"><div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div><span data-bg="Корабостроенето на Черно море: иновации и предизвикателства" data-en="Black Sea shipbuilding: innovation &amp; challenges">Корабостроенето на Черно море: иновации и предизвикателства</span></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- Coming soon banner -->
     <div class="spk-coming-banner">
       <h3 data-bg="Официалното обявяване на лекторите предстои" data-en="Speaker announcements coming soon">Официалното обявяване на лекторите предстои</h3>
       <p data-bg="Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него." data-en="We are assembling an exceptional lineup of practitioners, researchers, and policymakers from across the Black Sea region and beyond.">Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него.</p>
@@ -756,23 +721,6 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     });
   }
 
-  // Track filter logic
-  var filterBtns = document.querySelectorAll('.track-filter');
-  var spkCards = document.querySelectorAll('#spk-grid .spk-card');
-  filterBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      filterBtns.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var track = btn.getAttribute('data-track');
-      spkCards.forEach(function(card) {
-        if (track === 'all' || card.getAttribute('data-track') === track) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
 })();
 window.addEventListener('pageshow',function(e){if(e.persisted)window.location.reload();});
 </script>
