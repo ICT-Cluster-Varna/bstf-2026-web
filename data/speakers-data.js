@@ -125,7 +125,7 @@
     },
     {
       id: 'teade-punter', track: 'ai',
-      img: 'images/speakers/teade-punter.webp', alt: 'Teade Punter',
+      img: 'images/speakers/teade-punter.jpg', alt: 'Teade Punter',
       objectPosition: '65% 15%',
       name: 'Dr. Teade Punter',
       role: 'Leading Professor, AI for Society @ Fontys University',
@@ -169,7 +169,7 @@
     },
     {
       id: 'cemile-usta', track: 'smart-city',
-      img: 'images/speakers/cemile-usta.webp', alt: 'Cemile Köseler Usta',
+      img: 'images/speakers/cemile-usta.jpg', alt: 'Cemile Köseler Usta',
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
       role: 'Innovation Specialist @ Istanbul Chamber of Industry',
@@ -188,7 +188,7 @@
     },
     {
       id: 'kalina-tsolova', track: 'smart-city',
-      img: 'images/speakers/kalina-tsolova.webp', alt: 'Kalina Tsolova',
+      img: 'images/speakers/kalina-tsolova.jpg', alt: 'Kalina Tsolova',
       objectPosition: 'center top',
       name: 'Калина Цолова',
       role: 'Expert @ ARC Fund',
@@ -260,7 +260,7 @@
     },
     {
       id: 'dragomir-vatkov', track: 'cybersecurity',
-      img: 'images/speakers/dragomir-vatkov.webp', alt: 'Dragomir Vatkov',
+      img: 'images/speakers/dragomir-vatkov.jpg', alt: 'Dragomir Vatkov',
       objectPosition: 'center 35%',
       name: 'Dragomir Vatkov',
       role: 'Lead Cyber Security Architect, SABSA',
@@ -357,7 +357,7 @@
     },
     {
       id: 'anton-tonchev', track: 'biotech',
-      img: 'images/speakers/anton-tonchev.webp', alt: 'Anton Tonchev',
+      img: 'images/speakers/anton-tonchev.jpg', alt: 'Anton Tonchev',
       objectPosition: 'center 30%',
       name: 'проф. Антон Тончев',
       role: 'Professor &amp; Chair, Anatomy @ Medical University Varna',
@@ -418,7 +418,7 @@
     },
     {
       id: 'kristina-bliznakova', track: 'biotech',
-      img: 'images/speakers/kristina-bliznakova.webp', alt: 'Kristina Bliznakova',
+      img: 'images/speakers/kristina-bliznakova.jpg', alt: 'Kristina Bliznakova',
       objectPosition: 'center top',
       name: 'проф. Кристина Близнакова',
       role: 'Associate Professor @ TU Varna | Medical University Varna',
@@ -443,7 +443,7 @@
     // ── Marine ──
     {
       id: 'svetlin-stoyanov', track: 'marine',
-      img: 'images/speakers/svetlin-stoyanov.webp', alt: 'Svetlin Stoyanov',
+      img: 'images/speakers/svetlin-stoyanov.jpg', alt: 'Svetlin Stoyanov',
       objectPosition: '40% top',
       name: 'Светлин Стоянов',
       role: 'Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS',
