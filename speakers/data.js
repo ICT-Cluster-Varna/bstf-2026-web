@@ -99,7 +99,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "anton-tonchev.webp"
+    "image": "anton-tonchev.jpg"
   },
   {
     "slug": "cemile-usta",
@@ -133,7 +133,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "cemile-usta.webp"
+    "image": "cemile-usta.jpg"
   },
   {
     "slug": "dimitar-karlovski",
@@ -201,7 +201,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "dragomir-vatkov.webp"
+    "image": "dragomir-vatkov.jpg"
   },
   {
     "slug": "elitsa-encheva",
@@ -371,7 +371,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "kalina-tsolova.webp"
+    "image": "kalina-tsolova.jpg"
   },
   {
     "slug": "krastena-nikolova",
@@ -439,7 +439,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "kristina-bliznakova.webp"
+    "image": "kristina-bliznakova.jpg"
   },
   {
     "slug": "kristina-eskenazi",
@@ -575,7 +575,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "svetlin-stoyanov.webp"
+    "image": "svetlin-stoyanov.jpg"
   },
   {
     "slug": "teade-punter",
@@ -609,7 +609,7 @@ var speakersData = [
       "bg": "Варна, България",
       "en": "Varna, Bulgaria"
     },
-    "image": "teade-punter.webp"
+    "image": "teade-punter.jpg"
   },
   {
     "slug": "trifon-tsekov",
