@@ -1440,7 +1440,7 @@
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260702"></script>
+      <script>document.write('<script type="text/javascript" src="data/speakers-data.js?v=' + Date.now() + '"><\/script>');</script>
       <script>
         (function () {
           'use strict';
