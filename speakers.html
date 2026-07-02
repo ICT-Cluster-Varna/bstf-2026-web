@@ -9,6 +9,18 @@
   <meta http-equiv="Expires" content="0">
   <title>Лектори - BSTF 2026</title>
   <meta name="description" content="Black Sea Technology Forum 2026 - Speakers">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BSTF 2026">
+  <meta property="og:title" content="Лектори - BSTF 2026">
+  <meta property="og:description" content="Black Sea Technology Forum 2026 - Speakers">
+  <meta property="og:url" content="https://bstf2026.bg/speakers.html">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Лектори - BSTF 2026">
+  <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Speakers">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -411,6 +423,16 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 52px
+    }
+
+    .hero-desc-break {
+      display: none
+    }
+
+    @media (min-width: 640px) {
+      .hero-desc-break {
+        display: inline
+      }
     }
 
     .hero-stats-strip {
@@ -1380,9 +1402,9 @@
           2026 · ВАРНА · 5-7 ОКТОМВРИ</p>
         <h1 data-bg="Лектори" data-en="Speakers">Лектори</h1>
         <p class="hero-desc"
-          data-bg="Практици, учени и стратегически лидери от региона на Черно море и света - на една сцена."
-          data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
-          Практици, учени и стратегически лидери от региона на Черно море и света - на една сцена.</p>
+          data-bg="Практици, учени и стратегически лидери&lt;br class=&quot;hero-desc-break&quot;&gt; от региона на Черно море и света - на една сцена."
+          data-en="Practitioners, researchers and strategic leaders&lt;br class=&quot;hero-desc-break&quot;&gt; from the Black Sea region and beyond - on one stage.">
+          Практици, учени и стратегически лидери<br class="hero-desc-break"> от региона на Черно море и света - на една сцена.</p>
         <div class="hero-stats-strip">
           <div class="hero-stat">
             <span class="hero-stat-num" id="stat-speakers">20+</span>
@@ -1418,7 +1440,7 @@
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260702"></script>
       <script>
         (function () {
           'use strict';
