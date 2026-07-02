@@ -26,7 +26,7 @@
       labelEn: 'Smart City',
       descBg: 'Дигитализация, иновации и градски екосистеми',
       descEn: 'Digitalization, innovation &amp; urban ecosystems',
-      dot: '#4a9cc7',
+      dot: '#2CA6B3',
       countPluralBg: 'лектора'
     },
     {
@@ -37,7 +37,7 @@
       labelEn: 'Cybersecurity',
       descBg: 'Кибер защита, регулации и цифрова идентичност',
       descEn: 'Cyber defence, regulations &amp; digital identity',
-      dot: '#e05252',
+      dot: '#2CA6B3',
       countPluralBg: 'лектора'
     },
     {
@@ -48,7 +48,7 @@
       labelEn: 'BioTech',
       descBg: 'Медицинска наука, биоинженерство и здравни иновации',
       descEn: 'Medical science, bioengineering &amp; health innovation',
-      dot: '#4ec87a',
+      dot: '#2CA6B3',
       countPluralBg: 'лектори'
     },
     {
@@ -59,7 +59,7 @@
       labelEn: 'Marine Tech',
       descBg: 'Корабостроене, морски иновации и Черноморски регион',
       descEn: 'Shipbuilding, marine innovation &amp; the Black Sea region',
-      dot: '#5a9ce6',
+      dot: '#2CA6B3',
       countPluralBg: 'лектора'
     }
   ];
