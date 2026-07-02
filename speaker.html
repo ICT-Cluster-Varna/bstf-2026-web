@@ -67,8 +67,14 @@
       color: var(--white)
     }
 
-    ::-webkit-scrollbar { width: 11px }
-    ::-webkit-scrollbar-track { background: var(--light-gray) }
+    ::-webkit-scrollbar {
+      width: 11px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-gray)
+    }
+
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(180deg, var(--teal), var(--navy));
       border-radius: 20px;
@@ -133,38 +139,38 @@
     .btn-primary {
       background: linear-gradient(155deg, var(--teal) 0%, var(--teal-deep) 100%);
       color: var(--white);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 8px 20px rgba(26,138,150,0.28)
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 8px 20px rgba(26, 138, 150, 0.28)
     }
 
     .btn-primary:hover {
       background: linear-gradient(155deg, #34b8c6 0%, var(--teal-deep) 100%);
       transform: translateY(-2px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 14px 30px rgba(26,138,150,0.38)
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 14px 30px rgba(26, 138, 150, 0.38)
     }
 
     .btn-outline {
       border: 2px solid var(--teal);
       color: var(--teal);
-      background: rgba(44,166,179,0.03)
+      background: rgba(44, 166, 179, 0.03)
     }
 
     .btn-outline:hover {
       background: var(--teal);
       color: var(--white);
-      box-shadow: 0 10px 24px rgba(26,138,150,0.28);
+      box-shadow: 0 10px 24px rgba(26, 138, 150, 0.28);
       transform: translateY(-2px)
     }
 
     .btn-white {
       background: linear-gradient(155deg, var(--white) 0%, #f4fafb 100%);
       color: var(--navy);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12)
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12)
     }
 
     .btn-white:hover {
       background: var(--light-blue);
       transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.16)
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16)
     }
 
     .btn-sm {
@@ -325,7 +331,7 @@
     .page-hero {
       position: relative;
       background:
-        radial-gradient(ellipse 900px 500px at 50% -10%, rgba(44,166,179,0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 900px 500px at 50% -10%, rgba(44, 166, 179, 0.16) 0%, transparent 60%),
         linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
       padding: 148px 0 88px;
       text-align: center;
@@ -338,7 +344,7 @@
       inset: 0;
       background-image: var(--dot-grid);
       background-size: 24px 24px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,0,0,0.9), transparent 75%);
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0, 0, 0, 0.9), transparent 75%);
       opacity: 0.6;
       pointer-events: none
     }
@@ -346,9 +352,11 @@
     .page-hero::after {
       content: '';
       position: absolute;
-      left: 0; right: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(44,166,179,0.5), transparent)
+      background: linear-gradient(90deg, transparent, rgba(44, 166, 179, 0.5), transparent)
     }
 
     .hero-inner {
@@ -366,14 +374,22 @@
       font-size: 0.76rem;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
       margin-bottom: 24px;
       transition: color 0.3s ease
     }
 
-    .back-to-speakers span:first-child { transition: transform 0.3s var(--ease-premium) }
-    .back-to-speakers:hover { color: var(--teal) }
-    .back-to-speakers:hover span:first-child { transform: translateX(-3px) }
+    .back-to-speakers span:first-child {
+      transition: transform 0.3s var(--ease-premium)
+    }
+
+    .back-to-speakers:hover {
+      color: var(--teal)
+    }
+
+    .back-to-speakers:hover span:first-child {
+      transform: translateX(-3px)
+    }
 
     .hero-eyebrow {
       display: inline-flex;
@@ -398,7 +414,9 @@
       display: block
     }
 
-    .hero-eyebrow::after { background: linear-gradient(90deg, var(--teal), transparent) }
+    .hero-eyebrow::after {
+      background: linear-gradient(90deg, var(--teal), transparent)
+    }
 
     .hero-inner h1 {
       font-size: clamp(2.4rem, 4.6vw, 3.6rem);
@@ -434,16 +452,33 @@
       z-index: 0
     }
 
-    .sp-main > .container { position: relative; z-index: 1 }
-    .sbc-1 { width:560px; height:560px; top:-200px; left:-200px; background:radial-gradient(circle, rgba(44,166,179,0.09) 0%, transparent 68%) }
-    .sbc-2 { width:380px; height:380px; top:40%;   right:-120px; background:radial-gradient(circle, rgba(11,57,84,0.07) 0%, transparent 65%) }
+    .sp-main>.container {
+      position: relative;
+      z-index: 1
+    }
+
+    .sbc-1 {
+      width: 560px;
+      height: 560px;
+      top: -200px;
+      left: -200px;
+      background: radial-gradient(circle, rgba(44, 166, 179, 0.09) 0%, transparent 68%)
+    }
+
+    .sbc-2 {
+      width: 380px;
+      height: 380px;
+      top: 40%;
+      right: -120px;
+      background: radial-gradient(circle, rgba(11, 57, 84, 0.07) 0%, transparent 65%)
+    }
 
     .sp-card {
       position: relative;
       background: var(--white);
       border-radius: 20px;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 8px rgba(8,28,43,0.05), 0 26px 60px rgba(8,28,43,0.12);
-      border: 1px solid rgba(8,28,43,0.04);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 8px rgba(8, 28, 43, 0.05), 0 26px 60px rgba(8, 28, 43, 0.12);
+      border: 1px solid rgba(8, 28, 43, 0.04);
       overflow: hidden;
       display: grid;
       grid-template-columns: 360px 1fr;
@@ -462,7 +497,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(11,57,84,0) 55%, rgba(8,28,43,0.32) 100%);
+      background: linear-gradient(180deg, rgba(11, 57, 84, 0) 55%, rgba(8, 28, 43, 0.32) 100%);
       z-index: 1;
       pointer-events: none
     }
@@ -470,17 +505,34 @@
     .sp-photo::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 4px;
       background: var(--teal);
       z-index: 2;
-      box-shadow: 0 0 14px 1px rgba(44,166,179,0.6)
+      box-shadow: 0 0 14px 1px rgba(44, 166, 179, 0.6)
     }
 
-    .sp-profile[data-track="smart-city"]    .sp-photo::after { background: #4a9cc7; box-shadow: 0 0 14px 1px rgba(74,156,199,0.55) }
-    .sp-profile[data-track="cybersecurity"] .sp-photo::after { background: #e05252; box-shadow: 0 0 14px 1px rgba(224,82,82,0.5) }
-    .sp-profile[data-track="biotech"]       .sp-photo::after { background: #4ec87a; box-shadow: 0 0 14px 1px rgba(78,200,122,0.5) }
-    .sp-profile[data-track="marine"]        .sp-photo::after { background: #5a9ce6; box-shadow: 0 0 14px 1px rgba(90,156,230,0.5) }
+    .sp-profile[data-track="smart-city"] .sp-photo::after {
+      background: #4a9cc7;
+      box-shadow: 0 0 14px 1px rgba(74, 156, 199, 0.55)
+    }
+
+    .sp-profile[data-track="cybersecurity"] .sp-photo::after {
+      background: #e05252;
+      box-shadow: 0 0 14px 1px rgba(224, 82, 82, 0.5)
+    }
+
+    .sp-profile[data-track="biotech"] .sp-photo::after {
+      background: #4ec87a;
+      box-shadow: 0 0 14px 1px rgba(78, 200, 122, 0.5)
+    }
+
+    .sp-profile[data-track="marine"] .sp-photo::after {
+      background: #5a9ce6;
+      box-shadow: 0 0 14px 1px rgba(90, 156, 230, 0.5)
+    }
 
     .sp-photo img {
       width: 100%;
@@ -506,15 +558,30 @@
       text-transform: uppercase;
       margin-bottom: 16px;
       width: fit-content;
-      background: rgba(44,166,179,0.1);
-      border: 1px solid rgba(44,166,179,0.2);
+      background: rgba(44, 166, 179, 0.1);
+      border: 1px solid rgba(44, 166, 179, 0.2);
       color: #146672
     }
 
-    .sp-profile[data-track="smart-city"]    .sp-track-pill { background: rgba(74,156,199,0.1);  color: #2C6E93 }
-    .sp-profile[data-track="cybersecurity"] .sp-track-pill { background: rgba(224,82,82,0.1);   color: #c94444 }
-    .sp-profile[data-track="biotech"]       .sp-track-pill { background: rgba(78,200,122,0.1);  color: #1F7A45 }
-    .sp-profile[data-track="marine"]        .sp-track-pill { background: rgba(90,156,230,0.1);  color: #2F6BB0 }
+    .sp-profile[data-track="smart-city"] .sp-track-pill {
+      background: rgba(74, 156, 199, 0.1);
+      color: #2C6E93
+    }
+
+    .sp-profile[data-track="cybersecurity"] .sp-track-pill {
+      background: rgba(224, 82, 82, 0.1);
+      color: #c94444
+    }
+
+    .sp-profile[data-track="biotech"] .sp-track-pill {
+      background: rgba(78, 200, 122, 0.1);
+      color: #1F7A45
+    }
+
+    .sp-profile[data-track="marine"] .sp-track-pill {
+      background: rgba(90, 156, 230, 0.1);
+      color: #2F6BB0
+    }
 
     .sp-name {
       font-family: 'Space Grotesk', sans-serif;
@@ -524,7 +591,7 @@
       color: var(--navy);
       margin-bottom: 8px;
       line-height: 1.15;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4)
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4)
     }
 
     .sp-role {
@@ -535,18 +602,29 @@
       line-height: 1.5
     }
 
-    .sp-profile[data-track="smart-city"]    .sp-role { color: #2C6E93 }
-    .sp-profile[data-track="cybersecurity"] .sp-role { color: #c94444 }
-    .sp-profile[data-track="biotech"]       .sp-role { color: #1F7A45 }
-    .sp-profile[data-track="marine"]        .sp-role { color: #2F6BB0 }
+    .sp-profile[data-track="smart-city"] .sp-role {
+      color: #2C6E93
+    }
+
+    .sp-profile[data-track="cybersecurity"] .sp-role {
+      color: #c94444
+    }
+
+    .sp-profile[data-track="biotech"] .sp-role {
+      color: #1F7A45
+    }
+
+    .sp-profile[data-track="marine"] .sp-role {
+      color: #2F6BB0
+    }
 
     .sp-topic {
       position: relative;
       overflow: hidden;
       padding: 18px 22px;
-      border-left: 3px solid rgba(44,166,179,0.28);
+      border-left: 3px solid rgba(44, 166, 179, 0.28);
       border-radius: 0 10px 10px 0;
-      background: rgba(11,57,84,0.03);
+      background: rgba(11, 57, 84, 0.03);
       font-size: 1rem;
       color: var(--text);
       line-height: 1.6;
@@ -561,15 +639,26 @@
       font-family: 'Space Grotesk', serif;
       font-size: 5rem;
       font-weight: 700;
-      color: rgba(11,57,84,0.05);
+      color: rgba(11, 57, 84, 0.05);
       line-height: 1;
       pointer-events: none
     }
 
-    .sp-profile[data-track="smart-city"]    .sp-topic { border-left-color: rgba(74,156,199,0.35) }
-    .sp-profile[data-track="cybersecurity"] .sp-topic { border-left-color: rgba(224,82,82,0.3) }
-    .sp-profile[data-track="biotech"]       .sp-topic { border-left-color: rgba(78,200,122,0.35) }
-    .sp-profile[data-track="marine"]        .sp-topic { border-left-color: rgba(90,156,230,0.35) }
+    .sp-profile[data-track="smart-city"] .sp-topic {
+      border-left-color: rgba(74, 156, 199, 0.35)
+    }
+
+    .sp-profile[data-track="cybersecurity"] .sp-topic {
+      border-left-color: rgba(224, 82, 82, 0.3)
+    }
+
+    .sp-profile[data-track="biotech"] .sp-topic {
+      border-left-color: rgba(78, 200, 122, 0.35)
+    }
+
+    .sp-profile[data-track="marine"] .sp-topic {
+      border-left-color: rgba(90, 156, 230, 0.35)
+    }
 
     .sp-topic-label {
       display: block;
@@ -582,10 +671,21 @@
       margin-bottom: 8px
     }
 
-    .sp-profile[data-track="smart-city"]    .sp-topic-label { color: #2C6E93 }
-    .sp-profile[data-track="cybersecurity"] .sp-topic-label { color: #c94444 }
-    .sp-profile[data-track="biotech"]       .sp-topic-label { color: #1F7A45 }
-    .sp-profile[data-track="marine"]        .sp-topic-label { color: #2F6BB0 }
+    .sp-profile[data-track="smart-city"] .sp-topic-label {
+      color: #2C6E93
+    }
+
+    .sp-profile[data-track="cybersecurity"] .sp-topic-label {
+      color: #c94444
+    }
+
+    .sp-profile[data-track="biotech"] .sp-topic-label {
+      color: #1F7A45
+    }
+
+    .sp-profile[data-track="marine"] .sp-topic-label {
+      color: #2F6BB0
+    }
 
     .sp-cta-row {
       display: flex;
@@ -600,13 +700,21 @@
       text-align: center;
       background: var(--white);
       border-radius: 20px;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 8px rgba(8,28,43,0.05), 0 26px 56px rgba(8,28,43,0.1);
-      border: 1px solid rgba(8,28,43,0.04);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 8px rgba(8, 28, 43, 0.05), 0 26px 56px rgba(8, 28, 43, 0.1);
+      border: 1px solid rgba(8, 28, 43, 0.04);
       padding: 64px 40px
     }
 
-    .sp-not-found h2 { color: var(--navy); font-size: 1.6rem; margin-bottom: 12px }
-    .sp-not-found p { color: var(--text-light); margin-bottom: 28px }
+    .sp-not-found h2 {
+      color: var(--navy);
+      font-size: 1.6rem;
+      margin-bottom: 12px
+    }
+
+    .sp-not-found p {
+      color: var(--text-light);
+      margin-bottom: 28px
+    }
 
     /* ── Extended info: bio + session details ── */
     .sp-details {
@@ -614,13 +722,18 @@
       margin: 24px auto 0;
       background: var(--white);
       border-radius: 20px;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 8px rgba(8,28,43,0.05), 0 26px 60px rgba(8,28,43,0.12);
-      border: 1px solid rgba(8,28,43,0.04);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 8px rgba(8, 28, 43, 0.05), 0 26px 60px rgba(8, 28, 43, 0.12);
+      border: 1px solid rgba(8, 28, 43, 0.04);
       padding: 44px
     }
 
-    .sp-section { margin-bottom: 36px }
-    .sp-section:last-child { margin-bottom: 0 }
+    .sp-section {
+      margin-bottom: 36px
+    }
+
+    .sp-section:last-child {
+      margin-bottom: 0
+    }
 
     .sp-section-title {
       font-family: 'Space Grotesk', sans-serif;
@@ -630,7 +743,7 @@
       color: var(--navy);
       margin-bottom: 18px;
       padding-bottom: 14px;
-      border-bottom: 1px solid rgba(11,57,84,0.08)
+      border-bottom: 1px solid rgba(11, 57, 84, 0.08)
     }
 
     .sp-bio p {
@@ -640,16 +753,35 @@
       margin-bottom: 14px
     }
 
-    .sp-bio p:last-child { margin-bottom: 0 }
+    .sp-bio p:last-child {
+      margin-bottom: 0
+    }
 
-    .sp-details .sp-topic { margin-bottom: 16px }
-    .sp-details .sp-topic:last-child { margin-bottom: 0 }
+    .sp-details .sp-topic {
+      margin-bottom: 16px
+    }
+
+    .sp-details .sp-topic:last-child {
+      margin-bottom: 0
+    }
 
     @media(max-width:860px) {
-      .sp-card { grid-template-columns: 1fr; max-width: 480px }
-      .sp-photo { aspect-ratio: 4 / 3 }
-      .sp-body { padding: 32px }
-      .sp-details { padding: 32px 28px }
+      .sp-card {
+        grid-template-columns: 1fr;
+        max-width: 480px
+      }
+
+      .sp-photo {
+        aspect-ratio: 4 / 3
+      }
+
+      .sp-body {
+        padding: 32px
+      }
+
+      .sp-details {
+        padding: 32px 28px
+      }
     }
 
     .prefooter-cta {
@@ -666,12 +798,15 @@
       inset: 0;
       background-image: var(--dot-grid);
       background-size: 26px 26px;
-      mask-image: radial-gradient(ellipse 60% 90% at 50% 30%, rgba(0,0,0,0.8), transparent 75%);
+      mask-image: radial-gradient(ellipse 60% 90% at 50% 30%, rgba(0, 0, 0, 0.8), transparent 75%);
       opacity: 0.5;
       pointer-events: none
     }
 
-    .prefooter-cta .container { position: relative; z-index: 1 }
+    .prefooter-cta .container {
+      position: relative;
+      z-index: 1
+    }
 
     .prefooter-cta h2 {
       font-size: 2.6rem;
@@ -699,7 +834,7 @@
       background: var(--dark);
       color: rgba(255, 255, 255, 0.8);
       border-top: 1px solid transparent;
-      background-image: linear-gradient(var(--dark), var(--dark)), linear-gradient(90deg, transparent, rgba(44,166,179,0.5), transparent);
+      background-image: linear-gradient(var(--dark), var(--dark)), linear-gradient(90deg, transparent, rgba(44, 166, 179, 0.5), transparent);
       background-origin: border-box;
       background-clip: padding-box, border-box;
       padding: 64px 0 32px
@@ -778,7 +913,7 @@
     .modal {
       background: var(--white);
       border-radius: 18px;
-      box-shadow: 0 30px 70px rgba(8,28,43,0.35);
+      box-shadow: 0 30px 70px rgba(8, 28, 43, 0.35);
       max-width: 520px;
       width: 100%;
       max-height: 90vh;
@@ -1125,23 +1260,23 @@
 
         root.innerHTML =
           '<div class="sp-profile" data-track="' + track.id + '">' +
-            '<div class="sp-card">' +
-              '<div class="sp-photo"><img loading="eager" decoding="async" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
-              '<div class="sp-body">' +
-                '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
-                '<div class="sp-name">' + speaker.name + '</div>' +
-                '<div class="sp-role">' + speaker.role + '</div>' +
-                '<div class="sp-topic">' +
-                  '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span>' +
-                  '<span data-bg="' + esc(speaker.topicBg) + '" data-en="' + esc(speaker.topicEn) + '">' + speaker.topicBg + '</span>' +
-                '</div>' +
-                '<div class="sp-cta-row">' +
-                  '<a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="View program">Виж програмата</a>' +
-                  '<a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-            renderDetails(speaker) +
+          '<div class="sp-card">' +
+          '<div class="sp-photo"><img loading="eager" decoding="async" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
+          '<div class="sp-body">' +
+          '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
+          '<div class="sp-name">' + speaker.name + '</div>' +
+          '<div class="sp-role">' + speaker.role + '</div>' +
+          '<div class="sp-topic">' +
+          '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span>' +
+          '<span data-bg="' + esc(speaker.topicBg) + '" data-en="' + esc(speaker.topicEn) + '">' + speaker.topicBg + '</span>' +
+          '</div>' +
+          '<div class="sp-cta-row">' +
+          '<a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="View program">Виж програмата</a>' +
+          '<a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          renderDetails(speaker) +
           '</div>';
       } else {
         heroTrack.setAttribute('data-bg', 'BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ');
@@ -1156,11 +1291,11 @@
 
         root.innerHTML =
           '<div class="sp-not-found">' +
-            '<h2 data-bg="Няма намерен лектор" data-en="No speaker found">Няма намерен лектор</h2>' +
-            '<p data-bg="Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026."' +
-              ' data-en="Check the link or browse the full BSTF 2026 speaker list.">' +
-              'Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026.</p>' +
-            '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">Към всички лектори</a>' +
+          '<h2 data-bg="Няма намерен лектор" data-en="No speaker found">Няма намерен лектор</h2>' +
+          '<p data-bg="Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026."' +
+          ' data-en="Check the link or browse the full BSTF 2026 speaker list.">' +
+          'Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026.</p>' +
+          '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">Към всички лектори</a>' +
           '</div>';
       }
     })();
@@ -1284,7 +1419,8 @@
           data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
         <div class="form-group"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input
             type="text" id="sp-name" required></div>
-        <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="sp-email" required></div>
+        <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="sp-email"
+            required></div>
         <div class="form-group"><label data-bg="Компания / Организация" data-en="Company / Organization">Компания /
             Организация</label><input type="text" id="sp-company"></div>
         <div class="form-group"><label data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</label><input

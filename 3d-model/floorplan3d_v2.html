@@ -6,7 +6,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Floor Plan +5.40 — 3D Model / Stand Editor</title>
   <style>
@@ -337,161 +339,285 @@
 
     /* -- Stand popup: right-drawer (desktop) / bottom-sheet (mobile) -- */
     #popupBackdrop {
-      display: none; position: fixed; inset: 0;
-      background: rgba(6,16,26,.55);
-      backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 16, 26, .55);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
       z-index: 68;
     }
+
     #standPopup {
-      position: fixed; z-index: 70;
+      position: fixed;
+      z-index: 70;
       font-family: 'Inter', system-ui, sans-serif;
       background: #f4f8fb;
-      top: 56px; right: 0; bottom: 0; width: 320px;
-      box-shadow: -6px 0 40px rgba(11,57,84,.22);
+      top: 56px;
+      right: 0;
+      bottom: 0;
+      width: 320px;
+      box-shadow: -6px 0 40px rgba(11, 57, 84, .22);
       transform: translateX(110%);
-      transition: transform .3s cubic-bezier(.4,0,.2,1);
-      overflow-y: auto; box-sizing: border-box;
+      transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+      overflow-y: auto;
+      box-sizing: border-box;
     }
-    #standPopup.open { transform: translateX(0); }
+
+    #standPopup.open {
+      transform: translateX(0);
+    }
+
     @media (max-width: 620px) {
       #standPopup {
-        top: auto; left: 0; right: 0; bottom: 0; width: 100%;
-        max-height: 84vh; border-radius: 20px 20px 0 0;
-        box-shadow: 0 -6px 40px rgba(11,57,84,.22);
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-height: 84vh;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -6px 40px rgba(11, 57, 84, .22);
         transform: translateY(110%);
       }
-      #standPopup.open { transform: translateY(0); }
+
+      #standPopup.open {
+        transform: translateY(0);
+      }
     }
 
     /* Drag handle — mobile only */
     #popup-drag-handle {
-      display: none; width: 36px; height: 4px;
-      background: rgba(255,255,255,.35); border-radius: 2px;
-      margin: 12px auto 0; flex-shrink: 0;
+      display: none;
+      width: 36px;
+      height: 4px;
+      background: rgba(255, 255, 255, .35);
+      border-radius: 2px;
+      margin: 12px auto 0;
+      flex-shrink: 0;
     }
-    @media (max-width: 620px) { #popup-drag-handle { display: block; } }
+
+    @media (max-width: 620px) {
+      #popup-drag-handle {
+        display: block;
+      }
+    }
 
     /* ── Tier band (full-bleed header with package accent color) ── */
     #popup-tier-band {
       position: relative;
       padding: 20px 18px 18px;
     }
+
     #popup-tier-label {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px; font-weight: 700; color: #fff;
-      letter-spacing: -.01em; line-height: 1.2;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.01em;
+      line-height: 1.2;
     }
+
     #popup-stand-num {
-      font-size: 11px; color: rgba(255,255,255,.6);
-      letter-spacing: .06em; text-transform: uppercase;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .06em;
+      text-transform: uppercase;
       margin-top: 3px;
     }
+
     #popupClose {
-      position: absolute; top: 14px; right: 14px;
-      width: 30px; height: 30px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.28);
-      border-radius: 8px; color: rgba(255,255,255,.85); font-size: 14px;
-      cursor: pointer; transition: background .15s; touch-action: manipulation;
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, .85);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background .15s;
+      touch-action: manipulation;
     }
-    #popupClose:hover { background: rgba(255,255,255,.32); color: #fff; }
-    #popupClose:active { transform: scale(.93); }
+
+    #popupClose:hover {
+      background: rgba(255, 255, 255, .32);
+      color: #fff;
+    }
+
+    #popupClose:active {
+      transform: scale(.93);
+    }
 
     /* ── Body ── */
     #popup-body {
       padding: 16px 16px 32px;
-      display: flex; flex-direction: column; gap: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     /* Company card */
     #popup-company-row {
-      display: flex; align-items: center; gap: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       background: #fff;
-      border: 1px solid rgba(11,57,84,.1);
-      border-radius: 12px; padding: 12px 14px;
-      box-shadow: 0 1px 4px rgba(11,57,84,.06);
+      border: 1px solid rgba(11, 57, 84, .1);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 4px rgba(11, 57, 84, .06);
     }
+
     #popup-logo-wrap {
-      flex-shrink: 0; width: 44px; height: 44px;
-      background: #edf4f8; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; overflow: hidden;
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: #edf4f8;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
+
     #popup-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 15px; font-weight: 700; color: #0B3954;
-      word-break: break-word; line-height: 1.3;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0B3954;
+      word-break: break-word;
+      line-height: 1.3;
     }
+
     #popup-name-sub {
-      font-size: 11px; color: #6a8fa8;
-      margin-top: 1px; letter-spacing: .02em;
+      font-size: 11px;
+      color: #6a8fa8;
+      margin-top: 1px;
+      letter-spacing: .02em;
     }
 
     /* Benefits card */
     #popup-benefits-card {
       background: #fff;
-      border: 1px solid rgba(11,57,84,.08);
-      border-radius: 12px; padding: 14px 14px;
-      box-shadow: 0 1px 4px rgba(11,57,84,.05);
+      border: 1px solid rgba(11, 57, 84, .08);
+      border-radius: 12px;
+      padding: 14px 14px;
+      box-shadow: 0 1px 4px rgba(11, 57, 84, .05);
     }
+
     #popup-benefits-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 10px; font-weight: 600; color: #8aaabb;
-      letter-spacing: .1em; text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 600;
+      color: #8aaabb;
+      letter-spacing: .1em;
+      text-transform: uppercase;
       margin-bottom: 12px;
     }
+
     #popup-desc .popup-benefits {
-      list-style: none; margin: 0; padding: 0;
-      display: flex; flex-direction: column; gap: 9px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
     }
+
     #popup-desc .popup-benefits li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 13px; color: #1e3a4e; line-height: 1.45;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #1e3a4e;
+      line-height: 1.45;
     }
+
     #popup-desc .popup-benefits li .pb-check {
-      font-size: 12px; font-weight: 800; flex-shrink: 0;
-      width: 18px; height: 18px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 1px; background: transparent;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      background: transparent;
     }
 
     /* Price card */
     #popup-price-card {
       background: #fff;
-      border: 1px solid rgba(11,57,84,.08);
-      border-radius: 12px; padding: 16px 14px 14px;
+      border: 1px solid rgba(11, 57, 84, .08);
+      border-radius: 12px;
+      padding: 16px 14px 14px;
       text-align: center;
-      box-shadow: 0 1px 4px rgba(11,57,84,.05);
+      box-shadow: 0 1px 4px rgba(11, 57, 84, .05);
     }
+
     #popup-price-eyebrow {
-      font-size: 10px; color: #8aaabb;
-      text-transform: uppercase; letter-spacing: .1em;
+      font-size: 10px;
+      color: #8aaabb;
+      text-transform: uppercase;
+      letter-spacing: .1em;
       margin-bottom: 4px;
     }
+
     #popup-price {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 36px; font-weight: 700; color: #0B3954;
-      letter-spacing: -.03em; line-height: 1;
+      font-size: 36px;
+      font-weight: 700;
+      color: #0B3954;
+      letter-spacing: -.03em;
+      line-height: 1;
     }
 
     /* CTA */
     #popup-cta {
-      display: block; text-align: center;
-      padding: 15px 16px; border-radius: 12px;
-      color: #fff; text-decoration: none;
+      display: block;
+      text-align: center;
+      padding: 15px 16px;
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px; font-weight: 700; letter-spacing: .01em;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .01em;
       transition: filter .15s, transform .15s, box-shadow .15s;
       touch-action: manipulation;
     }
-    #popup-cta:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
-    #popup-cta:active { transform: scale(.97); filter: brightness(.95); }
+
+    #popup-cta:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+    }
+
+    #popup-cta:active {
+      transform: scale(.97);
+      filter: brightness(.95);
+    }
+
     #popup-occupied-banner {
-      display: none; text-align: center;
-      padding: 13px 16px; border-radius: 12px;
+      display: none;
+      text-align: center;
+      padding: 13px 16px;
+      border-radius: 12px;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px; font-weight: 700; letter-spacing: .04em;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
       text-transform: uppercase;
-      background: rgba(127,140,141,.15);
+      background: rgba(127, 140, 141, .15);
       border: 2px solid #7F8C8D;
       color: #7F8C8D;
     }
@@ -500,9 +626,17 @@
 
     /* -- Floating enter walkthrough button -- */
     @keyframes fwt-pulse {
-      0%, 100% { box-shadow: 0 4px 28px rgba(44,166,179,0.25), 0 0 0 0 rgba(44,166,179,0.35); }
-      50%       { box-shadow: 0 4px 28px rgba(44,166,179,0.45), 0 0 0 12px rgba(44,166,179,0); }
+
+      0%,
+      100% {
+        box-shadow: 0 4px 28px rgba(44, 166, 179, 0.25), 0 0 0 0 rgba(44, 166, 179, 0.35);
+      }
+
+      50% {
+        box-shadow: 0 4px 28px rgba(44, 166, 179, 0.45), 0 0 0 12px rgba(44, 166, 179, 0);
+      }
     }
+
     #floatEnterWT {
       position: fixed;
       bottom: 24px;
@@ -522,7 +656,7 @@
       font-weight: 600;
       font-family: system-ui, sans-serif;
       letter-spacing: 0.01em;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28), 0 1px 3px rgba(0, 0, 0, 0.18);
       animation: fwt-pulse 2.8s ease-in-out infinite;
       transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
@@ -530,7 +664,7 @@
     #floatEnterWT:hover {
       background: #1558b0;
       transform: translateX(-50%) translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.32);
       animation: none;
     }
 
@@ -538,7 +672,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.22);
+      background: rgba(255, 255, 255, 0.22);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -547,7 +681,7 @@
     }
 
     #floatEnterWT:hover .fwt-icon {
-      background: rgba(255,255,255,0.30);
+      background: rgba(255, 255, 255, 0.30);
     }
 
     #floatEnterWT svg {
@@ -797,7 +931,8 @@
 
     <h2>Layers</h2>
     <label><input type="checkbox" id="t_wall" checked><span class="sw" style="background:#d7dde4"></span>Walls</label>
-    <label><input type="checkbox" id="t_env" checked><span class="sw" style="background:#4fd0c0"></span>Outer envelope</label>
+    <label><input type="checkbox" id="t_env" checked><span class="sw" style="background:#4fd0c0"></span>Outer
+      envelope</label>
     <label><input type="checkbox" id="t_col" checked><span class="sw" style="background:#aeb6c2"></span>Columns</label>
     <label><input type="checkbox" id="t_glaz" checked><span class="sw" style="background:#7fc9ff"></span>Glazing</label>
     <label><input type="checkbox" id="t_furn"><span class="sw" style="background:#c9b58a"></span>Furniture</label>
@@ -923,9 +1058,9 @@
   <button id="floatEnterWT">
     <span class="fwt-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-        <circle cx="12" cy="4.5" r="2.5"/>
-        <path d="M12 8.5c-2.5 0-4.5 1.5-4.5 3.5v1h2v4.5h5V13h2v-1c0-2-2-3.5-4.5-3.5z"/>
-        <path d="M6 20h12" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <circle cx="12" cy="4.5" r="2.5" />
+        <path d="M12 8.5c-2.5 0-4.5 1.5-4.5 3.5v1h2v4.5h5V13h2v-1c0-2-2-3.5-4.5-3.5z" />
+        <path d="M6 20h12" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" />
       </svg>
     </span>
     Разгледай залата 3D
@@ -998,9 +1133,9 @@
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
-      CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+      CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
         var rad = (typeof r === 'number') ? [r, r, r, r] : r;
-        var tl = rad[0]||0, tr = rad[1]||0, br = rad[2]||0, bl = rad[3]||0;
+        var tl = rad[0] || 0, tr = rad[1] || 0, br = rad[2] || 0, bl = rad[3] || 0;
         this.moveTo(x + tl, y);
         this.lineTo(x + w - tr, y);
         this.arcTo(x + w, y, x + w, y + tr, tr);
@@ -1043,7 +1178,7 @@
     let renderer;
     try {
       renderer = new THREE.WebGLRenderer({ antialias: !_isMobile, powerPreference: 'default' });
-    } catch(e) {
+    } catch (e) {
       console.error('WebGLRenderer init failed:', e);
       var _le2 = document.getElementById('loErr');
       if (_le2) { _le2.style.display = 'block'; _le2.textContent = 'WebGL failed: ' + e.message; }
@@ -1056,8 +1191,8 @@
     renderer.shadowMap.enabled = false;
     document.body.appendChild(renderer.domElement);
     const dom = renderer.domElement;
-    dom.addEventListener('webglcontextlost', function(e) { e.preventDefault(); }, false);
-    dom.addEventListener('webglcontextrestored', function() { window.location.reload(); }, false);
+    dom.addEventListener('webglcontextlost', function (e) { e.preventDefault(); }, false);
+    dom.addEventListener('webglcontextrestored', function () { window.location.reload(); }, false);
 
 
     let _dirty = true;
@@ -1120,12 +1255,12 @@
         const nx = x / SZ, ny = y / SZ;
         // All multipliers are exact integers × 2π → f(0)===f(SZ) in both axes → zero-seam tiling
         const T = Math.PI * 2;
-        return Math.sin(nx * T*1 + ny * T*1 + 0.70) * 0.28
-          + Math.sin(nx * T*2 - ny * T*1 + 1.40) * 0.22
-          + Math.sin(nx * T*1 + ny * T*3 + 2.80) * 0.16
-          + Math.sin(nx * T*3 + ny * T*2 + 0.35) * 0.12
-          + Math.sin(nx * T*2 + ny * T*3 + 4.20) * 0.09
-          + Math.sin(nx * T*3 - ny * T*2 + 1.05) * 0.05;
+        return Math.sin(nx * T * 1 + ny * T * 1 + 0.70) * 0.28
+          + Math.sin(nx * T * 2 - ny * T * 1 + 1.40) * 0.22
+          + Math.sin(nx * T * 1 + ny * T * 3 + 2.80) * 0.16
+          + Math.sin(nx * T * 3 + ny * T * 2 + 0.35) * 0.12
+          + Math.sin(nx * T * 2 + ny * T * 3 + 4.20) * 0.09
+          + Math.sin(nx * T * 3 - ny * T * 2 + 1.05) * 0.05;
       }
       const img = ctx.createImageData(SZ, SZ); const pd = img.data;
       const CONT = 18, LTHK = 0.10;
@@ -1517,8 +1652,8 @@
     // (scene coords): A = isolated pair behind the stand row, B = stub partition
     // beside stand 9, C = X-braced angular cluster further left toward the railing.
     const _brokenWallZones = [
-      { x0: -3.7,  x1: -2.3,  z0: -15.5, z1: -14.5 }, // A
-      { x0: -9.1,  x1: -8.6,  z0: -13.3, z1: -9.4  }, // B
+      { x0: -3.7, x1: -2.3, z0: -15.5, z1: -14.5 }, // A
+      { x0: -9.1, x1: -8.6, z0: -13.3, z1: -9.4 }, // B
       { x0: -11.6, x1: -10.7, z0: -16.0, z1: -13.3 }, // C
     ];
     for (const m of wallSegMeshes) {
@@ -1542,14 +1677,14 @@
       return !(mx > 51500 && mx < 55000 && my > -12500 && my < -11900);
     });
     // Remove X-facing env segments in the identified problem zone (midX 50000–54500)
-    const _envFinal = _envSegsAll.filter(([x1,y1,x2,y2]) => {
-      const mx = (x1+x2)/2, my = (y1+y2)/2;
-      if (mx > 50000 && mx < 54500 && Math.abs(y2-y1) > Math.abs(x2-x1)) return false;
+    const _envFinal = _envSegsAll.filter(([x1, y1, x2, y2]) => {
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      if (mx > 50000 && mx < 54500 && Math.abs(y2 - y1) > Math.abs(x2 - x1)) return false;
       // Remove old terrace boundary env panels (now inside the new terrace perimeter)
       if (mx > 26000 && mx < 38000 && my < -33000 && my > -48000) return false;
       return true;
     });
-    groups.env      = wallMesh(_envFinal, 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
+    groups.env = wallMesh(_envFinal, 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
     groups.envRight = new THREE.Group();
     [groups.wall, groups.glaz, groups.furn, groups.strs, groups.door, groups.col, groups.env, groups.envRight].forEach(m => scene.add(m));
     groups.wall.visible = true;
@@ -2288,10 +2423,10 @@
       const c = document.createElement('canvas'); c.width = CW; c.height = CH;
       const ctx = c.getContext('2d');
       const _C = {
-        free:     { o0: 'rgba(4,20,10,0.96)',   o1: 'rgba(2,12,6,0.96)',    gw: 'rgba(40,200,90,0.45)',   p0: 'rgba(26,170,80,0.95)',  p1: 'rgba(18,120,56,0.95)'  },
-        occupied: { o0: 'rgba(12,22,46,0.96)',  o1: 'rgba(6,12,30,0.96)',   gw: 'rgba(80,160,255,0.45)', p0: 'rgba(30,120,220,0.95)', p1: 'rgba(20,90,190,0.95)'  },
-        reserved: { o0: 'rgba(20,14,4,0.96)',   o1: 'rgba(12,8,2,0.96)',    gw: 'rgba(220,140,40,0.45)', p0: 'rgba(212,130,10,0.95)', p1: 'rgba(168,98,8,0.95)'   },
-        partner:  { o0: 'rgba(12,22,46,0.96)',  o1: 'rgba(6,12,30,0.96)',   gw: 'rgba(80,160,255,0.45)', p0: 'rgba(30,120,220,0.95)', p1: 'rgba(20,90,190,0.95)'  },
+        free: { o0: 'rgba(4,20,10,0.96)', o1: 'rgba(2,12,6,0.96)', gw: 'rgba(40,200,90,0.45)', p0: 'rgba(26,170,80,0.95)', p1: 'rgba(18,120,56,0.95)' },
+        occupied: { o0: 'rgba(12,22,46,0.96)', o1: 'rgba(6,12,30,0.96)', gw: 'rgba(80,160,255,0.45)', p0: 'rgba(30,120,220,0.95)', p1: 'rgba(20,90,190,0.95)' },
+        reserved: { o0: 'rgba(20,14,4,0.96)', o1: 'rgba(12,8,2,0.96)', gw: 'rgba(220,140,40,0.45)', p0: 'rgba(212,130,10,0.95)', p1: 'rgba(168,98,8,0.95)' },
+        partner: { o0: 'rgba(12,22,46,0.96)', o1: 'rgba(6,12,30,0.96)', gw: 'rgba(80,160,255,0.45)', p0: 'rgba(30,120,220,0.95)', p1: 'rgba(20,90,190,0.95)' },
       };
       const col = _C[status] || _C.free;
       const bg = ctx.createLinearGradient(0, 0, 0, CH);
@@ -2347,24 +2482,24 @@
       bg.addColorStop(0, 'rgba(12,22,46,0.96)');
       bg.addColorStop(1, 'rgba(6,12,30,0.96)');
       ctx.fillStyle = bg;
-      ctx.beginPath(); ctx.moveTo(r,0); ctx.arcTo(CW,0,CW,CH,r); ctx.arcTo(CW,CH,0,CH,r);
-      ctx.arcTo(0,CH,0,0,r); ctx.arcTo(0,0,CW,0,r); ctx.closePath(); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(r, 0); ctx.arcTo(CW, 0, CW, CH, r); ctx.arcTo(CW, CH, 0, CH, r);
+      ctx.arcTo(0, CH, 0, 0, r); ctx.arcTo(0, 0, CW, 0, r); ctx.closePath(); ctx.fill();
       // Border glow
       ctx.strokeStyle = 'rgba(80,160,255,0.45)'; ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(r,1); ctx.arcTo(CW-1,1,CW-1,CH-1,r); ctx.arcTo(CW-1,CH-1,1,CH-1,r);
-      ctx.arcTo(1,CH-1,1,1,r); ctx.arcTo(1,1,CW-1,1,r); ctx.closePath(); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(r, 1); ctx.arcTo(CW - 1, 1, CW - 1, CH - 1, r); ctx.arcTo(CW - 1, CH - 1, 1, CH - 1, r);
+      ctx.arcTo(1, CH - 1, 1, 1, r); ctx.arcTo(1, 1, CW - 1, 1, r); ctx.closePath(); ctx.stroke();
       // Number pill on the left
       const pill = ctx.createLinearGradient(6, 0, 76, 0);
       pill.addColorStop(0, 'rgba(30,120,220,0.95)');
       pill.addColorStop(1, 'rgba(20,90,190,0.95)');
       ctx.fillStyle = pill;
-      ctx.beginPath(); ctx.roundRect(6, 6, 70, CH-12, 10); ctx.fill();
+      ctx.beginPath(); ctx.roundRect(6, 6, 70, CH - 12, 10); ctx.fill();
       ctx.font = '800 36px "Segoe UI",system-ui,sans-serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#fff'; ctx.fillText(String(num), 41, CH/2);
+      ctx.fillStyle = '#fff'; ctx.fillText(String(num), 41, CH / 2);
       // Separator
       ctx.strokeStyle = 'rgba(80,160,255,0.25)'; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(82, 10); ctx.lineTo(82, CH-10); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(82, 10); ctx.lineTo(82, CH - 10); ctx.stroke();
       // Company name — shrink to fit the right panel
       const MAX_W = CW - 98;
       let fs = 22;
@@ -2374,7 +2509,7 @@
       while (ctx.measureText(label).width > MAX_W && label.length > 2) label = label.slice(0, -1);
       if (label !== name) label = label.slice(0, -1) + '…';
       ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#deeeff'; ctx.fillText(label, 90, CH/2);
+      ctx.fillStyle = '#deeeff'; ctx.fillText(label, 90, CH / 2);
       const tex = new THREE.CanvasTexture(c); tex.anisotropy = 16;
       const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
       s.renderOrder = 999;
@@ -2466,8 +2601,8 @@
     })();
 
     function makeFaceLogoMat(img, opts) {
-      const bg      = (opts && opts.bg)      || '#071629';
-      const border  = (opts && opts.border)  || 'rgba(26,107,208,0.8)';
+      const bg = (opts && opts.bg) || '#071629';
+      const border = (opts && opts.border) || 'rgba(26,107,208,0.8)';
       const padding = (opts && opts.padding) || 0.12;
       const W = 512, H = 512;
       const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
@@ -2607,7 +2742,7 @@
       const img = new Image();
       img.onload = () => {
         groups.stand.add(makeSignPanel(m7, img, { face: 'front', company: 'ResearchMetrics' }));
-        groups.stand.add(makeSignPanel(m7, img, { face: 'back',  company: 'ResearchMetrics' }));
+        groups.stand.add(makeSignPanel(m7, img, { face: 'back', company: 'ResearchMetrics' }));
         markDirty();
       };
       img.src = window.RESEARCHMETRICS_LOGO_SRC;
@@ -2620,7 +2755,7 @@
       const img = new Image();
       img.onload = () => {
         groups.stand.add(makeSignPanel(m8, img, { face: 'front', company: 'ITRM Consult' }));
-        groups.stand.add(makeSignPanel(m8, img, { face: 'back',  company: 'ITRM Consult' }));
+        groups.stand.add(makeSignPanel(m8, img, { face: 'back', company: 'ITRM Consult' }));
         markDirty();
       };
       img.src = window.NEARSHORE_LOGO_SRC;
@@ -3651,10 +3786,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
