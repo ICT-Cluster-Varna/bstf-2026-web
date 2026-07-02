@@ -91,7 +91,7 @@
       objectPosition: 'center 12%',
       name: 'Елица Стоилова',
       role: 'Co-founder &amp; CEO @ Umni | AI2B Zone',
-      topicBg: 'AI чатботи в туризма: реален бизнес ефект',
+      topicBg: 'AI чатботове в туризма: реален бизнес ефект',
       topicEn: 'AI chatbots in tourism: real business impact',
       bioEn: [
         'Elitza Stoilova is the co-founder and CEO of Umni - an AI chatbot platform for creating and managing AI chatbots for sales, marketing and customer support, and a co-founder, CEO and expert of AI agency AI2B Zone (audit, consultancy and training in AI).',
