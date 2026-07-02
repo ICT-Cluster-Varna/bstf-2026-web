@@ -1,905 +1,1470 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Speaker - BSTF 2026</title>
-  <meta name="description" content="BSTF 2026 Speaker">
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Лектор - BSTF 2026</title>
+  <meta name="description" content="Black Sea Technology Forum 2026 - Speaker profile">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet">
+  </noscript>
   <style>
-    :root{--navy:#0B3954;--teal:#2CA6B3;--white:#FFFFFF;--light-gray:#F5F7F9;--text:#333;--text-light:#666;--radius:12px;--transition:0.3s ease;--track:#2CA6B3}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;background:var(--white);overflow-x:hidden}
-    h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.2}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:0 24px}
-
-    nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06)}
-    nav.main-nav .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 32px}
-    nav.main-nav .logo{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy)}
-    nav.main-nav .logo span{color:var(--teal)}
-    nav.main-nav .nav-links{display:flex;align-items:center;gap:28px;margin-left:auto}
-    nav.main-nav .nav-links a{font-size:0.88rem;font-weight:500;color:var(--text);transition:var(--transition)}
-    nav.main-nav .nav-links a:hover{color:var(--teal)}
-    .lang-toggle{display:flex;border:1px solid #ddd;border-radius:var(--radius-sm);overflow:hidden}
-    .lang-toggle button{padding:6px 12px;font-size:0.8rem;font-weight:600;transition:var(--transition);background:var(--white);color:var(--text);cursor:pointer;border:none}
-    .lang-toggle button.active{background:var(--navy);color:var(--white)}
-
-    .breadcrumb{padding:100px 0 0;background:var(--light-gray)}
-    .breadcrumb .crumbs{display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-light);padding-bottom:20px}
-    .breadcrumb .crumbs a{color:var(--teal);font-weight:500}
-    .breadcrumb .crumbs a:hover{text-decoration:underline}
-    .breadcrumb .crumbs .sep{opacity:0.4}
-
-    .spk-hero{background:var(--light-gray);padding-bottom:64px}
-    .spk-hero-inner{display:grid;grid-template-columns:340px 1fr;gap:52px;align-items:start}
-    .spk-hero-photo{border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:linear-gradient(160deg,#0d3852,#1a5c7a);box-shadow:0 8px 40px rgba(11,57,84,0.18);position:relative;border-bottom:5px solid var(--track)}
-    .spk-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
-    .spk-hero-info{padding-top:12px}
-    .spk-track-badge{display:inline-flex;align-items:center;padding:5px 14px;border-radius:50px;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(44,166,179,0.1);color:#2CA6B3;margin-bottom:16px}
-    .spk-hero-name{font-size:2.4rem;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.15}
-    .spk-hero-role{font-size:1.05rem;color:var(--track);font-weight:500;margin-bottom:32px;line-height:1.5}
-    .spk-topic-card{background:var(--white);border-radius:14px;padding:24px 28px;box-shadow:0 2px 12px rgba(11,57,84,0.06);border-left:5px solid var(--track);margin-bottom:24px}
-    .spk-topic-label{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--track);margin-bottom:10px}
-    .spk-topic-text{font-size:1.05rem;color:var(--navy);font-weight:600;line-height:1.5}
-    .spk-bio{background:var(--white);border-radius:14px;padding:24px 28px;box-shadow:0 2px 12px rgba(11,57,84,0.06);margin-bottom:24px}
-    .spk-bio-label{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--track);margin-bottom:10px}
-    .spk-bio-text{font-size:0.92rem;color:var(--text);line-height:1.7}
-    .spk-meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .spk-meta-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;background:var(--white);border:1px solid rgba(11,57,84,0.1);font-size:0.8rem;color:var(--text-light);box-shadow:0 1px 4px rgba(0,0,0,0.04)}
-    .spk-meta-chip svg{flex-shrink:0;opacity:0.6}
-
-    .back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:50px;background:var(--white);border:1.5px solid rgba(11,57,84,0.12);font-size:0.85rem;font-weight:600;color:var(--navy);transition:var(--transition);margin-top:28px}
-    .back-link:hover{border-color:var(--teal);color:var(--teal);transform:translateX(-3px)}
-
-    footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:40px 0;font-size:0.85rem;text-align:center;margin-top:80px}
-    footer a{color:var(--teal)}
-
-    @media(max-width:900px){
-      .spk-hero-inner{grid-template-columns:1fr;gap:28px}
-      .spk-hero-photo{max-width:320px}
-      .spk-hero-name{font-size:1.9rem}
+    :root {
+      --navy: #0B3954;
+      --navy-deep: #0d4a6e;
+      --teal: #2CA6B3;
+      --teal-deep: #1a8a96;
+      --light-blue: #EDF7FA;
+      --white: #FFFFFF;
+      --light-gray: #F5F7F9;
+      --dark: #1a1a2e;
+      --text: #333;
+      --text-light: #666;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: 0.3s ease;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --dot-grid: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0);
+      --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace
     }
-    @media(max-width:540px){
-      nav.main-nav .nav-links{gap:14px}
-      .spk-hero-name{font-size:1.6rem}
-      .spk-hero-photo{max-width:100%}
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: var(--white)
+    }
+
+    ::selection {
+      background: var(--teal);
+      color: var(--white)
+    }
+
+    ::-webkit-scrollbar { width: 11px }
+    ::-webkit-scrollbar-track { background: var(--light-gray) }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--teal), var(--navy));
+      border-radius: 20px;
+      border: 3px solid var(--light-gray)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.2
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none
+    }
+
+    ul {
+      list-style: none
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium), background 0.3s ease;
+      cursor: pointer;
+      position: relative
+    }
+
+    .btn-primary {
+      background: linear-gradient(155deg, var(--teal) 0%, var(--teal-deep) 100%);
+      color: var(--white);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 8px 20px rgba(26,138,150,0.28)
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(155deg, #34b8c6 0%, var(--teal-deep) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 14px 30px rgba(26,138,150,0.38)
+    }
+
+    .btn-outline {
+      border: 2px solid var(--teal);
+      color: var(--teal);
+      background: rgba(44,166,179,0.03)
+    }
+
+    .btn-outline:hover {
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(26,138,150,0.28);
+      transform: translateY(-2px)
+    }
+
+    .btn-white {
+      background: linear-gradient(155deg, var(--white) 0%, #f4fafb 100%);
+      color: var(--navy);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12)
+    }
+
+    .btn-white:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.16)
+    }
+
+    .btn-sm {
+      padding: 10px 20px;
+      font-size: 0.875rem
+    }
+
+    nav.main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      transition: var(--transition)
+    }
+
+    nav.main-nav .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      width: 100%;
+      padding: 0 32px
+    }
+
+    nav.main-nav .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    nav.main-nav .logo span {
+      color: var(--teal)
+    }
+
+    nav.main-nav .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-left: auto
+    }
+
+    nav.main-nav .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: var(--transition);
+      position: relative
+    }
+
+    nav.main-nav .nav-links a:hover {
+      color: var(--teal)
+    }
+
+    nav.main-nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: var(--transition)
+    }
+
+    nav.main-nav .nav-links a:hover::after {
+      width: 100%
+    }
+
+    nav.main-nav .nav-links a.active {
+      color: var(--teal)
+    }
+
+    nav.main-nav .nav-links a.active::after {
+      width: 100%
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: 32px
+    }
+
+    .lang-toggle {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-sm);
+      overflow: hidden
+    }
+
+    .lang-toggle button {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: var(--transition);
+      background: var(--white);
+      color: var(--text)
+    }
+
+    .lang-toggle button.active {
+      background: var(--navy);
+      color: var(--white)
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px
+    }
+
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: var(--transition)
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 24px;
+      z-index: 199
+    }
+
+    .mobile-nav.open {
+      display: block
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      border-bottom: 1px solid var(--light-gray)
+    }
+
+    .mobile-nav a.btn-primary {
+      color: var(--white) !important;
+      border-bottom: none
+    }
+
+    .mobile-nav a.active {
+      color: var(--teal)
+    }
+
+    .page-hero {
+      position: relative;
+      background:
+        radial-gradient(ellipse 900px 500px at 50% -10%, rgba(44,166,179,0.16) 0%, transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+      padding: 148px 0 88px;
+      text-align: center;
+      overflow: hidden
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--dot-grid);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,0,0,0.9), transparent 75%);
+      opacity: 0.6;
+      pointer-events: none
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(44,166,179,0.5), transparent)
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto
+    }
+
+    .back-to-speakers {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 24px;
+      transition: color 0.3s ease
+    }
+
+    .back-to-speakers span:first-child { transition: transform 0.3s var(--ease-premium) }
+    .back-to-speakers:hover { color: var(--teal) }
+    .back-to-speakers:hover span:first-child { transform: translateX(-3px) }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 22px
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      flex-shrink: 0;
+      width: 28px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal));
+      display: block
+    }
+
+    .hero-eyebrow::after { background: linear-gradient(90deg, var(--teal), transparent) }
+
+    .hero-inner h1 {
+      font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      text-wrap: balance
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.68);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    /* === Speaker profile === */
+    .sp-main {
+      padding: 72px 0 96px;
+      background-color: #F0F4F7;
+      position: relative;
+      overflow: hidden
+    }
+
+    .sp-bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    .sp-main > .container { position: relative; z-index: 1 }
+    .sbc-1 { width:560px; height:560px; top:-200px; left:-200px; background:radial-gradient(circle, rgba(44,166,179,0.09) 0%, transparent 68%) }
+    .sbc-2 { width:380px; height:380px; top:40%;   right:-120px; background:radial-gradient(circle, rgba(11,57,84,0.07) 0%, transparent 65%) }
+
+    .sp-card {
+      position: relative;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 8px rgba(8,28,43,0.05), 0 26px 60px rgba(8,28,43,0.12);
+      border: 1px solid rgba(8,28,43,0.04);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      max-width: 1040px;
+      margin: 0 auto
+    }
+
+    .sp-photo {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: linear-gradient(160deg, #0d3852 0%, #1a5c7a 100%)
+    }
+
+    .sp-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11,57,84,0) 55%, rgba(8,28,43,0.32) 100%);
+      z-index: 1;
+      pointer-events: none
+    }
+
+    .sp-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--teal);
+      z-index: 2;
+      box-shadow: 0 0 14px 1px rgba(44,166,179,0.6)
+    }
+
+    .sp-profile[data-track="smart-city"]    .sp-photo::after { background: #4a9cc7; box-shadow: 0 0 14px 1px rgba(74,156,199,0.55) }
+    .sp-profile[data-track="cybersecurity"] .sp-photo::after { background: #e05252; box-shadow: 0 0 14px 1px rgba(224,82,82,0.5) }
+    .sp-profile[data-track="biotech"]       .sp-photo::after { background: #4ec87a; box-shadow: 0 0 14px 1px rgba(78,200,122,0.5) }
+    .sp-profile[data-track="marine"]        .sp-photo::after { background: #5a9ce6; box-shadow: 0 0 14px 1px rgba(90,156,230,0.5) }
+
+    .sp-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .sp-body {
+      padding: 40px 44px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .sp-track-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      width: fit-content;
+      background: rgba(44,166,179,0.1);
+      border: 1px solid rgba(44,166,179,0.2);
+      color: #146672
+    }
+
+    .sp-profile[data-track="smart-city"]    .sp-track-pill { background: rgba(74,156,199,0.1);  color: #2C6E93 }
+    .sp-profile[data-track="cybersecurity"] .sp-track-pill { background: rgba(224,82,82,0.1);   color: #c94444 }
+    .sp-profile[data-track="biotech"]       .sp-track-pill { background: rgba(78,200,122,0.1);  color: #1F7A45 }
+    .sp-profile[data-track="marine"]        .sp-track-pill { background: rgba(90,156,230,0.1);  color: #2F6BB0 }
+
+    .sp-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.15;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.4)
+    }
+
+    .sp-role {
+      font-size: 1rem;
+      color: #146672;
+      font-weight: 500;
+      margin-bottom: 28px;
+      line-height: 1.5
+    }
+
+    .sp-profile[data-track="smart-city"]    .sp-role { color: #2C6E93 }
+    .sp-profile[data-track="cybersecurity"] .sp-role { color: #c94444 }
+    .sp-profile[data-track="biotech"]       .sp-role { color: #1F7A45 }
+    .sp-profile[data-track="marine"]        .sp-role { color: #2F6BB0 }
+
+    .sp-topic {
+      position: relative;
+      overflow: hidden;
+      padding: 18px 22px;
+      border-left: 3px solid rgba(44,166,179,0.28);
+      border-radius: 0 10px 10px 0;
+      background: rgba(11,57,84,0.03);
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 32px
+    }
+
+    .sp-topic::before {
+      content: '\201C' / '';
+      position: absolute;
+      top: -22px;
+      right: 10px;
+      font-family: 'Space Grotesk', serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(11,57,84,0.05);
+      line-height: 1;
+      pointer-events: none
+    }
+
+    .sp-profile[data-track="smart-city"]    .sp-topic { border-left-color: rgba(74,156,199,0.35) }
+    .sp-profile[data-track="cybersecurity"] .sp-topic { border-left-color: rgba(224,82,82,0.3) }
+    .sp-profile[data-track="biotech"]       .sp-topic { border-left-color: rgba(78,200,122,0.35) }
+    .sp-profile[data-track="marine"]        .sp-topic { border-left-color: rgba(90,156,230,0.35) }
+
+    .sp-topic-label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #146672;
+      margin-bottom: 8px
+    }
+
+    .sp-profile[data-track="smart-city"]    .sp-topic-label { color: #2C6E93 }
+    .sp-profile[data-track="cybersecurity"] .sp-topic-label { color: #c94444 }
+    .sp-profile[data-track="biotech"]       .sp-topic-label { color: #1F7A45 }
+    .sp-profile[data-track="marine"]        .sp-topic-label { color: #2F6BB0 }
+
+    .sp-cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: auto
+    }
+
+    .sp-not-found {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 8px rgba(8,28,43,0.05), 0 26px 56px rgba(8,28,43,0.1);
+      border: 1px solid rgba(8,28,43,0.04);
+      padding: 64px 40px
+    }
+
+    .sp-not-found h2 { color: var(--navy); font-size: 1.6rem; margin-bottom: 12px }
+    .sp-not-found p { color: var(--text-light); margin-bottom: 28px }
+
+    /* ── Extended info: bio + session details ── */
+    .sp-details {
+      max-width: 1040px;
+      margin: 24px auto 0;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 8px rgba(8,28,43,0.05), 0 26px 60px rgba(8,28,43,0.12);
+      border: 1px solid rgba(8,28,43,0.04);
+      padding: 44px
+    }
+
+    .sp-section { margin-bottom: 36px }
+    .sp-section:last-child { margin-bottom: 0 }
+
+    .sp-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(11,57,84,0.08)
+    }
+
+    .sp-bio p {
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 14px
+    }
+
+    .sp-bio p:last-child { margin-bottom: 0 }
+
+    .sp-details .sp-topic { margin-bottom: 16px }
+    .sp-details .sp-topic:last-child { margin-bottom: 0 }
+
+    @media(max-width:860px) {
+      .sp-card { grid-template-columns: 1fr; max-width: 480px }
+      .sp-photo { aspect-ratio: 4 / 3 }
+      .sp-body { padding: 32px }
+      .sp-details { padding: 32px 28px }
+    }
+
+    .prefooter-cta {
+      position: relative;
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--navy) 0%, #0d4a6e 100%);
+      text-align: center;
+      overflow: hidden
+    }
+
+    .prefooter-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--dot-grid);
+      background-size: 26px 26px;
+      mask-image: radial-gradient(ellipse 60% 90% at 50% 30%, rgba(0,0,0,0.8), transparent 75%);
+      opacity: 0.5;
+      pointer-events: none
+    }
+
+    .prefooter-cta .container { position: relative; z-index: 1 }
+
+    .prefooter-cta h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 14px
+    }
+
+    .prefooter-cta p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 36px;
+      font-size: 1.1rem
+    }
+
+    .prefooter-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    footer.main-footer {
+      position: relative;
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.8);
+      border-top: 1px solid transparent;
+      background-image: linear-gradient(var(--dark), var(--dark)), linear-gradient(90deg, transparent, rgba(44,166,179,0.5), transparent);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      padding: 64px 0 32px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px
+    }
+
+    .footer-brand .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px
+    }
+
+    .footer-brand .logo span {
+      color: var(--teal)
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7
+    }
+
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      padding: 4px 0;
+      transition: color 0.3s ease, transform 0.3s var(--ease-premium)
+    }
+
+    .footer-col a:hover {
+      color: var(--teal);
+      transform: translateX(3px)
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 24px
+    }
+
+    .modal-overlay.open {
+      display: flex
+    }
+
+    .modal {
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 30px 70px rgba(8,28,43,0.35);
+      max-width: 520px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      transition: var(--transition);
+      background: var(--light-gray)
+    }
+
+    .modal-close:hover {
+      background: var(--navy);
+      color: var(--white)
+    }
+
+    .modal h2 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .modal .modal-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 24px
+    }
+
+    .form-group {
+      margin-bottom: 16px
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: var(--transition)
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(44, 166, 179, 0.15)
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 8px
+    }
+
+    .modal-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px
+    }
+
+    .modal-success.show {
+      display: block
+    }
+
+    .modal-form.hidden {
+      display: none
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 2rem;
+      color: var(--teal)
+    }
+
+    .modal-success h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .modal-success p {
+      font-size: 0.9rem;
+      color: var(--text-light)
+    }
+
+    #bstf-btt {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow)
+    }
+
+    #bstf-btt.visible {
+      opacity: 1;
+      visibility: visible
+    }
+
+    #bstf-btt:hover {
+      background: var(--teal);
+      transform: translateY(-2px)
+    }
+
+    body.page-exit {
+      opacity: 0;
+      transition: opacity 0.12s ease-in
+    }
+
+    @media(max-width:1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none !important
+      }
+
+      .mobile-menu-btn {
+        display: flex
+      }
+
+      .page-hero {
+        padding: 90px 0 56px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center
+      }
+
+      #bstf-btt {
+        bottom: 5rem
+      }
+    }
+
+    @media(max-width:768px) {
+      #nav-cta-btn {
+        display: none !important
+      }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">BSTF <span>2026</span></a>
       <div class="nav-links">
         <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
-        <a href="speakers.html" data-bg="Лектори" data-en="Speakers" style="color:var(--teal)">Лектори</a>
-        <a href="index.html#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
-        <a href="index.html#venue" data-bg="Място" data-en="Venue">Място</a>
+        <a href="speakers.html" class="active" data-bg="Лектори" data-en="Speakers">Лектори</a>
+        <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
+        <a href="index.html#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+      </div>
+      <div class="nav-right">
         <div class="lang-toggle">
           <button class="active" data-lang="bg">BG</button>
           <button data-lang="en">EN</button>
         </div>
+        <button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет"
+          data-en="Buy Ticket">Купи Билет</button>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
 
-  <div class="breadcrumb">
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
+    <a href="speakers.html" class="active" data-bg="Лектори" data-en="Speakers">Лектори</a>
+    <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
+    <a href="index.html#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+    <a href="index.html#tickets" class="btn btn-primary"
+      style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">Купи
+      Билет</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
     <div class="container">
-      <div class="crumbs">
-        <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-        <span class="sep">›</span>
-        <span class="spk-breadcrumb-name" data-bg="" data-en=""></span>
+      <div class="hero-inner">
+        <a class="back-to-speakers" href="speakers.html">
+          <span aria-hidden="true">&#8592;</span>
+          <span data-bg="Всички лектори" data-en="All speakers">Всички лектори</span>
+        </a>
+        <p class="hero-eyebrow" id="sp-hero-track">BSTF 2026</p>
+        <h1 id="sp-hero-name">&nbsp;</h1>
+        <p class="hero-desc" id="sp-hero-role">&nbsp;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker Profile -->
+  <section class="sp-main">
+    <div class="sp-bg-circle sbc-1"></div>
+    <div class="sp-bg-circle sbc-2"></div>
+    <div class="container">
+      <div id="sp-root"></div>
+    </div>
+  </section>
+
+  <script src="data/speakers-data.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+      }
+
+      function getParam(name) {
+        var params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+
+      function renderParagraphs(arrBg, arrEn) {
+        if (!arrBg && !arrEn) return '';
+        var bg = arrBg || arrEn;
+        var en = arrEn || arrBg;
+        var len = Math.max(bg.length, en.length);
+        var html = '';
+        for (var i = 0; i < len; i++) {
+          var bgText = bg[i] || en[i] || '';
+          var enText = en[i] || bg[i] || '';
+          html += '<p data-bg="' + esc(bgText) + '" data-en="' + esc(enText) + '">' + bgText + '</p>';
+        }
+        return html;
+      }
+
+      function renderTextBlock(labelBg, labelEn, textBg, textEn) {
+        var bg = textBg || textEn;
+        var en = textEn || textBg;
+        return '<div class="sp-topic">' +
+          '<span class="sp-topic-label" data-bg="' + esc(labelBg) + '" data-en="' + esc(labelEn) + '">' + labelBg + '</span>' +
+          '<span data-bg="' + esc(bg) + '" data-en="' + esc(en) + '">' + bg + '</span>' +
+          '</div>';
+      }
+
+      function renderDetails(speaker) {
+        var sections = '';
+
+        var bioHtml = renderParagraphs(speaker.bioBg, speaker.bioEn);
+        if (bioHtml) {
+          sections += '<div class="sp-section">' +
+            '<div class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</div>' +
+            '<div class="sp-bio">' + bioHtml + '</div>' +
+            '</div>';
+        }
+
+        var hasSession = speaker.sessionDescBg || speaker.sessionDescEn;
+        if (hasSession) {
+          var sessionHtml = renderTextBlock('Описание на лекцията', 'Talk Description', speaker.sessionDescBg, speaker.sessionDescEn);
+          if (speaker.takeawaysBg || speaker.takeawaysEn) {
+            sessionHtml += renderTextBlock('Основни изводи за аудиторията', 'Key Takeaways', speaker.takeawaysBg, speaker.takeawaysEn);
+          }
+          sections += '<div class="sp-section">' +
+            '<div class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</div>' +
+            sessionHtml +
+            '</div>';
+        }
+
+        return sections ? '<div class="sp-details">' + sections + '</div>' : '';
+      }
+
+      // Speaker id lives in the URL hash (e.g. speaker.html#alexander-minchev), not the
+      // query string — some static hosts (e.g. `serve`'s clean-urls redirect) rewrite
+      // /speaker.html?id=x to /speaker and drop the query string entirely. Hash fragments
+      // never touch the server and survive redirects, so they work everywhere.
+      // ?id= is still read as a fallback for any old bookmarked/query-style links.
+      var id = decodeURIComponent(window.location.hash.replace(/^#/, '')) || getParam('id');
+      var speaker = id ? window.bstfGetSpeaker(id) : null;
+      var track = speaker ? window.bstfGetTrack(speaker.track) : null;
+      var root = document.getElementById('sp-root');
+      var heroTrack = document.getElementById('sp-hero-track');
+      var heroName = document.getElementById('sp-hero-name');
+      var heroRole = document.getElementById('sp-hero-role');
+
+      if (speaker && track) {
+        document.title = speaker.name.replace(/<[^>]*>/g, '') + ' — BSTF 2026';
+
+        heroTrack.setAttribute('data-bg', track.labelBg);
+        heroTrack.setAttribute('data-en', track.labelEn);
+        heroTrack.textContent = track.labelBg;
+        heroName.innerHTML = speaker.name;
+        heroRole.innerHTML = speaker.role;
+
+        root.innerHTML =
+          '<div class="sp-profile" data-track="' + track.id + '">' +
+            '<div class="sp-card">' +
+              '<div class="sp-photo"><img loading="eager" decoding="async" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
+              '<div class="sp-body">' +
+                '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
+                '<div class="sp-name">' + speaker.name + '</div>' +
+                '<div class="sp-role">' + speaker.role + '</div>' +
+                '<div class="sp-topic">' +
+                  '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span>' +
+                  '<span data-bg="' + esc(speaker.topicBg) + '" data-en="' + esc(speaker.topicEn) + '">' + speaker.topicBg + '</span>' +
+                '</div>' +
+                '<div class="sp-cta-row">' +
+                  '<a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="View program">Виж програмата</a>' +
+                  '<a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            renderDetails(speaker) +
+          '</div>';
+      } else {
+        heroTrack.setAttribute('data-bg', 'BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ');
+        heroTrack.setAttribute('data-en', 'BSTF 2026 · VARNA · OCT 5-7');
+        heroTrack.textContent = 'BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ';
+        heroName.setAttribute('data-bg', 'Лекторът не е намерен');
+        heroName.setAttribute('data-en', 'Speaker not found');
+        heroName.textContent = 'Лекторът не е намерен';
+        heroRole.setAttribute('data-bg', 'Профилът, който търсите, не съществува или е преместен.');
+        heroRole.setAttribute('data-en', 'The profile you are looking for does not exist or has moved.');
+        heroRole.textContent = 'Профилът, който търсите, не съществува или е преместен.';
+
+        root.innerHTML =
+          '<div class="sp-not-found">' +
+            '<h2 data-bg="Няма намерен лектор" data-en="No speaker found">Няма намерен лектор</h2>' +
+            '<p data-bg="Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026."' +
+              ' data-en="Check the link or browse the full BSTF 2026 speaker list.">' +
+              'Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026.</p>' +
+            '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">Към всички лектори</a>' +
+          '</div>';
+      }
+    })();
+  </script>
+
+  <!-- Pre-footer CTA -->
+  <section class="prefooter-cta">
+    <div class="container">
+      <h2 data-bg="Готови ли сте за BSTF 2026?" data-en="Ready for BSTF 2026?">Готови ли сте за BSTF 2026?</h2>
+      <p data-bg="Присъединете се към водещата технологична конференция в Черноморския регион."
+        data-en="Join the leading technology conference in the Black Sea region.">Присъединете се към водещата
+        технологична конференция в Черноморския регион.</p>
+      <div class="prefooter-buttons">
+        <button class="btn btn-white" onclick="openModal('register-modal')" data-bg="Регистрирай се"
+          data-en="Register now">Регистрирай се</button>
+        <a href="index.html#program" class="btn btn-outline"
+          style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж програмата"
+          data-en="View program">Виж програмата</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">BSTF <span>2026</span></div>
+          <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
+            форум</p>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:4px"
+            data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии
+            от 7-мо поколение без граници</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-bg="Събитие" data-en="Event">Събитие</h4>
+          <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
+          <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
+          <a href="index.html#venue" data-bg="Място" data-en="Venue">Място</a>
+          <a href="index.html#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
+          <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
+          <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-bg="Правни" data-en="Legal">Правни</h4>
+          <a href="#" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>
+          <a href="#" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
+          <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <a href="#" aria-label="LinkedIn"
+              style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
+                width="18" height="18" viewBox="0 0 24 24" fill="var(--white)">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-bg="&copy; 2026 Черноморски технологичен форум. Всички права запазени."
+          data-en="&copy; 2026 Black Sea Technology Forum. All rights reserved.">&copy; 2026 Черноморски технологичен
+          форум. Всички права запазени.</span>
+        <span data-bg="Организирано от ИКТ Клъстер - Варна" data-en="Organized by ICT Cluster - Varna">Организирано от
+          ИКТ Клъстер - Варна</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Registration Modal -->
+  <div class="modal-overlay" id="register-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="register-modal-title" tabindex="-1">
+      <button class="modal-close" onclick="closeModal('register-modal')" aria-label="Close">&times;</button>
+      <div class="modal-form" id="register-form">
+        <h2 id="register-modal-title" data-bg="Регистрация" data-en="Registration">Регистрация</h2>
+        <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на BSTF 2026."
+          data-en="Fill in the form to reserve your spot at BSTF 2026.">Попълнете формата, за да резервирате вашето
+          място на BSTF 2026.</p>
+        <div class="form-group"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input
+            type="text" id="reg-name" placeholder="John Doe" required></div>
+        <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="reg-email"
+            placeholder="john@example.com" required></div>
+        <div class="form-group"><label data-bg="Телефон" data-en="Phone">Телефон</label><input type="tel" id="reg-phone"
+            placeholder="+359 ..."></div>
+        <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
+          <select id="reg-ticket">
+            <option value="early-bird" data-bg="Early Bird - 199 EUR" data-en="Early Bird - 199 EUR">Early Bird - 199
+              EUR</option>
+            <option value="standard" data-bg="Full Event - 199 EUR" data-en="Full Event - 199 EUR">Full Event - 199 EUR
+            </option>
+            <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
+            <option value="ultra-vip" data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR
+            </option>
+          </select>
+        </div>
+        <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
+          data-en="Register">Регистрирай се</button>
+      </div>
+      <div class="modal-success" id="register-success">
+        <div class="success-icon">&#x2713;</div>
+        <h3 id="register-success-title" tabindex="-1" data-bg="Имейлът е готов за изпращане"
+          data-en="Your email is ready to send">Имейлът е готов за изпращане</h3>
+        <p data-bg="Отворихме имейл клиента ви с попълнени данни за регистрация — натиснете „Изпрати“, за да я завършите."
+          data-en="We opened your email app with your registration details filled in — hit send to complete it.">
+          Отворихме имейл клиента ви с попълнени данни за регистрация — натиснете „Изпрати“, за да я завършите.</p>
+        <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('register-modal')" data-bg="Затвори"
+          data-en="Close">Затвори</button>
       </div>
     </div>
   </div>
 
-  <main class="spk-hero">
-    <div class="container">
-      <div class="spk-hero-inner">
-
-        <div class="spk-hero-photo">
-          <img class="spk-hero-img" src="" alt="">
+  <!-- Speaker Application Modal -->
+  <div class="modal-overlay" id="speaker-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="speaker-modal-title" tabindex="-1">
+      <button class="modal-close" onclick="closeModal('speaker-modal')" aria-label="Close">&times;</button>
+      <div class="modal-form" id="speaker-form">
+        <h2 id="speaker-modal-title" data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
+        <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
+          data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
+        <div class="form-group"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input
+            type="text" id="sp-name" required></div>
+        <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="sp-email" required></div>
+        <div class="form-group"><label data-bg="Компания / Организация" data-en="Company / Organization">Компания /
+            Организация</label><input type="text" id="sp-company"></div>
+        <div class="form-group"><label data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</label><input
+            type="text" id="sp-topic" required></div>
+        <div class="form-group"><label data-bg="Тематичен поток" data-en="Thematic Stream">Тематичен поток</label>
+          <select id="sp-stream">
+            <option data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
+            <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
+            <option data-bg="Умен град" data-en="Smart City">Умен град</option>
+            <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
+            <option data-bg="Автоматизация" data-en="Automation">Автоматизация</option>
+            <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
+            <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
+            <option data-bg="BioTech" data-en="BioTech">BioTech</option>
+          </select>
         </div>
-
-        <div class="spk-hero-info">
-          <div class="spk-track-badge" data-bg="" data-en=""></div>
-          <h1 class="spk-hero-name" data-bg="" data-en=""></h1>
-          <div class="spk-hero-role" data-bg="" data-en=""></div>
-
-          <div class="spk-topic-card">
-            <div class="spk-topic-label" data-bg="Тема на доклада" data-en="Talk topic">Тема на доклада</div>
-            <div class="spk-topic-text" data-bg="" data-en=""></div>
-          </div>
-
-          <div class="spk-bio">
-            <div class="spk-bio-label" data-bg="За лектора" data-en="About">За лектора</div>
-            <div class="spk-bio-text" data-bg="" data-en=""></div>
-          </div>
-
-          <div class="spk-meta-row">
-            <div class="spk-meta-chip">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span class="spk-meta-date" data-bg="" data-en=""></span>
-            </div>
-            <div class="spk-meta-chip">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span class="spk-meta-location" data-bg="" data-en=""></span>
-            </div>
-          </div>
-
-          <a href="speakers.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            <span data-bg="Всички лектори" data-en="All speakers">Всички лектори</span>
-          </a>
-        </div>
-
+        <div class="form-group"><label data-bg="Кратко описание" data-en="Brief Description">Кратко
+            описание</label><textarea rows="3" id="sp-desc"></textarea></div>
+        <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
+          data-en="Submit Proposal">Изпрати предложение</button>
+      </div>
+      <div class="modal-success" id="speaker-success">
+        <div class="success-icon">&#x2713;</div>
+        <h3 id="speaker-success-title" tabindex="-1" data-bg="Имейлът е готов за изпращане"
+          data-en="Your email is ready to send">Имейлът е готов за изпращане</h3>
+        <p data-bg="Отворихме имейл клиента ви с попълнено предложение — натиснете „Изпрати“, за да го изпратите."
+          data-en="We opened your email app with your proposal filled in — hit send to submit it.">
+          Отворихме имейл клиента ви с попълнено предложение — натиснете „Изпрати“, за да го изпратите.</p>
+        <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('speaker-modal')" data-bg="Затвори"
+          data-en="Close">Затвори</button>
       </div>
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <div class="container">
-      <p data-bg="© 2026 BSTF - Black Sea Technology Forum. Организиран от ICT Cluster Varna." data-en="© 2026 BSTF - Black Sea Technology Forum. Organized by ICT Cluster Varna.">© 2026 BSTF - Black Sea Technology Forum. Организиран от ICT Cluster Varna.</p>
-    </div>
-  </footer>
+  <!-- Back to Top -->
+  <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
 
-  <script id="spk-data" type="application/json">[
-  {
-    "slug": "alexander-minchev",
-    "title": "Alexander Minchev - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Alexander Minchev, Founder &amp; MD @ AbsCloud / Abilix Soft",
-    "name": {
-      "bg": "Александър Минчев",
-      "en": "Alexander Minchev"
-    },
-    "role": {
-      "bg": "Founder &amp; MD @ AbsCloud / Abilix Soft",
-      "en": "Founder &amp; MD @ AbsCloud / Abilix Soft"
-    },
-    "track": {
-      "bg": "Изкуствен интелект",
-      "en": "Artificial Intelligence"
-    },
-    "topic": {
-      "bg": "Облачна инфраструктура, AI и киберсигурност",
-      "en": "Cloud infrastructure, AI &amp; cybersecurity"
-    },
-    "bio": {
-      "bg": "Alexander Minchev е основател и управляващ директор на Abilix Soft Ltd. Работи професионално със сървъри повече от 25 години — от края на миналото хилядолетие, както той обича да казва. Под негово ръководство Abilix Soft се специализира в предоставянето на висококачествени облачни решения за бизнес клиенти, предлагани под марката AbsCloud. През април 2025 г. обновеният дата център на компанията във Варна отвори врати за външни клиенти под бранда AC DC (AbsCloud Data Center). Проектът се откроява с концепцията си за улавяне на топлината, генерирана от сървърите в дата центъра, и съхраняването ѝ в специализирани контейнери за последващо използване в градската отоплителна система. Паралелно с това Alexander Minchev работи върху докторска дисертация в областта на изкуствения интелект и сигурността. Той е посветен на запазването на предния фронт на технологичния прогрес и използването на изкуствен интелект за подобряване на киберсигурността.",
-      "en": "Alexander Minchev is the founder and managing director of Abilix Soft Ltd. He has been working professionally with servers for over 25 years, or, as he likes to put it, since the end of the last millennium. Under his leadership, Abilix Soft has specialized in providing high-quality cloud solutions for business clients, offered under the AbsCloud brand. In April 2025, the company's renovated data center in Varna opened its doors to external clients under the brand AC DC (AbsCloud Data Center). The project stands out for its concept of harnessing the heat generated by the servers in the Data Center and storing it in specialized containers for subsequent use in the city's district heating system. In parallel, Alexander Minchev is working on a doctoral dissertation in artificial intelligence and security. He is dedicated to staying at the forefront of technological progress and to leveraging artificial intelligence to enhance cybersecurity."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "alexander-minchev.jpg"
-  },
-  {
-    "slug": "andrey-lilov",
-    "title": "Андрей Лилов - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Андрей Лилов, Co-founder &amp; CEO @ URBO Studio",
-    "name": {
-      "bg": "Андрей Лилов",
-      "en": "Andrey Lilov"
-    },
-    "role": {
-      "bg": "Co-founder &amp; CEO @ URBO Studio",
-      "en": "Co-founder &amp; CEO @ URBO Studio"
-    },
-    "track": {
-      "bg": "Умен град",
-      "en": "Smart City"
-    },
-    "topic": {
-      "bg": "Дигитализация на туризма и събитийната индустрия",
-      "en": "Digitalization of tourism &amp; events industry"
-    },
-    "bio": {
-      "bg": "URBO Studio е софтуерна компания, работеща в сферата на туризма и умната градска инфраструктура. От повече от 11 години компанията разработва цялостни системи за резервации, билетиране и разплащания, маркетингови инструменти и контрол на достъпа, помагайки на бизнеса да оптимизира търговските си процеси и да повиши оперативната ефективност. С над 2 000 клиенти в България и 10+ индустрии и интеграции с водещи партньори, URBO Studio е доверен избор за бизнеса и общините, търсещи иновации, мащабируемост и устойчив растеж. Андрей Лилов е съосновател и CEO на URBO Studio - технологична компания, разработваща решения за дигитализация, продажби и управление в туризма, събитията, културата, спорта и развлекателната индустрия. Той има богат опит в бизнес развитието, хотелския софтуер, продажбите и създаването на дигитални платформи, които свързват бизнеса с клиентите му по по-пряк и ефективен начин. Под негово ръководство URBO Studio разработва решения за онлайн билетиране, резервации, плащания, контрол на достъпа, QR базирани продажби и туристически платформи за общини и туристически обекти, музеи, атракции, хотели и организатори на събития. Днес Андрей е фокусиран върху следващия етап от развитието на URBO Studio - интеграцията на AI, автоматизацията и нови модели за достъп, продажби и управление на изживяванията.",
-      "en": "URBO Studio is a software solutions provider operating in the fields of tourism and smart urban infrastructure. For more than 11 years, the company has been developing end-to-end systems for reservation, ticketing and payment management, marketing tools and access control, helping businesses optimize their commercial processes and improve operational efficiency. With over 2,000 clients in Bulgaria across 10+ industries and integrations with leading partners, URBO Studio is a trusted choice for businesses and municipalities looking for innovation, scalability and sustainable growth. Andrey Lilov is Co-founder and CEO of URBO Studio - a technology company developing solutions for digitalization, sales and management in tourism, events, culture, sports and the entertainment industry. He has extensive experience in business development, hospitality software, sales and the creation of digital platforms that connect businesses with their customers in a more direct and efficient way. Under his leadership, URBO Studio develops solutions for online ticketing, reservations, payments, access control, QR-based sales, and tourism platforms for municipalities and tourism sites, museums, attractions, hotels and event organizers. Today, Andrey is focused on the next stage of URBO Studio's development - the integration of AI, automation and new models for access, sales and experience management."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "andrey-lilov.jpg"
-  },
-  {
-    "slug": "anton-tonchev",
-    "title": "проф. Антон Тончев - BSTF 2026",
-    "metaDesc": "BSTF 2026 - проф. Антон Тончев, Professor &amp; Chair, Anatomy @ Medical University Varna",
-    "name": {
-      "bg": "проф. Антон Тончев",
-      "en": "Prof. Anton Tonchev"
-    },
-    "role": {
-      "bg": "Professor &amp; Chair, Anatomy @ Medical University Varna",
-      "en": "Professor &amp; Chair, Anatomy @ Medical University Varna"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "Стволови клетки на мозъка: от изследвания към терапия",
-      "en": "Brain stem cell niches: from research to therapy"
-    },
-    "bio": {
-      "bg": "Проф. Антон Тончев завършва Медицина в Медицински университет - Варна. Докторантурата си извършва в Университета в Каназава, Япония, изучавайки неврогенеза и глиогенеза при маймуни след церебрална исхемия. Бил е постдокторант на фондация „Александър фон Хумболт” в Института за биофизична химия „Макс Планк” в Гьотинген, Германия, изучавайки генетични механизми на неврогенезата при възрастни. От 2012 г. е ръководител на Катедрата по анатомия и клетъчна биология във Варна, а от 2018 г. - директор на Научноизследователския институт на Медицински университет - Варна. Неговата група във Варна изучава стволовите клетъчни ниши на мозъка с фокус върху примати и хора.",
-      "en": "Professor in Anatomy and Neurobiology at Medical University - Varna. Anton B. Tonchev has graduated in Medicine at the Medical University - Varna. He has done his PhD work at the University of Kanazawa, Japan, studying neurogenesis and gliogenesis in monkeys following cerebral ischemia. He has been postdoctoral fellow of the Alexander von Humboldt Foundation at the Max Planck Institute for Biophysical Chemistry, Goettingen Germany studying genetic mechanisms of adult neurogenesis. Since 2012 he has served as a Chair at the Department of Anatomy and Cell Biology in Varna, and since 2018 - as a Director of the Research Institute of the Medical University - Varna. His group in Varna is studying the brain stem cell niches with a focus on primates and humans."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "anton-tonchev.webp"
-  },
-  {
-    "slug": "cemile-usta",
-    "title": "Cemile Köseler Usta - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Cemile Köseler Usta, Innovation Specialist @ Istanbul Chamber of Industry",
-    "name": {
-      "bg": "Cemile Köseler Usta",
-      "en": "Cemile Köseler Usta"
-    },
-    "role": {
-      "bg": "Innovation Specialist @ Istanbul Chamber of Industry",
-      "en": "Innovation Specialist @ Istanbul Chamber of Industry"
-    },
-    "track": {
-      "bg": "Умен град",
-      "en": "Smart City"
-    },
-    "topic": {
-      "bg": "Иновации и дигитална трансформация: турско-българско сътрудничество",
-      "en": "Innovation &amp; digital transformation: Turkey-Bulgaria cooperation"
-    },
-    "bio": {
-      "bg": "Cemile Köseler Usta започва професионалната си кариера в компания за производство на полимерни композити, като участва в проекти за подобрение на процесите и R&amp;D. Придобива опит в контрола на качеството, оценката на клиентски жалби, финансиране на R&amp;D проекти, одитиране на системи за качество и околна среда. След това работи за Dizayn Group като мениджър на международни инфраструктурни проекти, придобивайки опит в писането на оферти за международни търгове, експортни процеси, организиране на обучения и презентации за клиенти, както и участие в международни маркетингови събития. От 2009 г. работи в Истанбулската камара на индустрията, специализирайки в информиране, обратна връзка, консултации относно иновации и дигитална трансформация, достъп до финансиране, предприемачество, брокерски услуги и трансфер на технологии за индивидуални клиенти, както и организиране на конгреси, обучения и B2B събития.",
-      "en": "Cemile started her professional career at a polymeric composites producing company as taking part in the company's process improvement and R&amp;D projects. She gained experience in quality control, evaluation of customer complaints, R&amp;D Projects funding, Quality and Environment Systems auditing there. She then worked for Dizayn Group as International Infrastructure Projects Manager. She gained experience in writing proposals for international tenders, export processes, organizing trainings and presentations for the customers, organizing participations to international marketing events, representing the company during the meetings with Water Ministries of several countries. She has been working in Istanbul Chamber of Industry since 2009 specializing on informing, feedback, consultancy on innovation and digital transformation, access to finance, entrepreneurship, brokerage and technology transfer services to individual clients as well as organization of congress, education, B2B events."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "cemile-usta.webp"
-  },
-  {
-    "slug": "dimitar-karlovski",
-    "title": "Dimitar Karlovski - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Dimitar Karlovski, Founder @ Mitotopia",
-    "name": {
-      "bg": "Dimitar Karlovski",
-      "en": "Dimitar Karlovski"
-    },
-    "role": {
-      "bg": "Founder @ Mitotopia",
-      "en": "Founder @ Mitotopia"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "Митохондриите като Chi: May the Force be with you",
-      "en": "Mitochondria as Chi: May the Force be with you"
-    },
-    "bio": {
-      "bg": "Mitotopia е стартъп, разработващ продукти и услуги, насърчаващи митохондриалното здраве в репродукцията, спорта и дълголетието. Митохондриите са много повече от енергийните централи на клетките - те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми, а използвайки наука и изследвания, идеите могат да се превърнат в бъдещи решения, които след това да се приложат обратно в практиката.",
-      "en": "Mitotopia is a start-up developing products and services promoting mitochondrial health in reproduction, sports and longevity. Mitochondria are much more than the powerhouses of the cells. They are coordinators of cellular biochemistry. Clinical practice can generate ideas and address problems. When using science and research, ideas can be turned into prospective solutions, and solutions could then be applied back into practice."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "dimitar-karlovski.jpg"
-  },
-  {
-    "slug": "dragomir-vatkov",
-    "title": "Dragomir Vatkov - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Dragomir Vatkov, Lead Cyber Security Architect, SABSA",
-    "name": {
-      "bg": "Dragomir Vatkov",
-      "en": "Dragomir Vatkov"
-    },
-    "role": {
-      "bg": "Lead Cyber Security Architect, SABSA",
-      "en": "Lead Cyber Security Architect, SABSA"
-    },
-    "track": {
-      "bg": "Киберсигурност",
-      "en": "Cybersecurity"
-    },
-    "topic": {
-      "bg": "Невидимата архитектура: как основите на киберсигурността определят устойчивостта",
-      "en": "The Invisible Architecture: How Cyber Security Foundations Determine Resilience"
-    },
-    "bio": {
-      "bg": "Dragomir Vatkov е опитен корпоративен архитект по киберсигурност с повече от 27 години опит в проектирането и управлението на бизнес-ориентирани архитектури за сигурност в средите на IT, OT и софтуерно-центрични продукти. Като водещ архитект по киберсигурност, той ръководи инициативи за сигурност чрез дизайн, основани на корпоративна архитектура и принципите на SABSA, гарантирайки, че киберсигурността е систематично вградена в дигиталните продукти, платформи и операции за постигане на осезаема бизнес стойност. Преди това Dragomir заемаше висши ръководни позиции в енергийния сектор и в разработката на продукти и услуги за киберсигурност. Притежава MSc от RWTH Aachen (Германия) и е SABSA Chartered Architect.",
-      "en": "Dragomir is a seasoned Enterprise Cyber Security Architect with more than 27 years of experience designing and governing business-driven security architectures across IT, OT, and software-centric products environments. As Lead Cyber Security Architect, he leads security-by-design initiatives grounded in Enterprise Architecture and SABSA principles, ensuring cyber security is systematically embedded into digital products, platforms, and operations to deliver tangible business value. Previously, Dragomir held senior leadership roles in the Energy, Cyber Security Products and Services development Sectors. He holds an MSc. from RWTH Aachen (Germany), is a SABSA Chartered Architect, and combines deep architectural rigor with hands-on industry, product, and research experience."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "dragomir-vatkov.webp"
-  },
-  {
-    "slug": "elitsa-encheva",
-    "title": "проф. Елица Енчева, д.м. - BSTF 2026",
-    "metaDesc": "BSTF 2026 - проф. Елица Енчева, д.м., Head of Radiation Oncology @ Medical University Varna",
-    "name": {
-      "bg": "проф. Елица Енчева, д.м.",
-      "en": "Prof. Elitsa Encheva, MD, PhD"
-    },
-    "role": {
-      "bg": "Head of Radiation Oncology @ Medical University Varna",
-      "en": "Head of Radiation Oncology @ Medical University Varna"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "Радиационна онкология и медицинска иновация",
-      "en": "Radiation oncology &amp; medical innovation"
-    },
-    "bio": {
-      "bg": "Проф. Елица Енчева завършва Медицински университет - София през 2003 г. През 2009 г. придобива специалност по лъчелечение, а през 2011 г. - образователната и научна степен доктор от МУ-София. От 2013 г. е ръководител на новосъздаденото Отделение по лъчелечение в УМБАЛ „Света Марина” - Варна. През 2014 г. ѝ е присъдено академичното звание доцент, а през 2019 г. е избрана за професор в МУ-Варна. Член е на Българското дружество по лъчелечение, Българската асоциация по радиология (BAR), Европейското дружество по лъчетерапия и онкология (ESTRO) и Международното дружество по стереотаксична радиохирургия (ISRS). През 2016 г. е удостоена с Почетния знак на Българския лекарски съюз за принос в развитието и внедряването на иновативна медицина.",
-      "en": "Prof. Elitsa Encheva graduated from the Medical University of Sofia in 2003. In 2009, she obtained her specialty in Radiation Oncology, and in 2011 she earned her PhD from the Medical University of Sofia. Since 2013, she has been Head of the Department of Radiation Oncology at St. Marina University Hospital, Varna. In 2014, she was awarded the academic title of Associate Professor, and in 2019 she was promoted to Full Professor at the Medical University of Varna. She is a member of the Bulgarian Society of Radiation Oncologists, the Bulgarian Association of Radiology (BAR), the European Society for Radiotherapy and Oncology (ESTRO), and the International Stereotactic Radiosurgery Society (ISRS). In 2016, Prof. Encheva was awarded the Honorary Badge of the Bulgarian Medical Association for her contribution to the development and implementation of innovative medicine."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "elitsa-encheva.jpg"
-  },
-  {
-    "slug": "elitza-stoilova",
-    "title": "Елица Стоилова - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Елица Стоилова, Co-founder &amp; CEO @ Umni | AI2B Zone",
-    "name": {
-      "bg": "Елица Стоилова",
-      "en": "Elitza Stoilova"
-    },
-    "role": {
-      "bg": "Co-founder &amp; CEO @ Umni | AI2B Zone",
-      "en": "Co-founder &amp; CEO @ Umni | AI2B Zone"
-    },
-    "track": {
-      "bg": "Изкуствен интелект",
-      "en": "Artificial Intelligence"
-    },
-    "topic": {
-      "bg": "AI чатботи в туризма: реален бизнес ефект",
-      "en": "AI chatbots in tourism: real business impact"
-    },
-    "bio": {
-      "bg": "Елица Стоилова е съосновател и CEO на Umni.bg - AI чатбот платформа за създаване и управление на AI чатботове за продажби, маркетинг, клиентска поддръжка, както и съосновател и експерт на AI агенция AI2B Zone (одит, консултации и обучения в сферата на AI). Тя има над 20 години опит в хотелиерството и туризма, с утвърдена кариера като маркетинг директор и генерален мениджър на хотели, туроператор и компания за недвижими имоти, управляваща хотели. Работила е в хотели в Турция, Тунис, Мароко и е развила кариера в хотелиерството за 17 години на о-в Сайпан, Северни Мариански острови (САЩ). Била е консултант по дестинационен маркетинг и председател на комитет към Marianas Visitors Authority (AdHoc, MVA) за над 10 години и е получила 2 награди от MVA за влиянието си върху развитието на дестинацията. Елица съосновава Umni.bg през 2017 г. по време на участието си в най-големия глобален стартъп акселератор, The Founder Institute (от Силициевата долина), с фокус върху чатботове. Тя е лектор в Software University с първия цялостен курс в България за AI чатботове. Сертифициран AEO специалист (оптимизация за AI видимост), AI консултант и обучител, чест гост като експерт в национални медии и лектор на конференции, публични събития и университети в България и Китай, където преподава \"AI в Туризма\". Автор е на рубриката \"AI Travel Economy\" в BGTourism.bg и на първия в България курс \"AEO за хотели\".",
-      "en": "Elitza Stoilova is the co-founder and CEO of Umni - an AI chatbot platform for creating and managing AI chatbots for sales, marketing, customer support, and a co-founder and expert of AI Agency AI2B Zone (audit, consultancy and training in AI). Elitza has over 20 years of experience in the hospitality and tourism industry, with an established career as a Marketing Director and General Manager of hotels, tour operator and real estate company managing hotels. She has worked in hotels in Turkey, Tunisia, Morocco and has developed her career in the hospitality industry over 17 years on Saipan, Northern Mariana Islands (USA). She served as a destination marketing consultant and committee chair for the Marianas Visitors Authority (AdHoc, MVA) for over 10 years and received 2 awards from MVA for her impact on the destination development. Elitza co-founded Umni while participating in and successfully completing the largest global startup accelerator, The Founder Institute (by Silicon Valley), with a focus on chatbots in 2017. Elitza was lecturer at Software University with the first comprehensive course in Bulgaria on AI chatbots. She is certified AEO Specialist (AI visibility optimization), AI consultant and trainer, frequent guest as an expert in national media and speaker at conferences, public events and Universities in Bulgaria and China, where she teaches \"AI in Tourism\". She is an author of AI Travel Economy rubric at BGTourism.bg and the first in Bulgaria course \"AEO for hotels\"."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "elitza-stoilova.jpg"
-  },
-  {
-    "slug": "georgi-dobrev",
-    "title": "Георги Добрев - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Георги Добрев, Analyst @ ARC Fund",
-    "name": {
-      "bg": "Георги Добрев",
-      "en": "Georgi Dobrev"
-    },
-    "role": {
-      "bg": "Analyst @ ARC Fund",
-      "en": "Analyst @ ARC Fund"
-    },
-    "track": {
-      "bg": "Умен град",
-      "en": "Smart City"
-    },
-    "topic": {
-      "bg": "Дигитализация на МСП: анализ и политики",
-      "en": "SME digitalization: analysis &amp; policy"
-    },
-    "bio": {
-      "bg": "Георги Добрев работи като анализатор във Фондация за приложни изследвания и комуникации (ARC Fund), като се фокусира върху подкрепата за трансфер на технологии и дигитализация на МСП, устойчивото развитие на регионалната иновационна екосистема и приобщаването чрез интеграция на уязвими групи на пазара на труда. Той анализира и публикува по темите за иновациите, търговията и технологичната политика, използвайки количествени методи, които комбинират макроикономически статистики, финансови и анкетни данни. Георги допринася за ежегодния доклад Innovation.bg на ARC Fund, Глобалния годишник за конкурентоспособност на IMD World Competitiveness Centre и регулярните доклади на Global Trade and Innovation Policy Alliance.",
-      "en": "Georgi Dobrev works as an analyst at the Applied Research and Communications Fund (ARC Fund), focusing on support for the technology transfer and the digitalisation of SMEs, the sustainable development of the regional innovation ecosystem, and employability through the integration of vulnerable groups into the labour market. He analyses and publishes on innovation, trade, and technology policy, using quantitative methods that combine macroeconomic statistics, financial and survey data. Georgi contributes to ARC Fund's annual Innovation.bg report, the Global Competitiveness Yearbook of the IMD World Competitiveness Centre, and the regular reports of the Global Trade and Innovation Policy Alliance."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "georgi-dobrev.jpg"
-  },
-  {
-    "slug": "hristian-daskalov",
-    "title": "д-р Христиан Даскалов - BSTF 2026",
-    "metaDesc": "BSTF 2026 - д-р Христиан Даскалов, Cybersecurity Compliance Director | Chair @ DIH Trakia",
-    "name": {
-      "bg": "д-р Христиан Даскалов",
-      "en": "Dr. Hristian Daskalov"
-    },
-    "role": {
-      "bg": "Cybersecurity Compliance Director | Chair @ DIH Trakia",
-      "en": "Cybersecurity Compliance Director | Chair @ DIH Trakia"
-    },
-    "track": {
-      "bg": "Киберсигурност",
-      "en": "Cybersecurity"
-    },
-    "topic": {
-      "bg": "Европейски портфейли за цифрова самоличност: възможности и рискове",
-      "en": "European digital identity wallets: opportunities and risks"
-    },
-    "bio": {
-      "bg": "Д-р Христиан Даскалов е практикуващ специалист по киберсигурност, изследовател, университетски преподавател и съветник по дигитална политика с над 15 години опит в дигиталната трансформация, отворените технологии и регулаторните рамки за управление и устойчивост. В момента служи като директор по съответствие в областта на киберсигурността във водещ квалифициран доставчик на доверителни услуги. Преди това е съосновател на Центъра за споделена наука и бизнес (CSSB) към Техническия университет в София, където пилотира приложението на блокчейн технологиите в академичната среда. Между 2023 и 2026 г. е председател на Управителния съвет на Дигитален иновационен хъб Тракия (Cyber4AllSTAR), българския EDIH за киберсигурност, и координира ангажимента на Хъба по паневропейските инициативи CyberSec4OT и OSCRAT.EU. В това качество той подкрепя предоставянето на услуги за киберсигурност на индустриални МСП в цяла Европа и подпомага съответствието им с регулаторните рамки за киберсигурност, включително Европейския акт за киберустойчивост. Работата му е фокусирана върху изграждането на институционална и технологична устойчивост в дигитално зависими екосистеми, с акцент върху публично-частното сътрудничество, сигурното управление на жизнения цикъл на продуктите и изграждането на капацитет за кибер-осъзнати иновации.",
-      "en": "Dr. Hristian DASKALOV is a cybersecurity practitioner, researcher, university lecturer, and digital policy advisor with over 15 years of experience in digital transformation, open technologies, and regulatory frameworks for governance and resilience. He currently serves as Cybersecurity Compliance Director at a leading qualified trust service provider. Previously, he co-founded the Center for Shared Science &amp; Business (CSSB) at the Technical University of Sofia, where he piloted the application of blockchain technologies in academia. Between 2023 and 2026, he served as Chairman of the Board of Digital Innovation Hub Trakia (Cyber4AllSTAR), Bulgaria's cybersecurity EDIH, and coordinated the Hub's engagement under the pan-European CyberSec4OT and OSCRAT.EU initiatives. In this capacity, he supported the provision of cybersecurity services to industrial SMEs across Europe and helped enable their compliance with cybersecurity regulatory frameworks, including the European Cyber Resilience Act. His work focuses on building institutional and technological resilience in digitally dependent ecosystems, with an emphasis on public-private collaboration, secure product lifecycle governance, and capacity building for cyber-aware innovation."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "hristian-daskalov.jpg"
-  },
-  {
-    "slug": "kalina-tsolova",
-    "title": "Калина Цолова - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Калина Цолова, Expert @ ARC Fund",
-    "name": {
-      "bg": "Калина Цолова",
-      "en": "Kalina Tsolova"
-    },
-    "role": {
-      "bg": "Expert @ ARC Fund",
-      "en": "Expert @ ARC Fund"
-    },
-    "track": {
-      "bg": "Умен град",
-      "en": "Smart City"
-    },
-    "topic": {
-      "bg": "Иновационни екосистеми и технологична устойчивост на градовете",
-      "en": "Innovation ecosystems &amp; urban technology resilience"
-    },
-    "bio": {
-      "bg": "Калина Цолова е експерт по иновации, регионално развитие и климатично-фокусирана градска трансформация с опит в публичния, частния и неправителствения сектор. В ARC Fund тя се фокусира върху развитието на иновационни екосистеми и технологично-базирани решения, които укрепват устойчивостта, конкурентоспособността на градовете и регионите. Калина организира диалога за сигурност и иновации на високо ниво - ангажимент на ARC Fund с иновационната общност на Силициевата долина и Маями, където работи с глобални технологични компании, инвеститори и академични институции по темите за бъдещето на AI, дигиталната инфраструктура и устойчивите вериги за доставки. Тя има задълбочено разбиране за връзката между дигиталната трансформация и индустриалната конкурентоспособност, с фокус върху позиционирането на Черноморския регион в развиващия се технологичен и енергиен пейзаж на Европа.",
-      "en": "Kalina Tcolova is an expert in innovation, regional development, and climate-focused urban transformation, with experience in the public, private, and non-governmental sectors. At ARC Fund, she focuses on the development of innovation ecosystems and technology-driven solutions that strengthen the resilience, sustainability, and competitiveness of cities and regions. Kalina organizes the high-level Security and Innovation Dialogue - an ARC Fund engagement with the Silicon Valley and Miami innovation community, where she engages with global technology companies, investors, and academic institutions on the future of AI, digital infrastructure, and resilient supply chains. She brings a comprehensive understanding of the link between digital transformation and industrial competitiveness, with a focus on positioning the Black Sea region within Europe's evolving technology and energy landscape."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "kalina-tsolova.webp"
-  },
-  {
-    "slug": "krastena-nikolova",
-    "title": "проф. Кръстена Николова - BSTF 2026",
-    "metaDesc": "BSTF 2026 - проф. Кръстена Николова, Full Professor of Biophysics @ Medical University Varna",
-    "name": {
-      "bg": "проф. Кръстена Николова",
-      "en": "Prof. Krastena Nikolova"
-    },
-    "role": {
-      "bg": "Full Professor of Biophysics @ Medical University Varna",
-      "en": "Full Professor of Biophysics @ Medical University Varna"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "Биофизика и оптични методи в медицината",
-      "en": "Biophysics &amp; optical methods in medicine"
-    },
-    "bio": {
-      "bg": "Проф. Кръстена Николова завършва Физическия факултет на Пловдивския университет през 2001 г., а през 2002 г. придобива магистърска степен по Приложна математика. През 2007 г. защитава докторска дисертация по Физика в Централната лаборатория по оптично съхранение и обработка на информация при БАН. От 2002 до 2011 г. преминава през академичните длъжности асистент, старши асистент и главен асистент в Университета по хранителни технологии - Пловдив. През 2011 г. е избрана за доцент по Физика, а през 2016 г. - за доцент в Медицински университет - Варна. През 2018 г. е избрана за професор по Физика в МУ-Варна, а през 2019 г. придобива специалност по Биофизика.",
-      "en": "Professor Krastena Nikolova graduated from the Faculty of Physics at Paisii Hilendarski University of Plovdiv in 2001. In 2002, she obtained a Master's degree in Applied Mathematics. In 2007, she was awarded her PhD in Physics from the Central Laboratory of Optical Storage and Processing of Information at the Bulgarian Academy of Sciences. From 2002 to 2011, she held academic positions from Assistant to Chief Assistant Professor at the University of Food Technologies, Plovdiv. In 2011, she was appointed Associate Professor of Physics, and in 2016 she joined the Medical University of Varna. In 2018, she was promoted to Full Professor of Physics at MU-Varna, and in 2019 she obtained a specialty qualification in Biophysics."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "krastena-nikolova.jpg"
-  },
-  {
-    "slug": "kristina-bliznakova",
-    "title": "проф. Кристина Близнакова - BSTF 2026",
-    "metaDesc": "BSTF 2026 - проф. Кристина Близнакова, Associate Professor @ TU Varna | Medical University Varna",
-    "name": {
-      "bg": "проф. Кристина Близнакова",
-      "en": "Prof. Kristina Bliznakova"
-    },
-    "role": {
-      "bg": "Associate Professor @ TU Varna | Medical University Varna",
-      "en": "Associate Professor @ TU Varna | Medical University Varna"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "Биомедицинско инженерство и AI в диагностиката на рак",
-      "en": "Biomedical engineering &amp; AI in cancer diagnostics"
-    },
-    "bio": {
-      "bg": "Проф. Кристина Близнакова завършва Електронна техника и микроелектроника в Технически университет - Варна през 1996 г. Между 1996 и 1998 г. посещава магистърска програма по Биомедицинско инженерство в Университета в Патрас, Гърция. През 2003 г. защитава докторска дисертация на тема \"Изследване и разработка на софтуерна симулация за рентгеново изображение\" в Университета в Патрас. От 2004 до 2012 г. ръководи изследователската група по Монте Карло симулации в Университета в Патрас. През 2012 г. получава престижната награда Marie Curie Career Integration Grant за реинтеграция в България. От 2016 г. е доцент в Технически университет - Варна, а от 2019 г. е член на катедрата по Медицинска техника в Медицински университет - Варна. На европейско ниво проф. Близнакова ръководи модула \"Антропоморфни фантоми\" в EUTEMPE-NET.",
-      "en": "Professor Kristina Bliznakova graduated in Electronic Engineering and Microelectronics from the Technical University of Varna, Bulgaria, in 1996. Between 1996 and 1998, she attended the Master's Program in Biomedical Engineering at the University of Patras, Greece. In 2003, she successfully defended her PhD dissertation on \"software simulation for X-ray imaging\" at the University of Patras. From 2004 to 2012, she led the Monte Carlo Simulations Research Group at the University of Patras. In 2012, she was awarded a Marie Curie Career Integration Grant to support her reintegration into Bulgaria. Since 2016, she has served as Associate Professor at the Technical University of Varna, and since 2019 she has been a member of the Department of Medical Equipment at the Medical University of Varna. At the European level, Prof. Bliznakova serves as the leader of the Anthropomorphic Phantoms module within EUTEMPE-NET."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "kristina-bliznakova.webp"
-  },
-  {
-    "slug": "kristina-eskenazi",
-    "title": "Кристина Ескенази - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Кристина Ескенази, Chair @ Health &amp; Life Sciences Cluster Bulgaria",
-    "name": {
-      "bg": "Кристина Ескенази",
-      "en": "Kristina Eskenazi"
-    },
-    "role": {
-      "bg": "Chair @ Health &amp; Life Sciences Cluster Bulgaria",
-      "en": "Chair @ Health &amp; Life Sciences Cluster Bulgaria"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "Бъдещето на здравеопазването: от изследвания към мащабни иновации",
-      "en": "Future of Health &amp; Life Sciences: from research to scalable innovation"
-    },
-    "bio": {
-      "bg": "Кристина Ескенази е председател на Клъстер Здравеопазване и Науки за Живота България и AI Cluster Bulgaria, вицепрезидент на Съвета на европейските биорегиони (CEBR) и член на Управителния съвет на КРИБ. Тя е съосновател на Spinoff Bulgaria и активно популяризира иновациите, биотехнологиите, изкуствения интелект и deep-tech предприемачеството в Европа.",
-      "en": "Kristina Eskenazi is Chair of the Health &amp; Life Sciences Cluster Bulgaria and AI Cluster Bulgaria, Vice President of the Council of European BioRegions (CEBR), and Board Member of KRIB. She is co-founder of Spinoff Bulgaria and actively promotes innovation, biotechnology, AI, and deep-tech entrepreneurship in Europe."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "kristina-eskenazi.jpg"
-  },
-  {
-    "slug": "martin-kuvandzhiev",
-    "title": "Мартин Кувандиев - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Мартин Кувандиев, Founder @ Encorp | Co-founder, Bitcoin Gold",
-    "name": {
-      "bg": "Мартин Кувандиев",
-      "en": "Martin Kuvandzhiev"
-    },
-    "role": {
-      "bg": "Founder @ Encorp | Co-founder, Bitcoin Gold",
-      "en": "Founder @ Encorp | Co-founder, Bitcoin Gold"
-    },
-    "track": {
-      "bg": "Изкуствен интелект",
-      "en": "Artificial Intelligence"
-    },
-    "topic": {
-      "bg": "Blockchain, fintech и AI: следващата вълна на иновации",
-      "en": "Blockchain, fintech &amp; AI: the next innovation wave"
-    },
-    "bio": {
-      "bg": "Мартин Кувандиев е основател на Encorp, водещ доставчик на fintech, blockchain и healthcare решения, с над 10 години опит в създаването и мащабирането на иновативни проекти, които използват най-съвременни технологии. Encorp расте с 2x годишно от 2019 г., благодарение на талантлив екип от над 30 професионалисти и разнообразно портфолио от клиенти и партньори. Той е и съосновател на Bitcoin Gold, една от водещите криптовалути на пазара, и blockchain консултант за няколко други ventures като TokaCity. С опит в софтуерното развитие, той е печелил множество NASA Space Apps Challenges и е разработвал награждавани приложения за iOS и други платформи.",
-      "en": "As the founder of Encorp, a leading fintech, blockchain and healthcare solutions provider, Martin has over ten years of experience in creating and scaling innovative projects that leverage cutting-edge technology and business acumen. Encorp has been growing 2x yearly since 2019, thanks to our talented team of 30+ professionals and our diverse portfolio of clients and partners. He is also a co-founder of Bitcoin Gold, one of the top cryptocurrencies in the market, and a blockchain advisor for several other ventures, such as TokaCity. With a background in software development and programming, he has won multiple NASA Space Apps Challenges and developed award-winning applications for iOS and other platforms."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "martin-kuvandzhiev-2.png"
-  },
-  {
-    "slug": "ruslan-stefanov",
-    "title": "Руслан Стефанов - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Руслан Стефанов, Director Strategy &amp; Innovation @ ARC Fund",
-    "name": {
-      "bg": "Руслан Стефанов",
-      "en": "Ruslan Stefanov"
-    },
-    "role": {
-      "bg": "Director Strategy &amp; Innovation @ ARC Fund",
-      "en": "Director Strategy &amp; Innovation @ ARC Fund"
-    },
-    "track": {
-      "bg": "Умен град",
-      "en": "Smart City"
-    },
-    "topic": {
-      "bg": "20 години Innovation.bg: картата на иновациите в България",
-      "en": "20 years Innovation.bg: mapping Bulgaria's innovation landscape"
-    },
-    "bio": {
-      "bg": "Руслан Стефанов е директор по стратегия и иновации във Фондация за приложни изследвания и комуникации (ARC Fund). Той ръководи изследователската, проектната и консултантската дейност на ARC Fund в областта на интелигентната специализация, регионалните иновационни стратегии, технологичните и иновационни оценки и подкрепата за иновационно-ориентирани предприятия в Югоизточна Европа и Черноморския регион. Руслан е председател и редактор на Innovation.bg, най-престижната годишна оценка на иновационното представяне на българската икономика през последните 20 години, и член на журито на Националния награден фонд за иновации. Той е член на Global Trade and Innovation Policy Alliance и на MIT REAP Bulgaria екипа.",
-      "en": "Ruslan Stefanov is the Director for Strategy and Innovation at the Applied Research and Communications Fund (ARC Fund). He leads ARC Fund's research, project management and consulting work on smart specialization, regional innovation strategies, technology and innovation assessments and innovation-driven enterprise support and scale up in Southeast Europe and the Black Sea region. Ruslan is chair and editor of Innovation.bg, the most reputable annual assessment of the innovation performance of the Bulgarian economy over the past 20 years, and a member of the jury of the National Innovation Award. He is a member of the Global Trade and Innovation Policy Alliance and the MIT REAP Bulgaria team."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "ruslan-stefanov.jpg"
-  },
-  {
-    "slug": "svetlin-stoyanov",
-    "title": "Светлин Стоянов - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Светлин Стоянов, Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS",
-    "name": {
-      "bg": "Светлин Стоянов",
-      "en": "Svetlin Stoyanov"
-    },
-    "role": {
-      "bg": "Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS",
-      "en": "Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS"
-    },
-    "track": {
-      "bg": "Морски технологии",
-      "en": "Marine Tech"
-    },
-    "topic": {
-      "bg": "Корабостроенето на Черно море: иновации и предизвикателства",
-      "en": "Black Sea shipbuilding: innovation &amp; challenges"
-    },
-    "bio": {
-      "bg": "Светлин Стоянов е изпълнителен директор на корабостроителница MTG Dolphin във Варна, България. Той е председател на Управителния комитет на Българската национална асоциация по корабостроене и кораборемонт (BULNAS), член на Управителния съвет на Конфедерацията на работодателите и индустриалците в България (КРИБ) и член на Управителния съвет на Българската камара за корабоплаване. Член е и на Надзорния съвет на Морско училище, както и на ABS Black Sea технически комитет и BV Hellenic and Black Sea Technical Committee. Г-н Стоянов е завършил Висшето морско училище - Варна и притежава MSc от Морска академия, Варна.",
-      "en": "Svetlin Stoyanov is Executive Director of MTG Dolphin Shipyard in Varna, Bulgaria. He is Chairman of the Managing Committee of Bulgarian National Association of Shipbuilding and Ship repair (BULNAS), Member of the Board of Confederation of Employers and Industrialists in Bulgaria (CEIB) and Member of the Board of Bulgarian Chamber of Shipping. He stays at the Supervisory board of the Naval Academy as well and a Member of ABS Black Sea technical committee and BV Hellenic and Black Sea Technical Committee. Mr. Stoyanov has graduated from the High Maritime School-Varna and holds a MSc from the Naval Academy, Varna."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "svetlin-stoyanov.webp"
-  },
-  {
-    "slug": "teade-punter",
-    "title": "Dr. Teade Punter - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Dr. Teade Punter, Leading Professor, AI for Society @ Fontys University",
-    "name": {
-      "bg": "Dr. Teade Punter",
-      "en": "Dr. Teade Punter"
-    },
-    "role": {
-      "bg": "Leading Professor, AI for Society @ Fontys University",
-      "en": "Leading Professor, AI for Society @ Fontys University"
-    },
-    "track": {
-      "bg": "Изкуствен интелект",
-      "en": "Artificial Intelligence"
-    },
-    "topic": {
-      "bg": "Интеграция на умни системи",
-      "en": "Smart System Integration"
-    },
-    "bio": {
-      "bg": "Dr. Ir. Teade Punter е професор (лектор) по High Tech Embedded Software в Университета за приложни науки Fontys, Айндховен, Нидерландия. Неговата изследователска група прави приложни изследвания в областта на data engineering, digital twinning и AI за разработка на интелигентни системи. Фокусът на групата HTES е също върху киберсигурността в кибер-физическите системи. Teade е и водещ професор за Fontys' Centre of Expertise AI for Society, в който 7 изследователски групи си сътрудничат по различни аспекти на AI, като AI инженеринг и ELSA. Преди да се присъедини към Fontys, Teade беше research fellow в TNO Embedded Systems Initiative, knowledge manager в Embedded Systems Institute, консултант по формални методи в Laboratory of Quality Software на Технологичния университет в Айндховен, group leader и competence manager във Fraunhofer IESE в Кайзерслаутерн и course teamleader в Отворения университет на Нидерландия.",
-      "en": "Dr.Ir. Teade Punter is a professor (lector) in High Tech Embedded Software at Fontys University of Applied Science, Eindhoven, the Netherlands. His research group does applied research on data engineering, digital twinning and AI for smart systems development. The focus of the HTES group is also on Cybersecurity in Cyber Physical Systems. Teade is also leading professor for the Fontys' Centre of Expertise AI for Society, in which 7 research groups cooperate on various aspects of AI, like AI engineering and ELSA. Before he joined Fontys, Teade was research fellow at TNO Embedded Systems Initiative, knowledge manager at Embedded Systems Institute, consultant Formal Methods at Laboratory of Quality Software of Eindhoven University of Technology, groupleader and competence manager at Fraunhofer IESE in Kaiserslautern and course teamleader at the Open University of the Netherlands."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "teade-punter.webp"
-  },
-  {
-    "slug": "trifon-tsekov",
-    "title": "Трифон Цеков - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Трифон Цеков, CEO @ 3-Fi Medical",
-    "name": {
-      "bg": "Трифон Цеков",
-      "en": "Trifon Tsekov"
-    },
-    "role": {
-      "bg": "CEO @ 3-Fi Medical",
-      "en": "CEO @ 3-Fi Medical"
-    },
-    "track": {
-      "bg": "Биотехнологии",
-      "en": "BioTech"
-    },
-    "topic": {
-      "bg": "От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI",
-      "en": "From Data Silos to Clinical Evidence: Federated Learning for Medical AI"
-    },
-    "bio": {
-      "bg": "Трифон Цеков е CEO на 3-Fi Medical, бивш директор на хардуерни R&amp;D и radar системен архитект с над 10 години опит във вградени системи, обработка на сигнали в реално време и надежден отбранителен хардуер. Член на AI Cluster Bulgaria, той прилага високонадеждно инженерство за регулирани медицински AI решения.",
-      "en": "Trifon Tsekov is CEO of 3-Fi Medical, a former Director of Hardware R&amp;D and radar systems architect with 10+ years in embedded systems, real-time signal processing, and rugged defence hardware. An AI Cluster Bulgaria member, he applies high-reliability engineering to regulated medical AI."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "trifon-tsekov.jpg"
-  },
-  {
-    "slug": "yasen-tanev",
-    "title": "Ясен Танев - BSTF 2026",
-    "metaDesc": "BSTF 2026 - Ясен Танев, Cybersecurity Expert @ DIH Trakia",
-    "name": {
-      "bg": "Ясен Танев",
-      "en": "Yasen Tanev"
-    },
-    "role": {
-      "bg": "Cybersecurity Expert @ DIH Trakia",
-      "en": "Cybersecurity Expert @ DIH Trakia"
-    },
-    "track": {
-      "bg": "Киберсигурност",
-      "en": "Cybersecurity"
-    },
-    "topic": {
-      "bg": "Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност",
-      "en": "Help, Not Burden: How to Transform Regulatory Requirements into Real Cybersecurity"
-    },
-    "bio": {
-      "bg": "Ясен Танев е експерт по киберсигурност и информационна сигурност в Дигитален иновационен хъб Тракия, специализирайки в регулаторни рамки и съответствие. Притежава богат опит в прилагането на стратегии за киберсигурност, включващи NIS2, AI Act и Cyber Resilience Act.",
-      "en": "Yasen Tanev is a cybersecurity and information security expert at Digital Innovation Hub Trakia, specializing in regulatory frameworks and compliance. He has extensive experience in implementing cybersecurity strategies involving NIS2, AI Act and Cyber Resilience Act."
-    },
-    "metaDate": {
-      "bg": "21-22 ноември 2026",
-      "en": "November 21-22, 2026"
-    },
-    "metaLocation": {
-      "bg": "Варна, България",
-      "en": "Varna, Bulgaria"
-    },
-    "image": "yasen-tanev.jpg"
-  }
-]
-</script>
   <script>
-    var speakersData = JSON.parse(document.getElementById('spk-data').textContent);
-    var currentLang = localStorage.getItem('bstf-lang') || 'bg';
-
-    function setLang(lang) {
-      currentLang = lang;
-      localStorage.setItem('bstf-lang', lang);
-      document.documentElement.lang = lang;
-      document.querySelectorAll('.lang-toggle button').forEach(function(btn) {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-      document.querySelectorAll('[data-bg][data-en]').forEach(function(el) {
-        var text = lang === 'bg' ? el.getAttribute('data-bg') : el.getAttribute('data-en');
-        if (text !== null) el.innerHTML = text;
-      });
-    }
-
-    document.querySelectorAll('.lang-toggle button').forEach(function(btn) {
-      btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
-    });
-
-    var params = new URLSearchParams(window.location.search);
-    var slug = params.get('slug');
-    if (slug) {
-      var speaker = null;
-      for (var i = 0; i < speakersData.length; i++) {
-        if (speakersData[i].slug === slug) {
-          speaker = speakersData[i];
-          break;
-        }
+    (function () {
+      'use strict';
+      var currentLang = localStorage.getItem('bstf-lang') || 'bg';
+      function setLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('bstf-lang', lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        document.querySelectorAll('[data-bg][data-en]').forEach(function (el) {
+          var text = lang === 'bg' ? el.getAttribute('data-bg') : el.getAttribute('data-en');
+          if (text !== null) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = text; }
+            else { el.innerHTML = text; }
+          }
+        });
+        document.querySelectorAll('select option[data-bg][data-en]').forEach(function (opt) {
+          opt.textContent = lang === 'bg' ? opt.getAttribute('data-bg') : opt.getAttribute('data-en');
+        });
       }
-      if (speaker) {
-        document.title = speaker.title;
-        document.querySelector('meta[name="description"]').setAttribute('content', speaker.metaDesc);
-        document.querySelector('.spk-hero-img').src = 'images/speakers/' + speaker.image;
-        document.querySelector('.spk-hero-img').alt = speaker.name.en;
-        document.querySelector('.spk-breadcrumb-name').setAttribute('data-bg', speaker.name.bg);
-        document.querySelector('.spk-breadcrumb-name').setAttribute('data-en', speaker.name.en);
-        document.querySelector('.spk-breadcrumb-name').textContent = speaker.name.en;
-        document.querySelector('.spk-track-badge').setAttribute('data-bg', speaker.track.bg);
-        document.querySelector('.spk-track-badge').setAttribute('data-en', speaker.track.en);
-        document.querySelector('.spk-track-badge').textContent = speaker.track.en;
-        document.querySelector('.spk-hero-name').setAttribute('data-bg', speaker.name.bg);
-        document.querySelector('.spk-hero-name').setAttribute('data-en', speaker.name.en);
-        document.querySelector('.spk-hero-name').textContent = speaker.name.en;
-        document.querySelector('.spk-hero-role').setAttribute('data-bg', speaker.role.bg);
-        document.querySelector('.spk-hero-role').setAttribute('data-en', speaker.role.en);
-        document.querySelector('.spk-hero-role').textContent = speaker.role.en;
-        document.querySelector('.spk-topic-text').setAttribute('data-bg', speaker.topic.bg);
-        document.querySelector('.spk-topic-text').setAttribute('data-en', speaker.topic.en);
-        document.querySelector('.spk-topic-text').textContent = speaker.topic.en;
-        document.querySelector('.spk-bio-text').setAttribute('data-bg', speaker.bio.bg);
-        document.querySelector('.spk-bio-text').setAttribute('data-en', speaker.bio.en);
-        document.querySelector('.spk-bio-text').textContent = speaker.bio.en;
-        document.querySelector('.spk-meta-date').setAttribute('data-bg', speaker.metaDate.bg);
-        document.querySelector('.spk-meta-date').setAttribute('data-en', speaker.metaDate.en);
-        document.querySelector('.spk-meta-date').textContent = speaker.metaDate.en;
-        document.querySelector('.spk-meta-location').setAttribute('data-bg', speaker.metaLocation.bg);
-        document.querySelector('.spk-meta-location').setAttribute('data-en', speaker.metaLocation.en);
-        document.querySelector('.spk-meta-location').textContent = speaker.metaLocation.en;
-        setLang(currentLang);
-      } else {
-        document.querySelector('.spk-hero-info').innerHTML = '<p style="padding:40px;text-align:center">Speaker not found.</p>';
+      window.setLang = setLang;
+      document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+        btn.addEventListener('click', function () { setLang(btn.dataset.lang); });
+      });
+      setLang(currentLang);
+
+      var menuBtn = document.querySelector('.mobile-menu-btn');
+      var mobileNav = document.getElementById('mobile-nav');
+      if (menuBtn && mobileNav) {
+        menuBtn.addEventListener('click', function () { mobileNav.classList.toggle('open'); });
+        mobileNav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () { mobileNav.classList.remove('open'); });
+        });
       }
-    } else {
-      document.querySelector('.spk-hero-info').innerHTML = '<p style="padding:40px;text-align:center">No speaker specified. <a href="speakers.html" style="color:var(--teal);font-weight:500">View all speakers</a></p>';
-    }
+
+      var lastFocused = null;
+      function getFocusable(container) {
+        if (!container) return [];
+        return Array.prototype.slice.call(
+          container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        ).filter(function (el) { return el.offsetParent !== null; });
+      }
+      function openModal(id) {
+        var overlay = document.getElementById(id);
+        if (!overlay) return;
+        var form = overlay.querySelector('.modal-form');
+        var success = overlay.querySelector('.modal-success');
+        if (form) { form.classList.remove('hidden'); form.style.display = ''; }
+        if (success) { success.classList.remove('show'); success.style.display = 'none'; }
+        lastFocused = document.activeElement;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        var focusables = getFocusable(overlay.querySelector('.modal'));
+        (focusables[0] || overlay.querySelector('.modal')).focus();
+      }
+      window.openModal = openModal;
+      function closeModal(id) {
+        var overlay = document.getElementById(id);
+        if (overlay) { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+        if (lastFocused && typeof lastFocused.focus === 'function') { lastFocused.focus(); }
+        lastFocused = null;
+      }
+      window.closeModal = closeModal;
+      document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+        overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(overlay.id); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay.open').forEach(function (m) { closeModal(m.id); }); return; }
+        if (e.key !== 'Tab') return;
+        var openOverlay = document.querySelector('.modal-overlay.open');
+        if (!openOverlay) return;
+        var focusables = getFocusable(openOverlay.querySelector('.modal'));
+        if (!focusables.length) return;
+        var first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
+
+      function showSuccess(formId, successId, titleId) {
+        var f = document.getElementById(formId), s = document.getElementById(successId);
+        if (f) f.style.display = 'none';
+        if (s) { s.classList.add('show'); s.style.display = 'block'; }
+        var title = document.getElementById(titleId);
+        if (title) title.focus();
+      }
+
+      function submitRegister() {
+        var name = document.getElementById('reg-name'), email = document.getElementById('reg-email');
+        if (!name.value.trim()) { name.focus(); return; }
+        if (!email.value.trim()) { email.focus(); return; }
+        var phone = document.getElementById('reg-phone').value.trim();
+        var ticketSelect = document.getElementById('reg-ticket');
+        var ticket = ticketSelect.options[ticketSelect.selectedIndex].text;
+        var subject = 'BSTF 2026 — Registration: ' + name.value.trim();
+        var body = 'Name: ' + name.value.trim() + '\nEmail: ' + email.value.trim() + '\nPhone: ' + (phone || '-') + '\nTicket: ' + ticket;
+        window.location.href = 'mailto:bstf@ictclustervarna.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        showSuccess('register-form', 'register-success', 'register-success-title');
+      }
+      window.submitRegister = submitRegister;
+      function submitSpeaker() {
+        var name = document.getElementById('sp-name'), email = document.getElementById('sp-email'), topic = document.getElementById('sp-topic');
+        if (!name.value.trim()) { name.focus(); return; }
+        if (!email.value.trim()) { email.focus(); return; }
+        if (!topic.value.trim()) { topic.focus(); return; }
+        var company = document.getElementById('sp-company').value.trim();
+        var streamSelect = document.getElementById('sp-stream');
+        var stream = streamSelect.options[streamSelect.selectedIndex].text;
+        var desc = document.getElementById('sp-desc').value.trim();
+        var subject = 'BSTF 2026 — Speaker proposal: ' + name.value.trim();
+        var body = 'Name: ' + name.value.trim() + '\nEmail: ' + email.value.trim() + '\nCompany/Organization: ' + (company || '-') +
+          '\nTalk topic: ' + topic.value.trim() + '\nThematic stream: ' + stream + '\nDescription: ' + (desc || '-');
+        window.location.href = 'mailto:bstf@ictclustervarna.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        showSuccess('speaker-form', 'speaker-success', 'speaker-success-title');
+      }
+      window.submitSpeaker = submitSpeaker;
+
+      var navRegBtn = document.getElementById('nav-cta-btn');
+      if (navRegBtn) { navRegBtn.addEventListener('click', function () { window.location.href = 'index.html#tickets'; }); }
+
+      // Smooth page transitions
+      document.querySelectorAll('a[href]').forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+        link.addEventListener('click', function (e) {
+          if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+          e.preventDefault();
+          document.body.classList.add('page-exit');
+          setTimeout(function () { window.location.href = href; }, 120);
+        });
+      });
+
+      var btt = document.getElementById('bstf-btt');
+      if (btt) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > window.innerHeight * 1.5) { btt.classList.add('visible'); }
+          else { btt.classList.remove('visible'); }
+        });
+      }
+    })();
+    window.addEventListener('pageshow', function (e) { if (e.persisted) window.location.reload(); });
   </script>
 </body>
+
 </html>
