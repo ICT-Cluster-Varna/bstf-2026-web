@@ -72,3 +72,18 @@ All 9 requirements from the SEO/UX audit are implemented:
 ## Deployment
 
 Host `index.html` and the `images/` directory together. No build step required.
+
+## Cache-Busting (always do this automatically)
+
+Every deployable file uses static `?v=YYYYMMDD` cache-busting query strings on scripts/styles. Whenever you edit any of these files, bump every `?v=YYYYMMDD` in it to today's date — do this automatically, without being asked:
+
+- `expo.html` — `floorplan3d_v2.html?v=YYYYMMDD` (iframe src)
+- `3d-model/floorplan3d_v2.html` — all `<script src="...?v=YYYYMMDD">` tags
+- `speaker.html` — `data/speakers-data.js?v=YYYYMMDD`
+- `speakers.html` — `data/speakers-data.js?v=YYYYMMDD`
+- `../bstf-2026-web-modern/index.html` — `css/modern.css?v=YYYYMMDD`
+- `index.html`, `expo.html`, `speakers.html`, `sponsors.html` — `og:image`/`twitter:image` URL (`images/og-cover.jpg?v=YYYYMMDD`), only if `og-cover.jpg` itself changes
+
+If a same-day edit needs a second cache-bust, append a suffix instead of faking a date, e.g. `20260702-2`.
+
+Do NOT switch this to a dynamic `Date.now()`/`document.write()` scheme — that was tried and rejected: it disables browser caching entirely and `document.write` is a deprecated, parser-blocking pattern.

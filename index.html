@@ -9,6 +9,18 @@
   <meta http-equiv="Expires" content="0">
   <title>BSTF 2026</title>
   <meta name="description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BSTF 2026">
+  <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
+  <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
+  <meta property="og:url" content="https://bstf2026.bg/">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
+  <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -22,6 +34,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <style>
+    .hero-desc-break {
+      display: none
+    }
+
+    @media (min-width: 640px) {
+      .hero-desc-break {
+        display: inline
+      }
+    }
+
     :root {
       --navy: #0B3954;
       --teal: #2CA6B3;
@@ -1747,152 +1769,206 @@
       text-align: left
     }
 
-    /* === Sponsors section: brand table === */
-    .sponsor-table-wrap {
+    /* === Sponsors section: partner rows === */
+    .partners-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
       max-width: 1100px;
       margin: 0 auto;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
     }
 
-    .sponsor-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
+    .partner-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
       background: var(--white);
+      border: 1px solid rgba(11, 57, 84, 0.06);
+      border-radius: var(--radius);
+      padding: 30px 40px;
+      box-shadow: 0 4px 20px rgba(11, 57, 84, 0.05);
     }
 
-    .sponsor-table tbody tr {
-      position: relative;
-      transition: background 0.25s ease;
+    .partner-row__label,
+    .partner-row__crest {
+      flex: 0 0 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .sponsor-table tbody tr[data-tier="organizers"] {
-      background: rgba(44, 166, 179, 0.06)
-    }
-
-    .sponsor-table tbody tr[data-tier="partners"] {
-      background: rgba(11, 57, 84, 0.035)
-    }
-
-    .sponsor-table tbody tr[data-tier="organizers"]:hover {
-      background: rgba(44, 166, 179, 0.12)
-    }
-
-    .sponsor-table tbody tr[data-tier="partners"]:hover {
-      background: rgba(11, 57, 84, 0.075)
-    }
-
-    .sponsor-table td {
-      padding: 32px;
-      vertical-align: top;
-      border-top: 4px solid var(--teal);
-    }
-
-    .sponsor-table td:first-child {
-      width: 230px
-    }
-
-    .sponsor-tier-name {
-      display: block;
+    .partner-row__label span {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.01em;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-
-    .sponsor-tier-count {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 13px;
-      border-radius: 50px;
-      background: var(--teal);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--navy);
     }
 
-    .sponsor-tier-count::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.85);
-      flex-shrink: 0
+    .partner-row__divider {
+      width: 1px;
+      align-self: stretch;
+      background: rgba(44, 166, 179, 0.35);
+      flex-shrink: 0;
     }
 
-    .sponsor-logos-row {
+    .partner-row__content {
+      flex: 1;
       display: flex;
+      align-items: center;
+    }
+
+    .partner-row__content--text {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .partner-row__content--text p {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .partner-row__content--text p.partner-patron-name {
+      font-weight: 700;
+      color: var(--teal);
+      font-size: 1.2rem;
+      margin-top: 2px !important;
+    }
+
+    .partner-row__logos {
       flex-wrap: wrap;
-      align-items: center;
-      gap: 18px;
+      gap: 26px;
     }
 
-    .sponsor-logo-chip {
+    .partner-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 170px;
-      min-height: 130px;
-      padding: 10px 18px;
-      background: var(--white);
-      border: 1px solid rgba(11, 57, 84, 0.1);
-      border-radius: var(--radius-sm);
-      box-shadow: 0 4px 14px rgba(11, 57, 84, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      gap: 14px;
     }
 
-    .sponsor-logo-chip:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: rgba(44, 166, 179, 0.4);
-    }
-
-    .sponsor-logo-chip a,
-    .sponsor-logo-chip>img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .sponsor-logo-chip img {
-      max-width: 100%;
-      max-height: 100px;
+    .partner-logo img {
+      height: 56px;
+      width: auto;
+      max-width: 170px;
       object-fit: contain;
+      display: block;
+    }
+
+    .partner-logo--ict img {
+      height: 58px;
+      max-width: 150px;
+    }
+
+    .partner-logo--bsmepa img {
+      height: 68px;
+      max-width: 150px;
+    }
+
+    .partner-logo--brainpp img {
+      height: 52px;
+    }
+
+    .partner-logo--arcf img {
+      height: 26px;
+    }
+
+    .partner-logo--varna img {
+      height: 74px;
+      max-width: 90px;
+    }
+
+    .partner-logo--mobility img {
+      height: 84px;
+      max-width: 220px;
+    }
+
+    .partner-varna-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    .partner-varna-text strong {
+      display: block;
+      font-weight: 700;
+    }
+
+    .partner-crest-img {
+      height: 100px;
+      width: auto;
+      max-width: 130px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .partners-thanks {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 40px 0 0;
     }
 
     @media(max-width:768px) {
-      .sponsor-table td {
-        display: block;
-        width: auto;
-        padding: 20px;
-        border-top: 4px solid var(--teal);
+      .partner-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 26px 24px;
       }
 
-      .sponsor-table td+td {
-        border-top: none;
+      .partner-row__label,
+      .partner-row__crest {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: flex-start;
       }
 
-      .sponsor-tier-name {
-        font-size: 1rem
+      .partner-row__divider {
+        width: 100%;
+        height: 1px;
+        align-self: auto;
       }
 
-      .sponsor-logo-chip {
-        min-width: 130px;
-        min-height: 100px;
-        padding: 10px 14px;
+      .partner-row__logos {
+        flex-wrap: wrap;
+        gap: 22px;
       }
 
-      .sponsor-logo-chip img {
-        max-height: 70px
+      .partner-logo--ict img,
+      .partner-logo--bsmepa img {
+        max-width: 130px;
+      }
+
+      .partner-logo--ict img {
+        height: 46px;
+      }
+
+      .partner-logo--bsmepa img {
+        height: 54px;
+      }
+
+      .partner-logo--brainpp img {
+        height: 40px;
+      }
+
+      .partner-logo--arcf img {
+        height: 22px;
+      }
+
+      .partner-logo--mobility img {
+        height: 60px;
+        max-width: 170px;
+      }
+
+      .partner-crest-img {
+        height: 76px;
       }
     }
 
@@ -2481,55 +2557,79 @@
       <h2 class="section-title text-center" style="font-size:2rem;margin-bottom:56px"
         data-bg="Заедно изграждаме форума." data-en="Building the forum together.">Заедно изграждаме форума.</h2>
 
-      <div class="sponsor-table-wrap">
-        <table class="sponsor-table">
-          <tbody>
-            <!-- Organizers -->
-            <tr data-tier="organizers">
-              <td>
-                <span class="sponsor-tier-name" data-bg="Организатори" data-en="Organizers">Организатори</span>
-                <span class="sponsor-tier-count" data-bg="4 организации" data-en="4 organizations">4 организации</span>
-              </td>
-              <td>
-                <div class="sponsor-logos-row">
-                  <div class="sponsor-logo-chip">
-                    <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                      <img src="images/ict_cluster_logo.png" alt="ИКТ Клъстер Варна" style="transform:scale(1.55)">
-                    </a>
-                  </div>
-                  <div class="sponsor-logo-chip">
-                    <img src="images/bsmepa_logo.png" alt="ИАНМСП">
-                  </div>
-                  <div class="sponsor-logo-chip">
-                    <img src="images/brainpp_logo.png" alt="Brain++" style="max-height:76px">
-                  </div>
-                  <div class="sponsor-logo-chip">
-                    <img src="images/ARCF_logo.svg" alt="ARC Fund" style="max-height:76px">
-                  </div>
-                </div>
-              </td>
-            </tr>
+      <div class="partners-stack">
+        <!-- Presidential patronage -->
+        <div class="partner-row">
+          <div class="partner-row__crest">
+            <img src="images/gerp-image.png" alt="Държавен герб на Република България" class="partner-crest-img">
+          </div>
+          <div class="partner-row__divider"></div>
+          <div class="partner-row__content partner-row__content--text">
+            <p data-bg="Събитието се провежда под патронажа" data-en="The event is held under the patronage">Събитието
+              се провежда под патронажа</p>
+            <p data-bg="на Президента на Република България" data-en="of the President of the Republic of Bulgaria">на
+              Президента на Република България</p>
+            <p class="partner-patron-name" data-bg="г-жа Илияна Йотова" data-en="Ms. Iliana Yotova">г-жа Илияна
+              Йотова</p>
+          </div>
+        </div>
 
-            <!-- Partners -->
-            <tr data-tier="partners">
-              <td>
-                <span class="sponsor-tier-name" data-bg="Партньори" data-en="Partners">Партньори</span>
-                <span class="sponsor-tier-count" data-bg="2 организации" data-en="2 organizations">2 организации</span>
-              </td>
-              <td>
-                <div class="sponsor-logos-row">
-                  <div class="sponsor-logo-chip">
-                    <img src="images/varna_coat.png" alt="Община Варна">
-                  </div>
-                  <div class="sponsor-logo-chip">
-                    <img src="images/mobility-partner.png" alt="Top Mobility">
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Organizers -->
+        <div class="partner-row">
+          <div class="partner-row__label">
+            <span data-bg="Организатори" data-en="Organizers">Организатори</span>
+          </div>
+          <div class="partner-row__divider"></div>
+          <div class="partner-row__content partner-row__logos">
+            <div class="partner-logo partner-logo--ict">
+              <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
+                <img src="images/ict_cluster_logo.png" alt="ИКТ Клъстер Варна">
+              </a>
+            </div>
+            <div class="partner-logo partner-logo--bsmepa">
+              <img src="images/bsmepa_logo.png" alt="ИАНМСП">
+            </div>
+            <div class="partner-logo partner-logo--brainpp">
+              <img src="images/brainpp_logo.png" alt="Brain++ AI Factory">
+            </div>
+            <div class="partner-logo partner-logo--arcf">
+              <img src="images/ARCF_logo.svg" alt="ARC Fund">
+            </div>
+          </div>
+        </div>
+
+        <!-- Partners -->
+        <div class="partner-row">
+          <div class="partner-row__label">
+            <span data-bg="Партньори" data-en="Partners">Партньори</span>
+          </div>
+          <div class="partner-row__divider"></div>
+          <div class="partner-row__content partner-row__logos">
+            <div class="partner-logo partner-logo--varna">
+              <img src="images/varna_coat.png" alt="Община Варна">
+              <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
+                data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobility partner -->
+        <div class="partner-row">
+          <div class="partner-row__label">
+            <span data-bg="Мобилити партньор" data-en="Mobility Partner">Мобилити партньор</span>
+          </div>
+          <div class="partner-row__divider"></div>
+          <div class="partner-row__content partner-row__logos">
+            <div class="partner-logo partner-logo--mobility">
+              <img src="images/mobility-partner.png" alt="Top Rent a Car">
+            </div>
+          </div>
+        </div>
       </div>
+
+      <p class="partners-thanks" data-bg="Благодарим на нашите партньори и спонсори за доверието и подкрепата."
+        data-en="Thank you to our partners and sponsors for their trust and support.">Благодарим на нашите партньори и
+        спонсори за доверието и подкрепата.</p>
 
       <!-- Become sponsor CTA -->
       <div style="text-align:center;margin-top:52px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.06)">
@@ -2844,9 +2944,10 @@
           <h2 style="font-size:2.5rem;font-weight:700;color:var(--white);margin-bottom:12px" data-bg="Лектори"
             data-en="Speakers">Лектори</h2>
           <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:24px"
-            data-bg="Практици, учени и стратегически лидери - на една сцена."
-            data-en="Practitioners, researchers, policymakers - on one stage.">Практици, учени и стратегически лидери -
-            на една сцена.</p>
+            data-bg="Практици, учени и стратегически лидери&lt;br class=&quot;hero-desc-break&quot;&gt; от региона на Черно море и света - на една сцена."
+            data-en="Practitioners, researchers and strategic leaders&lt;br class=&quot;hero-desc-break&quot;&gt; from the Black Sea region and beyond - on one stage.">Практици,
+            учени и стратегически лидери<br class="hero-desc-break"> от региона на Черно море и света - на една
+            сцена.</p>
           <div
             style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;margin-bottom:24px">
             <p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.8;margin:0 0 24px 0"
