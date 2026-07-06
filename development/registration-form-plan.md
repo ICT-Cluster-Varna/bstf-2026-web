@@ -108,7 +108,6 @@ https://www.paysera.com/pay/?data=...&sign=...
 - [ ] Получаване на `projectid` и `sign_password`
 
 ### 2. Определяне на цени на билетите
-- [ ] Early Bird — цена в EUR/BGN
 - [ ] Standard — цена в EUR/BGN
 - [ ] VIP / All Access — цена в EUR/BGN
 - [ ] Валута (EUR или BGN)

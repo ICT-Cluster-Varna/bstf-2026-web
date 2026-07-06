@@ -296,6 +296,23 @@
       sessionDescBg: 'С навлизането на NIS2 и Закона за киберсигурност, AI Act и Cyber Resilience Act организациите са изправени пред нова реалност – съответствието вече не е еднократна инициатива, а непрекъснат процес на адаптация. Вместо да се възприемат като административна тежест, тези регулации могат да служат като практическа рамка за управление на риска, повишаване на устойчивостта и изграждане на доверие. Лекцията ще представи концепцията за развиващо се съответствие (continuous compliance) и ще покаже чрез реални примери как регулаторните изисквания могат да бъдат превърнати в инструмент за по-ефективна и устойчива киберсигурност.',
       takeawaysBg: 'Разбиране на връзката между NIS2/Закона за киберсигурност, AI Act, Cyber Resilience Act и съществуващите рамки за управление на информационната сигурност. Практически подход за преминаване от „съответствие на хартия“ към реално управление на риска и повишаване на киберустойчивостта. Идентифициране на общите контроли и процеси, които позволяват едновременно покриване на множество регулаторни изисквания. Изграждане на модел за развиващо се съответствие, който подпомага бизнеса да се адаптира към нови регулации без значително увеличаване на административната тежест.'
     },
+    {
+      id: 'stanislav-simeonov', track: 'cybersecurity',
+      img: 'images/speakers/stanislav-simeonov.jpg', alt: 'Stanislav Simeonov',
+      objectPosition: 'center 15%',
+      name: 'Станислав Симеонов',
+      role: 'Product Manager, Cloud, IT Services &amp; Cybersecurity @ Neterra',
+      topicBg: 'Киберсигурност (съвместна лекция с Александър Минчев)',
+      topicEn: 'Cybersecurity (joint talk with Alexander Minchev)',
+      bioEn: [
+        'Stanislav Simeonov is a Product Manager for "Cloud, IT Services, and Cybersecurity" at Neterra. His previous experience as a Cloud Infrastructure Engineer and Cloud Specialist, focused on AWS services, helps him turn complex data protection and cloud environment requirements into easy-to-implement, scalable products for Neterra customers.',
+        'He holds a master\'s degree in engineering with specializations in "Cyber Investigation" and "Communication Networks," which makes him a skilled analyst of cyber incidents beyond the firewalls.'
+      ],
+      bioBg: [
+        'Станислав Симеонов е Product Manager за „Cloud, IT Services and Cybersecurity“ в Нетера. Предишният му опит като Cloud Infrastructure Engineer и Cloud Specialist, фокусиран върху AWS услуги, му помага да превръща сложните изисквания за защита на данните и облачна инфраструктура в лесни за внедряване, мащабируеми продукти за клиентите на Нетера.',
+        'Той притежава магистърска степен по инженерство със специализации „Разследване на кибер престъпления“ (Cyber Investigation) и „Комуникационни мрежи“, което го прави опитен анализатор на кибер инциденти отвъд защитните стени.'
+      ]
+    },
 
     // ── BioTech ──
     {
@@ -305,7 +322,7 @@
       name: 'Кристина Ескенази',
       role: 'Chair @ Health &amp; Life Sciences Cluster Bulgaria',
       topicBg: 'Бъдещето на здравеопазването: от изследвания към мащабни иновации',
-      topicEn: 'Future of Health &amp; Life Sciences: from research to scalable innovation',
+      topicEn: 'Future of Health &amp; Life Sciences: from research excellence to scalable innovation',
       bioEn: [
         'Kristina Eskenazi is Chair of the Health & Life Sciences Cluster Bulgaria and AI Cluster Bulgaria, Vice President of the Council of European BioRegions (CEBR), and Board Member of KRIB. She is co-founder of Spinoff Bulgaria and actively promotes innovation, biotechnology, AI, and deep-tech entrepreneurship in Europe.'
       ],
@@ -342,8 +359,8 @@
       objectPosition: 'center 18%',
       name: 'Трифон Цеков',
       role: 'CEO @ 3-Fi Medical',
-      topicBg: 'От изолирани данни до клинични доказателства: федерирано обучение в медицинския AI',
-      topicEn: 'From Data Silos to Clinical Evidence: Federated Learning for Medical AI',
+      topicBg: 'От изолирани данни до клинични доказателства: федерирано обучение в медицинския софтуер',
+      topicEn: 'From Data Silos to Clinical Evidence: Federated Learning for Medical Software',
       bioEn: [
         'Trifon Tsekov is CEO of 3-Fi Medical, a former Director of Hardware R&D and radar systems architect with 10+ years in embedded systems, real-time signal processing, and rugged defence hardware. An AI Cluster Bulgaria member, he applies high-reliability engineering to regulated medical AI.'
       ],

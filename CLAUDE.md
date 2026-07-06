@@ -81,8 +81,8 @@ Every deployable file uses static `?v=YYYYMMDD` cache-busting query strings on s
 - `3d-model/floorplan3d_v2.html` — all `<script src="...?v=YYYYMMDD">` tags
 - `speaker.html` — `data/speakers-data.js?v=YYYYMMDD`
 - `speakers.html` — `data/speakers-data.js?v=YYYYMMDD`
-- `../bstf-2026-web-modern/index.html` — `css/modern.css?v=YYYYMMDD`
 - `index.html`, `expo.html`, `speakers.html`, `sponsors.html` — `og:image`/`twitter:image` URL (`images/og-cover.jpg?v=YYYYMMDD`), only if `og-cover.jpg` itself changes
+- **All local image references** (`<img src="images/...">` and CSS `background:url('images/...')`) across `index.html`, `expo.html`, and `sponsors.html` — every one carries `?v=YYYYMMDD` (added 2026-07-03, per client request since deploys are manual via Cloudflare and edge-cached images were showing stale). Bump every one of these when its file changes; new `<img>`/`url()` references to `images/` must get a `?v=YYYYMMDD` from the start.
 
 If a same-day edit needs a second cache-bust, append a suffix instead of faking a date, e.g. `20260702-2`.
 

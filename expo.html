@@ -13,19 +13,25 @@
 <meta property="og:title" content="Изложение и щандове - BSTF 2026">
 <meta property="og:description" content="Black Sea Technology Forum 2026 - Exhibition Floor Plan & Booth Types">
 <meta property="og:url" content="https://bstf2026.bg/expo.html">
-<meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+<meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Изложение и щандове - BSTF 2026">
 <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Exhibition Floor Plan & Booth Types">
-<meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+<meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{--navy:#0B3954;--teal:#2CA6B3;--light-blue:#EDF7FA;--white:#FFFFFF;--light-gray:#F5F7F9;--dark:#1a1a2e;--text:#333;--text-light:#666;--radius:12px;--radius-sm:8px;--transition:0.3s ease;--shadow:0 4px 20px rgba(0,0,0,0.08);--shadow-lg:0 8px 40px rgba(0,0,0,0.12)}
+@view-transition{navigation:auto}
+::view-transition-group(root){animation-duration:.45s;animation-timing-function:cubic-bezier(0.16,1,0.3,1)}
+::view-transition-old(root){animation-name:bstf-vt-out}
+::view-transition-new(root){animation-name:bstf-vt-in}
+@keyframes bstf-vt-out{to{opacity:0;transform:translateY(-2%)}}
+@keyframes bstf-vt-in{from{opacity:0;transform:translateY(3%)}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;background:var(--white)}
@@ -60,7 +66,7 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}.mobile-nav a.btn-primary{color:var(--white)!important;border-bottom:none}
 .mobile-nav a.active{color:var(--teal)}
 .page-hero{position:relative;padding:140px 24px 80px;background:linear-gradient(135deg,rgba(11,57,84,0.95) 0%,rgba(44,166,179,0.88) 100%);text-align:center;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png') center/cover no-repeat;opacity:0.15;z-index:0}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png?v=20260706') center/cover no-repeat;opacity:0.15;z-index:0}
 .page-hero .container{position:relative;z-index:1}
 .page-hero h1{font-size:3rem;font-weight:700;color:var(--white);margin-bottom:16px}
 .page-hero p{font-size:1.2rem;color:rgba(255,255,255,0.85);max-width:650px;margin:0 auto}
@@ -102,7 +108,7 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 
 /* Floor plan */
-.floor-plan-section{padding:80px 0;background:var(--white)}
+.floor-plan-section{padding:80px 0;background:var(--white);scroll-margin-top:88px}
 .floor-plan-wrap{background:var(--white);margin-bottom:48px}
 .fp-stage{position:relative;width:100%;height:clamp(480px,72vh,800px);border-radius:var(--radius-sm);overflow:hidden;background:var(--light-blue);box-shadow:var(--shadow)}
 .fp-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
@@ -205,12 +211,12 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 </section>
 
 <!-- Floor Plan -->
-<section class="floor-plan-section">
+<section class="floor-plan-section" id="floor-plan">
   <div class="container">
     <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:32px" data-bg="Схема на изложението" data-en="Exhibition Floor Plan">Схема на изложението</h2>
     <div class="floor-plan-wrap">
       <div class="fp-stage" id="fp-stage">
-        <img class="fp-poster" src="images/new-preview.png" alt="3D схема на изложението" loading="lazy">
+        <img class="fp-poster" src="images/new-preview.png?v=20260706" alt="3D схема на изложението" loading="lazy">
         <button class="fp-activate" id="fp-activate" aria-label="Зареди интерактивния 3D изглед">
           <span class="fp-3d-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -320,7 +326,6 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <div class="form-group"><label data-bg="Телефон" data-en="Phone">Телефон</label><input type="tel" placeholder="+359 ..."></div>
       <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
         <select>
-          <option data-bg="Early Bird - 199 EUR" data-en="Early Bird - 199 EUR">Early Bird - 199 EUR</option>
           <option data-bg="Full Event - 199 EUR" data-en="Full Event - 199 EUR">Full Event - 199 EUR</option>
           <option data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
           <option data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR</option>
@@ -453,7 +458,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260702';
+    iframe.src = '3d-model/floorplan3d_v2.html?v=20260706';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');

@@ -14,13 +14,13 @@
   <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
   <meta property="og:url" content="https://bstf2026.bg/">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -870,8 +870,9 @@
     }
 
     .halls-section {
-      padding: 80px 0;
-      background: var(--white)
+      padding: 100px 0;
+      background: var(--white);
+      position: relative
     }
 
     .halls-grid {
@@ -880,34 +881,158 @@
       gap: 24px
     }
 
-    .hall-card {
-      background: var(--light-gray);
-      border-radius: var(--radius);
-      padding: 32px;
-      text-align: center;
-      transition: var(--transition)
+    .halls-kicker {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px
     }
 
-    .hall-card:hover {
-      background: var(--light-blue);
-      transform: translateY(-2px)
+    .halls-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px
     }
 
-    .hall-card .hall-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px
+    .halls-list::before {
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: 36px;
+      bottom: 36px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--navy));
+      opacity: 0.22
     }
 
-    .hall-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
+    .hall-entry {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 32px;
+      padding: 36px 0
+    }
+
+    .hall-entry+.hall-entry {
+      border-top: 1px solid var(--light-gray)
+    }
+
+    .hall-entry-index {
+      flex: none;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--hall-accent, var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--hall-accent, var(--teal));
+      transition: background 0.3s ease, color 0.3s ease
+    }
+
+    .hall-entry:hover .hall-entry-index {
+      background: var(--hall-accent, var(--teal));
+      color: var(--white)
+    }
+
+    .hall-entry-body {
+      flex: 1;
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    .hall-entry-text {
+      flex: 1 1 320px
+    }
+
+    .hall-entry-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--navy);
-      margin-bottom: 8px
+      margin: 0 0 8px
     }
 
-    .hall-card p {
-      font-size: 0.9rem;
-      color: var(--text-light)
+    .hall-entry-desc {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0
+    }
+
+    .hall-entry-focus {
+      flex: 1 1 280px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 20px 22px;
+      border-radius: 14px 4px 14px 4px;
+      background: var(--hall-accent-bg, var(--light-blue));
+      border-left: 3px solid var(--hall-accent, var(--teal));
+      transition: transform 0.3s ease, box-shadow 0.3s ease
+    }
+
+    .hall-entry:hover .hall-entry-focus {
+      transform: translateX(4px);
+      box-shadow: 0 8px 24px rgba(11, 57, 84, 0.1)
+    }
+
+    .hall-entry-focus svg {
+      flex: none;
+      width: 22px;
+      height: 22px;
+      margin-top: 2px
+    }
+
+    .hall-entry-focus p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--navy)
+    }
+
+    @media(max-width:768px) {
+      .hall-entry-index {
+        width: 56px;
+        height: 56px;
+        font-size: 1.05rem
+      }
+
+      .halls-list::before {
+        left: 27px
+      }
+
+      .hall-entry {
+        gap: 20px;
+        padding: 28px 0
+      }
+
+      .hall-entry-body {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px
+      }
+
+      .hall-entry-text,
+      .hall-entry-focus {
+        flex: none;
+        width: auto
+      }
+
+      .hall-entry-name {
+        font-size: 1.15rem
+      }
     }
 
     .tickets-section {
@@ -926,7 +1051,7 @@
       border-radius: var(--radius);
       padding: 46px 28px 28px;
       text-align: center;
-      transition: var(--transition);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid rgba(44, 166, 179, 0.15);
       position: relative;
       display: flex;
@@ -937,18 +1062,16 @@
 
     .ticket-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 14px 48px rgba(11, 57, 84, 0.16)
+      box-shadow: 0 16px 50px rgba(11, 57, 84, 0.18)
     }
 
-    .ticket-card[data-ticket="early-bird"],
     .ticket-card[data-ticket="vip"] {
       border: 2px solid var(--teal);
       box-shadow: 0 6px 32px rgba(44, 166, 179, 0.18)
     }
 
-    .ticket-card[data-ticket="early-bird"]:hover,
     .ticket-card[data-ticket="vip"]:hover {
-      box-shadow: 0 16px 52px rgba(44, 166, 179, 0.32)
+      box-shadow: 0 18px 54px rgba(44, 166, 179, 0.34)
     }
 
     .ticket-card.active {
@@ -988,7 +1111,7 @@
       text-align: center;
       border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;
       z-index: 2;
-      box-shadow: none
+      box-shadow: 0 2px 10px rgba(11, 57, 84, 0.15)
     }
 
     .ticket-ribbon-corner {
@@ -1008,7 +1131,7 @@
       top: 20px;
       left: -22px;
       width: 110px;
-      background: var(--navy);
+      background: linear-gradient(135deg, var(--navy) 0%, #0f4a68 100%);
       color: var(--white);
       font-size: 0.58rem;
       font-weight: 700;
@@ -1017,7 +1140,7 @@
       transform: rotate(-45deg);
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25)
     }
 
     .ticket-header-row {
@@ -1085,150 +1208,419 @@
       background: var(--white)
     }
 
-    .events-grid {
+    .events-timeline {
+      margin-top: 48px
+    }
+
+    .events-timeline__rail {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      margin-bottom: 20px
+    }
+
+    .events-timeline__rail::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(44, 166, 179, 0.15), var(--teal) 50%, rgba(44, 166, 179, 0.15));
+      z-index: 0
+    }
+
+    .events-timeline__dot {
+      position: relative;
+      z-index: 1;
+      justify-self: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px rgba(44, 166, 179, 0.35)
+    }
+
+    .events-timeline__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px
     }
 
     .event-card {
+      display: flex;
+      flex-direction: column;
       background: var(--light-gray);
-      border-radius: var(--radius);
-      padding: 32px;
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid transparent;
       transition: var(--transition)
     }
 
     .event-card:hover {
-      background: var(--light-blue);
-      transform: translateY(-2px)
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(44, 166, 179, 0.25);
+      transform: translateY(-4px)
+    }
+
+    .event-card__icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(44, 166, 179, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px
     }
 
     .event-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1.15rem;
+      font-weight: 700;
       color: var(--navy);
       margin-bottom: 8px
     }
 
     .event-card .event-meta {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--teal);
-      font-weight: 500;
-      margin-bottom: 12px
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px
     }
 
-    .event-card p {
-      font-size: 0.9rem;
-      color: var(--text-light)
+    .event-card p:not(.event-meta) {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.55
     }
 
-    .expo-section {
-      padding: 80px 0;
-      background: var(--light-gray)
-    }
-
-    .expo-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px
-    }
-
-    .expo-features {
-      display: flex;
-      flex-direction: column;
-      gap: 16px
-    }
-
-    .expo-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start
-    }
-
-    .expo-feature .feat-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
+    /* ===== Expo & Startups (v3 — matches venue/speakers card language) ===== */
+    .expo-v2 {
+      position: relative;
+      padding: 100px 0;
       background: var(--light-blue);
+      overflow: hidden
+    }
+
+    .expo-v2__glow {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      top: -180px;
+      background: radial-gradient(circle, rgba(44, 166, 179, 0.16) 0%, rgba(44, 166, 179, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none
+    }
+
+    .expo-v2__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .expo-v2__title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px
+    }
+
+    .expo-v2__title .highlight {
+      color: var(--teal)
+    }
+
+    .expo-v2__desc {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 460px
+    }
+
+    .expo-v2__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .expo-v2__cta svg {
+      transition: transform 0.25s ease
+    }
+
+    .expo-v2__cta:hover svg {
+      transform: translateX(4px)
+    }
+
+    .expo-v2__panel {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(44, 166, 179, 0.15);
+      padding: 32px
+    }
+
+    .expo-v2__panel h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--light-gray)
+    }
+
+    .expo-v2__row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--light-gray)
+    }
+
+    .expo-v2__row:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none
+    }
+
+    .expo-v2__row-icon {
+      width: 24px;
+      height: 24px;
+      margin-top: 1px;
+      background: var(--teal);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
       flex-shrink: 0
     }
 
-    .expo-feature h3 {
+    .expo-v2__row span {
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 500;
       color: var(--navy);
-      margin-bottom: 4px
+      line-height: 1.5
     }
 
-    .expo-feature p {
-      font-size: 0.85rem;
-      color: var(--text-light)
+    @media(max-width:900px) {
+      .expo-v2__inner {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+    }
+
+    @media(max-width:768px) {
+      .expo-v2 {
+        padding: 70px 0
+      }
+
+      .expo-v2__title {
+        font-size: 1.9rem
+      }
+
+      .expo-v2__panel {
+        padding: 24px
+      }
     }
 
     .venue-section {
-      padding: 100px 0 80px;
-      background: var(--white);
+      padding: 0;
+      background: var(--navy);
       position: relative;
       overflow: hidden
     }
 
     .venue-bg {
       position: absolute;
-      inset: -12px;
-      background: url('images/varna_seaside_bg.jpg?v=20260703') center/cover no-repeat;
-      opacity: 0.45;
-      filter: blur(8px)
+      inset: 0;
+      background: url('images/varna_seaside_bg.jpg?v=20260706') center/cover no-repeat
     }
 
-    .venue-overlay {
+    .venue-scrim {
       position: absolute;
       inset: 0;
-      background: none
+      background: linear-gradient(115deg, rgba(11, 57, 84, .96) 0%, rgba(11, 57, 84, .88) 26%, rgba(11, 57, 84, .5) 52%, rgba(11, 57, 84, .18) 72%, rgba(11, 57, 84, .4) 100%)
     }
 
-    .venue-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
+    .venue-wrap {
       position: relative;
-      z-index: 2
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px
     }
 
-    .venue-image {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg)
-    }
-
-    .venue-details h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 12px
-    }
-
-    .venue-details p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 16px
-    }
-
-    .venue-info-list {
+    .venue-top {
       display: flex;
-      flex-direction: column;
-      gap: 12px
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 56px;
+      padding: 96px 0 88px
     }
 
-    .venue-info-item {
+    .venue-heading-block {
+      flex: 1 1 420px;
+      min-width: 280px
+    }
+
+    .venue-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      line-height: 1.16;
+      color: var(--white);
+      border-left: 4px solid var(--teal);
+      padding-left: 26px;
+      margin: 0
+    }
+
+    .venue-heading .venue-accent {
+      color: var(--teal)
+    }
+
+    .venue-pass {
+      position: relative;
+      flex: 0 0 380px;
+      max-width: 380px;
+      width: 100%;
+      background: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 24px 55px rgba(0, 0, 0, .38);
+      transform: rotate(-1.4deg);
+      overflow: hidden
+    }
+
+    .venue-pass::before {
+      content: '';
+      display: block;
+      height: 6px;
+      background: linear-gradient(90deg, var(--teal), var(--navy))
+    }
+
+    .venue-pass-body {
+      padding: 28px 28px 8px
+    }
+
+    .venue-pass-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px dashed rgba(11, 57, 84, .18)
+    }
+
+    .venue-pass-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 26px
+    }
+
+    .venue-pass-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--light-blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .venue-pass-row strong {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: block
+    }
+
+    .venue-pass-row span {
+      font-size: .82rem;
+      color: var(--text-light)
+    }
+
+    .venue-pass-stub {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 28px;
+      background: var(--light-blue);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.02rem;
+      text-decoration: none;
+      border-top: 2px dashed rgba(11, 57, 84, .22);
+      transition: background .2s ease, color .2s ease
+    }
+
+    .venue-pass-stub svg {
+      transition: transform .2s ease
+    }
+
+    .venue-pass-stub:hover {
+      background: var(--teal);
+      color: var(--white)
+    }
+
+    .venue-pass-stub:hover svg {
+      transform: translateX(4px)
+    }
+
+    .venue-amenities {
+      position: relative;
+      z-index: 2;
+      background: rgba(11, 57, 84, .55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 2px solid var(--teal)
+    }
+
+    .venue-amenities-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px 32px
+    }
+
+    .venue-amenity {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.9)
+      color: var(--white);
+      font-size: .88rem;
+      font-weight: 500;
+      position: relative;
+      padding-right: 32px
+    }
+
+    .venue-amenity:last-child {
+      padding-right: 0
+    }
+
+    .venue-amenity:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, .25)
     }
 
     .prefooter-cta {
@@ -1592,6 +1984,18 @@
       .footer-grid {
         grid-template-columns: 1fr 1fr
       }
+
+      .events-timeline__rail {
+        display: none
+      }
+
+      .events-timeline {
+        margin-top: 8px
+      }
+
+      .events-timeline__grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
     }
 
     @media(max-width:768px) {
@@ -1643,20 +2047,6 @@
       .hero-right-top {
         align-items: flex-start;
         gap: 2px
-      }
-
-      .hall-row {
-        flex-direction: column;
-        gap: 8px;
-        align-items: stretch
-      }
-
-      .hall-row>div {
-        flex: none
-      }
-
-      .hall-row>div>p {
-        text-align: center
       }
 
       .hero-date-lg {
@@ -1717,8 +2107,21 @@
         grid-template-columns: 1fr
       }
 
-      .events-grid {
-        grid-template-columns: 1fr
+      .events-timeline__rail {
+        display: none
+      }
+
+      .events-timeline {
+        margin-top: 8px
+      }
+
+      .events-timeline__grid {
+        grid-template-columns: 1fr;
+        gap: 16px
+      }
+
+      .event-card {
+        padding: 24px 20px
       }
 
       .footer-grid {
@@ -1749,9 +2152,8 @@
         font-size: 1.75rem !important
       }
 
-      .venue-inner-content {
-        padding: 0 20px !important;
-        min-height: auto !important
+      .venue-wrap {
+        padding: 0 20px !important
       }
 
       .hero h1 {
@@ -2101,55 +2503,37 @@
 
     /* === RESPONSIVE: Mobile fixes for custom sections === */
     @media(max-width:768px) {
-      .halls-section .container>div[style*="display:flex"] {
-        flex-direction: column !important;
-        gap: 32px !important
+      .venue-top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 36px;
+        padding: 56px 0 40px
       }
 
-      .halls-section .container>div>div[style*="flex:1"] {
-        flex: none !important;
-        width: 100% !important
+      .venue-heading {
+        font-size: 1.9rem;
+        padding-left: 18px
       }
 
-      .halls-section .container>div>div[style*="flex:1"] div[style*="display:flex;flex-direction:column"] {
-        gap: 16px !important
+      .venue-pass {
+        flex: none;
+        max-width: 100%;
+        transform: none
       }
 
-      .expo-section .container>div[style*="display:flex"] {
-        flex-direction: column !important;
-        gap: 32px !important
+      .venue-amenities-inner {
+        padding: 16px 20px;
+        justify-content: flex-start;
+        gap: 12px 0
       }
 
-      .expo-section .container>div>div[style*="flex:1"] {
-        flex: none !important;
-        width: 100% !important
+      .venue-amenity {
+        flex: 0 0 50%;
+        padding-right: 0
       }
 
-      .venue-section div[style*="display:flex"][style*="justify-content:space-between"] {
-        flex-direction: column !important;
-        gap: 24px !important
-      }
-
-      .venue-section div[style*="flex:0 0 380px"] {
-        flex: none !important;
-        width: 100% !important
-      }
-
-      .venue-section div[style*="flex:1;padding-top"] {
-        padding-top: 0 !important
-      }
-
-      .venue-section h2 {
-        font-size: 2rem !important
-      }
-
-      .venue-section div[style*="display:flex;gap:12px;flex-wrap:wrap"] {
-        gap: 8px !important
-      }
-
-      .venue-section div[style*="padding:8px 16px"] {
-        padding: 6px 12px !important;
-        font-size: 0.8rem !important
+      .venue-amenity:not(:last-child)::after {
+        display: none
       }
 
       .tickets-grid {
@@ -2228,17 +2612,6 @@
       .hero-cta-wrap {
         min-height: auto !important
       }
-    }
-
-    .hall-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-width 0.3s ease;
-      cursor: default
-    }
-
-    .hall-card:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 8px 24px rgba(44, 166, 179, 0.15);
-      border-left-width: 6px
     }
 
     .stream-card {
@@ -2320,7 +2693,7 @@
         <div class="hero-content">
           <!-- Left: Title -->
           <div class="hero-left">
-            <img src="images/Connexus - BLACK.svg?v=20260703" alt="Connexus" class="logo-connexus">
+            <img src="images/Connexus - BLACK.svg?v=20260706" alt="Connexus" class="logo-connexus">
             <h1>
               <span class="title-light" data-bg="Черноморски" data-en="Black Sea">Black Sea</span>
               <span data-bg="ТЕХНОЛОГИЧЕН" data-en="TECHNOLOGY">TECHNOLOGY</span><br>
@@ -2329,7 +2702,7 @@
           </div>
           <!-- Center: 3D Visual -->
           <div class="hero-center">
-            <img src="images/hero_3d.png?v=20260703" alt="BSTF 2026 Visual">
+            <img src="images/hero_3d.png?v=20260706" alt="BSTF 2026 Visual">
           </div>
           <!-- Right: Date, Location -->
           <div class="hero-right">
@@ -2357,9 +2730,9 @@
     <!-- CTA Banner -->
     <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
       <div style="max-width:800px;margin:0 auto">
-        <button onclick="openModal('register-modal','early-bird')" class="btn btn-primary"
+        <button onclick="openModal('register-modal','standard')" class="btn btn-primary"
           style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
-          data-bg="КУПИ БИЛЕТ (EARLY BIRD)" data-en="BUY TICKET (EARLY BIRD)">КУПИ БИЛЕТ (EARLY BIRD)</button>
+          data-bg="КУПИ БИЛЕТ" data-en="BUY TICKET">КУПИ БИЛЕТ</button>
         <h2
           style="font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--navy);margin-bottom:16px"
           data-bg="Там, където Изтокът среща Западните иновации." data-en="Where East Meets Western Innovation.">Там,
@@ -2376,94 +2749,76 @@
   <!-- SECTION 4: Halls -->
   <section class="halls-section">
     <div class="container">
+      <span class="halls-kicker" data-bg="Локации" data-en="Venues">Локации</span>
       <h2 class="section-title animate-on-scroll" data-bg="Три зали. Три направления."
         data-en="Three halls. Three tracks.">Три зали. Три направления.</h2>
-      <div style="display:flex;flex-direction:column;gap:24px;margin-top:32px">
-        <div class="hall-row" style="display:flex;gap:60px;align-items:center">
-          <div style="flex:1">
-            <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
-              data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала „България"</p>
-            <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0"
-              data-bg="Основната сцена за хоризонтални технологии - AI, IoT, роботика, киберсигурност."
-              data-en="The main stage for horizontal technologies - AI, IoT, robotics, cybersecurity.">Основната сцена
-              за хоризонтални технологии - AI, IoT, роботика, киберсигурност.</p>
-          </div>
-          <div style="flex:1">
-            <div class="animate-on-scroll hall-card"
-              style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
-              <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
-                <div
-                  style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <path
-                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-              </div>
-              <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center"
-                data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение."
+      <div class="halls-list">
+        <div class="hall-entry animate-on-scroll"
+          style="--hall-accent:var(--teal);--hall-accent-bg:rgba(44,166,179,0.08)">
+          <div class="hall-entry-index"><span>01</span></div>
+          <div class="hall-entry-body">
+            <div class="hall-entry-text">
+              <h3 class="hall-entry-name" data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала
+                „България"</h3>
+              <p class="hall-entry-desc" data-bg="Основната сцена за хоризонтални технологии - AI, IoT, роботика, киберсигурност."
+                data-en="The main stage for horizontal technologies - AI, IoT, robotics, cybersecurity.">Основната сцена
+                за хоризонтални технологии - AI, IoT, роботика, киберсигурност.</p>
+            </div>
+            <div class="hall-entry-focus">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hall-accent)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+              <p data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение."
                 data-en="AI, IoT, robotics, cybersecurity and other broad-application technologies.">AI, IoT,
                 роботизация, киберсигурност и други технологии с широко приложение.</p>
             </div>
           </div>
         </div>
-        <div class="hall-row" style="display:flex;gap:60px;align-items:center">
-          <div style="flex:1">
-            <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
-              data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала „Черно море"</p>
-            <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0"
-              data-bg="Заедно с фоайето - домакин на изложението и стартъп зоната."
-              data-en="Together with the foyer - hosting the expo and startup zone.">Заедно с фоайето - домакин на
-              изложението и стартъп зоната.</p>
-          </div>
-          <div style="flex:1">
-            <div class="animate-on-scroll hall-card"
-              style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
-              <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
-                <div
-                  style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
-                </div>
-              </div>
-              <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center"
-                data-bg="Фирми изложители и секция за стартъпи - демонстрации, контакти и партньорства."
+        <div class="hall-entry animate-on-scroll"
+          style="--hall-accent:var(--navy);--hall-accent-bg:rgba(11,57,84,0.06)">
+          <div class="hall-entry-index"><span>02</span></div>
+          <div class="hall-entry-body">
+            <div class="hall-entry-text">
+              <h3 class="hall-entry-name" data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала
+                „Черно море"</h3>
+              <p class="hall-entry-desc" data-bg="Заедно с фоайето - домакин на изложението и стартъп зоната."
+                data-en="Together with the foyer - hosting the expo and startup zone.">Заедно с фоайето - домакин на
+                изложението и стартъп зоната.</p>
+            </div>
+            <div class="hall-entry-focus">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hall-accent)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <p data-bg="Фирми изложители и секция за стартъпи - демонстрации, контакти и партньорства."
                 data-en="Company exhibitors and startup section - demos, contacts and partnerships.">Фирми изложители и
                 секция за стартъпи - демонстрации, контакти и партньорства.</p>
             </div>
           </div>
         </div>
-        <div class="hall-row" style="display:flex;gap:60px;align-items:center">
-          <div style="flex:1">
-            <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
-              data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</p>
-            <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0"
-              data-bg="Паралелната програма със секторни и вертикални теми."
-              data-en="The parallel programme with sector and vertical topics.">Паралелната програма със секторни и
-              вертикални теми.</p>
-          </div>
-          <div style="flex:1">
-            <div class="animate-on-scroll hall-card"
-              style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
-              <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
-                <div
-                  style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </div>
-              </div>
-              <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center"
-                data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство."
+        <div class="hall-entry animate-on-scroll"
+          style="--hall-accent:var(--teal);--hall-accent-bg:rgba(44,166,179,0.08)">
+          <div class="hall-entry-index"><span>03</span></div>
+          <div class="hall-entry-body">
+            <div class="hall-entry-text">
+              <h3 class="hall-entry-name" data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</h3>
+              <p class="hall-entry-desc" data-bg="Паралелната програма със секторни и вертикални теми."
+                data-en="The parallel programme with sector and vertical topics.">Паралелната програма със секторни и
+                вертикални теми.</p>
+            </div>
+            <div class="hall-entry-focus">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hall-accent)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <p data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство."
                 data-en="Marine technologies, biotechnologies, smart agriculture, tourism, industry/manufacturing.">
                 Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство.</p>
             </div>
@@ -2486,56 +2841,56 @@
         style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:0 auto">
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/ai.png?v=20260703" alt="AI"
+          <img src="images/streams/ai.png?v=20260706" alt="AI"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
             data-en="Artificial Intelligence">Изкуствен интелект</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/transport.png?v=20260703" alt="Transport"
+          <img src="images/streams/transport.png?v=20260706" alt="Transport"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
             data-en="Future of Transport">Транспорт на бъдещето</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/smart_city.png?v=20260703" alt="Smart City"
+          <img src="images/streams/smart_city.png?v=20260706" alt="Smart City"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
             град</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/cybersecurity.png?v=20260703" alt="Cybersecurity"
+          <img src="images/streams/cybersecurity.png?v=20260706" alt="Cybersecurity"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
             data-en="Cybersecurity">Киберсигурност</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/automation.png?v=20260703" alt="Automation"
+          <img src="images/streams/automation.png?v=20260706" alt="Automation"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация" data-en="Automation">
             Автоматизация</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/agritech.png?v=20260703" alt="AgriTech"
+          <img src="images/streams/agritech.png?v=20260706" alt="AgriTech"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
           </div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/marine_tech.png?v=20260703" alt="Marine Tech"
+          <img src="images/streams/marine_tech.png?v=20260706" alt="Marine Tech"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
             data-en="Marine Tech">Морски технологии</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/biotech.png?v=20260703" alt="BioTech"
+          <img src="images/streams/biotech.png?v=20260706" alt="BioTech"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
           </div>
@@ -2561,7 +2916,7 @@
         <!-- Presidential patronage -->
         <div class="partner-row">
           <div class="partner-row__crest">
-            <img src="images/gerp-image.png?v=20260703" alt="Държавен герб на Република България" class="partner-crest-img">
+            <img src="images/gerp-image.png?v=20260706" alt="Държавен герб на Република България" class="partner-crest-img">
           </div>
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__content--text">
@@ -2583,17 +2938,17 @@
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--ict">
               <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                <img src="images/ict_cluster_logo.png?v=20260703" alt="ИКТ Клъстер Варна">
+                <img src="images/ict_cluster_logo.png?v=20260706" alt="ИКТ Клъстер Варна">
               </a>
             </div>
             <div class="partner-logo partner-logo--bsmepa">
-              <img src="images/bsmepa_logo.png?v=20260703" alt="ИАНМСП">
+              <img src="images/bsmepa_logo.png?v=20260706" alt="ИАНМСП">
             </div>
             <div class="partner-logo partner-logo--brainpp">
-              <img src="images/brainpp_logo.png?v=20260703" alt="Brain++ AI Factory">
+              <img src="images/brainpp_logo.png?v=20260706" alt="Brain++ AI Factory">
             </div>
             <div class="partner-logo partner-logo--arcf">
-              <img src="images/ARCF_logo.svg?v=20260703" alt="ARC Fund">
+              <img src="images/ARCF_logo.svg?v=20260706" alt="ARC Fund">
             </div>
           </div>
         </div>
@@ -2606,7 +2961,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--varna">
-              <img src="images/varna_coat.png?v=20260703" alt="Община Варна">
+              <img src="images/varna_coat.png?v=20260706" alt="Община Варна">
               <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                 data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
             </div>
@@ -2621,7 +2976,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--mobility">
-              <img src="images/mobility-partner.png?v=20260703" alt="Top Rent a Car">
+              <img src="images/mobility-partner.png?v=20260706" alt="Top Rent a Car">
             </div>
           </div>
         </div>
@@ -2637,8 +2992,8 @@
           data-bg="Заинтересовани от спонсорство? Разгледайте пакетите ни."
           data-en="Interested in sponsorship? Explore our packages.">Заинтересовани от спонсорство? Разгледайте пакетите
           ни.</p>
-        <a href="sponsors.html" class="btn btn-outline btn-sm" data-bg="Пакети за спонсори"
-          data-en="Sponsorship packages">Пакети за спонсори</a>
+        <a href="sponsors.html" class="btn btn-outline btn-sm" data-bg="Стани партньор &rarr;"
+          data-en="Become a Partner &rarr;">Стани партньор &rarr;</a>
       </div>
     </div>
   </section>
@@ -2902,34 +3257,73 @@
   <!-- SECTION 6: Side Events -->
   <section class="side-events-section" style="border-top:1px solid rgba(44,166,179,0.12)">
     <div class="container">
-      <h2 class="section-title text-center" data-bg="Съпътстващи събития, които превръщат контактите в сътрудничества."
+      <h2 class="section-title text-center animate-on-scroll"
+        data-bg="Съпътстващи събития, които превръщат контактите в сътрудничества."
         data-en="Side events that turn contacts into collaborations.">Съпътстващи събития, които превръщат контактите в
         сътрудничества.</h2>
-      <div class="events-grid">
-        <div class="event-card animate-on-scroll">
-          <h3 data-bg="TechStart Motivator" data-en="TechStart Motivator">TechStart Motivator</h3>
-          <p class="event-meta" data-bg="5 октомври" data-en="Oct 5">5 октомври</p>
-          <p data-bg="Вдъхновяваща сесия за стартиращи компании и предприемачи."
-            data-en="Inspirational session for startups and entrepreneurs.">Вдъхновяваща сесия за стартиращи компании и
-            предприемачи.</p>
+
+      <div class="events-timeline">
+        <div class="events-timeline__rail" aria-hidden="true">
+          <span class="events-timeline__dot"></span>
+          <span class="events-timeline__dot"></span>
+          <span class="events-timeline__dot"></span>
+          <span class="events-timeline__dot"></span>
         </div>
-        <div class="event-card animate-on-scroll">
-          <h3 data-bg="Гала коктейл" data-en="Gala Cocktail">Гала коктейл</h3>
-          <p class="event-meta" data-bg="5 октомври вечер" data-en="Oct 5 evening">5 октомври вечер</p>
-          <p data-bg="Гала коктейл за нетуъркинг и забавление." data-en="Gala cocktail for networking and fun.">Гала
-            коктейл за нетуъркинг и забавление.</p>
-        </div>
-        <div class="event-card animate-on-scroll">
-          <h3 data-bg="Парти" data-en="Party">Парти</h3>
-          <p class="event-meta" data-bg="6 октомври вечер" data-en="Oct 6 evening">6 октомври вечер</p>
-          <p data-bg="Парти за нетуъркинг и забавление." data-en="Party for networking and fun.">Парти за нетуъркинг и
-            забавление.</p>
-        </div>
-        <div class="event-card animate-on-scroll">
-          <h3 data-bg="Училище за успех" data-en="Success School">Училище за успех</h3>
-          <p class="event-meta" data-bg="7 октомври" data-en="Oct 7">7 октомври</p>
-          <p data-bg="Практически уъркшопи, менторство и обучение."
-            data-en="Hands-on workshops, mentorship and training.">Практически уъркшопи, менторство и обучение.</p>
+
+        <div class="events-timeline__grid">
+          <div class="event-card animate-on-scroll">
+            <div class="event-card__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <p class="event-meta" data-bg="5 октомври" data-en="Oct 5">5 октомври</p>
+            <h3 data-bg="TechStart Motivator" data-en="TechStart Motivator">TechStart Motivator</h3>
+            <p data-bg="Вдъхновяваща сесия за стартиращи компании и предприемачи."
+              data-en="Inspirational session for startups and entrepreneurs.">Вдъхновяваща сесия за стартиращи
+              компании и предприемачи.</p>
+          </div>
+
+          <div class="event-card animate-on-scroll">
+            <div class="event-card__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <p class="event-meta" data-bg="5 октомври вечер" data-en="Oct 5 evening">5 октомври вечер</p>
+            <h3 data-bg="Гала коктейл" data-en="Gala Cocktail">Гала коктейл</h3>
+            <p data-bg="Гала коктейл за нетуъркинг и забавление." data-en="Gala cocktail for networking and fun.">
+              Гала коктейл за нетуъркинг и забавление.</p>
+          </div>
+
+          <div class="event-card animate-on-scroll">
+            <div class="event-card__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <p class="event-meta" data-bg="6 октомври вечер" data-en="Oct 6 evening">6 октомври вечер</p>
+            <h3 data-bg="Парти" data-en="Party">Парти</h3>
+            <p data-bg="Парти за нетуъркинг и забавление." data-en="Party for networking and fun.">Парти за
+              нетуъркинг и забавление.</p>
+          </div>
+
+          <div class="event-card animate-on-scroll">
+            <div class="event-card__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <p class="event-meta" data-bg="7 октомври" data-en="Oct 7">7 октомври</p>
+            <h3 data-bg="Училище за успех" data-en="Success School">Училище за успех</h3>
+            <p data-bg="Практически уъркшопи, менторство и обучение."
+              data-en="Hands-on workshops, mentorship and training.">Практически уъркшопи, менторство и обучение.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -2980,50 +3374,62 @@
   </section>
 
   <!-- SECTION 8: Expo -->
-  <section class="expo-section" id="expo" style="padding:80px 0;background:var(--light-blue)">
-    <div class="container">
-      <div style="display:flex;gap:60px;align-items:flex-start">
-        <!-- Left side: Title + Description -->
-        <div style="flex:1">
-          <h2 class="section-title animate-on-scroll"
-            data-bg="Експо зона.<br>Зона за стартиращи компании.<br>Live demos."
-            data-en="Expo Zone.<br>Startup Zone.<br>Live demos.">Експо зона.<br>Зона за стартиращи компании.<br>Live
-            demos.</h2>
-          <p style="color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:460px"
-            data-bg="Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне."
-            data-en="Meet solution providers in AI, robotics, IoT and vertical sectors. Startups get a dedicated zone + pitch time.">
-            Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите
-            компании получават специална зона + време за представяне.</p>
-          <a href="expo.html" class="btn btn-primary" data-bg="Виж щандовете" data-en="View booths">Виж щандовете</a>
-        </div>
-        <!-- Right side: Feature cards stacked -->
-        <div style="flex:1;display:flex;flex-direction:column;gap:20px">
-          <div class="animate-on-scroll"
-            style="background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--teal)">
-            <h3 style="font-size:1.15rem;color:var(--navy);margin:0 0 16px 0" data-bg="Изложение или представяне"
-              data-en="Exhibition or presentation">Изложение или представяне</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
-              <li
-                style="display:flex;align-items:flex-start;gap:10px;font-size:0.95rem;color:var(--text);line-height:1.5">
-                <span style="color:var(--teal);font-weight:700;flex-shrink:0">&#x2713;</span><span
-                  data-bg="Пакети за щандове и нива на спонсорство"
-                  data-en="Booth packages and sponsorship levels">Пакети за щандове и нива на спонсорство</span>
-              </li>
-              <li
-                style="display:flex;align-items:flex-start;gap:10px;font-size:0.95rem;color:var(--text);line-height:1.5">
-                <span style="color:var(--teal);font-weight:700;flex-shrink:0">&#x2713;</span><span
-                  data-bg="Кандидатури за представяне на стартиращи компании са отворени"
-                  data-en="Applications for startup presentations are open">Кандидатури за представяне на стартиращи
-                  компании са отворени</span>
-              </li>
-              <li
-                style="display:flex;align-items:flex-start;gap:10px;font-size:0.95rem;color:var(--text);line-height:1.5">
-                <span style="color:var(--teal);font-weight:700;flex-shrink:0">&#x2713;</span><span
-                  data-bg="Часове за срещи с инвеститори" data-en="Investor meeting hours">Часове за срещи с
-                  инвеститори</span>
-              </li>
-            </ul>
+  <section class="expo-v2" id="expo">
+    <div class="expo-v2__glow" aria-hidden="true"></div>
+    <div class="container expo-v2__inner">
+      <!-- Left side: Title + Description -->
+      <div class="animate-on-scroll">
+        <h2 class="expo-v2__title"
+          data-bg="Експо зона.<br>Зона за стартиращи компании.<br><span class='highlight'>Live demos.</span>"
+          data-en="Expo Zone.<br>Startup Zone.<br><span class='highlight'>Live demos.</span>">Експо зона.<br>Зона за
+          стартиращи компании.<br><span class="highlight">Live demos.</span></h2>
+        <p class="expo-v2__desc"
+          data-bg="Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне."
+          data-en="Meet solution providers in AI, robotics, IoT and vertical sectors. Startups get a dedicated zone + pitch time.">
+          Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите
+          компании получават специална зона + време за представяне.</p>
+        <a href="expo.html" class="btn btn-primary expo-v2__cta">
+          <span data-bg="Виж щандовете" data-en="View booths">Виж щандовете</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+      <!-- Right side: Info card (matches venue card pattern) -->
+      <div class="expo-v2__panel animate-on-scroll">
+        <h3 data-bg="Изложение или представяне" data-en="Exhibition or presentation">Изложение или представяне</h3>
+        <div class="expo-v2__row">
+          <div class="expo-v2__row-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
           </div>
+          <span data-bg="Пакети за щандове и нива на спонсорство"
+            data-en="Booth packages and sponsorship levels">Пакети за щандове и нива на спонсорство</span>
+        </div>
+        <div class="expo-v2__row">
+          <div class="expo-v2__row-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <span data-bg="Кандидатури за представяне на стартиращи компании са отворени"
+            data-en="Applications for startup presentations are open">Кандидатури за представяне на стартиращи
+            компании са отворени</span>
+        </div>
+        <div class="expo-v2__row">
+          <div class="expo-v2__row-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <span data-bg="Часове за срещи с инвеститори" data-en="Investor meeting hours">Часове за срещи с
+            инвеститори</span>
         </div>
       </div>
     </div>
@@ -3032,29 +3438,23 @@
   <!-- SECTION 9: Venue -->
   <section class="venue-section" id="venue">
     <div class="venue-bg"></div>
-    <div class="venue-overlay"></div>
-    <div class="venue-inner-content"
-      style="position:relative;z-index:2;padding:0 48px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between">
-      <!-- Top row: Title left, Info card right -->
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:60px;flex:1">
+    <div class="venue-scrim"></div>
+    <div class="venue-wrap">
+      <div class="venue-top">
         <!-- Left: Title -->
-        <div style="flex:1;padding-top:20px">
-          <h2
-            style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:0;text-shadow:0 1px 3px rgba(255,255,255,0.25)"
-            data-bg="Варна.<br>Където <span style='color:var(--white)'>Черно море</span><br>се среща с дълбоките<br>технологии."
-            data-en="Varna.<br>Where the <span style='color:var(--white)'>Black Sea</span><br>meets deep tech.">
-            Варна.<br>Където <span style="color:var(--white)">Черно море</span><br>се среща с дълбоките<br>технологии.
+        <div class="venue-heading-block">
+          <h2 class="venue-heading"
+            data-bg="Варна.<br>Където <span class='venue-accent'>Черно море</span><br>се среща с дълбоките<br>технологии."
+            data-en="Varna.<br>Where the <span class='venue-accent'>Black Sea</span><br>meets deep tech.">
+            Варна.<br>Където <span class="venue-accent">Черно море</span><br>се среща с дълбоките<br>технологии.
           </h2>
         </div>
-        <!-- Right: Combined info card -->
-        <div style="flex:0 0 380px;margin-top:20px">
-          <div
-            style="background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid rgba(44,166,179,0.15)">
-            <div
-              style="display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--light-gray)">
-              <div
-                style="width:48px;height:48px;background:var(--light-blue);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+        <!-- Right: Boarding-pass style info card -->
+        <div class="venue-pass">
+          <div class="venue-pass-body">
+            <div class="venue-pass-row">
+              <div class="venue-pass-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                   <line x1="16" y1="2" x2="16" y2="6" />
@@ -3063,61 +3463,56 @@
                 </svg>
               </div>
               <div>
-                <span style="font-size:1.2rem;font-weight:700;color:var(--navy);display:block"
-                  data-bg="5 - 7 октомври 2026" data-en="5 - 7 October 2026">5 - 7 октомври 2026</span>
-                <span style="font-size:0.85rem;color:var(--text-light)" data-bg="3 дни конференция"
-                  data-en="3-day conference">3 дни конференция</span>
+                <strong data-bg="5 - 7 октомври 2026" data-en="5 - 7 October 2026">5 - 7 октомври 2026</strong>
+                <span data-bg="3 дни конференция" data-en="3-day conference">3 дни конференция</span>
               </div>
             </div>
-            <div
-              style="display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--light-gray)">
-              <div
-                style="width:48px;height:48px;background:var(--light-blue);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+            <div class="venue-pass-row">
+              <div class="venue-pass-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
               <div>
-                <span style="font-size:1.2rem;font-weight:700;color:var(--navy);display:block"
-                  data-bg="Хотел &bdquo;Черно море&ldquo;, Варна" data-en="Hotel Cherno More, Varna">Хотел „Черно море",
-                  Варна</span>
-                <span style="font-size:0.85rem;color:var(--text-light)" data-bg="България"
-                  data-en="Bulgaria">България</span>
+                <strong data-bg="Хотел &bdquo;Черно море&ldquo;, Варна" data-en="Hotel Cherno More, Varna">Хотел
+                  „Черно море", Варна</strong>
+                <span data-bg="България" data-en="Bulgaria">България</span>
               </div>
             </div>
-            <a href="#" style="display:flex;align-items:center;gap:16px;text-decoration:none;margin-top:4px">
-              <span style="font-size:1.1rem;font-weight:700;color:var(--teal)" data-bg="Насоки за пристигане &#x2192;"
-                data-en="Arrival directions &#x2192;">Насоки за пристигане &#x2192;</span>
-            </a>
           </div>
+          <a href="#" class="venue-pass-stub">
+            <span data-bg="Насоки за пристигане" data-en="Arrival directions">Насоки за пристигане</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
         </div>
       </div>
-      <!-- Bottom-left: Info badges -->
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-bottom:8px">
-        <div
-          style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:50px;background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border:1px solid rgba(44,166,179,0.2)">
+    </div>
+    <!-- Bottom: amenities strip -->
+    <div class="venue-amenities">
+      <div class="venue-amenities-inner">
+        <div class="venue-amenity">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path
               d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
           </svg>
-          <span style="font-size:0.85rem;color:var(--navy);font-weight:500" data-bg="Летище 15 мин"
-            data-en="Airport 15 min">Летище 15 мин</span>
+          <span data-bg="Летище 15 мин" data-en="Airport 15 min">Летище 15 мин</span>
         </div>
-        <div
-          style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:50px;background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border:1px solid rgba(44,166,179,0.2)">
+        <div class="venue-amenity">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
             <polyline points="9 22 9 12 15 12 15 22" />
           </svg>
-          <span style="font-size:0.85rem;color:var(--navy);font-weight:500" data-bg="Хотели наблизо"
-            data-en="Hotels nearby">Хотели наблизо</span>
+          <span data-bg="Хотели наблизо" data-en="Hotels nearby">Хотели наблизо</span>
         </div>
-        <div
-          style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:50px;background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border:1px solid rgba(44,166,179,0.2)">
+        <div class="venue-amenity">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <rect x="1" y="3" width="15" height="13" />
@@ -3127,11 +3522,9 @@
             <circle cx="5" cy="19" r="2" />
             <circle cx="12" cy="19" r="2" />
           </svg>
-          <span style="font-size:0.85rem;color:var(--navy);font-weight:500" data-bg="Обществен транспорт"
-            data-en="Public transit">Обществен транспорт</span>
+          <span data-bg="Обществен транспорт" data-en="Public transit">Обществен транспорт</span>
         </div>
-        <div
-          style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:50px;background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border:1px solid rgba(44,166,179,0.2)">
+        <div class="venue-amenity">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
@@ -3139,8 +3532,7 @@
             <line x1="9" y1="9" x2="9.01" y2="9" />
             <line x1="15" y1="9" x2="15.01" y2="9" />
           </svg>
-          <span style="font-size:0.85rem;color:var(--navy);font-weight:500" data-bg="Достъпност"
-            data-en="Accessibility">Достъпност</span>
+          <span data-bg="Достъпност" data-en="Accessibility">Достъпност</span>
         </div>
       </div>
     </div>
@@ -3152,31 +3544,7 @@
       <h2 class="section-title text-center" data-bg="Билети" data-en="Tickets">Билети</h2>
       <p class="section-subtitle text-center" data-bg="Изберете пропуска, който отговаря на вашите цели."
         data-en="Choose the pass that fits your goals.">Изберете пропуска, който отговаря на вашите цели.</p>
-      <div class="tickets-grid" style="grid-template-columns:repeat(4,1fr)">
-        <!-- Early Bird -->
-        <div class="ticket-card animate-on-scroll" data-ticket="early-bird" data-selected-label="Избран"
-          data-selected-label-en="Selected">
-          <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
-          <div class="ticket-badge" data-bg="Най-изгоден" data-en="Best Value">Най-изгоден</div>
-          <div class="ticket-header-row">
-            <h3>Early Bird</h3>
-            <div class="ticket-period" data-bg="Валидна до края на юни" data-en="Valid until end of June">Валидна до
-              края на юни</div>
-          </div>
-          <div class="ticket-price">&euro;199</div>
-          <ul class="ticket-features">
-            <li style="color:var(--teal);font-weight:600" data-bg="2 на цената на 1" data-en="2 for the price of 1">2 на
-              цената на 1</li>
-            <li data-bg="Всички лекции и сцени" data-en="All lectures and stages">Всички лекции и сцени</li>
-            <li data-bg="Изложение и партньорски зони" data-en="Exhibition and partner zones">Изложение и партньорски
-              зони</li>
-            <li data-bg="Съпътстващи събития" data-en="Side events">Съпътстващи събития</li>
-            <li data-bg="Дигитални материали" data-en="Digital materials">Дигитални материали</li>
-          </ul>
-          <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
-            data-en="Register now">Регистрирай се</button>
-        </div>
-
+      <div class="tickets-grid" style="grid-template-columns:repeat(3,1fr)">
         <!-- Standard (Full Event) -->
         <div class="ticket-card animate-on-scroll" data-ticket="standard" data-selected-label="Избран"
           data-selected-label-en="Selected">
@@ -3330,8 +3698,6 @@
         <div class="form-group">
           <label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
           <select id="reg-ticket">
-            <option value="early-bird" data-bg="Early Bird - 199 EUR" data-en="Early Bird - 199 EUR">Early Bird - 199
-              EUR</option>
             <option value="standard" data-bg="Standard (Full Event) - 199 EUR"
               data-en="Standard (Full Event) - 199 EUR">Standard (Full Event) - 199 EUR</option>
             <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
