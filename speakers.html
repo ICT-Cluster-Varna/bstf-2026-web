@@ -14,13 +14,13 @@
   <meta property="og:title" content="Лектори - BSTF 2026">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - Speakers">
   <meta property="og:url" content="https://bstf2026.bg/speakers.html">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лектори - BSTF 2026">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Speakers">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -1402,9 +1402,9 @@
           2026 · ВАРНА · 5-7 ОКТОМВРИ</p>
         <h1 data-bg="Лектори" data-en="Speakers">Лектори</h1>
         <p class="hero-desc"
-          data-bg="Практици, учени и стратегически лидери от региона на Черно море и света - на една сцена."
-          data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
-          Практици, учени и стратегически лидери от региона на Черно море и света - на една сцена.</p>
+          data-bg="Практици, учени и стратегически лидери&lt;br&gt; от региона на Черно&amp;nbsp;море и света - на една сцена."
+          data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">
+          Практици, учени и стратегически лидери<br> от региона на Черно&nbsp;море и света - на една сцена.</p>
         <div class="hero-stats-strip">
           <div class="hero-stat">
             <span class="hero-stat-num" id="stat-speakers">20+</span>
@@ -1440,7 +1440,7 @@
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260707"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260707-5"></script>
       <script>
         (function () {
           'use strict';
@@ -1466,7 +1466,7 @@
               '<div class="spk-photo"><img loading="lazy" decoding="async" src="' + spk.img + '" alt="' + esc(spk.alt) + '" style="object-position:' + spk.objectPosition + '"></div>' +
               '<div class="spk-body">' +
               '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
-              '<div class="spk-name">' + spk.name + '</div>' +
+              '<div class="spk-name" data-bg="' + esc(spk.name) + '" data-en="' + esc(spk.nameEn || spk.name) + '">' + spk.name + '</div>' +
               '<div class="spk-role">' + spk.role + '</div>' +
               '<div class="spk-topic">' +
               '<div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>' +
@@ -1492,7 +1492,9 @@
               '</div>';
           }
 
-          var tracks = window.BSTF_TRACKS || [];
+          var tracks = (window.BSTF_TRACKS || []).filter(function (t) {
+            return window.bstfSpeakersByTrack(t.id).length > 0;
+          });
           var jumpNav = document.getElementById('track-jump-nav');
           var container = document.getElementById('tracks-container');
           if (jumpNav) jumpNav.innerHTML = tracks.map(renderTrackJump).join('');

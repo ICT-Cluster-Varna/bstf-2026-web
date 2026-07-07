@@ -14,21 +14,21 @@
   <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
   <meta property="og:url" content="https://bstf2026.bg/">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260706">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -46,7 +46,9 @@
 
     :root {
       --navy: #0B3954;
+      --navy-deep: #0d4a6e;
       --teal: #2CA6B3;
+      --teal-deep: #1a8a96;
       --light-blue: #EDF7FA;
       --white: #FFFFFF;
       --light-gray: #F5F7F9;
@@ -55,9 +57,21 @@
       --text-light: #666;
       --radius: 12px;
       --radius-sm: 8px;
+      --radius-lg: 20px;
       --transition: 0.3s ease;
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12)
+      --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+      --shadow-modal: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 20px rgba(11, 57, 84, 0.12), 0 30px 64px rgba(11, 57, 84, 0.2);
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .modal-overlay.open,
+      .modal {
+        animation: none !important
+      }
     }
 
     *,
@@ -1461,7 +1475,7 @@
     .venue-bg {
       position: absolute;
       inset: 0;
-      background: url('images/varna_seaside_bg.jpg?v=20260707') center/cover no-repeat
+      background: url('images/varna_seaside_bg.jpg?v=20260707-5') center/cover no-repeat
     }
 
     .venue-scrim {
@@ -1759,8 +1773,8 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(8, 20, 28, 0.6);
+      backdrop-filter: blur(6px);
       z-index: 300;
       align-items: center;
       justify-content: center;
@@ -1768,18 +1782,43 @@
     }
 
     .modal-overlay.open {
-      display: flex
+      display: flex;
+      animation: modalOverlayIn 0.3s var(--ease-premium)
+    }
+
+    @keyframes modalOverlayIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes modalPanelIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+      }
     }
 
     .modal {
       background: var(--white);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       max-width: 520px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 40px;
-      position: relative
+      padding: 44px 40px;
+      position: relative;
+      box-shadow: var(--shadow-modal);
+      animation: modalPanelIn 0.35s var(--ease-premium)
     }
 
     .modal-close {
@@ -1803,16 +1842,55 @@
       color: var(--white)
     }
 
+    .modal-close:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 2px
+    }
+
+    .modal-eyebrow {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-deep);
+      margin-bottom: 10px
+    }
+
     .modal h2 {
-      font-size: 1.5rem;
+      font-size: 1.55rem;
+      font-weight: 700;
       color: var(--navy);
       margin-bottom: 8px
     }
 
     .modal .modal-desc {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
       color: var(--text-light);
       margin-bottom: 24px
+    }
+
+    .modal-pricing-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal-deep);
+      text-underline-offset: 3px;
+      margin: -12px 0 24px
+    }
+
+    .modal-pricing-link:hover {
+      text-decoration: underline
+    }
+
+    .modal-pricing-link:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 2px;
+      border-radius: 4px
     }
 
     .form-group {
@@ -1827,24 +1905,70 @@
       margin-bottom: 6px
     }
 
+    .form-group .form-hint {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-top: 4px
+    }
+
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
       padding: 12px 16px;
-      border: 1px solid #ddd;
+      border: 1.5px solid #E2E8EE;
       border-radius: var(--radius-sm);
       font-size: 0.9rem;
       font-family: inherit;
+      background: var(--white);
       transition: var(--transition)
     }
 
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group input:focus-visible,
+    .form-group select:focus-visible,
+    .form-group textarea:focus-visible {
       outline: none;
       border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(44, 166, 179, 0.15)
+      box-shadow: 0 0 0 3px rgba(44, 166, 179, 0.18)
+    }
+
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      padding-right: 44px;
+      text-overflow: ellipsis;
+      color: var(--navy);
+      font-weight: 600;
+      background-color: var(--white);
+      box-shadow: inset 0 1px 2px rgba(11, 57, 84, 0.05);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230B3954' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 12px 8px;
+      transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease
+    }
+
+    .form-group select:hover {
+      border-color: var(--teal);
+      background-color: var(--light-blue)
+    }
+
+    .form-group select:focus {
+      background-color: var(--white);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%232CA6B3' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    }
+
+    .form-group select option {
+      color: var(--text);
+      font-weight: 400;
+      padding: 8px 12px
     }
 
     .form-group textarea {
@@ -2712,7 +2836,7 @@
         <div class="hero-content">
           <!-- Left: Title -->
           <div class="hero-left">
-            <img src="images/Connexus - BLACK.svg?v=20260706" alt="Connexus" class="logo-connexus">
+            <img src="images/Connexus - BLACK.svg?v=20260707-5" alt="Connexus" class="logo-connexus">
             <h1>
               <span class="title-light" data-bg="Черноморски" data-en="Black Sea">Black Sea</span>
               <span data-bg="ТЕХНОЛОГИЧЕН" data-en="TECHNOLOGY">TECHNOLOGY</span><br>
@@ -2721,7 +2845,7 @@
           </div>
           <!-- Center: 3D Visual -->
           <div class="hero-center">
-            <img src="images/hero_3d.png?v=20260707" alt="BSTF 2026 Visual" width="1600" height="1270" fetchpriority="high" decoding="async">
+            <img src="images/hero_3d.png?v=20260707-5" alt="BSTF 2026 Visual" width="1600" height="1270" fetchpriority="high" decoding="async">
           </div>
           <!-- Right: Date, Location -->
           <div class="hero-right">
@@ -2860,56 +2984,56 @@
         style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:0 auto">
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/ai.png?v=20260707" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/ai.png?v=20260707-5" alt="AI" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
             data-en="Artificial Intelligence">Изкуствен интелект</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/transport.png?v=20260707" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/transport.png?v=20260707-5" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
             data-en="Future of Transport">Транспорт на бъдещето</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/smart_city.png?v=20260707" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/smart_city.png?v=20260707-5" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
             град</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/cybersecurity.png?v=20260707" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/cybersecurity.png?v=20260707-5" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
             data-en="Cybersecurity">Киберсигурност</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/automation.png?v=20260707" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/automation.png?v=20260707-5" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация" data-en="Automation">
             Автоматизация</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/agritech.png?v=20260707" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/agritech.png?v=20260707-5" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
           </div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/marine_tech.png?v=20260707" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/marine_tech.png?v=20260707-5" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
             data-en="Marine Tech">Морски технологии</div>
         </div>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/biotech.png?v=20260707" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/biotech.png?v=20260707-5" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
           </div>
@@ -2935,7 +3059,7 @@
         <!-- Presidential patronage -->
         <div class="partner-row">
           <div class="partner-row__crest">
-            <img src="images/gerp-image.png?v=20260707" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
+            <img src="images/gerp-image.png?v=20260707-5" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
           </div>
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__content--text">
@@ -2957,17 +3081,17 @@
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--ict">
               <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                <img src="images/ict_cluster_logo.png?v=20260707" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
+                <img src="images/ict_cluster_logo.png?v=20260707-5" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
               </a>
             </div>
             <div class="partner-logo partner-logo--bsmepa">
-              <img src="images/bsmepa_logo.png?v=20260707" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
+              <img src="images/bsmepa_logo.png?v=20260707-5" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
             </div>
             <div class="partner-logo partner-logo--brainpp">
-              <img src="images/brainpp_logo.png?v=20260707" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
+              <img src="images/brainpp_logo.png?v=20260707-5" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
             </div>
             <div class="partner-logo partner-logo--arcf">
-              <img src="images/ARCF_logo.svg?v=20260706" alt="ARC Fund">
+              <img src="images/ARCF_logo.svg?v=20260707-5" alt="ARC Fund">
             </div>
           </div>
         </div>
@@ -2980,7 +3104,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--varna">
-              <img src="images/varna_coat.png?v=20260707" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
+              <img src="images/varna_coat.png?v=20260707-5" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
               <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                 data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
             </div>
@@ -2995,7 +3119,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--mobility">
-              <img src="images/mobility-partner.png?v=20260707" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
+              <img src="images/mobility-partner.png?v=20260707-5" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
             </div>
           </div>
         </div>
@@ -3357,9 +3481,9 @@
           <h2 style="font-size:2.5rem;font-weight:700;color:var(--white);margin-bottom:12px" data-bg="Лектори"
             data-en="Speakers">Лектори</h2>
           <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:24px"
-            data-bg="Практици, учени и стратегически лидери&lt;br class=&quot;hero-desc-break&quot;&gt; от региона на Черно море и света - на една сцена."
-            data-en="Practitioners, researchers and strategic leaders&lt;br class=&quot;hero-desc-break&quot;&gt; from the Black Sea region and beyond - on one stage.">Практици,
-            учени и стратегически лидери<br class="hero-desc-break"> от региона на Черно море и света - на една
+            data-bg="Практици, учени и стратегически лидери&lt;br&gt; от региона на Черно&amp;nbsp;море и света - на една сцена."
+            data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">Практици,
+            учени и стратегически лидери<br> от региона на Черно&nbsp;море и света - на една
             сцена.</p>
           <div
             style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;margin-bottom:24px">
@@ -3637,9 +3761,8 @@
       <div class="prefooter-buttons">
         <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай
           се</button>
-        <button class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)"
-          data-bg="Стани изложител" data-en="Become an exhibitor"
-          onclick="document.getElementById('exhibitor-modal').classList.add('open')">Стани изложител</button>
+        <button class="btn btn-outline open-exhibitor-modal" style="border-color:rgba(255,255,255,0.4);color:var(--white)"
+          data-bg="Стани изложител" data-en="Become an exhibitor">Стани изложител</button>
       </div>
     </div>
   </section>
@@ -3698,6 +3821,7 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('register-modal')">&times;</button>
       <div class="modal-form" id="register-form">
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА" data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
         <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
         <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на BSTF 2026."
           data-en="Fill in the form to reserve your spot at BSTF 2026.">Попълнете формата, за да резервирате вашето
@@ -3742,9 +3866,12 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('exhibitor-modal')">&times;</button>
       <div class="modal-form" id="exhibitor-form">
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF 2026 &middot; ИЗЛОЖЕНИЕ</span>
         <h2 data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
         <p class="modal-desc" data-bg="Заявете щанд на BSTF 2026 изложението."
           data-en="Apply for a booth at the BSTF 2026 expo.">Заявете щанд на BSTF 2026 изложението.</p>
+        <a href="sponsors.html" class="modal-pricing-link" data-bg="Виж пълните цени и пакети &rarr;"
+          data-en="See full pricing &amp; packages &rarr;">Виж пълните цени и пакети &rarr;</a>
         <div class="form-group">
           <label data-bg="Име на компанията" data-en="Company Name">Име на компанията</label>
           <input type="text" required>
@@ -3758,13 +3885,17 @@
           <input type="email" required>
         </div>
         <div class="form-group">
-          <label data-bg="Размер на щанда" data-en="Booth Size">Размер на щанда</label>
+          <label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
           <select>
-            <option data-bg="Малък (6 кв.м)" data-en="Small (6 sq.m)">Малък (6 кв.м)</option>
-            <option data-bg="Среден (12 кв.м)" data-en="Medium (12 sq.m)">Среден (12 кв.м)</option>
-            <option data-bg="Голям (24 кв.м)" data-en="Large (24 sq.m)">Голям (24 кв.м)</option>
-            <option data-bg="Премиум (36 кв.м)" data-en="Premium (36 sq.m)">Премиум (36 кв.м)</option>
+            <option data-bg="Expo - &euro;1,700 (Expo щанд)" data-en="Expo - &euro;1,700 (Expo booth)">Expo - &euro;1,700 (Expo щанд)</option>
+            <option data-bg="Silver - &euro;7,500 (Premium щанд)" data-en="Silver - &euro;7,500 (Premium booth)">Silver - &euro;7,500 (Premium щанд)</option>
+            <option data-bg="Gold - &euro;12,000 (Premium щанд)" data-en="Gold - &euro;12,000 (Premium booth)">Gold - &euro;12,000 (Premium щанд)</option>
+            <option data-bg="Stage - &euro;18,000 (Premium щанд)" data-en="Stage - &euro;18,000 (Premium booth)">Stage - &euro;18,000 (Premium щанд)</option>
+            <option data-bg="Institution - &euro;30,000 (Premium щанд)" data-en="Institution - &euro;30,000 (Premium booth)">Institution - &euro;30,000 (Premium щанд)</option>
+            <option data-bg="Все още не съм сигурен/а - консултирайте ме" data-en="Not sure yet - please advise">Все още не съм сигурен/а - консултирайте ме</option>
           </select>
+          <span class="form-hint" data-bg="Пълно сравнение на включените придобивки за всеки пакет: страница Изложители."
+            data-en="Full benefit comparison for each package: see the Exhibitors page.">Пълно сравнение на включените придобивки за всеки пакет: страница Изложители.</span>
         </div>
         <div class="form-group">
           <label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label>
@@ -3788,6 +3919,7 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('speaker-modal')">&times;</button>
       <div class="modal-form" id="speaker-form">
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ЛЕКТОРИ" data-en="BSTF 2026 &middot; SPEAKERS">BSTF 2026 &middot; ЛЕКТОРИ</span>
         <h2 data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
         <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
           data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>

@@ -1085,7 +1085,7 @@
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260707"></script>
+  <script src="data/speakers-data.js?v=20260707-5"></script>
   <script>
     (function () {
       'use strict';
@@ -1167,6 +1167,8 @@
         heroTrack.setAttribute('data-bg', track.labelBg);
         heroTrack.setAttribute('data-en', track.labelEn);
         heroTrack.textContent = track.labelBg;
+        heroName.setAttribute('data-bg', speaker.name);
+        heroName.setAttribute('data-en', speaker.nameEn || speaker.name);
         heroName.innerHTML = speaker.name;
         heroRole.innerHTML = speaker.role;
 
@@ -1176,7 +1178,7 @@
           '<div class="sp-photo"><img loading="eager" decoding="async" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
           '<div class="sp-body">' +
           '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
-          '<div class="sp-name">' + speaker.name + '</div>' +
+          '<div class="sp-name" data-bg="' + esc(speaker.name) + '" data-en="' + esc(speaker.nameEn || speaker.name) + '">' + speaker.name + '</div>' +
           '<div class="sp-role">' + speaker.role + '</div>' +
           '<div class="sp-topic">' +
           '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span>' +
