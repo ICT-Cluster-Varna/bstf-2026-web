@@ -268,7 +268,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <p class="floor-plan-intro" data-bg="Разгледайте залата, щандовете и сцените отвътре - завъртете модела на 360° и изберете позицията, която пасва на вашия бранд, преди да заявите пакет." data-en="Explore the hall, booths and stages from the inside - rotate the model 360° and pick the spot that fits your brand before you request a package.">Разгледайте залата, щандовете и сцените отвътре - завъртете модела на 360° и изберете позицията, която пасва на вашия бранд, преди да заявите пакет.</p>
     <div class="floor-plan-wrap">
       <div class="fp-stage" id="fp-stage">
-        <img class="fp-poster" src="images/new-preview.png?v=20260706" alt="3D схема на изложението" loading="lazy">
+        <img class="fp-poster" src="images/new-preview.png?v=20260707" alt="3D схема на изложението" loading="lazy" decoding="async" width="980" height="557">
         <button class="fp-activate" id="fp-activate" aria-label="Зареди интерактивния 3D изглед">
           <span class="fp-3d-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -709,7 +709,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260706';
+    iframe.src = '3d-model/floorplan3d_v2.html?v=20260707-3';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');

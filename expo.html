@@ -35,6 +35,10 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;background:var(--white)}
+::selection{background:var(--teal);color:var(--white)}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:var(--light-gray)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--teal),var(--navy));border-radius:20px;border:3px solid var(--light-gray)}
 h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;line-height:1.2}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}button{cursor:pointer;font-family:inherit;border:none;background:none}ul{list-style:none}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -66,7 +70,7 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}.mobile-nav a.btn-primary{color:var(--white)!important;border-bottom:none}
 .mobile-nav a.active{color:var(--teal)}
 .page-hero{position:relative;padding:140px 24px 80px;background:linear-gradient(135deg,rgba(11,57,84,0.95) 0%,rgba(44,166,179,0.88) 100%);text-align:center;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png?v=20260706') center/cover no-repeat;opacity:0.15;z-index:0}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png?v=20260707') center/cover no-repeat;opacity:0.15;z-index:0}
 .page-hero .container{position:relative;z-index:1}
 .page-hero h1{font-size:3rem;font-weight:700;color:var(--white);margin-bottom:16px}
 .page-hero p{font-size:1.2rem;color:rgba(255,255,255,0.85);max-width:650px;margin:0 auto}
@@ -216,7 +220,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:32px" data-bg="Схема на изложението" data-en="Exhibition Floor Plan">Схема на изложението</h2>
     <div class="floor-plan-wrap">
       <div class="fp-stage" id="fp-stage">
-        <img class="fp-poster" src="images/new-preview.png?v=20260706" alt="3D схема на изложението" loading="lazy">
+        <img class="fp-poster" src="images/new-preview.png?v=20260707" alt="3D схема на изложението" loading="lazy" decoding="async" width="980" height="557">
         <button class="fp-activate" id="fp-activate" aria-label="Зареди интерактивния 3D изглед">
           <span class="fp-3d-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -458,7 +462,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260706';
+    iframe.src = '3d-model/floorplan3d_v2.html?v=20260707-3';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');

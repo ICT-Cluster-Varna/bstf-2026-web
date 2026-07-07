@@ -1077,7 +1077,7 @@
   <script id="stands-data" type="application/json">
 {
   "exhibitors": {
-    "6":  { "company": "Top-Rent-A-Car",  "logo": "Logos/toprentacar.webp", "status": "partner",  "website": "", "description": "" },
+    "6":  { "company": "Top-Rent-A-Car",  "logo": "Logos/toprentacar.png",  "status": "partner",  "website": "", "description": "" },
     "12": { "company": "Девиа България",  "logo": "Logos/deviaLogoBG.png",  "status": "occupied", "website": "", "description": "" }
   },
   "stand_info": {
@@ -1119,17 +1119,17 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260706"></script>
-  <script src="bsmepa_logo.js?v=20260706"></script>
-  <script src="toprentacar_logo.js?v=20260706"></script>
-  <script src="electrohold_logo.js?v=20260706"></script>
-  <script src="netpeak_logo.js?v=20260706"></script>
-  <script src="researchmetrics_logo.js?v=20260706"></script>
-  <script src="nearshore_logo.js?v=20260706"></script>
+  <script src="stands.js?v=20260707-3"></script>
+  <script src="bsmepa_logo.js?v=20260707-3"></script>
+  <script src="toprentacar_logo.js?v=20260707-3"></script>
+  <script src="electrohold_logo.js?v=20260707-3"></script>
+  <script src="netpeak_logo.js?v=20260707-3"></script>
+  <script src="researchmetrics_logo.js?v=20260707-3"></script>
+  <script src="nearshore_logo.js?v=20260707-3"></script>
   <!-- //fix -->
-  <script src="./libs/three.min.js?v=20260706"></script>
-  <script src="./libs/OrbitControls-global.js?v=20260706"></script>
-  <script src="data.js?v=20260706"></script>
+  <script src="./libs/three.min.js?v=20260707-3"></script>
+  <script src="./libs/OrbitControls-global.js?v=20260707-3"></script>
+  <script src="data.js?v=20260707-3"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -1199,7 +1199,7 @@
     function markDirty() { _dirty = true; }
 
     let asp = innerWidth / innerHeight;
-    const cam = new THREE.PerspectiveCamera(50, asp, 0.1, 6000);
+    const cam = new THREE.PerspectiveCamera(50, asp, 0.1, Math.max(MAXWD * 6, 300));
 
     const ctrl = new OrbitControls(cam, dom); ctrl.enableDamping = true; ctrl.screenSpacePanning = true;
 
@@ -1450,14 +1450,6 @@
     });
     // -----------------------------------------------------------------------
 
-    // Pendant chandelier point lights � warm amber at ~2.55 m (brass fixtures)
-    [[0, 0], [W * 0.28, 0], [-W * 0.28, 0], [W * 0.10, D * 0.22], [-W * 0.10, D * 0.22],
-    [W * 0.10, -D * 0.22], [-W * 0.10, -D * 0.22]
-    ].forEach(([px, pz]) => {
-      const pl = new THREE.PointLight(0xffd080, 0.85, MAXWD * 0.75);
-      pl.position.set(px, 2.55, pz); scene.add(pl);
-    });
-
     function wallMesh(segs, h0, h1, mat) {
       const pos = [];
       for (const [x1, y1, x2, y2] of segs) {
@@ -1665,6 +1657,25 @@
         if (mx >= z.x0 && mx <= z.x1 && mz >= z.z0 && mz <= z.z1) { m.visible = false; break; }
       }
     }
+    // Auto-dedupe near-duplicate wall segments: the source DWG has several short
+    // walls traced 2-6x a few cm apart (CAD tracing artifact), which z-fights/flickers
+    // since the copies occupy almost the same plane. Keep the first of each cluster,
+    // hide the rest — general replacement for the hardcoded zone hacks above.
+    {
+      const _EPS = 0.05, _EPS2 = _EPS * _EPS;
+      const _kept = [];
+      const _closeEnough = (u, k) => {
+        const dA = (u.ax - k.ax) ** 2 + (u.az - k.az) ** 2, dB = (u.bx - k.bx) ** 2 + (u.bz - k.bz) ** 2;
+        if (dA < _EPS2 && dB < _EPS2) return true;
+        const dAr = (u.ax - k.bx) ** 2 + (u.az - k.bz) ** 2, dBr = (u.bx - k.ax) ** 2 + (u.bz - k.az) ** 2;
+        return dAr < _EPS2 && dBr < _EPS2;
+      };
+      for (const m of wallSegMeshes) {
+        if (!m.visible) continue;
+        const u = m.userData;
+        if (_kept.some(k => _closeEnough(u, k))) { m.visible = false; } else { _kept.push(u); }
+      }
+    }
     buildWallDisplayMeshes();
 
     groups.glaz = wallMesh(clip(DATA.segments.glaz), 0, 2.8, new THREE.MeshStandardMaterial({ color: 0x90d8ff, roughness: 0.05, metalness: 0.25, transparent: true, opacity: 0.20, side: THREE.DoubleSide }));
@@ -1684,7 +1695,7 @@
       if (mx > 26000 && mx < 38000 && my < -33000 && my > -48000) return false;
       return true;
     });
-    groups.env = wallMesh(_envFinal, 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
+    groups.env = wallMesh(_envFinal, 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 2, polygonOffsetUnits: 2 }));
     groups.envRight = new THREE.Group();
     [groups.wall, groups.glaz, groups.furn, groups.strs, groups.door, groups.col, groups.env, groups.envRight].forEach(m => scene.add(m));
     groups.wall.visible = true;
@@ -1699,7 +1710,7 @@
       [35825, -43980, 31825, -43980],
       [31825, -43980, 31825, -42450],
       [31825, -42450, 30430, -42450],
-    ], 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide })));
+    ], 0, 4.0, new THREE.MeshLambertMaterial({ color: 0xd8eeff, transparent: true, opacity: 0.45, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 2, polygonOffsetUnits: 2 })));
     groups.furn.visible = false;
     groups.strs.visible = false;
     groups.door.visible = false;
@@ -1896,9 +1907,11 @@
       scene.add(grp);
     })();
 
-    // -- Restaurant Tables & Chairs (natural layout) ------
+    // -- Restaurant Tables & Chairs (natural layout, instanced) ------
+    // All 48 tables + 288 chairs share just 5 geometries and 4 materials, so every
+    // repeat is drawn via InstancedMesh instead of one THREE.Mesh per part —
+    // ~1824 draw calls collapse to 7.
     (() => {
-      const grp = new THREE.Group();
       // Tablecloth: alternating navy blue and warm beige (matching reference photo)
       const mBlue = new THREE.MeshLambertMaterial({ color: 0x1e3070, emissive: new THREE.Color(0.02, 0.03, 0.09) });
       const mBeige = new THREE.MeshLambertMaterial({ color: 0xc8b490, emissive: new THREE.Color(0.07, 0.06, 0.04) });
@@ -1912,41 +1925,8 @@
       const gBack = new THREE.BoxGeometry(0.50, 0.44, 0.08);
       const gLeg = new THREE.CylinderGeometry(0.022, 0.022, 0.43, 6);
 
-      let ti = 0;
-      function addTable(tx, tz, rot) {
-        rot = rot || 0;
-        const cloth = (ti++ % 2 === 0) ? mBlue : mBeige;
-
-        // Tablecloth top disc + draping skirt
-        const top = new THREE.Mesh(gTop, cloth); top.position.set(tx, 0.762, tz); grp.add(top);
-        const skrt = new THREE.Mesh(gSkirt, cloth); skrt.position.set(tx, 0.415, tz); grp.add(skrt);
-
-        // 6 chairs at 60� intervals, 1.14 m from centre
-        for (let k = 0; k < 6; k++) {
-          const a = rot + (k / 6) * Math.PI * 2;
-          const CR = 1.14;
-          const cx = tx + Math.sin(a) * CR, cz = tz + Math.cos(a) * CR;
-          const ca = Math.cos(a), sa = Math.sin(a);
-
-          const seat = new THREE.Mesh(gSeat, mSeat);
-          seat.position.set(cx, 0.46, cz); seat.rotation.y = a; grp.add(seat);
-
-          // Chair back � behind seat, away from table centre
-          const back = new THREE.Mesh(gBack, mSeat);
-          back.position.set(cx + Math.sin(a) * 0.25, 0.74, cz + Math.cos(a) * 0.25);
-          back.rotation.y = a; grp.add(back);
-
-          // 4 legs at seat corners (rotated to chair orientation)
-          [[-0.18, -0.18], [0.18, -0.18], [-0.18, 0.18], [0.18, 0.18]].forEach(([lx, lz]) => {
-            const leg = new THREE.Mesh(gLeg, mFrame);
-            leg.position.set(cx + (lx * ca - lz * sa), 0.215, cz + (lx * sa + lz * ca));
-            grp.add(leg);
-          });
-        }
-      }
-
-      // 48 tables � 6 staggered rows, positions match the restaurant polygon
-      [
+      // 48 tables — 6 staggered rows, positions match the restaurant polygon
+      const TABLES = [
         // row 1
         [-40.9, 2.3, 0.12], [-38.0, 2.7, 0.07], [-34.6, 2.1, 0.04],
         [-31.2, 2.6, -0.06], [-27.7, 2.2, -0.10], [-24.3, 2.8, -0.14], [-20.8, 2.4, -0.06],
@@ -1967,9 +1947,55 @@
         // row 6
         [-49.3, 19.5, -0.12], [-45.3, 20.0, -0.07], [-41.3, 19.6, 0.05],
         [-37.3, 20.1, 0.09], [-33.3, 19.7, 0.14], [-29.3, 19.3, -0.05], [-25.3, 19.8, -0.10],
-      ].forEach(([wx, wz, rot]) => addTable(wx, wz, rot));
+      ];
+      const nT = TABLES.length, nBlue = Math.ceil(nT / 2), nBeige = Math.floor(nT / 2);
 
-      scene.add(grp);
+      const topBlue = new THREE.InstancedMesh(gTop, mBlue, nBlue);
+      const topBeige = new THREE.InstancedMesh(gTop, mBeige, nBeige);
+      const skirtBlue = new THREE.InstancedMesh(gSkirt, mBlue, nBlue);
+      const skirtBeige = new THREE.InstancedMesh(gSkirt, mBeige, nBeige);
+      const seatIM = new THREE.InstancedMesh(gSeat, mSeat, nT * 6);
+      const backIM = new THREE.InstancedMesh(gBack, mSeat, nT * 6);
+      const legIM = new THREE.InstancedMesh(gLeg, mFrame, nT * 6 * 4);
+
+      const dm = new THREE.Object3D();
+      let biIdx = 0, geIdx = 0, seatI = 0, backI = 0, legI = 0;
+      TABLES.forEach(([tx, tz, rot], ti) => {
+        const isBlue = ti % 2 === 0;
+        const topIM = isBlue ? topBlue : topBeige, skIM = isBlue ? skirtBlue : skirtBeige;
+        const localI = isBlue ? biIdx++ : geIdx++;
+
+        // Tablecloth top disc + draping skirt (rotationally symmetric — no rotation needed)
+        dm.position.set(tx, 0.762, tz); dm.rotation.set(0, 0, 0); dm.updateMatrix();
+        topIM.setMatrixAt(localI, dm.matrix);
+        dm.position.set(tx, 0.415, tz); dm.updateMatrix();
+        skIM.setMatrixAt(localI, dm.matrix);
+
+        // 6 chairs at 60� intervals, 1.14 m from centre
+        for (let k = 0; k < 6; k++) {
+          const a = rot + (k / 6) * Math.PI * 2;
+          const CR = 1.14;
+          const cx = tx + Math.sin(a) * CR, cz = tz + Math.cos(a) * CR;
+          const ca = Math.cos(a), sa = Math.sin(a);
+
+          dm.position.set(cx, 0.46, cz); dm.rotation.set(0, a, 0); dm.updateMatrix();
+          seatIM.setMatrixAt(seatI++, dm.matrix);
+
+          // Chair back � behind seat, away from table centre
+          dm.position.set(cx + Math.sin(a) * 0.25, 0.74, cz + Math.cos(a) * 0.25); dm.updateMatrix();
+          backIM.setMatrixAt(backI++, dm.matrix);
+
+          // 4 legs at seat corners (rotated to chair orientation)
+          dm.rotation.set(0, 0, 0);
+          [[-0.18, -0.18], [0.18, -0.18], [-0.18, 0.18], [0.18, 0.18]].forEach(([lx, lz]) => {
+            dm.position.set(cx + (lx * ca - lz * sa), 0.215, cz + (lx * sa + lz * ca)); dm.updateMatrix();
+            legIM.setMatrixAt(legI++, dm.matrix);
+          });
+        }
+      });
+      [topBlue, topBeige, skirtBlue, skirtBeige, seatIM, backIM, legIM].forEach(im => {
+        im.instanceMatrix.needsUpdate = true; scene.add(im);
+      });
     })();
 
     // -- Furniture placement system ------------------------------------------
