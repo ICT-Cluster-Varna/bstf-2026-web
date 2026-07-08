@@ -1212,9 +1212,8 @@
     }
 
     .halls-section {
-      padding: 100px 0;
-      background: var(--white);
-      position: relative
+      padding: 80px 0;
+      background: var(--white)
     }
 
     .halls-grid {
@@ -1223,158 +1222,34 @@
       gap: 24px
     }
 
-    .halls-kicker {
-      display: inline-block;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 10px
+    .hall-card {
+      background: var(--light-gray);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      transition: var(--transition)
     }
 
-    .halls-list {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      margin-top: 40px
+    .hall-card:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px)
     }
 
-    .halls-list::before {
-      content: '';
-      position: absolute;
-      left: 35px;
-      top: 36px;
-      bottom: 36px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--teal), var(--navy));
-      opacity: 0.22
+    .hall-card .hall-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px
     }
 
-    .hall-entry {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      gap: 32px;
-      padding: 36px 0
-    }
-
-    .hall-entry+.hall-entry {
-      border-top: 1px solid var(--light-gray)
-    }
-
-    .hall-entry-index {
-      flex: none;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--hall-accent, var(--teal));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--hall-accent, var(--teal));
-      transition: background 0.3s ease, color 0.3s ease
-    }
-
-    .hall-entry:hover .hall-entry-index {
-      background: var(--hall-accent, var(--teal));
-      color: var(--white)
-    }
-
-    .hall-entry-body {
-      flex: 1;
-      display: flex;
-      gap: 48px;
-      align-items: center;
-      flex-wrap: wrap
-    }
-
-    .hall-entry-text {
-      flex: 1 1 320px
-    }
-
-    .hall-entry-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
+    .hall-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
       color: var(--navy);
-      margin: 0 0 8px
+      margin-bottom: 8px
     }
 
-    .hall-entry-desc {
-      color: var(--text-light);
-      font-size: 1rem;
-      line-height: 1.7;
-      margin: 0
-    }
-
-    .hall-entry-focus {
-      flex: 1 1 280px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 20px 22px;
-      border-radius: 14px 4px 14px 4px;
-      background: var(--hall-accent-bg, var(--light-blue));
-      border-left: 3px solid var(--hall-accent, var(--teal));
-      transition: transform 0.3s ease, box-shadow 0.3s ease
-    }
-
-    .hall-entry:hover .hall-entry-focus {
-      transform: translateX(4px);
-      box-shadow: 0 8px 24px rgba(11, 57, 84, 0.1)
-    }
-
-    .hall-entry-focus svg {
-      flex: none;
-      width: 22px;
-      height: 22px;
-      margin-top: 2px
-    }
-
-    .hall-entry-focus p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.6;
-      color: var(--navy)
-    }
-
-    @media(max-width:768px) {
-      .hall-entry-index {
-        width: 56px;
-        height: 56px;
-        font-size: 1.05rem
-      }
-
-      .halls-list::before {
-        left: 27px
-      }
-
-      .hall-entry {
-        gap: 20px;
-        padding: 28px 0
-      }
-
-      .hall-entry-body {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 14px
-      }
-
-      .hall-entry-text,
-      .hall-entry-focus {
-        flex: none;
-        width: auto
-      }
-
-      .hall-entry-name {
-        font-size: 1.15rem
-      }
+    .hall-card p {
+      font-size: 0.9rem;
+      color: var(--text-light)
     }
 
     .tickets-section {
@@ -2501,6 +2376,20 @@
         gap: 2px
       }
 
+      .hall-row {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch
+      }
+
+      .hall-row>div {
+        flex: none
+      }
+
+      .hall-row>div>p {
+        text-align: center
+      }
+
       .hero-date-lg {
         font-size: 1.2rem
       }
@@ -3066,6 +2955,17 @@
       }
     }
 
+    .hall-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-width 0.3s ease;
+      cursor: default
+    }
+
+    .hall-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(44, 166, 179, 0.15);
+      border-left-width: 6px
+    }
+
     .stream-card {
       background: var(--light-gray)
     }
@@ -3201,76 +3101,94 @@
   <!-- SECTION 4: Halls -->
   <section class="halls-section">
     <div class="container">
-      <span class="halls-kicker" data-bg="Локации" data-en="Venues">Локации</span>
       <h2 class="section-title animate-on-scroll" data-bg="Три зали. Три направления."
         data-en="Three halls. Three tracks.">Три зали. Три направления.</h2>
-      <div class="halls-list">
-        <div class="hall-entry animate-on-scroll"
-          style="--hall-accent:var(--teal);--hall-accent-bg:rgba(44,166,179,0.08)">
-          <div class="hall-entry-index"><span>01</span></div>
-          <div class="hall-entry-body">
-            <div class="hall-entry-text">
-              <h3 class="hall-entry-name" data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала
-                „България"</h3>
-              <p class="hall-entry-desc" data-bg="Основната сцена за хоризонтални технологии - AI, IoT, роботика, киберсигурност."
-                data-en="The main stage for horizontal technologies - AI, IoT, robotics, cybersecurity.">Основната сцена
-                за хоризонтални технологии - AI, IoT, роботика, киберсигурност.</p>
-            </div>
-            <div class="hall-entry-focus">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hall-accent)" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-              <p data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение."
+      <div style="display:flex;flex-direction:column;gap:24px;margin-top:32px">
+        <div class="hall-row" style="display:flex;gap:60px;align-items:center">
+          <div style="flex:1">
+            <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
+              data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала „България"</p>
+            <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0"
+              data-bg="Основната сцена за хоризонтални технологии - AI, IoT, роботика, киберсигурност."
+              data-en="The main stage for horizontal technologies - AI, IoT, robotics, cybersecurity.">Основната сцена
+              за хоризонтални технологии - AI, IoT, роботика, киберсигурност.</p>
+          </div>
+          <div style="flex:1">
+            <div class="animate-on-scroll hall-card"
+              style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+              <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
+                <div
+                  style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center"
+                data-bg="AI, IoT, роботизация, киберсигурност и други технологии с широко приложение."
                 data-en="AI, IoT, robotics, cybersecurity and other broad-application technologies.">AI, IoT,
                 роботизация, киберсигурност и други технологии с широко приложение.</p>
             </div>
           </div>
         </div>
-        <div class="hall-entry animate-on-scroll"
-          style="--hall-accent:var(--navy);--hall-accent-bg:rgba(11,57,84,0.06)">
-          <div class="hall-entry-index"><span>02</span></div>
-          <div class="hall-entry-body">
-            <div class="hall-entry-text">
-              <h3 class="hall-entry-name" data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала
-                „Черно море"</h3>
-              <p class="hall-entry-desc" data-bg="Заедно с фоайето - домакин на изложението и стартъп зоната."
-                data-en="Together with the foyer - hosting the expo and startup zone.">Заедно с фоайето - домакин на
-                изложението и стартъп зоната.</p>
-            </div>
-            <div class="hall-entry-focus">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hall-accent)" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-              <p data-bg="Фирми изложители и секция за стартъпи - демонстрации, контакти и партньорства."
+        <div class="hall-row" style="display:flex;gap:60px;align-items:center">
+          <div style="flex:1">
+            <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
+              data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала „Черно море"</p>
+            <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0"
+              data-bg="Заедно с фоайето - домакин на изложението и стартъп зоната."
+              data-en="Together with the foyer - hosting the expo and startup zone.">Заедно с фоайето - домакин на
+              изложението и стартъп зоната.</p>
+          </div>
+          <div style="flex:1">
+            <div class="animate-on-scroll hall-card"
+              style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+              <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
+                <div
+                  style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center"
+                data-bg="Фирми изложители и секция за стартъпи - демонстрации, контакти и партньорства."
                 data-en="Company exhibitors and startup section - demos, contacts and partnerships.">Фирми изложители и
                 секция за стартъпи - демонстрации, контакти и партньорства.</p>
             </div>
           </div>
         </div>
-        <div class="hall-entry animate-on-scroll"
-          style="--hall-accent:var(--teal);--hall-accent-bg:rgba(44,166,179,0.08)">
-          <div class="hall-entry-index"><span>03</span></div>
-          <div class="hall-entry-body">
-            <div class="hall-entry-text">
-              <h3 class="hall-entry-name" data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</h3>
-              <p class="hall-entry-desc" data-bg="Паралелната програма със секторни и вертикални теми."
-                data-en="The parallel programme with sector and vertical topics.">Паралелната програма със секторни и
-                вертикални теми.</p>
-            </div>
-            <div class="hall-entry-focus">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hall-accent)" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <p data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство."
+        <div class="hall-row" style="display:flex;gap:60px;align-items:center">
+          <div style="flex:1">
+            <p style="font-size:0.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
+              data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</p>
+            <p class="hall-row-desc" style="color:var(--text-light);font-size:1rem;line-height:1.7;margin:0"
+              data-bg="Паралелната програма със секторни и вертикални теми."
+              data-en="The parallel programme with sector and vertical topics.">Паралелната програма със секторни и
+              вертикални теми.</p>
+          </div>
+          <div style="flex:1">
+            <div class="animate-on-scroll hall-card"
+              style="background:var(--light-blue);border-radius:var(--radius);padding:28px;border-left:4px solid var(--teal)">
+              <div style="display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px">
+                <div
+                  style="width:44px;height:44px;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color:var(--text-light);font-size:0.92rem;margin:0;line-height:1.6;text-align:center"
+                data-bg="Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство."
                 data-en="Marine technologies, biotechnologies, smart agriculture, tourism, industry/manufacturing.">
                 Морски технологии, биотехнологии, умно земеделие, туризъм, индустрия/производство.</p>
             </div>
@@ -4100,8 +4018,8 @@
             <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор"
               data-en="Apply as speaker">Кандидатствай като лектор</button>
             <a href="speakers.html" class="btn btn-outline"
-              style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж всички участници"
-              data-en="See all participants">Виж всички участници</a>
+              style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж всички лектори"
+              data-en="See all speakers">Виж всички лектори</a>
           </div>
         </div>
 
