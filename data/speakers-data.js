@@ -83,6 +83,17 @@
       descEn: 'Innovation ecosystems &amp; policy for the Black Sea region',
       dot: '#2CA6B3',
       countPluralBg: 'лектора'
+    },
+    {
+      id: 'automation',
+      nameBg: 'АВТОМАТИЗАЦИЯ И РОБОТИКА',
+      nameEn: 'AUTOMATION AND ROBOTICS',
+      labelBg: 'Автоматизация и роботика',
+      labelEn: 'Automation and Robotics',
+      descBg: 'Умни системи, роботика и интеграция на IoT решения',
+      descEn: 'Smart systems, robotics and IoT integration',
+      dot: '#2CA6B3',
+      countPluralBg: 'лектора'
     }
   ];
 
@@ -107,7 +118,7 @@
       ]
     },
     {
-      id: 'teade-punter', track: 'ai',
+      id: 'teade-punter', track: 'automation',
       img: 'images/speakers/teade-punter.jpg?v=20260707-5', alt: 'Teade Punter',
       objectPosition: '65% 15%',
       name: 'Dr. Teade Punter',

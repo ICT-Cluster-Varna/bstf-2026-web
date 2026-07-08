@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -14,13 +14,13 @@
   <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
   <meta property="og:url" content="https://bstf2026.bg/">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260708">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260708">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -671,11 +671,170 @@
     }
 
     .program-section {
-      padding: 64px 0;
+      padding: 48px 0;
       background: linear-gradient(135deg, #e8f4f8 0%, #d0ebf1 100%)
     }
 
-    /* --- Program: unified timeline --- */
+    .program-section .schedule-table td {
+      background: var(--white)
+    }
+
+    .program-section .schedule-table tbody tr:nth-child(even) td {
+      background: #f0f7fa
+    }
+
+    .program-section .schedule-table tr:hover td {
+      background: var(--light-blue)
+    }
+
+    .day-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px
+    }
+
+    .day-tab {
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: var(--light-gray);
+      color: var(--text)
+    }
+
+    .day-tab.active {
+      background: var(--navy);
+      color: var(--white)
+    }
+
+    .day-tab:hover:not(.active) {
+      background: var(--light-blue);
+      color: var(--navy)
+    }
+
+    .day-content {
+      display: none !important
+    }
+
+    .day-content.active {
+      display: block !important
+    }
+
+    .day-subtitle-row {
+      background: var(--navy) !important;
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: var(--radius) var(--radius) 0 0
+    }
+
+    .schedule-table td[colspan="2"] {
+      text-align: center;
+      color: var(--text-light);
+      font-style: italic
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 16px;
+      border-radius: var(--radius);
+      overflow: hidden
+    }
+
+    .schedule-table th {
+      text-align: center;
+      padding: 10px 12px;
+      background: #1a5c7a;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600
+    }
+
+    .schedule-table th:first-child {
+      border-radius: 0
+    }
+
+    .schedule-table th:last-child {
+      border-radius: 0
+    }
+
+    .schedule-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 0.85rem;
+      text-align: center
+    }
+
+    .schedule-table tr:hover {
+      background: var(--light-blue)
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background: rgba(44, 166, 179, 0.04)
+    }
+
+    .schedule-table {
+      table-layout: fixed
+    }
+
+    .schedule-table th:first-child,
+    .schedule-table td:first-child {
+      width: 6%;
+      padding-left: 0;
+      padding-right: 0
+    }
+
+    .time-cell {
+      font-weight: 600;
+      color: var(--teal);
+      white-space: nowrap;
+      width: 6%;
+      font-size: 0.75rem
+    }
+
+    @media(max-width:768px) {
+      .schedule-table {
+        font-size: 0.78rem;
+        table-layout: auto
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 8px 6px;
+        word-break: break-word
+      }
+
+      .schedule-table .time-cell {
+        width: 72px;
+        font-size: 0.72rem
+      }
+
+      .day-tabs {
+        flex-wrap: wrap
+      }
+
+      .day-tab {
+        padding: 10px 16px;
+        font-size: 0.85rem
+      }
+
+      .program-section {
+        padding: 48px 0
+      }
+
+      .program-section .container {
+        padding: 0 12px
+      }
+    }
+
+    /* --- Program: unified timeline (PENDING APPROVAL — disabled, see commented HTML block below) --- */
     .prog-filterbar {
       position: sticky;
       top: 92px;
@@ -773,14 +932,18 @@
 
     .prog-rail-line {
       position: absolute;
-      left: 37px;
-      top: 20px;
-      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 26px;
+      bottom: 10px;
       width: 1px;
-      background: rgba(11, 57, 84, 0.12)
+      background: rgba(11, 57, 84, 0.14);
+      z-index: 0
     }
 
     .prog-day-dot {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -796,6 +959,7 @@
       height: 32px;
       border-radius: 50%;
       border: 1.5px solid rgba(11, 57, 84, 0.18);
+      background: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1620,7 +1784,7 @@
     .venue-bg {
       position: absolute;
       inset: 0;
-      background: url('images/varna_seaside_bg.jpg?v=20260707-5') center/cover no-repeat
+      background: url('images/varna_seaside_bg.jpg?v=20260708') center/cover no-repeat
     }
 
     .venue-scrim {
@@ -2981,7 +3145,7 @@
         <div class="hero-content">
           <!-- Left: Title -->
           <div class="hero-left">
-            <img src="images/Connexus - BLACK.svg?v=20260707-5" alt="Connexus" class="logo-connexus">
+            <img src="images/Connexus - BLACK.svg?v=20260708" alt="Connexus" class="logo-connexus">
             <h1>
               <span class="title-light" data-bg="Черноморски" data-en="Black Sea">Black Sea</span>
               <span data-bg="ТЕХНОЛОГИЧЕН" data-en="TECHNOLOGY">TECHNOLOGY</span><br>
@@ -2990,7 +3154,7 @@
           </div>
           <!-- Center: 3D Visual -->
           <div class="hero-center">
-            <img src="images/hero_3d.png?v=20260707-5" alt="BSTF 2026 Visual" width="1600" height="1270" fetchpriority="high" decoding="async">
+            <img src="images/hero_3d.png?v=20260708" alt="BSTF 2026 Visual" width="1600" height="1270" fetchpriority="high" decoding="async">
           </div>
           <!-- Right: Date, Location -->
           <div class="hero-right">
@@ -3129,55 +3293,55 @@
         style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1100px;margin:0 auto">
         <a href="speakers.html#track-ai" class="stream-card" data-track-link="ai"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/ai.png?v=20260707-5" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/ai.png?v=20260708" alt="AI" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
             data-en="Artificial Intelligence">Изкуствен интелект</div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/transport.png?v=20260707-5" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/transport.png?v=20260708" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
             data-en="Future of Transport">Транспорт на бъдещето</div>
         </div>
         <a href="speakers.html#track-smart-city" class="stream-card" data-track-link="smart-city"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/smart_city.png?v=20260707-5" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/smart_city.png?v=20260708" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
             град</div>
         </a>
         <a href="speakers.html#track-cybersecurity" class="stream-card" data-track-link="cybersecurity"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/cybersecurity.png?v=20260707-5" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/cybersecurity.png?v=20260708" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
             data-en="Cybersecurity">Киберсигурност</div>
         </a>
         <a href="speakers.html#track-automation" class="stream-card" data-track-link="automation"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/automation.png?v=20260707-5" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/automation.png?v=20260708" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Автоматизация и роботика </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/agritech.png?v=20260707-5" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/agritech.png?v=20260708" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
           </div>
         </div>
         <a href="speakers.html#track-marine" class="stream-card" data-track-link="marine"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/marine_tech.png?v=20260707-5" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/marine_tech.png?v=20260708" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
             data-en="Marine Tech">Морски технологии</div>
         </a>
         <a href="speakers.html#track-biotech" class="stream-card" data-track-link="biotech"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/biotech.png?v=20260707-5" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/biotech.png?v=20260708" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
           </div>
@@ -3220,7 +3384,7 @@
         <!-- Presidential patronage -->
         <div class="partner-row">
           <div class="partner-row__crest">
-            <img src="images/gerp-image.png?v=20260707-5" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
+            <img src="images/gerp-image.png?v=20260708" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
           </div>
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__content--text">
@@ -3242,17 +3406,17 @@
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--ict">
               <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                <img src="images/ict_cluster_logo.png?v=20260707-5" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
+                <img src="images/ict_cluster_logo.png?v=20260708" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
               </a>
             </div>
             <div class="partner-logo partner-logo--bsmepa">
-              <img src="images/bsmepa_logo.png?v=20260707-5" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
+              <img src="images/bsmepa_logo.png?v=20260708" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
             </div>
             <div class="partner-logo partner-logo--brainpp">
-              <img src="images/brainpp_logo.png?v=20260707-5" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
+              <img src="images/brainpp_logo.png?v=20260708" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
             </div>
             <div class="partner-logo partner-logo--arcf">
-              <img src="images/ARCF_logo.svg?v=20260707-5" alt="ARC Fund">
+              <img src="images/ARCF_logo.svg?v=20260708" alt="ARC Fund">
             </div>
           </div>
         </div>
@@ -3265,7 +3429,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--varna">
-              <img src="images/varna_coat.png?v=20260707-5" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
+              <img src="images/varna_coat.png?v=20260708" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
               <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                 data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
             </div>
@@ -3280,7 +3444,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--mobility">
-              <img src="images/mobility-partner.png?v=20260707-5" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
+              <img src="images/mobility-partner.png?v=20260708" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
             </div>
           </div>
         </div>
@@ -3310,6 +3474,264 @@
         data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.
       </p>
 
+      <div class="day-tabs">
+        <button class="day-tab active" data-day="1" data-bg="5 октомври" data-en="5 October">5 октомври</button>
+        <button class="day-tab" data-day="2" data-bg="6 октомври" data-en="6 October">6 октомври</button>
+        <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
+      </div>
+
+      <!-- Day 1 – Защо? -->
+      <div class="day-content active" data-day="1">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th colspan="3" class="day-subtitle-row" data-bg="Ден 1 – Защо?" data-en="Day 1 – Why?">Ден 1 – Защо?</th>
+            </tr>
+            <tr>
+              <th data-bg="Час" data-en="Time">Час</th>
+              <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
+              <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">13:00 – 13:30</td>
+              <td data-bg="Официално откриване" data-en="Official Opening">Официално откриване</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">13:30 – 14:00</td>
+              <td data-bg="Keynote – Технологии без граници за устойчив растеж в динамична среда"
+                data-en="Keynote – Borderless Technologies for Sustainable Growth in a Dynamic Environment">Keynote –
+                Технологии без граници за устойчив растеж в динамична среда</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">14:00 – 14:10</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">14:10 – 15:30</td>
+              <td data-bg="Блок 1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси"
+                data-en="Block 1 (80 min) – AI &amp; Automation as Answers to Rising Costs and Resource Shortages">Блок
+                1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси</td>
+              <td data-bg="Регионални политики за иновации" data-en="Regional Innovation Policies">Регионални политики
+                за иновации</td>
+            </tr>
+            <tr>
+              <td class="time-cell">15:30 – 15:45</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">15:45 – 17:05</td>
+              <td data-bg="Блок 2 (80 мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво"
+                data-en="Block 2 (80 min) – From Strategy to Execution: How Companies Deploy AI Sustainably">Блок 2 (80
+                мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво</td>
+              <td data-bg="Регионални политики за иновации" data-en="Regional Innovation Policies">Регионални политики
+                за иновации</td>
+            </tr>
+            <tr>
+              <td class="time-cell">17:05 – 17:15</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">17:15 – 17:45</td>
+              <td data-bg="Обобщаващ панел" data-en="Summary Panel">Обобщаващ панел</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">18:00 – 20:00</td>
+              <td data-bg="Техностарт Мотиватор" data-en="TechStart Motivator">Техностарт Мотиватор</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">20:00 – 22:00</td>
+              <td data-bg="Гала коктейл – ресторант х-л „Черно море“"
+                data-en="Gala Cocktail – Hotel Cherno More restaurant">Гала коктейл – ресторант х-л „Черно море“</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Day 2 – Какво и как? -->
+      <div class="day-content" data-day="2">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th colspan="3" class="day-subtitle-row" data-bg="Ден 2 – Какво и как?" data-en="Day 2 – What and how?">
+                Ден 2 – Какво и как?</th>
+            </tr>
+            <tr>
+              <th data-bg="Час" data-en="Time">Час</th>
+              <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
+              <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">09:30 – 09:50</td>
+              <td data-bg="Откриване и обобщение от Ден 1" data-en="Opening &amp; Day 1 Recap">Откриване и обобщение от
+                Ден 1</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">09:50 – 10:15</td>
+              <td data-bg="Keynote – Съвременни предизвикателства и новите бизнес модели"
+                data-en="Keynote – Contemporary Challenges and New Business Models">Keynote – Съвременни
+                предизвикателства и новите бизнес модели</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:15 – 10:30</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:30 – 11:50</td>
+              <td data-bg="Блок 1 (80 мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес"
+                data-en="Block 1 (80 min) – Secure Data, Resilient Chains &amp; Cyber-Resilient Business">Блок 1 (80
+                мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес</td>
+              <td data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</td>
+            </tr>
+            <tr>
+              <td class="time-cell">11:50 – 13:00</td>
+              <td data-bg="Пауза / Обяд / Networking" data-en="Break / Lunch / Networking" colspan="2">Пауза / Обяд /
+                Networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">13:00 – 14:20</td>
+              <td data-bg="Блок 2 (80 мин) – Управление с данни: IoT + логистика"
+                data-en="Block 2 (80 min) – Data-Driven Management: IoT + Logistics">Блок 2 (80 мин) – Управление с
+                данни: IoT + логистика</td>
+              <td data-bg="Биотехнологии, здраве и устойчиви индустрии"
+                data-en="Biotechnologies, Health &amp; Sustainable Industries">Биотехнологии, здраве и устойчиви
+                индустрии</td>
+            </tr>
+            <tr>
+              <td class="time-cell">14:20 – 15:00</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">15:00 – 16:05</td>
+              <td data-bg="Блок 3 (65 мин) – Роботика" data-en="Block 3 (65 min) – Robotics">Блок 3 (65 мин) – Роботика
+              </td>
+              <td data-bg="Туризъм" data-en="Tourism">Туризъм</td>
+            </tr>
+            <tr>
+              <td class="time-cell">16:05 – 16:20</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">16:20 – 16:50</td>
+              <td data-bg="Обобщаващ панел" data-en="Summary Panel">Обобщаващ панел</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">20:00 – 22:00</td>
+              <td data-bg="Парти – ресторант х-л „Черно море“" data-en="Party – Hotel Cherno More restaurant">Парти –
+                ресторант х-л „Черно море“</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Day 3 – Какво следва? -->
+      <div class="day-content" data-day="3">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th colspan="3" class="day-subtitle-row" data-bg="Ден 3 – Какво следва?" data-en="Day 3 – What's next?">
+                Ден 3 – Какво следва?</th>
+            </tr>
+            <tr>
+              <th data-bg="Час" data-en="Time">Час</th>
+              <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
+              <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time-cell">09:30 – 09:50</td>
+              <td data-bg="Откриване и обобщение от Ден 2" data-en="Opening &amp; Day 2 Recap">Откриване и обобщение от
+                Ден 2</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">09:50 – 10:15</td>
+              <td data-bg="Keynote – Какво следва?" data-en="Keynote – What’s Next?">Keynote – Какво следва?</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:15 – 10:30</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">10:30 – 11:50</td>
+              <td data-bg="Блок 1 (80 мин) – Финансиране, износ, нови пазари"
+                data-en="Block 1 (80 min) – Financing, Export, New Markets">Блок 1 (80 мин) – Финансиране, износ, нови
+                пазари</td>
+              <td data-bg="Образование" data-en="Education">Образование</td>
+            </tr>
+            <tr>
+              <td class="time-cell">11:50 – 13:00</td>
+              <td data-bg="Пауза / Обяд / Networking" data-en="Break / Lunch / Networking" colspan="2">Пауза / Обяд /
+                Networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">13:00 – 14:20</td>
+              <td data-bg="Блок 2 (80 мин) – Индустрия" data-en="Block 2 (80 min) – Industry">Блок 2 (80 мин) –
+                Индустрия</td>
+              <td data-bg="Образование" data-en="Education">Образование</td>
+            </tr>
+            <tr>
+              <td class="time-cell">14:20 – 15:00</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">15:00 – 16:05</td>
+              <td data-bg="Блок 3 (65 мин) – Нови хоризонти…" data-en="Block 3 (65 min) – New Horizons…">Блок 3 (65 мин)
+                – Нови хоризонти…</td>
+              <td data-bg="Умно земеделие" data-en="Smart Agriculture">Умно земеделие</td>
+            </tr>
+            <tr>
+              <td class="time-cell">16:05 – 16:20</td>
+              <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
+                & Expo networking</td>
+            </tr>
+            <tr>
+              <td class="time-cell">16:20 – 17:00</td>
+              <td data-bg="Закриване на Черноморски технологичен форум Варна 2026"
+                data-en="Closing of Black Sea Technology Forum Varna 2026">Закриване на Черноморски технологичен форум
+                Варна 2026</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!--
+  NEW PROGRAM TIMELINE — built 2026-07-08, pending client approval of the section redesign.
+  Do not delete: uncomment this block and remove/comment the old day-tabs block above to re-enable.
+
+  <section class="program-section" id="program">
+    <div class="container">
+      <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
+      <p class="section-subtitle text-center" data-bg="Основна програма + Секторни теми, работещи паралелно."
+        data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.
+      </p>
+
       <div class="prog-filterbar" id="progFilterBar">
         <span class="prog-fb-label" data-bg="Направление" data-en="Track">Направление</span>
         <div class="prog-fb-pills" id="progTrackPills"></div>
@@ -3328,8 +3750,10 @@
       </div>
     </div>
   </section>
+  -->
 
-  <script>
+  <script id="prog-timeline-script" type="text/plain" disabled>
+  Same as above: change type="text/plain" to remove it (and delete the disabled attribute) to re-enable.
     var PROGRAM_TRACKS = [
       { id: 'ai', bg: 'Изкуствен интелект', en: 'Artificial Intelligence' },
       { id: 'cybersecurity', bg: 'Киберсигурност', en: 'Cybersecurity' },

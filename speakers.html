@@ -14,13 +14,13 @@
   <meta property="og:title" content="Лектори - BSTF 2026">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - Speakers">
   <meta property="og:url" content="https://bstf2026.bg/speakers.html">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260708">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лектори - BSTF 2026">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Speakers">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260708">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -980,41 +980,9 @@
       }
     }
 
-    .spk-coming-banner {
-      position: relative;
-      background: linear-gradient(135deg, var(--navy) 0%, #0d4a6e 100%);
-      border-radius: var(--radius);
-      padding: 40px;
+    .apply-cta-wrap {
       text-align: center;
-      margin-top: 48px;
-      margin-bottom: 28px;
-      overflow: hidden;
-      box-shadow: 0 20px 44px rgba(8, 28, 43, 0.22);
-      border-top: 1px solid rgba(44, 166, 179, 0.4)
-    }
-
-    .spk-coming-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: var(--dot-grid);
-      background-size: 22px 22px;
-      mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(0, 0, 0, 0.8), transparent 75%);
-      opacity: 0.5;
-      pointer-events: none
-    }
-
-    .spk-coming-banner h3 {
-      position: relative;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 8px
-    }
-
-    .spk-coming-banner p {
-      position: relative;
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.95rem
+      margin-top: 96px
     }
 
     .prefooter-cta {
@@ -1440,7 +1408,7 @@
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260707-5"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260708"></script>
       <script>
         (function () {
           'use strict';
@@ -1506,17 +1474,7 @@
           if (statTracks) statTracks.textContent = tracks.length;
         })();
       </script>
-      <div class="spk-coming-banner">
-        <h3 data-bg="Официалното обявяване на лекторите предстои" data-en="Speaker announcements coming soon">
-          Официалното обявяване на лекторите предстои</h3>
-        <p data-bg="Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно море и извън него."
-          data-en="We are assembling an exceptional lineup of practitioners, researchers, and policymakers from across the Black Sea region and beyond.">
-          Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно
-          море и извън него.</p>
-      </div>
-
-      <!-- Apply CTA -->
-      <div style="text-align:center">
+      <div class="apply-cta-wrap">
         <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор"
           data-en="Apply as speaker">Кандидатствай като лектор</button>
       </div>
@@ -1652,7 +1610,7 @@
             <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
             <option data-bg="Умен град" data-en="Smart City">Умен град</option>
             <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
-            <option data-bg="Автоматизация" data-en="Automation">Автоматизация</option>
+            <option data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
             <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
             <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
             <option data-bg="BioTech" data-en="BioTech">BioTech</option>
