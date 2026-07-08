@@ -13,30 +13,46 @@
 <meta property="og:title" content="Изложители - BSTF 2026">
 <meta property="og:description" content="Black Sea Technology Forum 2026 - Sponsorship Packages">
 <meta property="og:url" content="https://bstf2026.bg/sponsors.html">
-<meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+<meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Изложители - BSTF 2026">
 <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Sponsorship Packages">
-<meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260702">
+<meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260707-5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
-:root{--navy:#0B3954;--teal:#2CA6B3;--light-blue:#EDF7FA;--white:#FFFFFF;--light-gray:#F5F7F9;--dark:#1a1a2e;--text:#333;--text-light:#666;--radius:12px;--radius-sm:8px;--transition:0.3s ease;--shadow:0 4px 20px rgba(0,0,0,0.08);--shadow-lg:0 8px 40px rgba(0,0,0,0.12)}
+:root{--navy:#0B3954;--navy-deep:#0d4a6e;--teal:#2CA6B3;--teal-deep:#1a8a96;--light-blue:#EDF7FA;--white:#FFFFFF;--light-gray:#F5F7F9;--dark:#1a1a2e;--text:#333;--text-light:#666;--radius:12px;--radius-sm:8px;--radius-lg:20px;--transition:0.3s ease;--shadow:0 4px 20px rgba(0,0,0,0.08);--shadow-lg:0 8px 40px rgba(0,0,0,0.12);--shadow-modal:inset 0 1px 0 rgba(255,255,255,0.7),0 8px 20px rgba(11,57,84,0.12),0 30px 64px rgba(11,57,84,0.2);--ease-premium:cubic-bezier(0.16,1,0.3,1);--dot-grid:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, transparent 0);--mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace}
+@view-transition{navigation:auto}
+::view-transition-group(root){animation-duration:.45s;animation-timing-function:var(--ease-premium)}
+@media (prefers-reduced-motion: reduce){.modal-overlay.open,.modal{animation:none!important}}
+::view-transition-old(root){animation-name:bstf-vt-out}
+::view-transition-new(root){animation-name:bstf-vt-in}
+@keyframes bstf-vt-out{to{opacity:0;transform:translateY(-2%)}}
+@keyframes bstf-vt-in{from{opacity:0;transform:translateY(3%)}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{font-family:'Inter',sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;background:var(--white)}
+::selection{background:var(--teal);color:var(--white)}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:var(--light-gray)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--teal),var(--navy));border-radius:20px;border:3px solid var(--light-gray)}
 h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;line-height:1.2}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}button{cursor:pointer;font-family:inherit;border:none;background:none}ul{list-style:none}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .text-center{text-align:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-weight:600;font-size:1rem;transition:var(--transition);cursor:pointer}
-.btn-primary{background:var(--teal);color:var(--white)}.btn-primary:hover{background:#238a95;transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn-outline{border:2px solid var(--teal);color:var(--teal)}.btn-outline:hover{background:var(--teal);color:var(--white)}
-.btn-white{background:var(--white);color:var(--navy)}.btn-white:hover{background:var(--light-blue);transform:translateY(-2px)}
+.section-title{font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;color:var(--navy);text-align:center;margin-bottom:14px;letter-spacing:-0.01em}
+.section-title-bar{width:56px;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal-deep));border-radius:2px;margin:0 auto 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-weight:600;font-size:1rem;letter-spacing:0.01em;transition:transform 0.3s var(--ease-premium),box-shadow 0.3s var(--ease-premium),background 0.3s ease;cursor:pointer;position:relative}
+.btn-primary{background:linear-gradient(155deg,var(--teal) 0%,var(--teal-deep) 100%);color:var(--white);box-shadow:0 1px 0 rgba(255,255,255,0.25) inset,0 8px 20px rgba(26,138,150,0.28)}
+.btn-primary:hover{background:linear-gradient(155deg,#34b8c6 0%,var(--teal-deep) 100%);transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,0.3) inset,0 14px 30px rgba(26,138,150,0.38)}
+.btn-outline{border:2px solid var(--teal);color:var(--teal);background:rgba(44,166,179,0.03)}
+.btn-outline:hover{background:var(--teal);color:var(--white);box-shadow:0 10px 24px rgba(26,138,150,0.28);transform:translateY(-2px)}
+.btn-white{background:linear-gradient(155deg,var(--white) 0%,#f4fafb 100%);color:var(--navy);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+.btn-white:hover{background:var(--light-blue);transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,0.16)}
 .btn-sm{padding:10px 20px;font-size:0.875rem}
 nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);transition:var(--transition)}
 nav.main-nav .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;width:100%;padding:0 32px}
@@ -59,16 +75,22 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-nav.open{display:block}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}.mobile-nav a.btn-primary{color:var(--white)!important;border-bottom:none}
 .mobile-nav a.active{color:var(--teal)}
-.page-hero{position:relative;padding:140px 24px 80px;background:linear-gradient(135deg,rgba(11,57,84,0.95) 0%,rgba(44,166,179,0.88) 100%);text-align:center;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:url('images/Varna.png') center/cover no-repeat;opacity:0.15;z-index:0}
+.page-hero{position:relative;background:radial-gradient(ellipse 900px 500px at 50% -10%,rgba(44,166,179,0.16) 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);padding:148px 24px 96px;text-align:center;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:var(--dot-grid);background-size:24px 24px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,0,0,0.9),transparent 75%);opacity:0.6;pointer-events:none}
+.page-hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(44,166,179,0.5),transparent)}
 .page-hero .container{position:relative;z-index:1}
-.page-hero h1{font-size:3rem;font-weight:700;color:var(--white);margin-bottom:16px}
-.page-hero p{font-size:1.2rem;color:rgba(255,255,255,0.85);max-width:650px;margin:0 auto}
-.prefooter-cta{padding:80px 0;background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);text-align:center}
+.hero-inner{max-width:700px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:22px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';flex-shrink:0;width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--teal));display:block}
+.hero-eyebrow::after{background:linear-gradient(90deg,var(--teal),transparent)}
+.page-hero h1{font-size:clamp(2.6rem,5vw,3.4rem);font-weight:700;letter-spacing:-0.02em;color:var(--white);margin-bottom:16px}
+.page-hero p{font-size:1.1rem;line-height:1.7;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto}
+.prefooter-cta{padding:80px 0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);text-align:center}
 .prefooter-cta h2{font-size:2.25rem;color:var(--white);margin-bottom:12px}
 .prefooter-cta p{color:rgba(255,255,255,0.8);margin-bottom:32px;font-size:1.1rem}
 .prefooter-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64px 0 32px}
+footer.main-footer{position:relative;background:var(--dark);color:rgba(255,255,255,0.8);padding:64px 0 32px}
+footer.main-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .footer-brand .logo{font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:12px}
 .footer-brand .logo span{color:var(--teal)}
@@ -77,17 +99,29 @@ footer.main-footer{background:var(--dark);color:rgba(255,255,255,0.8);padding:64
 .footer-col a{display:block;font-size:0.85rem;padding:4px 0;transition:var(--transition)}
 .footer-col a:hover{color:var(--teal)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem}
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:300;align-items:center;justify-content:center;padding:24px}
-.modal-overlay.open{display:flex}
-.modal{background:var(--white);border-radius:var(--radius);max-width:520px;width:100%;max-height:90vh;overflow-y:auto;padding:40px;position:relative}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(8,20,28,0.6);backdrop-filter:blur(6px);z-index:300;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex;animation:modalOverlayIn 0.3s var(--ease-premium)}
+@keyframes modalOverlayIn{from{opacity:0}to{opacity:1}}
+@keyframes modalPanelIn{from{opacity:0;transform:translateY(16px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal{background:var(--white);border-radius:var(--radius-lg);max-width:520px;width:100%;max-height:90vh;overflow-y:auto;padding:44px 40px;position:relative;box-shadow:var(--shadow-modal);animation:modalPanelIn 0.35s var(--ease-premium)}
 .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--text-light);transition:var(--transition);background:var(--light-gray)}
 .modal-close:hover{background:var(--navy);color:var(--white)}
-.modal h2{font-size:1.5rem;color:var(--navy);margin-bottom:8px}
-.modal .modal-desc{font-size:0.9rem;color:var(--text-light);margin-bottom:24px}
+.modal-close:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.modal-eyebrow{display:block;font-family:var(--mono);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px}
+.modal h2{font-size:1.55rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.modal .modal-desc{font-size:0.92rem;line-height:1.55;color:var(--text-light);margin-bottom:24px}
+.modal-pricing-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--teal-deep);text-underline-offset:3px;margin:-12px 0 24px}
+.modal-pricing-link:hover{text-decoration:underline}
+.modal-pricing-link:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:4px}
 .form-group{margin-bottom:16px}
 .form-group label{display:block;font-size:0.85rem;font-weight:500;color:var(--text);margin-bottom:6px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:var(--radius-sm);font-size:0.9rem;font-family:inherit;transition:var(--transition)}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(44,166,179,0.15)}
+.form-group .form-hint{display:block;font-size:0.78rem;font-weight:400;color:var(--text-light);margin-top:4px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid #E2E8EE;border-radius:var(--radius-sm);font-size:0.9rem;font-family:inherit;background:var(--white);transition:var(--transition)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus,.form-group input:focus-visible,.form-group select:focus-visible,.form-group textarea:focus-visible{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(44,166,179,0.18)}
+.form-group select{appearance:none;-webkit-appearance:none;-moz-appearance:none;cursor:pointer;padding-right:44px;text-overflow:ellipsis;color:var(--navy);font-weight:600;background-color:var(--white);box-shadow:inset 0 1px 2px rgba(11,57,84,0.05);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230B3954' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px 8px;transition:border-color 0.2s ease,background-color 0.2s ease,box-shadow 0.2s ease}
+.form-group select:hover{border-color:var(--teal);background-color:var(--light-blue)}
+.form-group select:focus{background-color:var(--white);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%232CA6B3' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.form-group select option{color:var(--text);font-weight:400;padding:8px 12px}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-submit{width:100%;margin-top:8px}
 .modal-success{display:none;text-align:center;padding:40px 20px}
@@ -103,10 +137,11 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 
 /* Sponsor packages */
 .sponsor-packages{padding:80px 0;background:var(--white)}
-.sponsor-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:64px}
-.sponsor-card{background:var(--white);border-radius:var(--radius);padding:28px 20px;border:2px solid var(--light-gray);display:flex;flex-direction:column;align-items:center;text-align:center;transition:var(--transition);position:relative;overflow:hidden}
-.sponsor-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.sponsor-card .tier-badge{text-transform:uppercase}
+.sponsor-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-bottom:64px}
+.sponsor-card{background:var(--white);border-radius:16px;padding:32px 22px;border:1px solid rgba(11,57,84,0.08);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform 0.32s var(--ease-premium),box-shadow 0.32s var(--ease-premium),border-color 0.32s ease;position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,0.7) inset,0 1px 4px rgba(11,57,84,0.06),0 8px 24px rgba(11,57,84,0.06)}
+.sponsor-card:hover{transform:translateY(-8px);border-color:rgba(44,166,179,0.35);box-shadow:0 1px 0 rgba(255,255,255,0.7) inset,0 4px 16px rgba(11,57,84,0.1),0 26px 56px rgba(11,57,84,0.16)}
+.sponsor-card.selected{border-color:var(--teal);box-shadow:0 0 0 2px rgba(44,166,179,0.25),0 1px 0 rgba(255,255,255,0.7) inset,0 26px 56px rgba(11,57,84,0.16)}
+.sponsor-card .tier-badge{text-transform:uppercase;border-radius:50px}
 .sponsor-card .tier-price{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--teal);margin-bottom:4px}
 .sponsor-card .tier-spots{font-size:0.8rem;color:var(--text-light);margin-bottom:20px}
 .sponsor-card .tier-divider{width:100%;height:1px;background:var(--light-gray);margin-bottom:16px}
@@ -115,21 +150,22 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .sponsor-card .benefit-list li .icon-yes{color:var(--teal);font-weight:700;flex-shrink:0}
 .sponsor-card .benefit-list li .icon-no{color:#ccc;flex-shrink:0}
 .sponsor-card .benefit-list li.disabled{color:#bbb}
-.sponsor-card .btn{margin-top:auto;transition:var(--transition)}
-.sponsor-card .btn:hover{opacity:0.85;transform:translateY(-2px);box-shadow:var(--shadow)}
+.sponsor-card .btn{margin-top:auto;transition:transform 0.3s var(--ease-premium),box-shadow 0.3s var(--ease-premium),opacity 0.3s ease}
+.sponsor-card .btn:hover{opacity:0.85;transform:translateY(-2px);box-shadow:0 10px 24px rgba(11,57,84,0.22)}
 
 /* Comparison table */
 .comparison-section{padding:0 0 80px;background:var(--white)}
-.comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.comparison-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 1px 4px rgba(11,57,84,0.06),0 20px 48px rgba(11,57,84,0.1);border:1px solid rgba(11,57,84,0.06)}
 .comparison-table{width:100%;border-collapse:collapse;font-size:0.85rem}
-.comparison-table thead th{position:sticky;top:0;background:var(--navy);color:var(--white);padding:14px 10px;font-weight:600;text-align:center;white-space:nowrap;font-size:0.85rem;width:15%}
-.comparison-table thead th:first-child{text-align:left;min-width:240px;width:25%}
-.comparison-table tbody td{padding:10px;border-bottom:1px solid var(--light-gray);text-align:center;vertical-align:middle}
+.comparison-table thead th{position:sticky;top:0;background:var(--navy);color:var(--white);padding:16px 10px;font-weight:600;text-align:center;white-space:nowrap;font-size:0.85rem;width:15%}
+.comparison-table thead th:first-child{text-align:left;min-width:240px;width:25%;background:linear-gradient(120deg,var(--navy) 0%,var(--navy-deep) 100%)}
+.comparison-table tbody td{padding:11px 10px;border-bottom:1px solid var(--light-gray);text-align:center;vertical-align:middle}
 .comparison-table tbody td:first-child{text-align:left;color:var(--text);font-weight:500}
 .comparison-table tbody tr:hover{background:var(--light-blue)}
 .comparison-table .yes{color:var(--teal);font-weight:700}
 .comparison-table .no{color:#ccc}
-.comparison-table .cat-row td{background:#d9e8f0;color:var(--navy);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.8px;padding:14px 10px;border-left:4px solid var(--teal)}
+.comparison-table .cat-row td{background:rgba(11,57,84,0.05);color:var(--navy);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.8px;padding:13px 10px;border-left:4px solid var(--teal);border-top:14px solid var(--white)}
+.price-note{text-align:center;color:var(--text-light);font-size:0.82rem;margin-top:24px}
 
 
 @media(max-width:1024px){
@@ -142,7 +178,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   .page-hero h1{font-size:2rem}
   .page-hero p{font-size:1rem}
   .page-hero{padding:120px 24px 60px}
-  .sponsor-cards{grid-template-columns:1fr}
+  .sponsor-cards{grid-template-columns:repeat(2,1fr)}
   .comparison-table{font-size:0.75rem}
   .comparison-table thead th{padding:8px 6px;font-size:0.7rem}
   .comparison-table tbody td{padding:8px 6px}
@@ -156,11 +192,17 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   .fp-chips{gap:7px}
   .fp-chip{font-size:0.7rem;padding:4px 10px}
   .fp-activate .fp-play{width:74px;height:74px;border-radius:14px}
+  .floor-plan-wrap{padding:8px;border-radius:18px}
+  .fp-stage{border-radius:12px}
+}
+@media(max-width:560px){
+  .sponsor-cards{grid-template-columns:1fr}
 }
 /* Floor plan */
-.floor-plan-section{padding:80px 0;background:var(--white)}
-.floor-plan-wrap{background:var(--white);margin-bottom:48px}
-.fp-stage{position:relative;width:100%;height:clamp(480px,72vh,800px);border-radius:var(--radius-sm);overflow:hidden;background:var(--light-blue);box-shadow:var(--shadow)}
+.floor-plan-section{padding:80px 0;background:var(--light-blue)}
+.floor-plan-intro{max-width:620px;margin:0 auto 40px;text-align:center;color:var(--text-light);font-size:1rem;line-height:1.65}
+.floor-plan-wrap{background:var(--white);border:1px solid rgba(11,57,84,0.06);border-radius:24px;padding:14px;box-shadow:0 1px 0 rgba(255,255,255,0.9) inset,0 2px 8px rgba(11,57,84,0.04),0 30px 60px rgba(11,57,84,0.1);margin-bottom:48px}
+.fp-stage{position:relative;width:100%;aspect-ratio:2.35;min-height:350px;border-radius:16px;overflow:hidden;background:var(--light-blue);box-shadow:0 8px 24px rgba(11,57,84,0.18)}
 .fp-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .fp-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .fp-activate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(180deg,rgba(11,57,84,0.08) 0%,rgba(11,57,84,0.52) 55%,rgba(11,57,84,0.82) 100%);cursor:pointer;border:none;width:100%;transition:var(--transition);z-index:2}
@@ -182,7 +224,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .fp-fs{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:8px;background:rgba(11,57,84,0.75);color:#fff;display:none;align-items:center;justify-content:center;font-size:1.15rem;backdrop-filter:blur(6px);transition:var(--transition)}
 .fp-fs:hover{background:var(--teal)}
 .fp-stage.active .fp-fs{display:flex}
-.fp-stage:fullscreen{height:100%;border-radius:0}
+.fp-stage:fullscreen{height:100%;aspect-ratio:auto;border-radius:0}
 @media(max-width:768px){#nav-cta-btn{display:none!important}}
 </style>
 </head>
@@ -223,18 +265,23 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h1 data-bg="Изложители" data-en="Exhibitors">Изложители</h1>
-    <p data-bg="Станете партньор на водещия технологичен форум в Черноморския регион." data-en="Become a partner of the leading technology forum in the Black Sea region.">Станете партньор на водещия технологичен форум в Черноморския регион.</p>
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-bg="BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ" data-en="BSTF 2026 · VARNA · OCT 5-7">BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ</p>
+      <h1 data-bg="Изложители" data-en="Exhibitors">Изложители</h1>
+      <p data-bg="Станете партньор на водещия технологичен форум в Черноморския регион." data-en="Become a partner of the leading technology forum in the Black Sea region.">Станете партньор на водещия технологичен форум в Черноморския регион.</p>
+    </div>
   </div>
 </section>
 
 <!-- Floor Plan -->
 <section class="floor-plan-section">
   <div class="container">
-    <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:32px" data-bg="Схема на изложението" data-en="Exhibition Floor Plan">Схема на изложението</h2>
+    <h2 class="section-title" data-bg="Схема на изложението" data-en="Exhibition Floor Plan">Схема на изложението</h2>
+    <div class="section-title-bar"></div>
+    <p class="floor-plan-intro" data-bg="Разгледайте залата, щандовете и сцените отвътре - завъртете модела на 360° и изберете позицията, която пасва на вашия бранд, преди да заявите пакет." data-en="Explore the hall, booths and stages from the inside - rotate the model 360° and pick the spot that fits your brand before you request a package.">Разгледайте залата, щандовете и сцените отвътре - завъртете модела на 360° и изберете позицията, която пасва на вашия бранд, преди да заявите пакет.</p>
     <div class="floor-plan-wrap">
       <div class="fp-stage" id="fp-stage">
-        <img class="fp-poster" src="images/new-preview.png" alt="3D схема на изложението" loading="lazy">
+        <img class="fp-poster" src="images/new-preview.png?v=20260707-5" alt="3D схема на изложението" loading="lazy" decoding="async" width="980" height="557">
         <button class="fp-activate" id="fp-activate" aria-label="Зареди интерактивния 3D изглед">
           <span class="fp-3d-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -361,7 +408,8 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <!-- Comparison Table -->
 <section class="comparison-section">
   <div class="container">
-    <h2 class="text-center" style="font-size:2rem;color:var(--navy);margin-bottom:32px" data-bg="Сравнение на пакетите" data-en="Package Comparison">Сравнение на пакетите</h2>
+    <h2 class="section-title" data-bg="Сравнение на пакетите" data-en="Package Comparison">Сравнение на пакетите</h2>
+    <div class="section-title-bar"></div>
     <div class="comparison-wrap">
       <table class="comparison-table">
         <thead>
@@ -410,10 +458,9 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
         </tbody>
       </table>
     </div>
+    <p class="price-note" data-bg="* Всички цени са без ДДС." data-en="* All prices are VAT excluded.">* Всички цени са без ДДС.</p>
   </div>
 </section>
-
-<div style="text-align:center;padding:16px 24px 0;color:var(--text-light);font-size:0.85rem;font-style:italic" data-bg="* Всички цени са без ДДС." data-en="* All prices are VAT excluded.">* Всички цени са без ДДС.</div>
 
 <!-- Pre-footer CTA -->
 <section class="prefooter-cta">
@@ -422,7 +469,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <p data-bg="Свържете се с нас за персонализирано предложение." data-en="Contact us for a customized proposal.">Свържете се с нас за персонализирано предложение.</p>
     <div class="prefooter-buttons">
       <a href="mailto:bstf@ictclustervarna.com?subject=Sponsorship%20Inquiry" class="btn btn-white" data-bg="Свържете се с нас" data-en="Contact us">Свържете се с нас</a>
-      <a href="index.html#expo" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж изложението" data-en="View exhibition">Виж изложението</a>
+      <a href="expo.html#floor-plan" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж изложението" data-en="View exhibition">Виж изложението</a>
     </div>
   </div>
 </section>
@@ -470,11 +517,22 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   <div class="modal">
     <button class="modal-close" onclick="closeModal('exhibitor-modal')">&times;</button>
     <div class="modal-form" id="exhibitor-form">
+      <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF 2026 &middot; ИЗЛОЖЕНИЕ</span>
       <h2 data-bg="Запитване за щанд" data-en="Booth Inquiry">Запитване за щанд</h2>
       <p class="modal-desc" data-bg="Попълнете формата и ще се свържем с вас." data-en="Fill in the form and we will contact you.">Попълнете формата и ще се свържем с вас.</p>
       <div class="form-group"><label data-bg="Компания" data-en="Company Name">Компания</label><input type="text" required></div>
       <div class="form-group"><label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label><input type="text" required></div>
       <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" required></div>
+      <div class="form-group"><label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
+        <select id="exhibitor-tier">
+          <option value="expo" data-bg="Expo - &euro;1,700" data-en="Expo - &euro;1,700">Expo - &euro;1,700</option>
+          <option value="silver" data-bg="Silver - &euro;7,500" data-en="Silver - &euro;7,500">Silver - &euro;7,500</option>
+          <option value="gold" data-bg="Gold - &euro;12,000" data-en="Gold - &euro;12,000">Gold - &euro;12,000</option>
+          <option value="stage" data-bg="Stage - &euro;18,000" data-en="Stage - &euro;18,000">Stage - &euro;18,000</option>
+          <option value="institution" data-bg="Institution - &euro;30,000" data-en="Institution - &euro;30,000">Institution - &euro;30,000</option>
+        </select>
+        <span class="form-hint" data-bg="Виж пълното сравнение на пакетите по-горе на тази страница." data-en="See the full package comparison above on this page.">Виж пълното сравнение на пакетите по-горе на тази страница.</span>
+      </div>
       <div class="form-group"><label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label><textarea id="exhibitor-notes" rows="3"></textarea></div>
       <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати запитване" data-en="Submit Inquiry">Изпрати запитване</button>
     </div>
@@ -487,42 +545,12 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   </div>
 </div>
 
-<!-- Sponsor Inquiry Modal -->
-<div class="modal-overlay" id="sponsor-modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('sponsor-modal')">&times;</button>
-    <div class="modal-form" id="sponsor-form">
-      <h2 data-bg="Запитване за спонсорство" data-en="Sponsorship Inquiry">Запитване за спонсорство</h2>
-      <p class="modal-desc" data-bg="Попълнете формата и ще се свържем с вас." data-en="Fill in the form and we will contact you.">Попълнете формата и ще се свържем с вас.</p>
-      <div class="form-group"><label data-bg="Компания" data-en="Company">Компания</label><input type="text" required></div>
-      <div class="form-group"><label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label><input type="text" required></div>
-      <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" required></div>
-      <div class="form-group"><label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
-        <select>
-          <option data-bg="Institution - &euro;30,000" data-en="Institution - &euro;30,000">Institution - &euro;30,000</option>
-          <option data-bg="Stage - &euro;20,000" data-en="Stage - &euro;20,000">Stage - &euro;20,000</option>
-          <option data-bg="Gold - &euro;15,000" data-en="Gold - &euro;15,000">Gold - &euro;15,000</option>
-          <option data-bg="Silver - &euro;9,500" data-en="Silver - &euro;9,500">Silver - &euro;9,500</option>
-          <option data-bg="Expo - &euro;1,200" data-en="Expo - &euro;1,200">Expo - &euro;1,200</option>
-        </select>
-      </div>
-      <div class="form-group"><label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label><textarea rows="3"></textarea></div>
-      <button class="btn btn-primary form-submit" onclick="submitSponsor()" data-bg="Изпрати запитване" data-en="Submit Inquiry">Изпрати запитване</button>
-    </div>
-    <div class="modal-success" id="sponsor-success">
-      <div class="success-icon">&#x2713;</div>
-      <h3 data-bg="Запитването е изпратено!" data-en="Inquiry Submitted!">Запитването е изпратено!</h3>
-      <p data-bg="Ще се свържем с вас в рамките на 2 работни дни." data-en="We will contact you within 2 business days.">Ще се свържем с вас в рамките на 2 работни дни.</p>
-      <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('sponsor-modal')" data-bg="Затвори" data-en="Close">Затвори</button>
-    </div>
-  </div>
-</div>
-
 <!-- Registration Modal -->
 <div class="modal-overlay" id="register-modal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('register-modal')">&times;</button>
     <div class="modal-form" id="register-form">
+      <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА" data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
       <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
       <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на BSTF 2026." data-en="Fill in the form to reserve your spot at BSTF 2026.">Попълнете формата, за да резервирате вашето място на BSTF 2026.</p>
       <div class="form-group"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input type="text" id="reg-name" placeholder="John Doe" required></div>
@@ -530,8 +558,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <div class="form-group"><label data-bg="Телефон" data-en="Phone">Телефон</label><input type="tel" id="reg-phone" placeholder="+359 ..."></div>
       <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
         <select id="reg-ticket">
-          <option value="early-bird" data-bg="Early Bird - 199 EUR" data-en="Early Bird - 199 EUR">Early Bird - 199 EUR</option>
-          <option value="standard" data-bg="Full Event - 199 EUR" data-en="Full Event - 199 EUR">Full Event - 199 EUR</option>
+          <option value="standard" data-bg="Standard (Full Event) - 199 EUR" data-en="Standard (Full Event) - 199 EUR">Standard (Full Event) - 199 EUR</option>
           <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
           <option value="ultra-vip" data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR</option>
         </select>
@@ -617,12 +644,6 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     if (s) { s.classList.add('show'); s.style.display = 'block'; }
   }
   window.submitRegister = submitRegister;
-  function submitSponsor() {
-    var f = document.getElementById('sponsor-form'), s = document.getElementById('sponsor-success');
-    if (f) f.style.display = 'none';
-    if (s) { s.classList.add('show'); s.style.display = 'block'; }
-  }
-  window.submitSponsor = submitSponsor;
 
   // Sponsor card selection
   document.querySelectorAll('.sponsor-card').forEach(function(card) {
@@ -676,7 +697,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260702';
+    iframe.src = '3d-model/floorplan3d_v2.html?v=20260707-5';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');
@@ -702,10 +723,15 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
     if (d.type === 'bstf3d' && d.action === 'reserveStand') {
       if (document.fullscreenElement) { document.exitFullscreen(); }
       openModal('exhibitor-modal');
+      var tierSel = document.getElementById('exhibitor-tier');
+      if (tierSel) tierSel.value = 'expo';
       var ta = document.getElementById('exhibitor-notes');
       if (ta && d.stand) {
         var en = (localStorage.getItem('bstf-lang') === 'en');
-        ta.value = (en ? 'Booth no. ' : 'Щанд № ') + d.stand;
+        var priceStr = d.price ? ' (€' + Number(d.price).toLocaleString('de-DE') + ')' : '';
+        ta.value = en
+          ? 'Booth no. ' + d.stand + (d.tier ? ' - ' + d.tier + ' position' : '') + priceStr
+          : 'Щанд № ' + d.stand + (d.tier ? ' - ' + d.tier + ' позиция' : '') + priceStr;
       }
     }
   });

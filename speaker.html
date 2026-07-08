@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -1085,7 +1085,7 @@
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260702"></script>
+  <script src="data/speakers-data.js?v=20260708"></script>
   <script>
     (function () {
       'use strict';
@@ -1167,6 +1167,8 @@
         heroTrack.setAttribute('data-bg', track.labelBg);
         heroTrack.setAttribute('data-en', track.labelEn);
         heroTrack.textContent = track.labelBg;
+        heroName.setAttribute('data-bg', speaker.name);
+        heroName.setAttribute('data-en', speaker.nameEn || speaker.name);
         heroName.innerHTML = speaker.name;
         heroRole.innerHTML = speaker.role;
 
@@ -1176,7 +1178,7 @@
           '<div class="sp-photo"><img loading="eager" decoding="async" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
           '<div class="sp-body">' +
           '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
-          '<div class="sp-name">' + speaker.name + '</div>' +
+          '<div class="sp-name" data-bg="' + esc(speaker.name) + '" data-en="' + esc(speaker.nameEn || speaker.name) + '">' + speaker.name + '</div>' +
           '<div class="sp-role">' + speaker.role + '</div>' +
           '<div class="sp-topic">' +
           '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span>' +
@@ -1296,8 +1298,6 @@
             placeholder="+359 ..."></div>
         <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
           <select id="reg-ticket">
-            <option value="early-bird" data-bg="Early Bird - 199 EUR" data-en="Early Bird - 199 EUR">Early Bird - 199
-              EUR</option>
             <option value="standard" data-bg="Full Event - 199 EUR" data-en="Full Event - 199 EUR">Full Event - 199 EUR
             </option>
             <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
@@ -1343,7 +1343,7 @@
             <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
             <option data-bg="Умен град" data-en="Smart City">Умен град</option>
             <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
-            <option data-bg="Автоматизация" data-en="Automation">Автоматизация</option>
+            <option data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
             <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
             <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
             <option data-bg="BioTech" data-en="BioTech">BioTech</option>
