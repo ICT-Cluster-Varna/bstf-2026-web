@@ -24,11 +24,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=Russo+One&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=Russo+One&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -223,10 +223,16 @@
       left: 0;
       right: 0;
       z-index: 200;
+      background: transparent;
+      backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease
+    }
+
+    nav.main-nav.cx-nav-scrolled {
       background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      transition: var(--transition)
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06)
     }
 
     nav.main-nav .nav-inner {
@@ -238,15 +244,27 @@
       padding: 0 32px
     }
 
-    nav.main-nav .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--navy)
+    nav.main-nav .cx-nav-logo {
+      display: flex;
+      align-items: center
     }
 
-    nav.main-nav .logo span {
-      color: var(--teal)
+    nav.main-nav .cx-nav-logo-img {
+      height: 30px;
+      width: auto;
+      display: block
+    }
+
+    nav.main-nav .cx-nav-logo-img--black {
+      display: none
+    }
+
+    nav.main-nav.cx-nav-scrolled .cx-nav-logo-img--white {
+      display: none
+    }
+
+    nav.main-nav.cx-nav-scrolled .cx-nav-logo-img--black {
+      display: block
     }
 
     nav.main-nav .nav-links {
@@ -259,9 +277,13 @@
     nav.main-nav .nav-links a {
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--text);
+      color: rgba(255, 255, 255, 0.92);
       transition: var(--transition);
       position: relative
+    }
+
+    nav.main-nav.cx-nav-scrolled .nav-links a {
+      color: var(--text)
     }
 
     nav.main-nav .nav-links a:hover {
@@ -329,8 +351,12 @@
     .mobile-menu-btn span {
       width: 24px;
       height: 2px;
-      background: var(--navy);
+      background: rgba(255, 255, 255, 0.92);
       transition: var(--transition)
+    }
+
+    nav.main-nav.cx-nav-scrolled .mobile-menu-btn span {
+      background: var(--navy)
     }
 
     .mobile-nav {
@@ -1519,7 +1545,7 @@
     .venue-bg {
       position: absolute;
       inset: 0;
-      background: url('images/varna_seaside_bg.jpg?v=20260710-17') center/cover no-repeat
+      background: url('images/varna_seaside_bg.jpg?v=20260713-1') center/cover no-repeat
     }
 
     .venue-scrim {
@@ -2804,7 +2830,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 0
+      z-index: 0;
+      transform: translateZ(0);
+      will-change: transform;
+      backface-visibility: hidden
     }
 
     .cx-hero-bg-overlay {
@@ -2834,33 +2863,76 @@
       padding: 22px 40px 20px
     }
 
-    .cx-hero-logo {
-      width: 130px;
-      height: auto;
-      display: block;
-      margin-bottom: 16px
+    /* Twinkling lights over the hero photo */
+    .cx-hero-lights {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden
     }
 
-    .cx-hero-patron {
+    .cx-hero-lights span {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+      opacity: 0;
+      animation: cx-twinkle 4.5s ease-in-out infinite
+    }
+
+    .cx-hero-lights span:nth-child(1) { top: 14%; left: 8%; animation-delay: 0s }
+    .cx-hero-lights span:nth-child(2) { top: 22%; left: 32%; animation-delay: .6s }
+    .cx-hero-lights span:nth-child(3) { top: 10%; left: 55%; animation-delay: 1.2s }
+    .cx-hero-lights span:nth-child(4) { top: 30%; left: 78%; animation-delay: 1.8s }
+    .cx-hero-lights span:nth-child(5) { top: 48%; left: 18%; animation-delay: 2.4s }
+    .cx-hero-lights span:nth-child(6) { top: 60%; left: 62%; animation-delay: 3s }
+    .cx-hero-lights span:nth-child(7) { top: 38%; left: 90%; animation-delay: 3.6s }
+    .cx-hero-lights span:nth-child(8) { top: 68%; left: 40%; animation-delay: 4.2s }
+
+    @keyframes cx-twinkle {
+      0%, 100% { opacity: 0; transform: scale(0.6) }
+      50% { opacity: 1; transform: scale(1.3) }
+    }
+
+    /* Patronage band: white strip right below the hero */
+    .cx-patron-band {
+      background: var(--white);
+      border-bottom: 1px solid rgba(11, 57, 84, 0.08)
+    }
+
+    .cx-patron-band-inner {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 18px
+      justify-content: center;
+      gap: 16px;
+      padding: 22px 40px;
+      flex-wrap: wrap;
+      text-align: left
     }
 
-    .cx-hero-patron-crest {
-      width: 46px;
+    .cx-patron-band-crest {
+      width: 44px;
       height: auto;
       object-fit: contain;
       flex-shrink: 0
     }
 
-    .cx-hero-patron-text p {
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      color: rgba(255, 255, 255, 0.65);
+    .cx-patron-band-text p {
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      color: var(--navy);
       line-height: 1.5;
       margin: 0
+    }
+
+    @media (max-width: 640px) {
+      .cx-patron-band-inner {
+        justify-content: center;
+        text-align: center
+      }
     }
 
     .cx-hero-grid {
@@ -2868,7 +2940,7 @@
     }
 
     .cx-hero-kicker {
-      font-family: 'Archivo', sans-serif;
+      font-family: 'Russo One', 'Archivo', sans-serif;
       font-weight: 600;
       font-size: 0.78rem;
       letter-spacing: 0.16em;
@@ -2878,9 +2950,9 @@
     }
 
     .cx-hero-title {
-      font-family: 'Archivo', 'Inter', sans-serif;
+      font-family: 'Russo One', 'Archivo', 'Inter', sans-serif;
       font-size: 2.5rem;
-      font-weight: 900;
+      font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.005em;
       text-transform: uppercase;
@@ -2913,8 +2985,34 @@
 
     .cx-hero-btn {
       gap: 10px;
-      font-family: 'Archivo', sans-serif;
+      font-family: 'Russo One', 'Archivo', sans-serif;
       font-weight: 600
+    }
+
+    .cx-hero-btn.btn-primary,
+    .nav-register-btn {
+      animation: cx-btn-glow 2.6s ease-in-out infinite
+    }
+
+    .nav-register-btn {
+      font-family: 'Russo One', 'Archivo', sans-serif
+    }
+
+    .cx-hero-btn.btn-primary:hover,
+    .nav-register-btn:hover {
+      animation-play-state: paused
+    }
+
+    @keyframes cx-btn-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 205, 255, 0.45)
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(0, 205, 255, 0)
+      }
     }
 
     .cx-hero-btn.btn-outline {
@@ -2939,7 +3037,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Archivo', sans-serif;
+      font-family: 'Russo One', 'Archivo', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--white)
@@ -2992,15 +3090,15 @@
     }
 
     .cx-stat-num {
-      font-family: 'Archivo', sans-serif;
+      font-family: 'Russo One', 'Archivo', sans-serif;
       font-size: 1.6rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--white);
       line-height: 1.1
     }
 
     .cx-stat-label {
-      font-family: 'Archivo', sans-serif;
+      font-family: 'Russo One', 'Archivo', sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -3087,13 +3185,16 @@
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-inner">
-      <a href="#" class="logo" data-bg="BSTF <span>2026</span>" data-en="BSTF <span>2026</span>">BSTF
-        <span>2026</span></a>
+      <a href="#" class="logo cx-nav-logo">
+        <img src="images/Connexus - WHITE.svg?v=20260713-1" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--white">
+        <img src="images/Connexus - BLACK.svg?v=20260713-1" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--black">
+      </a>
       <div class="nav-links">
+        <a href="#" data-bg="За Connexus" data-en="About Connexus">За Connexus</a>
         <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
         <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-        <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-        <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+        <a href="#sponsors" data-bg="Партньори" data-en="Partners">Партньори</a>
+        <a href="#venue" data-bg="Практична информация" data-en="Practical information">Практична информация</a>
       </div>
       <div class="nav-right">
         <div class="lang-toggle">
@@ -3111,10 +3212,11 @@
 
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobile-nav">
+    <a href="#" data-bg="За Connexus" data-en="About Connexus">За Connexus</a>
     <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
     <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-    <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-    <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+    <a href="#sponsors" data-bg="Партньори" data-en="Partners">Партньори</a>
+    <a href="#venue" data-bg="Практична информация" data-en="Practical information">Практична информация</a>
     <a href="#tickets" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block"
       data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>
   </div>
@@ -3122,20 +3224,17 @@
   <div class="hero-cta-wrap" style="min-height:100vh;display:flex;flex-direction:column">
     <!-- SECTION 1: Hero -->
     <section class="hero cx-hero" style="height:100vh">
-      <img src="images/background.jpeg?v=20260710-17" alt="" class="cx-hero-bg-img" fetchpriority="high" decoding="async">
+      <video class="cx-hero-bg-img" autoplay muted loop playsinline preload="auto" poster="images/background.jpeg?v=20260713-1">
+        <source src="videos/hero-bg.mp4?v=20260713-5" type="video/mp4">
+      </video>
       <div class="cx-hero-bg-overlay"></div>
+
+      <div class="cx-hero-lights" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
       <div class="cx-hero-top">
       <div class="cx-hero-inner cx-hero-top-inner">
-        <img src="images/Connexus - WHITE.svg?v=20260710-17" alt="Connexus" class="cx-hero-logo">
-
-        <div class="cx-hero-patron">
-          <img src="images/gerp-image.png?v=20260710-17" alt="Държавен герб на Република България" class="cx-hero-patron-crest">
-          <div class="cx-hero-patron-text">
-            <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА</p>
-            <p data-bg="РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА" data-en="THE REPUBLIC OF BULGARIA MS. ILIANA YOTOVA">РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА</p>
-          </div>
-        </div>
-
         <div class="cx-hero-grid">
           <div class="cx-hero-left">
             <p class="cx-hero-kicker" data-bg="Хора. Идеи. Изкуствен интелект." data-en="People. Ideas. Artificial Intelligence.">Хора. Идеи. Изкуствен интелект.</p>
@@ -3212,6 +3311,17 @@
           <span data-bg="БЪДЕЩЕТО ЗАПОЧВА ТУК" data-en="THE FUTURE STARTS HERE">БЪДЕЩЕТО ЗАПОЧВА ТУК</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
         </a>
+      </div>
+    </section>
+
+    <!-- Patronage band: appears right below the hero, on white -->
+    <section class="cx-patron-band">
+      <div class="cx-hero-inner cx-patron-band-inner">
+        <img src="images/gerp-image.png?v=20260713-1" alt="Държавен герб на Република България" class="cx-patron-band-crest">
+        <div class="cx-patron-band-text">
+          <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА</p>
+          <p data-bg="РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА" data-en="THE REPUBLIC OF BULGARIA MS. ILIANA YOTOVA">РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА</p>
+        </div>
       </div>
     </section>
 
@@ -3347,73 +3457,73 @@
         style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1100px;margin:0 auto">
         <a href="speakers.html#track-ai" class="stream-card" data-track-link="ai"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/ai.png?v=20260710-17" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/ai.png?v=20260713-1" alt="AI" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
             data-en="Artificial Intelligence">Изкуствен интелект</div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/transport.png?v=20260710-17" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/transport.png?v=20260713-1" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
             data-en="Future of Transport">Транспорт на бъдещето</div>
         </div>
         <a href="speakers.html#track-smart-city" class="stream-card" data-track-link="smart-city"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/smart_city.png?v=20260710-17" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/smart_city.png?v=20260713-1" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
             град</div>
         </a>
         <a href="speakers.html#track-cybersecurity" class="stream-card" data-track-link="cybersecurity"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/cybersecurity.png?v=20260710-17" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/cybersecurity.png?v=20260713-1" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
             data-en="Cybersecurity">Киберсигурност</div>
         </a>
         <a href="speakers.html#track-automation" class="stream-card" data-track-link="automation"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/automation.png?v=20260710-17" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/automation.png?v=20260713-1" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Автоматизация и роботика </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/agritech.png?v=20260710-17" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/agritech.png?v=20260713-1" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
           </div>
         </div>
         <a href="speakers.html#track-marine" class="stream-card" data-track-link="marine"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/marine_tech.png?v=20260710-17" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/marine_tech.png?v=20260713-1" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
             data-en="Marine Tech">Морски технологии</div>
         </a>
         <a href="speakers.html#track-biotech" class="stream-card" data-track-link="biotech"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/biotech.png?v=20260710-17" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/biotech.png?v=20260713-1" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
           </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/gaming.png?v=20260710-17" alt="Gaming" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/gaming.png?v=20260713-1" alt="Gaming" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг</div>
         </div>
         <a href="speakers.html#track-regional-innovation-policy" class="stream-card" data-track-link="regional-innovation-policy"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-<img src="images/streams/regional-innovation-policies.png?v=20260710-17" alt="Regional Innovation Policies" loading="lazy" decoding="async" width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+<img src="images/streams/regional-innovation-policies.png?v=20260713-1" alt="Regional Innovation Policies" loading="lazy" decoding="async" width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални иновационни политики</div>
         </a>
         <a href="speakers.html#track-tourism" class="stream-card" data-track-link="tourism"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/tourism.png?v=20260710-17" alt="Tourism" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/tourism.png?v=20260713-1" alt="Tourism" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм</div>
         </a>
@@ -3438,7 +3548,7 @@
         <!-- Presidential patronage -->
         <div class="partner-row">
           <div class="partner-row__crest">
-            <img src="images/gerp-image.png?v=20260710-17" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
+            <img src="images/gerp-image.png?v=20260713-1" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
           </div>
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__content--text">
@@ -3458,17 +3568,17 @@
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--ict">
               <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                <img src="images/ict_cluster_logo.png?v=20260710-17" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
+                <img src="images/ict_cluster_logo.png?v=20260713-1" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
               </a>
             </div>
             <div class="partner-logo partner-logo--bsmepa">
-              <img src="images/bsmepa_logo.png?v=20260710-17" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
+              <img src="images/bsmepa_logo.png?v=20260713-1" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
             </div>
             <div class="partner-logo partner-logo--brainpp">
-              <img src="images/brainpp_logo.png?v=20260710-17" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
+              <img src="images/brainpp_logo.png?v=20260713-1" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
             </div>
             <div class="partner-logo partner-logo--arcf">
-              <img src="images/ARCF_logo.svg?v=20260710-17" alt="ARC Fund">
+              <img src="images/ARCF_logo.svg?v=20260713-1" alt="ARC Fund">
             </div>
           </div>
         </div>
@@ -3481,7 +3591,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--varna">
-              <img src="images/varna_coat.png?v=20260710-17" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
+              <img src="images/varna_coat.png?v=20260713-1" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
               <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                 data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
             </div>
@@ -3496,7 +3606,7 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--mobility">
-              <img src="images/mobility-partner.png?v=20260710-17" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
+              <img src="images/mobility-partner.png?v=20260713-1" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
             </div>
           </div>
         </div>
@@ -4680,6 +4790,20 @@
             mobileNav.classList.remove('open');
           });
         });
+      }
+
+      // === Nav: transparent over hero, solid once scrolled ===
+      var mainNav = document.querySelector('nav.main-nav');
+      if (mainNav) {
+        var updateNavBg = function () {
+          if (window.scrollY > 60) {
+            mainNav.classList.add('cx-nav-scrolled');
+          } else {
+            mainNav.classList.remove('cx-nav-scrolled');
+          }
+        };
+        updateNavBg();
+        window.addEventListener('scroll', updateNavBg, { passive: true });
       }
 
       // === Smooth Scroll for nav links ===
