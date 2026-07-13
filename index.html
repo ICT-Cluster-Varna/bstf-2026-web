@@ -2824,16 +2824,36 @@
       min-height: 0
     }
 
-    .cx-hero-bg-img {
+    /* Overscan wrapper: parallax transform target (video stays untouched so
+       object-fit cover isn't fought). Extra height gives translate headroom
+       so the drift never reveals an edge. */
+    .cx-hero-media {
       position: absolute;
-      inset: 0;
+      inset: -9% 0;
+      height: 118%;
+      width: 100%;
+      z-index: 0;
+      overflow: hidden;
+      backface-visibility: hidden
+    }
+
+    .cx-hero-bg-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 0;
-      transform: translateZ(0);
-      will-change: transform;
-      backface-visibility: hidden
+      display: block
+    }
+
+    /* Parallax base: the media wrapper is its own GPU layer and is
+       transformed on scroll by JS (rAF-throttled, one transform write per
+       frame). Starts slightly scaled so the drift never reveals an edge. */
+    .cx-hero-media {
+      transform: translate3d(0, 0, 0) scale(1.06);
+      transform-origin: center 40%
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cx-hero-media { transform: none }
     }
 
     .cx-hero-bg-overlay {
@@ -3224,9 +3244,12 @@
   <div class="hero-cta-wrap" style="min-height:100vh;display:flex;flex-direction:column">
     <!-- SECTION 1: Hero -->
     <section class="hero cx-hero" style="height:100vh">
-      <video class="cx-hero-bg-img" autoplay muted loop playsinline preload="auto" poster="images/background.jpeg?v=20260713-1">
-        <source src="videos/hero-bg.mp4?v=20260713-5" type="video/mp4">
-      </video>
+      <div class="cx-hero-media" data-hero-media>
+        <video class="cx-hero-bg-img" muted loop playsinline preload="none"
+               poster="images/hero-poster.jpg?v=20260713-12"
+               data-src-desktop="videos/hero-bg-1080.mp4?v=20260713-12"
+               data-src-mobile="videos/hero-bg-720.mp4?v=20260713-12"></video>
+      </div>
       <div class="cx-hero-bg-overlay"></div>
 
       <div class="cx-hero-lights" aria-hidden="true">
@@ -4805,6 +4828,73 @@
         updateNavBg();
         window.addEventListener('scroll', updateNavBg, { passive: true });
       }
+
+      // === Hero background video: adaptive source, autoplay, off-screen pause, parallax fallback ===
+      (function () {
+        var media = document.querySelector('[data-hero-media]');
+        var video = media && media.querySelector('.cx-hero-bg-img');
+        if (!video) return;
+
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+        // Bail on data-saver / very slow connections: keep the poster, load no video.
+        var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        var slowNet = conn && (conn.saveData ||
+          /(^|-)2g$/.test(conn.effectiveType || '') || conn.effectiveType === 'slow-2g');
+
+        if (!slowNet) {
+          var src = isMobile
+            ? video.getAttribute('data-src-mobile')
+            : video.getAttribute('data-src-desktop');
+          if (src) {
+            video.setAttribute('preload', 'auto');
+            video.src = src;
+            video.load();
+            var tryPlay = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
+            if (video.readyState >= 2) tryPlay();
+            else video.addEventListener('canplay', tryPlay, { once: true });
+          }
+        }
+
+        // Pause decode/compositing once the hero scrolls out of view.
+        if ('IntersectionObserver' in window) {
+          var vis = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (!video.src) return;
+              if (en.isIntersecting) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+              else { video.pause(); }
+            });
+          }, { threshold: 0.1 });
+          vis.observe(media);
+        }
+
+        // Scroll parallax: rAF-throttled, one transform write per frame on the
+        // media wrapper (its own GPU layer). Desktop only — on phones the video
+        // motion is enough and touch-momentum scroll makes JS parallax steppy.
+        // Skipped entirely under reduced-motion.
+        if (!reduceMotion && !isMobile) {
+          var hero = media.closest('.cx-hero') || media.parentElement;
+          var ticking = false;
+          media.style.willChange = 'transform';
+          var applyParallax = function () {
+            ticking = false;
+            var rect = hero.getBoundingClientRect();
+            var vh = window.innerHeight || 1;
+            // progress 0 (hero top at viewport top) → 1 (hero fully scrolled past)
+            var progress = Math.min(Math.max((-rect.top) / (rect.height || vh), 0), 1);
+            var y = progress * 12;               // 0% → +12%
+            var scale = 1.06 + progress * 0.06;  // 1.06 → 1.12
+            media.style.transform = 'translate3d(0,' + y.toFixed(2) + '%,0) scale(' + scale.toFixed(3) + ')';
+          };
+          var onScroll = function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(applyParallax); }
+          };
+          applyParallax();
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('resize', onScroll, { passive: true });
+        }
+      })();
 
       // === Smooth Scroll for nav links ===
       document.querySelectorAll('a[href^="#"]').forEach(function (link) {
