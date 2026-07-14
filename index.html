@@ -31,8 +31,6 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=Russo+One&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <style>
     .hero-desc-break {
       display: none
@@ -58,11 +56,12 @@
       --radius: 12px;
       --radius-sm: 8px;
       --radius-lg: 20px;
-      --transition: 0.3s ease;
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: 0.3s var(--ease-premium);
+      --transition-fast: 0.15s var(--ease-premium);
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
       --shadow-modal: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 20px rgba(11, 57, 84, 0.12), 0 30px 64px rgba(11, 57, 84, 0.2);
-      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
       --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace
     }
 
@@ -83,8 +82,13 @@
     }
 
     html {
-      scroll-behavior: smooth;
       scroll-padding-top: 84px
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth
+      }
     }
 
     body {
@@ -1878,6 +1882,33 @@
       }
     }
 
+    /* Exit animation — mirrors the entrance so the modal dismisses gracefully
+       instead of snapping shut. JS holds `.open .closing` until it ends. */
+    .modal-overlay.open.closing {
+      animation: modalOverlayOut 0.24s var(--ease-premium) forwards
+    }
+
+    .modal-overlay.open.closing .modal {
+      animation: modalPanelOut 0.24s var(--ease-premium) forwards
+    }
+
+    @keyframes modalOverlayOut {
+      from { opacity: 1 }
+      to { opacity: 0 }
+    }
+
+    @keyframes modalPanelOut {
+      from { opacity: 1; transform: translateY(0) scale(1) }
+      to { opacity: 0; transform: translateY(12px) scale(0.98) }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .modal-overlay.open.closing,
+      .modal-overlay.open.closing .modal {
+        animation: none !important
+      }
+    }
+
     .modal {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -2177,12 +2208,25 @@
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease
+      transition: opacity 0.45s var(--ease-premium), transform 0.45s var(--ease-premium);
+      will-change: opacity, transform
     }
 
     .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0)
+    }
+
+    /* Release the compositor hint once the element has settled. */
+    .animate-on-scroll.cx-reveal-done {
+      will-change: auto
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-on-scroll {
+        transition: none;
+        will-change: auto
+      }
     }
 
     @media(max-width:1024px) {
@@ -3051,30 +3095,8 @@
       font-weight: 600
     }
 
-    .cx-hero-btn.btn-primary,
-    .nav-register-btn {
-      animation: cx-btn-glow 2.6s ease-in-out infinite
-    }
-
     .nav-register-btn {
       font-family: 'Russo One', 'Archivo', sans-serif
-    }
-
-    .cx-hero-btn.btn-primary:hover,
-    .nav-register-btn:hover {
-      animation-play-state: paused
-    }
-
-    @keyframes cx-btn-glow {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(0, 205, 255, 0.45)
-      }
-
-      50% {
-        box-shadow: 0 0 0 8px rgba(0, 205, 255, 0)
-      }
     }
 
     .cx-hero-btn.btn-outline {
@@ -3203,6 +3225,16 @@
       50% {
         transform: translateY(5px)
       }
+    }
+
+    /* Silence looping decorative motion for users who ask for reduced motion
+       (WCAG 2.2.2). Covers the hero twinkle field and the scroll-cue bounce. */
+    @media (prefers-reduced-motion: reduce) {
+      .cx-hero-lights span,
+      .cx-hero-scroll svg {
+        animation: none !important
+      }
+      .cx-hero-lights span { opacity: 0 }
     }
 
     @media(max-width:900px) {
@@ -4930,12 +4962,17 @@
           var hero = media.closest('.cx-hero') || media.parentElement;
           var ticking = false;
           media.style.willChange = 'transform';
+          var lastProgress = -1;
           var applyParallax = function () {
             ticking = false;
             var rect = hero.getBoundingClientRect();
             var vh = window.innerHeight || 1;
             // progress 0 (hero top at viewport top) → 1 (hero fully scrolled past)
             var progress = Math.min(Math.max((-rect.top) / (rect.height || vh), 0), 1);
+            // Skip the transform write once the hero has fully left the viewport
+            // (progress pinned at 1) — nothing changes visually past that point.
+            if (progress === 1 && lastProgress === 1) return;
+            lastProgress = progress;
             var y = progress * 12;               // 0% → +12%
             var scale = 1.06 + progress * 0.06;  // 1.06 → 1.12
             media.style.transform = 'translate3d(0,' + y.toFixed(2) + '%,0) scale(' + scale.toFixed(3) + ')';
@@ -5014,10 +5051,25 @@
 
       function closeModal(id) {
         var modal = document.getElementById(id);
-        if (modal) {
-          modal.classList.remove('open');
-          document.body.style.overflow = '';
-        }
+        if (!modal || !modal.classList.contains('open') || modal.classList.contains('closing')) return;
+        document.body.style.overflow = '';
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var finish = function () {
+          modal.classList.remove('open', 'closing');
+        };
+        if (reduce) { finish(); return; }
+        // Play the exit animation, then tear down. animationend fires on the
+        // panel; a timeout guards against a missed/interrupted event.
+        modal.classList.add('closing');
+        var done = false;
+        var end = function () {
+          if (done) return; done = true;
+          modal.removeEventListener('animationend', onAnim, true);
+          finish();
+        };
+        var onAnim = function (e) { if (e.target === modal || e.target.classList.contains('modal')) end(); };
+        modal.addEventListener('animationend', onAnim, true);
+        setTimeout(end, 320);
       }
       window.closeModal = closeModal;
 
@@ -5164,7 +5216,15 @@
       var animObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            var el = entry.target;
+            el.classList.add('visible');
+            // Reveal is one-way: stop observing and drop the compositor hint
+            // once the transition finishes (or immediately under reduced motion).
+            animObserver.unobserve(el);
+            el.addEventListener('transitionend', function onEnd() {
+              el.classList.add('cx-reveal-done');
+              el.removeEventListener('transitionend', onEnd);
+            });
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -5177,7 +5237,7 @@
             return c.classList && c.classList.contains('animate-on-scroll');
           });
           var idx = sibs.indexOf(el);
-          if (idx > 0) el.style.transitionDelay = (Math.min(idx, 6) * 0.08) + 's';
+          if (idx > 0) el.style.transitionDelay = (Math.min(idx, 6) * 0.05) + 's';
         }
         animObserver.observe(el);
       });
@@ -5214,25 +5274,12 @@
         counters.forEach(function (el) { io.observe(el); });
       })();
 
-      // === GSAP Animations ===
-      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-
-
-        // Section fade-in
-        gsap.utils.toArray('section').forEach(function (sec) {
-          gsap.from(sec, {
-            opacity: 0.8,
-            y: 20,
-            duration: 0.8,
-            scrollTrigger: {
-              trigger: sec,
-              start: 'top 85%',
-              once: true
-            }
-          });
-        });
-      }
+      // === Section reveal ===
+      // Sections reveal via the CSS `.animate-on-scroll` + IntersectionObserver
+      // path above (reduced-motion aware). The former GSAP ScrollTrigger
+      // section fade was removed: it duplicated that reveal, ignored
+      // prefers-reduced-motion, and pulled ~70KB of CDN script for a trivial
+      // 0.8 -> 1 opacity nudge.
 
       // === Initialize Language ===
       setLang(currentLang);
