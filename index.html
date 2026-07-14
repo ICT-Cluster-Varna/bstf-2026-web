@@ -2844,6 +2844,21 @@
       display: block
     }
 
+    /* Brand color-grade: soft-light navy->teal duotone tint so the raw
+       footage reads as a designed brand asset (and the loop draws less eye). */
+    .cx-hero-grade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+      background:
+        linear-gradient(118deg,
+          rgba(11, 57, 84, 0.75) 0%,
+          rgba(11, 57, 84, 0.28) 42%,
+          rgba(44, 166, 179, 0.30) 78%,
+          rgba(44, 166, 179, 0.55) 100%)
+    }
+
     /* Parallax base: the media wrapper is its own GPU layer and is
        transformed on scroll by JS (rAF-throttled, one transform write per
        frame). Starts slightly scaled so the drift never reveals an edge. */
@@ -2861,6 +2876,7 @@
       inset: 0;
       z-index: 1;
       background:
+        radial-gradient(125% 115% at 50% 42%, rgba(3, 10, 17, 0) 52%, rgba(3, 10, 17, 0.5) 100%),
         linear-gradient(100deg, rgba(3, 10, 17, 0.95) 0%, rgba(3, 10, 17, 0.82) 32%, rgba(3, 10, 17, 0.4) 58%, rgba(3, 10, 17, 0.18) 100%),
         linear-gradient(0deg, rgba(3, 10, 17, 0.85) 0%, rgba(3, 10, 17, 0) 22%, rgba(3, 10, 17, 0) 78%, rgba(3, 10, 17, 0.7) 100%)
     }
@@ -3001,6 +3017,32 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap
+    }
+
+    /* === Hero entrance choreography === */
+    @keyframes cx-hero-fade { from { opacity: 0 } to { opacity: 1 } }
+    @keyframes cx-hero-rise { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: translateY(0) } }
+
+    .cx-hero-media { opacity: 0; animation: cx-hero-fade 1.6s ease-out 0.1s forwards }
+    .cx-hero-kicker { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) 0.30s forwards }
+    .cx-hero-title span { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) forwards }
+    .cx-hero-title span:nth-child(1) { animation-delay: 0.42s }
+    .cx-hero-title span:nth-child(2) { animation-delay: 0.52s }
+    .cx-hero-title span:nth-child(3) { animation-delay: 0.62s }
+    .cx-hero-title span:nth-child(4) { animation-delay: 0.72s }
+    .cx-hero-desc { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) 0.86s forwards }
+    .cx-hero-buttons { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) 1.0s forwards }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cx-hero-media,
+      .cx-hero-kicker,
+      .cx-hero-title span,
+      .cx-hero-desc,
+      .cx-hero-buttons {
+        opacity: 1 !important;
+        transform: none;
+        animation: none !important
+      }
     }
 
     .cx-hero-btn {
@@ -3245,10 +3287,11 @@
     <!-- SECTION 1: Hero -->
     <section class="hero cx-hero" style="height:100vh">
       <div class="cx-hero-media" data-hero-media>
-        <video class="cx-hero-bg-img" muted loop playsinline preload="none"
-               poster="images/hero-poster.jpg?v=20260713-12"
-               data-src-desktop="videos/hero-bg-1080.mp4?v=20260713-12"
-               data-src-mobile="videos/hero-bg-720.mp4?v=20260713-12"></video>
+        <video class="cx-hero-bg-img" muted playsinline preload="none"
+               poster="images/hero-poster.jpg?v=20260714-3"
+               data-src-desktop="videos/hero-bg-1080.mp4?v=20260714-3"
+               data-src-mobile="videos/hero-bg-720.mp4?v=20260714-3"></video>
+        <div class="cx-hero-grade" aria-hidden="true"></div>
       </div>
       <div class="cx-hero-bg-overlay"></div>
 
@@ -4857,13 +4900,23 @@
           }
         }
 
-        // Pause decode/compositing once the hero scrolls out of view.
+        // Play-once cinematic reveal: on enter play from the start (only if
+        // not already playing, so the initial load isn't reset mid-play); on
+        // leave pause. The video has no `loop`, so after it plays through it
+        // holds its final frame. Re-entering replays a fresh reveal — and the
+        // reset to frame 0 happens off-screen, so a loop seam is never seen.
         if ('IntersectionObserver' in window) {
           var vis = new IntersectionObserver(function (entries) {
             entries.forEach(function (en) {
               if (!video.src) return;
-              if (en.isIntersecting) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-              else { video.pause(); }
+              if (en.isIntersecting) {
+                if (video.paused) {
+                  try { video.currentTime = 0; } catch (e) {}
+                  var p = video.play(); if (p && p.catch) p.catch(function () {});
+                }
+              } else {
+                video.pause();
+              }
             });
           }, { threshold: 0.1 });
           vis.observe(media);
