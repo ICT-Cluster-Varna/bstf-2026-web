@@ -14,13 +14,13 @@
   <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
   <meta property="og:url" content="https://bstf2026.bg/">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260710-17">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260715-12">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260710-17">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260715-12">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -1549,7 +1549,7 @@
     .venue-bg {
       position: absolute;
       inset: 0;
-      background: url('images/varna_seaside_bg.jpg?v=20260713-1') center/cover no-repeat
+      background: url('images/varna_seaside_bg.jpg?v=20260715-12') center/cover no-repeat
     }
 
     .venue-scrim {
@@ -1893,16 +1893,29 @@
     }
 
     @keyframes modalOverlayOut {
-      from { opacity: 1 }
-      to { opacity: 0 }
+      from {
+        opacity: 1
+      }
+
+      to {
+        opacity: 0
+      }
     }
 
     @keyframes modalPanelOut {
-      from { opacity: 1; transform: translateY(0) scale(1) }
-      to { opacity: 0; transform: translateY(12px) scale(0.98) }
+      from {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98)
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .modal-overlay.open.closing,
       .modal-overlay.open.closing .modal {
         animation: none !important
@@ -2885,6 +2898,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: -15% 95%;
       display: block
     }
 
@@ -2912,7 +2926,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .cx-hero-media { transform: none }
+      .cx-hero-media {
+        transform: none
+      }
     }
 
     .cx-hero-bg-overlay {
@@ -2943,39 +2959,6 @@
       padding: 22px 40px 20px
     }
 
-    /* Twinkling lights over the hero photo */
-    .cx-hero-lights {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden
-    }
-
-    .cx-hero-lights span {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
-      opacity: 0;
-      animation: cx-twinkle 4.5s ease-in-out infinite
-    }
-
-    .cx-hero-lights span:nth-child(1) { top: 14%; left: 8%; animation-delay: 0s }
-    .cx-hero-lights span:nth-child(2) { top: 22%; left: 32%; animation-delay: .6s }
-    .cx-hero-lights span:nth-child(3) { top: 10%; left: 55%; animation-delay: 1.2s }
-    .cx-hero-lights span:nth-child(4) { top: 30%; left: 78%; animation-delay: 1.8s }
-    .cx-hero-lights span:nth-child(5) { top: 48%; left: 18%; animation-delay: 2.4s }
-    .cx-hero-lights span:nth-child(6) { top: 60%; left: 62%; animation-delay: 3s }
-    .cx-hero-lights span:nth-child(7) { top: 38%; left: 90%; animation-delay: 3.6s }
-    .cx-hero-lights span:nth-child(8) { top: 68%; left: 40%; animation-delay: 4.2s }
-
-    @keyframes cx-twinkle {
-      0%, 100% { opacity: 0; transform: scale(0.6) }
-      50% { opacity: 1; transform: scale(1.3) }
-    }
 
     /* Patronage band: white strip right below the hero */
     .cx-patron-band {
@@ -3064,20 +3047,71 @@
     }
 
     /* === Hero entrance choreography === */
-    @keyframes cx-hero-fade { from { opacity: 0 } to { opacity: 1 } }
-    @keyframes cx-hero-rise { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: translateY(0) } }
+    @keyframes cx-hero-fade {
+      from {
+        opacity: 0
+      }
 
-    .cx-hero-media { opacity: 0; animation: cx-hero-fade 1.6s ease-out 0.1s forwards }
-    .cx-hero-kicker { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) 0.30s forwards }
-    .cx-hero-title span { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) forwards }
-    .cx-hero-title span:nth-child(1) { animation-delay: 0.42s }
-    .cx-hero-title span:nth-child(2) { animation-delay: 0.52s }
-    .cx-hero-title span:nth-child(3) { animation-delay: 0.62s }
-    .cx-hero-title span:nth-child(4) { animation-delay: 0.72s }
-    .cx-hero-desc { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) 0.86s forwards }
-    .cx-hero-buttons { opacity: 0; animation: cx-hero-rise 0.85s cubic-bezier(.16,.8,.3,1) 1.0s forwards }
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes cx-hero-rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .cx-hero-media {
+      opacity: 0;
+      animation: cx-hero-fade 1.6s ease-out 0.1s forwards
+    }
+
+    .cx-hero-kicker {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 0.30s forwards
+    }
+
+    .cx-hero-title span {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) forwards
+    }
+
+    .cx-hero-title span:nth-child(1) {
+      animation-delay: 0.42s
+    }
+
+    .cx-hero-title span:nth-child(2) {
+      animation-delay: 0.52s
+    }
+
+    .cx-hero-title span:nth-child(3) {
+      animation-delay: 0.62s
+    }
+
+    .cx-hero-title span:nth-child(4) {
+      animation-delay: 0.72s
+    }
+
+    .cx-hero-desc {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 0.86s forwards
+    }
+
+    .cx-hero-buttons {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 1.0s forwards
+    }
 
     @media (prefers-reduced-motion: reduce) {
+
       .cx-hero-media,
       .cx-hero-kicker,
       .cx-hero-title span,
@@ -3228,13 +3262,11 @@
     }
 
     /* Silence looping decorative motion for users who ask for reduced motion
-       (WCAG 2.2.2). Covers the hero twinkle field and the scroll-cue bounce. */
+       (WCAG 2.2.2). Covers the scroll-cue bounce. */
     @media (prefers-reduced-motion: reduce) {
-      .cx-hero-lights span,
       .cx-hero-scroll svg {
         animation: none !important
       }
-      .cx-hero-lights span { opacity: 0 }
     }
 
     @media(max-width:900px) {
@@ -3271,6 +3303,13 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.14)
       }
     }
+
+    @media (min-width: 901px) {
+      .cx-hero-desc {
+        max-width: 460px;
+        color: rgba(255, 255, 255, 0.82)
+      }
+    }
   </style>
 </head>
 
@@ -3280,8 +3319,10 @@
   <nav class="main-nav">
     <div class="nav-inner">
       <a href="#" class="logo cx-nav-logo">
-        <img src="images/Connexus - WHITE.svg?v=20260713-1" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--white">
-        <img src="images/Connexus - BLACK.svg?v=20260713-1" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--black">
+        <img src="images/Connexus - WHITE.svg?v=20260715-12" alt="Connexus"
+          class="cx-nav-logo-img cx-nav-logo-img--white">
+        <img src="images/Connexus - BLACK.svg?v=20260715-12" alt="Connexus"
+          class="cx-nav-logo-img cx-nav-logo-img--black">
       </a>
       <div class="nav-links">
         <a href="#" data-bg="За Connexus" data-en="About Connexus">За Connexus</a>
@@ -3315,99 +3356,138 @@
       data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>
   </div>
 
-  <div class="hero-cta-wrap" style="min-height:100vh;display:flex;flex-direction:column">
+  <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
     <!-- SECTION 1: Hero -->
-    <section class="hero cx-hero" style="height:100vh">
+    <section class="hero cx-hero" style="height:100vh;height:100dvh">
       <div class="cx-hero-media" data-hero-media>
-        <video class="cx-hero-bg-img" muted playsinline preload="none"
-               poster="images/hero-poster.jpg?v=20260714-3"
-               data-src-desktop="videos/hero-bg-1080.mp4?v=20260714-3"
-               data-src-mobile="videos/hero-bg-720.mp4?v=20260714-3"></video>
+        <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster.jpg?v=20260715-12"
+          data-src-desktop="videos/hero-bg-1080-clean.mp4?v=20260715-12"
+          data-src-mobile="videos/hero-bg-720-clean.mp4?v=20260715-12"></video>
         <div class="cx-hero-grade" aria-hidden="true"></div>
       </div>
       <div class="cx-hero-bg-overlay"></div>
 
-      <div class="cx-hero-lights" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
-
       <div class="cx-hero-top">
-      <div class="cx-hero-inner cx-hero-top-inner">
-        <div class="cx-hero-grid">
-          <div class="cx-hero-left">
-            <p class="cx-hero-kicker" data-bg="Хора. Идеи. Изкуствен интелект." data-en="People. Ideas. Artificial Intelligence.">Хора. Идеи. Изкуствен интелект.</p>
-            <h1 class="cx-hero-title">
-              <span data-bg="Свързваме" data-en="Connecting">Свързваме</span>
-              <span data-bg="хората," data-en="people,">хората,</span>
-              <span class="cx-hero-title-accent" data-bg="ускоряваме" data-en="accelerating">ускоряваме</span>
-              <span class="cx-hero-title-accent" data-bg="бъдещето." data-en="the future.">бъдещето.</span>
-            </h1>
-            <p class="cx-hero-desc" data-bg="Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и света."
-              data-en="Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.">
-              Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и света.</p>
-            <div class="cx-hero-buttons">
-              <button class="btn btn-primary cx-hero-btn" onclick="openModal('register-modal','standard')" data-bg="Купи билет" data-en="Buy ticket">
-                <span data-bg="Купи билет" data-en="Buy ticket">Купи билет</span> <span aria-hidden="true">&rarr;</span></button>
-              <a href="#program" class="btn btn-outline cx-hero-btn" data-bg="Виж програмата" data-en="See program">
-                <span data-bg="Виж програмата" data-en="See program">Виж програмата</span> <span aria-hidden="true">&darr;</span></a>
+        <div class="cx-hero-inner cx-hero-top-inner">
+          <div class="cx-hero-grid">
+            <div class="cx-hero-left">
+              <p class="cx-hero-kicker" data-bg="Хора. Идеи. Изкуствен интелект."
+                data-en="People. Ideas. Artificial Intelligence.">Хора. Идеи. Изкуствен интелект.</p>
+              <h1 class="cx-hero-title">
+                <span data-bg="Свързваме" data-en="Connecting">Свързваме</span>
+                <span data-bg="хората," data-en="people,">хората,</span>
+                <span class="cx-hero-title-accent" data-bg="ускоряваме" data-en="accelerating">ускоряваме</span>
+                <span class="cx-hero-title-accent" data-bg="бъдещето." data-en="the future.">бъдещето.</span>
+              </h1>
+              <p class="cx-hero-desc"
+                data-bg="Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и света."
+                data-en="Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.">
+                Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и
+                света.</p>
+              <div class="cx-hero-buttons">
+                <button class="btn btn-primary cx-hero-btn" onclick="openModal('register-modal','standard')"
+                  data-bg="Купи билет" data-en="Buy ticket">
+                  <span data-bg="Купи билет" data-en="Buy ticket">Купи билет</span> <span
+                    aria-hidden="true">&rarr;</span></button>
+                <a href="#program" class="btn btn-outline cx-hero-btn" data-bg="Виж програмата" data-en="See program">
+                  <span data-bg="Виж програмата" data-en="See program">Виж програмата</span> <span
+                    aria-hidden="true">&darr;</span></a>
+              </div>
             </div>
+
           </div>
 
+          <div class="cx-hero-badge-row">
+            <span class="cx-hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              <span data-bg="5-7 ОКТОМВРИ 2026" data-en="5-7 OCTOBER 2026">5-7 ОКТОМВРИ 2026</span>
+            </span>
+            <span class="cx-hero-badge-divider"></span>
+            <span class="cx-hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" />
+                <circle cx="12" cy="9.5" r="2.5" />
+              </svg>
+              <span data-bg="Хотел Черно море, Варна" data-en="Cherno More Hotel, Varna">Хотел Черно море, Варна</span>
+            </span>
+          </div>
         </div>
-
-        <div class="cx-hero-badge-row">
-          <span class="cx-hero-badge-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span data-bg="5-7 ОКТОМВРИ 2026" data-en="5-7 OCTOBER 2026">5-7 ОКТОМВРИ 2026</span>
-          </span>
-          <span class="cx-hero-badge-divider"></span>
-          <span class="cx-hero-badge-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-            <span data-bg="Хотел Черно море, Варна" data-en="Cherno More Hotel, Varna">Хотел Черно море, Варна</span>
-          </span>
-        </div>
-      </div>
       </div>
 
       <div class="cx-hero-inner cx-hero-stats-wrap">
         <div class="cx-hero-stats">
           <div class="cx-stat">
-            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
             <div class="cx-stat-text">
               <div class="cx-stat-num"><span class="cx-count" data-count="500" data-suffix="+">500+</span></div>
               <div class="cx-stat-label" data-bg="УЧАСТНИЦИ" data-en="ATTENDEES">УЧАСТНИЦИ</div>
-              <div class="cx-stat-desc" data-bg="Лидери. Иноватори. Визионери." data-en="Leaders. Innovators. Visionaries.">Лидери. Иноватори. Визионери.</div>
+              <div class="cx-stat-desc" data-bg="Лидери. Иноватори. Визионери."
+                data-en="Leaders. Innovators. Visionaries.">Лидери. Иноватори. Визионери.</div>
             </div>
           </div>
           <div class="cx-stat">
-            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+              <path
+                d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+              <path d="m21 3 1 11h-2" />
+              <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+              <path d="M3 4h8" />
+            </svg>
             <div class="cx-stat-text">
               <div class="cx-stat-num"><span class="cx-count" data-count="79800" data-group="1">79 800</span></div>
               <div class="cx-stat-label" data-bg="РЪКОСТИСКАНИЯ" data-en="HANDSHAKES">РЪКОСТИСКАНИЯ</div>
-              <div class="cx-stat-desc" data-bg="Реални връзки. Реални възможности." data-en="Real connections. Real opportunities.">Реални връзки. Реални възможности.</div>
+              <div class="cx-stat-desc" data-bg="Реални връзки. Реални възможности."
+                data-en="Real connections. Real opportunities.">Реални връзки. Реални възможности.</div>
             </div>
           </div>
           <div class="cx-stat">
-            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6">
+              <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" />
+              <path d="M19 11a7 7 0 0 1-14 0" />
+              <line x1="12" y1="18" x2="12" y2="22" />
+            </svg>
             <div class="cx-stat-text">
               <div class="cx-stat-num"><span class="cx-count" data-count="40" data-suffix="+">40+</span></div>
               <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">ЛЕКТОРИ</div>
-              <div class="cx-stat-desc" data-bg="Световни експерти на една сцена." data-en="World experts on one stage.">Световни експерти на една сцена.</div>
+              <div class="cx-stat-desc" data-bg="Световни експерти на една сцена."
+                data-en="World experts on one stage.">Световни експерти на една сцена.</div>
             </div>
           </div>
           <div class="cx-stat">
-            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8-6.2-3.7-6.2 3.7 1.6-6.8-5.2-4.6 6.9-.6z"/></svg>
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6">
+              <path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8-6.2-3.7-6.2 3.7 1.6-6.8-5.2-4.6 6.9-.6z" />
+            </svg>
             <div class="cx-stat-text">
-              <div class="cx-stat-num"><span class="cx-count" data-count="3">3</span> <span data-bg="дни" data-en="days">дни</span></div>
+              <div class="cx-stat-num"><span class="cx-count" data-count="3">3</span> <span data-bg="дни"
+                  data-en="days">дни</span></div>
               <div class="cx-stat-label" data-bg="ВДЪХНОВЕНИЕ" data-en="INSPIRATION">ВДЪХНОВЕНИЕ</div>
-              <div class="cx-stat-desc" data-bg="Идеи. Стратегии. Технологии." data-en="Ideas. Strategies. Technology.">Идеи. Стратегии. Технологии.</div>
+              <div class="cx-stat-desc" data-bg="Идеи. Стратегии. Технологии." data-en="Ideas. Strategies. Technology.">
+                Идеи. Стратегии. Технологии.</div>
             </div>
           </div>
         </div>
 
         <a href="#program" class="cx-hero-scroll">
           <span data-bg="БЪДЕЩЕТО ЗАПОЧВА ТУК" data-en="THE FUTURE STARTS HERE">БЪДЕЩЕТО ЗАПОЧВА ТУК</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
         </a>
       </div>
     </section>
@@ -3415,10 +3495,13 @@
     <!-- Patronage band: appears right below the hero, on white -->
     <section class="cx-patron-band">
       <div class="cx-hero-inner cx-patron-band-inner">
-        <img src="images/gerp-image.png?v=20260713-1" alt="Държавен герб на Република България" class="cx-patron-band-crest">
+        <img src="images/gerp-image.png?v=20260715-12" alt="Държавен герб на Република България"
+          class="cx-patron-band-crest">
         <div class="cx-patron-band-text">
-          <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА</p>
-          <p data-bg="РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА" data-en="THE REPUBLIC OF BULGARIA MS. ILIANA YOTOVA">РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА</p>
+          <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА
+            ПРЕЗИДЕНТА НА</p>
+          <p data-bg="РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА" data-en="THE REPUBLIC OF BULGARIA MS. ILIANA YOTOVA">
+            РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА</p>
         </div>
       </div>
     </section>
@@ -3546,7 +3629,8 @@
   <section style="padding:72px 0;background:var(--light-gray)">
     <div class="container" style="text-align:center">
       <h2 class="section-title text-center" style="font-style:italic"
-        data-bg="11 направления. 3 дни. Максимална стойност." data-en="11 Streams. 3 Days. Maximum Value.">11 направления.
+        data-bg="11 направления. 3 дни. Максимална стойност." data-en="11 Streams. 3 Days. Maximum Value.">11
+        направления.
         3 дни. Максимална стойност.</h2>
       <p class="section-subtitle text-center" data-bg="Изберете тема и вижте съответните акценти от програмата."
         data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от
@@ -3555,75 +3639,82 @@
         style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1100px;margin:0 auto">
         <a href="speakers.html#track-ai" class="stream-card" data-track-link="ai"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/ai.png?v=20260713-1" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/ai.png?v=20260715-12" alt="AI" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
             data-en="Artificial Intelligence">Изкуствен интелект</div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/transport.png?v=20260713-1" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/transport.png?v=20260715-12" alt="Transport" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
             data-en="Future of Transport">Транспорт на бъдещето</div>
         </div>
         <a href="speakers.html#track-smart-city" class="stream-card" data-track-link="smart-city"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/smart_city.png?v=20260713-1" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/smart_city.png?v=20260715-12" alt="Smart City" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
             град</div>
         </a>
         <a href="speakers.html#track-cybersecurity" class="stream-card" data-track-link="cybersecurity"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/cybersecurity.png?v=20260713-1" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/cybersecurity.png?v=20260715-12" alt="Cybersecurity" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
             data-en="Cybersecurity">Киберсигурност</div>
         </a>
         <a href="speakers.html#track-automation" class="stream-card" data-track-link="automation"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/automation.png?v=20260713-1" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Автоматизация и роботика </div>
+          <img src="images/streams/automation.png?v=20260715-12" alt="Automation" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика"
+            data-en="Automation & Robotics">Автоматизация и роботика </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/agritech.png?v=20260713-1" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/agritech.png?v=20260715-12" alt="AgriTech" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
           </div>
         </div>
         <a href="speakers.html#track-marine" class="stream-card" data-track-link="marine"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/marine_tech.png?v=20260713-1" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/marine_tech.png?v=20260715-12" alt="Marine Tech" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
             data-en="Marine Tech">Морски технологии</div>
         </a>
         <a href="speakers.html#track-biotech" class="stream-card" data-track-link="biotech"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/biotech.png?v=20260713-1" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/biotech.png?v=20260715-12" alt="BioTech" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
           </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/gaming.png?v=20260713-1" alt="Gaming" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг</div>
+          <img src="images/streams/gaming.png?v=20260715-12" alt="Gaming" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг
+          </div>
         </div>
-        <a href="speakers.html#track-regional-innovation-policy" class="stream-card" data-track-link="regional-innovation-policy"
+        <a href="speakers.html#track-regional-innovation-policy" class="stream-card"
+          data-track-link="regional-innovation-policy"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-<img src="images/streams/regional-innovation-policies.png?v=20260713-1" alt="Regional Innovation Policies" loading="lazy" decoding="async" width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-            <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални иновационни политики</div>
+          <img src="images/streams/regional-innovation-policies.png?v=20260715-12" alt="Regional Innovation Policies"
+            loading="lazy" decoding="async" width="80" height="80"
+            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики"
+            data-en="Regional Innovation Policies">Регионални иновационни политики</div>
         </a>
         <a href="speakers.html#track-tourism" class="stream-card" data-track-link="tourism"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/tourism.png?v=20260713-1" alt="Tourism" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм</div>
+          <img src="images/streams/tourism.png?v=20260715-12" alt="Tourism" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм
+          </div>
         </a>
       </div>
     </div>
@@ -3646,14 +3737,18 @@
         <!-- Presidential patronage -->
         <div class="partner-row">
           <div class="partner-row__crest">
-            <img src="images/gerp-image.png?v=20260713-1" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
+            <img src="images/gerp-image.png?v=20260715-12" alt="Държавен герб на Република България"
+              class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
           </div>
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__content--text">
-            <p data-bg="Под патронажа на президента на" data-en="Under the patronage of the president of">Под патронажа на
+            <p data-bg="Под патронажа на президента на" data-en="Under the patronage of the president of">Под патронажа
+              на
               президента на</p>
-            <p data-bg="Република България <strong class=&quot;partner-patron-name&quot;>г-жа Илияна Йотова</strong>" data-en="the Republic of Bulgaria <strong class=&quot;partner-patron-name&quot;>Ms. Iliana Yotova</strong>">Република България <strong class="partner-patron-name">г-жа Илияна
-              Йотова</strong></p>
+            <p data-bg="Република България <strong class=&quot;partner-patron-name&quot;>г-жа Илияна Йотова</strong>"
+              data-en="the Republic of Bulgaria <strong class=&quot;partner-patron-name&quot;>Ms. Iliana Yotova</strong>">
+              Република България <strong class="partner-patron-name">г-жа Илияна
+                Йотова</strong></p>
           </div>
         </div>
 
@@ -3666,17 +3761,20 @@
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--ict">
               <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                <img src="images/ict_cluster_logo.png?v=20260713-1" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
+                <img src="images/ict_cluster_logo.png?v=20260715-12" alt="ИКТ Клъстер Варна" loading="lazy"
+                  decoding="async" width="1184" height="392">
               </a>
             </div>
             <div class="partner-logo partner-logo--bsmepa">
-              <img src="images/bsmepa_logo.png?v=20260713-1" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
+              <img src="images/bsmepa_logo.png?v=20260715-12" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
+                height="188">
             </div>
             <div class="partner-logo partner-logo--brainpp">
-              <img src="images/brainpp_logo.png?v=20260713-1" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
+              <img src="images/brainpp_logo.png?v=20260715-12" alt="Brain++ AI Factory" loading="lazy" decoding="async"
+                width="738" height="249">
             </div>
             <div class="partner-logo partner-logo--arcf">
-              <img src="images/ARCF_logo.svg?v=20260713-1" alt="ARC Fund">
+              <img src="images/ARCF_logo.svg?v=20260715-12" alt="ARC Fund">
             </div>
           </div>
         </div>
@@ -3689,7 +3787,8 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--varna">
-              <img src="images/varna_coat.png?v=20260713-1" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
+              <img src="images/varna_coat.png?v=20260715-12" alt="Община Варна" loading="lazy" decoding="async"
+                width="284" height="328">
               <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                 data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
             </div>
@@ -3704,7 +3803,8 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--mobility">
-              <img src="images/mobility-partner.png?v=20260713-1" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
+              <img src="images/mobility-partner.png?v=20260715-12" alt="Top Rent a Car" loading="lazy" decoding="async"
+                width="700" height="459">
             </div>
           </div>
         </div>
@@ -4335,7 +4435,8 @@
             data-en="Speakers">Лектори</h2>
           <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:24px"
             data-bg="Практици, учени и стратегически лидери&lt;br&gt; от региона на Черно&amp;nbsp;море и света - на една сцена."
-            data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">Практици,
+            data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">
+            Практици,
             учени и стратегически лидери<br> от региона на Черно&nbsp;море и света - на една
             сцена.</p>
           <div
@@ -4403,8 +4504,8 @@
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
-          <span data-bg="Пакети за щандове и нива на спонсорство"
-            data-en="Booth packages and sponsorship levels">Пакети за щандове и нива на спонсорство</span>
+          <span data-bg="Пакети за щандове и нива на спонсорство" data-en="Booth packages and sponsorship levels">Пакети
+            за щандове и нива на спонсорство</span>
         </div>
         <div class="expo-v2__row">
           <div class="expo-v2__row-icon">
@@ -4614,8 +4715,9 @@
       <div class="prefooter-buttons">
         <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай
           се</button>
-        <button class="btn btn-outline open-exhibitor-modal" style="border-color:rgba(255,255,255,0.4);color:var(--white)"
-          data-bg="Стани изложител" data-en="Become an exhibitor">Стани изложител</button>
+        <button class="btn btn-outline open-exhibitor-modal"
+          style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител"
+          data-en="Become an exhibitor">Стани изложител</button>
       </div>
     </div>
   </section>
@@ -4674,7 +4776,8 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('register-modal')">&times;</button>
       <div class="modal-form" id="register-form">
-        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА" data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
+          data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
         <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
         <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на BSTF 2026."
           data-en="Fill in the form to reserve your spot at BSTF 2026.">Попълнете формата, за да резервирате вашето
@@ -4719,7 +4822,8 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('exhibitor-modal')">&times;</button>
       <div class="modal-form" id="exhibitor-form">
-        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF 2026 &middot; ИЗЛОЖЕНИЕ</span>
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF
+          2026 &middot; ИЗЛОЖЕНИЕ</span>
         <h2 data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
         <p class="modal-desc" data-bg="Заявете щанд на BSTF 2026 изложението."
           data-en="Apply for a booth at the BSTF 2026 expo.">Заявете щанд на BSTF 2026 изложението.</p>
@@ -4740,15 +4844,23 @@
         <div class="form-group">
           <label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
           <select>
-            <option data-bg="Expo - &euro;1,700 (Expo щанд)" data-en="Expo - &euro;1,700 (Expo booth)">Expo - &euro;1,700 (Expo щанд)</option>
-            <option data-bg="Silver - &euro;7,500 (Premium щанд)" data-en="Silver - &euro;7,500 (Premium booth)">Silver - &euro;7,500 (Premium щанд)</option>
-            <option data-bg="Gold - &euro;12,000 (Premium щанд)" data-en="Gold - &euro;12,000 (Premium booth)">Gold - &euro;12,000 (Premium щанд)</option>
-            <option data-bg="Stage - &euro;18,000 (Premium щанд)" data-en="Stage - &euro;18,000 (Premium booth)">Stage - &euro;18,000 (Premium щанд)</option>
-            <option data-bg="Institution - &euro;30,000 (Premium щанд)" data-en="Institution - &euro;30,000 (Premium booth)">Institution - &euro;30,000 (Premium щанд)</option>
-            <option data-bg="Все още не съм сигурен/а - консултирайте ме" data-en="Not sure yet - please advise">Все още не съм сигурен/а - консултирайте ме</option>
+            <option data-bg="Expo - &euro;1,700 (Expo щанд)" data-en="Expo - &euro;1,700 (Expo booth)">Expo -
+              &euro;1,700 (Expo щанд)</option>
+            <option data-bg="Silver - &euro;7,500 (Premium щанд)" data-en="Silver - &euro;7,500 (Premium booth)">Silver
+              - &euro;7,500 (Premium щанд)</option>
+            <option data-bg="Gold - &euro;12,000 (Premium щанд)" data-en="Gold - &euro;12,000 (Premium booth)">Gold -
+              &euro;12,000 (Premium щанд)</option>
+            <option data-bg="Stage - &euro;18,000 (Premium щанд)" data-en="Stage - &euro;18,000 (Premium booth)">Stage -
+              &euro;18,000 (Premium щанд)</option>
+            <option data-bg="Institution - &euro;30,000 (Premium щанд)"
+              data-en="Institution - &euro;30,000 (Premium booth)">Institution - &euro;30,000 (Premium щанд)</option>
+            <option data-bg="Все още не съм сигурен/а - консултирайте ме" data-en="Not sure yet - please advise">Все още
+              не съм сигурен/а - консултирайте ме</option>
           </select>
-          <span class="form-hint" data-bg="Пълно сравнение на включените придобивки за всеки пакет: страница Изложители."
-            data-en="Full benefit comparison for each package: see the Exhibitors page.">Пълно сравнение на включените придобивки за всеки пакет: страница Изложители.</span>
+          <span class="form-hint"
+            data-bg="Пълно сравнение на включените придобивки за всеки пакет: страница Изложители."
+            data-en="Full benefit comparison for each package: see the Exhibitors page.">Пълно сравнение на включените
+            придобивки за всеки пакет: страница Изложители.</span>
         </div>
         <div class="form-group">
           <label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label>
@@ -4772,7 +4884,8 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('speaker-modal')">&times;</button>
       <div class="modal-form" id="speaker-form">
-        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ЛЕКТОРИ" data-en="BSTF 2026 &middot; SPEAKERS">BSTF 2026 &middot; ЛЕКТОРИ</span>
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ЛЕКТОРИ" data-en="BSTF 2026 &middot; SPEAKERS">BSTF 2026
+          &middot; ЛЕКТОРИ</span>
         <h2 data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
         <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
           data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
@@ -4804,7 +4917,8 @@
             <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
             <option data-bg="BioTech" data-en="BioTech">BioTech</option>
             <option data-bg="Гейминг" data-en="Gaming">Гейминг</option>
-            <option data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални иновационни политики</option>
+            <option data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални
+              иновационни политики</option>
             <option data-bg="Туризъм" data-en="Tourism">Туризъм</option>
           </select>
         </div>
@@ -4918,7 +5032,8 @@
         var slowNet = conn && (conn.saveData ||
           /(^|-)2g$/.test(conn.effectiveType || '') || conn.effectiveType === 'slow-2g');
 
-        if (!slowNet) {
+        // Reduced-motion users get the static poster only — no autoplaying video.
+        if (!slowNet && !reduceMotion) {
           var src = isMobile
             ? video.getAttribute('data-src-mobile')
             : video.getAttribute('data-src-desktop');
@@ -4926,25 +5041,24 @@
             video.setAttribute('preload', 'auto');
             video.src = src;
             video.load();
-            var tryPlay = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
+            var tryPlay = function () { var p = video.play(); if (p && p.catch) p.catch(function () { }); };
             if (video.readyState >= 2) tryPlay();
             else video.addEventListener('canplay', tryPlay, { once: true });
           }
         }
 
-        // Play-once cinematic reveal: on enter play from the start (only if
-        // not already playing, so the initial load isn't reset mid-play); on
-        // leave pause. The video has no `loop`, so after it plays through it
-        // holds its final frame. Re-entering replays a fresh reveal — and the
-        // reset to frame 0 happens off-screen, so a loop seam is never seen.
+        // Off-screen pause, on-screen resume: the video has no `loop`, so once
+        // it plays through it holds its final frame. Re-entering the viewport
+        // just resumes from wherever it paused (or stays held on the last
+        // frame if it already finished) — never resets to frame 0, so
+        // scrolling back up never looks like a restarted reveal.
         if ('IntersectionObserver' in window) {
           var vis = new IntersectionObserver(function (entries) {
             entries.forEach(function (en) {
               if (!video.src) return;
               if (en.isIntersecting) {
-                if (video.paused) {
-                  try { video.currentTime = 0; } catch (e) {}
-                  var p = video.play(); if (p && p.catch) p.catch(function () {});
+                if (video.paused && !video.ended) {
+                  var p = video.play(); if (p && p.catch) p.catch(function () { });
                 }
               } else {
                 video.pause();
