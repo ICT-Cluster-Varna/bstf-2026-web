@@ -14,13 +14,13 @@
   <meta property="og:title" content="Лектори - BSTF 2026">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - Speakers">
   <meta property="og:url" content="https://bstf2026.bg/speakers.html">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260710">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260716">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лектори - BSTF 2026">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Speakers">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260710">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260716">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -220,6 +220,36 @@
 
     nav.main-nav .logo span {
       color: var(--teal)
+    }
+
+    nav.main-nav .cx-nav-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1
+    }
+
+    nav.main-nav .cx-nav-logo-img {
+      height: 30px;
+      width: auto;
+      display: block
+    }
+
+    nav.main-nav .cx-nav-tagline {
+      display: block;
+      width: 194px;
+      margin: 7px auto 0;
+      font-size: 9px;
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.5)
+    }
+
+    nav.main-nav .cx-nav-tagline-inner {
+      display: inline-block;
+      letter-spacing: 0.6em;
+      margin-right: -0.6em
     }
 
     nav.main-nav .nav-links {
@@ -1302,7 +1332,10 @@
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">BSTF <span>2026</span></a>
+      <a href="index.html" class="cx-nav-logo">
+        <img src="images/Connexus - BLACK.svg?v=20260716" alt="Connexus" class="cx-nav-logo-img">
+        <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
+      </a>
       <div class="nav-links">
         <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
         <a href="speakers.html" class="active" data-bg="Лектори" data-en="Speakers">Лектори</a>
@@ -1380,7 +1413,7 @@
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260710"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260716"></script>
       <script>
         (function () {
           'use strict';
@@ -1537,14 +1570,15 @@
         </div>
         <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
           data-en="Register">Регистрирай се</button>
+        <div class="form-error" id="register-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
       </div>
       <div class="modal-success" id="register-success">
         <div class="success-icon">&#x2713;</div>
-        <h3 id="register-success-title" tabindex="-1" data-bg="Имейлът е готов за изпращане"
-          data-en="Your email is ready to send">Имейлът е готов за изпращане</h3>
-        <p data-bg="Отворихме имейл клиента ви с попълнени данни за регистрация — натиснете „Изпрати“, за да я завършите."
-          data-en="We opened your email app with your registration details filled in — hit send to complete it.">
-          Отворихме имейл клиента ви с попълнени данни за регистрация — натиснете „Изпрати“, за да я завършите.</p>
+        <h3 id="register-success-title" tabindex="-1" data-bg="Регистрацията е успешна!"
+          data-en="Registration Successful!">Регистрацията е успешна!</h3>
+        <p data-bg="Ще получите потвърждение на имейла си скоро."
+          data-en="You will receive a confirmation email shortly.">
+          Ще получите потвърждение на имейла си скоро.</p>
         <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('register-modal')" data-bg="Затвори"
           data-en="Close">Затвори</button>
       </div>
@@ -1583,14 +1617,15 @@
             описание</label><textarea rows="3" id="sp-desc"></textarea></div>
         <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
           data-en="Submit Proposal">Изпрати предложение</button>
+        <div class="form-error" id="speaker-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
       </div>
       <div class="modal-success" id="speaker-success">
         <div class="success-icon">&#x2713;</div>
-        <h3 id="speaker-success-title" tabindex="-1" data-bg="Имейлът е готов за изпращане"
-          data-en="Your email is ready to send">Имейлът е готов за изпращане</h3>
-        <p data-bg="Отворихме имейл клиента ви с попълнено предложение — натиснете „Изпрати“, за да го изпратите."
-          data-en="We opened your email app with your proposal filled in — hit send to submit it.">
-          Отворихме имейл клиента ви с попълнено предложение — натиснете „Изпрати“, за да го изпратите.</p>
+        <h3 id="speaker-success-title" tabindex="-1" data-bg="Предложението е изпратено!"
+          data-en="Proposal Submitted!">Предложението е изпратено!</h3>
+        <p data-bg="Ще разгледаме предложението ви и ще се свържем с вас."
+          data-en="We will review your proposal and get back to you.">
+          Ще разгледаме предложението ви и ще се свържем с вас.</p>
         <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('speaker-modal')" data-bg="Затвори"
           data-en="Close">Затвори</button>
       </div>
@@ -1689,6 +1724,35 @@
         if (title) title.focus();
       }
 
+      function bstfFormMsg(msg) { return (currentLang === 'en') ? msg.en : msg.bg; }
+
+      function bstfShowError(errorId, msg) {
+        var errorEl = document.getElementById(errorId);
+        if (errorEl) { errorEl.textContent = bstfFormMsg(msg); errorEl.style.display = 'block'; }
+      }
+
+      function bstfSubmitForm(fields, btn, errorId, formId, successId, titleId) {
+        var errorEl = document.getElementById(errorId);
+        if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+        var originalText = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = bstfFormMsg({ bg: 'Изпращане...', en: 'Sending...' }); }
+        fetch('send-email.asp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(fields).toString()
+        }).then(function (res) { return res.json(); }).then(function (data) {
+          if (data && data.success) {
+            showSuccess(formId, successId, titleId);
+          } else {
+            bstfShowError(errorId, { bg: 'Възникна грешка. Моля, опитайте отново.', en: 'Something went wrong. Please try again.' });
+          }
+        }).catch(function () {
+          bstfShowError(errorId, { bg: 'Възникна грешка. Моля, опитайте отново.', en: 'Something went wrong. Please try again.' });
+        }).finally(function () {
+          if (btn) { btn.disabled = false; btn.textContent = originalText; }
+        });
+      }
+
       function submitRegister() {
         var name = document.getElementById('reg-name'), email = document.getElementById('reg-email');
         if (!name.value.trim()) { name.focus(); return; }
@@ -1696,10 +1760,9 @@
         var phone = document.getElementById('reg-phone').value.trim();
         var ticketSelect = document.getElementById('reg-ticket');
         var ticket = ticketSelect.options[ticketSelect.selectedIndex].text;
-        var subject = 'BSTF 2026 — Registration: ' + name.value.trim();
-        var body = 'Name: ' + name.value.trim() + '\nEmail: ' + email.value.trim() + '\nPhone: ' + (phone || '-') + '\nTicket: ' + ticket;
-        window.location.href = 'mailto:bstf@ictclustervarna.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        showSuccess('register-form', 'register-success', 'register-success-title');
+        var btn = document.querySelector('#register-form .form-submit');
+        bstfSubmitForm({ formType: 'register', name: name.value.trim(), email: email.value.trim(), phone: phone, ticket: ticket },
+          btn, 'register-error', 'register-form', 'register-success', 'register-success-title');
       }
       window.submitRegister = submitRegister;
       function submitSpeaker() {
@@ -1711,11 +1774,9 @@
         var streamSelect = document.getElementById('sp-stream');
         var stream = streamSelect.options[streamSelect.selectedIndex].text;
         var desc = document.getElementById('sp-desc').value.trim();
-        var subject = 'BSTF 2026 — Speaker proposal: ' + name.value.trim();
-        var body = 'Name: ' + name.value.trim() + '\nEmail: ' + email.value.trim() + '\nCompany/Organization: ' + (company || '-') +
-          '\nTalk topic: ' + topic.value.trim() + '\nThematic stream: ' + stream + '\nDescription: ' + (desc || '-');
-        window.location.href = 'mailto:bstf@ictclustervarna.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        showSuccess('speaker-form', 'speaker-success', 'speaker-success-title');
+        var btn = document.querySelector('#speaker-form .form-submit');
+        bstfSubmitForm({ formType: 'speaker', name: name.value.trim(), email: email.value.trim(), company: company, topic: topic.value.trim(), stream: stream, description: desc },
+          btn, 'speaker-error', 'speaker-form', 'speaker-success', 'speaker-success-title');
       }
       window.submitSpeaker = submitSpeaker;
 

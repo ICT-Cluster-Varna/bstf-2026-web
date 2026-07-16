@@ -13,13 +13,13 @@
 <meta property="og:title" content="Изложители - BSTF 2026">
 <meta property="og:description" content="Black Sea Technology Forum 2026 - Sponsorship Packages">
 <meta property="og:url" content="https://bstf2026.bg/sponsors.html">
-<meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260710-2">
+<meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260716">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Изложители - BSTF 2026">
 <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Sponsorship Packages">
-<meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260710-2">
+<meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260716">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -58,6 +58,10 @@ nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255
 nav.main-nav .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;width:100%;padding:0 32px}
 nav.main-nav .logo{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--navy)}
 nav.main-nav .logo span{color:var(--teal)}
+nav.main-nav .cx-nav-logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+nav.main-nav .cx-nav-logo-img{height:30px;width:auto;display:block}
+nav.main-nav .cx-nav-tagline{display:block;width:194px;margin:7px auto 0;font-size:9px;font-weight:600;white-space:nowrap;text-align:center;color:rgba(0,0,0,0.5)}
+nav.main-nav .cx-nav-tagline-inner{display:inline-block;letter-spacing:0.6em;margin-right:-0.6em}
 nav.main-nav .nav-links{display:flex;align-items:center;gap:32px;margin-left:auto}
 nav.main-nav .nav-links a{font-size:0.9rem;font-weight:500;color:var(--text);transition:var(--transition);position:relative}
 nav.main-nav .nav-links a:hover{color:var(--teal)}
@@ -233,7 +237,10 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 <!-- Navigation -->
 <nav class="main-nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">BSTF <span>2026</span></a>
+    <a href="index.html" class="cx-nav-logo">
+      <img src="images/Connexus - BLACK.svg?v=20260716" alt="Connexus" class="cx-nav-logo-img">
+      <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
+    </a>
     <div class="nav-links">
       <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
       <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
@@ -281,7 +288,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <p class="floor-plan-intro" data-bg="Разгледайте залата, щандовете и сцените отвътре - завъртете модела на 360° и изберете позицията, която пасва на вашия бранд, преди да заявите пакет." data-en="Explore the hall, booths and stages from the inside - rotate the model 360° and pick the spot that fits your brand before you request a package.">Разгледайте залата, щандовете и сцените отвътре - завъртете модела на 360° и изберете позицията, която пасва на вашия бранд, преди да заявите пакет.</p>
     <div class="floor-plan-wrap">
       <div class="fp-stage" id="fp-stage">
-        <img class="fp-poster" src="images/new-preview.png?v=20260710-2" alt="3D схема на изложението" loading="lazy" decoding="async" width="980" height="557">
+        <img class="fp-poster" src="images/new-preview.png?v=20260716" alt="3D схема на изложението" loading="lazy" decoding="async" width="980" height="557">
         <button class="fp-activate" id="fp-activate" aria-label="Зареди интерактивния 3D изглед">
           <span class="fp-3d-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -520,9 +527,9 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF 2026 &middot; ИЗЛОЖЕНИЕ</span>
       <h2 data-bg="Запитване за щанд" data-en="Booth Inquiry">Запитване за щанд</h2>
       <p class="modal-desc" data-bg="Попълнете формата и ще се свържем с вас." data-en="Fill in the form and we will contact you.">Попълнете формата и ще се свържем с вас.</p>
-      <div class="form-group"><label data-bg="Компания" data-en="Company Name">Компания</label><input type="text" required></div>
-      <div class="form-group"><label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label><input type="text" required></div>
-      <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" required></div>
+      <div class="form-group"><label data-bg="Компания" data-en="Company Name">Компания</label><input type="text" id="exhibitor-company" required></div>
+      <div class="form-group"><label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label><input type="text" id="exhibitor-contact" required></div>
+      <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="exhibitor-email" required></div>
       <div class="form-group"><label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
         <select id="exhibitor-tier">
           <option value="expo" data-bg="Expo - &euro;1,700" data-en="Expo - &euro;1,700">Expo - &euro;1,700</option>
@@ -535,6 +542,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       </div>
       <div class="form-group"><label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label><textarea id="exhibitor-notes" rows="3"></textarea></div>
       <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати запитване" data-en="Submit Inquiry">Изпрати запитване</button>
+      <div class="form-error" id="exhibitor-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
     </div>
     <div class="modal-success" id="exhibitor-success">
       <div class="success-icon">&#x2713;</div>
@@ -584,6 +592,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
         </select>
       </div>
       <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се" data-en="Register">Регистрирай се</button>
+      <div class="form-error" id="register-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
     </div>
     <div class="modal-success" id="register-success">
       <div class="success-icon">&#x2713;</div>
@@ -664,10 +673,50 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay.open').forEach(function(m) { closeModal(m.id); }); }
   });
 
+  function bstfFormMsg(msg) { return (currentLang === 'en') ? msg.en : msg.bg; }
+
+  function bstfShowError(errorId, msg) {
+    var errorEl = document.getElementById(errorId);
+    if (errorEl) { errorEl.textContent = bstfFormMsg(msg); errorEl.style.display = 'block'; }
+  }
+
+  function bstfSubmitForm(fields, btn, errorId, formId, successId) {
+    var errorEl = document.getElementById(errorId);
+    if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+    var originalText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = bstfFormMsg({ bg: 'Изпращане...', en: 'Sending...' }); }
+    fetch('send-email.asp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(fields).toString()
+    }).then(function (res) { return res.json(); }).then(function (data) {
+      if (data && data.success) {
+        var form = document.getElementById(formId);
+        var success = document.getElementById(successId);
+        if (form) form.style.display = 'none';
+        if (success) { success.classList.add('show'); success.style.display = 'block'; }
+      } else {
+        bstfShowError(errorId, { bg: 'Възникна грешка. Моля, опитайте отново.', en: 'Something went wrong. Please try again.' });
+      }
+    }).catch(function () {
+      bstfShowError(errorId, { bg: 'Възникна грешка. Моля, опитайте отново.', en: 'Something went wrong. Please try again.' });
+    }).finally(function () {
+      if (btn) { btn.disabled = false; btn.textContent = originalText; }
+    });
+  }
+
   function submitRegister() {
-    var f = document.getElementById('register-form'), s = document.getElementById('register-success');
-    if (f) f.style.display = 'none';
-    if (s) { s.classList.add('show'); s.style.display = 'block'; }
+    var name = (document.getElementById('reg-name') || {}).value || '';
+    var email = (document.getElementById('reg-email') || {}).value || '';
+    var phone = (document.getElementById('reg-phone') || {}).value || '';
+    var ticket = (document.getElementById('reg-ticket') || {}).value || '';
+    if (!name.trim() || !email.trim()) {
+      bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' });
+      return;
+    }
+    var btn = document.querySelector('#register-form .form-submit');
+    bstfSubmitForm({ formType: 'register', name: name, email: email, phone: phone, ticket: ticket },
+      btn, 'register-error', 'register-form', 'register-success');
   }
   window.submitRegister = submitRegister;
 
@@ -682,9 +731,18 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   });
 
   function submitExhibitor() {
-    var f = document.getElementById('exhibitor-form'), s = document.getElementById('exhibitor-success');
-    if (f) f.style.display = 'none';
-    if (s) { s.classList.add('show'); s.style.display = 'block'; }
+    var company = (document.getElementById('exhibitor-company') || {}).value || '';
+    var contact = (document.getElementById('exhibitor-contact') || {}).value || '';
+    var email = (document.getElementById('exhibitor-email') || {}).value || '';
+    var pkg = (document.getElementById('exhibitor-tier') || {}).value || '';
+    var notes = (document.getElementById('exhibitor-notes') || {}).value || '';
+    if (!company.trim() || !contact.trim() || !email.trim()) {
+      bstfShowError('exhibitor-error', { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' });
+      return;
+    }
+    var btn = document.querySelector('#exhibitor-form .form-submit');
+    bstfSubmitForm({ formType: 'exhibitor', company: company, contact: contact, email: email, package: pkg, notes: notes },
+      btn, 'exhibitor-error', 'exhibitor-form', 'exhibitor-success');
   }
   window.submitExhibitor = submitExhibitor;
 
@@ -723,7 +781,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260710-2';
+    iframe.src = '3d-model/floorplan3d_v2.html?v=20260716';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');
