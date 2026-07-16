@@ -1,17 +1,18 @@
 <%@ Language="JScript" CodePage="65001" %>
+<!--#include file="resend-config.asp"-->
 <%
 // BSTF 2026 - form submissions -> Resend -> email notification
 // Handles: register (registration modal), exhibitor (become an exhibitor modal), speaker (become a speaker modal)
 // All three currently notify the same address while the project is being set up.
+//
+// RESEND_API_KEY comes from resend-config.asp (gitignored, not in this repo -
+// see resend-config.example.asp for the template). Deploy that file manually.
 
 Response.Buffer = true;
 Response.CodePage = 65001;
 Response.ContentType = "application/json";
 Response.CharSet = "utf-8";
 Response.CacheControl = "no-cache";
-
-// TODO: replace with a real Resend API key (dashboard.resend.com/api-keys)
-var RESEND_API_KEY = "re_cfVb39jj_FjdZYQsoiAvAzMphTbEdkKD4";
 
 // TODO: once a domain is verified in Resend, switch this to e.g. "BSTF 2026 <noreply@bstf2026.bg>"
 // "onboarding@resend.dev" is Resend's shared sandbox sender - it works before domain verification.
