@@ -251,7 +251,7 @@
     nav.main-nav .cx-nav-logo {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
       line-height: 1
     }
 
@@ -267,20 +267,15 @@
 
     nav.main-nav .cx-nav-tagline {
       display: block;
-      width: 194px;
-      margin: 7px auto 0;
+      width: 100%;
+      margin-top: 7px;
       font-size: 9px;
       font-weight: 600;
+      letter-spacing: 0.6em;
       white-space: nowrap;
       text-align: center;
       color: rgba(255, 255, 255, 0.85);
       transition: color 0.3s ease
-    }
-
-    nav.main-nav .cx-nav-tagline-inner {
-      display: inline-block;
-      letter-spacing: 0.6em;
-      margin-right: -0.6em
     }
 
     nav.main-nav.cx-nav-scrolled .cx-nav-tagline {
@@ -3347,7 +3342,7 @@
           class="cx-nav-logo-img cx-nav-logo-img--white">
         <img src="images/Connexus - BLACK.svg?v=20260716" alt="Connexus"
           class="cx-nav-logo-img cx-nav-logo-img--black">
-        <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
+        <span class="cx-nav-tagline">black sea tech forum</span>
       </a>
       <div class="nav-links">
         <!-- <a href="#" data-bg="За Connexus" data-en="About Connexus">За Connexus</a> -->
@@ -4831,6 +4826,7 @@
         </div>
         <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
           data-en="Register">Регистрирай се</button>
+        <div class="form-error" id="register-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
       </div>
       <div class="modal-success" id="register-success">
         <div class="success-icon">&#x2713;</div>
@@ -4856,19 +4852,19 @@
           data-en="See full pricing &amp; packages &rarr;">Виж пълните цени и пакети &rarr;</a>
         <div class="form-group">
           <label data-bg="Име на компанията" data-en="Company Name">Име на компанията</label>
-          <input type="text" required>
+          <input type="text" id="exh-company" required>
         </div>
         <div class="form-group">
           <label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label>
-          <input type="text" required>
+          <input type="text" id="exh-contact" required>
         </div>
         <div class="form-group">
           <label data-bg="Имейл" data-en="Email">Имейл</label>
-          <input type="email" required>
+          <input type="email" id="exh-email" required>
         </div>
         <div class="form-group">
           <label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
-          <select>
+          <select id="exh-package">
             <option data-bg="Expo - &euro;1,700 (Expo щанд)" data-en="Expo - &euro;1,700 (Expo booth)">Expo -
               &euro;1,700 (Expo щанд)</option>
             <option data-bg="Silver - &euro;7,500 (Premium щанд)" data-en="Silver - &euro;7,500 (Premium booth)">Silver
@@ -4889,10 +4885,11 @@
         </div>
         <div class="form-group">
           <label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label>
-          <textarea rows="3"></textarea>
+          <textarea rows="3" id="exh-notes"></textarea>
         </div>
         <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати заявка"
           data-en="Submit Application">Изпрати заявка</button>
+        <div class="form-error" id="exhibitor-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
       </div>
       <div class="modal-success" id="exhibitor-success">
         <div class="success-icon">&#x2713;</div>
@@ -4916,23 +4913,23 @@
           data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
         <div class="form-group">
           <label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
-          <input type="text" required>
+          <input type="text" id="spk-name" required>
         </div>
         <div class="form-group">
           <label data-bg="Имейл" data-en="Email">Имейл</label>
-          <input type="email" required>
+          <input type="email" id="spk-email" required>
         </div>
         <div class="form-group">
           <label data-bg="Компания / Организация" data-en="Company / Organization">Компания / Организация</label>
-          <input type="text">
+          <input type="text" id="spk-company">
         </div>
         <div class="form-group">
           <label data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</label>
-          <input type="text" required>
+          <input type="text" id="spk-topic" required>
         </div>
         <div class="form-group">
           <label data-bg="Тематичен поток" data-en="Thematic Stream">Тематичен поток</label>
-          <select>
+          <select id="spk-stream">
             <option data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
             <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
             <option data-bg="Умен град" data-en="Smart City">Умен град</option>
@@ -4949,10 +4946,11 @@
         </div>
         <div class="form-group">
           <label data-bg="Кратко описание" data-en="Brief Description">Кратко описание</label>
-          <textarea rows="3"></textarea>
+          <textarea rows="3" id="spk-desc"></textarea>
         </div>
         <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
           data-en="Submit Proposal">Изпрати предложение</button>
+        <div class="form-error" id="speaker-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
       </div>
       <div class="modal-success" id="speaker-success">
         <div class="success-icon">&#x2713;</div>
@@ -5226,27 +5224,83 @@
         }
       });
       // === Form Submissions ===
+      function bstfFormMsg(msg) { return (currentLang === 'en') ? msg.en : msg.bg; }
+
+      function bstfShowError(errorId, msg) {
+        var errorEl = document.getElementById(errorId);
+        if (errorEl) { errorEl.textContent = bstfFormMsg(msg); errorEl.style.display = 'block'; }
+      }
+
+      function bstfSubmitForm(fields, btn, errorId, formId, successId) {
+        var errorEl = document.getElementById(errorId);
+        if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+        var originalText = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = bstfFormMsg({ bg: 'Изпращане...', en: 'Sending...' }); }
+        fetch('send-email.asp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(fields).toString()
+        }).then(function (res) { return res.json(); }).then(function (data) {
+          if (data && data.success) {
+            var form = document.getElementById(formId);
+            var success = document.getElementById(successId);
+            if (form) form.style.display = 'none';
+            if (success) { success.classList.add('show'); success.style.display = 'block'; }
+          } else {
+            bstfShowError(errorId, { bg: 'Възникна грешка. Моля, опитайте отново.', en: 'Something went wrong. Please try again.' });
+          }
+        }).catch(function () {
+          bstfShowError(errorId, { bg: 'Възникна грешка. Моля, опитайте отново.', en: 'Something went wrong. Please try again.' });
+        }).finally(function () {
+          if (btn) { btn.disabled = false; btn.textContent = originalText; }
+        });
+      }
+
       function submitRegister() {
-        var form = document.getElementById('register-form');
-        var success = document.getElementById('register-success');
-        if (form) form.style.display = 'none';
-        if (success) { success.classList.add('show'); success.style.display = 'block'; }
+        var name = (document.getElementById('reg-name') || {}).value || '';
+        var email = (document.getElementById('reg-email') || {}).value || '';
+        var phone = (document.getElementById('reg-phone') || {}).value || '';
+        var ticket = (document.getElementById('reg-ticket') || {}).value || '';
+        if (!name.trim() || !email.trim()) {
+          bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' });
+          return;
+        }
+        var btn = document.querySelector('#register-form .form-submit');
+        bstfSubmitForm({ formType: 'register', name: name, email: email, phone: phone, ticket: ticket },
+          btn, 'register-error', 'register-form', 'register-success');
       }
       window.submitRegister = submitRegister;
 
       function submitExhibitor() {
-        var form = document.getElementById('exhibitor-form');
-        var success = document.getElementById('exhibitor-success');
-        if (form) form.style.display = 'none';
-        if (success) { success.classList.add('show'); success.style.display = 'block'; }
+        var company = (document.getElementById('exh-company') || {}).value || '';
+        var contact = (document.getElementById('exh-contact') || {}).value || '';
+        var email = (document.getElementById('exh-email') || {}).value || '';
+        var pkg = (document.getElementById('exh-package') || {}).value || '';
+        var notes = (document.getElementById('exh-notes') || {}).value || '';
+        if (!company.trim() || !contact.trim() || !email.trim()) {
+          bstfShowError('exhibitor-error', { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' });
+          return;
+        }
+        var btn = document.querySelector('#exhibitor-form .form-submit');
+        bstfSubmitForm({ formType: 'exhibitor', company: company, contact: contact, email: email, package: pkg, notes: notes },
+          btn, 'exhibitor-error', 'exhibitor-form', 'exhibitor-success');
       }
       window.submitExhibitor = submitExhibitor;
 
       function submitSpeaker() {
-        var form = document.getElementById('speaker-form');
-        var success = document.getElementById('speaker-success');
-        if (form) form.style.display = 'none';
-        if (success) { success.classList.add('show'); success.style.display = 'block'; }
+        var name = (document.getElementById('spk-name') || {}).value || '';
+        var email = (document.getElementById('spk-email') || {}).value || '';
+        var company = (document.getElementById('spk-company') || {}).value || '';
+        var topic = (document.getElementById('spk-topic') || {}).value || '';
+        var stream = (document.getElementById('spk-stream') || {}).value || '';
+        var desc = (document.getElementById('spk-desc') || {}).value || '';
+        if (!name.trim() || !email.trim() || !topic.trim()) {
+          bstfShowError('speaker-error', { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' });
+          return;
+        }
+        var btn = document.querySelector('#speaker-form .form-submit');
+        bstfSubmitForm({ formType: 'speaker', name: name, email: email, company: company, topic: topic, stream: stream, description: desc },
+          btn, 'speaker-error', 'speaker-form', 'speaker-success');
       }
       window.submitSpeaker = submitSpeaker;
 
