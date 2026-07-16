@@ -14,25 +14,23 @@
   <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
   <meta property="og:url" content="https://bstf2026.bg/">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260708">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260716">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260708">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260716">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=Russo+One&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&family=Archivo:wght@700;800;900&family=Russo+One&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <style>
     .hero-desc-break {
       display: none
@@ -47,8 +45,8 @@
     :root {
       --navy: #0B3954;
       --navy-deep: #0d4a6e;
-      --teal: #2CA6B3;
-      --teal-deep: #1a8a96;
+      --teal: #00cdff;
+      --teal-deep: #00a0cc;
       --light-blue: #EDF7FA;
       --white: #FFFFFF;
       --light-gray: #F5F7F9;
@@ -58,11 +56,12 @@
       --radius: 12px;
       --radius-sm: 8px;
       --radius-lg: 20px;
-      --transition: 0.3s ease;
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: 0.3s var(--ease-premium);
+      --transition-fast: 0.15s var(--ease-premium);
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
       --shadow-modal: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 20px rgba(11, 57, 84, 0.12), 0 30px 64px rgba(11, 57, 84, 0.2);
-      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
       --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace
     }
 
@@ -83,8 +82,13 @@
     }
 
     html {
-      scroll-behavior: smooth;
       scroll-padding-top: 84px
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth
+      }
     }
 
     body {
@@ -187,7 +191,7 @@
     }
 
     .btn-primary:hover {
-      background: #238a95;
+      background: #00a0cc;
       transform: translateY(-2px);
       box-shadow: var(--shadow)
     }
@@ -223,10 +227,16 @@
       left: 0;
       right: 0;
       z-index: 200;
+      background: transparent;
+      backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease
+    }
+
+    nav.main-nav.cx-nav-scrolled {
       background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      transition: var(--transition)
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06)
     }
 
     nav.main-nav .nav-inner {
@@ -238,15 +248,51 @@
       padding: 0 32px
     }
 
-    nav.main-nav .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--navy)
+    nav.main-nav .cx-nav-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1
     }
 
-    nav.main-nav .logo span {
-      color: var(--teal)
+    nav.main-nav .cx-nav-logo-img {
+      height: 30px;
+      width: auto;
+      display: block
+    }
+
+    nav.main-nav .cx-nav-logo-img--black {
+      display: none
+    }
+
+    nav.main-nav .cx-nav-tagline {
+      display: block;
+      width: 194px;
+      margin: 7px auto 0;
+      font-size: 9px;
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.85);
+      transition: color 0.3s ease
+    }
+
+    nav.main-nav .cx-nav-tagline-inner {
+      display: inline-block;
+      letter-spacing: 0.6em;
+      margin-right: -0.6em
+    }
+
+    nav.main-nav.cx-nav-scrolled .cx-nav-tagline {
+      color: rgba(0, 0, 0, 0.5)
+    }
+
+    nav.main-nav.cx-nav-scrolled .cx-nav-logo-img--white {
+      display: none
+    }
+
+    nav.main-nav.cx-nav-scrolled .cx-nav-logo-img--black {
+      display: block
     }
 
     nav.main-nav .nav-links {
@@ -259,9 +305,13 @@
     nav.main-nav .nav-links a {
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--text);
+      color: rgba(255, 255, 255, 0.92);
       transition: var(--transition);
       position: relative
+    }
+
+    nav.main-nav.cx-nav-scrolled .nav-links a {
+      color: var(--text)
     }
 
     nav.main-nav .nav-links a:hover {
@@ -329,8 +379,12 @@
     .mobile-menu-btn span {
       width: 24px;
       height: 2px;
-      background: var(--navy);
+      background: rgba(255, 255, 255, 0.92);
       transition: var(--transition)
+    }
+
+    nav.main-nav.cx-nav-scrolled .mobile-menu-btn span {
+      background: var(--navy)
     }
 
     .mobile-nav {
@@ -378,146 +432,6 @@
       display: none
     }
 
-    .hero-inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      width: 100%;
-      margin: 0 auto;
-      padding: 44px 80px 0
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: 0.9fr 1.4fr 0.8fr;
-      align-items: start;
-      gap: 0;
-      max-width: 100%;
-      margin: 0 auto;
-      width: 100%
-    }
-
-    .hero-left {
-      position: relative;
-      z-index: 2
-    }
-
-    .hero-left .logo-connexus {
-      width: 200px;
-      height: auto;
-      display: block;
-      margin-bottom: 18px
-    }
-
-    @media(max-width:768px) {
-      .hero-left .logo-connexus {
-        width: 120px;
-        margin: 0 0 10px
-      }
-    }
-
-    .hero-left h1 {
-      font-size: 3.8rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--navy);
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: -0.01em
-    }
-
-    .hero-left h1 .title-light {
-      color: var(--teal);
-      font-weight: 300;
-      font-size: 3.8rem;
-      display: block;
-      margin-bottom: 8px;
-      text-transform: none;
-      letter-spacing: 0.01em;
-      font-style: italic
-    }
-
-    .hero-center {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      position: relative;
-      margin: -20px -40px 0
-    }
-
-    .hero-center img {
-      width: 70%;
-      max-width: none;
-      height: auto
-    }
-
-    .hero-right {
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: flex-start;
-      position: relative;
-      z-index: 2;
-      height: 100%
-    }
-
-    .hero-right-top {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px
-    }
-
-    .hero-date-lg {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--teal);
-      line-height: 1.2
-    }
-
-    .hero-location {
-      font-size: 1.05rem;
-      color: var(--text);
-      font-weight: 500
-    }
-
-    .hero-bottom {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      padding: 18px 0 34px;
-      max-width: 100%;
-      margin: 0 auto;
-      width: 100%;
-      margin-top: 24px
-    }
-
-    .hero-bottom-left {
-      flex: 1
-    }
-
-    .hero-topics {
-      font-size: 1.05rem;
-      color: var(--teal);
-      font-weight: 500;
-      margin-bottom: 4px;
-      letter-spacing: 0.02em
-    }
-
-    .hero-tagline {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.65rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.2
-    }
-
-    .hero-tagline sup {
-      font-size: 0.55em;
-      vertical-align: super
-    }
 
     .hero-badge,
     .hero-desc,
@@ -777,7 +691,7 @@
     }
 
     .schedule-table tbody tr:nth-child(even) {
-      background: rgba(44, 166, 179, 0.04)
+      background: rgba(0, 205, 255, 0.04)
     }
 
     .schedule-table {
@@ -1063,7 +977,7 @@
       border-radius: 99px;
       background: var(--light-blue);
       color: var(--teal-deep);
-      border: 1px solid rgba(44, 166, 179, 0.25)
+      border: 1px solid rgba(0, 205, 255, 0.25)
     }
 
     .prog-ev-card.dim {
@@ -1269,7 +1183,7 @@
       padding: 46px 28px 28px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(44, 166, 179, 0.15);
+      border: 1px solid rgba(0, 205, 255, 0.15);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -1284,17 +1198,17 @@
 
     .ticket-card[data-ticket="vip"] {
       border: 2px solid var(--teal);
-      box-shadow: 0 6px 32px rgba(44, 166, 179, 0.18)
+      box-shadow: 0 6px 32px rgba(0, 205, 255, 0.18)
     }
 
     .ticket-card[data-ticket="vip"]:hover {
-      box-shadow: 0 18px 54px rgba(44, 166, 179, 0.34)
+      box-shadow: 0 18px 54px rgba(0, 205, 255, 0.34)
     }
 
     .ticket-card.active {
       border: 3px solid var(--teal) !important;
       background: var(--light-blue) !important;
-      box-shadow: 0 0 0 4px rgba(44, 166, 179, 0.25), 0 16px 48px rgba(44, 166, 179, 0.2) !important;
+      box-shadow: 0 0 0 4px rgba(0, 205, 255, 0.25), 0 16px 48px rgba(0, 205, 255, 0.2) !important;
       transform: translateY(-8px) scale(1.02) !important;
       z-index: 2;
       position: relative
@@ -1318,7 +1232,7 @@
       right: 0;
       width: auto;
       transform: none;
-      background: linear-gradient(90deg, var(--teal) 0%, #1a8a96 100%);
+      background: linear-gradient(90deg, var(--teal) 0%, #00a0cc 100%);
       color: var(--white);
       padding: 8px 16px 8px 50px;
       font-size: 0.67rem;
@@ -1444,7 +1358,7 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(90deg, rgba(44, 166, 179, 0.15), var(--teal) 50%, rgba(44, 166, 179, 0.15));
+      background: linear-gradient(90deg, rgba(0, 205, 255, 0.15), var(--teal) 50%, rgba(0, 205, 255, 0.15));
       z-index: 0
     }
 
@@ -1457,7 +1371,7 @@
       border-radius: 50%;
       background: var(--teal);
       border: 3px solid var(--white);
-      box-shadow: 0 0 0 2px rgba(44, 166, 179, 0.35)
+      box-shadow: 0 0 0 2px rgba(0, 205, 255, 0.35)
     }
 
     .events-timeline__grid {
@@ -1479,7 +1393,7 @@
     .event-card:hover {
       background: var(--white);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(44, 166, 179, 0.25);
+      border-color: rgba(0, 205, 255, 0.25);
       transform: translateY(-4px)
     }
 
@@ -1487,7 +1401,7 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: rgba(44, 166, 179, 0.12);
+      background: rgba(0, 205, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1530,7 +1444,7 @@
       height: 520px;
       right: -220px;
       top: -180px;
-      background: radial-gradient(circle, rgba(44, 166, 179, 0.16) 0%, rgba(44, 166, 179, 0) 70%);
+      background: radial-gradient(circle, rgba(0, 205, 255, 0.16) 0%, rgba(0, 205, 255, 0) 70%);
       border-radius: 50%;
       pointer-events: none
     }
@@ -1581,7 +1495,7 @@
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(44, 166, 179, 0.15);
+      border: 1px solid rgba(0, 205, 255, 0.15);
       padding: 32px
     }
 
@@ -1659,7 +1573,7 @@
     .venue-bg {
       position: absolute;
       inset: 0;
-      background: url('images/varna_seaside_bg.jpg?v=20260708') center/cover no-repeat
+      background: url('images/varna_seaside_bg.jpg?v=20260716') center/cover no-repeat
     }
 
     .venue-scrim {
@@ -1992,6 +1906,46 @@
       }
     }
 
+    /* Exit animation — mirrors the entrance so the modal dismisses gracefully
+       instead of snapping shut. JS holds `.open .closing` until it ends. */
+    .modal-overlay.open.closing {
+      animation: modalOverlayOut 0.24s var(--ease-premium) forwards
+    }
+
+    .modal-overlay.open.closing .modal {
+      animation: modalPanelOut 0.24s var(--ease-premium) forwards
+    }
+
+    @keyframes modalOverlayOut {
+      from {
+        opacity: 1
+      }
+
+      to {
+        opacity: 0
+      }
+    }
+
+    @keyframes modalPanelOut {
+      from {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98)
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .modal-overlay.open.closing,
+      .modal-overlay.open.closing .modal {
+        animation: none !important
+      }
+    }
+
     .modal {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -2118,7 +2072,7 @@
     .form-group textarea:focus-visible {
       outline: none;
       border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(44, 166, 179, 0.18)
+      box-shadow: 0 0 0 3px rgba(0, 205, 255, 0.18)
     }
 
     .form-group select {
@@ -2146,7 +2100,7 @@
 
     .form-group select:focus {
       background-color: var(--white);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%232CA6B3' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2300cdff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
     }
 
     .form-group select option {
@@ -2291,12 +2245,25 @@
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease
+      transition: opacity 0.45s var(--ease-premium), transform 0.45s var(--ease-premium);
+      will-change: opacity, transform
     }
 
     .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0)
+    }
+
+    /* Release the compositor hint once the element has settled. */
+    .animate-on-scroll.cx-reveal-done {
+      will-change: auto
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-on-scroll {
+        transition: none;
+        will-change: auto
+      }
     }
 
     @media(max-width:1024px) {
@@ -2339,43 +2306,6 @@
         min-height: auto
       }
 
-      .hero-inner {
-        padding: 20px 20px 0;
-        position: relative
-      }
-
-      .hero h1 {
-        font-size: 2.5rem
-      }
-
-      .hero-left h1 .title-light {
-        font-size: 1.6rem
-      }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: left;
-        gap: 8px
-      }
-
-      .hero-left {
-        text-align: left;
-        order: 1
-      }
-
-      .hero-right {
-        order: 2;
-        text-align: left;
-        align-items: flex-start;
-        height: auto;
-        position: static
-      }
-
-      .hero-right-top {
-        align-items: flex-start;
-        gap: 2px
-      }
-
       .hall-row {
         flex-direction: column;
         gap: 8px;
@@ -2388,33 +2318,6 @@
 
       .hall-row>div>p {
         text-align: center
-      }
-
-      .hero-date-lg {
-        font-size: 1.2rem
-      }
-
-      .hero-center {
-        order: 3;
-        margin: 0 -20px
-      }
-
-      .hero-center img {
-        max-width: 100%;
-        width: 100%;
-        margin: 0 auto
-      }
-
-      .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        padding: 10px 20px 20px;
-        margin-top: 0
-      }
-
-      .hero-tagline {
-        font-size: 1.3rem
       }
 
       .section-title {
@@ -2508,10 +2411,6 @@
       }
     }
 
-    .hero-left {
-      text-align: left
-    }
-
     /* === Sponsors section: partner rows === */
     .partners-stack {
       display: flex;
@@ -2553,7 +2452,7 @@
     .partner-row__divider {
       width: 1px;
       align-self: stretch;
-      background: rgba(44, 166, 179, 0.35);
+      background: rgba(0, 205, 255, 0.35);
       flex-shrink: 0;
     }
 
@@ -2575,7 +2474,7 @@
       color: var(--navy);
     }
 
-    .partner-row__content--text p.partner-patron-name {
+    .partner-row__content--text .partner-patron-name {
       font-weight: 700;
       color: var(--teal);
       font-size: 1.2rem;
@@ -2962,7 +2861,7 @@
 
     .hall-card:hover {
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 8px 24px rgba(44, 166, 179, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 205, 255, 0.15);
       border-left-width: 6px
     }
 
@@ -2973,7 +2872,7 @@
     .stream-card:hover {
       background: var(--light-blue);
       transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(44, 166, 179, 0.12)
+      box-shadow: 0 6px 20px rgba(0, 205, 255, 0.12)
     }
 
     .stream-card img {
@@ -2984,18 +2883,455 @@
       transform: scale(1.1)
     }
 
-    /* === Small desktop: keep hero logos above the fold === */
-    @media(min-width:769px) and (max-height:820px) {
-      .hero-inner {
-        padding-top: 20px
+
+    /* === Connexus Hero (redesign) === */
+    .cx-hero {
+      background: #030a11;
+      padding: 72px 0 0;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
+    }
+
+    .cx-hero-top {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0
+    }
+
+    /* Overscan wrapper: parallax transform target (video stays untouched so
+       object-fit cover isn't fought). Extra height gives translate headroom
+       so the drift never reveals an edge. */
+    .cx-hero-media {
+      position: absolute;
+      inset: -9% 0;
+      height: 118%;
+      width: 100%;
+      z-index: 0;
+      overflow: hidden;
+      backface-visibility: hidden
+    }
+
+    .cx-hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: -15% 95%;
+      display: block
+    }
+
+    /* Brand color-grade: soft-light navy->teal duotone tint so the raw
+       footage reads as a designed brand asset (and the loop draws less eye). */
+    .cx-hero-grade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+      background:
+        linear-gradient(118deg,
+          rgba(11, 57, 84, 0.75) 0%,
+          rgba(11, 57, 84, 0.28) 42%,
+          rgba(44, 166, 179, 0.30) 78%,
+          rgba(44, 166, 179, 0.55) 100%)
+    }
+
+    /* Parallax base: the media wrapper is its own GPU layer and is
+       transformed on scroll by JS (rAF-throttled, one transform write per
+       frame). Starts slightly scaled so the drift never reveals an edge. */
+    .cx-hero-media {
+      transform: translate3d(0, 0, 0) scale(1.06);
+      transform-origin: center 40%
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cx-hero-media {
+        transform: none
       }
     }
 
-    @media(min-width:769px) and (max-width:1280px) {
-      .hero-inner {
-        padding-top: 24px;
-        padding-left: 40px;
-        padding-right: 40px
+    .cx-hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(125% 115% at 50% 42%, rgba(3, 10, 17, 0) 52%, rgba(3, 10, 17, 0.5) 100%),
+        linear-gradient(100deg, rgba(3, 10, 17, 0.95) 0%, rgba(3, 10, 17, 0.82) 32%, rgba(3, 10, 17, 0.4) 58%, rgba(3, 10, 17, 0.18) 100%),
+        linear-gradient(0deg, rgba(3, 10, 17, 0.85) 0%, rgba(3, 10, 17, 0) 22%, rgba(3, 10, 17, 0) 78%, rgba(3, 10, 17, 0.7) 100%)
+    }
+
+    .cx-hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 24px 40px;
+      position: relative;
+      z-index: 2
+    }
+
+    .cx-hero-top-inner {
+      padding-top: 22px;
+      padding-bottom: 0
+    }
+
+    .cx-hero-stats-wrap {
+      padding: 22px 40px 20px
+    }
+
+
+    /* Patronage band: white strip right below the hero */
+    .cx-patron-band {
+      background: var(--white);
+      border-bottom: 1px solid rgba(11, 57, 84, 0.08)
+    }
+
+    .cx-patron-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 22px 40px;
+      flex-wrap: wrap;
+      text-align: left
+    }
+
+    .cx-patron-band-crest {
+      width: 44px;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0
+    }
+
+    .cx-patron-band-text p {
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      color: var(--navy);
+      line-height: 1.5;
+      margin: 0
+    }
+
+    @media (max-width: 640px) {
+      .cx-patron-band-inner {
+        justify-content: center;
+        text-align: center
+      }
+    }
+
+    .cx-hero-grid {
+      max-width: 640px
+    }
+
+    .cx-hero-kicker {
+      font-family: 'Russo One', 'Archivo', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px
+    }
+
+    .cx-hero-title {
+      font-family: 'Russo One', 'Archivo', 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 14px
+    }
+
+    .cx-hero-title span {
+      display: block
+    }
+
+    .cx-hero-title-accent {
+      color: var(--teal)
+    }
+
+    .cx-hero-desc {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 335px;
+      margin-bottom: 20px
+    }
+
+    .cx-hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    /* === Hero entrance choreography === */
+    @keyframes cx-hero-fade {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes cx-hero-rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .cx-hero-media {
+      opacity: 0;
+      animation: cx-hero-fade 1.6s ease-out 0.1s forwards
+    }
+
+    .cx-hero-kicker {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 0.30s forwards
+    }
+
+    .cx-hero-title span {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) forwards
+    }
+
+    .cx-hero-title span:nth-child(1) {
+      animation-delay: 0.42s
+    }
+
+    .cx-hero-title span:nth-child(2) {
+      animation-delay: 0.52s
+    }
+
+    .cx-hero-title span:nth-child(3) {
+      animation-delay: 0.62s
+    }
+
+    .cx-hero-title span:nth-child(4) {
+      animation-delay: 0.72s
+    }
+
+    .cx-hero-desc {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 0.86s forwards
+    }
+
+    .cx-hero-buttons {
+      opacity: 0;
+      animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 1.0s forwards
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .cx-hero-media,
+      .cx-hero-kicker,
+      .cx-hero-title span,
+      .cx-hero-desc,
+      .cx-hero-buttons {
+        opacity: 1 !important;
+        transform: none;
+        animation: none !important
+      }
+    }
+
+    .cx-hero-btn {
+      gap: 10px;
+      font-family: 'Russo One', 'Archivo', sans-serif;
+      font-weight: 600
+    }
+
+    .nav-register-btn {
+      font-family: 'Russo One', 'Archivo', sans-serif
+    }
+
+    .cx-hero-btn.btn-outline {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--white)
+    }
+
+    .cx-hero-btn.btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.5)
+    }
+
+    .cx-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      flex-wrap: wrap
+    }
+
+    .cx-hero-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Russo One', 'Archivo', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white)
+    }
+
+    .cx-hero-badge-item svg {
+      color: var(--teal);
+      flex-shrink: 0
+    }
+
+    .cx-hero-badge-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.3)
+    }
+
+    .cx-hero-stats {
+      margin-top: 0;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(3, 10, 17, 0.62);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35)
+    }
+
+    .cx-stat {
+      padding: 18px 20px;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border-right: 1px solid rgba(255, 255, 255, 0.14)
+    }
+
+    .cx-stat:last-child {
+      border-right: none
+    }
+
+    .cx-stat-icon {
+      color: var(--teal);
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    .cx-stat-text {
+      min-width: 0
+    }
+
+    .cx-stat-num {
+      font-family: 'Russo One', 'Archivo', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1
+    }
+
+    .cx-stat-label {
+      font-family: 'Russo One', 'Archivo', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin: 3px 0 4px
+    }
+
+    .cx-stat-desc {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.76rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.35
+    }
+
+    .cx-hero-scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-decoration: none
+    }
+
+    .cx-hero-scroll svg {
+      animation: cxBounce 1.8s ease-in-out infinite
+    }
+
+    @keyframes cxBounce {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(5px)
+      }
+    }
+
+    /* Silence looping decorative motion for users who ask for reduced motion
+       (WCAG 2.2.2). Covers the scroll-cue bounce. */
+    @media (prefers-reduced-motion: reduce) {
+      .cx-hero-scroll svg {
+        animation: none !important
+      }
+    }
+
+    @media(max-width:900px) {
+      .cx-hero {
+        height: auto !important
+      }
+
+      .cx-hero-inner {
+        padding: 16px 20px
+      }
+
+      .cx-hero-stats-wrap {
+        padding: 0 20px 28px
+      }
+
+      .cx-hero-grid {
+        max-width: none
+      }
+
+      .cx-hero-title {
+        font-size: 2.2rem
+      }
+
+      .cx-hero-stats {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .cx-stat:nth-child(2) {
+        border-right: none
+      }
+
+      .cx-stat:nth-child(1),
+      .cx-stat:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14)
+      }
+    }
+
+    @media (min-width: 901px) {
+      .cx-hero-desc {
+        max-width: 460px;
+        color: rgba(255, 255, 255, 0.82)
       }
     }
   </style>
@@ -3006,13 +3342,19 @@
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-inner">
-      <a href="#" class="logo" data-bg="BSTF <span>2026</span>" data-en="BSTF <span>2026</span>">BSTF
-        <span>2026</span></a>
+      <a href="#" class="logo cx-nav-logo">
+        <img src="images/Connexus - WHITE.svg?v=20260716" alt="Connexus"
+          class="cx-nav-logo-img cx-nav-logo-img--white">
+        <img src="images/Connexus - BLACK.svg?v=20260716" alt="Connexus"
+          class="cx-nav-logo-img cx-nav-logo-img--black">
+        <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
+      </a>
       <div class="nav-links">
+        <!-- <a href="#" data-bg="За Connexus" data-en="About Connexus">За Connexus</a> -->
         <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
         <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
         <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-        <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+        <a href="#contact" data-bg="Контакти" data-en="Contacts">Контакти</a>
       </div>
       <div class="nav-right">
         <div class="lang-toggle">
@@ -3030,51 +3372,161 @@
 
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobile-nav">
+    <!-- <a href="#" data-bg="За Connexus" data-en="About Connexus">За Connexus</a> -->
     <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
     <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
     <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-    <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+    <a href="#contact" data-bg="Контакти" data-en="Contacts">Контакти</a>
     <a href="#tickets" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block"
       data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>
   </div>
 
-  <div class="hero-cta-wrap" style="min-height:100vh;display:flex;flex-direction:column">
+  <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
     <!-- SECTION 1: Hero -->
-    <section class="hero" style="flex:1">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <!-- Left: Title -->
-          <div class="hero-left">
-            <img src="images/Connexus - BLACK.svg?v=20260708" alt="Connexus" class="logo-connexus">
-            <h1>
-              <span class="title-light" data-bg="Черноморски" data-en="Black Sea">Black Sea</span>
-              <span data-bg="ТЕХНОЛОГИЧЕН" data-en="TECHNOLOGY">TECHNOLOGY</span><br>
-              <span data-bg="ФОРУМ" data-en="FORUM">FORUM</span>
-            </h1>
-          </div>
-          <!-- Center: 3D Visual -->
-          <div class="hero-center">
-            <img src="images/hero_3d.png?v=20260708" alt="BSTF 2026 Visual" width="1600" height="1270" fetchpriority="high" decoding="async">
-          </div>
-          <!-- Right: Date, Location -->
-          <div class="hero-right">
-            <div class="hero-right-top">
-              <div class="hero-date-lg" data-bg="5 – 7 ОКТОМВРИ 2026" data-en="5 – 7 OCTOBER 2026">5 – 7 OCTOBER 2026
+    <section class="hero cx-hero" style="height:100vh;height:100dvh">
+      <div class="cx-hero-media" data-hero-media>
+        <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster.jpg?v=20260716"
+          data-src-desktop="videos/hero-bg-1080-clean.mp4?v=20260716"
+          data-src-mobile="videos/hero-bg-720-clean.mp4?v=20260716"></video>
+        <div class="cx-hero-grade" aria-hidden="true"></div>
+      </div>
+      <div class="cx-hero-bg-overlay"></div>
+
+      <div class="cx-hero-top">
+        <div class="cx-hero-inner cx-hero-top-inner">
+          <div class="cx-hero-grid">
+            <div class="cx-hero-left">
+              <p class="cx-hero-kicker" data-bg="Хора. Идеи. Изкуствен интелект."
+                data-en="People. Ideas. Artificial Intelligence.">Хора. Идеи. Изкуствен интелект.</p>
+              <h1 class="cx-hero-title">
+                <span data-bg="Свързваме" data-en="Connecting">Свързваме</span>
+                <span data-bg="хората," data-en="people,">хората,</span>
+                <span class="cx-hero-title-accent" data-bg="ускоряваме" data-en="accelerating">ускоряваме</span>
+                <span class="cx-hero-title-accent" data-bg="бъдещето." data-en="the future.">бъдещето.</span>
+              </h1>
+              <p class="cx-hero-desc"
+                data-bg="Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и света."
+                data-en="Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.">
+                Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и
+                света.</p>
+              <div class="cx-hero-buttons">
+                <button class="btn btn-primary cx-hero-btn" onclick="openModal('register-modal','standard')"
+                  data-bg="Купи билет" data-en="Buy ticket">
+                  <span data-bg="Купи билет" data-en="Buy ticket">Купи билет</span> <span
+                    aria-hidden="true">&rarr;</span></button>
+                <a href="#program" class="btn btn-outline cx-hero-btn" data-bg="Виж програмата" data-en="See program">
+                  <span data-bg="Виж програмата" data-en="See program">Виж програмата</span> <span
+                    aria-hidden="true">&darr;</span></a>
               </div>
-              <div class="hero-location" data-bg="Варна, България" data-en="Varna, Bulgaria">Varna, Bulgaria</div>
+            </div>
+
+          </div>
+
+          <div class="cx-hero-badge-row">
+            <span class="cx-hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              <span data-bg="5-7 ОКТОМВРИ 2026" data-en="5-7 OCTOBER 2026">5-7 ОКТОМВРИ 2026</span>
+            </span>
+            <span class="cx-hero-badge-divider"></span>
+            <span class="cx-hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" />
+                <circle cx="12" cy="9.5" r="2.5" />
+              </svg>
+              <span data-bg="Хотел Черно море, Варна" data-en="Cherno More Hotel, Varna">Хотел Черно море, Варна</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-hero-inner cx-hero-stats-wrap">
+        <div class="cx-hero-stats">
+          <div class="cx-stat">
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+            <div class="cx-stat-text">
+              <div class="cx-stat-num"><span class="cx-count" data-count="500" data-suffix="+">500+</span></div>
+              <div class="cx-stat-label" data-bg="УЧАСТНИЦИ" data-en="ATTENDEES">УЧАСТНИЦИ</div>
+              <div class="cx-stat-desc" data-bg="Лидери. Иноватори. Визионери."
+                data-en="Leaders. Innovators. Visionaries.">Лидери. Иноватори. Визионери.</div>
+            </div>
+          </div>
+          <div class="cx-stat">
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+              <path
+                d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+              <path d="m21 3 1 11h-2" />
+              <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+              <path d="M3 4h8" />
+            </svg>
+            <div class="cx-stat-text">
+              <div class="cx-stat-num"><span class="cx-count" data-count="79800" data-group="1">79 800</span></div>
+              <div class="cx-stat-label" data-bg="РЪКОСТИСКАНИЯ" data-en="HANDSHAKES">РЪКОСТИСКАНИЯ</div>
+              <div class="cx-stat-desc" data-bg="Реални връзки. Реални възможности."
+                data-en="Real connections. Real opportunities.">Реални връзки. Реални възможности.</div>
+            </div>
+          </div>
+          <div class="cx-stat">
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6">
+              <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" />
+              <path d="M19 11a7 7 0 0 1-14 0" />
+              <line x1="12" y1="18" x2="12" y2="22" />
+            </svg>
+            <div class="cx-stat-text">
+              <div class="cx-stat-num"><span class="cx-count" data-count="40" data-suffix="+">40+</span></div>
+              <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">ЛЕКТОРИ</div>
+              <div class="cx-stat-desc" data-bg="Световни експерти на една сцена."
+                data-en="World experts on one stage.">Световни експерти на една сцена.</div>
+            </div>
+          </div>
+          <div class="cx-stat">
+            <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6">
+              <path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8-6.2-3.7-6.2 3.7 1.6-6.8-5.2-4.6 6.9-.6z" />
+            </svg>
+            <div class="cx-stat-text">
+              <div class="cx-stat-num"><span class="cx-count" data-count="3">3</span> <span data-bg="дни"
+                  data-en="days">дни</span></div>
+              <div class="cx-stat-label" data-bg="ВДЪХНОВЕНИЕ" data-en="INSPIRATION">ВДЪХНОВЕНИЕ</div>
+              <div class="cx-stat-desc" data-bg="Идеи. Стратегии. Технологии." data-en="Ideas. Strategies. Technology.">
+                Идеи. Стратегии. Технологии.</div>
             </div>
           </div>
         </div>
-        <!-- Bottom: Tagline + Logos -->
-        <div class="hero-bottom">
-          <div class="hero-bottom-left">
-            <p class="hero-topics" data-bg="Изкуствен интелект | Умен град | Транспорт на бъдещето"
-              data-en="Artificial Intelligence | Smart City | Transport Of The Future">Artificial Intelligence | Smart
-              City | Transport Of The Future</p>
-            <p class="hero-tagline" data-bg="Технологии от 7<sup>-мо</sup> поколение без граници"
-              data-en="7<sup>th</sup> Generation Technologies Without Borders">7<sup>th</sup> Generation Technologies
-              Without Borders</p>
-          </div>
+
+        <a href="#program" class="cx-hero-scroll">
+          <span data-bg="БЪДЕЩЕТО ЗАПОЧВА ТУК" data-en="THE FUTURE STARTS HERE">БЪДЕЩЕТО ЗАПОЧВА ТУК</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Patronage band: appears right below the hero, on white -->
+    <section class="cx-patron-band">
+      <div class="cx-hero-inner cx-patron-band-inner">
+        <img src="images/gerp-image.png?v=20260716" alt="Държавен герб на Република България"
+          class="cx-patron-band-crest">
+        <div class="cx-patron-band-text">
+          <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА
+            ПРЕЗИДЕНТА НА</p>
+          <p data-bg="РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА" data-en="THE REPUBLIC OF BULGARIA MS. ILIANA YOTOVA">
+            РЕПУБЛИКА БЪЛГАРИЯ Г-ЖА ИЛИЯНА ЙОТОВА</p>
         </div>
       </div>
     </section>
@@ -3202,7 +3654,8 @@
   <section style="padding:72px 0;background:var(--light-gray)">
     <div class="container" style="text-align:center">
       <h2 class="section-title text-center" style="font-style:italic"
-        data-bg="11 направления. 3 дни. Максимална стойност." data-en="11 Streams. 3 Days. Maximum Value.">11 направления.
+        data-bg="11 направления. 3 дни. Максимална стойност." data-en="11 Streams. 3 Days. Maximum Value.">11
+        направления.
         3 дни. Максимална стойност.</h2>
       <p class="section-subtitle text-center" data-bg="Изберете тема и вижте съответните акценти от програмата."
         data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от
@@ -3211,75 +3664,82 @@
         style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1100px;margin:0 auto">
         <a href="speakers.html#track-ai" class="stream-card" data-track-link="ai"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/ai.png?v=20260708" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+          <img src="images/streams/ai.png?v=20260716" alt="AI" loading="lazy" decoding="async" width="80" height="80"
             style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
             data-en="Artificial Intelligence">Изкуствен интелект</div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/transport.png?v=20260708" alt="Transport" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/transport.png?v=20260716" alt="Transport" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
             data-en="Future of Transport">Транспорт на бъдещето</div>
         </div>
         <a href="speakers.html#track-smart-city" class="stream-card" data-track-link="smart-city"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/smart_city.png?v=20260708" alt="Smart City" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/smart_city.png?v=20260716" alt="Smart City" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
             град</div>
         </a>
         <a href="speakers.html#track-cybersecurity" class="stream-card" data-track-link="cybersecurity"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/cybersecurity.png?v=20260708" alt="Cybersecurity" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/cybersecurity.png?v=20260716" alt="Cybersecurity" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
             data-en="Cybersecurity">Киберсигурност</div>
         </a>
         <a href="speakers.html#track-automation" class="stream-card" data-track-link="automation"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/automation.png?v=20260708" alt="Automation" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Автоматизация и роботика </div>
+          <img src="images/streams/automation.png?v=20260716" alt="Automation" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика"
+            data-en="Automation & Robotics">Автоматизация и роботика </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/agritech.png?v=20260708" alt="AgriTech" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/agritech.png?v=20260716" alt="AgriTech" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
           </div>
         </div>
         <a href="speakers.html#track-marine" class="stream-card" data-track-link="marine"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/marine_tech.png?v=20260708" alt="Marine Tech" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/marine_tech.png?v=20260716" alt="Marine Tech" loading="lazy" decoding="async"
+            width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
             data-en="Marine Tech">Морски технологии</div>
         </a>
         <a href="speakers.html#track-biotech" class="stream-card" data-track-link="biotech"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/biotech.png?v=20260708" alt="BioTech" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <img src="images/streams/biotech.png?v=20260716" alt="BioTech" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
           <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
           </div>
         </a>
         <div class="stream-card"
           style="text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/gaming.png?v=20260708" alt="Gaming" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг</div>
+          <img src="images/streams/gaming.png?v=20260716" alt="Gaming" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг
+          </div>
         </div>
-        <a href="speakers.html#track-regional-innovation-policy" class="stream-card" data-track-link="regional-innovation-policy"
+        <a href="speakers.html#track-regional-innovation-policy" class="stream-card"
+          data-track-link="regional-innovation-policy"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-<img src="images/streams/regional-innovation-policies.png?v=20260708" alt="Regional Innovation Policies" loading="lazy" decoding="async" width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-            <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални иновационни политики</div>
+          <img src="images/streams/regional-innovation-policies.png?v=20260716" alt="Regional Innovation Policies"
+            loading="lazy" decoding="async" width="80" height="80"
+            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики"
+            data-en="Regional Innovation Policies">Регионални иновационни политики</div>
         </a>
         <a href="speakers.html#track-tourism" class="stream-card" data-track-link="tourism"
           style="display:block;text-align:center;padding:20px 12px;border-radius:var(--radius);cursor:pointer;transition:var(--transition)">
-          <img src="images/streams/tourism.png?v=20260708" alt="Tourism" loading="lazy" decoding="async" width="80" height="80"
-            style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм</div>
+          <img src="images/streams/tourism.png?v=20260716" alt="Tourism" loading="lazy" decoding="async" width="80"
+            height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм
+          </div>
         </a>
       </div>
     </div>
@@ -3287,7 +3747,7 @@
 
   <!-- SECTION: Partners & Sponsors -->
   <section id="sponsors"
-    style="padding:100px 0;background:linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);position:relative;overflow:hidden;border-top:1px solid rgba(44,166,179,0.1)">
+    style="padding:100px 0;background:linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);position:relative;overflow:hidden;border-top:1px solid rgba(0, 205, 255,0.1)">
     <!-- Glowing background elements for margins -->
     <div class="bg-glow-left"></div>
     <div class="bg-glow-right"></div>
@@ -3302,16 +3762,18 @@
         <!-- Presidential patronage -->
         <div class="partner-row">
           <div class="partner-row__crest">
-            <img src="images/gerp-image.png?v=20260708" alt="Държавен герб на Република България" class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
+            <img src="images/gerp-image.png?v=20260716" alt="Държавен герб на Република България"
+              class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
           </div>
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__content--text">
-            <p data-bg="Събитието се провежда под патронажа" data-en="The event is held under the patronage">Събитието
-              се провежда под патронажа</p>
-            <p data-bg="на Президента на Република България" data-en="of the President of the Republic of Bulgaria">на
-              Президента на Република България</p>
-            <p class="partner-patron-name" data-bg="г-жа Илияна Йотова" data-en="Ms. Iliana Yotova">г-жа Илияна
-              Йотова</p>
+            <p data-bg="Под патронажа на президента на" data-en="Under the patronage of the president of">Под патронажа
+              на
+              президента на</p>
+            <p data-bg="Република България <strong class=&quot;partner-patron-name&quot;>г-жа Илияна Йотова</strong>"
+              data-en="the Republic of Bulgaria <strong class=&quot;partner-patron-name&quot;>Ms. Iliana Yotova</strong>">
+              Република България <strong class="partner-patron-name">г-жа Илияна
+                Йотова</strong></p>
           </div>
         </div>
 
@@ -3324,17 +3786,20 @@
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--ict">
               <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                <img src="images/ict_cluster_logo.png?v=20260708" alt="ИКТ Клъстер Варна" loading="lazy" decoding="async" width="1184" height="392">
+                <img src="images/ict_cluster_logo.png?v=20260716" alt="ИКТ Клъстер Варна" loading="lazy"
+                  decoding="async" width="1184" height="392">
               </a>
             </div>
             <div class="partner-logo partner-logo--bsmepa">
-              <img src="images/bsmepa_logo.png?v=20260708" alt="ИАНМСП" loading="lazy" decoding="async" width="475" height="188">
+              <img src="images/bsmepa_logo.png?v=20260716" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
+                height="188">
             </div>
             <div class="partner-logo partner-logo--brainpp">
-              <img src="images/brainpp_logo.png?v=20260708" alt="Brain++ AI Factory" loading="lazy" decoding="async" width="738" height="249">
+              <img src="images/brainpp_logo.png?v=20260716" alt="Brain++ AI Factory" loading="lazy" decoding="async"
+                width="738" height="249">
             </div>
             <div class="partner-logo partner-logo--arcf">
-              <img src="images/ARCF_logo.svg?v=20260708" alt="ARC Fund">
+              <img src="images/ARCF_logo.svg?v=20260716" alt="ARC Fund">
             </div>
           </div>
         </div>
@@ -3347,7 +3812,8 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--varna">
-              <img src="images/varna_coat.png?v=20260708" alt="Община Варна" loading="lazy" decoding="async" width="284" height="328">
+              <img src="images/varna_coat.png?v=20260716" alt="Община Варна" loading="lazy" decoding="async"
+                width="284" height="328">
               <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                 data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
             </div>
@@ -3362,7 +3828,8 @@
           <div class="partner-row__divider"></div>
           <div class="partner-row__content partner-row__logos">
             <div class="partner-logo partner-logo--mobility">
-              <img src="images/mobility-partner.png?v=20260708" alt="Top Rent a Car" loading="lazy" decoding="async" width="700" height="459">
+              <img src="images/mobility-partner.png?v=20260716" alt="Top Rent a Car" loading="lazy" decoding="async"
+                width="700" height="459">
             </div>
           </div>
         </div>
@@ -3909,7 +4376,7 @@
   </script>
 
   <!-- SECTION 6: Side Events -->
-  <section class="side-events-section" style="border-top:1px solid rgba(44,166,179,0.12)">
+  <section class="side-events-section" style="border-top:1px solid rgba(0, 205, 255,0.12)">
     <div class="container">
       <h2 class="section-title text-center animate-on-scroll"
         data-bg="Съпътстващи събития, които превръщат контактите в сътрудничества."
@@ -3993,7 +4460,8 @@
             data-en="Speakers">Лектори</h2>
           <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:24px"
             data-bg="Практици, учени и стратегически лидери&lt;br&gt; от региона на Черно&amp;nbsp;море и света - на една сцена."
-            data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">Практици,
+            data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">
+            Практици,
             учени и стратегически лидери<br> от региона на Черно&nbsp;море и света - на една
             сцена.</p>
           <div
@@ -4061,8 +4529,8 @@
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
-          <span data-bg="Пакети за щандове и нива на спонсорство"
-            data-en="Booth packages and sponsorship levels">Пакети за щандове и нива на спонсорство</span>
+          <span data-bg="Пакети за щандове и нива на спонсорство" data-en="Booth packages and sponsorship levels">Пакети
+            за щандове и нива на спонсорство</span>
         </div>
         <div class="expo-v2__row">
           <div class="expo-v2__row-icon">
@@ -4272,8 +4740,9 @@
       <div class="prefooter-buttons">
         <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай
           се</button>
-        <button class="btn btn-outline open-exhibitor-modal" style="border-color:rgba(255,255,255,0.4);color:var(--white)"
-          data-bg="Стани изложител" data-en="Become an exhibitor">Стани изложител</button>
+        <button class="btn btn-outline open-exhibitor-modal"
+          style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител"
+          data-en="Become an exhibitor">Стани изложител</button>
       </div>
     </div>
   </section>
@@ -4332,7 +4801,8 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('register-modal')">&times;</button>
       <div class="modal-form" id="register-form">
-        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА" data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
+          data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
         <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
         <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на BSTF 2026."
           data-en="Fill in the form to reserve your spot at BSTF 2026.">Попълнете формата, за да резервирате вашето
@@ -4377,7 +4847,8 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('exhibitor-modal')">&times;</button>
       <div class="modal-form" id="exhibitor-form">
-        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF 2026 &middot; ИЗЛОЖЕНИЕ</span>
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF
+          2026 &middot; ИЗЛОЖЕНИЕ</span>
         <h2 data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
         <p class="modal-desc" data-bg="Заявете щанд на BSTF 2026 изложението."
           data-en="Apply for a booth at the BSTF 2026 expo.">Заявете щанд на BSTF 2026 изложението.</p>
@@ -4398,15 +4869,23 @@
         <div class="form-group">
           <label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
           <select>
-            <option data-bg="Expo - &euro;1,700 (Expo щанд)" data-en="Expo - &euro;1,700 (Expo booth)">Expo - &euro;1,700 (Expo щанд)</option>
-            <option data-bg="Silver - &euro;7,500 (Premium щанд)" data-en="Silver - &euro;7,500 (Premium booth)">Silver - &euro;7,500 (Premium щанд)</option>
-            <option data-bg="Gold - &euro;12,000 (Premium щанд)" data-en="Gold - &euro;12,000 (Premium booth)">Gold - &euro;12,000 (Premium щанд)</option>
-            <option data-bg="Stage - &euro;18,000 (Premium щанд)" data-en="Stage - &euro;18,000 (Premium booth)">Stage - &euro;18,000 (Premium щанд)</option>
-            <option data-bg="Institution - &euro;30,000 (Premium щанд)" data-en="Institution - &euro;30,000 (Premium booth)">Institution - &euro;30,000 (Premium щанд)</option>
-            <option data-bg="Все още не съм сигурен/а - консултирайте ме" data-en="Not sure yet - please advise">Все още не съм сигурен/а - консултирайте ме</option>
+            <option data-bg="Expo - &euro;1,700 (Expo щанд)" data-en="Expo - &euro;1,700 (Expo booth)">Expo -
+              &euro;1,700 (Expo щанд)</option>
+            <option data-bg="Silver - &euro;7,500 (Premium щанд)" data-en="Silver - &euro;7,500 (Premium booth)">Silver
+              - &euro;7,500 (Premium щанд)</option>
+            <option data-bg="Gold - &euro;12,000 (Premium щанд)" data-en="Gold - &euro;12,000 (Premium booth)">Gold -
+              &euro;12,000 (Premium щанд)</option>
+            <option data-bg="Stage - &euro;18,000 (Premium щанд)" data-en="Stage - &euro;18,000 (Premium booth)">Stage -
+              &euro;18,000 (Premium щанд)</option>
+            <option data-bg="Institution - &euro;30,000 (Premium щанд)"
+              data-en="Institution - &euro;30,000 (Premium booth)">Institution - &euro;30,000 (Premium щанд)</option>
+            <option data-bg="Все още не съм сигурен/а - консултирайте ме" data-en="Not sure yet - please advise">Все още
+              не съм сигурен/а - консултирайте ме</option>
           </select>
-          <span class="form-hint" data-bg="Пълно сравнение на включените придобивки за всеки пакет: страница Изложители."
-            data-en="Full benefit comparison for each package: see the Exhibitors page.">Пълно сравнение на включените придобивки за всеки пакет: страница Изложители.</span>
+          <span class="form-hint"
+            data-bg="Пълно сравнение на включените придобивки за всеки пакет: страница Изложители."
+            data-en="Full benefit comparison for each package: see the Exhibitors page.">Пълно сравнение на включените
+            придобивки за всеки пакет: страница Изложители.</span>
         </div>
         <div class="form-group">
           <label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label>
@@ -4430,7 +4909,8 @@
     <div class="modal">
       <button class="modal-close" onclick="closeModal('speaker-modal')">&times;</button>
       <div class="modal-form" id="speaker-form">
-        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ЛЕКТОРИ" data-en="BSTF 2026 &middot; SPEAKERS">BSTF 2026 &middot; ЛЕКТОРИ</span>
+        <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ЛЕКТОРИ" data-en="BSTF 2026 &middot; SPEAKERS">BSTF 2026
+          &middot; ЛЕКТОРИ</span>
         <h2 data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
         <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
           data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
@@ -4462,7 +4942,8 @@
             <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
             <option data-bg="BioTech" data-en="BioTech">BioTech</option>
             <option data-bg="Гейминг" data-en="Gaming">Гейминг</option>
-            <option data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални иновационни политики</option>
+            <option data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални
+              иновационни политики</option>
             <option data-bg="Туризъм" data-en="Tourism">Туризъм</option>
           </select>
         </div>
@@ -4548,6 +5029,102 @@
         });
       }
 
+      // === Nav: transparent over hero, solid once scrolled ===
+      var mainNav = document.querySelector('nav.main-nav');
+      if (mainNav) {
+        var updateNavBg = function () {
+          if (window.scrollY > 60) {
+            mainNav.classList.add('cx-nav-scrolled');
+          } else {
+            mainNav.classList.remove('cx-nav-scrolled');
+          }
+        };
+        updateNavBg();
+        window.addEventListener('scroll', updateNavBg, { passive: true });
+      }
+
+      // === Hero background video: adaptive source, autoplay, off-screen pause, parallax fallback ===
+      (function () {
+        var media = document.querySelector('[data-hero-media]');
+        var video = media && media.querySelector('.cx-hero-bg-img');
+        if (!video) return;
+
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+        // Bail on data-saver / very slow connections: keep the poster, load no video.
+        var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        var slowNet = conn && (conn.saveData ||
+          /(^|-)2g$/.test(conn.effectiveType || '') || conn.effectiveType === 'slow-2g');
+
+        // Reduced-motion users get the static poster only — no autoplaying video.
+        if (!slowNet && !reduceMotion) {
+          var src = isMobile
+            ? video.getAttribute('data-src-mobile')
+            : video.getAttribute('data-src-desktop');
+          if (src) {
+            video.setAttribute('preload', 'auto');
+            video.src = src;
+            video.load();
+            var tryPlay = function () { var p = video.play(); if (p && p.catch) p.catch(function () { }); };
+            if (video.readyState >= 2) tryPlay();
+            else video.addEventListener('canplay', tryPlay, { once: true });
+          }
+        }
+
+        // Off-screen pause, on-screen resume: the video has no `loop`, so once
+        // it plays through it holds its final frame. Re-entering the viewport
+        // just resumes from wherever it paused (or stays held on the last
+        // frame if it already finished) — never resets to frame 0, so
+        // scrolling back up never looks like a restarted reveal.
+        if ('IntersectionObserver' in window) {
+          var vis = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (!video.src) return;
+              if (en.isIntersecting) {
+                if (video.paused && !video.ended) {
+                  var p = video.play(); if (p && p.catch) p.catch(function () { });
+                }
+              } else {
+                video.pause();
+              }
+            });
+          }, { threshold: 0.1 });
+          vis.observe(media);
+        }
+
+        // Scroll parallax: rAF-throttled, one transform write per frame on the
+        // media wrapper (its own GPU layer). Desktop only — on phones the video
+        // motion is enough and touch-momentum scroll makes JS parallax steppy.
+        // Skipped entirely under reduced-motion.
+        if (!reduceMotion && !isMobile) {
+          var hero = media.closest('.cx-hero') || media.parentElement;
+          var ticking = false;
+          media.style.willChange = 'transform';
+          var lastProgress = -1;
+          var applyParallax = function () {
+            ticking = false;
+            var rect = hero.getBoundingClientRect();
+            var vh = window.innerHeight || 1;
+            // progress 0 (hero top at viewport top) → 1 (hero fully scrolled past)
+            var progress = Math.min(Math.max((-rect.top) / (rect.height || vh), 0), 1);
+            // Skip the transform write once the hero has fully left the viewport
+            // (progress pinned at 1) — nothing changes visually past that point.
+            if (progress === 1 && lastProgress === 1) return;
+            lastProgress = progress;
+            var y = progress * 12;               // 0% → +12%
+            var scale = 1.06 + progress * 0.06;  // 1.06 → 1.12
+            media.style.transform = 'translate3d(0,' + y.toFixed(2) + '%,0) scale(' + scale.toFixed(3) + ')';
+          };
+          var onScroll = function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(applyParallax); }
+          };
+          applyParallax();
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('resize', onScroll, { passive: true });
+        }
+      })();
+
       // === Smooth Scroll for nav links ===
       document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         link.addEventListener('click', function (e) {
@@ -4613,10 +5190,25 @@
 
       function closeModal(id) {
         var modal = document.getElementById(id);
-        if (modal) {
-          modal.classList.remove('open');
-          document.body.style.overflow = '';
-        }
+        if (!modal || !modal.classList.contains('open') || modal.classList.contains('closing')) return;
+        document.body.style.overflow = '';
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var finish = function () {
+          modal.classList.remove('open', 'closing');
+        };
+        if (reduce) { finish(); return; }
+        // Play the exit animation, then tear down. animationend fires on the
+        // panel; a timeout guards against a missed/interrupted event.
+        modal.classList.add('closing');
+        var done = false;
+        var end = function () {
+          if (done) return; done = true;
+          modal.removeEventListener('animationend', onAnim, true);
+          finish();
+        };
+        var onAnim = function (e) { if (e.target === modal || e.target.classList.contains('modal')) end(); };
+        modal.addEventListener('animationend', onAnim, true);
+        setTimeout(end, 320);
       }
       window.closeModal = closeModal;
 
@@ -4763,53 +5355,70 @@
       var animObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            var el = entry.target;
+            el.classList.add('visible');
+            // Reveal is one-way: stop observing and drop the compositor hint
+            // once the transition finishes (or immediately under reduced motion).
+            animObserver.unobserve(el);
+            el.addEventListener('transitionend', function onEnd() {
+              el.classList.add('cx-reveal-done');
+              el.removeEventListener('transitionend', onEnd);
+            });
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
+        // Stagger siblings within the same container so cards cascade instead of popping in together
+        if (!prefersReduced && el.parentElement) {
+          var sibs = Array.prototype.filter.call(el.parentElement.children, function (c) {
+            return c.classList && c.classList.contains('animate-on-scroll');
+          });
+          var idx = sibs.indexOf(el);
+          if (idx > 0) el.style.transitionDelay = (Math.min(idx, 6) * 0.05) + 's';
+        }
         animObserver.observe(el);
       });
-      // === GSAP Animations ===
-      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
 
-
-        // Stats counter animation
-        gsap.utils.toArray('.stat-number').forEach(function (el) {
-          var target = parseInt(el.textContent);
-          var suffix = el.textContent.replace(/[0-9]/g, '');
-          gsap.from(el, {
-            textContent: 0,
-            duration: 2,
-            ease: 'power1.out',
-            snap: { textContent: 1 },
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 80%',
-              once: true
-            },
-            onUpdate: function () {
-              el.textContent = Math.round(parseFloat(el.textContent)) + suffix;
-            }
+      // === Hero stat count-up ===
+      (function () {
+        var counters = document.querySelectorAll('.cx-count');
+        if (!counters.length) return;
+        function fmt(n, group) {
+          var s = Math.round(n).toString();
+          return group ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : s;
+        }
+        function run(el) {
+          var target = parseFloat(el.getAttribute('data-count')) || 0;
+          var suffix = el.getAttribute('data-suffix') || '';
+          var group = el.getAttribute('data-group');
+          if (prefersReduced) { el.textContent = fmt(target, group) + suffix; return; }
+          var dur = 1800, startTs = null;
+          function step(ts) {
+            if (startTs === null) startTs = ts;
+            var p = Math.min((ts - startTs) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+            el.textContent = fmt(target * eased, group) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = fmt(target, group) + suffix;
+          }
+          requestAnimationFrame(step);
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
           });
-        });
+        }, { threshold: 0.4 });
+        counters.forEach(function (el) { io.observe(el); });
+      })();
 
-        // Section fade-in
-        gsap.utils.toArray('section').forEach(function (sec) {
-          gsap.from(sec, {
-            opacity: 0.8,
-            y: 20,
-            duration: 0.8,
-            scrollTrigger: {
-              trigger: sec,
-              start: 'top 85%',
-              once: true
-            }
-          });
-        });
-      }
+      // === Section reveal ===
+      // Sections reveal via the CSS `.animate-on-scroll` + IntersectionObserver
+      // path above (reduced-motion aware). The former GSAP ScrollTrigger
+      // section fade was removed: it duplicated that reveal, ignored
+      // prefers-reduced-motion, and pulled ~70KB of CDN script for a trivial
+      // 0.8 -> 1 opacity nudge.
 
       // === Initialize Language ===
       setLang(currentLang);

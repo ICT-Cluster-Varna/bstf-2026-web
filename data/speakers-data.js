@@ -15,7 +15,7 @@
       labelEn: 'Artificial Intelligence',
       descBg: 'Машинно обучение, автоматизация и AI стратегии',
       descEn: 'Machine learning, automation &amp; AI strategies',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     },
     {
@@ -26,7 +26,7 @@
       labelEn: 'Smart City',
       descBg: 'Дигитализация, иновации и градски екосистеми',
       descEn: 'Digitalization, innovation &amp; urban ecosystems',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     },
     {
@@ -37,7 +37,7 @@
       labelEn: 'Cybersecurity',
       descBg: 'Кибер защита, регулации и цифрова идентичност',
       descEn: 'Cyber defence, regulations &amp; digital identity',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     },
     {
@@ -48,7 +48,7 @@
       labelEn: 'BioTech',
       descBg: 'Медицинска наука, биоинженерство и здравни иновации',
       descEn: 'Medical science, bioengineering &amp; health innovation',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектори'
     },
     {
@@ -59,7 +59,7 @@
       labelEn: 'Marine Tech',
       descBg: 'Корабостроене, морски иновации и Черноморски регион',
       descEn: 'Shipbuilding, marine innovation &amp; the Black Sea region',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     },
     {
@@ -70,7 +70,7 @@
       labelEn: 'Tourism',
       descBg: 'Дигитализация и AI в туризма и събитийната индустрия',
       descEn: 'Digitalization &amp; AI in tourism and the events industry',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     },
     {
@@ -81,7 +81,7 @@
       labelEn: 'Regional Innovation Policy',
       descBg: 'Иновационни екосистеми и политики за Черноморския регион',
       descEn: 'Innovation ecosystems &amp; policy for the Black Sea region',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     },
     {
@@ -92,7 +92,7 @@
       labelEn: 'Automation and Robotics',
       descBg: 'Умни системи, роботика и интеграция на IoT решения',
       descEn: 'Smart systems, robotics and IoT integration',
-      dot: '#2CA6B3',
+      dot: '#00cdff',
       countPluralBg: 'лектора'
     }
   ];
