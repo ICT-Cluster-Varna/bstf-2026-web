@@ -330,7 +330,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Premium щанд" data-en="Premium booth">Premium щанд</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="2 ULTRA VIP + 4 VIP + 6 Full Event" data-en="2 ULTRA VIP + 4 VIP + 6 Full Event">2 ULTRA VIP + 4 VIP + 6 Full Event</span></li>
         </ul>
-        <button type="button" onclick="openContactModal('Institution Package')" class="btn btn-sm" style="background:#1F4E78;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
+        <button type="button" onclick="openExhibitorModalForTier('institution')" class="btn btn-sm" style="background:#1F4E78;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
       </div>
 
       <!-- Stage -->
@@ -350,7 +350,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Premium щанд" data-en="Premium booth">Premium щанд</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 ULTRA VIP + 2 VIP + 4 Full Event" data-en="1 ULTRA VIP + 2 VIP + 4 Full Event">1 ULTRA VIP + 2 VIP + 4 Full Event</span></li>
         </ul>
-        <button type="button" onclick="openContactModal('Stage Package')" class="btn btn-sm" style="background:#8064A2;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
+        <button type="button" onclick="openExhibitorModalForTier('stage')" class="btn btn-sm" style="background:#8064A2;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
       </div>
 
       <!-- Gold -->
@@ -369,7 +369,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Premium щанд" data-en="Premium booth">Premium щанд</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 VIP + 4 Full Event билети" data-en="1 VIP + 4 Full Event tickets">1 VIP + 4 Full Event билети</span></li>
         </ul>
-        <button type="button" onclick="openContactModal('Gold Package')" class="btn btn-sm" style="background:#BF9000;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
+        <button type="button" onclick="openExhibitorModalForTier('gold')" class="btn btn-sm" style="background:#BF9000;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
       </div>
 
       <!-- Silver -->
@@ -388,7 +388,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 e-mail включване" data-en="1 email inclusion">1 e-mail включване</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 VIP + 3 Full Event билети" data-en="1 VIP + 3 Full Event tickets">1 VIP + 3 Full Event билети</span></li>
         </ul>
-        <button type="button" onclick="openContactModal('Silver Package')" class="btn btn-sm" style="background:#7F7F7F;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
+        <button type="button" onclick="openExhibitorModalForTier('silver')" class="btn btn-sm" style="background:#7F7F7F;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
       </div>
 
       <!-- Expo -->
@@ -405,7 +405,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="Listing в matchmaking апликация" data-en="Listing in matchmaking app">Listing в matchmaking апликация</span></li>
           <li><span class="icon-yes">&#x2713;</span> <span data-bg="1 Full Event билет" data-en="1 Full Event ticket">1 Full Event билет</span></li>
         </ul>
-        <button type="button" onclick="openContactModal('Expo Package')" class="btn btn-sm" style="background:#548235;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
+        <button type="button" onclick="openExhibitorModalForTier('expo')" class="btn btn-sm" style="background:#548235;color:#fff;width:100%" data-bg="Заявете" data-en="Inquire">Заявете</button>
       </div>
 
     </div>
@@ -548,6 +548,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
       <div class="success-icon">&#x2713;</div>
       <h3 data-bg="Запитването е изпратено!" data-en="Inquiry Submitted!">Запитването е изпратено!</h3>
       <p data-bg="Ще се свържем с вас в рамките на 2 работни дни." data-en="We will contact you within 2 business days.">Ще се свържем с вас в рамките на 2 работни дни.</p>
+      <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6"><span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Или се свържете директно:</span><br><a href="mailto:bstf@ictclustervarna.com" style="color:inherit;text-decoration:underline">bstf@ictclustervarna.com</a><br><a href="tel:+359876658296" style="color:inherit;text-decoration:underline">+359 876 658 296</a></p>
       <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('exhibitor-modal')" data-bg="Затвори" data-en="Close">Затвори</button>
     </div>
   </div>
@@ -597,7 +598,8 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     <div class="modal-success" id="register-success">
       <div class="success-icon">&#x2713;</div>
       <h3 data-bg="Регистрацията е успешна!" data-en="Registration Successful!">Регистрацията е успешна!</h3>
-      <p data-bg="Ще получите потвърждение на имейла си скоро." data-en="You will receive a confirmation email shortly.">Ще получите потвърждение на имейла си скоро.</p>
+      <p data-bg="Ще се свържем с вас скоро." data-en="We will get in touch with you shortly.">Ще се свържем с вас скоро.</p>
+      <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6"><span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Или се свържете директно:</span><br><a href="mailto:bstf@ictclustervarna.com" style="color:inherit;text-decoration:underline">bstf@ictclustervarna.com</a><br><a href="tel:+359876658296" style="color:inherit;text-decoration:underline">+359 876 658 296</a></p>
       <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('register-modal')" data-bg="Затвори" data-en="Close">Затвори</button>
     </div>
   </div>
@@ -661,6 +663,12 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
     openModal('contact-modal');
   }
   window.openContactModal = openContactModal;
+  function openExhibitorModalForTier(tier) {
+    openModal('exhibitor-modal');
+    var tierSel = document.getElementById('exhibitor-tier');
+    if (tierSel) tierSel.value = tier;
+  }
+  window.openExhibitorModalForTier = openExhibitorModalForTier;
   function closeModal(id) {
     var modal = document.getElementById(id);
     if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
