@@ -144,6 +144,9 @@ var resultOk = false, resultMsg = "";
 try {
   var http = Server.CreateObject("MSXML2.ServerXMLHTTP.6.0");
   http.open("POST", "https://api.resend.com/emails", false);
+  // Fail fast instead of hanging until Cloudflare/the browser gives up:
+  // resolve, connect, send, receive timeouts in milliseconds.
+  http.setTimeouts(5000, 5000, 10000, 15000);
   http.setRequestHeader("Content-Type", "application/json");
   http.setRequestHeader("Authorization", "Bearer " + RESEND_API_KEY);
   http.send(payload);
