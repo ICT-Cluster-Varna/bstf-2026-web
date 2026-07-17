@@ -3321,6 +3321,22 @@
       .cx-stat:nth-child(2) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.14)
       }
+
+      /* Video is cropped hard once the section switches to stacked/auto
+         height on narrow screens; re-center the focal point (the glowing X
+         stage-light logo + handshake) instead of the desktop left-aligned
+         framing so it never gets pushed out of the visible crop. Text sits
+         in front of the dark overlay gradients, which are unaffected by
+         this shift. */
+      .cx-hero-bg-img {
+        object-position: 61% 95%
+      }
+    }
+
+    @media(max-width:520px) {
+      .cx-hero-bg-img {
+        object-position: 58% 93%
+      }
     }
 
     @media (min-width: 901px) {
