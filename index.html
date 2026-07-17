@@ -580,160 +580,11 @@
     }
 
     .program-section {
-      padding: 48px 0;
+      padding: 80px 0;
       background: linear-gradient(135deg, #e8f4f8 0%, #d0ebf1 100%)
     }
 
-    .program-section .schedule-table td {
-      background: var(--white)
-    }
-
-    .program-section .schedule-table tbody tr:nth-child(even) td {
-      background: #f0f7fa
-    }
-
-    .program-section .schedule-table tr:hover td {
-      background: var(--light-blue)
-    }
-
-    .day-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 32px
-    }
-
-    .day-tab {
-      padding: 12px 28px;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      background: var(--light-gray);
-      color: var(--text)
-    }
-
-    .day-tab.active {
-      background: var(--navy);
-      color: var(--white)
-    }
-
-    .day-tab:hover:not(.active) {
-      background: var(--light-blue);
-      color: var(--navy)
-    }
-
-    .day-content {
-      display: none !important
-    }
-
-    .day-content.active {
-      display: block !important
-    }
-
-    .day-subtitle-row {
-      background: var(--navy) !important;
-      color: var(--white);
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 14px 16px;
-      border-radius: var(--radius) var(--radius) 0 0
-    }
-
-    .schedule-table td[colspan="2"] {
-      text-align: center;
-      color: var(--text-light);
-      font-style: italic
-    }
-
-    .schedule-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin-top: 16px;
-      border-radius: var(--radius);
-      overflow: hidden
-    }
-
-    .schedule-table th {
-      text-align: center;
-      padding: 10px 12px;
-      background: #1a5c7a;
-      color: var(--white);
-      font-size: 0.85rem;
-      font-weight: 600
-    }
-
-    .schedule-table th:first-child {
-      border-radius: 0
-    }
-
-    .schedule-table th:last-child {
-      border-radius: 0
-    }
-
-    .schedule-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--light-gray);
-      font-size: 0.85rem;
-      text-align: center
-    }
-
-    .schedule-table tr:hover {
-      background: var(--light-blue)
-    }
-
-    .schedule-table tbody tr:nth-child(even) {
-      background: rgba(0, 205, 255, 0.04)
-    }
-
-    .schedule-table {
-      table-layout: fixed
-    }
-
-    .schedule-table th:first-child,
-    .schedule-table td:first-child {
-      width: 6%;
-      padding-left: 0;
-      padding-right: 0
-    }
-
-    .time-cell {
-      font-weight: 600;
-      color: var(--teal);
-      white-space: nowrap;
-      width: 6%;
-      font-size: 0.75rem
-    }
-
     @media(max-width:768px) {
-      .schedule-table {
-        font-size: 0.78rem;
-        table-layout: auto
-      }
-
-      .schedule-table th,
-      .schedule-table td {
-        padding: 8px 6px;
-        word-break: break-word
-      }
-
-      .schedule-table .time-cell {
-        width: 72px;
-        font-size: 0.72rem
-      }
-
-      .day-tabs {
-        flex-wrap: wrap
-      }
-
-      .day-tab {
-        padding: 10px 16px;
-        font-size: 0.85rem
-      }
-
       .program-section {
         padding: 48px 0
       }
@@ -743,30 +594,84 @@
       }
     }
 
-    /* --- Program: unified timeline (PENDING APPROVAL — disabled, see commented HTML block below) --- */
+    /* --- Program: unified timeline (Smart Timeline) --- */
     .prog-filterbar {
       position: sticky;
       top: 92px;
-      z-index: 20;
+      z-index: 25;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: flex-end;
+      margin: -8px 0 20px
+    }
+
+    .prog-fb-toggle {
+      display: inline-flex;
       align-items: center;
-      gap: 10px 16px;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(8px);
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--white);
+      border: 1px solid rgba(11, 57, 84, 0.14);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .prog-fb-toggle:hover {
+      border-color: var(--teal)
+    }
+
+    .prog-fb-toggle.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy)
+    }
+
+    .prog-fb-badge {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal)
+    }
+
+    .prog-fb-toggle.active .prog-fb-badge {
+      background: var(--white)
+    }
+
+    .prog-fb-panel {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 300px;
+      max-width: calc(100vw - 40px);
+      background: var(--white);
       border: 1px solid rgba(11, 57, 84, 0.1);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 14px 18px;
-      margin: 28px 0 32px
+      box-shadow: 0 16px 40px rgba(11, 57, 84, 0.18);
+      padding: 18px;
+      text-align: left
+    }
+
+    .prog-fb-panel.open {
+      display: block
+    }
+
+    .prog-fb-row {
+      margin-bottom: 14px
     }
 
     .prog-fb-label {
+      display: block;
       font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text-light)
+      color: var(--text-light);
+      margin-bottom: 8px
     }
 
     .prog-fb-pills {
@@ -776,13 +681,14 @@
     }
 
     .prog-fb-pill {
-      font-size: 0.8rem;
+      white-space: nowrap;
+      font-size: 0.76rem;
       font-weight: 600;
       color: var(--navy);
       background: var(--light-gray);
       border: 1px solid transparent;
       border-radius: 99px;
-      padding: 6px 14px;
+      padding: 6px 13px;
       transition: var(--transition)
     }
 
@@ -796,19 +702,21 @@
     }
 
     .prog-fb-select {
+      width: 100%;
       font: inherit;
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--navy);
       background: var(--light-gray);
       border: 1px solid transparent;
-      border-radius: 99px;
-      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
       cursor: pointer
     }
 
     .prog-fb-clear {
-      margin-left: auto;
+      width: 100%;
+      text-align: center;
       font-size: 0.78rem;
       color: var(--text-light);
       text-decoration: underline;
@@ -836,7 +744,7 @@
       top: 210px;
       display: flex;
       flex-direction: column;
-      gap: 10px
+      gap: 14px
     }
 
     .prog-rail-line {
@@ -896,35 +804,39 @@
     }
 
     .prog-day-group-head {
-      padding: 30px 0 14px
+      padding: 56px 0 18px
     }
 
     .prog-day-group-head .dh-day {
       font-family: var(--mono);
       font-size: 0.72rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--teal-deep)
+      color: var(--teal-deep);
+      margin-bottom: 4px
     }
 
     .prog-day-group-head h3 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.3rem;
-      color: var(--navy)
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin-top: 2px
     }
 
     .prog-slot {
       display: grid;
       grid-template-columns: 104px 1fr;
       gap: 14px;
-      padding: 8px 0
+      padding: 12px 0
     }
 
     .prog-slot-time {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--text-light);
-      padding-top: 14px;
+      padding-top: 16px;
       white-space: nowrap;
       line-height: 1.4
     }
@@ -932,7 +844,7 @@
     .prog-slot-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px
+      gap: 14px
     }
 
     .prog-slot.single .prog-slot-cards {
@@ -943,7 +855,7 @@
       background: var(--white);
       border: 1px solid rgba(11, 57, 84, 0.08);
       border-radius: var(--radius);
-      padding: 14px 16px;
+      padding: 18px 20px;
       box-shadow: var(--shadow);
       transition: opacity 0.25s ease, filter 0.25s ease
     }
@@ -954,14 +866,15 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text-light);
-      margin-bottom: 6px
+      margin-bottom: 8px
     }
 
     .prog-ev-card .title {
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.96rem;
+      line-height: 1.45;
       color: var(--navy);
-      margin-bottom: 8px
+      margin-bottom: 10px
     }
 
     .prog-ev-card .tag {
@@ -985,9 +898,11 @@
       align-items: center;
       gap: 12px;
       color: var(--text-light);
-      font-size: 0.82rem;
-      font-style: italic;
-      padding: 6px 0
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 10px 0
     }
 
     .prog-break-row::before,
@@ -1039,8 +954,8 @@
         padding-top: 0
       }
 
-      .prog-filterbar {
-        top: 0
+      .prog-fb-panel {
+        width: calc(100vw - 40px)
       }
 
       .program-section {
@@ -3862,7 +3777,8 @@
     </div>
   </section>
 
-  <!-- SECTION 5: Program -->
+  <!-- SECTION 5: Program — OLD design (day-tabs), commented out as fallback (2026-07-17). Active design is the Smart Timeline below. -->
+  <!--
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -3876,7 +3792,7 @@
         <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
       </div>
 
-      <!-- Day 1 – Защо? -->
+      Day 1 – Защо?
       <div class="day-content active" data-day="1">
         <table class="schedule-table">
           <thead>
@@ -3953,7 +3869,7 @@
         </table>
       </div>
 
-      <!-- Day 2 – Какво и как? -->
+      Day 2 – Какво и как?
       <div class="day-content" data-day="2">
         <table class="schedule-table">
           <thead>
@@ -4038,7 +3954,7 @@
         </table>
       </div>
 
-      <!-- Day 3 – Какво следва? -->
+      Day 3 – Какво следва?
       <div class="day-content" data-day="3">
         <table class="schedule-table">
           <thead>
@@ -4116,11 +4032,9 @@
 
     </div>
   </section>
+  -->
 
-  <!--
-  NEW PROGRAM TIMELINE — built 2026-07-08, pending client approval of the section redesign.
-  Do not delete: uncomment this block and remove/comment the old day-tabs block above to re-enable.
-
+  <!-- SECTION 5: Program (Smart Timeline) — ACTIVE. Old day-tabs design kept commented above as fallback. -->
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -4129,12 +4043,26 @@
       </p>
 
       <div class="prog-filterbar" id="progFilterBar">
-        <span class="prog-fb-label" data-bg="Направление" data-en="Track">Направление</span>
-        <div class="prog-fb-pills" id="progTrackPills"></div>
-        <span class="prog-fb-label" data-bg="Блок" data-en="Block">Блок</span>
-        <select class="prog-fb-select" id="progBlockSelect"></select>
-        <button class="prog-fb-clear" id="progClearBtn" data-bg="изчисти филтрите" data-en="clear filters">изчисти
-          филтрите</button>
+        <button class="prog-fb-toggle" id="progFilterToggle" type="button" aria-expanded="false">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+          </svg>
+          <span data-bg="Филтри" data-en="Filters">Филтри</span>
+          <span class="prog-fb-badge" id="progFilterBadge" hidden></span>
+        </button>
+        <div class="prog-fb-panel" id="progFilterPanel">
+          <div class="prog-fb-row">
+            <span class="prog-fb-label" data-bg="Направление" data-en="Track">Направление</span>
+            <div class="prog-fb-pills" id="progTrackPills"></div>
+          </div>
+          <div class="prog-fb-row">
+            <span class="prog-fb-label" data-bg="Блок" data-en="Block">Блок</span>
+            <select class="prog-fb-select" id="progBlockSelect"></select>
+          </div>
+          <button class="prog-fb-clear" id="progClearBtn" data-bg="изчисти филтрите" data-en="clear filters">изчисти
+            филтрите</button>
+        </div>
       </div>
 
       <div class="prog-timeline">
@@ -4146,10 +4074,8 @@
       </div>
     </div>
   </section>
-  -->
 
-  <script id="prog-timeline-script" type="text/plain" disabled>
-  Same as above: change type="text/plain" to remove it (and delete the disabled attribute) to re-enable.
+  <script>
     var PROGRAM_TRACKS = [
       { id: 'ai', bg: 'Изкуствен интелект', en: 'Artificial Intelligence' },
       { id: 'cybersecurity', bg: 'Киберсигурност', en: 'Cybersecurity' },
@@ -4247,6 +4173,27 @@
 
       var state = { track: null, block: '' };
 
+      // Filter bar: dropdown toggle
+      var filterToggle = document.getElementById('progFilterToggle');
+      var filterPanel = document.getElementById('progFilterPanel');
+      var filterBadge = document.getElementById('progFilterBadge');
+      filterToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = filterPanel.classList.toggle('open');
+        filterToggle.classList.toggle('active', open);
+        filterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', function (e) {
+        if (!filterPanel.classList.contains('open')) return;
+        if (filterPanel.contains(e.target) || filterToggle.contains(e.target)) return;
+        filterPanel.classList.remove('open');
+        filterToggle.classList.remove('active');
+        filterToggle.setAttribute('aria-expanded', 'false');
+      });
+      function updateFilterBadge() {
+        filterBadge.hidden = !(state.track || state.block);
+      }
+
       // Filter bar: track pills
       var pillsWrap = document.getElementById('progTrackPills');
       function makePill(bg, en, val) {
@@ -4284,13 +4231,13 @@
           blockSelect.appendChild(o);
         });
       });
-      blockSelect.addEventListener('change', function () { state.block = blockSelect.value; render(); });
+      blockSelect.addEventListener('change', function () { state.block = blockSelect.value; updateFilterBadge(); render(); });
 
       document.getElementById('progClearBtn').addEventListener('click', function () {
-        state.track = null; state.block = ''; blockSelect.value = ''; syncPills(); render();
+        state.track = null; state.block = ''; blockSelect.value = ''; syncPills(); updateFilterBadge(); render();
       });
 
-      function setTrackFilter(trackId) { state.track = trackId; syncPills(); render(); }
+      function setTrackFilter(trackId) { state.track = trackId; syncPills(); updateFilterBadge(); render(); }
       function syncPills() {
         Array.prototype.forEach.call(pillsWrap.children, function (p) {
           p.classList.toggle('active', (p.dataset.val || null) === (state.track || null));
@@ -5177,18 +5124,6 @@
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 600);
       }
-
-      // === Day Tabs ===
-      document.querySelectorAll('.day-tab').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          var day = tab.dataset.day;
-          document.querySelectorAll('.day-tab').forEach(function (t) { t.classList.remove('active'); });
-          document.querySelectorAll('.day-content').forEach(function (c) { c.classList.remove('active'); });
-          tab.classList.add('active');
-          var content = document.querySelector('.day-content[data-day="' + day + '"]');
-          if (content) content.classList.add('active');
-        });
-      });
 
       // === Ticket Card Selection ===
       document.querySelectorAll('.ticket-card').forEach(function (card) {
