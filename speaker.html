@@ -2,6 +2,13 @@
 <html lang="bg">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K6JDS83T');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
@@ -11,12 +18,13 @@
   <meta name="description" content="Black Sea Technology Forum 2026 - Speaker profile">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet">
   </noscript>
   <style>
@@ -87,7 +95,9 @@
     h4,
     h5,
     h6 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'hyperspace-race-variable', 'myriad-pro', 'Archivo', sans-serif;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 140;
       line-height: 1.2
     }
 
@@ -200,14 +210,21 @@
     }
 
     nav.main-nav .logo {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'hyperspace-race-variable', 'myriad-pro', 'Archivo', sans-serif;
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 140;
       color: var(--navy)
     }
 
     nav.main-nav .logo span {
       color: var(--teal)
+    }
+
+    nav.main-nav .nav-register-btn {
+      font-family: 'hyperspace-race-variable', 'myriad-pro', 'Archivo', sans-serif;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 140
     }
 
     nav.main-nav .cx-nav-logo {
@@ -397,6 +414,7 @@
     }
 
     .back-to-speakers {
+      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -407,6 +425,12 @@
       color: rgba(255, 255, 255, 0.65);
       margin-bottom: 24px;
       transition: color 0.3s ease
+    }
+
+    .back-to-speakers::after {
+      content: '';
+      position: absolute;
+      inset: -13px
     }
 
     .back-to-speakers span:first-child {
@@ -431,7 +455,8 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 22px
+      margin-bottom: 22px;
+      text-wrap: balance
     }
 
     .hero-eyebrow::before,
@@ -574,9 +599,10 @@
     }
 
     .sp-name {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'hyperspace-race-variable', 'myriad-pro', 'Archivo', sans-serif;
       font-size: 2rem;
-      font-weight: 700;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 140;
       letter-spacing: -0.015em;
       color: var(--navy);
       margin-bottom: 8px;
@@ -610,9 +636,10 @@
       position: absolute;
       top: -22px;
       right: 10px;
-      font-family: 'Space Grotesk', serif;
+      font-family: 'hyperspace-race-variable', 'myriad-pro', 'Archivo', sans-serif;
       font-size: 5rem;
-      font-weight: 700;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 140;
       color: rgba(11, 57, 84, 0.05);
       line-height: 1;
       pointer-events: none
@@ -655,7 +682,8 @@
 
     .sp-not-found p {
       color: var(--text-light);
-      margin-bottom: 28px
+      margin-bottom: 28px;
+      text-wrap: balance
     }
 
     /* ── Extended info: bio + session details ── */
@@ -678,9 +706,10 @@
     }
 
     .sp-section-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'hyperspace-race-variable', 'myriad-pro', 'Archivo', sans-serif;
       font-size: 1.3rem;
-      font-weight: 700;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 140;
       letter-spacing: -0.01em;
       color: var(--navy);
       margin-bottom: 18px;
@@ -718,11 +747,51 @@
       }
 
       .sp-body {
-        padding: 32px
+        padding: 32px;
+        align-items: flex-start;
+        text-align: left
       }
 
       .sp-details {
-        padding: 32px 28px
+        padding: 32px 28px;
+        text-align: left
+      }
+
+      .back-to-speakers,
+      .sp-cta-row {
+        justify-content: flex-start
+      }
+
+      .back-to-speakers,
+      .sp-track-pill {
+        margin-left: 0;
+        margin-right: 0
+      }
+
+      .sp-topic {
+        border-left: 3px solid rgba(0, 205, 255, 0.28);
+        border-top: none;
+        border-radius: 0 10px 10px 0;
+        text-align: left
+      }
+
+      .sp-section-title,
+      .sp-bio p,
+      .sp-role {
+        text-align: left
+      }
+
+      .sp-cta-row {
+        width: 100%
+      }
+
+      .sp-cta-row .btn {
+        width: 100%;
+        max-width: 280px
+      }
+
+      .sp-bio p {
+        text-wrap: pretty
       }
     }
 
@@ -834,6 +903,10 @@
       justify-content: space-between;
       align-items: center;
       font-size: 0.8rem
+    }
+
+    .footer-bottom span {
+      text-wrap: balance
     }
 
     .modal-overlay {
@@ -1027,6 +1100,24 @@
         display: flex
       }
 
+      nav.main-nav .nav-inner {
+        padding: 0 20px
+      }
+
+      nav.main-nav .cx-nav-logo-img {
+        height: 22px
+      }
+
+      nav.main-nav .cx-nav-tagline {
+        width: 138px;
+        margin-top: 5px;
+        font-size: 7px
+      }
+
+      .nav-right {
+        margin-left: 0
+      }
+
       .page-hero {
         padding: 90px 0 56px
       }
@@ -1055,12 +1146,16 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6JDS83T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-inner">
       <a href="index.html" class="cx-nav-logo">
-        <img src="images/Connexus - BLACK.svg?v=20260716" alt="Connexus" class="cx-nav-logo-img">
+        <img src="images/Connexus - BLACK.svg?v=20260720" alt="Connexus" class="cx-nav-logo-img">
         <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
       </a>
       <div class="nav-links">
@@ -1118,7 +1213,7 @@
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260716"></script>
+  <script src="data/speakers-data.js?v=20260721-9"></script>
   <script>
     (function () {
       'use strict';
@@ -1195,7 +1290,7 @@
       var heroRole = document.getElementById('sp-hero-role');
 
       if (speaker && track) {
-        document.title = speaker.name.replace(/<[^>]*>/g, '') + ' — BSTF 2026';
+        document.title = speaker.name.replace(/<[^>]*>/g, '') + ' - BSTF 2026';
 
         heroTrack.setAttribute('data-bg', track.labelBg);
         heroTrack.setAttribute('data-en', track.labelEn);
@@ -1270,7 +1365,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo">BSTF <span>2026</span></div>
+          <img src="images/Connexus - WHITE.svg?v=20260720" alt="Connexus" style="height:28px;margin-bottom:4px">
+          <p style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:10px"
+            data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
           <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
             форум</p>
           <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:4px"

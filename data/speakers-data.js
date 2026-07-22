@@ -1,5 +1,5 @@
 /*
- * BSTF 2026 — single source of truth for speaker & track data.
+ * BSTF 2026 - single source of truth for speaker & track data.
  * Consumed by speakers.html (listing) and speaker.html (detail page).
  * Loaded as a plain <script> (not a module) so it works over file:// too.
  */
@@ -113,8 +113,8 @@
         'He is also a co-founder of Bitcoin Gold, one of the top cryptocurrencies in the market, and a blockchain advisor for several other ventures, such as TokaCity. With a background in software development and programming, he has won multiple NASA Space Apps Challenges and developed award-winning applications for iOS and other platforms.'
       ],
       bioBg: [
-        'Като основател на Encorp — водещ доставчик на fintech, blockchain и healthcare решения — Мартин има над десет години опит в създаването и мащабирането на иновативни проекти, съчетаващи модерни технологии и бизнес нюх. От 2019 г. насам Encorp расте двойно всяка година благодарение на екип от над 30 специалисти и разнообразно портфолио от клиенти и партньори.',
-        'Той е и съосновател на Bitcoin Gold — една от водещите криптовалути на пазара — и blockchain консултант на няколко други проекта, сред които TokaCity. С опит в софтуерната разработка и програмирането, той е печелил многократно NASA Space Apps Challenge и е разработвал отличавани приложения за iOS и други платформи.'
+        'Като основател на Encorp - водещ доставчик на fintech, blockchain и healthcare решения - Мартин има над десет години опит в създаването и мащабирането на иновативни проекти, съчетаващи модерни технологии и бизнес нюх. От 2019 г. насам Encorp расте двойно всяка година благодарение на екип от над 30 специалисти и разнообразно портфолио от клиенти и партньори.',
+        'Той е и съосновател на Bitcoin Gold - една от водещите криптовалути на пазара - и blockchain консултант на няколко други проекта, сред които TokaCity. С опит в софтуерната разработка и програмирането, той е печелил многократно NASA Space Apps Challenge и е разработвал отличавани приложения за iOS и други платформи.'
       ]
     },
     {
@@ -130,7 +130,7 @@
         'Before joining Fontys, Teade was a research fellow at the TNO Embedded Systems Initiative, knowledge manager at the Embedded Systems Institute, consultant in Formal Methods at the Laboratory of Quality Software of Eindhoven University of Technology, group leader and competence manager at Fraunhofer IESE in Kaiserslautern, and course team leader at the Open University of the Netherlands.'
       ],
       bioBg: [
-        "Д-р инж. Теаде Пунтер е професор (лектор) по High Tech Embedded Software във Fontys University of Applied Sciences, Айндховен, Нидерландия. Изследователската му група работи по приложни изследвания в областта на инженеринга на данни, цифровите двойници и AI за разработка на умни системи, с фокус върху киберсигурността на кибер-физически системи. Теаде ръководи и Центъра за компетентност на Fontys „AI for Society“, в който 7 изследователски групи си партнират по различни аспекти на AI — инженеринг на AI и ELSA.",
+        "Д-р инж. Теаде Пунтер е професор (лектор) по High Tech Embedded Software във Fontys University of Applied Sciences, Айндховен, Нидерландия. Изследователската му група работи по приложни изследвания в областта на инженеринга на данни, цифровите двойници и AI за разработка на умни системи, с фокус върху киберсигурността на кибер-физически системи. Теаде ръководи и Центъра за компетентност на Fontys „AI for Society“, в който 7 изследователски групи си партнират по различни аспекти на AI - инженеринг на AI и ELSA.",
         'Преди да се присъедини към Fontys, Теаде е бил научен сътрудник в TNO Embedded Systems Initiative, мениджър знания в Embedded Systems Institute, консултант по формални методи в Лабораторията за качествен софтуер на Технологичния университет на Айндховен, ръководител на екип и компетентностен мениджър във Fraunhofer IESE в Кайзерслаутерн, и ръководител на учебен екип в Открития университет на Нидерландия.'
       ],
       sessionDescEn: 'This presentation provides an overview of key aspects encountered in smart system development. These systems encompass equipment and robotics and need orchestration and AI to work properly.',
@@ -147,15 +147,15 @@
       name: 'Александър Минчев',
       nameEn: 'Alexander Minchev',
       role: 'Founder &amp; MD @ AbsCloud / Abilix Soft',
-      topicBg: 'Облачна инфраструктура, AI и киберсигурност',
-      topicEn: 'Cloud infrastructure, AI &amp; cybersecurity',
+      topicBg: 'Физическите аспекти на сигурността на данните',
+      topicEn: 'The Physical Aspects of Data Security',
       bioEn: [
         'Alexander Minchev is the founder and managing director of Abilix Soft Ltd. He has been working professionally with servers for over 25 years, or, as he likes to put it, since the end of the last millennium. Under his leadership, Abilix Soft has specialized in providing high-quality cloud solutions for business clients, offered under the AbsCloud brand.',
         "In April 2025, the company's renovated data center in Varna opened its doors to external clients under the brand ACDC (AbsCloud Data Center). The project stands out for its concept of harnessing the heat generated by the servers in the data center and storing it in specialized containers for subsequent use in the city's district heating system.",
         'In parallel, Alexander Minchev is working on a doctoral dissertation in artificial intelligence and security. He is dedicated to staying at the forefront of technological progress and to leveraging artificial intelligence to enhance cybersecurity.'
       ],
       bioBg: [
-        'Александър Минчев е основател и управляващ директор на „Абиликс Софт“ ЕООД. Работи професионално със сървъри повече от 25 години — или, както обича да казва, от края на миналото хилядолетие. Под неговото ръководство Abilix Soft се специализира в предоставянето на висококачествени облачни решения за бизнес клиенти под марката AbsCloud.',
+        'Александър Минчев е основател и управляващ директор на „Абиликс Софт“ ЕООД. Работи професионално със сървъри повече от 25 години - или, както обича да казва, от края на миналото хилядолетие. Под неговото ръководство Abilix Soft се специализира в предоставянето на висококачествени облачни решения за бизнес клиенти под марката AbsCloud.',
         'През април 2025 г. обновеният център за данни на компанията във Варна отвори врати за външни клиенти под марката ACDC (AbsCloud Data Center). Проектът се откроява с концепцията за оползотворяване на топлината, генерирана от сървърите в центъра за данни, и съхраняването ѝ в специализирани контейнери за последващо използване в градската топлофикационна система.',
         'Паралелно с това Александър Минчев работи по докторска дисертация в областта на изкуствения интелект и сигурността. Той е посветен на това да бъде в крак с технологичния прогрес и да използва изкуствения интелект за подобряване на киберсигурността.'
       ]
@@ -179,8 +179,8 @@
         'Преди това е съосновател на Центъра за споделена наука и бизнес към Техническия университет - София, където пилотира прилагането на блокчейн технологии в академична среда. В периода 2023-2026 г. той изпълнява мандат като председател на Управителния съвет на Европейски цифров иновационен хъб „Тракия“ (Cyber4AllSTAR), българския европейски цифров иновационен хъб в областта на киберсигурността, и координира участието на хъба в паневропейските инициативи CyberSec4OT и OSCRAT.EU.',
         'В това си качество той подкрепя предоставянето на услуги в областта на киберсигурността за индустриални малки и средни предприятия в Европа и допринася за постигането на съответствие с регулаторните рамки в областта на киберсигурността, включително Европейския акт за киберустойчивост. Работата му е насочена към изграждане на институционална и технологична устойчивост в цифрово зависими екосистеми, с акцент върху публично-частното сътрудничество, сигурното управление на жизнения цикъл на продуктите и изграждането на капацитет за иновации с осъзнатост за киберрисковете.'
       ],
-      sessionDescBg: 'Европейските портфейли за цифрова самоличност, до които всяко правителство следва да предостави достъп на своите граждани до края на 2026 г., ще позволят на всички в Европа да се идентифицират по сигурен начин, когато имат достъп до публични и частни услуги, както и да съхраняват и показват цифрови документи като мобилни шофьорски книжки и образователни удостоверения — всичко това от мобилните си телефони. Те също така ще подобрят неприкосновеността на личния живот, като споделят само точната информация, за която е постигнато съгласие. Сходни ще бъдат ползите за европейските компании по линия на „Европейския бизнес портфейл“. Презентацията ще влезе в детайлите както на възможностите, които произтичат от тези нови технологични решения, така и на заплахите, които следва да бъдат адресирани в процеса на имплементация.',
-      sessionDescEn: 'European digital identity wallets, which every government must give its citizens access to by the end of 2026, will let everyone in Europe securely identify themselves when accessing public and private services, and store and present digital documents such as mobile driving licences and educational certificates — all from their mobile phones. They will also improve privacy by sharing only the exact information consented to. Similar benefits will apply to European companies via the "European Business Wallet". The talk will detail both the opportunities created by these new technological solutions and the threats that need to be addressed during implementation.',
+      sessionDescBg: 'Европейските портфейли за цифрова самоличност, до които всяко правителство следва да предостави достъп на своите граждани до края на 2026 г., ще позволят на всички в Европа да се идентифицират по сигурен начин, когато имат достъп до публични и частни услуги, както и да съхраняват и показват цифрови документи като мобилни шофьорски книжки и образователни удостоверения - всичко това от мобилните си телефони. Те също така ще подобрят неприкосновеността на личния живот, като споделят само точната информация, за която е постигнато съгласие. Сходни ще бъдат ползите за европейските компании по линия на „Европейския бизнес портфейл“. Презентацията ще влезе в детайлите както на възможностите, които произтичат от тези нови технологични решения, така и на заплахите, които следва да бъдат адресирани в процеса на имплементация.',
+      sessionDescEn: 'European digital identity wallets, which every government must give its citizens access to by the end of 2026, will let everyone in Europe securely identify themselves when accessing public and private services, and store and present digital documents such as mobile driving licences and educational certificates - all from their mobile phones. They will also improve privacy by sharing only the exact information consented to. Similar benefits will apply to European companies via the "European Business Wallet". The talk will detail both the opportunities created by these new technological solutions and the threats that need to be addressed during implementation.',
       takeawaysBg: 'Европейските портфейли за цифрова самоличност ще създадат универсално, надеждно и сигурно средство за цифрова идентификация за всички европейци, както и за европейските компании и публични организации.',
       takeawaysEn: 'European digital identity wallets will create a universal, trustworthy and secure means of digital identification for all Europeans, as well as for European companies and public organizations.'
     },
@@ -201,8 +201,8 @@
         'Драгомир е опитен архитект по корпоративна киберсигурност с над 27 години опит в проектирането и управлението на бизнес-ориентирани архитектури за сигурност в сферата на ИТ, оперативните технологии и софтуерно-ориентирани продуктови среди. Като водещ архитект по киберсигурност, той ръководи инициативи за „сигурност по дизайн“, базирани на принципите на Enterprise Architecture и SABSA, осигурявайки систематично вграждане на киберсигурността в цифровите продукти, платформи и операции с реална бизнес стойност.',
         'Преди това Драгомир е заемал старши ръководни позиции в сектора на енергетиката и в разработката на продукти и услуги за киберсигурност. Той притежава магистърска степен от RWTH Аахен (Германия), сертифициран е като SABSA Chartered Architect и съчетава задълбочена архитектурна прецизност с практически опит в индустрията, продуктите и научните изследвания.'
       ],
-      sessionDescEn: 'Sets the strategic context: why architecture, cyber security hygiene and baseline practices — not reactive tools — are the true determinant of organisational resilience. Bridges technical depth with board-level narrative. Challenges leaders to rethink their security posture as a strategic, not operational, decision in a rapidly changing environment shaped by AI, geopolitical tensions, and continuously increasing regulatory pressure.',
-      sessionDescBg: 'Задава стратегическия контекст: защо архитектурата, киберхигиената и базовите практики — не реактивните инструменти — са истинският определящ фактор за устойчивостта на организацията. Свързва техническата дълбочина с наратив на ниво борд на директорите. Предизвиква лидерите да преосмислят позицията си по сигурността като стратегическо, а не оперативно решение, в бързо променяща се среда, оформена от AI, геополитическо напрежение и непрекъснато нарастващ регулаторен натиск.',
+      sessionDescEn: 'Sets the strategic context: why architecture, cyber security hygiene and baseline practices - not reactive tools - are the true determinant of organisational resilience. Bridges technical depth with board-level narrative. Challenges leaders to rethink their security posture as a strategic, not operational, decision in a rapidly changing environment shaped by AI, geopolitical tensions, and continuously increasing regulatory pressure.',
+      sessionDescBg: 'Задава стратегическия контекст: защо архитектурата, киберхигиената и базовите практики - не реактивните инструменти - са истинският определящ фактор за устойчивостта на организацията. Свързва техническата дълбочина с наратив на ниво борд на директорите. Предизвиква лидерите да преосмислят позицията си по сигурността като стратегическо, а не оперативно решение, в бързо променяща се среда, оформена от AI, геополитическо напрежение и непрекъснато нарастващ регулаторен натиск.',
       takeawaysEn: 'Bridges technical depth with board-level narrative. Challenges leaders to rethink their security posture as a strategic, not operational, decision.',
       takeawaysBg: 'Свързва техническата дълбочина с наратив на ниво борд на директорите. Предизвиква лидерите да преосмислят позицията си по сигурността като стратегическо, а не оперативно решение.'
     },
@@ -261,8 +261,8 @@
       ],
       sessionDescEn: "This lecture explores how Europe can transform outstanding scientific research into scalable health and life sciences innovations. It will examine the role of innovation ecosystems, university spinoffs, investment, regulation, and cross-sector collaboration in accelerating the journey from laboratory discoveries to market-ready solutions that improve patient outcomes and strengthen Europe's competitiveness.",
       sessionDescBg: 'Лекцията разглежда как Европа може да превърне върховите научни изследвания в мащабируеми иновации в сферата на здравеопазването и науките за живота. Ще бъде разгледана ролята на иновационните екосистеми, университетските spin-off компании, инвестициите, регулациите и междусекторното сътрудничество за ускоряване на пътя от лабораторните открития до пазарно готови решения, които подобряват резултатите за пациентите и укрепват конкурентоспособността на Европа.',
-      takeawaysEn: 'Strong innovation ecosystems do not emerge by chance — they are built through long-term collaboration, trust, shared vision, and strategic investment in people, knowledge, and partnerships.',
-      takeawaysBg: 'Силните иновационни екосистеми не се появяват случайно — те се изграждат чрез дългосрочно сътрудничество, доверие, споделена визия и стратегическа инвестиция в хора, знания и партньорства.'
+      takeawaysEn: 'Strong innovation ecosystems do not emerge by chance - they are built through long-term collaboration, trust, shared vision, and strategic investment in people, knowledge, and partnerships.',
+      takeawaysBg: 'Силните иновационни екосистеми не се появяват случайно - те се изграждат чрез дългосрочно сътрудничество, доверие, споделена визия и стратегическа инвестиция в хора, знания и партньорства.'
     },
     {
       id: 'dimitar-karlovski', track: 'biotech',
@@ -280,9 +280,9 @@
         'Mitotopia е стартъп, разработващ продукти и услуги за подобряване на митохондриалното здраве в областта на репродукцията, спорта и дълголетието, основан от Димитър Карловски.'
       ],
       sessionDescEn: "From the Chinese concept of Chi to the contemporary knowledge of energy and metabolism, mitochondria play the lead role. They are powerful, flexible and adaptable. So is Mitotopia. What's the story?",
-      sessionDescBg: 'От китайската концепция за Чи до съвременните познания за енергията и метаболизма — митохондриите играят главна роля. Те са мощни, гъвкави и адаптивни. Такъв е и Mitotopia. Каква е историята?',
-      takeawaysEn: 'Mitochondria are much more than the powerhouses of the cell — they are coordinators of cellular biochemistry. Clinical practice can generate ideas and address problems; when combined with science and research, ideas can be turned into prospective solutions, which can then be applied back into practice.',
-      takeawaysBg: 'Митохондриите са много повече от „енергийните централи“ на клетката — те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми; при съчетаване с наука и изследвания идеите могат да се превърнат в перспективни решения, които впоследствие се прилагат обратно в практиката.'
+      sessionDescBg: 'От китайската концепция за Чи до съвременните познания за енергията и метаболизма - митохондриите играят главна роля. Те са мощни, гъвкави и адаптивни. Такъв е и Mitotopia. Каква е историята?',
+      takeawaysEn: 'Mitochondria are much more than the powerhouses of the cell - they are coordinators of cellular biochemistry. Clinical practice can generate ideas and address problems; when combined with science and research, ideas can be turned into prospective solutions, which can then be applied back into practice.',
+      takeawaysBg: 'Митохондриите са много повече от „енергийните централи“ на клетката - те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми; при съчетаване с наука и изследвания идеите могат да се превърнат в перспективни решения, които впоследствие се прилагат обратно в практиката.'
     },
     {
       id: 'trifon-tsekov', track: 'biotech',
@@ -299,10 +299,10 @@
       bioBg: [
         'Трифон Цеков е CEO на 3-Fi Medical, бивш директор „Хардуерни R&D“ и архитект на радарни системи с над 10 години опит във вградени системи, обработка на сигнали в реално време и издръжлив хардуер за отбранителни приложения. Член на AI Cluster Bulgaria, той прилага инженерство с висока надеждност в регулирания медицински AI.'
       ],
-      sessionDescEn: 'Medical AI teams need evidence that their software is safe, performs as intended, and creates clinical value — but relevant patient data is often fragmented across institutions. This session introduces federated learning as a practical way to work across approved data environments without centralizing sensitive patient data, connecting the concept to SaMD evidence generation under the EU MDR using plain-language examples. It is intended for founders, researchers, hospitals, and innovation teams working to turn strong research into scalable, trustworthy health products.',
-      sessionDescBg: 'Екипите, разработващи медицински AI, се нуждаят от доказателства, че софтуерът им е безопасен, работи според очакванията и създава клинична стойност — но релевантните данни за пациенти често са разпръснати между различни институции. Тази сесия представя федерираното обучение като практичен начин за работа през одобрени среди с данни, без централизиране на чувствителни пациентски данни, свързвайки концепцията с генерирането на доказателства за SaMD съгласно EU MDR чрез разбираеми примери. Предназначена е за основатели, изследователи, болници и иновационни екипи, работещи за превръщането на силни изследвания в мащабируеми и надеждни здравни продукти.',
-      takeawaysEn: 'A plain-language view of why clinical evidence matters for medical software beyond model accuracy, and the practical idea behind federated learning — bringing computation to governed data environments instead of moving sensitive data into one central repository. The session shows how multi-site collaboration can support validation, monitoring, and evidence-generation workflows for SaMD products, and highlights what startups, hospitals, and researchers need to align early: intended use, governance, validation criteria, and regulatory documentation.',
-      takeawaysBg: 'Разбираемо обяснение защо клиничните доказателства са важни за медицинския софтуер отвъд точността на модела, и практическата идея зад федерираното обучение — пренасяне на изчисленията към управлявани среди с данни, вместо преместване на чувствителни данни в едно централно хранилище. Сесията показва как сътрудничеството между множество обекти може да подпомогне валидацията, мониторинга и генерирането на доказателства за SaMD продукти, и очертава какво трябва да бъде съгласувано рано между стартъпи, болници и изследователи: предназначение на употреба, управление, критерии за валидация и регулаторна документация.'
+      sessionDescEn: 'Medical AI teams need evidence that their software is safe, performs as intended, and creates clinical value - but relevant patient data is often fragmented across institutions. This session introduces federated learning as a practical way to work across approved data environments without centralizing sensitive patient data, connecting the concept to SaMD evidence generation under the EU MDR using plain-language examples. It is intended for founders, researchers, hospitals, and innovation teams working to turn strong research into scalable, trustworthy health products.',
+      sessionDescBg: 'Екипите, разработващи медицински AI, се нуждаят от доказателства, че софтуерът им е безопасен, работи според очакванията и създава клинична стойност - но релевантните данни за пациенти често са разпръснати между различни институции. Тази сесия представя федерираното обучение като практичен начин за работа през одобрени среди с данни, без централизиране на чувствителни пациентски данни, свързвайки концепцията с генерирането на доказателства за SaMD съгласно EU MDR чрез разбираеми примери. Предназначена е за основатели, изследователи, болници и иновационни екипи, работещи за превръщането на силни изследвания в мащабируеми и надеждни здравни продукти.',
+      takeawaysEn: 'A plain-language view of why clinical evidence matters for medical software beyond model accuracy, and the practical idea behind federated learning - bringing computation to governed data environments instead of moving sensitive data into one central repository. The session shows how multi-site collaboration can support validation, monitoring, and evidence-generation workflows for SaMD products, and highlights what startups, hospitals, and researchers need to align early: intended use, governance, validation criteria, and regulatory documentation.',
+      takeawaysBg: 'Разбираемо обяснение защо клиничните доказателства са важни за медицинския софтуер отвъд точността на модела, и практическата идея зад федерираното обучение - пренасяне на изчисленията към управлявани среди с данни, вместо преместване на чувствителни данни в едно централно хранилище. Сесията показва как сътрудничеството между множество обекти може да подпомогне валидацията, мониторинга и генерирането на доказателства за SaMD продукти, и очертава какво трябва да бъде съгласувано рано между стартъпи, болници и изследователи: предназначение на употреба, управление, критерии за валидация и регулаторна документация.'
     },
     {
       id: 'anton-tonchev', track: 'biotech',
@@ -311,39 +311,39 @@
       name: 'проф. Антон Тончев',
       nameEn: 'Prof. Anton Tonchev',
       role: 'Professor &amp; Chair, Anatomy @ Medical University Varna',
-      topicBg: 'Стволови клетки на мозъка: от изследвания към терапия',
-      topicEn: 'Brain stem cell niches: from research to therapy',
+      topicBg: 'Поглед към микросвета - и отвъд него',
+      topicEn: 'Zoom into the micro-world, and beyond',
       bioEn: [
-        'Professor in Anatomy and Neurobiology at the Medical University of Varna. Anton B. Tonchev graduated in Medicine at the Medical University – Varna.',
-        'He completed his PhD at the University of Kanazawa, Japan, studying neurogenesis and gliogenesis in monkeys following cerebral ischemia. He was a postdoctoral fellow of the Alexander von Humboldt Foundation at the Max Planck Institute for Biophysical Chemistry, Göttingen, Germany, studying the genetic mechanisms of adult neurogenesis.',
-        'Since 2012, he has served as Chair of the Department of Anatomy and Cell Biology in Varna, and since 2018 as Director of the Research Institute of the Medical University of Varna. His group studies brain stem cell niches, with a focus on primates and humans.'
+        'Anton Tonchev graduated in Medicine from the Medical University of Varna in 1998. From 1998 to 2003, he pursued his PhD at the research unit of the Department of Neurosurgery, University of Kanazawa, Japan. He returned to Bulgaria in 2003 and has since led the country\'s first research group focused on brain stem cells.',
+        'From 2012 to 2024, he chaired the Department of Anatomy and Cell Biology at the Medical University of Varna, and since 2018 he has been Director of the university\'s Research Institute. Prof. Tonchev is the chief organizer of the international "Black Sea Neurogenesis" conference (www.blacksea-neuro.org), and has supervised and consulted more than 10 PhD students, mainly in the field of brain stem cells.'
       ],
       bioBg: [
-        'Професор по анатомия и невробиология в Медицински университет – Варна. Антон Б. Тончев завършва медицина в Медицински университет – Варна.',
-        'Докторантурата си защитава в Университета на Канадзава, Япония, изучавайки неврогенезата и глиогенезата при маймуни след церебрална исхемия. Бил е постдокторант на фондация „Александър фон Хумболт“ в Института на Макс Планк по биофизична химия, Гьотинген, Германия, изучавайки генетичните механизми на неврогенезата при възрастни.',
-        'От 2012 г. е ръководител на Катедрата по анатомия и клетъчна биология във Варна, а от 2018 г. — директор на Научноизследователския институт на Медицински университет – Варна. Групата му изучава нишите на стволови клетки в мозъка, с фокус върху примати и хора.'
+        'Антон Тончев завършва „Медицина“ в Медицински университет – Варна през 1998 г. В периода 1998–2003 г. работи по своята докторантура към научното звено на Катедрата по неврохирургия, Университет на Каназава, Япония. През 2003 г. се завръща в България и оттогава ръководи първата в България научна група, фокусирана върху стволовите клетки в мозъка.',
+        'В периода 2012–2024 г. ръководи Катедрата по анатомия и клетъчна биология в МУ-Варна, а от 2018 г. е директор на Научноизследователския институт на МУ-Варна. А. Тончев е главният организатор на международната конференция „Black Sea Neurogenesis“ (www.blacksea-neuro.org). Научен ръководител и консултант на над 10 докторанти, главно в областта на мозъчните стволови клетки.'
       ]
     },
     {
       id: 'elitsa-encheva', track: 'biotech',
-      img: 'images/speakers/elitsa-encheva.jpg?v=20260716', alt: 'Elitsa Encheva',
+      img: 'images/speakers/elitsa-encheva.jpg?v=20260721', alt: 'Elitsa Encheva',
       objectPosition: 'center 40%',
-      name: 'проф. Елица Енчева, д.м.',
-      nameEn: 'Prof. Elitsa Encheva, MD',
+      name: 'проф. Елица Енчева',
+      nameEn: 'Prof. Elitsa Encheva',
       role: 'Head of Radiation Oncology @ Medical University Varna',
-      topicBg: 'Радиационна онкология и медицинска иновация',
-      topicEn: 'Radiation oncology &amp; medical innovation',
+      topicBg: 'Образна диагностика и прецизно таргетиране на тумори както никога досега',
+      topicEn: 'Imaging and targeting tumor like never before',
       bioEn: [
-        'Prof. Elitsa Encheva graduated from the Medical University of Sofia in 2003. In 2009, she obtained her specialty in Radiation Oncology, and in 2011 she earned a PhD from the Medical University of Sofia with a dissertation on radiation reactions in radiotherapy of cervical and endometrial carcinomas.',
-        'Since 2013, she has been Head of the Department of Radiation Oncology at St. Marina University Hospital, Varna. She was Chief Assistant Professor at the Medical University of Varna from 2013 to 2014, was awarded the academic title of Associate Professor in 2014, and was promoted to Full Professor in 2019. Since 2014, she has also held a Master\'s degree in Public Health and Health Management.',
-        'She is a member of the Bulgarian Society of Radiation Oncologists, the Bulgarian Association of Radiology (BAR), the European Society for Radiotherapy and Oncology (ESTRO), and the International Stereotactic Radiosurgery Society (ISRS). In 2016, she was awarded the Honorary Badge of the Bulgarian Medical Association for her contribution to the development and implementation of innovative medicine.',
-        'Her scientific interests include radiation-induced reactions and their assessment; genetic markers for predicting individual radiosensitivity; radiosurgery for brain and other metastases; chemoradiotherapy for lung, head and neck, gynecological, and gastrointestinal cancers; pediatric radiation oncology; brain tumors; prostate cancer; and modern radiotherapy and imaging techniques.'
+        'Prof. Elitsa Encheva, MD, PhD is a Radiation Oncologist with over 20 years of experience - head and founder of the Radiotherapy Clinic, St. Marina University Hospital, Varna, and head of the Radiotherapy Department at the Department of Nuclear Medicine and Radiotherapy, Medical University of Varna.',
+        'She graduated from the Medical University of Sofia in 2003, was board-certified in Radiotherapy in 2009, and earned her PhD at MU-Sofia in 2011. In 2014, she completed a Master\'s degree in Public Health and Health Management, and in 2018 she was awarded the academic title of Professor at MU-Varna - the youngest in Radiotherapy in Bulgaria. She has specialized in Germany, Denmark, Belgium, the UK, Italy, Ireland, Israel, Switzerland and the Netherlands, among others. She is the only Bulgarian radiation oncologist on the teaching faculty of the International Stereotactic Radiosurgery Society (ISRS), and the author of over 100 scientific papers with a combined impact factor above 25 and more than 470 citations in international journals.',
+        'She holds the Honorary Badge of the Bulgarian Medical Association (2016) for her contribution to innovative medicine, and in the same year she and the Radiotherapy Clinic received the Varna Award for the installation of high-tech radiotherapy equipment. In 2025, she was recognized by Open Society Varna for her contribution to medicine and healthcare.',
+        'She participates in two European Commission-funded projects on 3D breast cancer imaging models (MaXIMA, PHENOMENO) and is co-principal investigator of the Swiss National Science Foundation project A-BEACON on AI-based brain metastases tracking and segmentation. She also leads a Medical University of Varna project to install an MRI unit for oncology care, funded through the EU\'s Integrated Territorial Investment programme.',
+        'Under her leadership, all modern radiotherapy techniques for adults and children - IMRT, VMAT, IGRT, SRS radiosurgery and SBRT - have been introduced into practice, and her team was first in Bulgaria to introduce chemoradiation and hyperfractionated accelerated radiotherapy for lung cancer, whole-brain hippocampal-sparing irradiation, PET-CT-guided radiotherapy planning, and deep-inspiration breath-hold irradiation for breast cancer and for radiosurgery of the lung and liver.'
       ],
       bioBg: [
-        'Проф. Елица Енчева завършва Медицински университет – София през 2003 г. През 2009 г. придобива специалност „Лъчелечение“, а през 2011 г. защитава докторска степен в Медицински университет – София с дисертация върху лъчевите реакции при лъчелечение на карциноми на маточната шийка и ендометриума.',
-        'От 2013 г. е ръководител на новосъздадената Клиника по лъчелечение в УМБАЛ „Св. Марина“, Варна. В периода 2013–2014 г. е главен асистент в Медицински университет – Варна, през 2014 г. получава академичното звание „доцент“, а през 2019 г. е повишена в „професор“. От 2014 г. притежава и магистърска степен по обществено здраве и здравен мениджмънт.',
-        'Член е на Българското дружество по лъчелечение, Българската асоциация по радиология (БАР), Европейското дружество по лъчетерапия и онкология (ESTRO) и Международното дружество по стереотактична радиохирургия (ISRS). През 2016 г. е удостоена с почетния знак на Българския лекарски съюз за приноса си в развитието и внедряването на иновативната медицина.',
-        'Научните ѝ интереси включват лъчево индуцирани реакции и техните скали за оценка; генетични маркери за прогнозиране на индивидуалната радиочувствителност; радиохирургия на мозъчни и други метастази; химиолъчелечение на белодробен, глава-шиен, гинекологичен и стомашно-чревен рак; детска лъчева онкология; мозъчни тумори; рак на простатата; и съвременни техники за планиране на лъчелечение и образна диагностика.'
+        'Проф. Елица Енчева, доктор по медицина, е лъчетерапевт с над 20 години опит - ръководител и основател на Клиниката по лъчелечение в УМБАЛ „Св. Марина“, Варна, и ръководител на Отделението по лъчелечение към Катедрата по нуклеарна медицина и лъчелечение на Медицински университет – Варна.',
+        'Завършва Медицински университет – София през 2003 г., придобива специалност „Лъчелечение“ през 2009 г. и защитава докторска степен в МУ-София през 2011 г. През 2014 г. завършва магистратура по обществено здраве и здравен мениджмънт, а през 2018 г. получава академичното звание „професор“ в МУ-Варна - най-младият професор по лъчелечение в България. Специализирала е в Германия, Дания, Белгия, Обединеното кралство, Италия, Ирландия, Израел, Швейцария и Нидерландия, наред с други страни. Тя е единственият български лъчетерапевт в преподавателския състав на Международното дружество по стереотактична радиохирургия (ISRS) и автор на над 100 научни публикации с общ импакт фактор над 25 и над 470 цитирания в чуждестранни списания.',
+        'Носител е на почетния знак на Българския лекарски съюз (2016 г.) за приноса си в развитието и внедряването на иновативна медицина, а същата година тя и Клиниката по лъчелечение получават Наградата на Варна за въвеждане в експлоатация на високотехнологична лъчетерапевтична апаратура. През 2025 г. е отличена от Отворено общество – Варна за приноса си в медицината и здравеопазването.',
+        'Участва в два проекта на Европейската комисия за 3D модели за образна диагностика на рак на гърдата (MaXIMA, PHENOMENO) и е съ-водещ изследовател по проекта A-BEACON на Швейцарския национален научен фонд за AI-базирано проследяване и сегментиране на мозъчни метастази. Ръководи и проект на МУ-Варна за инсталиране на ЯМР за онкологични грижи, финансиран по програмата за интегрирани териториални инвестиции на ЕС.',
+        'Под нейно ръководство в практиката се въвеждат всички съвременни лъчетерапевтични техники за възрастни и деца - IMRT, VMAT, IGRT, радиохирургия SRS и SBRT, като екипът ѝ е първият в България, въвел химиолъчелечение и хиперфракционирано ускорено лъчелечение при рак на белия дроб, облъчване на целия мозък с щадене на хипокампа, планиране на лъчелечение с ПЕТ-КТ, и облъчване с техниката ABC (задържане на дъха при дълбоко вдишване) при рак на гърдата и радиохирургия на бял дроб и черен дроб.'
       ]
     },
     {
@@ -353,7 +353,7 @@
       name: 'проф. Кръстена Николова',
       nameEn: 'Prof. Krastena Nikolova',
       role: 'Full Professor of Biophysics @ Medical University Varna',
-      topicBg: 'Портативно аналитично устройство — химичен състав в ръцете ви',
+      topicBg: 'Портативно аналитично устройство - химичен състав в ръцете ви',
       topicEn: 'Portable analytic device - chemical composition in your hands',
       bioEn: [
         "Professor Krastena Nikolova graduated from the Faculty of Physics at Paisii Hilendarski University of Plovdiv in 2001, and obtained a Master's degree in Applied Mathematics from the same university in 2002.",
@@ -390,7 +390,7 @@
         'Проф. Кристина Близнакова завършва „Електроника и микроелектроника“ в Технически университет – Варна през 1996 г. и магистърска програма по биомедицинско инженерство в Университета на Патрас, Гърция, през 1998 г.',
         'През 2003 г. защитава докторска степен в Университета на Патрас с дисертация върху софтуерна симулация за рентгенова образна диагностика, разработвайки метод за създаване на антропоморфни изчислителни модели на гърда за рентгенова диагностика.',
         'В периода 2004–2012 г. ръководи изследователската група по симулации Monte Carlo в Университета на Патрас. През 2012 г. получава грант Marie Curie Career Integration Grant за реинтеграцията си в България чрез проект за 3D откриване на рак на гърдата, базиран на фазово-контрастна технология.',
-        'От 2016 г. е доцент в Катедрата по компютърни науки и инженерство на Технически университет – Варна, а от 2019 г. — член на Катедрата по медицинска техника, електроника и информационни технологии в здравеопазването на Медицински университет – Варна. Ръководи модула „Антропоморфни фантоми“ в рамките на EUTEMPE-NET — Европейската мрежа за обучение и образование на експерти по медицинска физика.',
+        'От 2016 г. е доцент в Катедрата по компютърни науки и инженерство на Технически университет – Варна, а от 2019 г. - член на Катедрата по медицинска техника, електроника и информационни технологии в здравеопазването на Медицински университет – Варна. Ръководи модула „Антропоморфни фантоми“ в рамките на EUTEMPE-NET - Европейската мрежа за обучение и образование на експерти по медицинска физика.',
         'Научните ѝ интереси са в областта на биомедицинското инженерство, математическото моделиране на антропоморфни тъканни фантоми и нови рентгенови техники за откриване на рак на гърдата. Член е на IEEE, IFMBE и EFOMP.'
       ],
       sessionDescBg: 'От 2020 г. насам ракът на гърдата е най-често диагностицираният рак в света, като ранното откриване остава предизвикателство – особено при жени с плътна гръдна тъкан. За да адресираме това, разработихме нова образна платформа, съчетаваща микрофокусен рентгенов източник с детектори както за преброяване на фотони, така и енергийно-интегриращи детектори. Системата разполага със собствен софтуер за управление на детектора, роботизирано сканиране и реконструкция на изображения, ръководени от предварителна изчислителна оптимизация. Успоредно с хардуера, проектирахме и произведохме нови физически антропоморфни фантоми на гърда, които точно възпроизвеждат тъканните структури и лезии. Валидираните фантоми осигуряват надеждна платформа за тестване на прототипа, подпомагайки разработването на диагностика от ново поколение.',
@@ -405,7 +405,7 @@
       name: 'доц. Оскан Тасинов',
       nameEn: 'Assoc. Prof. Oskan Tasinov',
       role: 'Associate Professor, Molecular Biology &amp; Biochemistry @ Medical University Varna',
-      topicBg: 'WineX — повече от вино',
+      topicBg: 'WineX - повече от вино',
       topicEn: 'WineX - more than wine',
       bioEn: [
         'Assoc. Prof. Oskan B. Tasinov is a molecular biologist, with specialty in biochemistry and researcher at the Medical University "Prof. Dr. Paraskev Stoyanov" in Varna, Bulgaria. He holds a PhD in Biochemistry (2015) and an MSc in Molecular Biology and Biotechnologies from Plovdiv University, following a BSc from Sofia University. Since 2023, he has been an Associate Professor.',
@@ -445,18 +445,14 @@
       img: 'images/speakers/cemile-usta.jpg?v=20260716', alt: 'Cemile Köseler Usta',
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
-      role: 'Innovation Specialist @ Istanbul Chamber of Industry',
-      topicBg: 'Иновации и дигитална трансформация: турско-българско сътрудничество',
-      topicEn: 'Innovation &amp; digital transformation: Turkey-Bulgaria cooperation',
+      role: 'Deputy Manager, Technology &amp; Digitalisation @ Istanbul Chamber of Industry',
+      topicBg: 'Морски AI и управлявано от данни корабоплаване',
+      topicEn: 'Maritime AI &amp; Data-Driven Shipping',
       bioEn: [
-        "Cemile started her professional career at a polymeric composites producing company, taking part in the company's process improvement and R&D projects. She gained experience in quality control, evaluation of customer complaints, R&D project funding, and quality and environment systems auditing.",
-        'She then worked for Dizayn Group as International Infrastructure Projects Manager, gaining experience in writing proposals for international tenders, export processes, organizing trainings and presentations for customers, organizing participation in international marketing events, and representing the company in meetings with Water Ministries of several countries.',
-        'She has been working at the Istanbul Chamber of Industry since 2009, specializing in informing, feedback, and consultancy on innovation and digital transformation, access to finance, entrepreneurship, brokerage and technology transfer services to individual clients, as well as organizing congresses, trainings and B2B events.'
+        'Cemile Köseler is Deputy Manager of the Technology and Digitalisation Dept. at the Istanbul Chamber of Industry and an Enterprise Europe Network (EEN) expert. A driving force behind industrial innovation and digital transformation, she empowers SMEs through strategic partnerships, technology adoption and EU-funded opportunities.'
       ],
       bioBg: [
-        'Джемиле започва професионалния си път в компания за производство на полимерни композити, участвайки в проекти за подобряване на процесите и R&D. Тя натрупва опит в контрола на качеството, обработката на клиентски рекламации, финансирането на R&D проекти и одита на системи за качество и околна среда.',
-        'След това работи в Dizayn Group като мениджър международни инфраструктурни проекти, придобивайки опит в писането на предложения за международни търгове, износни процеси, организиране на обучения и презентации за клиенти, участие в международни маркетингови събития и представяне на компанията пред министерства на водите на няколко държави.',
-        'От 2009 г. работи в Търговско-промишлената камара на Истанбул, специализирайки в консултиране относно иновации и дигитална трансформация, достъп до финансиране, предприемачество, брокерски услуги и трансфер на технологии за индивидуални клиенти, както и организиране на конгреси, обучения и B2B събития.'
+        'Джемиле Кьоселер е заместник-ръководител на отдел „Технологии и дигитализация“ в Търговско-промишлената камара на Истанбул и експерт на Enterprise Europe Network (EEN). Движеща сила зад индустриалните иновации и дигиталната трансформация, тя подпомага МСП чрез стратегически партньорства, внедряване на технологии и възможности за финансиране от ЕС.'
       ]
     },
 
@@ -493,13 +489,13 @@
       topicBg: 'Дигитализация на туризма и събитийната индустрия',
       topicEn: 'Digitalization of tourism &amp; events industry',
       bioEn: [
-        'Andrey Lilov is Co-founder and CEO of URBO Studio — a technology company developing solutions for digitalization, sales and management in tourism, events, culture, sports and the entertainment industry.',
+        'Andrey Lilov is Co-founder and CEO of URBO Studio - a technology company developing solutions for digitalization, sales and management in tourism, events, culture, sports and the entertainment industry.',
         'He has extensive experience in business development, hospitality software, sales and the creation of digital platforms that connect businesses with their customers in a more direct and efficient way.',
         'Under his leadership, URBO Studio develops solutions for online ticketing, reservations, payments, access control, QR-based sales, and tourism platforms for municipalities and tourism sites, museums, attractions, hotels and event organizers.',
-        "Today, Andrey is focused on the next stage of URBO Studio's development — the integration of AI, automation and new models for access, sales and experience management."
+        "Today, Andrey is focused on the next stage of URBO Studio's development - the integration of AI, automation and new models for access, sales and experience management."
       ],
       bioBg: [
-        'Андрей Лилов е съосновател и CEO на URBO Studio — технологична компания, която разработва решения за дигитализация, продажби и управление в туризма, събитийната индустрия, културата, спорта и развлекателния сектор.',
+        'Андрей Лилов е съосновател и CEO на URBO Studio - технологична компания, която разработва решения за дигитализация, продажби и управление в туризма, събитийната индустрия, културата, спорта и развлекателния сектор.',
         'Той има дългогодишен опит в бизнес развитието, хотелския софтуер, продажбите и изграждането на дигитални платформи, които свързват бизнеса с неговите клиенти по по-директен и ефективен начин.',
         'Под негово ръководство URBO Studio развива решения за онлайн билети, резервации, плащания, контрол на достъпа, QR продажби, туристически платформи за общини и туристически обекти, музеи, атракции, хотели и организатори на събития.',
         'Днес Андрей работи върху следващата фаза в развитието на URBO Studio - интеграция на AI, автоматизации и нови модели за достъп, продажби и управление на преживяванията.'
@@ -522,7 +518,7 @@
       ],
       bioBg: [
         'Калина Цолова е експерт по иновации, регионално развитие и градска трансформация, ориентирана към климата, с опит в публичния, частния и неправителствения сектор. В ARC Fund тя се фокусира върху развитието на иновационни екосистеми и технологични решения, които укрепват устойчивостта, устойчивото развитие и конкурентоспособността на градовете и регионите.',
-        'Калина организира високото ниво диалог Security and Innovation Dialogue — инициатива на ARC Fund с иновационната общност на Силициевата долина и Маями, в рамките на която работи с глобални технологични компании, инвеститори и академични институции по темите за бъдещето на AI, дигиталната инфраструктура и устойчивите вериги на доставки. Тя има задълбочено разбиране за връзката между дигиталната трансформация и индустриалната конкурентоспособност, с фокус върху позиционирането на Черноморския регион в развиващия се технологичен и енергиен пейзаж на Европа.'
+        'Калина организира високото ниво диалог Security and Innovation Dialogue - инициатива на ARC Fund с иновационната общност на Силициевата долина и Маями, в рамките на която работи с глобални технологични компании, инвеститори и академични институции по темите за бъдещето на AI, дигиталната инфраструктура и устойчивите вериги на доставки. Тя има задълбочено разбиране за връзката между дигиталната трансформация и индустриалната конкурентоспособност, с фокус върху позиционирането на Черноморския регион в развиващия се технологичен и енергиен пейзаж на Европа.'
       ]
     },
     {
@@ -554,8 +550,29 @@
         "Ruslan Stefanov is the Director for Strategy and Innovation at the Applied Research and Communications Fund (ARC Fund). He leads ARC Fund's research, project management and consulting work on smart specialization, regional innovation strategies, technology and innovation assessments, and innovation-driven enterprise support and scale-up in Southeast Europe and the Black Sea region. Ruslan is chair and editor of Innovation.bg, the most reputable annual assessment of the innovation performance of the Bulgarian economy over the past 20 years, and a member of the jury of the National Innovation Award. He is a member of the Global Trade and Innovation Policy Alliance and the MIT REAP Bulgaria team."
       ],
       bioBg: [
-        'Руслан Стефанов е директор „Стратегия и иновации“ във Фондация „Приложни изследвания и комуникации“ (ARC Fund). Той ръководи изследователската, проектната и консултантската дейност на ARC Fund в областта на интелигентната специализация, регионалните иновационни стратегии, оценките на технологиите и иновациите, както и подкрепата и мащабирането на иновативни предприятия в Югоизточна Европа и Черноморския регион. Руслан е председател и редактор на Innovation.bg — най-авторитетната годишна оценка на иновационното представяне на българската икономика през последните 20 години — и член на журито на Националната награда за иновации. Той е член на Global Trade and Innovation Policy Alliance и на екипа на MIT REAP България.'
+        'Руслан Стефанов е директор „Стратегия и иновации“ във Фондация „Приложни изследвания и комуникации“ (ARC Fund). Той ръководи изследователската, проектната и консултантската дейност на ARC Fund в областта на интелигентната специализация, регионалните иновационни стратегии, оценките на технологиите и иновациите, както и подкрепата и мащабирането на иновативни предприятия в Югоизточна Европа и Черноморския регион. Руслан е председател и редактор на Innovation.bg - най-авторитетната годишна оценка на иновационното представяне на българската икономика през последните 20 години - и член на журито на Националната награда за иновации. Той е член на Global Trade and Innovation Policy Alliance и на екипа на MIT REAP България.'
       ]
+    },
+    {
+      id: 'paul-lambert', track: 'regional-innovation-policy',
+      img: 'images/speakers/paul-lambert.jpg?v=20260721', alt: 'Paul Lambert',
+      objectPosition: 'center 12%',
+      name: 'Paul Lambert',
+      role: 'Ambassador of the Kingdom of Belgium to the Republic of Bulgaria',
+      topicBg: 'Иновационната привлекателност на Европейския съюз в Черноморския регион',
+      topicEn: "The European Union's innovation attraction power in the Black Sea region",
+      bioEn: [
+        'Paul Lambert combines over 25 years of diplomatic experience. Most recently, from summer 2020 till summer 2024, as Deputy DG ICT, Mr. Lambert was heading the cybersecurity department at the Belgian Ministry of Foreign Affairs. He pushed for high user acceptance of broad cybersecurity to achieve long-lasting changes (mass roll-out of modern endpoints, introduction of an anti-phishing platform, a DLP scheme, phasing out of Bring Your Own Devices) and pushed for a pilot project on the use of AI to render official data more readily available.',
+        'During his previous tenure, from 2016 till 2020, Mr. Lambert was the Belgian Consul General in Shanghai, where he contributed to the success of a large Trade Mission which led to new commercial ventures in the sports area, notably regarding football.',
+        'At BSTF 2026, Ambassador Lambert joins the panel "The European Union\'s innovation attraction power in the Black Sea region", together with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.'
+      ],
+      bioBg: [
+        'Пол Ламбърт съчетава над 25 години дипломатически опит. Най-скоро, от лятото на 2020 г. до лятото на 2024 г., като заместник генерален директор „ИКТ“, г-н Ламбърт ръководи отдела по киберсигурност в белгийското Министерство на външните работи. Той работи за високо ниво на приемане от потребителите на широкообхватни мерки за киберсигурност с цел постигане на трайни промени (масово внедряване на съвременни крайни устройства, въвеждане на платформа срещу фишинг, DLP схема, извеждане от употреба на политиката „донеси своето устройство“ (BYOD)) и подкрепя пилотен проект за използване на AI за по-лесен достъп до официални данни.',
+        'През предходния си мандат, от 2016 до 2020 г., г-н Ламбърт е бил генерален консул на Белгия в Шанхай, където допринася за успеха на голяма търговска мисия, довела до нови търговски начинания в областта на спорта, по-специално във футбола.',
+        'На BSTF 2026 посланик Ламбърт се присъединява към панела „Иновационната привлекателност на Европейския съюз в Черноморския регион“, заедно с Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+      ],
+      sessionDescEn: 'Panel discussion - "The European Union\'s innovation attraction power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Paul Lambert, Ambassador of Belgium to Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
+      sessionDescBg: 'Панелна дискусия - „Иновационната привлекателност на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
     }
   ];
 
