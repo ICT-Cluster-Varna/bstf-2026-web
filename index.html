@@ -604,6 +604,158 @@
       }
     }
 
+    /* --- Program: day-tabs (OLD design, restored active) --- */
+    .program-section .schedule-table td {
+      background: var(--white)
+    }
+
+    .program-section .schedule-table tbody tr:nth-child(even) td {
+      background: #f0f7fa
+    }
+
+    .program-section .schedule-table tr:hover td {
+      background: var(--light-blue)
+    }
+
+    .day-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px
+    }
+
+    .day-tab {
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: var(--light-gray);
+      color: var(--text)
+    }
+
+    .day-tab.active {
+      background: var(--navy);
+      color: var(--white)
+    }
+
+    .day-tab:hover:not(.active) {
+      background: var(--light-blue);
+      color: var(--navy)
+    }
+
+    .day-content {
+      display: none !important
+    }
+
+    .day-content.active {
+      display: block !important
+    }
+
+    .day-subtitle-row {
+      background: var(--navy) !important;
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: var(--radius) var(--radius) 0 0
+    }
+
+    .schedule-table td[colspan="2"] {
+      text-align: center;
+      color: var(--text-light);
+      font-style: italic
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 16px;
+      border-radius: var(--radius);
+      overflow: hidden
+    }
+
+    .schedule-table th {
+      text-align: center;
+      padding: 10px 12px;
+      background: #1a5c7a;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600
+    }
+
+    .schedule-table th:first-child {
+      border-radius: 0
+    }
+
+    .schedule-table th:last-child {
+      border-radius: 0
+    }
+
+    .schedule-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 0.85rem;
+      text-align: center
+    }
+
+    .schedule-table tr:hover {
+      background: var(--light-blue)
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background: rgba(44, 166, 179, 0.04)
+    }
+
+    .schedule-table {
+      table-layout: fixed
+    }
+
+    .schedule-table th:first-child,
+    .schedule-table td:first-child {
+      width: 6%;
+      padding-left: 0;
+      padding-right: 0
+    }
+
+    .time-cell {
+      font-weight: 600;
+      color: var(--teal);
+      white-space: nowrap;
+      width: 6%;
+      font-size: 0.75rem
+    }
+
+    @media(max-width:768px) {
+      .schedule-table {
+        font-size: 0.78rem;
+        table-layout: auto
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 8px 6px;
+        word-break: break-word
+      }
+
+      .schedule-table .time-cell {
+        width: 72px;
+        font-size: 0.72rem
+      }
+
+      .day-tabs {
+        flex-wrap: wrap
+      }
+
+      .day-tab {
+        padding: 10px 16px;
+        font-size: 0.85rem
+      }
+    }
+
     /* --- Program: unified timeline (Smart Timeline) --- */
     .prog-filterbar {
       position: sticky;
@@ -4206,8 +4358,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- SECTION 5: Program — OLD design (day-tabs), commented out as fallback (2026-07-17). Active design is the Smart Timeline below. -->
-  <!--
+  <!-- SECTION 5: Program — OLD design (day-tabs). Restored ACTIVE (2026-07-22) while the Smart Timeline / 3-Day Grid design is parked below, commented out. -->
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -4461,11 +4612,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
   </section>
-  -->
 
-  <!-- SECTION 5: Program (3-Day Grid) — ACTIVE. Renders Day 1/2/3 as side-by-side columns so the full
-       programme reads in one view on desktop; stacks to one column below 1000px. Older designs kept
-       commented above as fallback. -->
+  <!-- SECTION 5: Program (3-Day Grid) — PARKED (2026-07-22), not active. day-tabs design above is live again.
+       Renders Day 1/2/3 as side-by-side columns so the full programme reads in one view on desktop;
+       stacks to one column below 1000px. -->
+  <!--
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -4740,6 +4891,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       };
     })();
   </script>
+  -->
 
   <!-- SECTION 6: Side Events -->
   <section class="side-events-section" style="border-top:1px solid rgba(0, 205, 255,0.12)">
@@ -5544,6 +5696,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 600);
       }
+
+      // === Day Tabs ===
+      document.querySelectorAll('.day-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var day = tab.dataset.day;
+          document.querySelectorAll('.day-tab').forEach(function (t) { t.classList.remove('active'); });
+          document.querySelectorAll('.day-content').forEach(function (c) { c.classList.remove('active'); });
+          tab.classList.add('active');
+          var content = document.querySelector('.day-content[data-day="' + day + '"]');
+          if (content) content.classList.add('active');
+        });
+      });
 
       // === Ticket Card Selection ===
       document.querySelectorAll('.ticket-card').forEach(function (card) {
