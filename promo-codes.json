@@ -1,0 +1,22 @@
+{
+  "promoCodes": [
+    {
+      "code": "PARTNER10",
+      "company": "Test Partner Ltd.",
+      "discountPercent": 10,
+      "discountVisible": true
+    },
+    {
+      "code": "HIDDEN15",
+      "company": "Silent Referral Co.",
+      "discountPercent": 15,
+      "discountVisible": false
+    },
+    {
+      "code": "INFLUENCER20",
+      "company": "Demo Influencer",
+      "discountPercent": 20,
+      "discountVisible": true
+    }
+  ]
+}

@@ -181,9 +181,50 @@ var subject = "", htmlBody = "", textBody = "", replyTo = "";
 
 if (formType === "register") {
   var rName = field("name"), rEmail = field("email"), rPhone = field("phone"), rTicket = field("ticket"),
-      rCompanyType = field("companyType");
+      rCompanyType = field("companyType"), rPromoCode = field("promoCode"), rPromoSource = field("promoSource"),
+      rPromoCompany = field("promoCompany"), rPromoDiscountPercent = field("promoDiscountPercent"),
+      rPromoDiscountVisible = field("promoDiscountVisible");
   var rTicketDisplay = formatTicketValue(rTicket);
   var rCompanyTypeDisplay = formatCompanyType(rCompanyType);
+  var PROMO_SOURCE_LABELS = { "url": "\u043b\u0438\u043d\u043a", "form": "\u0432\u044a\u0432\u0435\u0434\u0435\u043d \u0440\u044a\u0447\u043d\u043e" };
+  var rPromoSourceDisplay = PROMO_SOURCE_LABELS.hasOwnProperty(rPromoSource) ? PROMO_SOURCE_LABELS[rPromoSource] : "";
+  // Promo code is always recorded (partner attribution), even when no
+  // discount was shown to the registrant - so this field is always present,
+  // "-" only when no code was submitted at all.
+  var rPromoDisplay = rPromoCode
+    ? rPromoCode + (rPromoSourceDisplay ? " (" + rPromoSourceDisplay + ")" : "")
+    : "-";
+  var rPromoMatched = !!(rPromoCode && rPromoCompany);
+  var rPromoCompanyDisplay = rPromoMatched ? rPromoCompany : (rPromoCode ? "\u041d\u0435\u043f\u043e\u0437\u043d\u0430\u0442 \u043a\u043e\u0434" : "-");
+
+  // Ticket base price in EUR, keyed by the <select> value codes (standard/vip/ultra-vip),
+  // so we can compute actual money - not just show a percentage.
+  var TICKET_BASE_PRICES = { "standard": 199, "vip": 399, "ultra-vip": 749 };
+  var rBasePrice = TICKET_BASE_PRICES.hasOwnProperty(rTicket) ? TICKET_BASE_PRICES[rTicket] : 0;
+  var rPromoPct = Number(rPromoDiscountPercent) || 0;
+  var rPromoVisible = rPromoDiscountVisible === "true";
+
+  // Two distinct business models behind the same "discountPercent" number:
+  // - discountVisible=true:  the BUYER gets the discount and pays less.
+  // - discountVisible=false: the buyer pays FULL price; that same percentage
+  //   becomes a commission owed to the partner instead.
+  var rPromoTypeDisplay = "-";
+  if (rPromoMatched && rPromoPct > 0) {
+    if (rPromoVisible) {
+      rPromoTypeDisplay = "\u041e\u0442\u0441\u0442\u044a\u043f\u043a\u0430 \u0437\u0430 \u043a\u043b\u0438\u0435\u043d\u0442\u0430 (" + rPromoPct + "%) - \u043a\u043b\u0438\u0435\u043d\u0442\u044a\u0442 \u043f\u043b\u0430\u0449\u0430 \u043f\u043e-\u043c\u0430\u043b\u043a\u043e";
+      if (rBasePrice) {
+        var rPaidPrice = Math.round(rBasePrice * (1 - rPromoPct / 100));
+        rPromoTypeDisplay += " (\u20ac" + rPaidPrice + " \u0432\u043c\u0435\u0441\u0442\u043e \u20ac" + rBasePrice + ")";
+      }
+    } else {
+      rPromoTypeDisplay = "\u041a\u043e\u043c\u0438\u0441\u0438\u043e\u043d\u0430 \u0437\u0430 \u043f\u0430\u0440\u0442\u043d\u044c\u043e\u0440\u0430 (" + rPromoPct + "%) - \u043a\u043b\u0438\u0435\u043d\u0442\u044a\u0442 \u043f\u043b\u0430\u0449\u0430 \u043f\u044a\u043b\u043d\u0430 \u0446\u0435\u043d\u0430";
+      if (rBasePrice) {
+        var rCommission = Math.round(rBasePrice * rPromoPct / 100);
+        rPromoTypeDisplay += " (\u20ac" + rBasePrice + " \u043f\u043b\u0430\u0442\u0435\u043d\u0438, \u0434\u044a\u043b\u0436\u0438\u043c\u0430 \u043a\u043e\u043c\u0438\u0441\u0438\u043e\u043d\u0430: \u20ac" + rCommission + ")";
+      }
+    }
+  }
+
   if (!rName || !rEmail) sendJson(false, "Missing required fields");
   if (!isValidEmail(rEmail)) sendJson(false, "Invalid email");
   replyTo = rEmail;
@@ -193,7 +234,10 @@ if (formType === "register") {
     "\u0418\u043c\u0435\u0439\u043b: " + rEmail + "\n" +
     "\u0422\u0435\u043b\u0435\u0444\u043e\u043d: " + (rPhone || "-") + "\n" +
     "\u0422\u0438\u043f \u0431\u0438\u043b\u0435\u0442: " + (rTicketDisplay || "-") + "\n" +
-    "\u0422\u0438\u043f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f: " + (rCompanyTypeDisplay || "-");
+    "\u0422\u0438\u043f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f: " + (rCompanyTypeDisplay || "-") + "\n" +
+    "\u041f\u0440\u043e\u043c\u043e \u043a\u043e\u0434: " + rPromoDisplay + "\n" +
+    "\u041f\u0430\u0440\u0442\u043d\u044c\u043e\u0440: " + rPromoCompanyDisplay + "\n" +
+    "\u0422\u0438\u043f \u043d\u0430 \u043f\u0440\u043e\u043c\u043e\u0446\u0438\u044f\u0442\u0430: " + rPromoTypeDisplay;
   htmlBody = buildNotificationEmail(
     "BSTF 2026 \u00b7 \u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042f",
     "\u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430 BSTF 2026",
@@ -203,7 +247,10 @@ if (formType === "register") {
       { label: "\u0418\u043c\u0435\u0439\u043b", value: rEmail },
       { label: "\u0422\u0435\u043b\u0435\u0444\u043e\u043d", value: rPhone },
       { label: "\u0422\u0438\u043f \u0431\u0438\u043b\u0435\u0442", value: rTicketDisplay },
-      { label: "\u0422\u0438\u043f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f", value: rCompanyTypeDisplay }
+      { label: "\u0422\u0438\u043f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f", value: rCompanyTypeDisplay },
+      { label: "\u041f\u0440\u043e\u043c\u043e \u043a\u043e\u0434", value: rPromoDisplay },
+      { label: "\u041f\u0430\u0440\u0442\u043d\u044c\u043e\u0440", value: rPromoCompanyDisplay },
+      { label: "\u0422\u0438\u043f \u043d\u0430 \u043f\u0440\u043e\u043c\u043e\u0446\u0438\u044f\u0442\u0430", value: rPromoTypeDisplay }
     ],
     rEmail
   );
