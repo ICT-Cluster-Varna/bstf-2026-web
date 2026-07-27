@@ -917,56 +917,32 @@
       border-radius: 50%
     }
 
+    /* Every row of this grid is one shared "step" across all 3 days, placed
+       via explicit grid-column/grid-row (set in renderProgramTimeline below)
+       rather than relying on 3 independent per-day flows — so e.g. all 3
+       days' first coffee break really do land at the same height, because
+       the browser's own grid row-track sizing enforces it. DOM order stays
+       grouped by day (header + all of that day's rows in sequence) so the
+       mobile view (which switches this to a plain flex column, see the
+       1000px media query) reads normally without any JS re-ordering. */
     .prog-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0 32px;
+      gap: 10px 32px;
       align-items: stretch
     }
 
-    .prog-day-col {
-      min-width: 0;
-      display: flex;
-      flex-direction: column
-    }
-
-    .prog-day-col+.prog-day-col {
-      border-left: 1px solid rgba(11, 57, 84, 0.12);
-      padding-left: 32px
-    }
-
-    .prog-day-col-body {
+    .prog-cell {
       display: flex;
       flex-direction: column;
-      flex: 1;
-      gap: 14px;
-      position: relative;
-      padding-left: 22px
+      justify-content: center;
+      min-width: 0
     }
 
-    /* Connecting rail: a continuous vertical line threading through every slot's
-       dot marker, so leftover space at the end of shorter days reads as "day is
-       done" rather than a layout gap. */
-    .prog-day-col-body::before {
-      content: "";
-      position: absolute;
-      left: 5px;
-      top: 6px;
-      bottom: 6px;
-      width: 2px;
-      border-radius: 2px;
-      background: linear-gradient(180deg, rgba(0, 205, 255, 0.55), rgba(0, 160, 204, 0.12))
-    }
-
-    .prog-day-col-body::after {
-      content: "";
-      position: absolute;
-      left: 1.5px;
-      bottom: 4px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--navy)
+    .prog-col-2,
+    .prog-col-3 {
+      border-left: 1px solid rgba(11, 57, 84, 0.12);
+      padding-left: 32px
     }
 
     .prog-day-col-head {
@@ -974,7 +950,7 @@
       align-items: baseline;
       gap: 12px;
       padding-bottom: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 6px;
       border-bottom: 2px solid var(--navy)
     }
 
@@ -1002,22 +978,6 @@
       text-transform: uppercase;
       color: var(--text-light);
       margin-top: 2px
-    }
-
-    .prog-slot {
-      position: relative
-    }
-
-    .prog-slot::before {
-      content: "";
-      position: absolute;
-      left: -19px;
-      top: 3px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--teal-deep)
     }
 
     .prog-slot-time {
@@ -1113,28 +1073,8 @@
       filter: grayscale(0.4)
     }
 
-    /* Wrapper absorbs the leftover vertical space needed to keep the 3 day
-       columns equal height: it grows, so a short day's slack becomes a
-       taller (but still clearly a break) block instead of one big empty
-       gap. min-height keeps it sane on the tallest/busiest day, where
-       there's little or no slack to distribute. */
-    .prog-break-slot {
-      flex: 1 1 0;
-      min-height: 38px;
-      display: flex;
-      align-items: center;
-      position: relative
-    }
-
-    .prog-break-slot::before {
-      content: "";
-      position: absolute;
-      left: -19.5px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--teal);
-      box-shadow: 0 0 0 3px var(--light-blue)
+    .prog-break-cell .prog-slot-time {
+      text-align: center
     }
 
     .prog-break-row {
@@ -1155,13 +1095,21 @@
 
     @media(max-width:1000px) {
       .prog-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 0
       }
 
-      .prog-day-col+.prog-day-col {
+      .prog-col-2,
+      .prog-col-3 {
         border-left: none;
-        padding-left: 0;
+        padding-left: 0
+      }
+
+      /* Only the 2nd/3rd day's header (not every cell) gets the divider
+         here — DOM order is day-grouped, so this is simply "any header
+         that isn't the very first cell in the grid". */
+      .prog-cell-head:not(:first-child) {
         border-top: 1px solid rgba(11, 57, 84, 0.14);
         margin-top: 30px;
         padding-top: 30px
@@ -4978,63 +4926,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         return trackOk && blockOk;
       }
 
-      // All 3 days render as sibling columns in one row, so the whole
-      // programme is scannable without switching tabs or scrolling per day.
+      function buildHeaderCell(d, colIdx) {
+        var cell = document.createElement('div');
+        cell.className = 'prog-cell prog-cell-head prog-col-' + (colIdx + 1);
+        cell.id = 'prog-day-' + d.id;
+        cell.style.gridColumn = String(colIdx + 1);
+        cell.style.gridRow = '1';
+        var head = document.createElement('div');
+        head.className = 'prog-day-col-head';
+        head.innerHTML = '<span class="num">' + String(d.id).padStart(2, '0') + '</span><span class="meta"><h3 data-bg="' + d.label.bg + '" data-en="' + d.label.en + '">' + d.label.bg + '</h3><span class="date" data-bg="' + d.date.bg + '" data-en="' + d.date.en + '">' + d.date.bg + '</span></span>';
+        cell.appendChild(head);
+        return cell;
+      }
+
+      function buildSlotCell(s, colIdx, rowIdx) {
+        var cell = document.createElement('div');
+        cell.className = 'prog-cell prog-col-' + (colIdx + 1);
+        cell.style.gridColumn = String(colIdx + 1);
+        cell.style.gridRow = String(rowIdx + 2);
+
+        if (s.kind === 'break') {
+          cell.classList.add('prog-break-cell');
+          var breakTime = document.createElement('div');
+          breakTime.className = 'prog-slot-time';
+          breakTime.textContent = s.time;
+          var br = document.createElement('div');
+          br.className = 'prog-break-row';
+          br.setAttribute('data-bg', s.label.bg);
+          br.setAttribute('data-en', s.label.en);
+          br.textContent = s.label.bg;
+          cell.appendChild(breakTime);
+          cell.appendChild(br);
+          return cell;
+        }
+
+        var time = document.createElement('div');
+        time.className = 'prog-slot-time';
+        time.textContent = s.time;
+        cell.appendChild(time);
+
+        var cardsWrap = document.createElement('div');
+        cardsWrap.className = 'prog-slot-cards';
+        s.cards.forEach(function (c, i) {
+          if (s.kind === 'double' && i === 1) {
+            var ptag = document.createElement('div');
+            ptag.className = 'parallel-tag';
+            ptag.setAttribute('data-bg', 'По същото време');
+            ptag.setAttribute('data-en', 'At the same time');
+            ptag.textContent = 'По същото време';
+            cardsWrap.appendChild(ptag);
+          }
+          var match = cardMatches(c, s.block);
+          var card = document.createElement('div');
+          card.className = 'prog-ev-card' + (match ? '' : ' dim');
+          card.style.setProperty('--room-dot', c.room === HALL_VN ? 'var(--navy)' : 'var(--teal)');
+          var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + trackNameById[c.track].bg + '</span>' : '';
+          var roomEn = c.room === HALL_BG ? HALL_BG_EN : (c.room === HALL_VN ? HALL_VN_EN : c.room);
+          card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + c.room + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + c.title.bg + '</div>' + tagHtml;
+          cardsWrap.appendChild(card);
+        });
+        cell.appendChild(cardsWrap);
+        return cell;
+      }
+
+      // Every day's header + slots are placed via explicit grid-column/
+      // grid-row, so a shared "step" (e.g. each day's Nth coffee break)
+      // genuinely lands on the same grid row across all 3 days — the
+      // browser's row-track sizing does the aligning, not a hand-rolled
+      // spacer. DOM order stays grouped by day (append order below) so the
+      // mobile view (a plain flex column, see the 1000px media query)
+      // reads top-to-bottom per day with no re-ordering needed.
       function render() {
         grid.innerHTML = '';
-        PROGRAM_DAYS.forEach(function (d) {
-          var col = document.createElement('div');
-          col.className = 'prog-day-col';
-          col.id = 'prog-day-' + d.id;
-          var head = document.createElement('div');
-          head.className = 'prog-day-col-head';
-          head.innerHTML = '<span class="num">' + String(d.id).padStart(2, '0') + '</span><span class="meta"><h3 data-bg="' + d.label.bg + '" data-en="' + d.label.en + '">' + d.label.bg + '</h3><span class="date" data-bg="' + d.date.bg + '" data-en="' + d.date.en + '">' + d.date.bg + '</span></span>';
-          col.appendChild(head);
-
-          var body = document.createElement('div');
-          body.className = 'prog-day-col-body';
-          col.appendChild(body);
-
-          d.slots.forEach(function (s) {
-            if (s.kind === 'break') {
-              var brSlot = document.createElement('div');
-              brSlot.className = 'prog-break-slot';
-              var br = document.createElement('div');
-              br.className = 'prog-break-row';
-              br.setAttribute('data-bg', s.label.bg);
-              br.setAttribute('data-en', s.label.en);
-              br.textContent = s.label.bg;
-              brSlot.appendChild(br);
-              body.appendChild(brSlot);
-              return;
-            }
-            var slotEl = document.createElement('div');
-            slotEl.className = 'prog-slot' + (s.kind === 'single' ? ' single' : '');
-            slotEl.innerHTML = '<div class="prog-slot-time">' + s.time + '</div>';
-            var cardsWrap = document.createElement('div');
-            cardsWrap.className = 'prog-slot-cards';
-            s.cards.forEach(function (c, i) {
-              if (s.kind === 'double' && i === 1) {
-                var ptag = document.createElement('div');
-                ptag.className = 'parallel-tag';
-                ptag.setAttribute('data-bg', 'По същото време');
-                ptag.setAttribute('data-en', 'At the same time');
-                ptag.textContent = 'По същото време';
-                cardsWrap.appendChild(ptag);
-              }
-              var match = cardMatches(c, s.block);
-              var card = document.createElement('div');
-              card.className = 'prog-ev-card' + (match ? '' : ' dim');
-              card.style.setProperty('--room-dot', c.room === HALL_VN ? 'var(--navy)' : 'var(--teal)');
-              var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + trackNameById[c.track].bg + '</span>' : '';
-              var roomEn = c.room === HALL_BG ? HALL_BG_EN : (c.room === HALL_VN ? HALL_VN_EN : c.room);
-              card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + c.room + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + c.title.bg + '</div>' + tagHtml;
-              cardsWrap.appendChild(card);
-            });
-            slotEl.appendChild(cardsWrap);
-            body.appendChild(slotEl);
+        PROGRAM_DAYS.forEach(function (d, colIdx) {
+          grid.appendChild(buildHeaderCell(d, colIdx));
+          d.slots.forEach(function (s, rowIdx) {
+            grid.appendChild(buildSlotCell(s, colIdx, rowIdx));
           });
-          grid.appendChild(col);
         });
       }
 
