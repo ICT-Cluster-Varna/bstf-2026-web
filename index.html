@@ -969,11 +969,6 @@
       background: var(--navy)
     }
 
-    .prog-day-spacer {
-      flex: 1 1 auto;
-      min-height: 0
-    }
-
     .prog-day-col-head {
       display: flex;
       align-items: baseline;
@@ -1097,23 +1092,20 @@
       filter: grayscale(0.4)
     }
 
-    .prog-break-row {
+    /* Wrapper absorbs the leftover vertical space needed to keep the 3 day
+       columns equal height: it grows, so a short day's slack becomes a
+       taller (but still clearly a break) block instead of one big empty
+       gap. min-height keeps it sane on the tallest/busiest day, where
+       there's little or no slack to distribute. */
+    .prog-break-slot {
+      flex: 1 1 0;
+      min-height: 38px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      color: var(--white);
-      font-family: var(--mono);
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--teal-deep), var(--navy-deep))
+      position: relative
     }
 
-    .prog-break-row::before {
+    .prog-break-slot::before {
       content: "";
       position: absolute;
       left: -19.5px;
@@ -1122,6 +1114,22 @@
       border-radius: 50%;
       background: var(--teal);
       box-shadow: 0 0 0 3px var(--light-blue)
+    }
+
+    .prog-break-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--teal), var(--navy))
     }
 
     @media(max-width:1000px) {
@@ -4968,12 +4976,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           d.slots.forEach(function (s) {
             if (s.kind === 'break') {
+              var brSlot = document.createElement('div');
+              brSlot.className = 'prog-break-slot';
               var br = document.createElement('div');
               br.className = 'prog-break-row';
               br.setAttribute('data-bg', s.label.bg);
               br.setAttribute('data-en', s.label.en);
               br.textContent = s.label.bg;
-              body.appendChild(br);
+              brSlot.appendChild(br);
+              body.appendChild(brSlot);
               return;
             }
             var slotEl = document.createElement('div');
@@ -4994,9 +5005,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             slotEl.appendChild(cardsWrap);
             body.appendChild(slotEl);
           });
-          var spacer = document.createElement('div');
-          spacer.className = 'prog-day-spacer';
-          body.appendChild(spacer);
           grid.appendChild(col);
         });
       }
