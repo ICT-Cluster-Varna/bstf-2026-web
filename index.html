@@ -1053,15 +1053,11 @@
       border: 1px solid rgba(11, 57, 84, 0.08);
       border-left: 3px solid var(--room-dot, var(--teal));
       border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      box-shadow: var(--shadow);
+      padding: 14px 16px;
       transition: opacity 0.25s ease, filter 0.25s ease
     }
 
     .prog-ev-card .room {
-      display: flex;
-      align-items: center;
-      gap: 6px;
       font-family: var(--mono);
       font-size: 0.6rem;
       letter-spacing: 0.06em;
@@ -1070,19 +1066,10 @@
       margin-bottom: 6px
     }
 
-    .prog-ev-card .room::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      flex: none;
-      border-radius: 50%;
-      background: var(--room-dot, var(--teal))
-    }
-
     .prog-ev-card .title {
       font-weight: 600;
       font-size: 0.85rem;
-      line-height: 1.42;
+      line-height: 1.5;
       color: var(--navy);
       margin-bottom: 8px;
       text-wrap: balance
@@ -1090,6 +1077,11 @@
 
     .prog-ev-card .tag {
       display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: bottom;
       font-size: 0.6rem;
       font-weight: 600;
       letter-spacing: 0.02em;
@@ -1098,6 +1090,13 @@
       background: var(--light-blue);
       color: var(--teal-deep);
       border: 1px solid rgba(0, 205, 255, 0.25)
+    }
+
+    /* Paired (side-by-side) cards are narrower — shrink the tag further so
+       longer track names truncate instead of wrapping into a bulky 2-line pill. */
+    .prog-slot-cards.pair .tag {
+      font-size: 0.54rem;
+      padding: 2px 7px
     }
 
     .prog-ev-card.dim {
