@@ -1037,15 +1037,28 @@
     }
 
     /* Two sessions in the same time slot run in parallel (Hall Bulgaria +
-       Hall Varna) — show them side by side instead of stacked, so it
-       reads as "at the same time" rather than "one after another". */
-    .prog-slot-cards.pair {
-      flex-direction: row
+       Hall Varna). Full-width stacked cards read far more comfortably than
+       squeezing both into half-width columns — long titles need the room.
+       .parallel-tag (below) marks that they share the same time slot. */
+    .parallel-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: -2px 0;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--teal-deep)
     }
 
-    .prog-slot-cards.pair .prog-ev-card {
+    .parallel-tag::before,
+    .parallel-tag::after {
+      content: "";
       flex: 1;
-      min-width: 0
+      height: 1px;
+      background: rgba(0, 160, 204, 0.25)
     }
 
     .prog-ev-card {
@@ -1056,25 +1069,25 @@
       border: 1px solid rgba(11, 57, 84, 0.08);
       border-left: 3px solid var(--room-dot, var(--teal));
       border-radius: var(--radius-sm);
-      padding: 14px 16px;
+      padding: 16px 18px;
       transition: opacity 0.25s ease, filter 0.25s ease
     }
 
     .prog-ev-card .room {
       font-family: var(--mono);
-      font-size: 0.6rem;
+      font-size: 0.64rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text-light);
-      margin-bottom: 6px
+      margin-bottom: 7px
     }
 
     .prog-ev-card .title {
       font-weight: 600;
-      font-size: 0.85rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      line-height: 1.55;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       text-wrap: balance
     }
 
@@ -1085,21 +1098,14 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       vertical-align: bottom;
-      font-size: 0.6rem;
+      font-size: 0.64rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 99px;
       background: var(--light-blue);
       color: var(--teal-deep);
       border: 1px solid rgba(0, 205, 255, 0.25)
-    }
-
-    /* Paired (side-by-side) cards are narrower — shrink the tag further so
-       longer track names truncate instead of wrapping into a bulky 2-line pill. */
-    .prog-slot-cards.pair .tag {
-      font-size: 0.54rem;
-      padding: 2px 7px
     }
 
     .prog-ev-card.dim {
@@ -5006,8 +5012,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             slotEl.className = 'prog-slot' + (s.kind === 'single' ? ' single' : '');
             slotEl.innerHTML = '<div class="prog-slot-time">' + s.time + '</div>';
             var cardsWrap = document.createElement('div');
-            cardsWrap.className = 'prog-slot-cards' + (s.kind === 'double' ? ' pair' : '');
-            s.cards.forEach(function (c) {
+            cardsWrap.className = 'prog-slot-cards';
+            s.cards.forEach(function (c, i) {
+              if (s.kind === 'double' && i === 1) {
+                var ptag = document.createElement('div');
+                ptag.className = 'parallel-tag';
+                ptag.setAttribute('data-bg', 'По същото време');
+                ptag.setAttribute('data-en', 'At the same time');
+                ptag.textContent = 'По същото време';
+                cardsWrap.appendChild(ptag);
+              }
               var match = cardMatches(c, s.block);
               var card = document.createElement('div');
               card.className = 'prog-ev-card' + (match ? '' : ' dim');
