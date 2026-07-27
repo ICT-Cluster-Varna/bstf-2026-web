@@ -4393,6 +4393,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     - Every user-facing string carries data-bg/data-en attributes; the site-wide translation
       engine (applyTranslations(), see CLAUDE.md) swaps text based on the chosen language,
       the literal text node is the Bulgarian (default) copy.
+
+    NOTE: no HTML comments inside this section below this point — if this whole section
+    ever gets parked (wrapped in its own "<!-- ... -->"), a comment nested inside it would
+    prematurely close the outer one at its first "-->" and leak the rest of the markup back
+    into the live page. Keep all explanatory notes up here instead.
   -->
   <section class="program-section" id="program">
     <div class="container">
@@ -4401,14 +4406,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.
       </p>
 
-      <!-- Day switcher: data-day on each button must match the data-day on a .day-content below -->
       <div class="day-tabs">
         <button class="day-tab active" data-day="1" data-bg="5 октомври" data-en="5 October">5 октомври</button>
         <button class="day-tab" data-day="2" data-bg="6 октомври" data-en="6 October">6 октомври</button>
         <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
       </div>
 
-      <!-- Day 1 – Защо? (Why?) -->
       <div class="day-content active" data-day="1">
         <table class="schedule-table">
           <thead>
@@ -4485,7 +4488,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </table>
       </div>
 
-      <!-- Day 2 – Какво и как? (What and how?) -->
       <div class="day-content" data-day="2">
         <table class="schedule-table">
           <thead>
@@ -4570,7 +4572,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </table>
       </div>
 
-      <!-- Day 3 – Какво следва? (What's next?) -->
       <div class="day-content" data-day="3">
         <table class="schedule-table">
           <thead>
