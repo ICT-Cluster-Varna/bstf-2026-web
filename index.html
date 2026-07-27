@@ -1040,8 +1040,7 @@
        Hall Varna) — show them side by side instead of stacked, so it
        reads as "at the same time" rather than "one after another". */
     .prog-slot-cards.pair {
-      flex-direction: row;
-      align-items: flex-start
+      flex-direction: row
     }
 
     .prog-slot-cards.pair .prog-ev-card {
@@ -1050,6 +1049,9 @@
     }
 
     .prog-ev-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       background: var(--white);
       border: 1px solid rgba(11, 57, 84, 0.08);
       border-left: 3px solid var(--room-dot, var(--teal));
