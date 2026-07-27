@@ -4378,11 +4378,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!--
-    SECTION 5: Program — LIVE design (day-tabs). Currently the version deployed at bstf2026.bg.
-    Restored ACTIVE 2026-07-22. DO NOT REMOVE OR REPLACE without explicit sign-off — this is
-    the version currently online. The alternative "Smart Timeline / 3-Day Grid" design lives
-    further below, parked inside an HTML comment, and is being iterated on separately
-    (see the "program/smart-timeline-edit" branch) until it's ready to take over here.
+    SECTION 5: Program — LIVE design (day-tabs), currently deployed at bstf2026.bg.
+
+    PARKED HERE on the "program/smart-timeline-edit" branch only, so the Smart Timeline
+    design below can be edited/previewed in isolation. Do NOT merge this branch back
+    until the Smart Timeline replacement is signed off — on every other branch (main
+    line, deploy branches) this day-tabs section must stay ACTIVE/uncommented, since
+    it is the version currently online.
 
     Structure of this section:
     - .day-tabs: 3 buttons (one per conference day), data-day="1|2|3" selects which
@@ -4395,10 +4397,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       the literal text node is the Bulgarian (default) copy.
 
     NOTE: no HTML comments inside this section below this point — if this whole section
-    ever gets parked (wrapped in its own "<!-- ... -->"), a comment nested inside it would
-    prematurely close the outer one at its first "-->" and leak the rest of the markup back
-    into the live page. Keep all explanatory notes up here instead.
-  -->
+    ever gets parked (wrapped in its own HTML comment), a comment nested inside it would
+    prematurely close the outer one at its first comment-close marker and leak the rest of
+    the markup back into the live page. Keep all explanatory notes up here instead.
+
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -4649,11 +4651,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
   </section>
+  -->
 
-  <!-- SECTION 5: Program (3-Day Grid) — PARKED (2026-07-22), not active. day-tabs design above is live again.
-       Renders Day 1/2/3 as side-by-side columns so the full programme reads in one view on desktop;
-       stacks to one column below 1000px. -->
   <!--
+    SECTION 5: Program (3-Day Grid / "Smart Timeline") — ACTIVE FOR EDITING on this branch
+    ("program/smart-timeline-edit") only. day-tabs design above is temporarily parked so this
+    one can be previewed. Renders Day 1/2/3 as side-by-side columns so the whole programme
+    reads in one view on desktop; stacks to one column below 1000px.
+
+    Structure:
+    - PROGRAM_TRACKS: the 9 topical tracks available as filter pills (e.g. AI, Cybersecurity).
+    - PROGRAM_DAYS: source of truth for the schedule — 3 day objects, each with a `slots`
+      array. Every slot is either kind:'break' (a single-column coffee/lunch row) or
+      kind:'single'/'double' (1 or 2 side-by-side session cards). `block` groups slots that
+      share a filterable "Block" (used by the Block <select> in the filter bar).
+    - renderProgramTimeline() (IIFE below): wires up the filter bar (track pills + block
+      select), then calls render() to build the DOM from PROGRAM_DAYS/PROGRAM_TRACKS.
+      render() re-runs on every filter change, wiping and rebuilding #progGrid.
+    - window.bstfSetProgramTrack: called from the Home page's "Направления" (Tracks) cards
+      so clicking one scrolls here and pre-filters to that track.
+  -->
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -4928,7 +4945,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       };
     })();
   </script>
-  -->
 
   <!-- SECTION 6: Side Events -->
   <section class="side-events-section" style="border-top:1px solid rgba(0, 205, 255,0.12)">
