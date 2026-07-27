@@ -920,17 +920,19 @@
     .prog-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0 32px;
-      align-items: start
+      gap: 0 24px;
+      align-items: stretch
     }
 
     .prog-day-col {
-      min-width: 0
-    }
-
-    .prog-day-col+.prog-day-col {
-      border-left: 1px solid rgba(11, 57, 84, 0.12);
-      padding-left: 32px
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid rgba(11, 57, 84, 0.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px
     }
 
     .prog-day-col-head {
@@ -1047,35 +1049,32 @@
     .prog-break-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      color: var(--text-light);
+      gap: 8px;
+      color: #9a5b13;
       font-family: var(--mono);
-      font-size: 0.6rem;
+      font-size: 0.66rem;
+      font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 8px 0
+      margin: 6px 0;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: repeating-linear-gradient(135deg, rgba(217, 143, 33, 0.12) 0 10px, rgba(217, 143, 33, 0.05) 10px 20px);
+      border: 1px dashed rgba(217, 143, 33, 0.55)
     }
 
-    .prog-break-row::before,
-    .prog-break-row::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: rgba(11, 57, 84, 0.12)
+    .prog-break-row::before {
+      content: "☕";
+      flex: none;
+      font-size: 0.85rem;
+      line-height: 1;
+      filter: saturate(1.3)
     }
 
     @media(max-width:1000px) {
       .prog-grid {
         grid-template-columns: 1fr;
-        gap: 0
-      }
-
-      .prog-day-col+.prog-day-col {
-        border-left: none;
-        padding-left: 0;
-        border-top: 1px solid rgba(11, 57, 84, 0.14);
-        margin-top: 30px;
-        padding-top: 30px
+        gap: 20px
       }
 
       .prog-hall-legend {
