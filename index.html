@@ -1036,9 +1036,22 @@
       gap: 8px
     }
 
+    /* Two sessions in the same time slot run in parallel (Hall Bulgaria +
+       Hall Varna) — show them side by side instead of stacked, so it
+       reads as "at the same time" rather than "one after another". */
+    .prog-slot-cards.pair {
+      flex-direction: row
+    }
+
+    .prog-slot-cards.pair .prog-ev-card {
+      flex: 1;
+      min-width: 0
+    }
+
     .prog-ev-card {
       background: var(--white);
       border: 1px solid rgba(11, 57, 84, 0.08);
+      border-left: 3px solid var(--room-dot, var(--teal));
       border-radius: var(--radius-sm);
       padding: 12px 14px;
       box-shadow: var(--shadow);
@@ -4991,7 +5004,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             slotEl.className = 'prog-slot' + (s.kind === 'single' ? ' single' : '');
             slotEl.innerHTML = '<div class="prog-slot-time">' + s.time + '</div>';
             var cardsWrap = document.createElement('div');
-            cardsWrap.className = 'prog-slot-cards';
+            cardsWrap.className = 'prog-slot-cards' + (s.kind === 'double' ? ' pair' : '');
             s.cards.forEach(function (c) {
               var match = cardMatches(c, s.block);
               var card = document.createElement('div');
