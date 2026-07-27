@@ -4377,7 +4377,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- SECTION 5: Program — OLD design (day-tabs). Restored ACTIVE (2026-07-22) while the Smart Timeline / 3-Day Grid design is parked below, commented out. -->
+  <!--
+    SECTION 5: Program — LIVE design (day-tabs). Currently the version deployed at bstf2026.bg.
+    Restored ACTIVE 2026-07-22. DO NOT REMOVE OR REPLACE without explicit sign-off — this is
+    the version currently online. The alternative "Smart Timeline / 3-Day Grid" design lives
+    further below, parked inside an HTML comment, and is being iterated on separately
+    (see the "program/smart-timeline-edit" branch) until it's ready to take over here.
+
+    Structure of this section:
+    - .day-tabs: 3 buttons (one per conference day), data-day="1|2|3" selects which
+      .day-content block is shown. Only the button/content pair with .active is visible;
+      the rest are hidden via CSS (see ".day-content" / ".day-tab.active" rules near line 607).
+    - .day-content[data-day="N"]: one per day, each wrapping a .schedule-table with a
+      Час (Time) / Зала „България“ (Hall Bulgaria) / Зала „Варна“ (Hall Varna) column layout.
+    - Every user-facing string carries data-bg/data-en attributes; the site-wide translation
+      engine (applyTranslations(), see CLAUDE.md) swaps text based on the chosen language,
+      the literal text node is the Bulgarian (default) copy.
+  -->
   <section class="program-section" id="program">
     <div class="container">
       <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
@@ -4385,13 +4401,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.
       </p>
 
+      <!-- Day switcher: data-day on each button must match the data-day on a .day-content below -->
       <div class="day-tabs">
         <button class="day-tab active" data-day="1" data-bg="5 октомври" data-en="5 October">5 октомври</button>
         <button class="day-tab" data-day="2" data-bg="6 октомври" data-en="6 October">6 октомври</button>
         <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
       </div>
 
-      Day 1 – Защо?
+      <!-- Day 1 – Защо? (Why?) -->
       <div class="day-content active" data-day="1">
         <table class="schedule-table">
           <thead>
@@ -4468,7 +4485,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </table>
       </div>
 
-      Day 2 – Какво и как?
+      <!-- Day 2 – Какво и как? (What and how?) -->
       <div class="day-content" data-day="2">
         <table class="schedule-table">
           <thead>
@@ -4553,7 +4570,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </table>
       </div>
 
-      Day 3 – Какво следва?
+      <!-- Day 3 – Какво следва? (What's next?) -->
       <div class="day-content" data-day="3">
         <table class="schedule-table">
           <thead>
