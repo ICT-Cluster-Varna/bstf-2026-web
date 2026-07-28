@@ -1131,12 +1131,18 @@
         .prog-grid {
           display: flex;
           flex-direction: column;
+          align-items: stretch;
           gap: 0
         }
 
+        /* Stacked single column now — the side-by-side day divider (left
+          border + 32px indent) would just shove every Day 2/3 card off
+          the left edge for no reason, so drop it and let cards go full
+          width like Day 1's already do. */
         .prog-col-2,
         .prog-col-3 {
-          padding-left: 32px
+          border-left: none;
+          padding-left: 0
         }
 
         /* Only the 2nd/3rd day's header (not every cell) gets the divider
@@ -1160,6 +1166,15 @@
           border-top: 1px solid rgba(11, 57, 84, 0.14);
           margin-top: 30px;
           padding-top: 30px
+        }
+
+        /* The day header ("Ден 2", "6 октомври") already ran above, in the
+          aligned section — this smaller repeat label inside the tail
+          section just adds a redundant floating heading with nothing but
+          a time under it. The border-top divider above already marks the
+          day change, so drop the label instead of stacking two markers. */
+        .prog-tail-col-label {
+          display: none
         }
 
         .prog-hall-legend {
@@ -2385,6 +2400,83 @@
       .modal-success p {
         font-size: 0.9rem;
         color: var(--text-light)
+      }
+
+      /* Compact modal on phones so the whole form fits one screen without scrolling,
+        even once the mobile browser's address bar eats into the viewport height. */
+      @media(max-width:480px) {
+        .modal-overlay {
+          padding: 12px
+        }
+
+        .modal {
+          padding: 22px 18px 18px;
+          max-height: 94vh;
+          max-height: 94dvh
+        }
+
+        .modal-close {
+          top: 8px;
+          right: 8px;
+          width: 30px;
+          height: 30px;
+          font-size: 1rem
+        }
+
+        .modal-eyebrow {
+          font-size: 0.62rem;
+          margin-bottom: 6px
+        }
+
+        .modal h2 {
+          font-size: 1.2rem;
+          margin-bottom: 4px
+        }
+
+        .modal .modal-desc {
+          font-size: 0.82rem;
+          margin-bottom: 12px
+        }
+
+        .modal-pricing-link {
+          margin: -6px 0 14px
+        }
+
+        .form-group {
+          margin-bottom: 10px
+        }
+
+        .form-group label {
+          font-size: 0.78rem;
+          margin-bottom: 4px
+        }
+
+        .form-group .form-hint {
+          font-size: 0.72rem;
+          margin-top: 2px
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          padding: 9px 12px;
+          font-size: 0.85rem
+        }
+
+        .form-group select {
+          padding-right: 36px;
+          background-position: right 12px center
+        }
+
+        .form-group textarea {
+          min-height: 60px
+        }
+
+        .form-submit {
+          margin-top: 4px;
+          padding: 12px 28px;
+          font-size: 0.92rem
+        }
       }
 
       #bstf-btt {
@@ -4149,9 +4241,9 @@
             data-bg="Там, където Изтокът среща Западните иновации." data-en="Where East Meets Western Innovation.">Там,
             където Изтокът среща Западните иновации.</h2>
           <p class="home-cta-copy"
-            data-bg="3 дни, 10 тематични направления, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни градове."
-            data-en="3 days, 10 thematic streams, 30+ countries.<br>Don't miss the future of AI, Marine Tech, and Smart Cities.">
-            3 дни, 10 тематични направления, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни
+            data-bg="3 дни, 11 тематични области, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни градове."
+            data-en="3 days, 11 thematic areas, 30+ countries.<br>Don't miss the future of AI, Marine Tech, and Smart Cities.">
+            3 дни, 11 тематични области, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни
             градове.</p>
         </div>
       </section>
@@ -4902,7 +4994,8 @@
         var usedTracks = {};
         PROGRAM_DAYS.forEach(function (d) { d.slots.forEach(function (s) { (s.cards || []).forEach(function (c) { if (c.track) usedTracks[c.track] = true; }); }); });
 
-        var state = { track: null, block: '' };
+        var state = { tracks: {}, block: '' };
+        function selectedTrackCount() { return Object.keys(state.tracks).length; }
 
         // Filter bar: dropdown toggle
         var filterToggle = document.getElementById('progFilterToggle');
@@ -4922,7 +5015,7 @@
           filterToggle.setAttribute('aria-expanded', 'false');
         });
         function updateFilterBadge() {
-          filterBadge.hidden = !(state.track || state.block);
+          filterBadge.hidden = !(selectedTrackCount() > 0 || state.block);
         }
 
         // Filter bar: track pills
@@ -4935,7 +5028,7 @@
           b.setAttribute('data-bg', bg);
           b.setAttribute('data-en', en);
           b.textContent = bg;
-          b.addEventListener('click', function () { setTrackFilter(val); });
+          b.addEventListener('click', function () { toggleTrackFilter(val); });
           return b;
         }
         pillsWrap.appendChild(makePill('Всички', 'All', null));
@@ -4965,13 +5058,23 @@
         blockSelect.addEventListener('change', function () { state.block = blockSelect.value; updateFilterBadge(); render(); });
 
         document.getElementById('progClearBtn').addEventListener('click', function () {
-          state.track = null; state.block = ''; blockSelect.value = ''; syncPills(); updateFilterBadge(); render();
+          state.tracks = {}; state.block = ''; blockSelect.value = ''; syncPills(); updateFilterBadge(); render();
         });
 
-        function setTrackFilter(trackId) { state.track = trackId; syncPills(); updateFilterBadge(); render(); }
+        // "Всички" (val === null) resets the whole selection; any other pill
+        // toggles independently of the rest, so several tracks can be active
+        // together — click an already-active one again to drop just that one.
+        function toggleTrackFilter(trackId) {
+          if (trackId === null) { state.tracks = {}; }
+          else if (state.tracks[trackId]) { delete state.tracks[trackId]; }
+          else { state.tracks[trackId] = true; }
+          syncPills(); updateFilterBadge(); render();
+        }
         function syncPills() {
+          var noneSelected = selectedTrackCount() === 0;
           Array.prototype.forEach.call(pillsWrap.children, function (p) {
-            p.classList.toggle('active', (p.dataset.val || null) === (state.track || null));
+            var val = p.dataset.val || null;
+            p.classList.toggle('active', val === null ? noneSelected : !!state.tracks[val]);
           });
         }
 
@@ -4979,7 +5082,7 @@
         var tailGrid = document.getElementById('progGridTail');
 
         function cardMatches(card, slotBlock) {
-          var trackOk = !state.track || card.track === state.track;
+          var trackOk = selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
           var blockOk = !state.block || (slotBlock && slotBlock.id === state.block);
           return trackOk && blockOk;
         }
@@ -5110,10 +5213,16 @@
 
         render();
 
-        // Expose so Home "Направления" cards can pre-filter the timeline
+        // Expose so Home "Направления" cards can pre-filter the timeline.
+        // Coming from a Home card is a fresh "show me just this track" pick,
+        // not an add-on to whatever was already selected in the panel.
         window.bstfSetProgramTrack = function (trackId) {
           if (!usedTracks[trackId]) return;
-          setTrackFilter(trackId);
+          state.tracks = {};
+          state.tracks[trackId] = true;
+          syncPills();
+          updateFilterBadge();
+          render();
           var target = document.getElementById('prog-day-1');
           (target || document.getElementById('program')).scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
@@ -5144,7 +5253,7 @@
                 </svg>
               </div>
               <p class="event-meta" data-bg="5 октомври" data-en="Oct 5">5 октомври</p>
-              <h3 data-bg="TechnoStart Motivator" data-en="TechnoStart Motivator">TechnoStart Motivator</h3>
+              <h3 data-bg="TechnoStar Motivator" data-en="TechnoStar Motivator">TechnoStar Motivator</h3>
               <p data-bg="Вдъхновяваща сесия за стартиращи компании и предприемачи."
                 data-en="Inspirational session for startups and entrepreneurs.">Вдъхновяваща сесия за стартиращи
                 компании и предприемачи.</p>
