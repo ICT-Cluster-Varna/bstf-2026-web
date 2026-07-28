@@ -283,6 +283,8 @@ if (formType === "register") {
       ePackage = field("package"), eNotes = field("notes");
   var ePackageDisplay = formatPackageValue(ePackage);
   if (!eCompany || !eContact || !eEmail) sendJson(false, "Missing required fields");
+  if (eCompany.length < 2) sendJson(false, "Invalid company name");
+  if (!isRealName(eContact)) sendJson(false, "Invalid contact name");
   if (!isValidEmail(eEmail)) sendJson(false, "Invalid email");
   replyTo = eEmail;
   subject = "BSTF 2026 - \u0417\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b: " + eCompany;
@@ -309,7 +311,9 @@ if (formType === "register") {
   var sName = field("name"), sEmail = field("email"), sCompany = field("company"),
       sTopic = field("topic"), sStream = field("stream"), sDesc = field("description");
   if (!sName || !sEmail || !sTopic) sendJson(false, "Missing required fields");
+  if (!isRealName(sName)) sendJson(false, "Invalid name");
   if (!isValidEmail(sEmail)) sendJson(false, "Invalid email");
+  if (sTopic.length < 3) sendJson(false, "Invalid topic");
   replyTo = sEmail;
   subject = "BSTF 2026 - \u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440: " + sName;
   textBody = "\u041d\u043e\u0432\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440 - BSTF 2026\n\n" +

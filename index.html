@@ -5783,17 +5783,17 @@
             data-en="Apply for a booth at the BSTF 2026 expo.">Заявете щанд на BSTF 2026 изложението.</p>
           <a href="sponsors.html" class="modal-pricing-link" data-bg="Виж пълните цени и пакети &rarr;"
             data-en="See full pricing &amp; packages &rarr;">Виж пълните цени и пакети &rarr;</a>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Име на компанията" data-en="Company Name">Име на компанията</label>
-            <input type="text" id="exh-company" required>
+            <input type="text" id="exh-company" required aria-describedby="exhibitor-error">
           </div>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label>
-            <input type="text" id="exh-contact" required>
+            <input type="text" id="exh-contact" required aria-describedby="exhibitor-error">
           </div>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Имейл" data-en="Email">Имейл</label>
-            <input type="email" id="exh-email" required>
+            <input type="email" id="exh-email" required aria-describedby="exhibitor-error">
           </div>
           <div class="form-group">
             <label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
@@ -5822,7 +5822,7 @@
           </div>
           <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати заявка"
             data-en="Submit Application">Изпрати заявка</button>
-          <div class="form-error" id="exhibitor-error"
+          <div class="form-error" id="exhibitor-error" role="alert" aria-live="assertive"
             style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="exhibitor-success">
@@ -5851,21 +5851,21 @@
           <h2 data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
           <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
             data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
-            <input type="text" id="spk-name" required>
+            <input type="text" id="spk-name" required aria-describedby="speaker-error">
           </div>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Имейл" data-en="Email">Имейл</label>
-            <input type="email" id="spk-email" required>
+            <input type="email" id="spk-email" required aria-describedby="speaker-error">
           </div>
           <div class="form-group">
             <label data-bg="Компания / Организация" data-en="Company / Organization">Компания / Организация</label>
             <input type="text" id="spk-company">
           </div>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</label>
-            <input type="text" id="spk-topic" required>
+            <input type="text" id="spk-topic" required aria-describedby="speaker-error">
           </div>
           <div class="form-group">
             <label data-bg="Тематичен поток" data-en="Thematic Stream">Тематичен поток</label>
@@ -5890,7 +5890,7 @@
           </div>
           <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
             data-en="Submit Proposal">Изпрати предложение</button>
-          <div class="form-error" id="speaker-error"
+          <div class="form-error" id="speaker-error" role="alert" aria-live="assertive"
             style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="speaker-success">
@@ -6274,6 +6274,12 @@
           el.setAttribute('aria-invalid', invalid ? 'true' : 'false');
         }
 
+        // Shared field checks, reused across the register/exhibitor/speaker forms.
+        var BSTF_NAME_PATTERN = /^[A-Za-zÀ-ſЀ-ӿ]{2,}([\s'-][A-Za-zÀ-ſЀ-ӿ]{2,})*$/;
+        var BSTF_EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+        function bstfIsRealName(s) { return BSTF_NAME_PATTERN.test(s.trim()); }
+        function bstfIsValidEmail(s) { return BSTF_EMAIL_PATTERN.test(s.trim()); }
+
         function bstfSubmitForm(fields, btn, errorId, formId, successId) {
           var errorEl = document.getElementById(errorId);
           if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
@@ -6312,14 +6318,12 @@
 
           [nameEl, emailEl, phoneEl].forEach(function (el) { bstfMarkInvalid(el, false); });
 
-          var namePattern = /^[A-Za-zÀ-ſЀ-ӿ]{2,}([\s'-][A-Za-zÀ-ſЀ-ӿ]{2,})*$/;
-          if (!name.trim() || !namePattern.test(name.trim())) {
+          if (!name.trim() || !bstfIsRealName(name)) {
             bstfMarkInvalid(nameEl, true);
             bstfShowError('register-error', { bg: 'Моля, въведете истинско име (само букви).', en: 'Please enter your real name (letters only).' });
             return;
           }
-          var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
-          if (!email.trim() || !emailPattern.test(email.trim())) {
+          if (!email.trim() || !bstfIsValidEmail(email)) {
             bstfMarkInvalid(emailEl, true);
             bstfShowError('register-error', { bg: 'Моля, въведете валиден имейл адрес.', en: 'Please enter a valid email address.' });
             return;
@@ -6365,13 +6369,30 @@
         window.submitRegister = submitRegister;
 
         function submitExhibitor() {
-          var company = (document.getElementById('exh-company') || {}).value || '';
-          var contact = (document.getElementById('exh-contact') || {}).value || '';
-          var email = (document.getElementById('exh-email') || {}).value || '';
+          var companyEl = document.getElementById('exh-company');
+          var contactEl = document.getElementById('exh-contact');
+          var emailEl = document.getElementById('exh-email');
+          var company = (companyEl || {}).value || '';
+          var contact = (contactEl || {}).value || '';
+          var email = (emailEl || {}).value || '';
           var pkg = (document.getElementById('exh-package') || {}).value || '';
           var notes = (document.getElementById('exh-notes') || {}).value || '';
-          if (!company.trim() || !contact.trim() || !email.trim()) {
-            bstfShowError('exhibitor-error', { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' });
+
+          [companyEl, contactEl, emailEl].forEach(function (el) { bstfMarkInvalid(el, false); });
+
+          if (!company.trim() || company.trim().length < 2) {
+            bstfMarkInvalid(companyEl, true);
+            bstfShowError('exhibitor-error', { bg: 'Моля, въведете име на компанията.', en: 'Please enter the company name.' });
+            return;
+          }
+          if (!contact.trim() || !bstfIsRealName(contact)) {
+            bstfMarkInvalid(contactEl, true);
+            bstfShowError('exhibitor-error', { bg: 'Моля, въведете истинско име на лице за контакт (само букви).', en: 'Please enter a real contact person name (letters only).' });
+            return;
+          }
+          if (!email.trim() || !bstfIsValidEmail(email)) {
+            bstfMarkInvalid(emailEl, true);
+            bstfShowError('exhibitor-error', { bg: 'Моля, въведете валиден имейл адрес.', en: 'Please enter a valid email address.' });
             return;
           }
           var btn = document.querySelector('#exhibitor-form .form-submit');
@@ -6380,15 +6401,37 @@
         }
         window.submitExhibitor = submitExhibitor;
 
+        ['exh-company', 'exh-contact', 'exh-email'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.addEventListener('input', function () { bstfMarkInvalid(el, false); });
+        });
+
         function submitSpeaker() {
-          var name = (document.getElementById('spk-name') || {}).value || '';
-          var email = (document.getElementById('spk-email') || {}).value || '';
+          var nameEl = document.getElementById('spk-name');
+          var emailEl = document.getElementById('spk-email');
+          var topicEl = document.getElementById('spk-topic');
+          var name = (nameEl || {}).value || '';
+          var email = (emailEl || {}).value || '';
           var company = (document.getElementById('spk-company') || {}).value || '';
-          var topic = (document.getElementById('spk-topic') || {}).value || '';
+          var topic = (topicEl || {}).value || '';
           var stream = (document.getElementById('spk-stream') || {}).value || '';
           var desc = (document.getElementById('spk-desc') || {}).value || '';
-          if (!name.trim() || !email.trim() || !topic.trim()) {
-            bstfShowError('speaker-error', { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' });
+
+          [nameEl, emailEl, topicEl].forEach(function (el) { bstfMarkInvalid(el, false); });
+
+          if (!name.trim() || !bstfIsRealName(name)) {
+            bstfMarkInvalid(nameEl, true);
+            bstfShowError('speaker-error', { bg: 'Моля, въведете истинско име (само букви).', en: 'Please enter your real name (letters only).' });
+            return;
+          }
+          if (!email.trim() || !bstfIsValidEmail(email)) {
+            bstfMarkInvalid(emailEl, true);
+            bstfShowError('speaker-error', { bg: 'Моля, въведете валиден имейл адрес.', en: 'Please enter a valid email address.' });
+            return;
+          }
+          if (!topic.trim() || topic.trim().length < 3) {
+            bstfMarkInvalid(topicEl, true);
+            bstfShowError('speaker-error', { bg: 'Моля, въведете тема на лекцията.', en: 'Please enter a talk topic.' });
             return;
           }
           var btn = document.querySelector('#speaker-form .form-submit');
@@ -6396,6 +6439,11 @@
             btn, 'speaker-error', 'speaker-form', 'speaker-success');
         }
         window.submitSpeaker = submitSpeaker;
+
+        ['spk-name', 'spk-email', 'spk-topic'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.addEventListener('input', function () { bstfMarkInvalid(el, false); });
+        });
 
         // === Open modal buttons ===
         document.querySelectorAll('.open-register-modal').forEach(function (btn) {
