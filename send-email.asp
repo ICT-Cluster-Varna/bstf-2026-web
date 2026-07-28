@@ -168,7 +168,29 @@ function field(name) {
 }
 
 function isValidEmail(s) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+  return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(s);
+}
+
+// Character ranges built from char codes (not literal source characters) to
+// dodge encoding issues in this file's deploy pipeline: A-Za-z plus Latin
+// Extended-A (192-383, e.g. accented Latin) plus Cyrillic (1024-1279).
+var NAME_CHAR = "A-Za-z" + String.fromCharCode(192) + "-" + String.fromCharCode(383) +
+  String.fromCharCode(1024) + "-" + String.fromCharCode(1279);
+var NAME_RE = new RegExp("^[" + NAME_CHAR + "]{2,}([\\s'-][" + NAME_CHAR + "]{2,})*$");
+function isRealName(s) {
+  return NAME_RE.test(s);
+}
+
+// Format only - E.164 shape (+ then 1-9, never 0, per ITU E.164) or a national
+// number with the domestic trunk "0" prefix. Doesn't (and can't, without a
+// carrier lookup or SMS OTP) confirm the number is real/reachable - e.g.
+// "+999999999999" is E.164-shaped but 999 isn't an assigned country code.
+function isRealPhone(s) {
+  var digits = String(s).replace(/[\s\-()]/g, "");
+  if (!/^(\+[1-9]\d{6,14}|0\d{6,11})$/.test(digits)) return false;
+  var core = digits.replace(/^\+/, "");
+  if (/^(\d)\1+$/.test(core)) return false;
+  return true;
 }
 
 if (String(Request.ServerVariables("REQUEST_METHOD")) !== "POST") {
@@ -225,8 +247,10 @@ if (formType === "register") {
     }
   }
 
-  if (!rName || !rEmail) sendJson(false, "Missing required fields");
+  if (!rName || !rEmail || !rPhone) sendJson(false, "Missing required fields");
   if (!isValidEmail(rEmail)) sendJson(false, "Invalid email");
+  if (!isRealName(rName)) sendJson(false, "Invalid name");
+  if (!isRealPhone(rPhone)) sendJson(false, "Invalid phone");
   replyTo = rEmail;
   subject = "BSTF 2026 - \u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f: " + rName;
   textBody = "\u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430 BSTF 2026\n\n" +

@@ -1456,11 +1456,25 @@
       .ticket-price .ticket-discount-note {
         display: block;
         font-family: 'Inter', sans-serif;
-        font-size: 0.8rem;
+        font-size: 1.05rem;
         font-weight: 700;
         letter-spacing: 0.02em;
         color: var(--teal);
-        margin-top: 6px
+        margin-top: 8px
+      }
+
+      .ticket-price .ticket-discount-source {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: var(--text-light);
+        margin-top: 4px
+      }
+
+      .ticket-price .ticket-discount-source strong {
+        font-weight: 700;
+        color: var(--navy)
       }
 
       .ticket-period {
@@ -1866,17 +1880,11 @@
         max-width: 380px;
         width: 100%;
         background: var(--white);
-        border-radius: 6px;
-        box-shadow: 0 24px 55px rgba(0, 0, 0, .38);
-        transform: rotate(-1.4deg);
+        border-radius: 4px;
+        border: 1px solid rgba(11, 57, 84, .1);
+        box-shadow: 0 16px 40px rgba(11, 57, 84, .18);
+        font-family: 'myriad-pro', 'Inter', sans-serif;
         overflow: hidden
-      }
-
-      .venue-pass::before {
-        content: '';
-        display: block;
-        height: 6px;
-        background: linear-gradient(90deg, var(--teal), var(--navy))
       }
 
       .venue-pass-body {
@@ -1889,7 +1897,7 @@
         gap: 16px;
         padding-bottom: 22px;
         margin-bottom: 22px;
-        border-bottom: 1px dashed rgba(11, 57, 84, .18)
+        border-bottom: 1px solid rgba(11, 57, 84, .12)
       }
 
       .venue-pass-row:last-child {
@@ -1932,7 +1940,7 @@
         font-weight: 700;
         font-size: 1.02rem;
         text-decoration: none;
-        border-top: 2px dashed rgba(11, 57, 84, .22);
+        border-top: 1px solid rgba(11, 57, 84, .12);
         transition: background .2s ease, color .2s ease
       }
 
@@ -2288,6 +2296,11 @@
         margin-bottom: 6px
       }
 
+      .form-group.required label::after {
+        content: " *";
+        color: #ff6b6b
+      }
+
       .form-group .form-hint {
         display: block;
         font-size: 0.78rem;
@@ -2318,6 +2331,18 @@
         outline: none;
         border-color: var(--teal);
         box-shadow: 0 0 0 3px rgba(0, 205, 255, 0.18)
+      }
+
+      .form-group input.field-invalid,
+      .form-group select.field-invalid,
+      .form-group textarea.field-invalid {
+        border-color: #ff6b6b
+      }
+
+      .form-group input.field-invalid:focus,
+      .form-group select.field-invalid:focus,
+      .form-group textarea.field-invalid:focus {
+        box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.18)
       }
 
       .form-group select {
@@ -2633,6 +2658,27 @@
           text-align: center
         }
 
+        footer.main-footer {
+          padding: 48px 0 70px
+        }
+
+        .footer-col a {
+          padding: 9px 0
+        }
+
+        .footer-tagline {
+          letter-spacing: 0.25em !important
+        }
+
+        .footer-brand img {
+          margin-left: auto !important;
+          margin-right: auto !important
+        }
+
+        .footer-social {
+          justify-content: center !important
+        }
+
         .nav-links {
           display: none !important
         }
@@ -2664,8 +2710,6 @@
           font-size: 1.75rem
         }
 
-        .ticket-features,
-        .ticket-features li,
         .expo-v2__desc,
         .partner-row__content--text,
         .partners-thanks,
@@ -2674,8 +2718,6 @@
           text-align: center
         }
 
-        .ticket-features li,
-        .expo-v2__row,
         .partner-row__content--text,
         .partner-row__logos,
         .cx-stat,
@@ -2684,9 +2726,18 @@
           justify-content: center
         }
 
-        .expo-v2__row,
         .cx-stat {
           align-items: center
+        }
+
+        .expo-v2__row {
+          justify-content: flex-start;
+          align-items: flex-start;
+          text-align: left
+        }
+
+        .expo-v2__row span {
+          text-align: left
         }
 
         .venue-heading {
@@ -2905,9 +2956,7 @@
         }
 
         .ticket-features {
-          max-width: 30ch;
-          margin-left: auto;
-          margin-right: auto
+          padding: 0 18px
         }
 
         .events-timeline__grid {
@@ -2933,7 +2982,9 @@
         }
 
         .footer-grid {
-          grid-template-columns: 1fr
+          grid-template-columns: 1fr;
+          gap: 32px;
+          margin-bottom: 32px
         }
 
         .footer-bottom {
@@ -3392,6 +3443,11 @@
           align-items: stretch;
           gap: 36px;
           padding: 56px 0 40px
+        }
+
+        .venue-heading-block {
+          flex: none;
+          min-width: 0
         }
 
         .venue-heading {
@@ -5194,6 +5250,7 @@
           PROGRAM_DAYS.forEach(function (d, colIdx) {
             var col = document.createElement('div');
             col.className = 'prog-tail-col prog-col-' + (colIdx + 1);
+            col.id = 'prog-tail-col-' + d.id;
 
             if (commonN < d.slots.length) {
               var label = document.createElement('div');
@@ -5205,13 +5262,57 @@
             }
 
             for (var j = commonN; j < d.slots.length; j++) {
-              col.appendChild(buildSlotCell(d.slots[j], colIdx, false));
+              var cell = buildSlotCell(d.slots[j], colIdx, false);
+              cell.dataset.slotIdx = j;
+              col.appendChild(cell);
             }
             tailGrid.appendChild(col);
           });
+
+          equalizeTailRows(commonN);
+        }
+
+        // Day 2 and Day 3 keep running the identical run of session kinds
+        // for a while even after Day 1 breaks away for good (Block 3 ->
+        // break -> closing session — see commonPrefixLength above for why
+        // Day 1 can't join in). But since the tail columns above are just
+        // two independent flows, a differently-long card title on one day
+        // shifts everything below it out of step with the other — most
+        // visibly the closing coffee break landing at two different
+        // heights. Force each matching pair to share the taller one's
+        // height so that run of rows stays level, the same guarantee the
+        // aligned grid above gives the fully-common prefix. Skipped below
+        // the 1000px breakpoint, where the tail collapses to one stacked
+        // column and Day 2/Day 3 are no longer side by side.
+        function equalizeTailRows(commonN) {
+          var d2 = PROGRAM_DAYS[1], d3 = PROGRAM_DAYS[2];
+          if (!d2 || !d3) return;
+          var col2 = document.getElementById('prog-tail-col-' + d2.id);
+          var col3 = document.getElementById('prog-tail-col-' + d3.id);
+          if (!col2 || !col3) return;
+          var minLen = Math.min(d2.slots.length, d3.slots.length);
+          var narrow = window.innerWidth <= 1000;
+          for (var j = commonN; j < minLen; j++) {
+            if (d2.slots[j].kind !== d3.slots[j].kind) break;
+            var cell2 = col2.querySelector('[data-slot-idx="' + j + '"]');
+            var cell3 = col3.querySelector('[data-slot-idx="' + j + '"]');
+            if (!cell2 || !cell3) continue;
+            cell2.style.minHeight = '';
+            cell3.style.minHeight = '';
+            if (narrow) continue;
+            var h = Math.max(cell2.offsetHeight, cell3.offsetHeight) + 'px';
+            cell2.style.minHeight = h;
+            cell3.style.minHeight = h;
+          }
         }
 
         render();
+
+        var tailResizeTimer;
+        window.addEventListener('resize', function () {
+          clearTimeout(tailResizeTimer);
+          tailResizeTimer = setTimeout(function () { equalizeTailRows(commonPrefixLength()); }, 150);
+        });
 
         // Expose so Home "Направления" cards can pre-filter the timeline.
         // Coming from a Home card is a fresh "show me just this track" pick,
@@ -5406,12 +5507,12 @@
               Варна.<br>Където <span class="venue-accent">Черно море</span><br>се среща с дълбоките<br>технологии.
             </h2>
           </div>
-          <!-- Right: Boarding-pass style info card -->
+          <!-- Right: Classic info card -->
           <div class="venue-pass">
             <div class="venue-pass-body">
               <div class="venue-pass-row">
                 <div class="venue-pass-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                     <line x1="16" y1="2" x2="16" y2="6" />
@@ -5426,7 +5527,7 @@
               </div>
               <div class="venue-pass-row">
                 <div class="venue-pass-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
@@ -5588,12 +5689,12 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="images/Connexus - WHITE.svg?v=20260723-4" alt="Connexus" style="height:28px;margin-bottom:4px">
-            <p style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:10px"
+            <img src="images/Connexus - WHITE.svg?v=20260723-4" alt="Connexus" style="height:28px;margin-bottom:14px">
+            <p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px"
               data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
             <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
               форум</p>
-            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:4px"
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:8px"
               data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии
               от 7-мо поколение без граници</p>
           </div>
@@ -5615,7 +5716,7 @@
             <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
             <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
             <a href="tel:+359876658296">+359 876 658 296</a>
-            <div style="display:flex;gap:12px;margin-top:16px">
+            <div class="footer-social" style="display:flex;gap:12px;margin-top:16px">
               <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank"
                 rel="noopener noreferrer" aria-label="LinkedIn"
                 style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
@@ -5644,17 +5745,17 @@
           <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
             data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
           <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
-            <input type="text" id="reg-name" placeholder="John Doe" required>
+            <input type="text" id="reg-name" placeholder="John Doe" required aria-describedby="register-error">
           </div>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Имейл" data-en="Email">Имейл</label>
-            <input type="email" id="reg-email" placeholder="john@example.com" required>
+            <input type="email" id="reg-email" placeholder="john@example.com" required aria-describedby="register-error">
           </div>
-          <div class="form-group">
+          <div class="form-group required">
             <label data-bg="Телефон" data-en="Phone">Телефон</label>
-            <input type="tel" id="reg-phone" placeholder="+359 ...">
+            <input type="tel" id="reg-phone" placeholder="+359 ..." required inputmode="tel" aria-describedby="register-error">
           </div>
           <div class="form-group">
             <label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
@@ -5691,7 +5792,7 @@
           </div>
           <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
             data-en="Register">Регистрирай се</button>
-          <div class="form-error" id="register-error"
+          <div class="form-error" id="register-error" role="alert" aria-live="assertive"
             style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="register-success">
@@ -5887,28 +5988,49 @@
         // discount display state rather than adding to it, so re-calling with
         // a blank/invalid code resets the prices back to normal (no "stuck"
         // discount left over from a previously-typed value).
+        function bstfEscapeHtml(str) {
+          return String(str).replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+          });
+        }
+
         function applyPromoDisplay(code) {
           var promo = bstfFindPromo(code);
           var showDiscount = !!(promo && promo.discountVisible);
           var pct = showDiscount ? (Number(promo.discountPercent) || 0) : 0;
           if (pct <= 0 || pct >= 100) showDiscount = false;
+          var company = (showDiscount && promo.company) ? bstfEscapeHtml(promo.company) : '';
 
           document.querySelectorAll('.ticket-price[data-base-price]').forEach(function (priceEl) {
             var base = Number(priceEl.getAttribute('data-base-price'));
             var current = priceEl.querySelector('.ticket-price-current');
             var existingNote = priceEl.querySelector('.ticket-discount-note');
             if (existingNote) existingNote.parentNode.removeChild(existingNote);
+            var existingSource = priceEl.querySelector('.ticket-discount-source');
+            if (existingSource) existingSource.parentNode.removeChild(existingSource);
             if (!base || !current) return;
 
             if (showDiscount) {
               var discounted = Math.round(base * (1 - pct / 100));
               current.innerHTML = '<span class="ticket-price-old">&euro;' + base + '</span>&euro;' + discounted;
+
               var note = document.createElement('span');
               note.className = 'ticket-discount-note';
               note.setAttribute('data-bg', 'Вашата отстъпка: ' + pct + '%');
               note.setAttribute('data-en', 'Your discount: ' + pct + '%');
-              note.textContent = bstfFormMsg({ bg: 'Вашата отстъпка: ' + pct + '%', en: 'Your discount: ' + pct + '%' });
+              note.innerHTML = bstfFormMsg({ bg: 'Вашата отстъпка: ' + pct + '%', en: 'Your discount: ' + pct + '%' });
               priceEl.appendChild(note);
+
+              if (company) {
+                var source = document.createElement('span');
+                source.className = 'ticket-discount-source';
+                var bgHtml = 'Осигурено от <strong>' + company + '</strong>';
+                var enHtml = 'Provided by <strong>' + company + '</strong>';
+                source.setAttribute('data-bg', bgHtml);
+                source.setAttribute('data-en', enHtml);
+                source.innerHTML = bstfFormMsg({ bg: bgHtml, en: enHtml });
+                priceEl.appendChild(source);
+              }
             } else {
               current.innerHTML = '&euro;' + base;
             }
@@ -6136,6 +6258,11 @@
         }
         window.openModal = openModal;
 
+        ['reg-name', 'reg-email', 'reg-phone'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.addEventListener('input', function () { bstfMarkInvalid(el, false); });
+        });
+
         function closeModal(id) {
           var modal = document.getElementById(id);
           if (!modal || !modal.classList.contains('open') || modal.classList.contains('closing')) return;
@@ -6181,6 +6308,12 @@
           if (errorEl) { errorEl.textContent = bstfFormMsg(msg); errorEl.style.display = 'block'; }
         }
 
+        function bstfMarkInvalid(el, invalid) {
+          if (!el) return;
+          el.classList.toggle('field-invalid', invalid);
+          el.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+        }
+
         function bstfSubmitForm(fields, btn, errorId, formId, successId) {
           var errorEl = document.getElementById(errorId);
           if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
@@ -6207,14 +6340,41 @@
         }
 
         function submitRegister() {
-          var name = (document.getElementById('reg-name') || {}).value || '';
-          var email = (document.getElementById('reg-email') || {}).value || '';
-          var phone = (document.getElementById('reg-phone') || {}).value || '';
+          var nameEl = document.getElementById('reg-name');
+          var emailEl = document.getElementById('reg-email');
+          var phoneEl = document.getElementById('reg-phone');
+          var name = (nameEl || {}).value || '';
+          var email = (emailEl || {}).value || '';
+          var phone = (phoneEl || {}).value || '';
           var ticket = (document.getElementById('reg-ticket') || {}).value || '';
           var companyType = (document.getElementById('reg-company-type') || {}).value || '';
           var promoField = ((document.getElementById('reg-promo') || {}).value || '').trim();
-          if (!name.trim() || !email.trim()) {
-            bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' });
+
+          [nameEl, emailEl, phoneEl].forEach(function (el) { bstfMarkInvalid(el, false); });
+
+          var namePattern = /^[A-Za-zÀ-ſЀ-ӿ]{2,}([\s'-][A-Za-zÀ-ſЀ-ӿ]{2,})*$/;
+          if (!name.trim() || !namePattern.test(name.trim())) {
+            bstfMarkInvalid(nameEl, true);
+            bstfShowError('register-error', { bg: 'Моля, въведете истинско име (само букви).', en: 'Please enter your real name (letters only).' });
+            return;
+          }
+          var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+          if (!email.trim() || !emailPattern.test(email.trim())) {
+            bstfMarkInvalid(emailEl, true);
+            bstfShowError('register-error', { bg: 'Моля, въведете валиден имейл адрес.', en: 'Please enter a valid email address.' });
+            return;
+          }
+          var phoneDigits = phone.replace(/[\s\-()]/g, '');
+          // Format only - E.164 shape (+ then 1-9, never 0, per ITU E.164) or a
+          // national number with the domestic trunk "0" prefix. Doesn't (and can't,
+          // without a carrier lookup or SMS OTP) confirm the number is real/reachable -
+          // e.g. "+999999999999" is E.164-shaped but 999 isn't an assigned country code.
+          var phonePattern = /^(\+[1-9]\d{6,14}|0\d{6,11})$/;
+          var phoneCore = phoneDigits.replace(/^\+/, '');
+          var isAllSameDigit = /^(\d)\1+$/.test(phoneCore);
+          if (!phoneDigits.trim() || !phonePattern.test(phoneDigits) || isAllSameDigit) {
+            bstfMarkInvalid(phoneEl, true);
+            bstfShowError('register-error', { bg: 'Моля, въведете валиден телефонен номер (само цифри, 8-15 символа).', en: 'Please enter a valid phone number (digits only, 8-15 characters).' });
             return;
           }
 
