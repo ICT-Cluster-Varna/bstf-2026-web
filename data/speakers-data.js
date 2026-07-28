@@ -248,7 +248,7 @@
       id: 'kristina-eskenazi', track: 'biotech',
       img: 'images/speakers/kristina-eskenazi.jpg?v=20260716', alt: 'Kristina Eskenazi',
       objectPosition: 'center top',
-      name: 'Кристина Ескенази',
+      name: 'Кристина Ешкенази',
       nameEn: 'Kristina Eskenazi',
       role: 'Chair @ Health &amp; Life Sciences Cluster Bulgaria',
       topicBg: 'Бъдещето на здравеопазването: от изследвания към мащабни иновации',
