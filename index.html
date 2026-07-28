@@ -863,19 +863,6 @@
       color: var(--white)
     }
 
-    .prog-fb-select {
-      width: 100%;
-      font: inherit;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy);
-      background: var(--light-gray);
-      border: 1px solid transparent;
-      border-radius: var(--radius-sm);
-      padding: 8px 12px;
-      cursor: pointer
-    }
-
     .prog-fb-clear {
       width: 100%;
       text-align: center;
@@ -4767,12 +4754,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="prog-fb-panel" id="progFilterPanel">
           <div class="prog-fb-row">
-            <span class="prog-fb-label" data-bg="Направление" data-en="Track">Направление</span>
+            <span class="prog-fb-label" data-bg="Тематична област" data-en="Thematic Area">Тематична област</span>
             <div class="prog-fb-pills" id="progTrackPills"></div>
-          </div>
-          <div class="prog-fb-row">
-            <span class="prog-fb-label" data-bg="Блок" data-en="Block">Блок</span>
-            <select class="prog-fb-select" id="progBlockSelect"></select>
           </div>
           <button class="prog-fb-clear" id="progClearBtn" data-bg="изчисти филтрите" data-en="clear filters">изчисти
             филтрите</button>
@@ -4885,7 +4868,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var usedTracks = {};
       PROGRAM_DAYS.forEach(function (d) { d.slots.forEach(function (s) { (s.cards || []).forEach(function (c) { if (c.track) usedTracks[c.track] = true; }); }); });
 
-      var state = { track: null, block: '' };
+      var state = { track: null };
 
       // Filter bar: dropdown toggle
       var filterToggle = document.getElementById('progFilterToggle');
@@ -4905,7 +4888,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         filterToggle.setAttribute('aria-expanded', 'false');
       });
       function updateFilterBadge() {
-        filterBadge.hidden = !(state.track || state.block);
+        filterBadge.hidden = !state.track;
       }
 
       // Filter bar: track pills
@@ -4926,29 +4909,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         pillsWrap.appendChild(makePill(t.bg, t.en, t.id));
       });
 
-      // Filter bar: block select
-      var blockSelect = document.getElementById('progBlockSelect');
-      var allBlocksOpt = document.createElement('option');
-      allBlocksOpt.value = '';
-      allBlocksOpt.setAttribute('data-bg', 'Всички блокове');
-      allBlocksOpt.setAttribute('data-en', 'All blocks');
-      allBlocksOpt.textContent = 'Всички блокове';
-      blockSelect.appendChild(allBlocksOpt);
-      PROGRAM_DAYS.forEach(function (d) {
-        d.slots.forEach(function (s) {
-          if (!s.block) return;
-          var o = document.createElement('option');
-          o.value = s.block.id;
-          o.setAttribute('data-bg', s.block.bg);
-          o.setAttribute('data-en', s.block.en);
-          o.textContent = s.block.bg;
-          blockSelect.appendChild(o);
-        });
-      });
-      blockSelect.addEventListener('change', function () { state.block = blockSelect.value; updateFilterBadge(); render(); });
-
       document.getElementById('progClearBtn').addEventListener('click', function () {
-        state.track = null; state.block = ''; blockSelect.value = ''; syncPills(); updateFilterBadge(); render();
+        state.track = null; syncPills(); updateFilterBadge(); render();
       });
 
       function setTrackFilter(trackId) { state.track = trackId; syncPills(); updateFilterBadge(); render(); }
@@ -4961,10 +4923,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var grid = document.getElementById('progGrid');
       var tailGrid = document.getElementById('progGridTail');
 
-      function cardMatches(card, slotBlock) {
-        var trackOk = !state.track || card.track === state.track;
-        var blockOk = !state.block || (slotBlock && slotBlock.id === state.block);
-        return trackOk && blockOk;
+      function cardMatches(card) {
+        return !state.track || card.track === state.track;
       }
 
       function buildHeaderCell(d, colIdx) {
