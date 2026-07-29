@@ -6004,7 +6004,7 @@
             });
           }
 
-          fetch('promo-codes.json').then(function (res) {
+          fetch('data/promo-codes.json').then(function (res) {
             return res.ok ? res.json() : null;
           }).then(function (data) {
             if (!data || !Array.isArray(data.promoCodes)) return;
