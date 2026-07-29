@@ -5936,10 +5936,10 @@
 
         function bstfFindPromo(code) {
           if (!code) return null;
-          var upper = code.trim().toUpperCase();
-          if (!upper) return null;
+          var trimmed = code.trim();
+          if (!trimmed) return null;
           for (var i = 0; i < bstfPromo.list.length; i++) {
-            if ((bstfPromo.list[i].code || '').toUpperCase() === upper) return bstfPromo.list[i];
+            if ((bstfPromo.list[i].code || '') === trimmed) return bstfPromo.list[i];
           }
           return null;
         }
