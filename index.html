@@ -5936,10 +5936,10 @@
 
         function bstfFindPromo(code) {
           if (!code) return null;
-          var upper = code.trim().toUpperCase();
-          if (!upper) return null;
+          var trimmed = code.trim();
+          if (!trimmed) return null;
           for (var i = 0; i < bstfPromo.list.length; i++) {
-            if ((bstfPromo.list[i].code || '').toUpperCase() === upper) return bstfPromo.list[i];
+            if ((bstfPromo.list[i].code || '') === trimmed) return bstfPromo.list[i];
           }
           return null;
         }
@@ -5984,11 +5984,7 @@
               if (company) {
                 var source = document.createElement('span');
                 source.className = 'ticket-discount-source';
-                var bgHtml = 'Осигурено от <strong>' + company + '</strong>';
-                var enHtml = 'Provided by <strong>' + company + '</strong>';
-                source.setAttribute('data-bg', bgHtml);
-                source.setAttribute('data-en', enHtml);
-                source.innerHTML = bstfFormMsg({ bg: bgHtml, en: enHtml });
+                source.innerHTML = 'Осигурено от <strong>' + company + '</strong>';
                 priceEl.appendChild(source);
               }
             } else {
@@ -6008,7 +6004,7 @@
             });
           }
 
-          fetch('promo-codes.json').then(function (res) {
+          fetch('data/promo-codes.json').then(function (res) {
             return res.ok ? res.json() : null;
           }).then(function (data) {
             if (!data || !Array.isArray(data.promoCodes)) return;
