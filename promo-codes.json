@@ -2,7 +2,7 @@
   "promoCodes": [
     {
       "code": "ARDES",
-      "company": "ARDES",
+      "company": "Ardes",
       "discountPercent": 10,
       "discountVisible": true
     },
@@ -13,172 +13,197 @@
       "discountVisible": true
     },
     {
-      "code": "ABILIX",
+      "code": "ABSCLOUD",
       "company": "Абиликс Софт",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Abilix Soft"
     },
     {
       "code": "ADVANCEDVISION",
-      "company": "Advanced Vision IT",
+      "company": "Адвансд Вижън ИТ",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Advanced Vision IT"
     },
     {
       "code": "IDSGLOBAL",
-      "company": "IDS Global",
+      "company": "АйДиЕс Глобъл",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "IDS Global"
     },
     {
       "code": "ALTSCALE",
-      "company": "Altscale България",
+      "company": "Алтскейл България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Altscale Bulgaria"
     },
     {
       "code": "BGLEADS",
-      "company": "BG Leads",
+      "company": "БГ Лийдс",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "BG Leads"
     },
     {
       "code": "BARCODESYSTEMS",
-      "company": "Barcode Системи България",
+      "company": "Баркод Системи България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Barcode Systems Bulgaria"
     },
     {
-      "code": "VVMU",
-      "company": "ВВМУ \"Никола Вапцаров\"",
+      "code": "NAVALACADEMY",
+      "company": "Висше Военноморско Училище \"Никола Йонков Вапцаров\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Nikola Vaptsarov Naval Academy"
     },
     {
       "code": "VIBO",
       "company": "ВИБО Инженеринг",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "VIBO Engineering"
     },
     {
-      "code": "VITEH",
-      "company": "ВИТЕХ",
+      "code": "VTECH",
+      "company": "VTech",
       "discountPercent": 10,
       "discountVisible": true
     },
     {
       "code": "VIVACOM",
-      "company": "Vivacom",
+      "company": "Виваком България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Vivacom"
     },
     {
       "code": "DXC",
-      "company": "DXC Technology България",
+      "company": "Ди Екс Си Технолоджи България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "DXC Technology Bulgaria"
     },
     {
       "code": "ZARIBA",
-      "company": "Зариба",
+      "company": "Зариба ЕООД",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Zariba"
     },
     {
       "code": "ITRCONSULT",
       "company": "ИТР Мениджмънт Консулт",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "ITR Management Consult"
     },
     {
-      "code": "ECONVARNA",
+      "code": "UEVARNA",
       "company": "Икономически университет - Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "University of Economics - Varna"
     },
     {
       "code": "KBCGLOBAL",
-      "company": "KBC Global Services BG",
+      "company": "Кей Би Си Глобал Сървисис България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "KBC Global Services BG"
     },
     {
       "code": "MULTIMEDIA",
-      "company": "Multimedia.bg",
+      "company": "Мултимедия.БГ",
       "discountPercent": 10,
       "discountVisible": true
     },
     {
       "code": "NAUTICBLUE",
-      "company": "NauticBlue",
+      "company": "НаутикБлу",
       "discountPercent": 10,
       "discountVisible": true
     },
     {
       "code": "NETPEAK",
-      "company": "Netpeak",
+      "company": "Нетпик България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Netpeak"
     },
     {
       "code": "PERFOMALIS",
       "company": "Перфомалис",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Perfomalis"
     },
     {
       "code": "PONTICA",
-      "company": "Pontica Solutions",
+      "company": "Понтика Солюшънс",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Pontica Solutions"
     },
     {
       "code": "PROINTEGRA",
       "company": "Проинтегра",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Prointegra"
     },
     {
       "code": "REGIOCOM",
-      "company": "Regiocom България",
+      "company": "Региоком България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Regiocom Bulgaria"
     },
     {
       "code": "RONEVA",
-      "company": "Ронева",
+      "company": "Ронева ООД",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Roneva"
     },
     {
       "code": "ROYALTECH",
       "company": "Роял Технолоджи",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Royal Technology"
     },
     {
       "code": "SISTECH",
       "company": "СИС Технология",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "SIS Technology"
     },
     {
       "code": "SOLVAY",
-      "company": "Solvay Sodi",
+      "company": "Солвей Соди",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Solvay Sodi"
     },
     {
       "code": "SOFTSERVE",
-      "company": "SoftServe България",
+      "company": "Софтсърв България",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "SoftServe Bulgaria"
     },
     {
-      "code": "SARVISOES",
-      "company": "Service OS",
+      "code": "SERVICEOS",
+      "company": "Сървис О Ес",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "ServiceOS"
     },
     {
       "code": "TOPRENTACAR",
@@ -187,46 +212,51 @@
       "discountVisible": true
     },
     {
-      "code": "TELECOMVARNA",
-      "company": "Телекомуникационна компания Варна",
+      "code": "TCV",
+      "company": "TCV - Телекомуникационна компания Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "TCV - Telecommunication Company Varna"
     },
     {
       "code": "TEMPUS2000",
       "company": "Темпус 2000",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Tempus 2000"
     },
     {
       "code": "TUVARNA",
       "company": "Технически университет - Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Technical University of Varna"
     },
     {
       "code": "UCHASE",
-      "company": "Ucha.se",
+      "company": "Уча.се",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Ucha.se"
     },
     {
       "code": "FANCYSTUDIO",
-      "company": "Фенси-студио",
+      "company": "Фенси-студио ООД",
       "discountPercent": 10,
       "discountVisible": true
     },
     {
       "code": "SHOPMETRICS",
-      "company": "ShopMetrics Европа",
+      "company": "Шопметрикс Европа",
       "discountPercent": 10,
       "discountVisible": true
     },
     {
-      "code": "SHUMENUNI",
+      "code": "SHU",
       "company": "Шуменски университет „Епископ Константин Преславски\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Konstantin Preslavsky University of Shumen"
     },
     {
       "code": "UNBELIEVABLE",
@@ -236,63 +266,73 @@
     },
     {
       "code": "UNICORNSYSTEMS",
-      "company": "Unicorn Systems",
+      "company": "Юникорн Системс",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Unicorn Systems"
     },
     {
-      "code": "SU7NAYDENGEROV",
+      "code": "7SUVARNA",
       "company": "VII СУ \"Найден Геров\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "VII School \"Nayden Gerov\""
     },
     {
       "code": "BERR",
-      "company": "БЕРР",
+      "company": "Български експерти за регионално развитие",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Bulgarian Experts for Regional Development"
     },
     {
-      "code": "BASMK",
+      "code": "BSMA",
       "company": "Българска асоциация на морските капитани",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Bulgarian Association of Sea Captains"
     },
     {
       "code": "IEEEBG",
-      "company": "IEEE България",
+      "company": "Българска секция на ИИЕЕ",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "IEEE Bulgaria Section"
     },
     {
       "code": "BASEL",
-      "company": "БАСЕЛ",
+      "company": "Българската асоциация на електротехниката и електрониката",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Bulgarian Association of Electrical Engineering and Electronics"
     },
     {
       "code": "BBF",
       "company": "Български Бизнес Форуми",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Bulgarian Business Forums"
     },
     {
-      "code": "VTIK",
+      "code": "VCCI",
       "company": "Варненска Търговско-Индустриална Камара",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Varna Chamber of Commerce and Industry"
     },
     {
       "code": "VTGRAKOVSKI",
-      "company": "Варненска търговска гимназия „Г. Ст. Раковски\"",
+      "company": "Варненска търговска гимназия „Георги Ст. Раковски\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Varna Trade Gymnasium \"Georgi Stoykov Rakovski\""
     },
     {
-      "code": "VSU",
+      "code": "VFU",
       "company": "Варненски Свободен Университет",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Varna Free University \"Chernorizets Hrabar\""
     },
     {
       "code": "VUM",
@@ -301,145 +341,168 @@
       "discountVisible": true
     },
     {
-      "code": "GPCHEEXARH",
+      "code": "5EG",
       "company": "ГПЧЕ „Йоан Екзарх\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Foreign Language School \"Yoan Ekzarh\""
     },
     {
       "code": "ZANGADOR",
       "company": "Изследователски институт \"Зангадор\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Zangador Research Institute"
     },
     {
       "code": "MGPETARBERON",
       "company": "МГ „Д-р Петър Берон\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Mathematics High School \"Dr. Petar Beron\""
     },
     {
       "code": "MUVARNA",
       "company": "Медицински Университет - Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Medical University - Varna"
     },
     {
       "code": "NUVASILLEVSKI",
       "company": "НУ \"Васил Левски\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Primary School \"Vasil Levski\""
     },
     {
       "code": "OUPANAYOTVOLOV",
       "company": "ОУ „Панайот Волов\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Primary School \"Panayot Volov\""
     },
     {
       "code": "OUPETKOSLAVEYKOV",
       "company": "ОУ „Петко Р. Славейков\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Primary School \"Petko R. Slaveykov\""
     },
     {
       "code": "OBUHRISTOBOTEV",
       "company": "ОбУ „Христо Ботев\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Primary School \"Hristo Botev\""
     },
     {
-      "code": "PGELEKTROTEHNIKA",
+      "code": "PGEVARNA",
       "company": "ПГ по електротехника – Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Vocational School of Electrical Engineering - Varna"
     },
     {
-      "code": "PGIIVANBOGOROV",
+      "code": "PGIVARNA",
       "company": "ПГИ \"Д-р Иван Богоров\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Vocational School of Economics \"Dr. Ivan Bogorov\""
     },
     {
-      "code": "PGKMKSSENDOV",
-      "company": "ПГКМКС \"Академик Благовест Сендов\"",
+      "code": "ITPGVARNA",
+      "company": "ПГКМКС \"Акад. Благовест Сендов\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "ITPG-Varna"
     },
     {
-      "code": "PGTASENZLATAROV",
+      "code": "PGTVARNA",
       "company": "ПГТ \"Проф. д-р Асен Златаров\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "PGT Varna"
     },
     {
       "code": "PTGVARNA",
       "company": "Професионална техническа гимназия - Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "PTG Varna"
     },
     {
-      "code": "PERVAEZIKOVAGIMNAZIA",
+      "code": "1EG",
       "company": "Първа езикова гимназия",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "First Language School"
     },
     {
       "code": "RAPIV",
-      "company": "РАПИВ",
+      "company": "Регионална агенция за предприемачество и иновации - Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Regional Agency for Entrepreneurship and Innovation - Varna"
     },
     {
       "code": "SUSAVADOBROPLODNI",
       "company": "СУ \"Сава Доброплодни\" - Шумен",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"Sava Dobroplodni\" - Shumen"
     },
     {
       "code": "SUDIMITARTALEV",
       "company": "СУ „Димитър Талев\" - Добрич",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"Dimitar Talev\" - Dobrich"
     },
     {
       "code": "SUDIMCHODEBELYANOV",
-      "company": "СУ „Димчо Дебелянов\"",
+      "company": "СОУ „Димчо Дебелянов\" – Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"Dimcho Debelyanov\""
     },
     {
       "code": "SULYUBENKARAVELOV",
       "company": "СУ „Любен Каравелов\" - Добрич",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"Lyuben Karavelov\" - Dobrich"
     },
     {
       "code": "SUNEOFITBOZVELI",
-      "company": "СУ „Неофит Бозвели\"",
+      "company": "СУ „Неофит Бозвели\" – Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"Neofit Bozveli\""
     },
     {
       "code": "SUPEYOYAVOROV",
-      "company": "СУ „Пейо Крачолов Яворов\"",
+      "company": "СУ „Пейо Крачолов Яворов\" – Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"Peyo Krachalov Yavorov\""
     },
     {
       "code": "SUKLIMENTOHRIDSKI",
-      "company": "СУ „Св. Климент Охридски\" – Аксаково",
+      "company": "СУ „Свети Климент Охридски\" – Аксаково",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Secondary School \"St. Kliment Ohridski\" - Aksakovo"
     },
     {
-      "code": "SMBVARNA",
+      "code": "UBMVARNA",
       "company": "Съюз на Математиците в България - Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Union of Bulgarian Mathematicians - Varna"
     },
     {
-      "code": "IZTOCHENAKSELERATOR",
+      "code": "EASTACCELERATOR",
       "company": "Фондация \"Източен Акселератор\"",
       "discountPercent": 10,
       "discountVisible": true
@@ -448,19 +511,15 @@
       "code": "SMARTVARNA",
       "company": "Фондация Смарт Варна",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Smart Varna Foundation"
     },
     {
-      "code": "MGPETARBERONVARNA",
-      "company": "Фондация \"МГ д-р Петър Берон – Варна\"",
+      "code": "EXUPERY",
+      "company": "ЧПГ „Антоан дьо Сент-Екзюпери\"",
       "discountPercent": 10,
-      "discountVisible": true
-    },
-    {
-      "code": "CHPGANTOINEEXUPERY",
-      "company": "ЧПГ \"Антоан дьо Сент Екзюпери\"",
-      "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Antoine de Saint-Exupery School"
     }
   ]
 }

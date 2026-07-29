@@ -5984,11 +5984,7 @@
               if (company) {
                 var source = document.createElement('span');
                 source.className = 'ticket-discount-source';
-                var bgHtml = 'Осигурено от <strong>' + company + '</strong>';
-                var enHtml = 'Provided by <strong>' + company + '</strong>';
-                source.setAttribute('data-bg', bgHtml);
-                source.setAttribute('data-en', enHtml);
-                source.innerHTML = bstfFormMsg({ bg: bgHtml, en: enHtml });
+                source.innerHTML = 'Осигурено от <strong>' + company + '</strong>';
                 priceEl.appendChild(source);
               }
             } else {
