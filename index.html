@@ -4130,6 +4130,19 @@
           max-width: 460px;
           color: rgba(255, 255, 255, 0.82)
         }
+
+        /* Match the button row's width to the description above it (also
+          460px here) and split it evenly so "Купи билет" and "Виж програмата"
+          read as one equal-weight pair instead of two sizes shrunk to fit
+          their own label. */
+        .cx-hero-buttons {
+          max-width: 460px
+        }
+
+        .cx-hero-buttons .cx-hero-btn {
+          flex: 1 1 0;
+          width: auto
+        }
       }
 
       /* Beyond ~1600px the fixed 1360px cap leaves a growing dead margin on
@@ -6176,27 +6189,32 @@
           // component's mobile band/crop (index.html mobile hero rules) —
           // otherwise a device at exactly 768px (e.g. iPad portrait) gets the
           // mobile band styling but the desktop video underneath it.
-          var isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-          // Swap in the mobile-shot poster (framed for the vertical clip) so
-          // slow-connection/reduced-motion visitors who never load the video
-          // still see a correctly-cropped still, not the desktop frame.
-          if (isMobile) {
-            var mobilePoster = video.getAttribute('data-poster-mobile');
-            if (mobilePoster) video.setAttribute('poster', mobilePoster);
-          }
+          var mobileMq = window.matchMedia('(max-width: 768px)');
+          var isMobile = mobileMq.matches;
 
           // Bail on data-saver / very slow connections: keep the poster, load no video.
           var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
           var slowNet = conn && (conn.saveData ||
             /(^|-)2g$/.test(conn.effectiveType || '') || conn.effectiveType === 'slow-2g');
 
-          // Reduced-motion users get the static poster only — no autoplaying video.
-          if (!slowNet && !reduceMotion) {
-            var src = isMobile
+          // Applies the right poster+source for the given mode. Called on load
+          // and again whenever the viewport crosses the mobile breakpoint (see
+          // mobileMq listener below) so resizing/rotating past 768px doesn't
+          // leave the wrong (cropped-wrong) video stuck until a manual refresh.
+          function applySourceForMode(mobile) {
+            // Swap in the mobile-shot poster (framed for the vertical clip) so
+            // slow-connection/reduced-motion visitors who never load the video
+            // still see a correctly-cropped still, not the desktop frame.
+            if (mobile) {
+              var mobilePoster = video.getAttribute('data-poster-mobile');
+              if (mobilePoster) video.setAttribute('poster', mobilePoster);
+            }
+            // Reduced-motion users get the static poster only — no autoplaying video.
+            if (slowNet || reduceMotion) return;
+            var src = mobile
               ? video.getAttribute('data-src-mobile')
               : video.getAttribute('data-src-desktop');
-            if (src) {
+            if (src && video.getAttribute('src') !== src) {
               video.setAttribute('preload', 'auto');
               video.src = src;
               video.load();
@@ -6205,6 +6223,8 @@
               else video.addEventListener('canplay', tryPlay, { once: true });
             }
           }
+
+          applySourceForMode(isMobile);
 
           // Off-screen pause, on-screen resume: the video has no `loop`, so once
           // it plays through it holds its final frame. Re-entering the viewport
@@ -6230,14 +6250,19 @@
           // Scroll parallax: rAF-throttled, one transform write per frame on the
           // media wrapper (its own GPU layer). Desktop only — on phones the video
           // motion is enough and touch-momentum scroll makes JS parallax steppy.
-          // Skipped entirely under reduced-motion.
-          if (!reduceMotion && !isMobile) {
+          // Skipped entirely under reduced-motion. Listeners are attached
+          // unconditionally (not gated on the *initial* isMobile) because a
+          // page that loads mobile and is later resized/rotated past 768px
+          // still needs parallax to start working without a refresh —
+          // applyParallax itself bails out while isMobile is true.
+          if (!reduceMotion) {
             var hero = media.closest('.cx-hero') || media.parentElement;
             var ticking = false;
             media.style.willChange = 'transform';
             var lastProgress = -1;
             var applyParallax = function () {
               ticking = false;
+              if (isMobile) return;
               var rect = hero.getBoundingClientRect();
               var vh = window.innerHeight || 1;
               // progress 0 (hero top at viewport top) → 1 (hero fully scrolled past)
@@ -6250,13 +6275,32 @@
               var scale = 1.06 + progress * 0.06;  // 1.06 → 1.12
               media.style.transform = 'translate3d(0,' + y.toFixed(2) + '%,0) scale(' + scale.toFixed(3) + ')';
             };
-            var onScroll = function () {
+            if (!isMobile) applyParallax();
+            window.addEventListener('scroll', function () {
               if (!ticking) { ticking = true; requestAnimationFrame(applyParallax); }
-            };
-            applyParallax();
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onScroll, { passive: true });
+            }, { passive: true });
+            window.addEventListener('resize', function () {
+              if (!ticking) { ticking = true; requestAnimationFrame(applyParallax); }
+            }, { passive: true });
           }
+
+          // Re-sync everything when the viewport crosses the 768px breakpoint
+          // (window resize, or a tablet rotating orientation) — without this,
+          // the mobile/desktop video+poster picked at load time would stay
+          // stuck (wrong crop, wrong file) until the page is manually reloaded.
+          mobileMq.addEventListener('change', function (e) {
+            isMobile = e.matches;
+            applySourceForMode(isMobile);
+            if (isMobile) {
+              // Hand the band back to CSS's own `transform:none` mobile rule —
+              // an inline style from a prior desktop parallax frame would
+              // otherwise keep overriding it.
+              media.style.transform = 'none';
+            } else if (!reduceMotion) {
+              lastProgress = -1;
+              applyParallax();
+            }
+          });
         })();
 
         // === Smooth Scroll for nav links ===
