@@ -194,6 +194,24 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .comparison-table .yes{color:var(--teal-contrast);font-weight:700}
 .comparison-table .no{color:#ccc}
 .comparison-table .cat-row td{background:rgba(11,57,84,0.05);color:var(--navy);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.8px;padding:13px 10px;border-left:4px solid var(--teal);border-top:14px solid var(--white)}
+.tier-accordion{display:none}
+.tier-acc{background:var(--white);border:1px solid rgba(11,57,84,0.1);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;text-align:left}
+.tier-acc[open]{border-color:var(--tier-color,var(--teal))}
+.tier-acc summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-left:4px solid var(--tier-color,var(--teal))}
+.tier-acc summary::-webkit-details-marker{display:none}
+.tier-acc-head{font-family:'hyperspace-race-variable','myriad-pro','Archivo',sans-serif;font-weight:800;font-variation-settings:'wdth' 140;font-size:1.05rem;color:var(--navy);line-height:1.5}
+.tier-acc-chevron{flex-shrink:0;color:var(--tier-color,var(--teal));transition:transform 0.25s ease}
+.tier-acc[open] .tier-acc-chevron{transform:rotate(180deg)}
+.tier-acc-body{padding:0 18px 16px}
+.tier-acc-cat{font-family:var(--mono);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--teal-contrast);margin:16px 0 6px;padding-top:12px;border-top:1px solid var(--light-gray)}
+.tier-acc-cat:first-child{margin-top:0;padding-top:0;border-top:none}
+.tier-acc-list{list-style:none}
+.tier-acc-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--light-gray);font-size:0.88rem;color:var(--text)}
+.tier-acc-list li:last-child{border-bottom:none}
+.tier-acc-flag{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700}
+.tier-acc-flag.yes{background:rgba(0,109,143,0.12);color:var(--teal-contrast)}
+.tier-acc-flag.no{background:var(--light-gray);color:#ccc}
+.tier-acc-val{flex-shrink:0;font-size:0.78rem;font-weight:600;color:var(--navy);background:var(--light-blue);padding:3px 10px;border-radius:99px;text-align:right}
 .price-note{text-align:center;color:var(--text-light);font-size:0.82rem;margin-top:24px}
 
 /* Scroll reveal + ambient glow (matches index.html) */
@@ -223,25 +241,17 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
   .page-hero h1{font-size:2rem}
   .page-hero p{font-size:1rem}
   .page-hero{padding:120px 24px 60px}
-  .floor-plan-intro,.sponsor-card .benefit-list,.comparison-table thead th:first-child,.comparison-table tbody td:first-child,.footer-brand,.footer-col{text-align:center}
-  .sponsor-card .benefit-list li{justify-content:center}
+  .floor-plan-intro,.comparison-table thead th:first-child,.comparison-table tbody td:first-child,.footer-brand,.footer-col{text-align:center}
   .sponsor-cards{grid-template-columns:repeat(2,1fr)}
-  .comparison-table{font-size:0.75rem}
-  .comparison-table thead th{padding:8px 6px;font-size:0.7rem}
-  .comparison-table tbody td{padding:8px 6px}
+  .comparison-wrap{display:none}
+  .tier-accordion{display:block}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
   #bstf-btt{bottom:2rem}
   .prefooter-cta h2{font-size:1.75rem}
   .prefooter-buttons{flex-direction:column;align-items:center}
-  .fp-3d-badge{padding:5px 12px;font-size:0.6rem;letter-spacing:0.1em}
-  .fp-activate .fp-main-label{font-size:1.05rem}
-  .fp-activate .fp-sub-label{font-size:0.76rem;padding:5px 14px;white-space:normal;text-align:center}
   .fp-chips{gap:7px}
   .fp-chip{font-size:0.7rem;padding:4px 10px}
-  .fp-activate .fp-play{width:74px;height:74px;border-radius:14px}
-  .floor-plan-wrap{padding:8px;border-radius:18px}
-  .fp-stage{border-radius:12px}
 }
 @media(max-width:560px){
   .sponsor-cards{grid-template-columns:1fr}
@@ -273,6 +283,14 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .fp-fs:hover{background:var(--teal)}
 .fp-stage.active .fp-fs{display:flex}
 .fp-stage:fullscreen{height:100%;aspect-ratio:auto;border-radius:0}
+@media(max-width:768px){
+  .floor-plan-wrap{padding:8px;border-radius:18px}
+  .fp-stage{border-radius:12px}
+  .fp-3d-badge{padding:5px 12px;font-size:0.6rem;letter-spacing:0.1em}
+  .fp-activate .fp-play{width:74px;height:74px;border-radius:14px}
+  .fp-activate .fp-main-label{font-size:1.05rem}
+  .fp-activate .fp-sub-label{font-size:0.76rem;padding:5px 14px;white-space:normal;text-align:center}
+}
 @media(max-width:768px){#nav-cta-btn{display:none!important}}
 </style>
 </head>
@@ -531,9 +549,98 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </tbody>
       </table>
     </div>
+    <div class="tier-accordion" id="tierAccordion"></div>
     <p class="price-note" data-bg="* Всички цени са без ДДС." data-en="* All prices are VAT excluded.">* Всички цени са без ДДС.</p>
   </div>
 </section>
+
+<script>
+(function() {
+  'use strict';
+  // Mobile alternative to the comparison table: the same data, one collapsible
+  // section per tier, built from the live table so it can never drift out of
+  // sync and so translated cells (data-bg/data-en) keep working after setLang().
+  var table = document.querySelector('.comparison-table');
+  var wrap = document.getElementById('tierAccordion');
+  if (!table || !wrap) return;
+
+  var tierHeaders = Array.prototype.slice.call(table.querySelectorAll('thead th'), 1);
+  var categories = [];
+  var current = null;
+  Array.prototype.forEach.call(table.querySelectorAll('tbody tr'), function(tr) {
+    if (tr.classList.contains('cat-row')) {
+      current = { labelTd: tr.querySelector('td'), rows: [] };
+      categories.push(current);
+      return;
+    }
+    var tds = tr.querySelectorAll('td');
+    if (!current) { current = { labelTd: null, rows: [] }; categories.push(current); }
+    current.rows.push({ labelTd: tds[0], cells: Array.prototype.slice.call(tds, 1) });
+  });
+
+  function copyDataAttrs(from, to) {
+    if (from.hasAttribute('data-bg')) to.setAttribute('data-bg', from.getAttribute('data-bg'));
+    if (from.hasAttribute('data-en')) to.setAttribute('data-en', from.getAttribute('data-en'));
+  }
+
+  tierHeaders.forEach(function(th, tierIdx) {
+    var details = document.createElement('details');
+    details.className = 'tier-acc ' + th.className;
+
+    var summary = document.createElement('summary');
+    var head = document.createElement('span');
+    head.className = 'tier-acc-head';
+    head.innerHTML = th.innerHTML;
+    var chevron = document.createElement('span');
+    chevron.className = 'tier-acc-chevron';
+    chevron.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+    summary.appendChild(head);
+    summary.appendChild(chevron);
+    details.appendChild(summary);
+
+    var body = document.createElement('div');
+    body.className = 'tier-acc-body';
+
+    categories.forEach(function(cat) {
+      if (cat.labelTd) {
+        var catHead = document.createElement('div');
+        catHead.className = 'tier-acc-cat';
+        copyDataAttrs(cat.labelTd, catHead);
+        catHead.innerHTML = cat.labelTd.innerHTML;
+        body.appendChild(catHead);
+      }
+      var ul = document.createElement('ul');
+      ul.className = 'tier-acc-list';
+      cat.rows.forEach(function(row) {
+        var valueTd = row.cells[tierIdx];
+        if (!valueTd) return;
+        var li = document.createElement('li');
+        var label = document.createElement('span');
+        copyDataAttrs(row.labelTd, label);
+        label.innerHTML = row.labelTd.innerHTML;
+        var flag = document.createElement('span');
+        if (valueTd.classList.contains('yes') || valueTd.classList.contains('no')) {
+          flag.className = 'tier-acc-flag ' + (valueTd.classList.contains('yes') ? 'yes' : 'no');
+        } else {
+          flag.className = 'tier-acc-val';
+        }
+        copyDataAttrs(valueTd, flag);
+        flag.innerHTML = valueTd.innerHTML;
+        li.appendChild(label);
+        li.appendChild(flag);
+        ul.appendChild(li);
+      });
+      body.appendChild(ul);
+    });
+
+    details.appendChild(body);
+    wrap.appendChild(details);
+  });
+
+  var first = wrap.querySelector('details');
+  if (first) first.open = true;
+})();
+</script>
 
 <!-- Pre-footer CTA -->
 <section class="prefooter-cta">

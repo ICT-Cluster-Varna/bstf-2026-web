@@ -4069,19 +4069,21 @@
         }
       }
 
-      /* At this width the hero text wraps to fewer lines (shorter, wider
-        container), which changes how much of the video's width survives the
-        cover-fit crop. Re-tuned per-breakpoint so the X logo stays centered
-        and only one foreground face (not the full crowd) sits under it. */
+      /* Below 768px the mobile-only vertical clip (shot portrait, X logo
+        dead-center in frame) replaces the desktop video entirely — see the
+        isMobile src swap in the hero video script. Its stacked/auto-height
+        box is far narrower than the clip's own aspect ratio, so cover-fit
+        crops the sides hard but never the top/bottom; 50% keeps that crop
+        centered on the X regardless of viewport width. */
       @media(max-width:768px) {
         .cx-hero-bg-img {
-          object-position: 70% 95%
+          object-position: 50% 42%
         }
       }
 
       @media(max-width:520px) {
         .cx-hero-bg-img {
-          object-position: 66% 93%
+          object-position: 50% 42%
         }
       }
 
