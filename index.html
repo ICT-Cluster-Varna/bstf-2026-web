@@ -6172,7 +6172,11 @@
           if (!video) return;
 
           var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          var isMobile = window.matchMedia('(max-width: 767px)').matches;
+          // 768px, not 767, to match every CSS breakpoint that governs this
+          // component's mobile band/crop (index.html mobile hero rules) —
+          // otherwise a device at exactly 768px (e.g. iPad portrait) gets the
+          // mobile band styling but the desktop video underneath it.
+          var isMobile = window.matchMedia('(max-width: 768px)').matches;
 
           // Swap in the mobile-shot poster (framed for the vertical clip) so
           // slow-connection/reduced-motion visitors who never load the video
