@@ -57,6 +57,7 @@
         --navy: #0B3954;
         --navy-deep: #0d4a6e;
         --teal: #00cdff;
+        --teal-contrast: #006d8f;
         --teal-deep: #00a0cc;
         --light-blue: #EDF7FA;
         --white: #FFFFFF;
@@ -212,13 +213,19 @@
       }
 
       .btn-outline {
-        border: 2px solid var(--teal);
-        color: var(--teal)
+        border: 2px solid var(--teal-contrast);
+        color: var(--teal-contrast)
       }
 
       .btn-outline:hover {
         background: var(--teal);
         color: var(--white)
+      }
+
+      .btn:active {
+        transform: scale(0.97);
+        opacity: 0.85;
+        transition: transform 150ms ease-out, opacity 150ms ease-out
       }
 
       .btn-white {
@@ -349,6 +356,15 @@
 
       nav.main-nav .nav-links a.active {
         color: var(--teal)
+      }
+
+      /* Nav is transparent over the dark hero (bright teal reads fine there)
+        but turns solid white once scrolled (.cx-nav-scrolled) — bright teal
+        text fails contrast on that white background, so swap to the darker
+        contrast-safe teal only in the scrolled state. */
+      nav.main-nav.cx-nav-scrolled .nav-links a:hover,
+      nav.main-nav.cx-nav-scrolled .nav-links a.active {
+        color: var(--teal-contrast)
       }
 
       nav.main-nav .nav-links a.active::after {
@@ -734,7 +750,7 @@
 
       @media(max-width:768px) {
         .schedule-table {
-          font-size: 0.78rem;
+          font-size: 0.875rem;
           table-layout: auto
         }
 
@@ -745,8 +761,9 @@
         }
 
         .schedule-table .time-cell {
-          width: 72px;
-          font-size: 0.72rem
+          width: 78px;
+          font-size: 0.8rem;
+          white-space: normal
         }
 
         .day-tabs {
@@ -1119,7 +1136,7 @@
           display: flex;
           flex-direction: column;
           align-items: stretch;
-          gap: 0
+          gap: 20px
         }
 
         /* Stacked single column now — the side-by-side day divider (left
@@ -1181,6 +1198,31 @@
 
         .program-section .container {
           padding: 0 12px
+        }
+
+        /* This is the actual live timeline (renderProgramTimeline() below) —
+          the old .schedule-table markup elsewhere in this file is parked in
+          an HTML comment on this branch and never reaches the DOM, so its
+          mobile font-size rules don't affect what visitors see. These are
+          the real small-text offenders on the rendered page. */
+        .prog-slot-time {
+          font-size: 0.85rem
+        }
+
+        .prog-ev-card .room {
+          font-size: 0.7rem
+        }
+
+        .prog-ev-card .tag {
+          font-size: 0.7rem
+        }
+
+        .prog-day-col-head .date {
+          font-size: 0.7rem
+        }
+
+        .prog-break-row {
+          font-size: 0.72rem
         }
       }
 
@@ -1425,7 +1467,7 @@
         font-size: 2.6rem;
         font-weight: 800;
         font-variation-settings: 'wdth' 140;
-        color: var(--teal);
+        color: var(--teal-contrast);
         margin-bottom: 16px;
         padding-bottom: 14px;
         border-bottom: 1px solid var(--light-gray)
@@ -1446,7 +1488,7 @@
         font-size: 1.05rem;
         font-weight: 700;
         letter-spacing: 0.02em;
-        color: var(--teal);
+        color: var(--teal-contrast);
         margin-top: 8px
       }
 
@@ -1491,7 +1533,7 @@
 
       .ticket-features li::before {
         content: '\2713';
-        color: var(--teal);
+        color: var(--teal-contrast);
         font-weight: 700;
         flex-shrink: 0
       }
@@ -1587,7 +1629,8 @@
       .home-speakers-intro {
         color: rgba(255, 255, 255, 0.8);
         font-size: 1.1rem;
-        margin-bottom: 24px
+        margin-bottom: 24px;
+        text-wrap: balance
       }
 
       .home-speakers-note {
@@ -1635,7 +1678,8 @@
         font-size: 1.05rem;
         color: var(--text-light);
         line-height: 1.7;
-        margin: 0
+        margin: 0;
+        text-wrap: balance
       }
 
       .tickets-subtitle,
@@ -1643,7 +1687,8 @@
       .program-subtitle {
         max-width: 760px;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+        text-wrap: balance
       }
 
       .event-card h3 {
@@ -1655,7 +1700,7 @@
 
       .event-card .event-meta {
         font-size: 0.8rem;
-        color: var(--teal);
+        color: var(--teal-contrast);
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.04em;
@@ -1705,7 +1750,7 @@
       }
 
       .expo-v2__title .highlight {
-        color: var(--teal)
+        color: var(--teal-contrast)
       }
 
       .expo-v2__desc {
@@ -2201,23 +2246,22 @@
 
       .modal-close {
         position: absolute;
-        top: 16px;
-        right: 16px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
+        top: 12px;
+        right: 12px;
+        width: 48px;
+        height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
+        font-size: 2rem;
+        line-height: 1;
         color: var(--text-light);
         transition: var(--transition);
-        background: var(--light-gray)
+        background: transparent
       }
 
       .modal-close:hover {
-        background: var(--navy);
-        color: var(--white)
+        color: var(--navy)
       }
 
       .modal-close:focus-visible {
@@ -2232,7 +2276,7 @@
         font-weight: 600;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--teal-deep);
+        color: var(--teal-contrast);
         margin-bottom: 10px
       }
 
@@ -2400,7 +2444,7 @@
         justify-content: center;
         margin: 0 auto 16px;
         font-size: 2rem;
-        color: var(--teal)
+        color: var(--teal-contrast)
       }
 
       .modal-success h3 {
@@ -2428,11 +2472,11 @@
         }
 
         .modal-close {
-          top: 8px;
-          right: 8px;
-          width: 30px;
-          height: 30px;
-          font-size: 1rem
+          top: 4px;
+          right: 4px;
+          width: 48px;
+          height: 48px;
+          font-size: 1.7rem
         }
 
         .modal-eyebrow {
@@ -2471,7 +2515,7 @@
         .form-group input,
         .form-group select,
         .form-group textarea {
-          padding: 9px 12px;
+          padding: 12px 12px;
           font-size: 0.85rem
         }
 
@@ -2532,7 +2576,7 @@
         left: 0;
         right: 0;
         background: var(--teal);
-        padding: 12px 20px;
+        padding: 12px 20px calc(20px + env(safe-area-inset-bottom, 0px));
         z-index: 100;
         display: flex;
         align-items: center;
@@ -2713,6 +2757,11 @@
           justify-content: center
         }
 
+        .cx-hero-buttons .cx-hero-btn {
+          width: 100%;
+          max-width: 320px
+        }
+
         .cx-stat {
           align-items: center
         }
@@ -2796,7 +2845,6 @@
         }
 
         .side-events-title {
-          max-width: 24ch;
           line-height: 1.22
         }
 
@@ -2861,16 +2909,11 @@
           line-height: 1.65
         }
 
-        .home-cta-copy {
-          max-width: 28ch
-        }
-
         .hall-row {
           gap: 18px
         }
 
         .hall-row-desc {
-          max-width: 34ch;
           margin-left: auto !important;
           margin-right: auto !important;
           font-size: 1.05rem !important;
@@ -2884,12 +2927,6 @@
         .hall-card p {
           font-size: 1.05rem !important;
           line-height: 1.6 !important
-        }
-
-        .streams-subtitle,
-        .program-subtitle,
-        .tickets-subtitle {
-          max-width: 30ch
         }
 
         .venue-pass-row {
@@ -3326,9 +3363,14 @@
           margin-left: 0
         }
 
+        nav.main-nav .cx-nav-logo-img {
+          height: 22px
+        }
+
         nav.main-nav .cx-nav-tagline {
-          font-size: 6px;
-          letter-spacing: 0.45em
+          width: 138px;
+          margin-top: 5px;
+          font-size: 7px
         }
 
         .lang-toggle button {
@@ -3418,7 +3460,7 @@
 
       .booth-features li::before {
         content: '\2713';
-        color: var(--teal);
+        color: var(--teal-contrast);
         margin-right: 6px;
         font-weight: 700
       }
@@ -3839,7 +3881,8 @@
       }
 
       .cx-hero-btn.btn-outline {
-        border-color: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.06);
         color: var(--white)
       }
 
@@ -4128,8 +4171,9 @@
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
           <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260723-4"
+            data-poster-mobile="images/hero-poster-mobile.jpg?v=20260730"
             data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260722-2"
-            data-src-mobile="videos/hero-bg-new-clean.mp4?v=20260722-2"></video>
+            data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260730"></video>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
         <div class="cx-hero-bg-overlay"></div>
@@ -4284,9 +4328,9 @@
             data-bg="Там, където Изтокът среща Западните иновации." data-en="Where East Meets Western Innovation.">Там,
             където Изтокът среща Западните иновации.</h2>
           <p class="home-cta-copy"
-            data-bg="3 дни, 11 тематични области, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни градове."
-            data-en="3 days, 11 thematic areas, 30+ countries.<br>Don't miss the future of AI, Marine Tech, and Smart Cities.">
-            3 дни, 11 тематични области, 30+ държави.<br>Не пропускайте бъдещето на AI, морски технологии и умни
+            data-bg="3 дни, 11 тематични области, 30+ държави. Не пропускайте бъдещето на AI, морски технологии и умни градове."
+            data-en="3 days, 11 thematic areas, 30+ countries. Don't miss the future of AI, Marine Tech, and Smart Cities.">
+            3 дни, 11 тематични области, 30+ държави. Не пропускайте бъдещето на AI, морски технологии и умни
             градове.</p>
         </div>
       </section>
@@ -4300,7 +4344,7 @@
         <div style="display:flex;flex-direction:column;gap:24px;margin-top:32px">
           <div class="hall-row" style="display:flex;gap:60px;align-items:center">
             <div style="flex:1">
-              <p style="font-size:1.25rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
+              <p style="font-size:1.25rem;font-weight:700;color:var(--teal-contrast);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
                 data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала „България"</p>
               <p class="hall-row-desc" style="color:var(--text-light);font-size:1.125rem;line-height:1.7;margin:0"
                 data-bg="Основната сцена за хоризонтални технологии - AI, IoT, роботика, киберсигурност."
@@ -4331,7 +4375,7 @@
           </div>
           <div class="hall-row" style="display:flex;gap:60px;align-items:center">
             <div style="flex:1">
-              <p style="font-size:1.25rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
+              <p style="font-size:1.25rem;font-weight:700;color:var(--teal-contrast);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
                 data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала „Черно море"</p>
               <p class="hall-row-desc" style="color:var(--text-light);font-size:1.125rem;line-height:1.7;margin:0"
                 data-bg="Заедно с фоайето - домакин на изложението и стартъп зоната."
@@ -4361,7 +4405,7 @@
           </div>
           <div class="hall-row" style="display:flex;gap:60px;align-items:center">
             <div style="flex:1">
-              <p style="font-size:1.25rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
+              <p style="font-size:1.25rem;font-weight:700;color:var(--teal-contrast);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
                 data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</p>
               <p class="hall-row-desc" style="color:var(--text-light);font-size:1.125rem;line-height:1.7;margin:0"
                 data-bg="Паралелната програма със секторни и вертикални теми."
@@ -4489,7 +4533,7 @@
       <div class="bg-glow-right"></div>
 
       <div class="container" style="position:relative;z-index:1">
-        <p style="text-align:center;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px"
+        <p style="text-align:center;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal-contrast);margin-bottom:10px"
           data-bg="Партньори и спонсори" data-en="Partners &amp; Sponsors">Партньори и спонсори</p>
         <h2 class="section-title text-center" style="font-size:2rem;margin-bottom:56px"
           data-bg="Заедно изграждаме форума." data-en="Building the forum together.">Заедно изграждаме форума.</h2>
@@ -5359,10 +5403,10 @@
           <div>
             <h2 class="home-speakers-title" data-bg="Лектори" data-en="Speakers">Лектори</h2>
             <p class="home-speakers-intro"
-              data-bg="Практици, учени и стратегически лидери&lt;br&gt; от региона на Черно&amp;nbsp;море и света - на една сцена."
-              data-en="Practitioners, researchers and strategic leaders&lt;br&gt; from the Black Sea region and beyond - on one stage.">
+              data-bg="Практици, учени и стратегически лидери от региона на Черно&amp;nbsp;море и света - на една сцена."
+              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
               Практици,
-              учени и стратегически лидери<br> от региона на Черно&nbsp;море и света - на една
+              учени и стратегически лидери от региона на Черно&nbsp;море и света - на една
               сцена.</p>
             <div class="home-speakers-note">
               <p class="home-speakers-note-copy"
@@ -6089,6 +6133,14 @@
 
           var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+          // Swap in the mobile-shot poster (framed for the vertical clip) so
+          // slow-connection/reduced-motion visitors who never load the video
+          // still see a correctly-cropped still, not the desktop frame.
+          if (isMobile) {
+            var mobilePoster = video.getAttribute('data-poster-mobile');
+            if (mobilePoster) video.setAttribute('poster', mobilePoster);
+          }
 
           // Bail on data-saver / very slow connections: keep the poster, load no video.
           var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
