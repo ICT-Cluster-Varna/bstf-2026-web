@@ -21,13 +21,13 @@
   <meta property="og:title" content="Лектори - BSTF 2026">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - Speakers">
   <meta property="og:url" content="https://bstf2026.bg/speakers.html">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260720">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лектори - BSTF 2026">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Speakers">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260720">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -44,6 +44,7 @@
       --navy: #0B3954;
       --navy-deep: #0d4a6e;
       --teal: #00cdff;
+      --teal-contrast: #006d8f;
       --teal-deep: #00a0cc;
       --light-blue: #EDF7FA;
       --white: #FFFFFF;
@@ -154,7 +155,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--teal);
+      color: var(--teal-contrast);
       margin-bottom: 10px
     }
 
@@ -230,8 +231,8 @@
     }
 
     .btn-outline {
-      border: 2px solid var(--teal);
-      color: var(--teal);
+      border: 2px solid var(--teal-contrast);
+      color: var(--teal-contrast);
       background: rgba(0, 205, 255, 0.03)
     }
 
@@ -240,6 +241,12 @@
       color: var(--white);
       box-shadow: 0 10px 24px rgba(0, 160, 204, 0.28);
       transform: translateY(-2px)
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+      opacity: 0.85;
+      transition: transform 150ms ease-out, opacity 150ms ease-out
     }
 
     .btn-white {
@@ -656,7 +663,7 @@
     .track-jump:hover {
       box-shadow: 0 6px 18px rgba(11, 57, 84, 0.12);
       border-color: rgba(11, 57, 84, 0.12);
-      color: var(--teal);
+      color: var(--teal-contrast);
       transform: translateY(-1px)
     }
 
@@ -796,6 +803,18 @@
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 4px 16px rgba(11, 57, 84, 0.1), 0 26px 56px rgba(0, 205, 255, 0.22)
     }
 
+    .spk-card:active {
+      transform: scale(0.98);
+      border-color: rgba(0, 205, 255, 0.3)
+    }
+
+    @media (hover: none) {
+      .spk-card:hover {
+        transform: none;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 1px 4px rgba(11, 57, 84, 0.06), 0 8px 24px rgba(11, 57, 84, 0.08)
+      }
+    }
+
     .spk-card.hidden {
       display: none
     }
@@ -930,7 +949,7 @@
     .spk-topic-label {
       display: block;
       font-family: var(--mono);
-      font-size: 0.58rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1253,23 +1272,22 @@
 
     .modal-close {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+      top: 12px;
+      right: 12px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 2rem;
+      line-height: 1;
       color: var(--text-light);
       transition: var(--transition);
-      background: var(--light-gray)
+      background: transparent
     }
 
     .modal-close:hover {
-      background: var(--navy);
-      color: var(--white)
+      color: var(--navy)
     }
 
     .modal h2 {
@@ -1350,7 +1368,7 @@
       justify-content: center;
       margin: 0 auto 16px;
       font-size: 2rem;
-      color: var(--teal)
+      color: var(--teal-contrast)
     }
 
     .modal-success h3 {
@@ -1481,7 +1499,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="main-nav">
     <div class="nav-inner">
       <a href="index.html" class="cx-nav-logo">
-        <img src="images/Connexus - BLACK.svg?v=20260720" alt="Connexus" class="cx-nav-logo-img">
+        <img src="images/Connexus - BLACK.svg?v=20260730" alt="Connexus" class="cx-nav-logo-img">
         <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
       </a>
       <div class="nav-links">
@@ -1568,7 +1586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260721-10"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260730"></script>
       <script>
         (function () {
           'use strict';
@@ -1655,7 +1673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/Connexus - WHITE.svg?v=20260720" alt="Connexus" style="height:28px;margin-bottom:4px">
+          <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus" style="height:28px;margin-bottom:4px">
           <p style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:10px"
             data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
           <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
