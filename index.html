@@ -24,13 +24,13 @@
     <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
     <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
     <meta property="og:url" content="https://bstf2026.bg/">
-    <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260723-4">
+    <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
     <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-    <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260723-4">
+    <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -1859,7 +1859,7 @@
       .venue-bg {
         position: absolute;
         inset: 0;
-        background: url('images/varna_seaside_bg.jpg?v=20260723-4') center/cover no-repeat
+        background: url('images/varna_seaside_bg.jpg?v=20260730') center/cover no-repeat
       }
 
       .venue-scrim {
@@ -4030,8 +4030,45 @@
           height: auto !important
         }
 
+        /* Mobile hero is a tall auto-height content column (kicker→title→
+          desc→buttons→date row→stat cards, ~1000px). Stretching the video
+          behind all of it wastes it behind the opaque stat cards and buries
+          the X logo behind the densest text. Cap video+overlay to a short
+          band pinned to the top, covering only kicker/title/desc; `.cx-hero`'s
+          own base background (#030a11, see the un-media-queried .cx-hero rule
+          above) shows through below the band automatically, giving buttons/
+          date-row/stats full contrast for free. */
+        .cx-hero-media {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: auto;
+          height: 375px;
+          transform: none
+        }
+
+        .cx-hero-bg-overlay {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: auto;
+          height: 375px;
+          background:
+            radial-gradient(125% 115% at 50% 42%, rgba(3, 10, 17, 0) 52%, rgba(3, 10, 17, 0.5) 100%),
+            linear-gradient(100deg, rgba(3, 10, 17, 0.95) 0%, rgba(3, 10, 17, 0.82) 32%, rgba(3, 10, 17, 0.4) 58%, rgba(3, 10, 17, 0.18) 100%),
+            linear-gradient(0deg, rgba(3, 10, 17, 0.85) 0%, rgba(3, 10, 17, 0) 22%, rgba(3, 10, 17, 0) 76%, rgba(3, 10, 17, 1) 100%)
+        }
+
         .cx-hero-inner {
           padding: 16px 20px
+        }
+
+        /* Extra breathing room before the kicker so it starts a bit lower,
+          over the video band's quieter/darker upper zone (ceiling rigging,
+          already vignette-darkened) instead of butting right up against the
+          nav's bottom edge where the light beams are busiest. */
+        .cx-hero-top-inner {
+          padding-top: 40px
         }
 
         .cx-hero-stats-wrap {
@@ -4059,31 +4096,32 @@
           border-bottom: 1px solid rgba(255, 255, 255, 0.14)
         }
 
-        /* Video is cropped hard once the section switches to stacked/auto
-          height on narrow screens; re-center the focal point (the glowing X
-          stage-light logo) instead of the desktop left-aligned framing so it
-          never gets pushed out of the visible crop. Text sits in front of the
-          dark overlay gradients, which are unaffected by this shift. */
+        /* Now that the video/overlay are capped to a short top band (see the
+          .cx-hero-media/.cx-hero-bg-overlay rules above) instead of stretching
+          the full auto-height column, the band is wider than it is tall —
+          cover-fit is width-constrained, so unlike before, real vertical
+          cropping happens here and object-position-Y actually does something.
+          A low Y keeps the upper part of the portrait clip (the light rig +
+          X logo) in frame and crops away the lower crowd silhouette. */
         .cx-hero-bg-img {
-          object-position: 76% 95%
+          object-position: 50% 20%
         }
       }
 
       /* Below 768px the mobile-only vertical clip (shot portrait, X logo
         dead-center in frame) replaces the desktop video entirely — see the
-        isMobile src swap in the hero video script. Its stacked/auto-height
-        box is far narrower than the clip's own aspect ratio, so cover-fit
-        crops the sides hard but never the top/bottom; 50% keeps that crop
-        centered on the X regardless of viewport width. */
+        isMobile src swap in the hero video script. Same capped-band framing
+        as the 900px rule above; kept as a separate breakpoint in case a
+        narrower band width ever needs its own Y tuning. */
       @media(max-width:768px) {
         .cx-hero-bg-img {
-          object-position: 50% 42%
+          object-position: 50% 20%
         }
       }
 
       @media(max-width:520px) {
         .cx-hero-bg-img {
-          object-position: 50% 42%
+          object-position: 50% 20%
         }
       }
 
@@ -4132,9 +4170,9 @@
     <nav class="main-nav">
       <div class="nav-inner">
         <a href="#" class="logo cx-nav-logo">
-          <img src="images/Connexus - WHITE.svg?v=20260723-4" alt="Connexus"
+          <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus"
             class="cx-nav-logo-img cx-nav-logo-img--white">
-          <img src="images/Connexus - BLACK.svg?v=20260723-4" alt="Connexus"
+          <img src="images/Connexus - BLACK.svg?v=20260730" alt="Connexus"
             class="cx-nav-logo-img cx-nav-logo-img--black">
           <span class="cx-nav-tagline">black sea tech forum</span>
         </a>
@@ -4172,9 +4210,9 @@
       <!-- SECTION 1: Hero -->
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
-          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260723-4"
+          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260730"
             data-poster-mobile="images/hero-poster-mobile.jpg?v=20260730"
-            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260722-2"
+            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260730"
             data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260730"></video>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
@@ -4308,7 +4346,7 @@
       <!-- Patronage band: appears right below the hero, on white -->
       <section class="cx-patron-band">
         <div class="cx-hero-inner cx-patron-band-inner">
-          <img src="images/gerp-image.png?v=20260723-4" alt="Държавен герб на Република България"
+          <img src="images/gerp-image.png?v=20260730" alt="Държавен герб на Република България"
             class="cx-patron-band-crest">
           <div class="cx-patron-band-text">
             <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА
@@ -4451,74 +4489,74 @@
         <div class="streams-inner-grid"
           style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto">
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/ai.png?v=20260723-4" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+            <img src="images/streams/ai.png?v=20260730" alt="AI" loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
               data-en="Artificial Intelligence">Изкуствен интелект</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/transport.png?v=20260723-4" alt="Transport" loading="lazy" decoding="async"
+            <img src="images/streams/transport.png?v=20260730" alt="Transport" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
               data-en="Future of Transport">Транспорт на бъдещето</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/smart_city.png?v=20260723-4" alt="Smart City" loading="lazy" decoding="async"
+            <img src="images/streams/smart_city.png?v=20260730" alt="Smart City" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
               град</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/cybersecurity.png?v=20260723-4" alt="Cybersecurity" loading="lazy" decoding="async"
+            <img src="images/streams/cybersecurity.png?v=20260730" alt="Cybersecurity" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
               data-en="Cybersecurity">Киберсигурност</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/automation.png?v=20260723-4" alt="Automation" loading="lazy" decoding="async"
+            <img src="images/streams/automation.png?v=20260730" alt="Automation" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика"
               data-en="Automation & Robotics">Автоматизация и роботика </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/agritech.png?v=20260723-4" alt="AgriTech" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/agritech.png?v=20260730" alt="AgriTech" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/marine_tech.png?v=20260723-4" alt="Marine Tech" loading="lazy" decoding="async"
+            <img src="images/streams/marine_tech.png?v=20260730" alt="Marine Tech" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
               data-en="Marine Tech">Морски технологии</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/biotech.png?v=20260723-4" alt="BioTech" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/biotech.png?v=20260730" alt="BioTech" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/gaming.png?v=20260723-4" alt="Gaming" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/gaming.png?v=20260730" alt="Gaming" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/regional-innovation-policies.png?v=20260723-4" alt="Regional Innovation Policies"
+            <img src="images/streams/regional-innovation-policies.png?v=20260730" alt="Regional Innovation Policies"
               loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики"
               data-en="Regional Innovation Policies">Регионални иновационни политики</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/tourism.png?v=20260723-4" alt="Tourism" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/tourism.png?v=20260730" alt="Tourism" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/networking.png?v=20260723-1" alt="Networking" loading="lazy" decoding="async"
+            <img src="images/streams/networking.png?v=20260730" alt="Networking" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Нетуъркинг" data-en="Networking">
               Нетуъркинг</div>
@@ -4544,7 +4582,7 @@
           <!-- Presidential patronage -->
           <div class="partner-row">
             <div class="partner-row__crest">
-              <img src="images/gerp-image.png?v=20260723-4" alt="Държавен герб на Република България"
+              <img src="images/gerp-image.png?v=20260730" alt="Държавен герб на Република България"
                 class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
             </div>
             <div class="partner-row__divider"></div>
@@ -4568,20 +4606,20 @@
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--ict">
                 <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                  <img src="images/ict_cluster_logo.png?v=20260723-4" alt="ИКТ Клъстер Варна" loading="lazy"
+                  <img src="images/ict_cluster_logo.png?v=20260730" alt="ИКТ Клъстер Варна" loading="lazy"
                     decoding="async" width="1184" height="392">
                 </a>
               </div>
               <div class="partner-logo partner-logo--bsmepa">
-                <img src="images/bsmepa_logo.png?v=20260723-4" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
+                <img src="images/bsmepa_logo.png?v=20260730" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
                   height="188">
               </div>
               <div class="partner-logo partner-logo--brainpp">
-                <img src="images/brainpp_logo.png?v=20260723-4" alt="Brain++ AI Factory" loading="lazy" decoding="async"
+                <img src="images/brainpp_logo.png?v=20260730" alt="Brain++ AI Factory" loading="lazy" decoding="async"
                   width="738" height="249">
               </div>
               <div class="partner-logo partner-logo--arcf">
-                <img src="images/ARCF_logo.svg?v=20260723-4" alt="ARC Fund">
+                <img src="images/ARCF_logo.svg?v=20260730" alt="ARC Fund">
               </div>
             </div>
           </div>
@@ -4594,7 +4632,7 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--varna">
-                <img src="images/varna_coat.png?v=20260723-4" alt="Община Варна" loading="lazy" decoding="async"
+                <img src="images/varna_coat.png?v=20260730" alt="Община Варна" loading="lazy" decoding="async"
                   width="284" height="328">
                 <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                   data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
@@ -4610,7 +4648,7 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--mobility">
-                <img src="images/mobility-partner.png?v=20260723-4" alt="Top Rent a Car" loading="lazy" decoding="async"
+                <img src="images/mobility-partner.png?v=20260730" alt="Top Rent a Car" loading="lazy" decoding="async"
                   width="700" height="459">
               </div>
             </div>
@@ -5695,7 +5733,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="images/Connexus - WHITE.svg?v=20260723-4" alt="Connexus" style="height:28px;margin-bottom:14px">
+            <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus" style="height:28px;margin-bottom:14px">
             <p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px"
               data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
             <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен

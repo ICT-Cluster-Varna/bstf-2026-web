@@ -101,7 +101,7 @@
     // ── AI ──
     {
       id: 'martin-kuvandzhiev', track: 'ai',
-      img: 'images/speakers/martin-kuvandzhiev-2.png?v=20260716', alt: 'Martin Kuvandzhiev',
+      img: 'images/speakers/martin-kuvandzhiev-2.png?v=20260730', alt: 'Martin Kuvandzhiev',
       objectPosition: 'center 8%',
       name: 'Мартин Куванджиев',
       nameEn: 'Martin Kuvandzhiev',
@@ -119,7 +119,7 @@
     },
     {
       id: 'teade-punter', track: 'automation',
-      img: 'images/speakers/teade-punter.jpg?v=20260716', alt: 'Teade Punter',
+      img: 'images/speakers/teade-punter.jpg?v=20260730', alt: 'Teade Punter',
       objectPosition: '65% 15%',
       name: 'Dr. Teade Punter',
       role: 'Leading Professor, AI for Society @ Fontys University',
@@ -142,7 +142,7 @@
     // ── Cybersecurity ──
     {
       id: 'alexander-minchev', track: 'cybersecurity',
-      img: 'images/speakers/alexander-minchev.jpg?v=20260716', alt: 'Alexander Minchev',
+      img: 'images/speakers/alexander-minchev.jpg?v=20260730', alt: 'Alexander Minchev',
       objectPosition: 'center 25%',
       name: 'Александър Минчев',
       nameEn: 'Alexander Minchev',
@@ -162,7 +162,7 @@
     },
     {
       id: 'hristian-daskalov', track: 'cybersecurity',
-      img: 'images/speakers/hristian-daskalov.jpg?v=20260716', alt: 'Hristian Daskalov',
+      img: 'images/speakers/hristian-daskalov.jpg?v=20260730', alt: 'Hristian Daskalov',
       objectPosition: 'center 8%',
       name: 'д-р Христиан Даскалов',
       nameEn: 'Dr. Hristian Daskalov',
@@ -186,7 +186,7 @@
     },
     {
       id: 'dragomir-vatkov', track: 'cybersecurity',
-      img: 'images/speakers/dragomir-vatkov.jpg?v=20260716', alt: 'Dragomir Vatkov',
+      img: 'images/speakers/dragomir-vatkov.jpg?v=20260730', alt: 'Dragomir Vatkov',
       objectPosition: 'center 35%',
       name: 'Драгомир Вътков',
       nameEn: 'Dragomir Vatkov',
@@ -208,7 +208,7 @@
     },
     {
       id: 'yasen-tanev', track: 'cybersecurity',
-      img: 'images/speakers/yasen-tanev.jpg?v=20260716', alt: 'Yasen Tanev',
+      img: 'images/speakers/yasen-tanev.jpg?v=20260730', alt: 'Yasen Tanev',
       objectPosition: 'center top',
       name: 'Ясен Танев',
       nameEn: 'Yasen Tanev',
@@ -226,7 +226,7 @@
     },
     {
       id: 'stanislav-simeonov', track: 'cybersecurity',
-      img: 'images/speakers/stanislav-simeonov.jpg?v=20260716', alt: 'Stanislav Simeonov',
+      img: 'images/speakers/stanislav-simeonov.jpg?v=20260730', alt: 'Stanislav Simeonov',
       objectPosition: 'center 15%',
       name: 'Станислав Симеонов',
       nameEn: 'Stanislav Simeonov',
@@ -246,7 +246,7 @@
     // ── BioTech ──
     {
       id: 'kristina-eskenazi', track: 'biotech',
-      img: 'images/speakers/kristina-eskenazi.jpg?v=20260716', alt: 'Kristina Eskenazi',
+      img: 'images/speakers/kristina-eskenazi.jpg?v=20260730', alt: 'Kristina Eskenazi',
       objectPosition: 'center top',
       name: 'Кристина Ешкенази',
       nameEn: 'Kristina Eskenazi',
@@ -266,7 +266,7 @@
     },
     {
       id: 'dimitar-karlovski', track: 'biotech',
-      img: 'images/speakers/dimitar-karlovski.jpg?v=20260716', alt: 'Dimitar Karlovski',
+      img: 'images/speakers/dimitar-karlovski.jpg?v=20260730', alt: 'Dimitar Karlovski',
       objectPosition: 'center 5%',
       name: 'Димитър Карловски',
       nameEn: 'Dimitar Karlovski',
@@ -286,7 +286,7 @@
     },
     {
       id: 'trifon-tsekov', track: 'biotech',
-      img: 'images/speakers/trifon-tsekov.jpg?v=20260716', alt: 'Trifon Tsekov',
+      img: 'images/speakers/trifon-tsekov.jpg?v=20260730', alt: 'Trifon Tsekov',
       objectPosition: 'center 18%',
       name: 'Трифон Цеков',
       nameEn: 'Trifon Tsekov',
@@ -306,7 +306,7 @@
     },
     {
       id: 'anton-tonchev', track: 'biotech',
-      img: 'images/speakers/anton-tonchev.jpg?v=20260716', alt: 'Anton Tonchev',
+      img: 'images/speakers/anton-tonchev.jpg?v=20260730', alt: 'Anton Tonchev',
       objectPosition: 'center 30%',
       name: 'проф. Антон Тончев',
       nameEn: 'Prof. Anton Tonchev',
@@ -324,7 +324,7 @@
     },
     {
       id: 'elitsa-encheva', track: 'biotech',
-      img: 'images/speakers/elitsa-encheva.jpg?v=20260721', alt: 'Elitsa Encheva',
+      img: 'images/speakers/elitsa-encheva.jpg?v=20260730', alt: 'Elitsa Encheva',
       objectPosition: 'center 40%',
       name: 'проф. Елица Енчева',
       nameEn: 'Prof. Elitsa Encheva',
@@ -348,7 +348,7 @@
     },
     {
       id: 'krastena-nikolova', track: 'biotech',
-      img: 'images/speakers/krastena-nikolova.jpg?v=20260716', alt: 'Krastena Nikolova',
+      img: 'images/speakers/krastena-nikolova.jpg?v=20260730', alt: 'Krastena Nikolova',
       objectPosition: 'center 35%',
       name: 'проф. Кръстена Николова',
       nameEn: 'Prof. Krastena Nikolova',
@@ -372,7 +372,7 @@
     },
     {
       id: 'kristina-bliznakova', track: 'biotech',
-      img: 'images/speakers/kristina-bliznakova.jpg?v=20260716', alt: 'Kristina Bliznakova',
+      img: 'images/speakers/kristina-bliznakova.jpg?v=20260730', alt: 'Kristina Bliznakova',
       objectPosition: 'center top',
       name: 'проф. Кристина Близнакова',
       nameEn: 'Prof. Kristina Bliznakova',
@@ -400,7 +400,7 @@
     },
     {
       id: 'oskan-tasinov', track: 'biotech',
-      img: 'images/speakers/oskan-tasinov.jpg?v=20260716', alt: 'Oskan Tasinov',
+      img: 'images/speakers/oskan-tasinov.jpg?v=20260730', alt: 'Oskan Tasinov',
       objectPosition: 'center top',
       name: 'доц. Оскан Тасинов',
       nameEn: 'Assoc. Prof. Oskan Tasinov',
@@ -424,7 +424,7 @@
     // ── Marine ──
     {
       id: 'svetlin-stoyanov', track: 'marine',
-      img: 'images/speakers/svetlin-stoyanov.jpg?v=20260716', alt: 'Svetlin Stoyanov',
+      img: 'images/speakers/svetlin-stoyanov.jpg?v=20260730', alt: 'Svetlin Stoyanov',
       objectPosition: '40% top',
       name: 'Светлин Стоянов',
       nameEn: 'Svetlin Stoyanov',
@@ -442,7 +442,7 @@
     },
     {
       id: 'cemile-usta', track: 'marine',
-      img: 'images/speakers/cemile-usta.jpg?v=20260716', alt: 'Cemile Köseler Usta',
+      img: 'images/speakers/cemile-usta.jpg?v=20260730', alt: 'Cemile Köseler Usta',
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
       role: 'Deputy Manager, Technology &amp; Digitalisation @ Istanbul Chamber of Industry',
@@ -459,7 +459,7 @@
     // ── Tourism ──
     {
       id: 'elitza-stoilova', track: 'tourism',
-      img: 'images/speakers/elitza-stoilova.jpg?v=20260716', alt: 'Elitza Stoilova',
+      img: 'images/speakers/elitza-stoilova.jpg?v=20260730', alt: 'Elitza Stoilova',
       objectPosition: 'center 12%',
       name: 'Елица Стоилова',
       nameEn: 'Elitza Stoilova',
@@ -481,7 +481,7 @@
     },
     {
       id: 'andrey-lilov', track: 'tourism',
-      img: 'images/speakers/andrey-lilov.jpg?v=20260716', alt: 'Andrey Lilov',
+      img: 'images/speakers/andrey-lilov.jpg?v=20260730', alt: 'Andrey Lilov',
       objectPosition: 'center top',
       name: 'Андрей Лилов',
       nameEn: 'Andrey Lilov',
@@ -505,7 +505,7 @@
     // ── Regional Innovation Policy ──
     {
       id: 'kalina-tsolova', track: 'regional-innovation-policy',
-      img: 'images/speakers/kalina-tsolova.jpg?v=20260716', alt: 'Kalina Tsolova',
+      img: 'images/speakers/kalina-tsolova.jpg?v=20260730', alt: 'Kalina Tsolova',
       objectPosition: 'center top',
       name: 'Калина Цолова',
       nameEn: 'Kalina Tsolova',
@@ -523,7 +523,7 @@
     },
     {
       id: 'georgi-dobrev', track: 'regional-innovation-policy',
-      img: 'images/speakers/georgi-dobrev.jpg?v=20260716', alt: 'Georgi Dobrev',
+      img: 'images/speakers/georgi-dobrev.jpg?v=20260730', alt: 'Georgi Dobrev',
       objectPosition: 'center 8%',
       name: 'Георги Добрев',
       nameEn: 'Georgi Dobrev',
@@ -539,7 +539,7 @@
     },
     {
       id: 'ruslan-stefanov', track: 'regional-innovation-policy',
-      img: 'images/speakers/ruslan-stefanov.jpg?v=20260716', alt: 'Ruslan Stefanov',
+      img: 'images/speakers/ruslan-stefanov.jpg?v=20260730', alt: 'Ruslan Stefanov',
       objectPosition: 'center top',
       name: 'Руслан Стефанов',
       nameEn: 'Ruslan Stefanov',
@@ -555,7 +555,7 @@
     },
     {
       id: 'paul-lambert', track: 'regional-innovation-policy',
-      img: 'images/speakers/paul-lambert.jpg?v=20260721', alt: 'Paul Lambert',
+      img: 'images/speakers/paul-lambert.jpg?v=20260730', alt: 'Paul Lambert',
       objectPosition: 'center 12%',
       name: 'Paul Lambert',
       role: 'Ambassador of the Kingdom of Belgium to the Republic of Bulgaria',
