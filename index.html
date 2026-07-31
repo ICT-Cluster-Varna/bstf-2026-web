@@ -2102,7 +2102,16 @@
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
         gap: 48px;
-        margin-bottom: 48px
+        margin-bottom: 48px;
+        text-align: center
+      }
+
+      /* The global `img{display:block}` reset (see <style> top) makes this an
+        unstyled block box that ignores the parent's text-align — needs its
+        own margin:auto to actually center under the logo/tagline text above. */
+      .footer-brand img {
+        margin-left: auto;
+        margin-right: auto
       }
 
       .footer-brand .logo {
@@ -2143,8 +2152,11 @@
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 24px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        gap: 8px;
+        text-align: center;
         font-size: 0.8rem
       }
 
@@ -2690,7 +2702,7 @@
         }
 
         footer.main-footer {
-          padding: 48px 0 70px
+          padding: 24px 0 70px
         }
 
         .footer-col a {
@@ -4105,6 +4117,18 @@
           X logo) in frame and crops away the lower crowd silhouette. */
         .cx-hero-bg-img {
           object-position: 50% 20%
+        }
+      }
+
+      /* Tablet band (769-900px): same short 375px band, but a wider viewport
+        with an unchanged band height stretches the crop window much wider
+        relative to its height, so the same low 20% Y used on phones now cuts
+        the bottom off the X logo. Nudging Y down re-centers the X in the now
+        much shallower crop window without touching the phone (≤768px) or
+        desktop (≥901px) values at all. */
+      @media (min-width: 769px) and (max-width: 900px) {
+        .cx-hero-bg-img {
+          object-position: 50% 35%
         }
       }
 
@@ -5773,7 +5797,7 @@
             <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
             <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
             <a href="tel:+359876658296">+359 876 658 296</a>
-            <div class="footer-social" style="display:flex;gap:12px;margin-top:16px">
+            <div class="footer-social" style="display:flex;gap:12px;margin-top:16px;justify-content:center">
               <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank"
                 rel="noopener noreferrer" aria-label="LinkedIn"
                 style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
@@ -6185,11 +6209,14 @@
           if (!video) return;
 
           var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          // 768px, not 767, to match every CSS breakpoint that governs this
-          // component's mobile band/crop (index.html mobile hero rules) —
-          // otherwise a device at exactly 768px (e.g. iPad portrait) gets the
-          // mobile band styling but the desktop video underneath it.
-          var mobileMq = window.matchMedia('(max-width: 768px)');
+          // 900px, matching the @media(max-width:900px) block that caps the
+          // video/overlay to the short top band and turns off the parallax
+          // transform (index.html mobile hero rules). Tablets in the 769-900
+          // range get that same band CSS, so the JS must treat them as
+          // "mobile" too — otherwise they'd load the desktop landscape video
+          // (wrong crop for a short band) and parallax would keep writing an
+          // inline transform that fights the band's static layout.
+          var mobileMq = window.matchMedia('(max-width: 900px)');
           var isMobile = mobileMq.matches;
 
           // Bail on data-saver / very slow connections: keep the poster, load no video.
