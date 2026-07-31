@@ -87,3 +87,14 @@ Every deployable file uses static `?v=YYYYMMDD` cache-busting query strings on s
 If a same-day edit needs a second cache-bust, append a suffix instead of faking a date, e.g. `20260702-2`.
 
 Do NOT switch this to a dynamic `Date.now()`/`document.write()` scheme — that was tried and rejected: it disables browser caching entirely and `document.write` is a deprecated, parser-blocking pattern.
+
+## Tag Manager (always do this automatically)
+
+No build step exists, so the GTM container is hardcoded (script + `<noscript>` iframe) in every page rather than shared from one place. If the GTM ID `GTM-K6JDS83T` ever changes, update it in all 6 files:
+
+- `index.html`
+- `sponsors.html`
+- `speakers.html`
+- `speaker.html`
+- `participants.html`
+- `expo.html`

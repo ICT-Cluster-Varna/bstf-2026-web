@@ -419,6 +419,18 @@
       transition: var(--transition)
     }
 
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
     .mobile-nav {
       display: none;
       position: fixed;
@@ -982,36 +994,8 @@
       animation: cardIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards
     }
 
-    .track-section.is-visible .spk-card:nth-child(1) {
-      animation-delay: 0.06s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(2) {
-      animation-delay: 0.13s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(3) {
-      animation-delay: 0.20s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(4) {
-      animation-delay: 0.27s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(5) {
-      animation-delay: 0.33s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(6) {
-      animation-delay: 0.39s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(7) {
-      animation-delay: 0.45s
-    }
-
-    .track-section.is-visible .spk-card:nth-child(8) {
-      animation-delay: 0.51s
+    .track-section.is-visible .spk-card {
+      animation-delay: calc(var(--i, 0) * 0.065s + 0.06s)
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1590,9 +1574,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           2026 · ВАРНА · 5-7 ОКТОМВРИ</p>
         <h1 data-bg="Лектори" data-en="Speakers">Лектори</h1>
         <p class="hero-desc"
-          data-bg="Практици, учени и стратегически лидери от региона на Черно&amp;nbsp;море и света - на една сцена."
-          data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
-          Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света - на една сцена.</p>
+          data-bg="Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света."
+          data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond.">
+          Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света.</p>
         <div class="hero-stats-strip">
           <div class="hero-stat">
             <span class="hero-stat-num" id="stat-speakers">20+</span>
@@ -1635,7 +1619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260731"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260731-2"></script>
       <script>
         (function () {
           'use strict';
@@ -1651,8 +1635,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               '</a>';
           }
 
-          function renderCard(spk, track) {
-            return '<a class="spk-card" data-track="' + track.id + '" data-spk="' + spk.id + '" href="speaker.html#' + encodeURIComponent(spk.id) + '">' +
+          function renderCard(spk, track, index) {
+            return '<a class="spk-card" style="--i:' + index + '" data-track="' + track.id + '" data-spk="' + spk.id + '" href="speaker.html#' + encodeURIComponent(spk.id) + '">' +
               '<div class="spk-photo"><img loading="lazy" decoding="async" src="' + spk.img + '" alt="' + esc(spk.alt) + '" style="object-position:' + spk.objectPosition + '"></div>' +
               '<div class="spk-body">' +
               '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
@@ -1674,7 +1658,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               '<span class="track-band-sep"></span>' +
               '<span class="track-band-desc" data-bg="' + esc(track.descBg) + '" data-en="' + track.descEn + '">' + track.descBg + '</span>' +
               '</div>' +
-              '<div class="spk-grid">' + speakers.map(function (s) { return renderCard(s, track); }).join('') + '</div>' +
+              '<div class="spk-grid">' + speakers.map(function (s, i) { return renderCard(s, track, i); }).join('') + '</div>' +
               '</div>';
           }
 
@@ -1693,7 +1677,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         })();
       </script>
       <div class="apply-cta-wrap">
-        <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор"
+        <button class="btn btn-primary open-speaker-modal" data-modal-open="speaker" data-bg="Кандидатствай като лектор"
           data-en="Apply as speaker">Кандидатствай като лектор</button>
       </div>
 
@@ -1834,14 +1818,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             type="text" id="sp-topic" required></div>
         <div class="form-group"><label data-bg="Тематичен поток" data-en="Thematic Stream">Тематичен поток</label>
           <select id="sp-stream">
-            <option data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
-            <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
-            <option data-bg="Умен град" data-en="Smart City">Умен град</option>
-            <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
-            <option data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
-            <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
-            <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
-            <option data-bg="BioTech" data-en="BioTech">BioTech</option>
+            <option value="ai" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
+            <option value="transport" data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
+            <option value="smart-city" data-bg="Умен град" data-en="Smart City">Умен град</option>
+            <option value="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
+            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
+            <option value="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
+            <option value="marine" data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
+            <option value="biotech" data-bg="BioTech" data-en="BioTech">BioTech</option>
           </select>
         </div>
         <div class="form-group"><label data-bg="Кратко описание" data-en="Brief Description">Кратко
@@ -1899,9 +1883,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var menuBtn = document.querySelector('.mobile-menu-btn');
       var mobileNav = document.getElementById('mobile-nav');
       if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', function () { mobileNav.classList.toggle('open'); });
+        menuBtn.addEventListener('click', function () { mobileNav.classList.toggle('open'); menuBtn.classList.toggle('active'); });
         mobileNav.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () { mobileNav.classList.remove('open'); });
+          link.addEventListener('click', function () { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); });
         });
       }
 
@@ -1987,11 +1971,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       function submitRegister() {
         var name = document.getElementById('reg-name'), email = document.getElementById('reg-email');
-        if (!name.value.trim()) { name.focus(); bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' }); return; }
-        if (!email.value.trim()) { email.focus(); bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' }); return; }
+        if (!name.value.trim()) { name.focus(); bstfShowError('register-error', { bg: 'Моля, въведете име.', en: 'Please enter your name.' }); return; }
+        if (!email.value.trim()) { email.focus(); bstfShowError('register-error', { bg: 'Моля, въведете имейл.', en: 'Please enter your email.' }); return; }
         var phone = document.getElementById('reg-phone').value.trim();
         var ticketSelect = document.getElementById('reg-ticket');
-        var ticket = ticketSelect.options[ticketSelect.selectedIndex].text;
+        var ticket = ticketSelect.value;
         var btn = document.querySelector('#register-form .form-submit');
         bstfSubmitForm({ formType: 'register', name: name.value.trim(), email: email.value.trim(), phone: phone, ticket: ticket },
           btn, 'register-error', 'register-form', 'register-success', 'register-success-title');
@@ -1999,13 +1983,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.submitRegister = submitRegister;
       function submitSpeaker() {
         var name = document.getElementById('sp-name'), email = document.getElementById('sp-email'), topic = document.getElementById('sp-topic');
-        var missingMsg = { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' };
-        if (!name.value.trim()) { name.focus(); bstfShowError('speaker-error', missingMsg); return; }
-        if (!email.value.trim()) { email.focus(); bstfShowError('speaker-error', missingMsg); return; }
-        if (!topic.value.trim()) { topic.focus(); bstfShowError('speaker-error', missingMsg); return; }
+        if (!name.value.trim()) { name.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете име.', en: 'Please enter your name.' }); return; }
+        if (!email.value.trim()) { email.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете имейл.', en: 'Please enter your email.' }); return; }
+        if (!topic.value.trim()) { topic.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете тема на презентацията.', en: 'Please enter your presentation topic.' }); return; }
         var company = document.getElementById('sp-company').value.trim();
         var streamSelect = document.getElementById('sp-stream');
-        var stream = streamSelect.options[streamSelect.selectedIndex].text;
+        var stream = streamSelect.value;
         var desc = document.getElementById('sp-desc').value.trim();
         var btn = document.querySelector('#speaker-form .form-submit');
         bstfSubmitForm({ formType: 'speaker', name: name.value.trim(), email: email.value.trim(), company: company, topic: topic.value.trim(), stream: stream, description: desc },
@@ -2013,7 +1996,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       window.submitSpeaker = submitSpeaker;
 
-      document.querySelectorAll('.open-speaker-modal').forEach(function (btn) {
+      document.querySelectorAll('.open-speaker-modal, [data-modal-open="speaker"]').forEach(function (btn) {
         btn.addEventListener('click', function () { openModal('speaker-modal'); });
       });
       var navRegBtn = document.getElementById('nav-cta-btn');

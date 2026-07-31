@@ -417,6 +417,18 @@
         background: var(--navy)
       }
 
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg)
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0
+      }
+
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg)
+      }
+
       .mobile-nav {
         display: none;
         position: fixed;
@@ -3070,7 +3082,7 @@
         }
 
         #bstf-btt {
-          bottom: 5rem
+          bottom: calc(5rem + env(safe-area-inset-bottom, 0px))
         }
 
         .streams-inner-grid {
@@ -4328,7 +4340,7 @@
                   Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и
                   света.</p>
                 <div class="cx-hero-buttons">
-                  <button class="btn btn-primary cx-hero-btn" onclick="openModal('register-modal','standard')"
+                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})"
                     data-bg="Купи билет" data-en="Buy ticket">
                     <span data-bg="Купи билет" data-en="Buy ticket">Купи билет</span> <span
                       aria-hidden="true">&rarr;</span></button>
@@ -4406,8 +4418,8 @@
               <div class="cx-stat-text">
                 <div class="cx-stat-num"><span class="cx-count" data-count="40" data-suffix="+">40+</span></div>
                 <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">ЛЕКТОРИ</div>
-                <div class="cx-stat-desc" data-bg="Световни експерти на една сцена."
-                  data-en="World experts on one stage.">Световни експерти на една сцена.</div>
+                <div class="cx-stat-desc" data-bg="Световни експерти, три зали."
+                  data-en="World experts, three halls.">Световни експерти, три зали.</div>
               </div>
             </div>
             <div class="cx-stat">
@@ -4452,7 +4464,7 @@
       <!-- CTA Banner -->
       <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
         <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-conetnt:center; align-items:center">
-          <button onclick="openModal('register-modal','standard')" class="btn btn-primary"
+          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})" class="btn btn-primary"
             style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
             data-bg="КУПИ БИЛЕТ" data-en="BUY TICKET">КУПИ БИЛЕТ</button>
           <h2
@@ -5554,8 +5566,8 @@
           <div>
             <h2 class="home-speakers-title" data-bg="Лектори" data-en="Speakers">Лектори</h2>
             <p class="home-speakers-intro"
-              data-bg="Практици, учени и стратегически лидери от региона на Черно&amp;nbsp;море и света - на една сцена."
-              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
+              data-bg="Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света."
+              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond.">
               Практици,
               учени и стратегически лидери от региона на Черно&nbsp;море и света - на една
               сцена.</p>
@@ -5574,7 +5586,7 @@
               </div>
             </div>
             <div class="home-speakers-actions">
-              <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор"
+              <button class="btn btn-primary open-speaker-modal" data-modal-open="speaker" data-bg="Кандидатствай като лектор"
                 data-en="Apply as speaker">Кандидатствай като лектор</button>
               <a href="speakers.html" class="btn btn-outline"
                 style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж всички лектори"
@@ -5775,7 +5787,7 @@
               </li>
               <li data-bg="Дигитални материали" data-en="Digital materials">Дигитални материали</li>
             </ul>
-            <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
+            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
               data-en="Register now">Регистрирай се</button>
           </div>
 
@@ -5795,7 +5807,7 @@
                 зона</li>
               <li data-bg="VIP обяд с лекторите" data-en="VIP lunch with the speakers">VIP обяд с лекторите</li>
             </ul>
-            <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
+            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
               data-en="Register now">Регистрирай се</button>
           </div>
 
@@ -5816,7 +5828,7 @@
               <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Достъп до Networking Party
               </li>
             </ul>
-            <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
+            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
               data-en="Register now">Регистрирай се</button>
           </div>
         </div>
@@ -5830,9 +5842,9 @@
         <h2 data-bg="Ще се видим във Варна." data-en="See you in Varna.">Ще се видим във Варна.</h2>
         <p data-bg="5-7 окт 2026 • BSTF2026" data-en="5-7 Oct 2026 • BSTF2026">5-7 окт 2026 • BSTF2026</p>
         <div class="prefooter-buttons">
-          <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай
+          <button class="btn btn-primary open-register-modal" data-modal-open="register" data-bg="Регистрирай се" data-en="Register now">Регистрирай
             се</button>
-          <button class="btn btn-outline open-exhibitor-modal"
+          <button class="btn btn-outline open-exhibitor-modal" data-modal-open="exhibitor"
             style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител"
             data-en="Become an exhibitor">Стани изложител</button>
         </div>
@@ -6116,7 +6128,7 @@
 
     <!-- Mobile Sticky CTA -->
     <div id="bstf-mob-cta">
-      <button class="btn open-register-modal"
+      <button class="btn open-register-modal" data-modal-open="register"
         style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
         data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
     </div>
@@ -6260,10 +6272,12 @@
         if (menuBtn && mobileNav) {
           menuBtn.addEventListener('click', function () {
             mobileNav.classList.toggle('open');
+            menuBtn.classList.toggle('active');
           });
           mobileNav.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {
               mobileNav.classList.remove('open');
+              menuBtn.classList.remove('active');
             });
           });
         }
@@ -6435,13 +6449,25 @@
         }
 
         // === Ticket Card Selection ===
-        document.querySelectorAll('.ticket-card').forEach(function (card) {
-          card.addEventListener('click', function (e) {
-            if (e.target.closest('.btn')) return;
-            document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
-            card.classList.add('active');
+        (function () {
+          var savedTicket = null;
+          try { savedTicket = localStorage.getItem('bstf-ticket'); } catch (e) {}
+          if (savedTicket) {
+            var savedCard = document.querySelector('.ticket-card[data-ticket="' + savedTicket + '"]');
+            if (savedCard) {
+              document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
+              savedCard.classList.add('active');
+            }
+          }
+          document.querySelectorAll('.ticket-card').forEach(function (card) {
+            card.addEventListener('click', function (e) {
+              if (e.target.closest('.btn')) return;
+              document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
+              card.classList.add('active');
+              try { localStorage.setItem('bstf-ticket', card.dataset.ticket); } catch (e) {}
+            });
           });
-        });
+        })();
 
         // === Modals ===
         function openModal(id, ticketType) {
@@ -6689,7 +6715,7 @@
         });
 
         // === Open modal buttons ===
-        document.querySelectorAll('.open-register-modal').forEach(function (btn) {
+        document.querySelectorAll('.open-register-modal, [data-modal-open="register"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             var card = btn.closest('.ticket-card');
             var ticketType = card ? card.dataset.ticket : null;
@@ -6697,13 +6723,13 @@
           });
         });
 
-        document.querySelectorAll('.open-exhibitor-modal').forEach(function (btn) {
+        document.querySelectorAll('.open-exhibitor-modal, [data-modal-open="exhibitor"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             openModal('exhibitor-modal');
           });
         });
 
-        document.querySelectorAll('.open-speaker-modal').forEach(function (btn) {
+        document.querySelectorAll('.open-speaker-modal, [data-modal-open="speaker"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             openModal('speaker-modal');
           });

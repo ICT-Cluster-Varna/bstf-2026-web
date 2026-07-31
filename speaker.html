@@ -348,6 +348,18 @@
       transition: var(--transition)
     }
 
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
     .mobile-nav {
       display: none;
       position: fixed;
@@ -1268,7 +1280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260731"></script>
+  <script src="data/speakers-data.js?v=20260731-2"></script>
   <script>
     (function () {
       'use strict';
@@ -1532,14 +1544,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             type="text" id="sp-topic" required></div>
         <div class="form-group"><label data-bg="Тематичен поток" data-en="Thematic Stream">Тематичен поток</label>
           <select id="sp-stream">
-            <option data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
-            <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
-            <option data-bg="Умен град" data-en="Smart City">Умен град</option>
-            <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
-            <option data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
-            <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
-            <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
-            <option data-bg="BioTech" data-en="BioTech">BioTech</option>
+            <option value="ai" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
+            <option value="transport" data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
+            <option value="smart-city" data-bg="Умен град" data-en="Smart City">Умен град</option>
+            <option value="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
+            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
+            <option value="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
+            <option value="marine" data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
+            <option value="biotech" data-bg="BioTech" data-en="BioTech">BioTech</option>
           </select>
         </div>
         <div class="form-group"><label data-bg="Кратко описание" data-en="Brief Description">Кратко
@@ -1596,9 +1608,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var menuBtn = document.querySelector('.mobile-menu-btn');
       var mobileNav = document.getElementById('mobile-nav');
       if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', function () { mobileNav.classList.toggle('open'); });
+        menuBtn.addEventListener('click', function () { mobileNav.classList.toggle('open'); menuBtn.classList.toggle('active'); });
         mobileNav.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () { mobileNav.classList.remove('open'); });
+          link.addEventListener('click', function () { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); });
         });
       }
 
@@ -1684,11 +1696,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       function submitRegister() {
         var name = document.getElementById('reg-name'), email = document.getElementById('reg-email');
-        if (!name.value.trim()) { name.focus(); bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' }); return; }
-        if (!email.value.trim()) { email.focus(); bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' }); return; }
+        if (!name.value.trim()) { name.focus(); bstfShowError('register-error', { bg: 'Моля, въведете име.', en: 'Please enter your name.' }); return; }
+        if (!email.value.trim()) { email.focus(); bstfShowError('register-error', { bg: 'Моля, въведете имейл.', en: 'Please enter your email.' }); return; }
         var phone = document.getElementById('reg-phone').value.trim();
         var ticketSelect = document.getElementById('reg-ticket');
-        var ticket = ticketSelect.options[ticketSelect.selectedIndex].text;
+        var ticket = ticketSelect.value;
         var btn = document.querySelector('#register-form .form-submit');
         bstfSubmitForm({ formType: 'register', name: name.value.trim(), email: email.value.trim(), phone: phone, ticket: ticket },
           btn, 'register-error', 'register-form', 'register-success', 'register-success-title');
@@ -1696,13 +1708,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.submitRegister = submitRegister;
       function submitSpeaker() {
         var name = document.getElementById('sp-name'), email = document.getElementById('sp-email'), topic = document.getElementById('sp-topic');
-        var missingMsg = { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' };
-        if (!name.value.trim()) { name.focus(); bstfShowError('speaker-error', missingMsg); return; }
-        if (!email.value.trim()) { email.focus(); bstfShowError('speaker-error', missingMsg); return; }
-        if (!topic.value.trim()) { topic.focus(); bstfShowError('speaker-error', missingMsg); return; }
+        if (!name.value.trim()) { name.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете име.', en: 'Please enter your name.' }); return; }
+        if (!email.value.trim()) { email.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете имейл.', en: 'Please enter your email.' }); return; }
+        if (!topic.value.trim()) { topic.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете тема на презентацията.', en: 'Please enter your presentation topic.' }); return; }
         var company = document.getElementById('sp-company').value.trim();
         var streamSelect = document.getElementById('sp-stream');
-        var stream = streamSelect.options[streamSelect.selectedIndex].text;
+        var stream = streamSelect.value;
         var desc = document.getElementById('sp-desc').value.trim();
         var btn = document.querySelector('#speaker-form .form-submit');
         bstfSubmitForm({ formType: 'speaker', name: name.value.trim(), email: email.value.trim(), company: company, topic: topic.value.trim(), stream: stream, description: desc },

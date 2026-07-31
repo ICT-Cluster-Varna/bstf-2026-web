@@ -49,7 +49,7 @@
       descBg: 'Медицинска наука, биоинженерство и здравни иновации',
       descEn: 'Medical science, bioengineering &amp; health innovation',
       dot: '#00cdff',
-      countPluralBg: 'лектори'
+      countPluralBg: 'лектора'
     },
     {
       id: 'marine',
