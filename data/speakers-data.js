@@ -44,7 +44,7 @@
       id: 'biotech',
       nameBg: 'БИОТЕХНОЛОГИИ',
       nameEn: 'BIOTECH',
-      labelBg: 'BioTech',
+      labelBg: 'Биотехнологии',
       labelEn: 'BioTech',
       descBg: 'Медицинска наука, биоинженерство и здравни иновации',
       descEn: 'Medical science, bioengineering &amp; health innovation',

@@ -21,13 +21,13 @@
   <meta property="og:title" content="Лектори - BSTF 2026">
   <meta property="og:description" content="Black Sea Technology Forum 2026 - Speakers">
   <meta property="og:url" content="https://bstf2026.bg/speakers.html">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
+  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лектори - BSTF 2026">
   <meta name="twitter:description" content="Black Sea Technology Forum 2026 - Speakers">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
+  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -1237,6 +1237,40 @@
       transform: translateX(3px)
     }
 
+    .footer-email-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 4px 0
+    }
+
+    .footer-email-row a {
+      display: inline;
+      padding: 0
+    }
+
+    .copy-email-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: color 0.3s ease
+    }
+
+    .copy-email-btn:hover {
+      color: var(--teal)
+    }
+
+    .copy-email-msg {
+      font-size: 0.75rem;
+      color: var(--teal)
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 24px;
@@ -1514,7 +1548,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="main-nav">
     <div class="nav-inner">
       <a href="index.html" class="cx-nav-logo">
-        <img src="images/Connexus - BLACK.svg?v=20260730" alt="Connexus" class="cx-nav-logo-img">
+        <img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img">
         <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
       </a>
       <div class="nav-links">
@@ -1601,7 +1635,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260730"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260731"></script>
       <script>
         (function () {
           'use strict';
@@ -1688,7 +1722,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus" style="height:28px;margin-bottom:4px">
+          <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:4px">
           <p style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:10px"
             data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
           <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
@@ -1713,7 +1747,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="footer-col">
           <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-          <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+          <div class="footer-email-row">
+            <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+            <button type="button" class="copy-email-btn" data-email="bstf@ictclustervarna.com" aria-label="Copy email" title="Copy email">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+            <span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">Копирано!</span>
+          </div>
           <div style="display:flex;gap:12px;margin-top:16px;justify-content:center">
             <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
               style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
@@ -1978,6 +2018,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
       var navRegBtn = document.getElementById('nav-cta-btn');
       if (navRegBtn) { navRegBtn.addEventListener('click', function () { window.location.href = 'index.html#tickets'; }); }
+
+      // Copy email fallback (mailto: fails silently with no mail client configured)
+      document.querySelectorAll('.copy-email-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var email = btn.dataset.email;
+          var msg = btn.parentElement.querySelector('.copy-email-msg');
+          function reveal() {
+            if (!msg) return;
+            msg.hidden = false;
+            clearTimeout(btn._copyTimer);
+            btn._copyTimer = setTimeout(function () { msg.hidden = true; }, 1800);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(reveal, reveal);
+          } else {
+            var ta = document.createElement('textarea');
+            ta.value = email;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (err) {}
+            document.body.removeChild(ta);
+            reveal();
+          }
+        });
+      });
 
       // Smooth page transitions
       document.querySelectorAll('a[href]').forEach(function (link) {

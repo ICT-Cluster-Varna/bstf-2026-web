@@ -24,13 +24,13 @@
     <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
     <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
     <meta property="og:url" content="https://bstf2026.bg/">
-    <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
+    <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
     <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-    <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
+    <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -1717,7 +1717,7 @@
       /* ===== Expo & Startups (v3 — matches venue/speakers card language) ===== */
       .expo-v2 {
         position: relative;
-        padding: 100px 0;
+        padding: 80px 0;
         background: var(--light-blue);
         overflow: hidden
       }
@@ -1746,7 +1746,8 @@
         font-size: 2.5rem;
         font-weight: 800;
         color: var(--navy);
-        margin-bottom: 16px
+        margin-bottom: 16px;
+        text-wrap: balance
       }
 
       .expo-v2__title .highlight {
@@ -1837,7 +1838,7 @@
 
       @media(max-width:768px) {
         .expo-v2 {
-          padding: 70px 0
+          padding: 56px 0
         }
 
         .expo-v2__title {
@@ -1859,7 +1860,7 @@
       .venue-bg {
         position: absolute;
         inset: 0;
-        background: url('images/varna_seaside_bg.jpg?v=20260730') center/cover no-repeat
+        background: url('images/varna_seaside_bg.jpg?v=20260731') center/cover no-repeat
       }
 
       .venue-scrim {
@@ -1899,7 +1900,8 @@
         color: var(--white);
         border-left: 4px solid var(--teal);
         padding-left: 26px;
-        margin: 0
+        margin: 0;
+        text-wrap: balance
       }
 
       .venue-heading .venue-accent {
@@ -2066,6 +2068,10 @@
         text-align: center
       }
 
+      #sponsors {
+        padding: 64px 0
+      }
+
       .sponsors-label {
         font-size: 0.85rem;
         color: var(--text-light);
@@ -2145,6 +2151,40 @@
       }
 
       .footer-col a:hover {
+        color: var(--teal)
+      }
+
+      .footer-email-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 4px 0
+      }
+
+      .footer-email-row a {
+        display: inline;
+        padding: 0
+      }
+
+      .copy-email-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 2px;
+        color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: var(--transition)
+      }
+
+      .copy-email-btn:hover {
+        color: var(--teal)
+      }
+
+      .copy-email-msg {
+        font-size: 0.75rem;
         color: var(--teal)
       }
 
@@ -3479,6 +3519,21 @@
 
       /* === RESPONSIVE: Mobile fixes for custom sections === */
       @media(max-width:768px) {
+        /* Collapses specific manual <br> line-breaks in display headlines that were
+           tuned for desktop width; text-wrap:balance handles the mobile rewrap instead
+           so a single word doesn't get orphaned onto its own line. */
+        br.mobile-collapse {
+          display: none
+        }
+
+        .speakers-section,
+        .tickets-section,
+        .halls-section,
+        .prefooter-cta,
+        #sponsors {
+          padding: 48px 0
+        }
+
         .venue-top {
           flex-direction: column;
           align-items: stretch;
@@ -3492,7 +3547,7 @@
         }
 
         .venue-heading {
-          font-size: 1.9rem;
+          font-size: 1.75rem;
           padding-left: 18px
         }
 
@@ -4207,9 +4262,9 @@
     <nav class="main-nav">
       <div class="nav-inner">
         <a href="#" class="logo cx-nav-logo">
-          <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus"
+          <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus"
             class="cx-nav-logo-img cx-nav-logo-img--white">
-          <img src="images/Connexus - BLACK.svg?v=20260730" alt="Connexus"
+          <img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus"
             class="cx-nav-logo-img cx-nav-logo-img--black">
           <span class="cx-nav-tagline">black sea tech forum</span>
         </a>
@@ -4247,10 +4302,10 @@
       <!-- SECTION 1: Hero -->
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
-          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260730"
-            data-poster-mobile="images/hero-poster-mobile.jpg?v=20260730"
-            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260730"
-            data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260730"></video>
+          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260731"
+            data-poster-mobile="images/hero-poster-mobile.jpg?v=20260731"
+            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260731"
+            data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260731"></video>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
         <div class="cx-hero-bg-overlay"></div>
@@ -4383,7 +4438,7 @@
       <!-- Patronage band: appears right below the hero, on white -->
       <section class="cx-patron-band">
         <div class="cx-hero-inner cx-patron-band-inner">
-          <img src="images/gerp-image.png?v=20260730" alt="Държавен герб на Република България"
+          <img src="images/gerp-image.png?v=20260731" alt="Държавен герб на Република България"
             class="cx-patron-band-crest">
           <div class="cx-patron-band-text">
             <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА
@@ -4516,9 +4571,9 @@
     <!-- SECTION: Streams -->
     <section style="padding:72px 0;background:var(--light-gray)">
       <div class="container" style="text-align:center">
-        <h2 class="section-title text-center" data-bg="11 тематични области.<br>3 дни. Максимална стойност."
-          data-en="11 Streams.<br>3 Days. Maximum Value.">11
-          тематични области.<br>3 дни. Максимална стойност.</h2>
+        <h2 class="section-title text-center" data-bg="11 тематични области.<br class='mobile-collapse'> 3 дни. Максимална стойност."
+          data-en="11 Streams.<br class='mobile-collapse'> 3 Days. Maximum Value.">11
+          тематични области.<br class="mobile-collapse"> 3 дни. Максимална стойност.</h2>
         <p class="section-subtitle text-center streams-subtitle"
           data-bg="Изберете тема и вижте съответните акценти от програмата."
           data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от
@@ -4526,74 +4581,74 @@
         <div class="streams-inner-grid"
           style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto">
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/ai.png?v=20260730" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+            <img src="images/streams/ai.png?v=20260731" alt="AI" loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
               data-en="Artificial Intelligence">Изкуствен интелект</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/transport.png?v=20260730" alt="Transport" loading="lazy" decoding="async"
+            <img src="images/streams/transport.png?v=20260731" alt="Transport" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
               data-en="Future of Transport">Транспорт на бъдещето</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/smart_city.png?v=20260730" alt="Smart City" loading="lazy" decoding="async"
+            <img src="images/streams/smart_city.png?v=20260731" alt="Smart City" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
               град</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/cybersecurity.png?v=20260730" alt="Cybersecurity" loading="lazy" decoding="async"
+            <img src="images/streams/cybersecurity.png?v=20260731" alt="Cybersecurity" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
               data-en="Cybersecurity">Киберсигурност</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/automation.png?v=20260730" alt="Automation" loading="lazy" decoding="async"
+            <img src="images/streams/automation.png?v=20260731" alt="Automation" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика"
               data-en="Automation & Robotics">Автоматизация и роботика </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/agritech.png?v=20260730" alt="AgriTech" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/agritech.png?v=20260731" alt="AgriTech" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/marine_tech.png?v=20260730" alt="Marine Tech" loading="lazy" decoding="async"
+            <img src="images/streams/marine_tech.png?v=20260731" alt="Marine Tech" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
               data-en="Marine Tech">Морски технологии</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/biotech.png?v=20260730" alt="BioTech" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/biotech.png?v=20260731" alt="BioTech" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/gaming.png?v=20260730" alt="Gaming" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/gaming.png?v=20260731" alt="Gaming" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/regional-innovation-policies.png?v=20260730" alt="Regional Innovation Policies"
+            <img src="images/streams/regional-innovation-policies.png?v=20260731" alt="Regional Innovation Policies"
               loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики"
               data-en="Regional Innovation Policies">Регионални иновационни политики</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/tourism.png?v=20260730" alt="Tourism" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/tourism.png?v=20260731" alt="Tourism" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/networking.png?v=20260730" alt="Networking" loading="lazy" decoding="async"
+            <img src="images/streams/networking.png?v=20260731" alt="Networking" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Нетуъркинг" data-en="Networking">
               Нетуъркинг</div>
@@ -4604,7 +4659,7 @@
 
     <!-- SECTION: Partners & Sponsors -->
     <section id="sponsors"
-      style="padding:100px 0;background:linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);position:relative;overflow:hidden;border-top:1px solid rgba(0, 205, 255,0.1)">
+      style="background:linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);position:relative;overflow:hidden;border-top:1px solid rgba(0, 205, 255,0.1)">
       <!-- Glowing background elements for margins -->
       <div class="bg-glow-left"></div>
       <div class="bg-glow-right"></div>
@@ -4619,7 +4674,7 @@
           <!-- Presidential patronage -->
           <div class="partner-row">
             <div class="partner-row__crest">
-              <img src="images/gerp-image.png?v=20260730" alt="Държавен герб на Република България"
+              <img src="images/gerp-image.png?v=20260731" alt="Държавен герб на Република България"
                 class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
             </div>
             <div class="partner-row__divider"></div>
@@ -4643,20 +4698,20 @@
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--ict">
                 <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                  <img src="images/ict_cluster_logo.png?v=20260730" alt="ИКТ Клъстер Варна" loading="lazy"
+                  <img src="images/ict_cluster_logo.png?v=20260731" alt="ИКТ Клъстер Варна" loading="lazy"
                     decoding="async" width="1184" height="392">
                 </a>
               </div>
               <div class="partner-logo partner-logo--bsmepa">
-                <img src="images/bsmepa_logo.png?v=20260730" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
+                <img src="images/bsmepa_logo.png?v=20260731" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
                   height="188">
               </div>
               <div class="partner-logo partner-logo--brainpp">
-                <img src="images/brainpp_logo.png?v=20260730" alt="Brain++ AI Factory" loading="lazy" decoding="async"
+                <img src="images/brainpp_logo.png?v=20260731" alt="Brain++ AI Factory" loading="lazy" decoding="async"
                   width="738" height="249">
               </div>
               <div class="partner-logo partner-logo--arcf">
-                <img src="images/ARCF_logo.svg?v=20260730" alt="ARC Fund">
+                <img src="images/ARCF_logo.svg?v=20260731" alt="ARC Fund">
               </div>
             </div>
           </div>
@@ -4669,7 +4724,7 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--varna">
-                <img src="images/varna_coat.png?v=20260730" alt="Община Варна" loading="lazy" decoding="async"
+                <img src="images/varna_coat.png?v=20260731" alt="Община Варна" loading="lazy" decoding="async"
                   width="284" height="328">
                 <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                   data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
@@ -4685,7 +4740,7 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--mobility">
-                <img src="images/mobility-partner.png?v=20260730" alt="Top Rent a Car" loading="lazy" decoding="async"
+                <img src="images/mobility-partner.png?v=20260731" alt="Top Rent a Car" loading="lazy" decoding="async"
                   width="700" height="459">
               </div>
             </div>
@@ -5161,8 +5216,26 @@
         var filterToggle = document.getElementById('progFilterToggle');
         var filterPanel = document.getElementById('progFilterPanel');
         var filterBadge = document.getElementById('progFilterBadge');
+        var filterAutoCloseTimer = null;
+        function clearFilterAutoClose() {
+          if (filterAutoCloseTimer) { clearTimeout(filterAutoCloseTimer); filterAutoCloseTimer = null; }
+        }
+        function closeFilterPanel() {
+          clearFilterAutoClose();
+          filterPanel.classList.remove('open');
+          filterToggle.classList.remove('active');
+          filterToggle.setAttribute('aria-expanded', 'false');
+        }
+        // Multi-select: don't close on every pill tap (would block picking several
+        // tracks at once). Instead, auto-close a short pause after the last tap so
+        // it still feels automatic; each new tap resets the pause.
+        function scheduleFilterAutoClose() {
+          clearFilterAutoClose();
+          filterAutoCloseTimer = setTimeout(closeFilterPanel, 1100);
+        }
         filterToggle.addEventListener('click', function (e) {
           e.stopPropagation();
+          clearFilterAutoClose();
           var open = filterPanel.classList.toggle('open');
           filterToggle.classList.toggle('active', open);
           filterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -5170,9 +5243,7 @@
         document.addEventListener('click', function (e) {
           if (!filterPanel.classList.contains('open')) return;
           if (filterPanel.contains(e.target) || filterToggle.contains(e.target)) return;
-          filterPanel.classList.remove('open');
-          filterToggle.classList.remove('active');
-          filterToggle.setAttribute('aria-expanded', 'false');
+          closeFilterPanel();
         });
         function updateFilterBadge() {
           filterBadge.hidden = !(selectedTrackCount() > 0);
@@ -5198,6 +5269,7 @@
 
         document.getElementById('progClearBtn').addEventListener('click', function () {
           state.tracks = {}; syncPills(); updateFilterBadge(); render();
+          closeFilterPanel();
         });
 
         // "Всички" (val === null) resets the whole selection; any other pill
@@ -5208,6 +5280,8 @@
           else if (state.tracks[trackId]) { delete state.tracks[trackId]; }
           else { state.tracks[trackId] = true; }
           syncPills(); updateFilterBadge(); render();
+          if (trackId === null) { closeFilterPanel(); }
+          else { scheduleFilterAutoClose(); }
         }
         function syncPills() {
           var noneSelected = selectedTrackCount() === 0;
@@ -5474,7 +5548,7 @@
 
     <!-- SECTION 7: Speakers -->
     <section class="speakers-section" id="speakers"
-      style="padding:80px 0;background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);color:var(--white)">
+      style="background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);color:var(--white)">
       <div class="container">
         <div style="display:grid;grid-template-columns:1fr;gap:32px">
           <div>
@@ -5519,8 +5593,8 @@
         <!-- Left side: Title + Description -->
         <div class="animate-on-scroll">
           <h2 class="expo-v2__title"
-            data-bg="Експо зона.<br>Зона за стартиращи компании.<br><span class='highlight'>Live demos.</span>"
-            data-en="Expo Zone.<br>Startup Zone.<br><span class='highlight'>Live demos.</span>">Експо зона.<br>Зона за
+            data-bg="Експо зона.<br class='mobile-collapse'> Зона за стартиращи компании.<br><span class='highlight'>Live demos.</span>"
+            data-en="Expo Zone.<br class='mobile-collapse'> Startup Zone.<br><span class='highlight'>Live demos.</span>">Експо зона.<br class="mobile-collapse"> Зона за
             стартиращи компании.<br><span class="highlight">Live demos.</span></h2>
           <p class="expo-v2__desc"
             data-bg="Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне."
@@ -5621,7 +5695,7 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="venue-pass-stub">
+            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Cherno+More+Varna+Bulgaria" target="_blank" rel="noopener" class="venue-pass-stub">
               <span data-bg="Насоки за пристигане" data-en="Arrival directions">Насоки за пристигане</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -5770,7 +5844,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus" style="height:28px;margin-bottom:14px">
+            <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:14px">
             <p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px"
               data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
             <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
@@ -5795,7 +5869,13 @@
           </div>
           <div class="footer-col">
             <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-            <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+            <div class="footer-email-row">
+              <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+              <button type="button" class="copy-email-btn" data-email="bstf@ictclustervarna.com" aria-label="Copy email" title="Copy email">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+              <span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">Копирано!</span>
+            </div>
             <a href="tel:+359876658296">+359 876 658 296</a>
             <div class="footer-social" style="display:flex;gap:12px;margin-top:16px;justify-content:center">
               <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank"
@@ -6637,6 +6717,33 @@
             if (t) t.scrollIntoView({ behavior: 'smooth' });
           });
         }
+        // === Copy email fallback (mailto: fails silently with no mail client configured) ===
+        document.querySelectorAll('.copy-email-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var email = btn.dataset.email;
+            var msg = btn.parentElement.querySelector('.copy-email-msg');
+            function reveal() {
+              if (!msg) return;
+              msg.hidden = false;
+              clearTimeout(btn._copyTimer);
+              btn._copyTimer = setTimeout(function () { msg.hidden = true; }, 1800);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(email).then(reveal, reveal);
+            } else {
+              var ta = document.createElement('textarea');
+              ta.value = email;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand('copy'); } catch (err) {}
+              document.body.removeChild(ta);
+              reveal();
+            }
+          });
+        });
+
         // === Smooth page transitions ===
         document.querySelectorAll('a[href]').forEach(function (link) {
           var href = link.getAttribute('href');
