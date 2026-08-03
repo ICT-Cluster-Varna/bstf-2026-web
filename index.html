@@ -989,14 +989,18 @@
       }
 
 
-      .prog-tail-col-label {
-        font-family: var(--mono);
-        font-size: 0.66rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--text-light);
-        margin-bottom: 2px
+      /* Mobile-only linear rendering (see renderProgramTimeline): the
+        desktop layout splits each day's programme into an "aligned" grid
+        (#progGrid, synced rows across all 3 days) and a "tail" grid
+        (#progGridTail, each day's own diverging remainder) that sit
+        side-by-side as columns. Stacking those two SEPARATE containers on
+        narrow screens reads as Day1-early, Day2-early, Day3-early,
+        Day1-late, Day2-late, Day3-late — not chronological per day. This
+        container instead renders each day's header + every slot (aligned
+        and tail together) as one uninterrupted list, so it's built and
+        shown only below the 1000px breakpoint where the days stack. */
+      .prog-grid-mobile {
+        display: none
       }
 
       .prog-day-col-head {
@@ -1144,53 +1148,28 @@
       }
 
       @media(max-width:1000px) {
-        .prog-grid {
+        /* The synced-columns desktop layout only makes sense side-by-side;
+          stacked, it interleaves days out of order (see .prog-grid-mobile
+          above). Hide both desktop containers and show the linear one. */
+        .prog-grid,
+        .prog-grid-tail {
+          display: none
+        }
+
+        .prog-grid-mobile {
           display: flex;
           flex-direction: column;
           align-items: stretch;
-          gap: 20px
-        }
-
-        /* Stacked single column now — the side-by-side day divider (left
-          border + 32px indent) would just shove every Day 2/3 card off
-          the left edge for no reason, so drop it and let cards go full
-          width like Day 1's already do. */
-        .prog-col-2,
-        .prog-col-3 {
-          border-left: none;
-          padding-left: 0
+          gap: 14px
         }
 
         /* Only the 2nd/3rd day's header (not every cell) gets the divider
           here — DOM order is day-grouped, so this is simply "any header
-          that isn't the very first cell in the grid". */
-        .prog-cell-head:not(:first-child) {
+          that isn't the very first cell in the list". */
+        .prog-grid-mobile .prog-cell-head:not(:first-child) {
           border-top: 1px solid rgba(11, 57, 84, 0.14);
           margin-top: 30px;
           padding-top: 30px
-        }
-
-        .prog-grid-tail {
-          grid-template-columns: 1fr !important;
-          gap: 0;
-          grid-template-columns: 1fr;
-          gap: 0;
-          margin-top: 30px
-        }
-
-        .prog-tail-col:not(:first-child) {
-          border-top: 1px solid rgba(11, 57, 84, 0.14);
-          margin-top: 30px;
-          padding-top: 30px
-        }
-
-        /* The day header ("Ден 2", "6 октомври") already ran above, in the
-          aligned section — this smaller repeat label inside the tail
-          section just adds a redundant floating heading with nothing but
-          a time under it. The border-top divider above already marks the
-          day change, so drop the label instead of stacking two markers. */
-        .prog-tail-col-label {
-          display: none
         }
 
         .prog-hall-legend {
@@ -5106,6 +5085,7 @@
 
         <div class="prog-grid" id="progGrid"></div>
         <div class="prog-grid-tail" id="progGridTail"></div>
+        <div class="prog-grid-mobile" id="progGridMobile"></div>
       </div>
     </section>
 
@@ -5305,6 +5285,7 @@
 
         var grid = document.getElementById('progGrid');
         var tailGrid = document.getElementById('progGridTail');
+        var mobileGrid = document.getElementById('progGridMobile');
 
         function cardMatches(card) {
           return selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
@@ -5390,12 +5371,38 @@
           return n;
         }
 
+        // Three render targets, one per layout need — same PROGRAM_DAYS
+        // data and the same buildHeaderCell/buildSlotCell builders feed
+        // all three, but each lays the cells out differently:
+        //   - renderDesktopAligned: Day 1/2/3 headers + the leading run of
+        //     slots whose kind matches across all 3 days, placed on real
+        //     synced CSS Grid rows (explicit grid-row per cell) so e.g.
+        //     every day's first coffee break lands at the same height.
+        //     Only possible because these cells are siblings in one grid
+        //     with matching row numbers — the reason this is its own pass.
+        //   - renderDesktopTail: once the days structurally diverge (Day 1
+        //     wraps into fewer/different evening events than Day 2/3),
+        //     forcing them onto shared rows produced bad stretching/gaps,
+        //     so each day flows independently here instead — still 3 CSS
+        //     Grid columns, no shared rows.
+        //   - renderMobileLinear: below the 1000px breakpoint the two
+        //     desktop containers above would stack as separate blocks —
+        //     Day1-aligned, Day2-aligned, Day3-aligned, Day1-tail, ... —
+        //     which reads out of chronological order. This pass instead
+        //     renders each day's header + every slot (aligned prefix and
+        //     tail together) as one uninterrupted list.
         function render() {
           grid.innerHTML = '';
           tailGrid.innerHTML = '';
+          mobileGrid.innerHTML = '';
           var commonN = commonPrefixLength();
+          renderDesktopAligned(commonN);
+          renderDesktopTail(commonN);
+          renderMobileLinear();
+          equalizeTailRows(commonN);
+        }
 
-          // Aligned section: header + the shared prefix, on synced grid-rows.
+        function renderDesktopAligned(commonN) {
           PROGRAM_DAYS.forEach(function (d, colIdx) {
             var head = buildHeaderCell(d, colIdx);
             head.style.gridRow = '1';
@@ -5407,26 +5414,18 @@
               grid.appendChild(cell);
             }
           });
+        }
 
-          // Tail section: each day's own diverging remainder, independent —
-          // no shared rows, no forced height-matching between days. The
-          // divider class goes on the .prog-tail-col CONTAINER only (one
-          // continuous line for the whole column) — NOT on each individual
-          // cell too, which was drawing a short border-left per card with
-          // visible gaps between them (the earlier "leftover divider" bug).
+        function renderDesktopTail(commonN) {
+          // The divider class goes on the .prog-tail-col CONTAINER only
+          // (one continuous line for the whole column) — NOT on each
+          // individual cell too, which was drawing a short border-left per
+          // card with visible gaps between them (the earlier "leftover
+          // divider" bug).
           PROGRAM_DAYS.forEach(function (d, colIdx) {
             var col = document.createElement('div');
             col.className = 'prog-tail-col prog-col-' + (colIdx + 1);
             col.id = 'prog-tail-col-' + d.id;
-
-            if (commonN < d.slots.length) {
-              var label = document.createElement('div');
-              label.className = 'prog-tail-col-label';
-              label.setAttribute('data-bg', d.label.bg);
-              label.setAttribute('data-en', d.label.en);
-              label.textContent = d.label.bg;
-              col.appendChild(label);
-            }
 
             for (var j = commonN; j < d.slots.length; j++) {
               var cell = buildSlotCell(d.slots[j], colIdx, false);
@@ -5435,8 +5434,21 @@
             }
             tailGrid.appendChild(col);
           });
+        }
 
-          equalizeTailRows(commonN);
+        function renderMobileLinear() {
+          PROGRAM_DAYS.forEach(function (d, colIdx) {
+            var mHead = buildHeaderCell(d, colIdx);
+            mHead.style.gridColumn = '';
+            mHead.style.gridRow = '';
+            mobileGrid.appendChild(mHead);
+
+            d.slots.forEach(function (s) {
+              var mCell = buildSlotCell(s, colIdx, false);
+              mCell.style.gridColumn = '';
+              mobileGrid.appendChild(mCell);
+            });
+          });
         }
 
         // Day 2 and Day 3 keep running the identical run of session kinds
@@ -5876,8 +5888,8 @@
           </div>
           <div class="footer-col">
             <h4 data-bg="Правни" data-en="Legal">Правни</h4>
-            <a href="#" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>
-            <a href="#" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>
+            <a href="privacy-policy.html" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>
+            <a href="terms-and-conditions.html" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>
           </div>
           <div class="footer-col">
             <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
