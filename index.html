@@ -983,6 +983,7 @@
       }
 
       .prog-tail-col {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         min-width: 0
@@ -5463,6 +5464,15 @@
         // aligned grid above gives the fully-common prefix. Skipped below
         // the 1000px breakpoint, where the tail collapses to one stacked
         // column and Day 2/Day 3 are no longer side by side.
+        //
+        // Matching on `kind` alone isn't enough — Day 2's 16:20-16:50
+        // summary panel and Day 3's 16:20-17:00 closing ceremony are both
+        // kind:'single' at the same row index, but they're not actually
+        // the same moment. Syncing their heights forced Day 2's short
+        // panel up to the closing ceremony's taller box, leaving a slab of
+        // empty space inside it before the next real row (20:00 Парти).
+        // Requiring the times to match too stops the sync right where the
+        // days genuinely stop running in parallel.
         function equalizeTailRows(commonN) {
           var d2 = PROGRAM_DAYS[1], d3 = PROGRAM_DAYS[2];
           if (!d2 || !d3) return;
@@ -5472,7 +5482,7 @@
           var minLen = Math.min(d2.slots.length, d3.slots.length);
           var narrow = window.innerWidth <= 1000;
           for (var j = commonN; j < minLen; j++) {
-            if (d2.slots[j].kind !== d3.slots[j].kind) break;
+            if (d2.slots[j].kind !== d3.slots[j].kind || d2.slots[j].time !== d3.slots[j].time) break;
             var cell2 = col2.querySelector('[data-slot-idx="' + j + '"]');
             var cell3 = col3.querySelector('[data-slot-idx="' + j + '"]');
             if (!cell2 || !cell3) continue;
