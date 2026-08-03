@@ -1,7 +1,7 @@
 <%@ Language="JScript" CodePage="65001" %>
 <!--#include file="resend-config.asp"-->
 <%
-// BSTF 2026 - form submissions -> Resend -> email notification
+// CONNEXUS 2026 - form submissions -> Resend -> email notification
 // Handles: register (registration modal), exhibitor (become an exhibitor modal), speaker (become a speaker modal)
 // All three currently notify the same address while the project is being set up.
 //
@@ -14,9 +14,9 @@ Response.ContentType = "application/json";
 Response.CharSet = "utf-8";
 Response.CacheControl = "no-cache";
 
-// TODO: once a domain is verified in Resend, switch this to e.g. "BSTF 2026 <noreply@bstf2026.bg>"
+// TODO: once a domain is verified in Resend, switch this to e.g. "CONNEXUS 2026 <noreply@bstf2026.bg>"
 // "onboarding@resend.dev" is Resend's shared sandbox sender - it works before domain verification.
-var FROM_EMAIL = "BSTF 2026 <onboarding@resend.dev>";
+var FROM_EMAIL = "CONNEXUS 2026 <onboarding@resend.dev>";
 
 // Where every form submission is sent for now.
 var TO_EMAIL = "ssabev@shopmetrics.com";
@@ -122,7 +122,7 @@ function fieldRowsHtml(fields) {
 function emailHeaderHtml(eyebrow) {
   return "<tr><td height='4' style='background-color:#00cdff;font-size:1px;line-height:1px;' bgcolor='#00cdff'>&nbsp;</td></tr>" +
     "<tr><td style='background-color:#0B3954;padding:28px 40px 22px 40px;' bgcolor='#0B3954'>" +
-    "<div style='font-family:Space Grotesk,Segoe UI,Arial,sans-serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.5px;'>BSTF 2026</div>" +
+    "<div style='font-family:Space Grotesk,Segoe UI,Arial,sans-serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.5px;'>CONNEXUS 2026</div>" +
     "<div style='font-family:IBM Plex Mono,Courier New,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#00cdff;margin-top:6px;'>" +
     escapeHtml(eyebrow) + "</div></td></tr>";
 }
@@ -252,8 +252,8 @@ if (formType === "register") {
   if (!isRealName(rName)) sendJson(false, "Invalid name");
   if (!isRealPhone(rPhone)) sendJson(false, "Invalid phone");
   replyTo = rEmail;
-  subject = "BSTF 2026 - \u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f: " + rName;
-  textBody = "\u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430 BSTF 2026\n\n" +
+  subject = "CONNEXUS 2026 - \u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f: " + rName;
+  textBody = "\u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430 CONNEXUS 2026\n\n" +
     "\u0418\u043c\u0435: " + rName + "\n" +
     "\u0418\u043c\u0435\u0439\u043b: " + rEmail + "\n" +
     "\u0422\u0435\u043b\u0435\u0444\u043e\u043d: " + (rPhone || "-") + "\n" +
@@ -263,8 +263,8 @@ if (formType === "register") {
     "\u041f\u0430\u0440\u0442\u043d\u044c\u043e\u0440: " + rPromoCompanyDisplay + "\n" +
     "\u0422\u0438\u043f \u043d\u0430 \u043f\u0440\u043e\u043c\u043e\u0446\u0438\u044f\u0442\u0430: " + rPromoTypeDisplay;
   htmlBody = buildNotificationEmail(
-    "BSTF 2026 \u00b7 \u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042f",
-    "\u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430 BSTF 2026",
+    "CONNEXUS 2026 \u00b7 \u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042f",
+    "\u041d\u043e\u0432\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430 CONNEXUS 2026",
     "\u041d\u043e\u0432\u043e \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u0442 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u0437\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f",
     [
       { label: "\u0418\u043c\u0435", value: rName },
@@ -287,16 +287,16 @@ if (formType === "register") {
   if (!isRealName(eContact)) sendJson(false, "Invalid contact name");
   if (!isValidEmail(eEmail)) sendJson(false, "Invalid email");
   replyTo = eEmail;
-  subject = "BSTF 2026 - \u0417\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b: " + eCompany;
-  textBody = "\u041d\u043e\u0432\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b - BSTF 2026\n\n" +
+  subject = "CONNEXUS 2026 - \u0417\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b: " + eCompany;
+  textBody = "\u041d\u043e\u0432\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b - CONNEXUS 2026\n\n" +
     "\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f: " + eCompany + "\n" +
     "\u041b\u0438\u0446\u0435 \u0437\u0430 \u043a\u043e\u043d\u0442\u0430\u043a\u0442: " + eContact + "\n" +
     "\u0418\u043c\u0435\u0439\u043b: " + eEmail + "\n" +
     "\u041f\u0430\u043a\u0435\u0442: " + (ePackageDisplay || "-") + "\n" +
     "\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f: " + (eNotes || "-");
   htmlBody = buildNotificationEmail(
-    "BSTF 2026 \u00b7 \u0418\u0417\u041b\u041e\u0416\u0418\u0422\u0415\u041b",
-    "\u041d\u043e\u0432\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b - BSTF 2026",
+    "CONNEXUS 2026 \u00b7 \u0418\u0417\u041b\u041e\u0416\u0418\u0422\u0415\u041b",
+    "\u041d\u043e\u0432\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b - CONNEXUS 2026",
     "\u041d\u043e\u0432\u043e \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u0442 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u0437\u0430 \u0438\u0437\u043b\u043e\u0436\u0438\u0442\u0435\u043b",
     [
       { label: "\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f", value: eCompany },
@@ -315,8 +315,8 @@ if (formType === "register") {
   if (!isValidEmail(sEmail)) sendJson(false, "Invalid email");
   if (sTopic.length < 3) sendJson(false, "Invalid topic");
   replyTo = sEmail;
-  subject = "BSTF 2026 - \u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440: " + sName;
-  textBody = "\u041d\u043e\u0432\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440 - BSTF 2026\n\n" +
+  subject = "CONNEXUS 2026 - \u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440: " + sName;
+  textBody = "\u041d\u043e\u0432\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440 - CONNEXUS 2026\n\n" +
     "\u0418\u043c\u0435: " + sName + "\n" +
     "\u0418\u043c\u0435\u0439\u043b: " + sEmail + "\n" +
     "\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f/\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f: " + (sCompany || "-") + "\n" +
@@ -324,8 +324,8 @@ if (formType === "register") {
     "\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u0435\u043d \u043f\u043e\u0442\u043e\u043a: " + (sStream || "-") + "\n" +
     "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435: " + (sDesc || "-");
   htmlBody = buildNotificationEmail(
-    "BSTF 2026 \u00b7 \u041b\u0415\u041a\u0422\u041e\u0420",
-    "\u041d\u043e\u0432\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440 - BSTF 2026",
+    "CONNEXUS 2026 \u00b7 \u041b\u0415\u041a\u0422\u041e\u0420",
+    "\u041d\u043e\u0432\u043e \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440 - CONNEXUS 2026",
     "\u041d\u043e\u0432\u043e \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u0442 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u0437\u0430 \u043b\u0435\u043a\u0442\u043e\u0440",
     [
       { label: "\u0418\u043c\u0435", value: sName },
