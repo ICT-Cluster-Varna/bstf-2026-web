@@ -1,4 +1,4 @@
-# === BSTF 2026 — cache policy ===
+# === CONNEXUS 2026 — cache policy ===
 # Problem this solves: after a deploy, browsers kept serving the OLD .html
 # from cache because the files had no cache headers (browser "heuristic"
 # caching). These rules force the browser to re-check the server for HTML on

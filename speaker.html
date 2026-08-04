@@ -14,8 +14,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Лектор - BSTF 2026</title>
-  <meta name="description" content="Black Sea Technology Forum 2026 - Speaker profile">
+  <title>Лектор — CONNEXUS 2026</title>
+  <meta name="description" content="CONNEXUS 2026 (Black Sea Technology Forum) - Speaker profile">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -348,6 +348,18 @@
       transition: var(--transition)
     }
 
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
     .mobile-nav {
       display: none;
       position: fixed;
@@ -361,6 +373,21 @@
     }
 
     .mobile-nav.open {
+      display: block
+    }
+
+    .mobile-nav-backdrop {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 198
+    }
+
+    .mobile-nav-backdrop.open {
       display: block
     }
 
@@ -862,7 +889,15 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 48px;
-      margin-bottom: 48px
+      margin-bottom: 48px;
+      text-align: center
+    }
+
+    /* The global img{display:block} reset makes this an unstyled block box
+      that ignores the parent's text-align — needs its own margin:auto. */
+    .footer-brand img {
+      margin-left: auto;
+      margin-right: auto
     }
 
     .footer-brand .logo {
@@ -903,12 +938,49 @@
       transform: translateX(3px)
     }
 
+    .footer-email-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 4px 0
+    }
+
+    .footer-email-row a {
+      display: inline;
+      padding: 0
+    }
+
+    .copy-email-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: color 0.3s ease
+    }
+
+    .copy-email-btn:hover {
+      color: var(--teal)
+    }
+
+    .copy-email-msg {
+      font-size: 0.75rem;
+      color: var(--teal)
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 24px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      gap: 8px;
+      text-align: center;
       font-size: 0.8rem
     }
 
@@ -1086,6 +1158,32 @@
       transform: translateY(-2px)
     }
 
+    #bstf-mob-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--teal);
+      padding: 12px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15)
+    }
+
+    #bstf-mob-cta.visible {
+      transform: translateY(0)
+    }
+
+    @media(min-width:769px) {
+      #bstf-mob-cta {
+        display: none !important
+      }
+    }
+
     body.page-exit {
       opacity: 0;
       transition: opacity 0.12s ease-in
@@ -1128,6 +1226,10 @@
         padding: 90px 0 56px
       }
 
+      footer.main-footer {
+        padding: 24px 0 32px
+      }
+
       .footer-grid {
         grid-template-columns: 1fr
       }
@@ -1161,7 +1263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="main-nav">
     <div class="nav-inner">
       <a href="index.html" class="cx-nav-logo">
-        <img src="images/Connexus - BLACK.svg?v=20260730" alt="Connexus" class="cx-nav-logo-img">
+        <img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img">
         <span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>
       </a>
       <div class="nav-links">
@@ -1185,6 +1287,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 
   <!-- Mobile Nav -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
   <div class="mobile-nav" id="mobile-nav">
     <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
     <a href="speakers.html" class="active" data-bg="Лектори" data-en="Speakers">Лектори</a>
@@ -1203,7 +1306,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span aria-hidden="true">&#8592;</span>
           <span data-bg="Всички лектори" data-en="All speakers">Всички лектори</span>
         </a>
-        <p class="hero-eyebrow" id="sp-hero-track">BSTF 2026</p>
+        <p class="hero-eyebrow" id="sp-hero-track">CONNEXUS 2026</p>
         <h1 id="sp-hero-name">&nbsp;</h1>
         <p class="hero-desc" id="sp-hero-role">&nbsp;</p>
       </div>
@@ -1219,7 +1322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260730"></script>
+  <script src="data/speakers-data.js?v=20260804"></script>
   <script>
     (function () {
       'use strict';
@@ -1296,7 +1399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var heroRole = document.getElementById('sp-hero-role');
 
       if (speaker && track) {
-        document.title = speaker.name.replace(/<[^>]*>/g, '') + ' - BSTF 2026';
+        document.title = speaker.name.replace(/<[^>]*>/g, '') + ' - CONNEXUS 2026';
 
         heroTrack.setAttribute('data-bg', track.labelBg);
         heroTrack.setAttribute('data-en', track.labelEn);
@@ -1327,9 +1430,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           renderDetails(speaker) +
           '</div>';
       } else {
-        heroTrack.setAttribute('data-bg', 'BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ');
-        heroTrack.setAttribute('data-en', 'BSTF 2026 · VARNA · OCT 5-7');
-        heroTrack.textContent = 'BSTF 2026 · ВАРНА · 5-7 ОКТОМВРИ';
+        heroTrack.setAttribute('data-bg', 'CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ');
+        heroTrack.setAttribute('data-en', 'CONNEXUS 2026 · VARNA · OCT 5-7');
+        heroTrack.textContent = 'CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ';
         heroName.setAttribute('data-bg', 'Лекторът не е намерен');
         heroName.setAttribute('data-en', 'Speaker not found');
         heroName.textContent = 'Лекторът не е намерен';
@@ -1340,9 +1443,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         root.innerHTML =
           '<div class="sp-not-found">' +
           '<h2 data-bg="Няма намерен лектор" data-en="No speaker found">Няма намерен лектор</h2>' +
-          '<p data-bg="Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026."' +
-          ' data-en="Check the link or browse the full BSTF 2026 speaker list.">' +
-          'Проверете връзката или разгледайте пълния списък с лектори на BSTF 2026.</p>' +
+          '<p data-bg="Проверете връзката или разгледайте пълния списък с лектори на CONNEXUS 2026."' +
+          ' data-en="Check the link or browse the full CONNEXUS 2026 speaker list.">' +
+          'Проверете връзката или разгледайте пълния списък с лектори на CONNEXUS 2026.</p>' +
           '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">Към всички лектори</a>' +
           '</div>';
       }
@@ -1352,7 +1455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Pre-footer CTA -->
   <section class="prefooter-cta">
     <div class="container">
-      <h2 data-bg="Готови ли сте за BSTF 2026?" data-en="Ready for BSTF 2026?">Готови ли сте за BSTF 2026?</h2>
+      <h2 data-bg="Готови ли сте за Connexus 2026?" data-en="Ready for Connexus 2026?">Готови ли сте за Connexus 2026?</h2>
       <p data-bg="Присъединете се към водещата технологична конференция в Черноморския регион."
         data-en="Join the leading technology conference in the Black Sea region.">Присъединете се към водещата
         технологична конференция в Черноморския регион.</p>
@@ -1371,10 +1474,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus" style="height:28px;margin-bottom:4px">
+          <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:4px">
           <p style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:10px"
             data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
-          <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.6)" data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
             форум</p>
           <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:4px"
             data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии
@@ -1396,9 +1499,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="footer-col">
           <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-          <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
-          <div style="display:flex;gap:12px;margin-top:16px">
-            <a href="#" aria-label="LinkedIn"
+          <div class="footer-email-row">
+            <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+            <button type="button" class="copy-email-btn" data-email="bstf@ictclustervarna.com" aria-label="Copy email" title="Copy email">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+            <span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">Копирано!</span>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:16px;justify-content:center">
+            <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
               style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
                 width="18" height="18" viewBox="0 0 24 24" fill="var(--white)">
                 <path
@@ -1423,9 +1532,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="modal-close" onclick="closeModal('register-modal')" aria-label="Close">&times;</button>
       <div class="modal-form" id="register-form">
         <h2 id="register-modal-title" data-bg="Регистрация" data-en="Registration">Регистрация</h2>
-        <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на BSTF 2026."
-          data-en="Fill in the form to reserve your spot at BSTF 2026.">Попълнете формата, за да резервирате вашето
-          място на BSTF 2026.</p>
+        <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на CONNEXUS 2026."
+          data-en="Fill in the form to reserve your spot at CONNEXUS 2026.">Попълнете формата, за да резервирате вашето
+          място на CONNEXUS 2026.</p>
         <div class="form-group"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input
             type="text" id="reg-name" placeholder="John Doe" required></div>
         <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="reg-email"
@@ -1465,8 +1574,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="modal-close" onclick="closeModal('speaker-modal')" aria-label="Close">&times;</button>
       <div class="modal-form" id="speaker-form">
         <h2 id="speaker-modal-title" data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
-        <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
-          data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
+        <p class="modal-desc" data-bg="Предложете тема за лекция на CONNEXUS 2026."
+          data-en="Propose a talk topic for CONNEXUS 2026.">Предложете тема за лекция на CONNEXUS 2026.</p>
         <div class="form-group"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input
             type="text" id="sp-name" required></div>
         <div class="form-group"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="sp-email"
@@ -1477,14 +1586,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             type="text" id="sp-topic" required></div>
         <div class="form-group"><label data-bg="Тематичен поток" data-en="Thematic Stream">Тематичен поток</label>
           <select id="sp-stream">
-            <option data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
-            <option data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
-            <option data-bg="Умен град" data-en="Smart City">Умен град</option>
-            <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
-            <option data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
-            <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
-            <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
-            <option data-bg="BioTech" data-en="BioTech">BioTech</option>
+            <option value="ai" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</option>
+            <option value="transport" data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
+            <option value="smart-city" data-bg="Умен град" data-en="Smart City">Умен град</option>
+            <option value="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
+            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
+            <option value="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
+            <option value="marine" data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
+            <option value="biotech" data-bg="BioTech" data-en="BioTech">BioTech</option>
           </select>
         </div>
         <div class="form-group"><label data-bg="Кратко описание" data-en="Brief Description">Кратко
@@ -1509,6 +1618,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Back to Top -->
   <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
+
+  <!-- Mobile Sticky CTA -->
+  <div id="bstf-mob-cta">
+    <button class="btn" onclick="window.location.href='index.html#tickets'"
+      style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
+      data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
+  </div>
 
   <script>
     (function () {
@@ -1540,11 +1656,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       var menuBtn = document.querySelector('.mobile-menu-btn');
       var mobileNav = document.getElementById('mobile-nav');
+      var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
       if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', function () { mobileNav.classList.toggle('open'); });
+        menuBtn.addEventListener('click', function () { var willOpen = !mobileNav.classList.contains('open'); mobileNav.classList.toggle('open', willOpen); menuBtn.classList.toggle('active', willOpen); if (mobileNavBackdrop) mobileNavBackdrop.classList.toggle('open', willOpen); document.body.style.overflow = willOpen ? 'hidden' : ''; });
         mobileNav.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () { mobileNav.classList.remove('open'); });
+          link.addEventListener('click', function () { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('open'); document.body.style.overflow = ''; });
         });
+        if (mobileNavBackdrop) {
+          mobileNavBackdrop.addEventListener('click', function () { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); mobileNavBackdrop.classList.remove('open'); document.body.style.overflow = ''; });
+        }
       }
 
       var lastFocused = null;
@@ -1629,11 +1749,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       function submitRegister() {
         var name = document.getElementById('reg-name'), email = document.getElementById('reg-email');
-        if (!name.value.trim()) { name.focus(); bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' }); return; }
-        if (!email.value.trim()) { email.focus(); bstfShowError('register-error', { bg: 'Моля, попълнете име и имейл.', en: 'Please fill in name and email.' }); return; }
+        if (!name.value.trim()) { name.focus(); bstfShowError('register-error', { bg: 'Моля, въведете име.', en: 'Please enter your name.' }); return; }
+        if (!email.value.trim()) { email.focus(); bstfShowError('register-error', { bg: 'Моля, въведете имейл.', en: 'Please enter your email.' }); return; }
         var phone = document.getElementById('reg-phone').value.trim();
         var ticketSelect = document.getElementById('reg-ticket');
-        var ticket = ticketSelect.options[ticketSelect.selectedIndex].text;
+        var ticket = ticketSelect.value;
         var btn = document.querySelector('#register-form .form-submit');
         bstfSubmitForm({ formType: 'register', name: name.value.trim(), email: email.value.trim(), phone: phone, ticket: ticket },
           btn, 'register-error', 'register-form', 'register-success', 'register-success-title');
@@ -1641,13 +1761,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.submitRegister = submitRegister;
       function submitSpeaker() {
         var name = document.getElementById('sp-name'), email = document.getElementById('sp-email'), topic = document.getElementById('sp-topic');
-        var missingMsg = { bg: 'Моля, попълнете задължителните полета.', en: 'Please fill in the required fields.' };
-        if (!name.value.trim()) { name.focus(); bstfShowError('speaker-error', missingMsg); return; }
-        if (!email.value.trim()) { email.focus(); bstfShowError('speaker-error', missingMsg); return; }
-        if (!topic.value.trim()) { topic.focus(); bstfShowError('speaker-error', missingMsg); return; }
+        if (!name.value.trim()) { name.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете име.', en: 'Please enter your name.' }); return; }
+        if (!email.value.trim()) { email.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете имейл.', en: 'Please enter your email.' }); return; }
+        if (!topic.value.trim()) { topic.focus(); bstfShowError('speaker-error', { bg: 'Моля, въведете тема на презентацията.', en: 'Please enter your presentation topic.' }); return; }
         var company = document.getElementById('sp-company').value.trim();
         var streamSelect = document.getElementById('sp-stream');
-        var stream = streamSelect.options[streamSelect.selectedIndex].text;
+        var stream = streamSelect.value;
         var desc = document.getElementById('sp-desc').value.trim();
         var btn = document.querySelector('#speaker-form .form-submit');
         bstfSubmitForm({ formType: 'speaker', name: name.value.trim(), email: email.value.trim(), company: company, topic: topic.value.trim(), stream: stream, description: desc },
@@ -1657,6 +1776,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       var navRegBtn = document.getElementById('nav-cta-btn');
       if (navRegBtn) { navRegBtn.addEventListener('click', function () { window.location.href = 'index.html#tickets'; }); }
+
+      // Copy email fallback (mailto: fails silently with no mail client configured)
+      document.querySelectorAll('.copy-email-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var email = btn.dataset.email;
+          var msg = btn.parentElement.querySelector('.copy-email-msg');
+          function reveal() {
+            if (!msg) return;
+            msg.hidden = false;
+            clearTimeout(btn._copyTimer);
+            btn._copyTimer = setTimeout(function () { msg.hidden = true; }, 1800);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(reveal, reveal);
+          } else {
+            var ta = document.createElement('textarea');
+            ta.value = email;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (err) {}
+            document.body.removeChild(ta);
+            reveal();
+          }
+        });
+      });
 
       // Smooth page transitions
       document.querySelectorAll('a[href]').forEach(function (link) {
@@ -1676,6 +1822,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (window.scrollY > window.innerHeight * 1.5) { btt.classList.add('visible'); }
           else { btt.classList.remove('visible'); }
         });
+      }
+
+      // === Mobile Sticky CTA ===
+      var mobCta = document.getElementById('bstf-mob-cta');
+      if (mobCta && window.innerWidth < 769) {
+        var pageHero = document.querySelector('.page-hero');
+        if (pageHero) {
+          var heroObs = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) { mobCta.classList.remove('visible'); }
+            else { mobCta.classList.add('visible'); }
+          }, { threshold: 0.1 });
+          heroObs.observe(pageHero);
+        }
       }
     })();
     window.addEventListener('pageshow', function (e) { if (e.persisted) window.location.reload(); });

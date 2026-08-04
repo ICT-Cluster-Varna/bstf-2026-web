@@ -17,20 +17,20 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>BSTF 2026</title>
-    <meta name="description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
+    <title>CONNEXUS 2026</title>
+    <meta name="description" content="CONNEXUS 2026 (Black Sea Technology Forum) - 5-7 October, Varna, Bulgaria">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="BSTF 2026">
-    <meta property="og:title" content="BSTF 2026 - Black Sea Technology Forum">
-    <meta property="og:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
+    <meta property="og:site_name" content="CONNEXUS 2026">
+    <meta property="og:title" content="CONNEXUS 2026 - Black Sea Technology Forum">
+    <meta property="og:description" content="CONNEXUS 2026 (Black Sea Technology Forum) - 5-7 October, Varna, Bulgaria">
     <meta property="og:url" content="https://bstf2026.bg/">
-    <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
+    <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BSTF 2026 - Black Sea Technology Forum">
-    <meta name="twitter:description" content="Black Sea Technology Forum 2026 - 5-7 October, Varna, Bulgaria">
-    <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260730">
+    <meta name="twitter:title" content="CONNEXUS 2026 - Black Sea Technology Forum">
+    <meta name="twitter:description" content="CONNEXUS 2026 (Black Sea Technology Forum) - 5-7 October, Varna, Bulgaria">
+    <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -202,14 +202,15 @@
       }
 
       .btn-primary {
-        background: var(--teal);
-        color: var(--white)
+        background: linear-gradient(155deg, var(--teal) 0%, var(--teal-deep) 100%);
+        color: var(--white);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 8px 20px rgba(0, 160, 204, 0.28)
       }
 
       .btn-primary:hover {
-        background: #00a0cc;
+        background: linear-gradient(155deg, #33d6ff 0%, var(--teal-deep) 100%);
         transform: translateY(-2px);
-        box-shadow: var(--shadow)
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 14px 30px rgba(0, 160, 204, 0.38)
       }
 
       .btn-outline {
@@ -417,6 +418,18 @@
         background: var(--navy)
       }
 
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg)
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0
+      }
+
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg)
+      }
+
       .mobile-nav {
         display: none;
         position: fixed;
@@ -430,6 +443,21 @@
       }
 
       .mobile-nav.open {
+        display: block
+      }
+
+      .mobile-nav-backdrop {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 198
+      }
+
+      .mobile-nav-backdrop.open {
         display: block
       }
 
@@ -971,20 +999,25 @@
       }
 
       .prog-tail-col {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         min-width: 0
       }
 
 
-      .prog-tail-col-label {
-        font-family: var(--mono);
-        font-size: 0.66rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--text-light);
-        margin-bottom: 2px
+      /* Mobile-only linear rendering (see renderProgramTimeline): the
+        desktop layout splits each day's programme into an "aligned" grid
+        (#progGrid, synced rows across all 3 days) and a "tail" grid
+        (#progGridTail, each day's own diverging remainder) that sit
+        side-by-side as columns. Stacking those two SEPARATE containers on
+        narrow screens reads as Day1-early, Day2-early, Day3-early,
+        Day1-late, Day2-late, Day3-late — not chronological per day. This
+        container instead renders each day's header + every slot (aligned
+        and tail together) as one uninterrupted list, so it's built and
+        shown only below the 1000px breakpoint where the days stack. */
+      .prog-grid-mobile {
+        display: none
       }
 
       .prog-day-col-head {
@@ -1132,53 +1165,28 @@
       }
 
       @media(max-width:1000px) {
-        .prog-grid {
+        /* The synced-columns desktop layout only makes sense side-by-side;
+          stacked, it interleaves days out of order (see .prog-grid-mobile
+          above). Hide both desktop containers and show the linear one. */
+        .prog-grid,
+        .prog-grid-tail {
+          display: none
+        }
+
+        .prog-grid-mobile {
           display: flex;
           flex-direction: column;
           align-items: stretch;
-          gap: 20px
-        }
-
-        /* Stacked single column now — the side-by-side day divider (left
-          border + 32px indent) would just shove every Day 2/3 card off
-          the left edge for no reason, so drop it and let cards go full
-          width like Day 1's already do. */
-        .prog-col-2,
-        .prog-col-3 {
-          border-left: none;
-          padding-left: 0
+          gap: 14px
         }
 
         /* Only the 2nd/3rd day's header (not every cell) gets the divider
           here — DOM order is day-grouped, so this is simply "any header
-          that isn't the very first cell in the grid". */
-        .prog-cell-head:not(:first-child) {
+          that isn't the very first cell in the list". */
+        .prog-grid-mobile .prog-cell-head:not(:first-child) {
           border-top: 1px solid rgba(11, 57, 84, 0.14);
           margin-top: 30px;
           padding-top: 30px
-        }
-
-        .prog-grid-tail {
-          grid-template-columns: 1fr !important;
-          gap: 0;
-          grid-template-columns: 1fr;
-          gap: 0;
-          margin-top: 30px
-        }
-
-        .prog-tail-col:not(:first-child) {
-          border-top: 1px solid rgba(11, 57, 84, 0.14);
-          margin-top: 30px;
-          padding-top: 30px
-        }
-
-        /* The day header ("Ден 2", "6 октомври") already ran above, in the
-          aligned section — this smaller repeat label inside the tail
-          section just adds a redundant floating heading with nothing but
-          a time under it. The border-top divider above already marks the
-          day change, so drop the label instead of stacking two markers. */
-        .prog-tail-col-label {
-          display: none
         }
 
         .prog-hall-legend {
@@ -1717,7 +1725,7 @@
       /* ===== Expo & Startups (v3 — matches venue/speakers card language) ===== */
       .expo-v2 {
         position: relative;
-        padding: 100px 0;
+        padding: 80px 0;
         background: var(--light-blue);
         overflow: hidden
       }
@@ -1746,7 +1754,8 @@
         font-size: 2.5rem;
         font-weight: 800;
         color: var(--navy);
-        margin-bottom: 16px
+        margin-bottom: 16px;
+        text-wrap: balance
       }
 
       .expo-v2__title .highlight {
@@ -1837,7 +1846,7 @@
 
       @media(max-width:768px) {
         .expo-v2 {
-          padding: 70px 0
+          padding: 56px 0
         }
 
         .expo-v2__title {
@@ -1859,7 +1868,7 @@
       .venue-bg {
         position: absolute;
         inset: 0;
-        background: url('images/varna_seaside_bg.jpg?v=20260730') center/cover no-repeat
+        background: url('images/varna_seaside_bg.jpg?v=20260731') center/cover no-repeat
       }
 
       .venue-scrim {
@@ -1899,7 +1908,8 @@
         color: var(--white);
         border-left: 4px solid var(--teal);
         padding-left: 26px;
-        margin: 0
+        margin: 0;
+        text-wrap: balance
       }
 
       .venue-heading .venue-accent {
@@ -2066,6 +2076,10 @@
         text-align: center
       }
 
+      #sponsors {
+        padding: 64px 0
+      }
+
       .sponsors-label {
         font-size: 0.85rem;
         color: var(--text-light);
@@ -2102,7 +2116,16 @@
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
         gap: 48px;
-        margin-bottom: 48px
+        margin-bottom: 48px;
+        text-align: center
+      }
+
+      /* The global `img{display:block}` reset (see <style> top) makes this an
+        unstyled block box that ignores the parent's text-align — needs its
+        own margin:auto to actually center under the logo/tagline text above. */
+      .footer-brand img {
+        margin-left: auto;
+        margin-right: auto
       }
 
       .footer-brand .logo {
@@ -2139,12 +2162,49 @@
         color: var(--teal)
       }
 
+      .footer-email-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 4px 0
+      }
+
+      .footer-email-row a {
+        display: inline;
+        padding: 0
+      }
+
+      .copy-email-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 2px;
+        color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: var(--transition)
+      }
+
+      .copy-email-btn:hover {
+        color: var(--teal)
+      }
+
+      .copy-email-msg {
+        font-size: 0.75rem;
+        color: var(--teal)
+      }
+
       .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 24px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        gap: 8px;
+        text-align: center;
         font-size: 0.8rem
       }
 
@@ -2329,7 +2389,7 @@
 
       .form-group.required label::after {
         content: " *";
-        color: #ff6b6b
+        color: #c0392b
       }
 
       .form-group .form-hint {
@@ -2690,7 +2750,7 @@
         }
 
         footer.main-footer {
-          padding: 48px 0 70px
+          padding: 24px 0 70px
         }
 
         .footer-col a {
@@ -3018,7 +3078,7 @@
         }
 
         #bstf-btt {
-          bottom: 5rem
+          bottom: calc(5rem + env(safe-area-inset-bottom, 0px))
         }
 
         .streams-inner-grid {
@@ -3467,6 +3527,21 @@
 
       /* === RESPONSIVE: Mobile fixes for custom sections === */
       @media(max-width:768px) {
+        /* Collapses specific manual <br> line-breaks in display headlines that were
+           tuned for desktop width; text-wrap:balance handles the mobile rewrap instead
+           so a single word doesn't get orphaned onto its own line. */
+        br.mobile-collapse {
+          display: none
+        }
+
+        .speakers-section,
+        .tickets-section,
+        .halls-section,
+        .prefooter-cta,
+        #sponsors {
+          padding: 48px 0
+        }
+
         .venue-top {
           flex-direction: column;
           align-items: stretch;
@@ -3480,7 +3555,7 @@
         }
 
         .venue-heading {
-          font-size: 1.9rem;
+          font-size: 1.75rem;
           padding-left: 18px
         }
 
@@ -4108,6 +4183,18 @@
         }
       }
 
+      /* Tablet band (769-900px): same short 375px band, but a wider viewport
+        with an unchanged band height stretches the crop window much wider
+        relative to its height, so the same low 20% Y used on phones now cuts
+        the bottom off the X logo. Nudging Y down re-centers the X in the now
+        much shallower crop window without touching the phone (≤768px) or
+        desktop (≥901px) values at all. */
+      @media (min-width: 769px) and (max-width: 900px) {
+        .cx-hero-bg-img {
+          object-position: 50% 35%
+        }
+      }
+
       /* Below 768px the mobile-only vertical clip (shot portrait, X logo
         dead-center in frame) replaces the desktop video entirely — see the
         isMobile src swap in the hero video script. Same capped-band framing
@@ -4183,9 +4270,9 @@
     <nav class="main-nav">
       <div class="nav-inner">
         <a href="#" class="logo cx-nav-logo">
-          <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus"
+          <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus"
             class="cx-nav-logo-img cx-nav-logo-img--white">
-          <img src="images/Connexus - BLACK.svg?v=20260730" alt="Connexus"
+          <img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus"
             class="cx-nav-logo-img cx-nav-logo-img--black">
           <span class="cx-nav-tagline">black sea tech forum</span>
         </a>
@@ -4210,6 +4297,7 @@
     </nav>
 
     <!-- Mobile Nav -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
     <div class="mobile-nav" id="mobile-nav">
       <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
       <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
@@ -4223,10 +4311,10 @@
       <!-- SECTION 1: Hero -->
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
-          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260730"
-            data-poster-mobile="images/hero-poster-mobile.jpg?v=20260730"
-            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260730"
-            data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260730"></video>
+          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260731"
+            data-poster-mobile="images/hero-poster-mobile.jpg?v=20260731"
+            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260731"
+            data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260731"></video>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
         <div class="cx-hero-bg-overlay"></div>
@@ -4249,7 +4337,7 @@
                   Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и
                   света.</p>
                 <div class="cx-hero-buttons">
-                  <button class="btn btn-primary cx-hero-btn" onclick="openModal('register-modal','standard')"
+                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})"
                     data-bg="Купи билет" data-en="Buy ticket">
                     <span data-bg="Купи билет" data-en="Buy ticket">Купи билет</span> <span
                       aria-hidden="true">&rarr;</span></button>
@@ -4327,8 +4415,8 @@
               <div class="cx-stat-text">
                 <div class="cx-stat-num"><span class="cx-count" data-count="40" data-suffix="+">40+</span></div>
                 <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">ЛЕКТОРИ</div>
-                <div class="cx-stat-desc" data-bg="Световни експерти на една сцена."
-                  data-en="World experts on one stage.">Световни експерти на една сцена.</div>
+                <div class="cx-stat-desc" data-bg="Световни експерти, три зали."
+                  data-en="World experts, three halls.">Световни експерти, три зали.</div>
               </div>
             </div>
             <div class="cx-stat">
@@ -4359,7 +4447,7 @@
       <!-- Patronage band: appears right below the hero, on white -->
       <section class="cx-patron-band">
         <div class="cx-hero-inner cx-patron-band-inner">
-          <img src="images/gerp-image.png?v=20260730" alt="Държавен герб на Република България"
+          <img src="images/gerp-image.png?v=20260731" alt="Държавен герб на Република България"
             class="cx-patron-band-crest">
           <div class="cx-patron-band-text">
             <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА
@@ -4373,13 +4461,13 @@
       <!-- CTA Banner -->
       <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
         <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-conetnt:center; align-items:center">
-          <button onclick="openModal('register-modal','standard')" class="btn btn-primary"
+          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})" class="btn btn-primary"
             style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
             data-bg="КУПИ БИЛЕТ" data-en="BUY TICKET">КУПИ БИЛЕТ</button>
           <h2
             style="font-family:'hyperspace-race-variable','myriad-pro','Archivo',sans-serif;font-variation-settings:'wdth' 140;font-size:2.4rem;font-weight:800;color:var(--navy);margin-bottom:16px;text-wrap:balance"
-            data-bg="Там, където Изтокът среща Западните иновации." data-en="Where East Meets Western Innovation.">Там,
-            където Изтокът среща Западните иновации.</h2>
+            data-bg="Там, където Изтокът среща Запада" data-en="Where the East Meets the West.">Там,
+            където Изтокът среща Запада.</h2>
           <p class="home-cta-copy"
             data-bg="3 дни, 11 тематични области, 30+ държави. Не пропускайте бъдещето на AI, морски технологии и умни градове."
             data-en="3 days, 11 thematic areas, 30+ countries. Don't miss the future of AI, Marine Tech, and Smart Cities.">
@@ -4492,9 +4580,9 @@
     <!-- SECTION: Streams -->
     <section style="padding:72px 0;background:var(--light-gray)">
       <div class="container" style="text-align:center">
-        <h2 class="section-title text-center" data-bg="11 тематични области.<br>3 дни. Максимална стойност."
-          data-en="11 Streams.<br>3 Days. Maximum Value.">11
-          тематични области.<br>3 дни. Максимална стойност.</h2>
+        <h2 class="section-title text-center" data-bg="11 тематични области.<br class='mobile-collapse'> 3 дни. Максимална стойност."
+          data-en="11 Streams.<br class='mobile-collapse'> 3 Days. Maximum Value.">11
+          тематични области.<br class="mobile-collapse"> 3 дни. Максимална стойност.</h2>
         <p class="section-subtitle text-center streams-subtitle"
           data-bg="Изберете тема и вижте съответните акценти от програмата."
           data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от
@@ -4502,74 +4590,74 @@
         <div class="streams-inner-grid"
           style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto">
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/ai.png?v=20260730" alt="AI" loading="lazy" decoding="async" width="80" height="80"
+            <img src="images/streams/ai.png?v=20260731" alt="AI" loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Изкуствен интелект"
               data-en="Artificial Intelligence">Изкуствен интелект</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/transport.png?v=20260730" alt="Transport" loading="lazy" decoding="async"
+            <img src="images/streams/transport.png?v=20260731" alt="Transport" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
               data-en="Future of Transport">Транспорт на бъдещето</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/smart_city.png?v=20260730" alt="Smart City" loading="lazy" decoding="async"
+            <img src="images/streams/smart_city.png?v=20260731" alt="Smart City" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Умен град" data-en="Smart City">Умен
               град</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/cybersecurity.png?v=20260730" alt="Cybersecurity" loading="lazy" decoding="async"
+            <img src="images/streams/cybersecurity.png?v=20260731" alt="Cybersecurity" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Киберсигурност"
               data-en="Cybersecurity">Киберсигурност</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/automation.png?v=20260730" alt="Automation" loading="lazy" decoding="async"
+            <img src="images/streams/automation.png?v=20260731" alt="Automation" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Автоматизация и роботика"
               data-en="Automation & Robotics">Автоматизация и роботика </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/agritech.png?v=20260730" alt="AgriTech" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/agritech.png?v=20260731" alt="AgriTech" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="AgriTech" data-en="AgriTech">AgriTech
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/marine_tech.png?v=20260730" alt="Marine Tech" loading="lazy" decoding="async"
+            <img src="images/streams/marine_tech.png?v=20260731" alt="Marine Tech" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Морски технологии"
               data-en="Marine Tech">Морски технологии</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/biotech.png?v=20260730" alt="BioTech" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/biotech.png?v=20260731" alt="BioTech" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="BioTech" data-en="BioTech">BioTech
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/gaming.png?v=20260730" alt="Gaming" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/gaming.png?v=20260731" alt="Gaming" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/regional-innovation-policies.png?v=20260730" alt="Regional Innovation Policies"
+            <img src="images/streams/regional-innovation-policies.png?v=20260731" alt="Regional Innovation Policies"
               loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики"
               data-en="Regional Innovation Policies">Регионални иновационни политики</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/tourism.png?v=20260730" alt="Tourism" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/tourism.png?v=20260731" alt="Tourism" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/networking.png?v=20260730" alt="Networking" loading="lazy" decoding="async"
+            <img src="images/streams/networking.png?v=20260731" alt="Networking" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Нетуъркинг" data-en="Networking">
               Нетуъркинг</div>
@@ -4580,7 +4668,7 @@
 
     <!-- SECTION: Partners & Sponsors -->
     <section id="sponsors"
-      style="padding:100px 0;background:linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);position:relative;overflow:hidden;border-top:1px solid rgba(0, 205, 255,0.1)">
+      style="background:linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);position:relative;overflow:hidden;border-top:1px solid rgba(0, 205, 255,0.1)">
       <!-- Glowing background elements for margins -->
       <div class="bg-glow-left"></div>
       <div class="bg-glow-right"></div>
@@ -4595,7 +4683,7 @@
           <!-- Presidential patronage -->
           <div class="partner-row">
             <div class="partner-row__crest">
-              <img src="images/gerp-image.png?v=20260730" alt="Държавен герб на Република България"
+              <img src="images/gerp-image.png?v=20260731" alt="Държавен герб на Република България"
                 class="partner-crest-img" loading="lazy" decoding="async" width="487" height="410">
             </div>
             <div class="partner-row__divider"></div>
@@ -4619,20 +4707,20 @@
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--ict">
                 <a href="https://ictclustervarna.com" target="_blank" rel="noopener">
-                  <img src="images/ict_cluster_logo.png?v=20260730" alt="ИКТ Клъстер Варна" loading="lazy"
+                  <img src="images/ict_cluster_logo.png?v=20260731" alt="ИКТ Клъстер Варна" loading="lazy"
                     decoding="async" width="1184" height="392">
                 </a>
               </div>
               <div class="partner-logo partner-logo--bsmepa">
-                <img src="images/bsmepa_logo.png?v=20260730" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
+                <img src="images/bsmepa_logo.png?v=20260731" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
                   height="188">
               </div>
               <div class="partner-logo partner-logo--brainpp">
-                <img src="images/brainpp_logo.png?v=20260730" alt="Brain++ AI Factory" loading="lazy" decoding="async"
+                <img src="images/brainpp_logo.png?v=20260731" alt="Brain++ AI Factory" loading="lazy" decoding="async"
                   width="738" height="249">
               </div>
               <div class="partner-logo partner-logo--arcf">
-                <img src="images/ARCF_logo.svg?v=20260730" alt="ARC Fund">
+                <img src="images/ARCF_logo.svg?v=20260731" alt="ARC Fund">
               </div>
             </div>
           </div>
@@ -4645,7 +4733,7 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--varna">
-                <img src="images/varna_coat.png?v=20260730" alt="Община Варна" loading="lazy" decoding="async"
+                <img src="images/varna_coat.png?v=20260731" alt="Община Варна" loading="lazy" decoding="async"
                   width="284" height="328">
                 <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
                   data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
@@ -4661,7 +4749,7 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--mobility">
-                <img src="images/mobility-partner.png?v=20260730" alt="Top Rent a Car" loading="lazy" decoding="async"
+                <img src="images/mobility-partner.png?v=20260731" alt="Top Rent a Car" loading="lazy" decoding="async"
                   width="700" height="459">
               </div>
             </div>
@@ -5015,6 +5103,7 @@
 
         <div class="prog-grid" id="progGrid"></div>
         <div class="prog-grid-tail" id="progGridTail"></div>
+        <div class="prog-grid-mobile" id="progGridMobile"></div>
       </div>
     </section>
 
@@ -5056,7 +5145,7 @@
             },
             { time: '17:05 – 17:15', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             { time: '17:15 – 17:45', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Обобщаващ панел', en: 'Summary Panel' }, track: null }] },
-            { time: '18:00 – 20:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Техностарт Мотиватор', en: 'TechStart Motivator' }, track: null }] },
+            { time: '18:00 – 20:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Техностар Мотиватор', en: 'TechnoStar Motivator' }, track: null }] },
             { time: '20:00 – 22:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Гала коктейл – ресторант х-л „Черно море“', en: 'Gala Cocktail – Hotel Cherno More restaurant' }, track: null }] }
           ]
         },
@@ -5137,8 +5226,26 @@
         var filterToggle = document.getElementById('progFilterToggle');
         var filterPanel = document.getElementById('progFilterPanel');
         var filterBadge = document.getElementById('progFilterBadge');
+        var filterAutoCloseTimer = null;
+        function clearFilterAutoClose() {
+          if (filterAutoCloseTimer) { clearTimeout(filterAutoCloseTimer); filterAutoCloseTimer = null; }
+        }
+        function closeFilterPanel() {
+          clearFilterAutoClose();
+          filterPanel.classList.remove('open');
+          filterToggle.classList.remove('active');
+          filterToggle.setAttribute('aria-expanded', 'false');
+        }
+        // Multi-select: don't close on every pill tap (would block picking several
+        // tracks at once). Instead, auto-close a short pause after the last tap so
+        // it still feels automatic; each new tap resets the pause.
+        function scheduleFilterAutoClose() {
+          clearFilterAutoClose();
+          filterAutoCloseTimer = setTimeout(closeFilterPanel, 1100);
+        }
         filterToggle.addEventListener('click', function (e) {
           e.stopPropagation();
+          clearFilterAutoClose();
           var open = filterPanel.classList.toggle('open');
           filterToggle.classList.toggle('active', open);
           filterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -5146,9 +5253,7 @@
         document.addEventListener('click', function (e) {
           if (!filterPanel.classList.contains('open')) return;
           if (filterPanel.contains(e.target) || filterToggle.contains(e.target)) return;
-          filterPanel.classList.remove('open');
-          filterToggle.classList.remove('active');
-          filterToggle.setAttribute('aria-expanded', 'false');
+          closeFilterPanel();
         });
         function updateFilterBadge() {
           filterBadge.hidden = !(selectedTrackCount() > 0);
@@ -5174,6 +5279,7 @@
 
         document.getElementById('progClearBtn').addEventListener('click', function () {
           state.tracks = {}; syncPills(); updateFilterBadge(); render();
+          closeFilterPanel();
         });
 
         // "Всички" (val === null) resets the whole selection; any other pill
@@ -5184,6 +5290,8 @@
           else if (state.tracks[trackId]) { delete state.tracks[trackId]; }
           else { state.tracks[trackId] = true; }
           syncPills(); updateFilterBadge(); render();
+          if (trackId === null) { closeFilterPanel(); }
+          else { scheduleFilterAutoClose(); }
         }
         function syncPills() {
           var noneSelected = selectedTrackCount() === 0;
@@ -5195,6 +5303,7 @@
 
         var grid = document.getElementById('progGrid');
         var tailGrid = document.getElementById('progGridTail');
+        var mobileGrid = document.getElementById('progGridMobile');
 
         function cardMatches(card) {
           return selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
@@ -5280,12 +5389,38 @@
           return n;
         }
 
+        // Three render targets, one per layout need — same PROGRAM_DAYS
+        // data and the same buildHeaderCell/buildSlotCell builders feed
+        // all three, but each lays the cells out differently:
+        //   - renderDesktopAligned: Day 1/2/3 headers + the leading run of
+        //     slots whose kind matches across all 3 days, placed on real
+        //     synced CSS Grid rows (explicit grid-row per cell) so e.g.
+        //     every day's first coffee break lands at the same height.
+        //     Only possible because these cells are siblings in one grid
+        //     with matching row numbers — the reason this is its own pass.
+        //   - renderDesktopTail: once the days structurally diverge (Day 1
+        //     wraps into fewer/different evening events than Day 2/3),
+        //     forcing them onto shared rows produced bad stretching/gaps,
+        //     so each day flows independently here instead — still 3 CSS
+        //     Grid columns, no shared rows.
+        //   - renderMobileLinear: below the 1000px breakpoint the two
+        //     desktop containers above would stack as separate blocks —
+        //     Day1-aligned, Day2-aligned, Day3-aligned, Day1-tail, ... —
+        //     which reads out of chronological order. This pass instead
+        //     renders each day's header + every slot (aligned prefix and
+        //     tail together) as one uninterrupted list.
         function render() {
           grid.innerHTML = '';
           tailGrid.innerHTML = '';
+          mobileGrid.innerHTML = '';
           var commonN = commonPrefixLength();
+          renderDesktopAligned(commonN);
+          renderDesktopTail(commonN);
+          renderMobileLinear();
+          equalizeTailRows(commonN);
+        }
 
-          // Aligned section: header + the shared prefix, on synced grid-rows.
+        function renderDesktopAligned(commonN) {
           PROGRAM_DAYS.forEach(function (d, colIdx) {
             var head = buildHeaderCell(d, colIdx);
             head.style.gridRow = '1';
@@ -5297,26 +5432,18 @@
               grid.appendChild(cell);
             }
           });
+        }
 
-          // Tail section: each day's own diverging remainder, independent —
-          // no shared rows, no forced height-matching between days. The
-          // divider class goes on the .prog-tail-col CONTAINER only (one
-          // continuous line for the whole column) — NOT on each individual
-          // cell too, which was drawing a short border-left per card with
-          // visible gaps between them (the earlier "leftover divider" bug).
+        function renderDesktopTail(commonN) {
+          // The divider class goes on the .prog-tail-col CONTAINER only
+          // (one continuous line for the whole column) — NOT on each
+          // individual cell too, which was drawing a short border-left per
+          // card with visible gaps between them (the earlier "leftover
+          // divider" bug).
           PROGRAM_DAYS.forEach(function (d, colIdx) {
             var col = document.createElement('div');
             col.className = 'prog-tail-col prog-col-' + (colIdx + 1);
             col.id = 'prog-tail-col-' + d.id;
-
-            if (commonN < d.slots.length) {
-              var label = document.createElement('div');
-              label.className = 'prog-tail-col-label';
-              label.setAttribute('data-bg', d.label.bg);
-              label.setAttribute('data-en', d.label.en);
-              label.textContent = d.label.bg;
-              col.appendChild(label);
-            }
 
             for (var j = commonN; j < d.slots.length; j++) {
               var cell = buildSlotCell(d.slots[j], colIdx, false);
@@ -5325,8 +5452,21 @@
             }
             tailGrid.appendChild(col);
           });
+        }
 
-          equalizeTailRows(commonN);
+        function renderMobileLinear() {
+          PROGRAM_DAYS.forEach(function (d, colIdx) {
+            var mHead = buildHeaderCell(d, colIdx);
+            mHead.style.gridColumn = '';
+            mHead.style.gridRow = '';
+            mobileGrid.appendChild(mHead);
+
+            d.slots.forEach(function (s) {
+              var mCell = buildSlotCell(s, colIdx, false);
+              mCell.style.gridColumn = '';
+              mobileGrid.appendChild(mCell);
+            });
+          });
         }
 
         // Day 2 and Day 3 keep running the identical run of session kinds
@@ -5341,6 +5481,15 @@
         // aligned grid above gives the fully-common prefix. Skipped below
         // the 1000px breakpoint, where the tail collapses to one stacked
         // column and Day 2/Day 3 are no longer side by side.
+        //
+        // Matching on `kind` alone isn't enough — Day 2's 16:20-16:50
+        // summary panel and Day 3's 16:20-17:00 closing ceremony are both
+        // kind:'single' at the same row index, but they're not actually
+        // the same moment. Syncing their heights forced Day 2's short
+        // panel up to the closing ceremony's taller box, leaving a slab of
+        // empty space inside it before the next real row (20:00 Парти).
+        // Requiring the times to match too stops the sync right where the
+        // days genuinely stop running in parallel.
         function equalizeTailRows(commonN) {
           var d2 = PROGRAM_DAYS[1], d3 = PROGRAM_DAYS[2];
           if (!d2 || !d3) return;
@@ -5350,7 +5499,7 @@
           var minLen = Math.min(d2.slots.length, d3.slots.length);
           var narrow = window.innerWidth <= 1000;
           for (var j = commonN; j < minLen; j++) {
-            if (d2.slots[j].kind !== d3.slots[j].kind) break;
+            if (d2.slots[j].kind !== d3.slots[j].kind || d2.slots[j].time !== d3.slots[j].time) break;
             var cell2 = col2.querySelector('[data-slot-idx="' + j + '"]');
             var cell3 = col3.querySelector('[data-slot-idx="' + j + '"]');
             if (!cell2 || !cell3) continue;
@@ -5411,7 +5560,7 @@
                 </svg>
               </div>
               <p class="event-meta" data-bg="5 октомври" data-en="Oct 5">5 октомври</p>
-              <h3 data-bg="TechnoStar Motivator" data-en="TechnoStar Motivator">TechnoStar Motivator</h3>
+              <h3 data-bg="Техностар Мотиватор" data-en="TechnoStar Motivator">Техностар Мотиватор</h3>
               <p data-bg="Вдъхновяваща сесия за стартиращи компании и предприемачи."
                 data-en="Inspirational session for startups and entrepreneurs.">Вдъхновяваща сесия за стартиращи
                 компании и предприемачи.</p>
@@ -5450,14 +5599,14 @@
 
     <!-- SECTION 7: Speakers -->
     <section class="speakers-section" id="speakers"
-      style="padding:80px 0;background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);color:var(--white)">
+      style="background:linear-gradient(135deg,var(--navy) 0%,#0d4a6e 100%);color:var(--white)">
       <div class="container">
         <div style="display:grid;grid-template-columns:1fr;gap:32px">
           <div>
             <h2 class="home-speakers-title" data-bg="Лектори" data-en="Speakers">Лектори</h2>
             <p class="home-speakers-intro"
-              data-bg="Практици, учени и стратегически лидери от региона на Черно&amp;nbsp;море и света - на една сцена."
-              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
+              data-bg="Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света."
+              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond.">
               Практици,
               учени и стратегически лидери от региона на Черно&nbsp;море и света - на една
               сцена.</p>
@@ -5468,7 +5617,7 @@
                 Формираме силна международна линия от практици, изследователи и институционални лидери от региона на Черно
                 море и извън него. Очаквайте официалното обявяване на лекторите в следващите седмици.</p>
               <div class="home-speakers-stats">
-                <div class="home-speakers-stat"><span class="home-speakers-stat-value">100+</span><span
+                <div class="home-speakers-stat"><span class="home-speakers-stat-value">40+</span><span
                     class="home-speakers-stat-label" data-bg="лектори" data-en="speakers">лектори</span></div>
                 <div class="home-speakers-stat"><span class="home-speakers-stat-value">30+</span><span
                     class="home-speakers-stat-label" data-bg="панела" data-en="panels">панела</span>
@@ -5476,7 +5625,7 @@
               </div>
             </div>
             <div class="home-speakers-actions">
-              <button class="btn btn-primary open-speaker-modal" data-bg="Кандидатствай като лектор"
+              <button class="btn btn-primary open-speaker-modal" data-modal-open="speaker" data-bg="Кандидатствай като лектор"
                 data-en="Apply as speaker">Кандидатствай като лектор</button>
               <a href="speakers.html" class="btn btn-outline"
                 style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж всички лектори"
@@ -5495,15 +5644,15 @@
         <!-- Left side: Title + Description -->
         <div class="animate-on-scroll">
           <h2 class="expo-v2__title"
-            data-bg="Експо зона.<br>Зона за стартиращи компании.<br><span class='highlight'>Live demos.</span>"
-            data-en="Expo Zone.<br>Startup Zone.<br><span class='highlight'>Live demos.</span>">Експо зона.<br>Зона за
+            data-bg="Експо зона.<br class='mobile-collapse'> Зона за стартиращи компании.<br><span class='highlight'>Live demos.</span>"
+            data-en="Expo Zone.<br class='mobile-collapse'> Startup Zone.<br><span class='highlight'>Live demos.</span>">Експо зона.<br class="mobile-collapse"> Зона за
             стартиращи компании.<br><span class="highlight">Live demos.</span></h2>
           <p class="expo-v2__desc"
             data-bg="Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите компании получават специална зона + време за представяне."
             data-en="Meet solution providers in AI, robotics, IoT and vertical sectors. Startups get a dedicated zone + pitch time.">
             Запознайте се с доставчици на решения в областта на AI, роботиката, IoT и вертикалните сектори. Стартиращите
             компании получават специална зона + време за представяне.</p>
-          <a href="expo.html" class="btn btn-primary expo-v2__cta">
+          <a href="sponsors.html#floor-plan" class="btn btn-primary expo-v2__cta">
             <span data-bg="Виж щандовете" data-en="View booths">Виж щандовете</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -5597,7 +5746,7 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="venue-pass-stub">
+            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Cherno+More+Varna+Bulgaria" target="_blank" rel="noopener" class="venue-pass-stub">
               <span data-bg="Насоки за пристигане" data-en="Arrival directions">Насоки за пристигане</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -5677,7 +5826,7 @@
               </li>
               <li data-bg="Дигитални материали" data-en="Digital materials">Дигитални материали</li>
             </ul>
-            <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
+            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
               data-en="Register now">Регистрирай се</button>
           </div>
 
@@ -5697,7 +5846,7 @@
                 зона</li>
               <li data-bg="VIP обяд с лекторите" data-en="VIP lunch with the speakers">VIP обяд с лекторите</li>
             </ul>
-            <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
+            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
               data-en="Register now">Регистрирай се</button>
           </div>
 
@@ -5718,7 +5867,7 @@
               <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Достъп до Networking Party
               </li>
             </ul>
-            <button class="btn btn-primary open-register-modal" style="width:100%" data-bg="Регистрирай се"
+            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
               data-en="Register now">Регистрирай се</button>
           </div>
         </div>
@@ -5730,11 +5879,11 @@
     <section class="prefooter-cta">
       <div class="container">
         <h2 data-bg="Ще се видим във Варна." data-en="See you in Varna.">Ще се видим във Варна.</h2>
-        <p data-bg="5-7 окт 2026 • BSTF2026" data-en="5-7 Oct 2026 • BSTF2026">5-7 окт 2026 • BSTF2026</p>
+        <p data-bg="5-7 окт 2026 • CONNEXUS" data-en="5-7 Oct 2026 • CONNEXUS">5-7 окт 2026 • CONNEXUS</p>
         <div class="prefooter-buttons">
-          <button class="btn btn-primary open-register-modal" data-bg="Регистрирай се" data-en="Register now">Регистрирай
+          <button class="btn btn-primary open-register-modal" data-modal-open="register" data-bg="Регистрирай се" data-en="Register now">Регистрирай
             се</button>
-          <button class="btn btn-outline open-exhibitor-modal"
+          <button class="btn btn-outline open-exhibitor-modal" data-modal-open="exhibitor"
             style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител"
             data-en="Become an exhibitor">Стани изложител</button>
         </div>
@@ -5746,10 +5895,10 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="images/Connexus - WHITE.svg?v=20260730" alt="Connexus" style="height:28px;margin-bottom:14px">
+            <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:14px">
             <p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px"
               data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
-            <p data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.6)" data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
               форум</p>
             <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:8px"
               data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии
@@ -5766,14 +5915,20 @@
           </div>
           <div class="footer-col">
             <h4 data-bg="Правни" data-en="Legal">Правни</h4>
-            <a href="#" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>
-            <a href="#" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>
+            <a href="privacy-policy.html" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>
+            <a href="terms-and-conditions.html" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>
           </div>
           <div class="footer-col">
             <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-            <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+            <div class="footer-email-row">
+              <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
+              <button type="button" class="copy-email-btn" data-email="bstf@ictclustervarna.com" aria-label="Copy email" title="Copy email">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+              <span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">Копирано!</span>
+            </div>
             <a href="tel:+359876658296">+359 876 658 296</a>
-            <div class="footer-social" style="display:flex;gap:12px;margin-top:16px">
+            <div class="footer-social" style="display:flex;gap:12px;margin-top:16px;justify-content:center">
               <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank"
                 rel="noopener noreferrer" aria-label="LinkedIn"
                 style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
@@ -5799,8 +5954,8 @@
       <div class="modal">
         <button class="modal-close" onclick="closeModal('register-modal')">&times;</button>
         <div class="modal-form" id="register-form">
-          <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
-            data-en="BSTF 2026 &middot; 5-7 OCT &middot; VARNA">BSTF 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
+          <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
+            data-en="CONNEXUS 2026 &middot; 5-7 OCT &middot; VARNA">CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
           <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
           <div class="form-group required">
             <label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
@@ -5850,7 +6005,7 @@
           <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
             data-en="Register">Регистрирай се</button>
           <div class="form-error" id="register-error" role="alert" aria-live="assertive"
-            style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="register-success">
           <div class="success-icon">&#x2713;</div>
@@ -5873,11 +6028,11 @@
       <div class="modal">
         <button class="modal-close" onclick="closeModal('exhibitor-modal')">&times;</button>
         <div class="modal-form" id="exhibitor-form">
-          <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ИЗЛОЖЕНИЕ" data-en="BSTF 2026 &middot; EXHIBITION">BSTF
+          <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ИЗЛОЖЕНИЕ" data-en="CONNEXUS 2026 &middot; EXHIBITION">CONNEXUS
             2026 &middot; ИЗЛОЖЕНИЕ</span>
           <h2 data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
-          <p class="modal-desc" data-bg="Заявете щанд на BSTF 2026 изложението."
-            data-en="Apply for a booth at the BSTF 2026 expo.">Заявете щанд на BSTF 2026 изложението.</p>
+          <p class="modal-desc" data-bg="Заявете щанд на CONNEXUS 2026 изложението."
+            data-en="Apply for a booth at the CONNEXUS 2026 expo.">Заявете щанд на CONNEXUS 2026 изложението.</p>
           <a href="sponsors.html" class="modal-pricing-link" data-bg="Виж пълните цени и пакети &rarr;"
             data-en="See full pricing &amp; packages &rarr;">Виж пълните цени и пакети &rarr;</a>
           <div class="form-group required">
@@ -5920,7 +6075,7 @@
           <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати заявка"
             data-en="Submit Application">Изпрати заявка</button>
           <div class="form-error" id="exhibitor-error" role="alert" aria-live="assertive"
-            style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="exhibitor-success">
           <div class="success-icon">&#x2713;</div>
@@ -5943,11 +6098,11 @@
       <div class="modal">
         <button class="modal-close" onclick="closeModal('speaker-modal')">&times;</button>
         <div class="modal-form" id="speaker-form">
-          <span class="modal-eyebrow" data-bg="BSTF 2026 &middot; ЛЕКТОРИ" data-en="BSTF 2026 &middot; SPEAKERS">BSTF 2026
+          <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ЛЕКТОРИ" data-en="CONNEXUS 2026 &middot; SPEAKERS">CONNEXUS 2026
             &middot; ЛЕКТОРИ</span>
           <h2 data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
-          <p class="modal-desc" data-bg="Предложете тема за лекция на BSTF 2026."
-            data-en="Propose a talk topic for BSTF 2026.">Предложете тема за лекция на BSTF 2026.</p>
+          <p class="modal-desc" data-bg="Предложете тема за лекция на CONNEXUS 2026."
+            data-en="Propose a talk topic for CONNEXUS 2026.">Предложете тема за лекция на CONNEXUS 2026.</p>
           <div class="form-group required">
             <label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
             <input type="text" id="spk-name" required aria-describedby="speaker-error">
@@ -5988,7 +6143,7 @@
           <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
             data-en="Submit Proposal">Изпрати предложение</button>
           <div class="form-error" id="speaker-error" role="alert" aria-live="assertive"
-            style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="speaker-success">
           <div class="success-icon">&#x2713;</div>
@@ -6012,7 +6167,7 @@
 
     <!-- Mobile Sticky CTA -->
     <div id="bstf-mob-cta">
-      <button class="btn open-register-modal"
+      <button class="btn open-register-modal" data-modal-open="register"
         style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
         data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
     </div>
@@ -6153,15 +6308,27 @@
         // === Mobile Menu ===
         var menuBtn = document.querySelector('.mobile-menu-btn');
         var mobileNav = document.getElementById('mobile-nav');
+        var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+        function closeMobileNav() {
+          mobileNav.classList.remove('open');
+          menuBtn.classList.remove('active');
+          if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('open');
+          document.body.style.overflow = '';
+        }
         if (menuBtn && mobileNav) {
           menuBtn.addEventListener('click', function () {
-            mobileNav.classList.toggle('open');
+            var willOpen = !mobileNav.classList.contains('open');
+            mobileNav.classList.toggle('open', willOpen);
+            menuBtn.classList.toggle('active', willOpen);
+            if (mobileNavBackdrop) mobileNavBackdrop.classList.toggle('open', willOpen);
+            document.body.style.overflow = willOpen ? 'hidden' : '';
           });
           mobileNav.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-              mobileNav.classList.remove('open');
-            });
+            link.addEventListener('click', closeMobileNav);
           });
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.addEventListener('click', closeMobileNav);
+          }
         }
 
         // === Nav: transparent over hero, solid once scrolled ===
@@ -6185,11 +6352,14 @@
           if (!video) return;
 
           var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          // 768px, not 767, to match every CSS breakpoint that governs this
-          // component's mobile band/crop (index.html mobile hero rules) —
-          // otherwise a device at exactly 768px (e.g. iPad portrait) gets the
-          // mobile band styling but the desktop video underneath it.
-          var mobileMq = window.matchMedia('(max-width: 768px)');
+          // 900px, matching the @media(max-width:900px) block that caps the
+          // video/overlay to the short top band and turns off the parallax
+          // transform (index.html mobile hero rules). Tablets in the 769-900
+          // range get that same band CSS, so the JS must treat them as
+          // "mobile" too — otherwise they'd load the desktop landscape video
+          // (wrong crop for a short band) and parallax would keep writing an
+          // inline transform that fights the band's static layout.
+          var mobileMq = window.matchMedia('(max-width: 900px)');
           var isMobile = mobileMq.matches;
 
           // Bail on data-saver / very slow connections: keep the poster, load no video.
@@ -6328,13 +6498,25 @@
         }
 
         // === Ticket Card Selection ===
-        document.querySelectorAll('.ticket-card').forEach(function (card) {
-          card.addEventListener('click', function (e) {
-            if (e.target.closest('.btn')) return;
-            document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
-            card.classList.add('active');
+        (function () {
+          var savedTicket = null;
+          try { savedTicket = localStorage.getItem('bstf-ticket'); } catch (e) {}
+          if (savedTicket) {
+            var savedCard = document.querySelector('.ticket-card[data-ticket="' + savedTicket + '"]');
+            if (savedCard) {
+              document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
+              savedCard.classList.add('active');
+            }
+          }
+          document.querySelectorAll('.ticket-card').forEach(function (card) {
+            card.addEventListener('click', function (e) {
+              if (e.target.closest('.btn')) return;
+              document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
+              card.classList.add('active');
+              try { localStorage.setItem('bstf-ticket', card.dataset.ticket); } catch (e) {}
+            });
           });
-        });
+        })();
 
         // === Modals ===
         function openModal(id, ticketType) {
@@ -6582,7 +6764,7 @@
         });
 
         // === Open modal buttons ===
-        document.querySelectorAll('.open-register-modal').forEach(function (btn) {
+        document.querySelectorAll('.open-register-modal, [data-modal-open="register"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             var card = btn.closest('.ticket-card');
             var ticketType = card ? card.dataset.ticket : null;
@@ -6590,13 +6772,13 @@
           });
         });
 
-        document.querySelectorAll('.open-exhibitor-modal').forEach(function (btn) {
+        document.querySelectorAll('.open-exhibitor-modal, [data-modal-open="exhibitor"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             openModal('exhibitor-modal');
           });
         });
 
-        document.querySelectorAll('.open-speaker-modal').forEach(function (btn) {
+        document.querySelectorAll('.open-speaker-modal, [data-modal-open="speaker"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             openModal('speaker-modal');
           });
@@ -6610,6 +6792,33 @@
             if (t) t.scrollIntoView({ behavior: 'smooth' });
           });
         }
+        // === Copy email fallback (mailto: fails silently with no mail client configured) ===
+        document.querySelectorAll('.copy-email-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var email = btn.dataset.email;
+            var msg = btn.parentElement.querySelector('.copy-email-msg');
+            function reveal() {
+              if (!msg) return;
+              msg.hidden = false;
+              clearTimeout(btn._copyTimer);
+              btn._copyTimer = setTimeout(function () { msg.hidden = true; }, 1800);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(email).then(reveal, reveal);
+            } else {
+              var ta = document.createElement('textarea');
+              ta.value = email;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand('copy'); } catch (err) {}
+              document.body.removeChild(ta);
+              reveal();
+            }
+          });
+        });
+
         // === Smooth page transitions ===
         document.querySelectorAll('a[href]').forEach(function (link) {
           var href = link.getAttribute('href');
