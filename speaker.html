@@ -1158,6 +1158,32 @@
       transform: translateY(-2px)
     }
 
+    #bstf-mob-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--teal);
+      padding: 12px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15)
+    }
+
+    #bstf-mob-cta.visible {
+      transform: translateY(0)
+    }
+
+    @media(min-width:769px) {
+      #bstf-mob-cta {
+        display: none !important
+      }
+    }
+
     body.page-exit {
       opacity: 0;
       transition: opacity 0.12s ease-in
@@ -1593,6 +1619,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Back to Top -->
   <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
 
+  <!-- Mobile Sticky CTA -->
+  <div id="bstf-mob-cta">
+    <button class="btn" onclick="window.location.href='index.html#tickets'"
+      style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
+      data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
+  </div>
+
   <script>
     (function () {
       'use strict';
@@ -1789,6 +1822,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (window.scrollY > window.innerHeight * 1.5) { btt.classList.add('visible'); }
           else { btt.classList.remove('visible'); }
         });
+      }
+
+      // === Mobile Sticky CTA ===
+      var mobCta = document.getElementById('bstf-mob-cta');
+      if (mobCta && window.innerWidth < 769) {
+        var pageHero = document.querySelector('.page-hero');
+        if (pageHero) {
+          var heroObs = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) { mobCta.classList.remove('visible'); }
+            else { mobCta.classList.add('visible'); }
+          }, { threshold: 0.1 });
+          heroObs.observe(pageHero);
+        }
       }
     })();
     window.addEventListener('pageshow', function (e) { if (e.persisted) window.location.reload(); });
