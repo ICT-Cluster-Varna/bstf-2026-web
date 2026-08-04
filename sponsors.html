@@ -94,6 +94,8 @@ nav.main-nav .nav-links a.active::after{width:100%}
 .mobile-menu-btn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);border-bottom:1px solid rgba(0,0,0,0.06);padding:24px;z-index:199}
 .mobile-nav.open{display:block}
+.mobile-nav-backdrop{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:198}
+.mobile-nav-backdrop.open{display:block}
 .mobile-nav a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--light-gray)}.mobile-nav a.btn-primary{color:var(--white)!important;border-bottom:none}
 .mobile-nav a.active{color:var(--teal-contrast)}
 .page-hero{position:relative;background:radial-gradient(ellipse 900px 500px at 50% -10%,rgba(0, 205, 255,0.16) 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);padding:148px 24px 96px;text-align:center;overflow:hidden}
@@ -160,6 +162,9 @@ footer.main-footer::before{content:'';position:absolute;top:0;left:0;right:0;hei
 #bstf-btt{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;z-index:100;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:var(--shadow)}
 #bstf-btt.visible{opacity:1;visibility:visible}
 #bstf-btt:hover{background:var(--teal);transform:translateY(-2px)}
+#bstf-mob-cta{position:fixed;bottom:0;left:0;right:0;background:var(--teal);padding:12px 20px calc(20px + env(safe-area-inset-bottom, 0px));z-index:100;display:flex;align-items:center;justify-content:center;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -2px 12px rgba(0,0,0,0.15)}
+#bstf-mob-cta.visible{transform:translateY(0)}
+@media(min-width:769px){#bstf-mob-cta{display:none!important}}
 body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 
 /* Sponsor packages */
@@ -188,7 +193,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .sponsor-card .btn{margin-top:auto;transition:transform 0.3s var(--ease-premium),box-shadow 0.3s var(--ease-premium),opacity 0.3s ease}
 .sponsor-card .btn:hover{opacity:0.85;transform:translateY(-2px);box-shadow:0 10px 24px rgba(11,57,84,0.22)}
 .sponsor-card .btn-tier{background:var(--tier-color);color:#fff;width:100%}
-.sponsor-card .btn-tier[data-sold-out="true"]{background:#9aa5ab;cursor:not-allowed}
+.sponsor-card .btn-tier[data-sold-out="true"]{background:#6c757d;cursor:not-allowed}
 .sponsor-card .btn-tier[data-sold-out="true"]:hover{opacity:1;transform:none;box-shadow:none}
 
 /* Comparison table */
@@ -290,7 +295,7 @@ body.page-exit{opacity:0;transition:opacity 0.12s ease-in}
 .fp-chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
 .fp-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;background:rgba(255,255,255,0.08);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.14);border-radius:20px;color:rgba(255,255,255,0.78);font-size:0.75rem;font-weight:500;transition:var(--transition)}
 .fp-activate:hover .fp-chip{background:rgba(0, 205, 255,0.15);border-color:rgba(0, 205, 255,0.3);color:rgba(255,255,255,0.92)}
-.fp-fs{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:8px;background:rgba(11,57,84,0.75);color:#fff;display:none;align-items:center;justify-content:center;font-size:1.15rem;backdrop-filter:blur(6px);transition:var(--transition)}
+.fp-fs{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:8px;background:rgba(11,57,84,0.75);color:#fff;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:var(--transition)}
 .fp-fs:hover{background:var(--teal)}
 .fp-stage.active .fp-fs{display:flex}
 .fp-stage:fullscreen{height:100%;aspect-ratio:auto;border-radius:0}
@@ -338,6 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- Mobile Nav -->
+<div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
 <div class="mobile-nav" id="mobile-nav">
   <a href="index.html#program" data-bg="Програма" data-en="Program">Програма</a>
   <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
@@ -350,7 +356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="page-hero">
   <div class="container">
     <div class="hero-inner">
-      <p class="hero-eyebrow" data-bg="CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ" data-en="CONNEXUS 2026 · VARNA · OCT 5-7">CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ</p>
+      <p class="hero-eyebrow" data-bg="CONNEXUS 2026 · ВАРНА · 5&#8209;7 ОКТОМВРИ" data-en="CONNEXUS 2026 · VARNA · OCT 5&#8209;7">CONNEXUS 2026 · ВАРНА · 5&#8209;7 ОКТОМВРИ</p>
       <h1 data-bg="Изложители" data-en="Exhibitors">Изложители</h1>
       <p data-bg="Станете партньор на водещия технологичен форум в Черноморския регион." data-en="Become a partner of the leading technology forum in the Black Sea region.">Станете партньор на водещия технологичен форум в Черноморския регион.</p>
     </div>
@@ -383,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="fp-sub-label" data-bg="Кликни за пълноекранен 3D изглед" data-en="Click for full-screen 3D view">Кликни за пълноекранен 3D изглед</span>
           </div>
         </button>
-        <button class="fp-fs" id="fp-fs" title="Цял екран" aria-label="Цял екран">⛶</button>
+        <button class="fp-fs" id="fp-fs" title="Цял екран" aria-label="Цял екран"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
       </div>
     </div>
   </div>
@@ -733,7 +739,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="form-group"><label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label><textarea id="exhibitor-notes" rows="3"></textarea></div>
       <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати запитване" data-en="Submit Inquiry">Изпрати запитване</button>
-      <div class="form-error" id="exhibitor-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+      <div class="form-error" id="exhibitor-error" style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
     </div>
     <div class="modal-success" id="exhibitor-success">
       <div class="success-icon">&#x2713;</div>
@@ -804,7 +810,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </select>
       </div>
       <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се" data-en="Register">Регистрирай се</button>
-      <div class="form-error" id="register-error" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+      <div class="form-error" id="register-error" style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
     </div>
     <div class="modal-success" id="register-success">
       <div class="success-icon">&#x2713;</div>
@@ -818,6 +824,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Back to Top -->
 <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
+
+<!-- Mobile Sticky CTA -->
+<div id="bstf-mob-cta">
+  <button class="btn" onclick="window.location.href='index.html#tickets'"
+    style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
+    data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
+</div>
 
 <script>
 (function(){
@@ -850,11 +863,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   var menuBtn = document.querySelector('.mobile-menu-btn');
   var mobileNav = document.getElementById('mobile-nav');
+  var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
   if (menuBtn && mobileNav) {
-    menuBtn.addEventListener('click', function() { mobileNav.classList.toggle('open'); menuBtn.classList.toggle('active'); });
+    menuBtn.addEventListener('click', function() { var willOpen = !mobileNav.classList.contains('open'); mobileNav.classList.toggle('open', willOpen); menuBtn.classList.toggle('active', willOpen); if (mobileNavBackdrop) mobileNavBackdrop.classList.toggle('open', willOpen); document.body.style.overflow = willOpen ? 'hidden' : ''; });
     mobileNav.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); });
+      link.addEventListener('click', function() { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('open'); document.body.style.overflow = ''; });
     });
+    if (mobileNavBackdrop) {
+      mobileNavBackdrop.addEventListener('click', function() { mobileNav.classList.remove('open'); menuBtn.classList.remove('active'); mobileNavBackdrop.classList.remove('open'); document.body.style.overflow = ''; });
+    }
   }
 
   var lastFocused = null;
@@ -1040,6 +1057,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
 
+  // === Mobile Sticky CTA ===
+  var mobCta = document.getElementById('bstf-mob-cta');
+  if (mobCta && window.innerWidth < 769) {
+    var pageHero = document.querySelector('.page-hero');
+    if (pageHero) {
+      var heroObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) { mobCta.classList.remove('visible'); }
+        else { mobCta.classList.add('visible'); }
+      }, { threshold: 0.1 });
+      heroObs.observe(pageHero);
+    }
+  }
+
   // === Scroll Animations (IntersectionObserver) ===
   var animObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -1080,7 +1110,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260731';
+    iframe.src = '3d-model/floorplan3d_v2.html?v=20260804';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');

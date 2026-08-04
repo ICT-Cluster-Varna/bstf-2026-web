@@ -202,14 +202,15 @@
       }
 
       .btn-primary {
-        background: var(--teal);
-        color: var(--white)
+        background: linear-gradient(155deg, var(--teal) 0%, var(--teal-deep) 100%);
+        color: var(--white);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 8px 20px rgba(0, 160, 204, 0.28)
       }
 
       .btn-primary:hover {
-        background: #00a0cc;
+        background: linear-gradient(155deg, #33d6ff 0%, var(--teal-deep) 100%);
         transform: translateY(-2px);
-        box-shadow: var(--shadow)
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 14px 30px rgba(0, 160, 204, 0.38)
       }
 
       .btn-outline {
@@ -442,6 +443,21 @@
       }
 
       .mobile-nav.open {
+        display: block
+      }
+
+      .mobile-nav-backdrop {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 198
+      }
+
+      .mobile-nav-backdrop.open {
         display: block
       }
 
@@ -2373,7 +2389,7 @@
 
       .form-group.required label::after {
         content: " *";
-        color: #ff6b6b
+        color: #c0392b
       }
 
       .form-group .form-hint {
@@ -4281,6 +4297,7 @@
     </nav>
 
     <!-- Mobile Nav -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
     <div class="mobile-nav" id="mobile-nav">
       <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
       <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
@@ -5988,7 +6005,7 @@
           <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
             data-en="Register">Регистрирай се</button>
           <div class="form-error" id="register-error" role="alert" aria-live="assertive"
-            style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="register-success">
           <div class="success-icon">&#x2713;</div>
@@ -6058,7 +6075,7 @@
           <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати заявка"
             data-en="Submit Application">Изпрати заявка</button>
           <div class="form-error" id="exhibitor-error" role="alert" aria-live="assertive"
-            style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="exhibitor-success">
           <div class="success-icon">&#x2713;</div>
@@ -6126,7 +6143,7 @@
           <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
             data-en="Submit Proposal">Изпрати предложение</button>
           <div class="form-error" id="speaker-error" role="alert" aria-live="assertive"
-            style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
         </div>
         <div class="modal-success" id="speaker-success">
           <div class="success-icon">&#x2713;</div>
@@ -6291,17 +6308,27 @@
         // === Mobile Menu ===
         var menuBtn = document.querySelector('.mobile-menu-btn');
         var mobileNav = document.getElementById('mobile-nav');
+        var mobileNavBackdrop = document.getElementById('mobile-nav-backdrop');
+        function closeMobileNav() {
+          mobileNav.classList.remove('open');
+          menuBtn.classList.remove('active');
+          if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('open');
+          document.body.style.overflow = '';
+        }
         if (menuBtn && mobileNav) {
           menuBtn.addEventListener('click', function () {
-            mobileNav.classList.toggle('open');
-            menuBtn.classList.toggle('active');
+            var willOpen = !mobileNav.classList.contains('open');
+            mobileNav.classList.toggle('open', willOpen);
+            menuBtn.classList.toggle('active', willOpen);
+            if (mobileNavBackdrop) mobileNavBackdrop.classList.toggle('open', willOpen);
+            document.body.style.overflow = willOpen ? 'hidden' : '';
           });
           mobileNav.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-              mobileNav.classList.remove('open');
-              menuBtn.classList.remove('active');
-            });
+            link.addEventListener('click', closeMobileNav);
           });
+          if (mobileNavBackdrop) {
+            mobileNavBackdrop.addEventListener('click', closeMobileNav);
+          }
         }
 
         // === Nav: transparent over hero, solid once scrolled ===

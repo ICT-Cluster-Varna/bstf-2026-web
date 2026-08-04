@@ -69,6 +69,10 @@ All 9 requirements from the SEO/UX audit are implemented:
 8. Ticket card visual feedback — done
 9. ICT Cluster info in hero — done
 
+## Parked Pages — Do Not Touch or Analyze
+
+`participants.html` and `expo.html` are **parked/unused** — they are not live/usable pages on the current site. Do NOT edit, "fix," rebrand, or otherwise touch them, and do NOT include them in audits, reviews, or analysis passes (grep sweeps, consistency checks, etc.), even if a finding would technically apply to them. Skip them entirely unless the user explicitly names one of these two files and asks for work on it.
+
 ## Deployment
 
 Host `index.html` and the `images/` directory together. No build step required.
