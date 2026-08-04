@@ -977,8 +977,10 @@
         min-width: 0
       }
 
-      .prog-col-2,
-      .prog-col-3 {
+      .prog-grid .prog-col-2,
+      .prog-grid .prog-col-3,
+      .prog-grid-tail .prog-col-2,
+      .prog-grid-tail .prog-col-3 {
         border-left: 1px solid rgba(11, 57, 84, 0.12);
         padding-left: 32px
       }
@@ -1180,13 +1182,8 @@
           gap: 14px
         }
 
-        /* Only the 2nd/3rd day's header (not every cell) gets the divider
-          here — DOM order is day-grouped, so this is simply "any header
-          that isn't the very first cell in the list". */
         .prog-grid-mobile .prog-cell-head:not(:first-child) {
-          border-top: 1px solid rgba(11, 57, 84, 0.14);
-          margin-top: 30px;
-          padding-top: 30px
+          padding-top: 10px
         }
 
         .prog-hall-legend {
