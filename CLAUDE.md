@@ -69,6 +69,14 @@ All 9 requirements from the SEO/UX audit are implemented:
 8. Ticket card visual feedback — done
 9. ICT Cluster info in hero — done
 
+## Shared Nav/Footer Component
+
+`index.html`, `speakers.html`, `speaker.html`, and `sponsors.html` no longer carry their own `<nav>`/`<footer>` markup inline. Each has an empty `<div id="site-nav-root"></div>` / `<div id="site-footer-root"></div>` placeholder, a `<script src="shared/site-chrome.js?v=YYYYMMDD">` include, and one init call: `SiteChrome.renderNav('home'|'speakers'|'speaker'|'sponsors')` / `SiteChrome.renderFooter(...)`. `shared/site-chrome.js` derives all per-page differences (in-page anchor vs `index.html#anchor` hrefs, active nav link, home-only dual white/black logo) from that single pageKey string — added 2026-08-05 to de-duplicate markup that previously had to be hand-edited in 4 places. The render calls must run before any other inline script that queries `.main-nav`/`.main-footer` elements (mobile-menu toggle, language toggle, copy-to-clipboard), since those still live in each page's own script and assume the elements already exist — this works because the script tags execute in document order and the render calls are placed where the old inline nav/footer markup used to be. Modal markup/JS is intentionally NOT part of this shared component (see below).
+
+## Modals — Per-Page, Not Shared
+
+Each page still defines its own modal markup and `openModal`/`closeModal`/focus-trap JS. `speakers.html`/`speaker.html` share a near-identical implementation (Tab-key focus trap, `role="dialog" aria-modal="true"`). `index.html` has a materially different implementation (CSS closing-animation via a `.closing` class, heavier client-side validation, promo-code lookup) — its focus-trap was ported in on 2026-08-05 but the closing-animation behavior was deliberately left as index.html-only rather than reconciled across files. `sponsors.html` has 4 modals (exhibitor, contact, soldout, register) using the same focus-trap pattern as speakers.html/speaker.html. All modal "forms" are real `<form>` elements with `type="submit"` CTA buttons (as of 2026-08-05) so native `required`/`type="email"` validation fires before the existing `submitX()` fetch logic runs; the `submitX()` functions themselves are unchanged. Do not attempt to merge modal markup into `shared/site-chrome.js` without first deciding which page's JS behavior (index.html's vs. the other three's) becomes canonical.
+
 ## Parked Pages — Do Not Touch or Analyze
 
 `participants.html` and `expo.html` are **parked/unused** — they are not live/usable pages on the current site. Do NOT edit, "fix," rebrand, or otherwise touch them, and do NOT include them in audits, reviews, or analysis passes (grep sweeps, consistency checks, etc.), even if a finding would technically apply to them. Skip them entirely unless the user explicitly names one of these two files and asks for work on it.
@@ -87,6 +95,7 @@ Every deployable file uses static `?v=YYYYMMDD` cache-busting query strings on s
 - `speakers.html` — `data/speakers-data.js?v=YYYYMMDD`
 - `index.html`, `expo.html`, `speakers.html`, `sponsors.html` — `og:image`/`twitter:image` URL (`images/og-cover.jpg?v=YYYYMMDD`), only if `og-cover.jpg` itself changes
 - **All local image references** (`<img src="images/...">` and CSS `background:url('images/...')`) across `index.html`, `expo.html`, and `sponsors.html` — every one carries `?v=YYYYMMDD` (added 2026-07-03, per client request since deploys are manual via Cloudflare and edge-cached images were showing stale). Bump every one of these when its file changes; new `<img>`/`url()` references to `images/` must get a `?v=YYYYMMDD` from the start.
+- `index.html`, `speakers.html`, `speaker.html`, `sponsors.html` — `shared/site-chrome.js?v=YYYYMMDD` (added 2026-08-05). Bump in all 4 files whenever `shared/site-chrome.js` changes.
 
 If a same-day edit needs a second cache-bust, append a suffix instead of faking a date, e.g. `20260702-2`.
 

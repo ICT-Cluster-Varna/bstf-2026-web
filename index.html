@@ -651,159 +651,6 @@
         }
       }
 
-      /* --- Program: day-tabs (OLD design, restored active) --- */
-      .program-section .schedule-table td {
-        background: var(--white)
-      }
-
-      .program-section .schedule-table tbody tr:nth-child(even) td {
-        background: #f0f7fa
-      }
-
-      .program-section .schedule-table tr:hover td {
-        background: var(--light-blue)
-      }
-
-      .day-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-bottom: 32px
-      }
-
-      .day-tab {
-        padding: 12px 28px;
-        border-radius: var(--radius);
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: var(--transition);
-        background: var(--light-gray);
-        color: var(--text)
-      }
-
-      .day-tab.active {
-        background: var(--navy);
-        color: var(--white)
-      }
-
-      .day-tab:hover:not(.active) {
-        background: var(--light-blue);
-        color: var(--navy)
-      }
-
-      .day-content {
-        display: none !important
-      }
-
-      .day-content.active {
-        display: block !important
-      }
-
-      .day-subtitle-row {
-        background: var(--navy) !important;
-        color: var(--white);
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.15rem;
-        font-weight: 700;
-        text-align: center;
-        padding: 14px 16px;
-        border-radius: var(--radius) var(--radius) 0 0
-      }
-
-      .schedule-table td[colspan="2"] {
-        text-align: center;
-        color: var(--text-light);
-        font-style: italic
-      }
-
-      .schedule-table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0;
-        margin-top: 16px;
-        border-radius: var(--radius);
-        overflow: hidden
-      }
-
-      .schedule-table th {
-        text-align: center;
-        padding: 10px 12px;
-        background: #1a5c7a;
-        color: var(--white);
-        font-size: 0.85rem;
-        font-weight: 600
-      }
-
-      .schedule-table th:first-child {
-        border-radius: 0
-      }
-
-      .schedule-table th:last-child {
-        border-radius: 0
-      }
-
-      .schedule-table td {
-        padding: 10px 12px;
-        border-bottom: 1px solid var(--light-gray);
-        font-size: 0.85rem;
-        text-align: center
-      }
-
-      .schedule-table tr:hover {
-        background: var(--light-blue)
-      }
-
-      .schedule-table tbody tr:nth-child(even) {
-        background: rgba(44, 166, 179, 0.04)
-      }
-
-      .schedule-table {
-        table-layout: fixed
-      }
-
-      .schedule-table th:first-child,
-      .schedule-table td:first-child {
-        width: 6%;
-        padding-left: 0;
-        padding-right: 0
-      }
-
-      .time-cell {
-        font-weight: 600;
-        color: var(--teal);
-        white-space: nowrap;
-        width: 6%;
-        font-size: 0.75rem
-      }
-
-      @media(max-width:768px) {
-        .schedule-table {
-          font-size: 0.875rem;
-          table-layout: auto
-        }
-
-        .schedule-table th,
-        .schedule-table td {
-          padding: 8px 6px;
-          word-break: break-word
-        }
-
-        .schedule-table .time-cell {
-          width: 78px;
-          font-size: 0.8rem;
-          white-space: normal
-        }
-
-        .day-tabs {
-          flex-wrap: wrap
-        }
-
-        .day-tab {
-          padding: 10px 16px;
-          font-size: 0.85rem
-        }
-      }
-
       /* --- Program: unified timeline (Smart Timeline) --- */
       .prog-filterbar {
         position: sticky;
@@ -1205,11 +1052,10 @@
           padding: 0 12px
         }
 
-        /* This is the actual live timeline (renderProgramTimeline() below) —
-          the old .schedule-table markup elsewhere in this file is parked in
-          an HTML comment on this branch and never reaches the DOM, so its
-          mobile font-size rules don't affect what visitors see. These are
-          the real small-text offenders on the rendered page. */
+        /* Smart Timeline (renderProgramTimeline() below) is the only Program
+          design in this file — the legacy day-tabs/.schedule-table markup and
+          CSS were removed. These are the real small-text offenders on the
+          rendered page. */
         .prog-slot-time {
           font-size: 0.85rem
         }
@@ -1236,69 +1082,6 @@
         background: var(--light-gray)
       }
 
-      .speakers-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px
-      }
-
-      .speaker-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        overflow: hidden;
-        transition: var(--transition)
-      }
-
-      .speaker-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lg)
-      }
-
-      .speaker-photo {
-        height: 240px;
-        background: var(--navy);
-        position: relative;
-        overflow: hidden
-      }
-
-      .speaker-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover
-      }
-
-      .speaker-placeholder {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        color: rgba(255, 255, 255, 0.3)
-      }
-
-      .speaker-info {
-        padding: 20px
-      }
-
-      .speaker-info h3 {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--navy);
-        margin-bottom: 4px
-      }
-
-      .speaker-info .role {
-        font-size: 0.8rem;
-        color: var(--teal);
-        font-weight: 500
-      }
-
-      .speaker-info .company {
-        font-size: 0.8rem;
-        color: var(--text-light)
-      }
-
       .halls-section {
         padding: 80px 0;
         background: var(--white)
@@ -1316,11 +1099,6 @@
         padding: 32px;
         text-align: center;
         transition: var(--transition)
-      }
-
-      .hall-card:hover {
-        background: var(--light-blue);
-        transform: translateY(-2px)
       }
 
       .hall-card .hall-icon {
@@ -2706,10 +2484,6 @@
           grid-template-columns: repeat(3, 1fr)
         }
 
-        .speakers-grid {
-          grid-template-columns: repeat(3, 1fr)
-        }
-
         .footer-grid {
           grid-template-columns: 1fr 1fr
         }
@@ -2867,10 +2641,6 @@
         }
 
         .streams-grid {
-          grid-template-columns: repeat(2, 1fr)
-        }
-
-        .speakers-grid {
           grid-template-columns: repeat(2, 1fr)
         }
 
@@ -3661,6 +3431,7 @@
       }
 
       .hall-card:hover {
+        background: var(--light-blue);
         transform: translateY(-4px) scale(1.02);
         box-shadow: 0 8px 24px rgba(0, 205, 255, 0.15);
         border-left-width: 6px
@@ -4264,45 +4035,9 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation -->
-    <nav class="main-nav">
-      <div class="nav-inner">
-        <a href="#" class="logo cx-nav-logo">
-          <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus"
-            class="cx-nav-logo-img cx-nav-logo-img--white">
-          <img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus"
-            class="cx-nav-logo-img cx-nav-logo-img--black">
-          <span class="cx-nav-tagline">black sea tech forum</span>
-        </a>
-        <div class="nav-links">
-          <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
-          <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-          <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-          <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
-        </div>
-        <div class="nav-right">
-          <div class="lang-toggle">
-            <button class="active" data-lang="bg">BG</button>
-            <button data-lang="en">EN</button>
-          </div>
-          <button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет"
-            data-en="Buy Ticket">Купи Билет</button>
-          <button class="mobile-menu-btn" aria-label="Menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Mobile Nav -->
-    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
-    <div class="mobile-nav" id="mobile-nav">
-      <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
-      <a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-      <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-      <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
-      <a href="#tickets" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block"
-        data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>
-    </div>
+    <div id="site-nav-root"></div>
+    <script src="shared/site-chrome.js?v=20260805"></script>
+    <script>SiteChrome.renderNav('home');</script>
 
     <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
       <!-- SECTION 1: Hero -->
@@ -4457,7 +4192,7 @@
 
       <!-- CTA Banner -->
       <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
-        <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-conetnt:center; align-items:center">
+        <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-content:center; align-items:center">
           <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})" class="btn btn-primary"
             style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
             data-bg="КУПИ БИЛЕТ" data-en="BUY TICKET">КУПИ БИЛЕТ</button>
@@ -4770,286 +4505,10 @@
     </section>
 
     <!--
-      SECTION 5: Program — LIVE design (day-tabs), currently deployed at bstf2026.bg.
-
-      PARKED HERE on the "program/smart-timeline-edit" branch only, so the Smart Timeline
-      design below can be edited/previewed in isolation. Do NOT merge this branch back
-      until the Smart Timeline replacement is signed off — on every other branch (main
-      line, deploy branches) this day-tabs section must stay ACTIVE/uncommented, since
-      it is the version currently online.
-
-      Structure of this section:
-      - .day-tabs: 3 buttons (one per conference day), data-day="1|2|3" selects which
-        .day-content block is shown. Only the button/content pair with .active is visible;
-        the rest are hidden via CSS (see ".day-content" / ".day-tab.active" rules near line 607).
-      - .day-content[data-day="N"]: one per day, each wrapping a .schedule-table with a
-        Час (Time) / Зала „България“ (Hall Bulgaria) / Зала „Варна“ (Hall Varna) column layout.
-      - Every user-facing string carries data-bg/data-en attributes; the site-wide translation
-        engine (applyTranslations(), see CLAUDE.md) swaps text based on the chosen language,
-        the literal text node is the Bulgarian (default) copy.
-
-      NOTE: no HTML comments inside this section below this point — if this whole section
-      ever gets parked (wrapped in its own HTML comment), a comment nested inside it would
-      prematurely close the outer one at its first comment-close marker and leak the rest of
-      the markup back into the live page. Keep all explanatory notes up here instead.
-
-    <section class="program-section" id="program">
-      <div class="container">
-        <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
-        <p class="section-subtitle text-center" data-bg="Основна програма + Секторни теми, работещи паралелно."
-          data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.
-        </p>
-
-        <div class="day-tabs">
-          <button class="day-tab active" data-day="1" data-bg="5 октомври" data-en="5 October">5 октомври</button>
-          <button class="day-tab" data-day="2" data-bg="6 октомври" data-en="6 October">6 октомври</button>
-          <button class="day-tab" data-day="3" data-bg="7 октомври" data-en="7 October">7 октомври</button>
-        </div>
-
-        <div class="day-content active" data-day="1">
-          <table class="schedule-table">
-            <thead>
-              <tr>
-                <th colspan="3" class="day-subtitle-row" data-bg="Защо?" data-en="Day 1 – Why?">Why?</th>
-              </tr>
-              <tr>
-                <th data-bg="Час" data-en="Time">Час</th>
-                <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
-                <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-cell">13:00 – 13:30</td>
-                <td data-bg="Официално откриване" data-en="Official Opening">Официално откриване</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">13:30 – 14:00</td>
-                <td data-bg="Keynote – Технологии без граници за устойчив растеж в динамична среда"
-                  data-en="Keynote – Borderless Technologies for Sustainable Growth in a Dynamic Environment">Keynote –
-                  Технологии без граници за устойчив растеж в динамична среда</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">14:00 – 14:10</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">14:10 – 15:30</td>
-                <td data-bg="Блок 1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси"
-                  data-en="Block 1 (80 min) – AI &amp; Automation as Answers to Rising Costs and Resource Shortages">Блок
-                  1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси</td>
-                <td data-bg="Регионални политики за иновации" data-en="Regional Innovation Policies">Регионални политики
-                  за иновации</td>
-              </tr>
-              <tr>
-                <td class="time-cell">15:30 – 15:45</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">15:45 – 17:05</td>
-                <td data-bg="Блок 2 (80 мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво"
-                  data-en="Block 2 (80 min) – From Strategy to Execution: How Companies Deploy AI Sustainably">Блок 2 (80
-                  мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво</td>
-                <td data-bg="Регионални политики за иновации" data-en="Regional Innovation Policies">Регионални политики
-                  за иновации</td>
-              </tr>
-              <tr>
-                <td class="time-cell">17:05 – 17:15</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">17:15 – 17:45</td>
-                <td data-bg="Обобщаващ панел" data-en="Summary Panel">Обобщаващ панел</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">18:00 – 20:00</td>
-                <td data-bg="Техностарт Мотиватор" data-en="TechStart Motivator">Техностарт Мотиватор</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">20:00 – 22:00</td>
-                <td data-bg="Гала коктейл – ресторант х-л „Черно море“"
-                  data-en="Gala Cocktail – Hotel Cherno More restaurant">Гала коктейл – ресторант х-л „Черно море“</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="day-content" data-day="2">
-          <table class="schedule-table">
-            <thead>
-              <tr>
-                <th colspan="3" class="day-subtitle-row" data-bg="Какво и как?" data-en="Day 2 – What and how?">
-                  What and how?</th>
-              </tr>
-              <tr>
-                <th data-bg="Час" data-en="Time">Час</th>
-                <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
-                <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-cell">09:30 – 09:50</td>
-                <td data-bg="Откриване и обобщение от Ден 1" data-en="Opening &amp; Day 1 Recap">Откриване и обобщение от
-                  Ден 1</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">09:50 – 10:15</td>
-                <td data-bg="Keynote – Съвременни предизвикателства и новите бизнес модели"
-                  data-en="Keynote – Contemporary Challenges and New Business Models">Keynote – Съвременни
-                  предизвикателства и новите бизнес модели</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">10:15 – 10:30</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">10:30 – 11:50</td>
-                <td data-bg="Блок 1 (80 мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес"
-                  data-en="Block 1 (80 min) – Secure Data, Resilient Chains &amp; Cyber-Resilient Business">Блок 1 (80
-                  мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес</td>
-                <td data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</td>
-              </tr>
-              <tr>
-                <td class="time-cell">11:50 – 13:00</td>
-                <td data-bg="Пауза / Обяд / Networking" data-en="Break / Lunch / Networking" colspan="2">Пауза / Обяд /
-                  Networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">13:00 – 14:20</td>
-                <td data-bg="Блок 2 (80 мин) – Управление с данни: IoT + логистика"
-                  data-en="Block 2 (80 min) – Data-Driven Management: IoT + Logistics">Блок 2 (80 мин) – Управление с
-                  данни: IoT + логистика</td>
-                <td data-bg="Биотехнологии, здраве и устойчиви индустрии"
-                  data-en="Biotechnologies, Health &amp; Sustainable Industries">Биотехнологии, здраве и устойчиви
-                  индустрии</td>
-              </tr>
-              <tr>
-                <td class="time-cell">14:20 – 15:00</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">15:00 – 16:05</td>
-                <td data-bg="Блок 3 (65 мин) – Роботика" data-en="Block 3 (65 min) – Robotics">Блок 3 (65 мин) – Роботика
-                </td>
-                <td data-bg="Туризъм" data-en="Tourism">Туризъм</td>
-              </tr>
-              <tr>
-                <td class="time-cell">16:05 – 16:20</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">16:20 – 16:50</td>
-                <td data-bg="Обобщаващ панел" data-en="Summary Panel">Обобщаващ панел</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">20:00 – 22:00</td>
-                <td data-bg="Парти – ресторант х-л „Черно море“" data-en="Party – Hotel Cherno More restaurant">Парти –
-                  ресторант х-л „Черно море“</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="day-content" data-day="3">
-          <table class="schedule-table">
-            <thead>
-              <tr>
-                <th colspan="3" class="day-subtitle-row" data-bg="Какво следва?" data-en="Day 3 – What's next?">
-                  What's next?</th>
-              </tr>
-              <tr>
-                <th data-bg="Час" data-en="Time">Час</th>
-                <th data-bg="Зала „България“" data-en="Hall Bulgaria">Зала „България“</th>
-                <th data-bg="Зала „Варна“" data-en="Hall Varna">Зала „Варна“</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-cell">09:30 – 09:50</td>
-                <td data-bg="Откриване и обобщение от Ден 2" data-en="Opening &amp; Day 2 Recap">Откриване и обобщение от
-                  Ден 2</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">09:50 – 10:15</td>
-                <td data-bg="Keynote – Какво следва?" data-en="Keynote – What’s Next?">Keynote – Какво следва?</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-cell">10:15 – 10:30</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">10:30 – 11:50</td>
-                <td data-bg="Блок 1 (80 мин) – Финансиране, износ, нови пазари"
-                  data-en="Block 1 (80 min) – Financing, Export, New Markets">Блок 1 (80 мин) – Финансиране, износ, нови
-                  пазари</td>
-                <td data-bg="Образование" data-en="Education">Образование</td>
-              </tr>
-              <tr>
-                <td class="time-cell">11:50 – 13:00</td>
-                <td data-bg="Пауза / Обяд / Networking" data-en="Break / Lunch / Networking" colspan="2">Пауза / Обяд /
-                  Networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">13:00 – 14:20</td>
-                <td data-bg="Блок 2 (80 мин) – Индустрия" data-en="Block 2 (80 min) – Industry">Блок 2 (80 мин) –
-                  Индустрия</td>
-                <td data-bg="Образование" data-en="Education">Образование</td>
-              </tr>
-              <tr>
-                <td class="time-cell">14:20 – 15:00</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">15:00 – 16:05</td>
-                <td data-bg="Блок 3 (65 мин) – Нови хоризонти…" data-en="Block 3 (65 min) – New Horizons…">Блок 3 (65 мин)
-                  – Нови хоризонти…</td>
-                <td data-bg="Умно земеделие" data-en="Smart Agriculture">Умно земеделие</td>
-              </tr>
-              <tr>
-                <td class="time-cell">16:05 – 16:20</td>
-                <td data-bg="Кафе пауза & Expo networking" data-en="Coffee break & Expo networking" colspan="2">Кафе пауза
-                  & Expo networking</td>
-              </tr>
-              <tr>
-                <td class="time-cell">16:20 – 17:00</td>
-                <td data-bg="Закриване на Черноморски технологичен форум Варна 2026"
-                  data-en="Closing of Black Sea Technology Forum Varna 2026">Закриване на Черноморски технологичен форум
-                  Варна 2026</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-    </section>
-    -->
-
-    <!--
-      SECTION 5: Program (3-Day Grid / "Smart Timeline") — ACTIVE FOR EDITING on this branch
-      ("program/smart-timeline-edit") only. day-tabs design above is temporarily parked so this
-      one can be previewed. Renders Day 1/2/3 as side-by-side columns so the whole programme
-      reads in one view on desktop; stacks to one column below 1000px.
+      SECTION 5: Program (3-Day Grid / "Smart Timeline") — the sole, permanent live design.
+      The legacy day-tabs/.schedule-table design has been removed. Renders Day 1/2/3 as
+      side-by-side columns so the whole programme reads in one view on desktop; stacks to
+      one column below 1000px.
 
       Structure:
       - PROGRAM_TRACKS: the 9 topical tracks available as filter pills (e.g. AI, Cybersecurity).
@@ -5888,72 +5347,17 @@
     </section>
 
     <!-- SECTION 13: Footer -->
-    <footer class="main-footer" id="contact">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:14px">
-            <p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px"
-              data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>
-            <p style="font-size:0.75rem;color:rgba(255,255,255,0.6)" data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен
-              форум</p>
-            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:8px"
-              data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии
-              от 7-мо поколение без граници</p>
-          </div>
-          <div class="footer-col">
-            <h4 data-bg="Събитие" data-en="Event">Събитие</h4>
-            <a href="#program" data-bg="Програма" data-en="Program">Програма</a>
-            <a href="#speakers" data-bg="Лектори" data-en="Speakers">Лектори</a>
-            <a href="#venue" data-bg="Място" data-en="Venue">Място</a>
-            <a href="#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
-            <a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-            <a href="#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
-          </div>
-          <div class="footer-col">
-            <h4 data-bg="Правни" data-en="Legal">Правни</h4>
-            <a href="privacy-policy.html" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>
-            <a href="terms-and-conditions.html" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>
-          </div>
-          <div class="footer-col">
-            <h4 data-bg="Контакт" data-en="Contact">Контакт</h4>
-            <div class="footer-email-row">
-              <a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>
-              <button type="button" class="copy-email-btn" data-email="bstf@ictclustervarna.com" aria-label="Copy email" title="Copy email">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              </button>
-              <span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">Копирано!</span>
-            </div>
-            <a href="tel:+359876658296">+359 876 658 296</a>
-            <div class="footer-social" style="display:flex;gap:12px;margin-top:16px;justify-content:center">
-              <a href="https://www.linkedin.com/showcase/connexus-black-s%D0%B5%D0%B0-%D1%82ech-forum" target="_blank"
-                rel="noopener noreferrer" aria-label="LinkedIn"
-                style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center"><svg
-                  width="18" height="18" viewBox="0 0 24 24" fill="var(--white)">
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span data-bg="&copy; 2026 Черноморски технологичен форум. Всички права запазени."
-            data-en="&copy; 2026 Black Sea Technology Forum. All rights reserved.">&copy; 2026 Черноморски технологичен
-            форум. Всички права запазени.</span>
-          <span data-bg="Организирано от ИКТ Клъстер - Варна" data-en="Organized by ICT Cluster - Varna">Организирано от
-            ИКТ Клъстер - Варна</span>
-        </div>
-      </div>
-    </footer>
+    <div id="site-footer-root"></div>
+    <script>SiteChrome.renderFooter('home');</script>
 
     <!-- Registration Modal -->
     <div class="modal-overlay" id="register-modal">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModal('register-modal')">&times;</button>
-        <div class="modal-form" id="register-form">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="register-modal-title" tabindex="-1">
+        <button class="modal-close" onclick="closeModal('register-modal')" aria-label="Close">&times;</button>
+        <form class="modal-form" id="register-form" onsubmit="submitRegister(); return false;">
           <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
             data-en="CONNEXUS 2026 &middot; 5-7 OCT &middot; VARNA">CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
-          <h2 data-bg="Регистрация" data-en="Registration">Регистрация</h2>
+          <h2 id="register-modal-title" data-bg="Регистрация" data-en="Registration">Регистрация</h2>
           <div class="form-group required">
             <label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
             <input type="text" id="reg-name" placeholder="John Doe" required aria-describedby="register-error">
@@ -5999,14 +5403,14 @@
               <option value="other" data-bg="Друго" data-en="Other">Друго</option>
             </select>
           </div>
-          <button class="btn btn-primary form-submit" onclick="submitRegister()" data-bg="Регистрирай се"
+          <button type="submit" class="btn btn-primary form-submit" data-bg="Регистрирай се"
             data-en="Register">Регистрирай се</button>
           <div class="form-error" id="register-error" role="alert" aria-live="assertive"
             style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
-        </div>
+        </form>
         <div class="modal-success" id="register-success">
           <div class="success-icon">&#x2713;</div>
-          <h3 data-bg="Регистрацията е успешна!" data-en="Registration Successful!">Регистрацията е успешна!</h3>
+          <h3 id="register-success-title" tabindex="-1" data-bg="Регистрацията е успешна!" data-en="Registration Successful!">Регистрацията е успешна!</h3>
           <p data-bg="Ще се свържем с вас скоро." data-en="We will get in touch with you shortly.">Ще се свържем с вас
             скоро.</p>
           <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6">
@@ -6022,12 +5426,12 @@
     </div>
     <!-- Exhibitor Modal -->
     <div class="modal-overlay" id="exhibitor-modal">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModal('exhibitor-modal')">&times;</button>
-        <div class="modal-form" id="exhibitor-form">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="exhibitor-modal-title" tabindex="-1">
+        <button class="modal-close" onclick="closeModal('exhibitor-modal')" aria-label="Close">&times;</button>
+        <form class="modal-form" id="exhibitor-form" onsubmit="submitExhibitor(); return false;">
           <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ИЗЛОЖЕНИЕ" data-en="CONNEXUS 2026 &middot; EXHIBITION">CONNEXUS
             2026 &middot; ИЗЛОЖЕНИЕ</span>
-          <h2 data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
+          <h2 id="exhibitor-modal-title" data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
           <p class="modal-desc" data-bg="Заявете щанд на CONNEXUS 2026 изложението."
             data-en="Apply for a booth at the CONNEXUS 2026 expo.">Заявете щанд на CONNEXUS 2026 изложението.</p>
           <a href="sponsors.html" class="modal-pricing-link" data-bg="Виж пълните цени и пакети &rarr;"
@@ -6069,14 +5473,14 @@
             <label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label>
             <textarea rows="3" id="exh-notes"></textarea>
           </div>
-          <button class="btn btn-primary form-submit" onclick="submitExhibitor()" data-bg="Изпрати заявка"
+          <button type="submit" class="btn btn-primary form-submit" data-bg="Изпрати заявка"
             data-en="Submit Application">Изпрати заявка</button>
           <div class="form-error" id="exhibitor-error" role="alert" aria-live="assertive"
             style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
-        </div>
+        </form>
         <div class="modal-success" id="exhibitor-success">
           <div class="success-icon">&#x2713;</div>
-          <h3 data-bg="Заявката е изпратена!" data-en="Application Submitted!">Заявката е изпратена!</h3>
+          <h3 id="exhibitor-success-title" tabindex="-1" data-bg="Заявката е изпратена!" data-en="Application Submitted!">Заявката е изпратена!</h3>
           <p data-bg="Ще се свържем с вас в рамките на 2 работни дни."
             data-en="We will contact you within 2 business days.">Ще се свържем с вас в рамките на 2 работни дни.</p>
           <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6">
@@ -6092,12 +5496,12 @@
     </div>
     <!-- Speaker Modal -->
     <div class="modal-overlay" id="speaker-modal">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModal('speaker-modal')">&times;</button>
-        <div class="modal-form" id="speaker-form">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="speaker-modal-title" tabindex="-1">
+        <button class="modal-close" onclick="closeModal('speaker-modal')" aria-label="Close">&times;</button>
+        <form class="modal-form" id="speaker-form" onsubmit="submitSpeaker(); return false;">
           <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ЛЕКТОРИ" data-en="CONNEXUS 2026 &middot; SPEAKERS">CONNEXUS 2026
             &middot; ЛЕКТОРИ</span>
-          <h2 data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
+          <h2 id="speaker-modal-title" data-bg="Стани лектор" data-en="Become a Speaker">Стани лектор</h2>
           <p class="modal-desc" data-bg="Предложете тема за лекция на CONNEXUS 2026."
             data-en="Propose a talk topic for CONNEXUS 2026.">Предложете тема за лекция на CONNEXUS 2026.</p>
           <div class="form-group required">
@@ -6137,14 +5541,14 @@
             <label data-bg="Кратко описание" data-en="Brief Description">Кратко описание</label>
             <textarea rows="3" id="spk-desc"></textarea>
           </div>
-          <button class="btn btn-primary form-submit" onclick="submitSpeaker()" data-bg="Изпрати предложение"
+          <button type="submit" class="btn btn-primary form-submit" data-bg="Изпрати предложение"
             data-en="Submit Proposal">Изпрати предложение</button>
           <div class="form-error" id="speaker-error" role="alert" aria-live="assertive"
             style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
-        </div>
+        </form>
         <div class="modal-success" id="speaker-success">
           <div class="success-icon">&#x2713;</div>
-          <h3 data-bg="Предложението е изпратено!" data-en="Proposal Submitted!">Предложението е изпратено!</h3>
+          <h3 id="speaker-success-title" tabindex="-1" data-bg="Предложението е изпратено!" data-en="Proposal Submitted!">Предложението е изпратено!</h3>
           <p data-bg="Ще разгледаме предложението ви и ще се свържем с вас."
             data-en="We will review your proposal and get back to you.">Ще разгледаме предложението ви и ще се свържем с
             вас.</p>
@@ -6516,6 +5920,14 @@
         })();
 
         // === Modals ===
+        var bstfLastFocused = null;
+        function bstfGetFocusable(container) {
+          if (!container) return [];
+          return Array.prototype.slice.call(
+            container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+          ).filter(function (el) { return el.offsetParent !== null; });
+        }
+
         function openModal(id, ticketType) {
           var modal = document.getElementById(id);
           if (!modal) return;
@@ -6528,8 +5940,11 @@
             var sel = document.getElementById('reg-ticket');
             if (sel) sel.value = ticketType;
           }
+          bstfLastFocused = document.activeElement;
           modal.classList.add('open');
           document.body.style.overflow = 'hidden';
+          var focusables = bstfGetFocusable(modal.querySelector('.modal'));
+          (focusables[0] || modal.querySelector('.modal')).focus();
         }
         window.openModal = openModal;
 
@@ -6545,6 +5960,8 @@
           var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           var finish = function () {
             modal.classList.remove('open', 'closing');
+            if (bstfLastFocused && typeof bstfLastFocused.focus === 'function') { bstfLastFocused.focus(); }
+            bstfLastFocused = null;
           };
           if (reduce) { finish(); return; }
           // Play the exit animation, then tear down. animationend fires on the
@@ -6569,11 +5986,20 @@
           });
         });
 
-        // Close modal on Escape
+        // Close modal on Escape; trap Tab focus within the open modal
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape') {
             document.querySelectorAll('.modal-overlay.open').forEach(function (m) { closeModal(m.id); });
+            return;
           }
+          if (e.key !== 'Tab') return;
+          var openOverlay = document.querySelector('.modal-overlay.open');
+          if (!openOverlay) return;
+          var focusables = bstfGetFocusable(openOverlay.querySelector('.modal'));
+          if (!focusables.length) return;
+          var first = focusables[0], last = focusables[focusables.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
         });
         // === Form Submissions ===
         function bstfFormMsg(msg) { return (currentLang === 'en') ? msg.en : msg.bg; }
