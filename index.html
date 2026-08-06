@@ -2993,14 +2993,16 @@
 
       .partner-row__content--text p {
         margin: 0;
-        font-size: 1.05rem;
+        font-size: 1.3rem;
+        line-height: 1.4;
         color: var(--navy);
+        text-wrap: balance;
       }
 
       .partner-row__content--text .partner-patron-name {
-        font-weight: 400;
+        font-weight: 700;
         color: var(--navy);
-        font-size: 1.05rem;
+        font-size: 1.3rem;
       }
 
       .partner-row__logos {
@@ -3012,6 +3014,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 14px;
+      }
+
+      .partner-logo a {
+        display: flex;
+        align-items: center;
         gap: 14px;
       }
 
@@ -3099,6 +3107,17 @@
           width: 100%;
           height: 1px;
           align-self: auto;
+        }
+
+        .partner-row__content--text {
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+
+        .partner-row__content--text p,
+        .partner-row__content--text .partner-patron-name {
+          font-size: 1.2rem;
         }
 
         .partner-row__logos {
@@ -3568,7 +3587,7 @@
       }
 
       .cx-patron-band-text p {
-        font-size: 0.78rem;
+        font-size: 1.05rem;
         letter-spacing: 0.03em;
         color: var(--navy);
         line-height: 1.5;
@@ -3987,7 +4006,7 @@
         }
 
         /* Match the button row's width to the description above it (also
-          460px here) and split it evenly so "Купи билет" and "Виж програмата"
+          460px here) and split it evenly so "Запази място" and "Виж програмата"
           read as one equal-weight pair instead of two sizes shrunk to fit
           their own label. */
         .cx-hero-buttons {
@@ -4036,7 +4055,7 @@
 
     <!-- Navigation -->
     <div id="site-nav-root"></div>
-    <script src="shared/site-chrome.js?v=20260805"></script>
+    <script src="shared/site-chrome.js?v=20260806"></script>
     <script>SiteChrome.renderNav('home');</script>
 
     <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
@@ -4070,8 +4089,8 @@
                   света.</p>
                 <div class="cx-hero-buttons">
                   <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})"
-                    data-bg="Купи билет" data-en="Buy ticket">
-                    <span data-bg="Купи билет" data-en="Buy ticket">Купи билет</span> <span
+                    data-bg="Запази Място" data-en="Reserve a spot">
+                    <span data-bg="Запази място" data-en="Reserve a spot">Запази място</span> <span
                       aria-hidden="true">&rarr;</span></button>
                   <a href="#program" class="btn btn-outline cx-hero-btn" data-bg="Виж програмата" data-en="See program">
                     <span data-bg="Виж програмата" data-en="See program">Виж програмата</span> <span
@@ -4195,7 +4214,7 @@
         <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-content:center; align-items:center">
           <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})" class="btn btn-primary"
             style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
-            data-bg="КУПИ БИЛЕТ" data-en="BUY TICKET">КУПИ БИЛЕТ</button>
+            data-bg="ЗАПАЗИ МЯСТО" data-en="RESERVE A SPOT">ЗАПАЗИ МЯСТО</button>
           <h2
             style="font-family:'hyperspace-race-variable','myriad-pro','Archivo',sans-serif;font-variation-settings:'wdth' 140;font-size:2.4rem;font-weight:800;color:var(--navy);margin-bottom:16px;text-wrap:balance"
             data-bg="Там, където Изтокът среща Запада" data-en="Where the East Meets the West.">Там,
@@ -4423,9 +4442,9 @@
               <p data-bg="Под патронажа на президента на" data-en="Under the patronage of the president of">Под патронажа
                 на
                 президента на</p>
-              <p data-bg="Република България <strong class=&quot;partner-patron-name&quot;>г-жа Илияна Йотова</strong>"
+              <p data-bg="Република България <strong class=&quot;partner-patron-name&quot;>г&#8209;жа Илияна Йотова</strong>"
                 data-en="the Republic of Bulgaria <strong class=&quot;partner-patron-name&quot;>Ms. Iliana Yotova</strong>">
-                Република България <strong class="partner-patron-name">г-жа Илияна
+                Република България <strong class="partner-patron-name">г&#8209;жа Илияна
                   Йотова</strong></p>
             </div>
           </div>
@@ -4444,15 +4463,21 @@
                 </a>
               </div>
               <div class="partner-logo partner-logo--bsmepa">
-                <img src="images/bsmepa_logo.png?v=20260731" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
-                  height="188">
+                <a href="https://sme.government.bg/" target="_blank" rel="noopener">
+                  <img src="images/bsmepa_logo.png?v=20260731" alt="ИАНМСП" loading="lazy" decoding="async" width="475"
+                    height="188">
+                </a>
               </div>
               <div class="partner-logo partner-logo--brainpp">
-                <img src="images/brainpp_logo.png?v=20260731" alt="Brain++ AI Factory" loading="lazy" decoding="async"
-                  width="738" height="249">
+                <a href="https://brainplusplus.bg/" target="_blank" rel="noopener">
+                  <img src="images/brainpp_logo.png?v=20260731" alt="Brain++ AI Factory" loading="lazy" decoding="async"
+                    width="738" height="249">
+                </a>
               </div>
               <div class="partner-logo partner-logo--arcf">
-                <img src="images/ARCF_logo.svg?v=20260731" alt="ARC Fund">
+                <a href="https://arcfund.net/bg/" target="_blank" rel="noopener">
+                  <img src="images/ARCF_logo.svg?v=20260731" alt="ARC Fund">
+                </a>
               </div>
             </div>
           </div>
@@ -4465,10 +4490,12 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--varna">
-                <img src="images/varna_coat.png?v=20260731" alt="Община Варна" loading="lazy" decoding="async"
-                  width="284" height="328">
-                <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
-                  data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
+                <a href="https://varna.bg/" target="_blank" rel="noopener">
+                  <img src="images/varna_coat.png?v=20260731" alt="Община Варна" loading="lazy" decoding="async"
+                    width="284" height="328">
+                  <span class="partner-varna-text" data-bg="ОБЩИНА<strong>ВАРНА</strong>"
+                    data-en="MUNICIPALITY OF<strong>VARNA</strong>">ОБЩИНА<strong>ВАРНА</strong></span>
+                </a>
               </div>
             </div>
           </div>
@@ -4481,8 +4508,68 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--mobility">
-                <img src="images/mobility-partner.png?v=20260731" alt="Top Rent a Car" loading="lazy" decoding="async"
-                  width="700" height="459">
+                <a href="https://toprentacar.bg/" target="_blank" rel="noopener">
+                  <img src="images/mobility-partner.png?v=20260731" alt="Top Rent a Car" loading="lazy" decoding="async"
+                    width="700" height="459">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Media partners -->
+          <div class="partner-row">
+            <div class="partner-row__label">
+              <span data-bg="Медийни партньори" data-en="Media Partners">Медийни партньори</span>
+            </div>
+            <div class="partner-row__divider"></div>
+            <div class="partner-row__content partner-row__logos">
+              <div class="partner-logo partner-logo--media">
+                <a href="https://www.budnavarna.com/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-budnavarna.png?v=20260806" alt="Budna Varna" loading="lazy"
+                    decoding="async" width="399" height="71">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://varnautre.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-varnautre.png?v=20260806" alt="VarnaUtre.bg" loading="lazy"
+                    decoding="async" width="339" height="31">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://fakti.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-fakti.png?v=20260806" alt="Факти" loading="lazy" decoding="async"
+                    width="400" height="114">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://varnanews.net/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-varnanews.png?v=20260806" alt="Varna News" loading="lazy"
+                    decoding="async" width="200" height="38">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://varnafix.com/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-varnafix.png?v=20260806" alt="Граждани на квартала" loading="lazy"
+                    decoding="async" width="209" height="69">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://lider.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-lider.png?v=20260806" alt="Лидер.БГ" loading="lazy" decoding="async"
+                    width="205" height="36">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://offnews.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-offnews.jpg?v=20260806" alt="OFFNews" loading="lazy" decoding="async"
+                    width="400" height="72">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://hicomm.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-hicomm.jpg?v=20260806" alt="HiComm - Вижте бъдещето" loading="lazy"
+                    decoding="async" width="209" height="60">
+                </a>
               </div>
             </div>
           </div>

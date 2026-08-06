@@ -58,7 +58,7 @@
       '<div class="nav-links">' + links + '</div>' +
       '<div class="nav-right">' +
       '<div class="lang-toggle"><button class="active" data-lang="bg">BG</button><button data-lang="en">EN</button></div>' +
-      '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>' +
+      '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Запази място" data-en="Reserve a spot">Запази място</button>' +
       '<button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>' +
       '</div>' +
       '</div>' +
@@ -66,7 +66,7 @@
       '<div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>' +
       '<div class="mobile-nav" id="mobile-nav">' +
       links +
-      '<a href="' + href(cfg, '#tickets') + '" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>' +
+      '<a href="' + href(cfg, '#tickets') + '" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Запази място" data-en="Reserve a spot">Запази място</a>' +
       '</div>';
   }
 
