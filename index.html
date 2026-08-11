@@ -4092,7 +4092,7 @@
                   Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и
                   света.</p>
                 <div class="cx-hero-buttons">
-                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})"
+                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,'#tickets')"
                     data-bg="Купи Билет" data-en="Buy Ticket">
                     <span data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</span> <span
                       aria-hidden="true">&rarr;</span></button>
@@ -4216,7 +4216,7 @@
       <!-- CTA Banner -->
       <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
         <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-content:center; align-items:center">
-          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})" class="btn btn-primary"
+          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,'#tickets')" class="btn btn-primary"
             style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
             data-bg="ЗАПАЗИ МЯСТО" data-en="RESERVE A SPOT">ЗАПАЗИ МЯСТО</button>
           <h2
@@ -4528,6 +4528,18 @@
             <div class="partner-row__divider"></div>
             <div class="partner-row__content partner-row__logos">
               <div class="partner-logo partner-logo--media">
+                <a href="https://lider.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-lider.png?v=20260806" alt="Лидер.БГ" loading="lazy" decoding="async"
+                    width="205" height="36">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://www.moreto.net/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-moreto.jpg?v=20260811" alt="Moreto.net" loading="lazy"
+                    decoding="async" width="400" height="166">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
                 <a href="https://www.budnavarna.com/" target="_blank" rel="noopener">
                   <img src="images/media-partner-budnavarna.png?v=20260806" alt="Budna Varna" loading="lazy"
                     decoding="async" width="399" height="71">
@@ -4558,12 +4570,6 @@
                 </a>
               </div>
               <div class="partner-logo partner-logo--media">
-                <a href="https://lider.bg/" target="_blank" rel="noopener">
-                  <img src="images/media-partner-lider.png?v=20260806" alt="Лидер.БГ" loading="lazy" decoding="async"
-                    width="205" height="36">
-                </a>
-              </div>
-              <div class="partner-logo partner-logo--media">
                 <a href="https://offnews.bg/" target="_blank" rel="noopener">
                   <img src="images/media-partner-offnews.jpg?v=20260806" alt="OFFNews" loading="lazy" decoding="async"
                     width="400" height="72">
@@ -4585,6 +4591,12 @@
                 <a href="https://netpeak.bg/" target="_blank" rel="noopener">
                   <img src="images/media-partner-netpeak.svg?v=20260806" alt="Netpeak" loading="lazy"
                     decoding="async" width="206" height="56">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://www.entrepreneur.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-entrepreneur.png?v=20260811" alt="Entrepreneur.bg" loading="lazy"
+                    decoding="async" width="280" height="62">
                 </a>
               </div>
             </div>
@@ -5420,8 +5432,8 @@
             <div class="ticket-price" data-base-price="749"><span class="ticket-price-current">&euro;749</span></div>
             <ul class="ticket-features">
               <li data-bg="Всичко от VIP билета" data-en="Everything from the VIP ticket">Всичко от VIP билета</li>
-              <li data-bg="Гала вечеря с лектори и специални гости"
-                data-en="Gala dinner with speakers &amp; special guests">Гала вечеря с лектори и специални гости</li>
+              <li data-bg="Гала коктейл с лектори и специални гости"
+                data-en="Gala cocktail with speakers &amp; special guests">Гала коктейл с лектори и специални гости</li>
               <li data-bg="VIP обяд с лектори" data-en="VIP lunch with speakers">VIP обяд с лектори</li>
               <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Достъп до Networking Party
               </li>
@@ -6315,7 +6327,10 @@
         if (navRegBtn) {
           navRegBtn.addEventListener('click', function () {
             var t = document.getElementById('tickets');
-            if (t) t.scrollIntoView({ behavior: 'smooth' });
+            if (t) {
+              t.scrollIntoView({ behavior: 'smooth' });
+              history.replaceState(null, null, '#tickets');
+            }
           });
         }
         // === Copy email fallback (mailto: fails silently with no mail client configured) ===
