@@ -449,7 +449,8 @@
 
     .back-to-speakers {
       position: relative;
-      display: inline-flex;
+      display: flex;
+      width: fit-content;
       align-items: center;
       gap: 8px;
       font-family: var(--mono);
@@ -480,7 +481,8 @@
     }
 
     .hero-eyebrow {
-      display: inline-flex;
+      display: flex;
+      width: fit-content;
       align-items: center;
       gap: 14px;
       font-family: var(--mono);
@@ -1296,7 +1298,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260804"></script>
+  <script src="data/speakers-data.js?v=20260814"></script>
   <script>
     (function () {
       'use strict';
@@ -1378,6 +1380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var heroRole = document.getElementById('sp-hero-role');
 
       if (speaker && track) {
+        window.bstfCurrentSpeaker = speaker;
         document.title = speaker.name.replace(/<[^>]*>/g, '') + ' - CONNEXUS 2026';
 
         heroTrack.setAttribute('data-bg', track.labelBg);
@@ -1573,6 +1576,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.querySelectorAll('select option[data-bg][data-en]').forEach(function (opt) {
           opt.textContent = lang === 'bg' ? opt.getAttribute('data-bg') : opt.getAttribute('data-en');
         });
+        var spk = window.bstfCurrentSpeaker;
+        if (spk) {
+          var titleName = (lang === 'bg' ? spk.name : (spk.nameEn || spk.name)).replace(/<[^>]*>/g, '');
+          document.title = titleName + ' - CONNEXUS 2026';
+        }
       }
       window.setLang = setLang;
       document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
