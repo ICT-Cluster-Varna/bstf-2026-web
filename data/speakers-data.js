@@ -14,7 +14,7 @@
       labelBg: 'Изкуствен интелект',
       labelEn: 'Artificial Intelligence',
       descBg: 'Машинно обучение, автоматизация и AI стратегии',
-      descEn: 'Machine learning, automation &amp; AI strategies',
+      descEn: 'Machine learning, automation & AI strategies',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -25,7 +25,7 @@
       labelBg: 'Умен град',
       labelEn: 'Smart City',
       descBg: 'Дигитализация, иновации и градски екосистеми',
-      descEn: 'Digitalization, innovation &amp; urban ecosystems',
+      descEn: 'Digitalization, innovation & urban ecosystems',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -36,7 +36,7 @@
       labelBg: 'Киберсигурност',
       labelEn: 'Cybersecurity',
       descBg: 'Кибер защита, регулации и цифрова идентичност',
-      descEn: 'Cyber defence, regulations &amp; digital identity',
+      descEn: 'Cyber defence, regulations & digital identity',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -47,7 +47,7 @@
       labelBg: 'Биотехнологии',
       labelEn: 'BioTech',
       descBg: 'Медицинска наука, биоинженерство и здравни иновации',
-      descEn: 'Medical science, bioengineering &amp; health innovation',
+      descEn: 'Medical science, bioengineering & health innovation',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -58,7 +58,7 @@
       labelBg: 'Морски технологии',
       labelEn: 'Marine Tech',
       descBg: 'Корабостроене, морски иновации и Черноморски регион',
-      descEn: 'Shipbuilding, marine innovation &amp; the Black Sea region',
+      descEn: 'Shipbuilding, marine innovation & the Black Sea region',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -69,7 +69,7 @@
       labelBg: 'Туризъм',
       labelEn: 'Tourism',
       descBg: 'Дигитализация и AI в туризма и събитийната индустрия',
-      descEn: 'Digitalization &amp; AI in tourism and the events industry',
+      descEn: 'Digitalization & AI in tourism and the events industry',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -80,7 +80,7 @@
       labelBg: 'Регионални иновационни политики',
       labelEn: 'Regional Innovation Policy',
       descBg: 'Иновационни екосистеми и политики за Черноморския регион',
-      descEn: 'Innovation ecosystems &amp; policy for the Black Sea region',
+      descEn: 'Innovation ecosystems & policy for the Black Sea region',
       dot: '#00cdff',
       countPluralBg: 'лектора'
     },
@@ -107,7 +107,7 @@
       nameEn: 'Martin Kuvandzhiev',
       role: 'Founder @ Encorp | Co-founder, Bitcoin Gold',
       topicBg: 'Blockchain, fintech и AI: следващата вълна на иновации',
-      topicEn: 'Blockchain, fintech &amp; AI: the next innovation wave',
+      topicEn: 'Blockchain, fintech & AI: the next innovation wave',
       bioEn: [
         'As the founder of Encorp, a leading fintech, blockchain and healthcare solutions provider, Martin has over ten years of experience creating and scaling innovative projects that leverage cutting-edge technology and business acumen. Encorp has been growing 2x yearly since 2019, thanks to a talented team of 30+ professionals and a diverse portfolio of clients and partners.',
         'He is also a co-founder of Bitcoin Gold, one of the top cryptocurrencies in the market, and a blockchain advisor for several other ventures, such as TokaCity. With a background in software development and programming, he has won multiple NASA Space Apps Challenges and developed award-winning applications for iOS and other platforms.'
@@ -146,7 +146,7 @@
       objectPosition: 'center 25%',
       name: 'Александър Минчев',
       nameEn: 'Alexander Minchev',
-      role: 'Founder &amp; MD @ AbsCloud / Abilix Soft',
+      role: 'Founder & MD @ AbsCloud / Abilix Soft',
       topicBg: 'Физическите аспекти на сигурността на данните',
       topicEn: 'The Physical Aspects of Data Security',
       bioEn: [
@@ -232,7 +232,7 @@
       objectPosition: 'center 15%',
       name: 'Станислав Симеонов',
       nameEn: 'Stanislav Simeonov',
-      role: 'Product Manager, Cloud, IT Services &amp; Cybersecurity @ Neterra',
+      role: 'Product Manager, Cloud, IT Services & Cybersecurity @ Neterra',
       topicBg: 'Киберсигурност (съвместна лекция с Александър Минчев)',
       topicEn: 'Cybersecurity (joint talk with Alexander Minchev)',
       bioEn: [
@@ -252,9 +252,9 @@
       objectPosition: 'center top',
       name: 'Кристина Ешкенази',
       nameEn: 'Kristina Eskenazi',
-      role: 'Chair @ Health &amp; Life Sciences Cluster Bulgaria',
+      role: 'Chair @ Health & Life Sciences Cluster Bulgaria',
       topicBg: 'Бъдещето на здравеопазването: от изследвания към мащабни иновации',
-      topicEn: 'Future of Health &amp; Life Sciences: from research excellence to scalable innovation',
+      topicEn: 'Future of Health & Life Sciences: from research excellence to scalable innovation',
       bioEn: [
         'Kristina Eskenazi is Chair of the Health & Life Sciences Cluster Bulgaria and AI Cluster Bulgaria, Vice President of the Council of European BioRegions (CEBR), and Board Member of KRIB. She is co-founder of Spinoff Bulgaria and actively promotes innovation, biotechnology, AI, and deep-tech entrepreneurship in Europe.'
       ],
@@ -312,7 +312,7 @@
       objectPosition: 'center 30%',
       name: 'проф. Антон Тончев',
       nameEn: 'Prof. Anton Tonchev',
-      role: 'Professor &amp; Chair, Anatomy @ Medical University Varna',
+      role: 'Professor & Chair, Anatomy @ Medical University Varna',
       topicBg: 'Поглед към микросвета - и отвъд него',
       topicEn: 'Zoom into the micro-world, and beyond',
       bioEn: [
@@ -406,7 +406,7 @@
       objectPosition: 'center top',
       name: 'доц. Оскан Тасинов',
       nameEn: 'Assoc. Prof. Oskan Tasinov',
-      role: 'Associate Professor, Molecular Biology &amp; Biochemistry @ Medical University Varna',
+      role: 'Associate Professor, Molecular Biology & Biochemistry @ Medical University Varna',
       topicBg: 'WineX - повече от вино',
       topicEn: 'WineX - more than wine',
       bioEn: [
@@ -432,7 +432,7 @@
       nameEn: 'Svetlin Stoyanov',
       role: 'Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS',
       topicBg: 'Корабостроенето на Черно море: иновации и предизвикателства',
-      topicEn: 'Black Sea shipbuilding: innovation &amp; challenges',
+      topicEn: 'Black Sea shipbuilding: innovation & challenges',
       bioEn: [
         'Svetlin Stoyanov is Executive Director of MTG Dolphin Shipyard in Varna, Bulgaria. He is Chairman of the Managing Committee of the Bulgarian National Association of Shipbuilding and Ship Repair (BULNAS), a Member of the Board of the Confederation of Employers and Industrialists in Bulgaria (CEIB), and a Member of the Board of the Bulgarian Chamber of Shipping.',
         'He also sits on the Supervisory Board of the Naval Academy and is a member of the ABS Black Sea Technical Committee and the BV Hellenic and Black Sea Technical Committee. Mr. Stoyanov graduated from the High Maritime School – Varna and holds an MSc from the Naval Academy, Varna.'
@@ -447,9 +447,9 @@
       img: 'images/speakers/cemile-usta.jpg?v=20260730', alt: 'Cemile Köseler Usta',
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
-      role: 'Deputy Manager, Technology &amp; Digitalisation @ Istanbul Chamber of Industry',
+      role: 'Deputy Manager, Technology & Digitalisation @ Istanbul Chamber of Industry',
       topicBg: 'Морски AI и управлявано от данни корабоплаване',
-      topicEn: 'Maritime AI &amp; Data-Driven Shipping',
+      topicEn: 'Maritime AI & Data-Driven Shipping',
       bioEn: [
         'Cemile Köseler Usta is Deputy Manager of the Technology and Digitalisation Dept. at the Istanbul Chamber of Industry and an Enterprise Europe Network (EEN) expert. A driving force behind industrial innovation and digital transformation, she empowers SMEs through strategic partnerships, technology adoption and EU-funded opportunities.'
       ],
@@ -465,7 +465,7 @@
       objectPosition: 'center 12%',
       name: 'Елица Стоилова',
       nameEn: 'Elitza Stoilova',
-      role: 'Co-founder &amp; CEO @ Umni | AI2B Zone',
+      role: 'Co-founder & CEO @ Umni | AI2B Zone',
       topicBg: 'AI чатботове в туризма: реален бизнес ефект',
       topicEn: 'AI chatbots in tourism: real business impact',
       bioEn: [
@@ -487,9 +487,9 @@
       objectPosition: 'center top',
       name: 'Андрей Лилов',
       nameEn: 'Andrey Lilov',
-      role: 'Co-founder &amp; CEO @ URBO Studio',
+      role: 'Co-founder & CEO @ URBO Studio',
       topicBg: 'Дигитализация на туризма и събитийната индустрия',
-      topicEn: 'Digitalization of tourism &amp; events industry',
+      topicEn: 'Digitalization of tourism & events industry',
       bioEn: [
         'Andrey Lilov is Co-founder and CEO of URBO Studio - a technology company developing solutions for digitalization, sales and management in tourism, events, culture, sports and the entertainment industry.',
         'He has extensive experience in business development, hospitality software, sales and the creation of digital platforms that connect businesses with their customers in a more direct and efficient way.',
@@ -513,7 +513,7 @@
       nameEn: 'Kalina Tsolova',
       role: 'Expert @ ARC Fund',
       topicBg: 'Иновационни екосистеми и технологична устойчивост на градовете',
-      topicEn: 'Innovation ecosystems &amp; urban technology resilience',
+      topicEn: 'Innovation ecosystems & urban technology resilience',
       bioEn: [
         'Kalina Tsolova is an expert in innovation, regional development, and climate-focused urban transformation, with experience in the public, private, and non-governmental sectors. At ARC Fund, she focuses on the development of innovation ecosystems and technology-driven solutions that strengthen the resilience, sustainability, and competitiveness of cities and regions.',
         'Kalina organizes the high-level Security and Innovation Dialogue – an ARC Fund engagement with the Silicon Valley and Miami innovation community, where she engages with global technology companies, investors, and academic institutions on the future of AI, digital infrastructure, and resilient supply chains. She brings a comprehensive understanding of the link between digital transformation and industrial competitiveness, with a focus on positioning the Black Sea region within Europe\'s evolving technology and energy landscape.'
@@ -531,7 +531,7 @@
       nameEn: 'Georgi Dobrev',
       role: 'Analyst @ ARC Fund',
       topicBg: 'Дигитализация на МСП: анализ и политики',
-      topicEn: 'SME digitalization: analysis &amp; policy',
+      topicEn: 'SME digitalization: analysis & policy',
       bioEn: [
         "Georgi Dobrev works as an analyst at the Applied Research and Communications Fund (ARC Fund), focusing on support for technology transfer and the digitalisation of SMEs, the sustainable development of the regional innovation ecosystem, and employability through the integration of vulnerable groups into the labour market. He analyses and publishes on innovation, trade, and technology policy, using quantitative methods that combine macroeconomic statistics, financial and survey data. Georgi contributes to ARC Fund's annual Innovation.bg report, the Global Competitiveness Yearbook of the IMD World Competitiveness Centre, and the regular reports of the Global Trade and Innovation Policy Alliance."
       ],
@@ -545,7 +545,7 @@
       objectPosition: 'center top',
       name: 'Руслан Стефанов',
       nameEn: 'Ruslan Stefanov',
-      role: 'Director Strategy &amp; Innovation @ ARC Fund',
+      role: 'Director Strategy & Innovation @ ARC Fund',
       topicBg: '20 години Innovation.bg: картата на иновациите в България',
       topicEn: "20 years Innovation.bg: mapping Bulgaria's innovation landscape",
       bioEn: [
