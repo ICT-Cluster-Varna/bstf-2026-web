@@ -74,6 +74,7 @@
     var root = document.getElementById('site-footer-root');
     if (!root) return;
     var cfg = cfgFor(pageKey);
+    var year = new Date().getFullYear();
     root.outerHTML =
       '<footer class="main-footer" id="contact">' +
       '<div class="container">' +
@@ -113,7 +114,7 @@
       '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
-      '<span data-bg="&copy; 2026 Черноморски технологичен форум. Всички права запазени." data-en="&copy; 2026 Black Sea Technology Forum. All rights reserved.">&copy; 2026 Черноморски технологичен форум. Всички права запазени.</span>' +
+      '<span data-bg="&copy; ' + year + ' Черноморски технологичен форум. Всички права запазени." data-en="&copy; ' + year + ' Black Sea Technology Forum. All rights reserved.">&copy; ' + year + ' Черноморски технологичен форум. Всички права запазени.</span>' +
       '<span data-bg="Организирано от ИКТ Клъстер - Варна" data-en="Organized by ICT Cluster - Varna">Организирано от ИКТ Клъстер - Варна</span>' +
       '</div>' +
       '</div>' +
