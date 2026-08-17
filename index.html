@@ -997,6 +997,201 @@
         filter: grayscale(0.4)
       }
 
+      .prog-ev-card--expandable {
+        cursor: pointer;
+        position: relative;
+        border-color: rgba(0, 205, 255, 0.35);
+        box-shadow: 0 1px 4px rgba(11, 57, 84, 0.06)
+      }
+
+      .prog-ev-card--expandable:hover,
+      .prog-ev-card--expandable:focus-visible {
+        border-color: rgba(0, 205, 255, 0.65);
+        box-shadow: 0 4px 14px rgba(11, 57, 84, 0.12)
+      }
+
+      .prog-ev-card--expandable:focus-visible {
+        outline: 3px solid var(--teal);
+        outline-offset: 2px
+      }
+
+      /* CTA strip: one plain sentence ("N speakers · View details") instead of
+        several competing visual elements — the clearest single affordance,
+        and it states what's behind the click, not just that it's clickable. */
+      .prog-ev-cta {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px dashed rgba(11, 57, 84, 0.15);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--teal-deep)
+      }
+
+      .prog-ev-cta-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--teal-deep);
+        flex-shrink: 0
+      }
+
+      .prog-ev-cta-arrow {
+        margin-left: auto;
+        transition: transform 0.2s ease
+      }
+
+      .prog-ev-cta-arrow::after {
+        content: "\2192"
+      }
+
+      .prog-ev-card--expandable:hover .prog-ev-cta-arrow,
+      .prog-ev-card--expandable:focus-visible .prog-ev-cta-arrow {
+        transform: translateX(3px)
+      }
+
+      .prog-ev-card--expandable:hover .prog-ev-facepile-arrow,
+      .prog-ev-card--expandable:focus-visible .prog-ev-facepile-arrow {
+        transform: translateX(3px)
+      }
+
+      #session-modal .modal {
+        max-width: 640px
+      }
+
+      .session-modal-day {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 2px
+      }
+
+      .session-modal-room {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--teal-deep);
+        background: var(--light-blue);
+        padding: 4px 12px;
+        border-radius: 99px;
+        margin-bottom: 22px
+      }
+
+      .session-modal-room:empty {
+        display: none
+      }
+
+      #session-modal-body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px
+      }
+
+      .session-detail-item {
+        border-left: 3px solid var(--teal);
+        padding: 1px 0 1px 16px
+      }
+
+      .session-detail-time {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: var(--white);
+        background: var(--navy);
+        padding: 3px 10px;
+        border-radius: 99px;
+        margin-bottom: 10px
+      }
+
+      .session-detail-title {
+        font-weight: 700;
+        font-size: 1.02rem;
+        line-height: 1.45;
+        color: var(--navy);
+        margin-bottom: 10px
+      }
+
+      .session-detail-note {
+        display: block;
+        font-size: 0.78rem;
+        font-style: italic;
+        color: var(--text-light);
+        margin-bottom: 12px
+      }
+
+      .session-detail-note::before {
+        content: "\24D8";
+        font-style: normal;
+        color: var(--teal-deep);
+        margin-right: 5px
+      }
+
+      .session-detail-people {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px
+      }
+
+      .session-detail-person {
+        padding-left: 12px;
+        border-left: 2px solid rgba(11, 57, 84, 0.12)
+      }
+
+      .session-detail-person.is-moderator {
+        border-left-color: var(--teal-deep)
+      }
+
+      .session-detail-person-name {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 7px;
+        font-weight: 700;
+        font-size: 0.92rem;
+        color: var(--navy);
+        line-height: 1.35
+      }
+
+      .session-detail-mod-label {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--white);
+        background: var(--teal-deep);
+        padding: 2px 8px;
+        border-radius: 99px
+      }
+
+      .session-detail-role {
+        font-size: 0.82rem;
+        line-height: 1.45;
+        color: var(--text-light);
+        margin-top: 2px
+      }
+
+      .session-detail-person-note {
+        display: block;
+        font-size: 0.78rem;
+        font-style: italic;
+        color: var(--text-light);
+        margin-top: 2px
+      }
+
       .prog-break-row {
         display: flex;
         align-items: center;
@@ -4624,7 +4819,7 @@
               </div>
               <div class="partner-logo partner-logo--media">
                 <a href="https://novavarna.net/" target="_blank" rel="noopener">
-                  <img src="images/media-partner-novavarna.png?v=20260813-3" alt="Nova Varna" loading="lazy"
+                  <img src="images/media-partner-novavarna.png?v=20260817" alt="Nova Varna" loading="lazy"
                     decoding="async" width="400" height="66">
                 </a>
               </div>
@@ -4727,21 +4922,99 @@
         {
           id: 1, date: { bg: '5 октомври', en: '5 October' }, label: { bg: 'Ден 1', en: 'Day 1' },
           slots: [
-            { time: '13:00 – 13:30', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Официално откриване', en: 'Official Opening' }, track: null }] },
-            { time: '13:30 – 14:00', kind: 'single', block: { id: 'keynote-d1', bg: 'Ден 1 · Keynote', en: 'Day 1 · Keynote' }, cards: [{ room: HALL_BG, title: { bg: 'Keynote – Технологии без граници за устойчив растеж в динамична среда', en: 'Keynote – Borderless Technologies for Sustainable Growth in a Dynamic Environment' }, track: null }] },
+            {
+              time: '13:00 – 13:30', kind: 'single', cards: [{
+                room: HALL_BG, title: { bg: 'Официално откриване', en: 'Official Opening' }, track: null,
+                detail: {
+                  items: [
+                    {
+                      time: '13:00 – 13:10',
+                      title: { bg: 'Откриване: ключов момент за европейските иновации', en: 'Opening: A pivotal moment for European innovation' },
+                      people: [
+                        { name: 'Emil Tsankov', role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' } },
+                        { name: 'Boyko Takov', role: { bg: 'Изпълнителен директор, Изпълнителна агенция за насърчаване на малките и средните предприятия', en: 'Executive Director, Executive Agency for the Promotion of Small and Medium-sized Enterprises' } }
+                      ]
+                    },
+                    {
+                      time: '13:10 – 13:30',
+                      title: { bg: 'Ключова реч: Полюси на растеж в Черноморския регион – визия за европейски иновации, технологичен суверенитет и индустриална трансформация', en: 'Keynote address: Black Sea growth poles – A Vision for European innovation, tech sovereignty and industrial transformation' },
+                      people: [
+                        { name: 'Iliana Iotova', role: { bg: 'Президент на Република България', en: 'President of the Republic of Bulgaria' } }
+                      ]
+                    }
+                  ]
+                }
+              }]
+            },
+            {
+              time: '13:30 – 14:00', kind: 'single', block: { id: 'keynote-d1', bg: 'Ден 1 · Keynote', en: 'Day 1 · Keynote' }, cards: [{
+                room: HALL_BG, title: { bg: 'Към европейска иновационна екосистема: как Европа да се конкурира и сътрудничи със САЩ и Китай', en: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China' }, track: null,
+                detail: {
+                  items: [
+                    {
+                      time: '13:30 – 14:00',
+                      title: { bg: 'Към европейска иновационна екосистема: как Европа да се конкурира и сътрудничи със САЩ и Китай', en: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China' },
+                      people: [
+                        { name: 'Lars Frølund', role: { bg: 'Лектор, Масачузетски технологичен институт; стратегически съветник, NATO Innovation Fund', en: 'Lecturer, Massachusetts Institute of Technology; Strategic Advisor, NATO Innovation Fund' } },
+                        { name: 'Ruslan Stefanov', role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
+                      ]
+                    }
+                  ]
+                }
+              }]
+            },
             { time: '14:00 – 14:10', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             {
-              time: '14:10 – 15:30', kind: 'double', block: { id: 'block-1-d1', bg: 'Ден 1 · Блок 1', en: 'Day 1 · Block 1' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – AI и автоматизация като отговор на растящи разходи и недостиг на ресурси', en: 'Block 1 (80 min) – AI & Automation as Answers to Rising Costs and Resource Shortages' }, track: 'ai' },
-                { room: HALL_VN, title: { bg: 'Регионални политики за иновации', en: 'Regional Innovation Policies' }, track: 'regional-innovation-policy' }
-              ]
+              time: '14:10 – 15:30', kind: 'single', block: { id: 'block-1-d1', bg: 'Ден 1 · Блок 1', en: 'Day 1 · Block 1' }, cards: [{
+                room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Регионални политики за иновации', en: 'Block 1 (80 min) – Regional Innovation Policies' }, track: null,
+                detail: {
+                  items: [
+                    {
+                      time: '14:10 – 14:45',
+                      title: { bg: 'Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги на доставки', en: 'Digital & AI transformation for industrial growth: Secure European supply chains' },
+                      note: { bg: 'Чакаме потвърждение от лекторите.', en: 'Speakers to be confirmed.' },
+                      people: [
+                        { name: 'Ruslan Stefanov', role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
+                      ]
+                    },
+                    {
+                      time: '14:45 – 15:30',
+                      title: { bg: 'Към черноморска иновационна екосистема: трансфер на технологии и възможности за мащабиране', en: 'Towards a Black Sea innovation ecosystem: Technology transfer and scale up opportunities' },
+                      people: [
+                        { name: 'Ekaterina Zaharieva', role: { bg: 'Еврокомисар по въпросите на стартиращите предприятия, научните изследвания и иновациите', en: 'European Commissioner for Startups, Research and Innovation' }, note: { bg: 'видео послание', en: 'video message' } },
+                        { name: 'Svetoslava Georgieva', role: { bg: 'Председател на Съвета на директорите, European Innovation Council Fund', en: 'Board Chair, European Innovation Council Fund' } },
+                        { name: 'Emil Tsankov', role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' }, isModerator: true }
+                      ]
+                    }
+                  ]
+                }
+              }]
             },
             { time: '15:30 – 15:45', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             {
-              time: '15:45 – 17:05', kind: 'double', block: { id: 'block-2-d1', bg: 'Ден 1 · Блок 2', en: 'Day 1 · Block 2' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 2 (80 мин) – От стратегия към изпълнение: как фирмите внедряват AI устойчиво', en: 'Block 2 (80 min) – From Strategy to Execution: How Companies Deploy AI Sustainably' }, track: 'ai' },
-                { room: HALL_VN, title: { bg: 'Регионални политики за иновации', en: 'Regional Innovation Policies' }, track: 'regional-innovation-policy' }
-              ]
+              time: '15:45 – 17:05', kind: 'single', block: { id: 'block-2-d1', bg: 'Ден 1 · Блок 2', en: 'Day 1 · Block 2' }, cards: [{
+                room: HALL_VN, title: { bg: 'Блок 2 (80 мин) – Регионални политики за иновации', en: 'Block 2 (80 min) – Regional Innovation Policies' }, track: null,
+                detail: {
+                  items: [
+                    {
+                      time: '15:45 – 16:15',
+                      title: { bg: 'От стратегия към изпълнение: ефективни политики за дигиталната трансформация на европейските региони', en: 'From strategy to delivery: Effective policymaking for digital transformation of Europe’s regions' },
+                      people: [
+                        { name: 'Paul Lambert', role: { bg: 'Посланик на Белгия в България', en: 'Ambassador of Belgium to Bulgaria' } },
+                        { name: 'Georgi Dobrev', role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
+                      ]
+                    },
+                    {
+                      time: '16:15 – 17:05',
+                      title: { bg: 'Иновационната и геоикономическа роля на Европейския съюз в Черноморския регион', en: 'The European Union’s innovation and geoeconomic power in the Black Sea region' },
+                      people: [
+                        { name: 'Michael Roux', role: { bg: 'Посланик за Източното партньорство и Черно море, Министерство на Европа и външните работи на Франция', en: 'Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France' } },
+                        { name: 'Kalina Tcolova', role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
+                      ]
+                    }
+                  ]
+                }
+              }]
             },
             { time: '17:05 – 17:15', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             { time: '17:15 – 17:45', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Обобщаващ панел', en: 'Summary Panel' }, track: null }] },
@@ -4922,7 +5195,7 @@
           return cell;
         }
 
-        function buildSlotCell(s, colIdx, withColDivider) {
+        function buildSlotCell(s, colIdx, withColDivider, d) {
           var cell = document.createElement('div');
           cell.className = 'prog-cell' + (withColDivider ? ' prog-col-' + (colIdx + 1) : '');
           cell.style.gridColumn = String(colIdx + 1);
@@ -4960,11 +5233,30 @@
             }
             var match = cardMatches(c, s.block);
             var card = document.createElement('div');
-            card.className = 'prog-ev-card' + (match ? '' : ' dim');
+            card.className = 'prog-ev-card' + (match ? '' : ' dim') + (c.detail ? ' prog-ev-card--expandable' : '');
             card.style.setProperty('--room-dot', c.room === HALL_VN ? 'var(--navy)' : 'var(--teal)');
             var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + trackNameById[c.track].bg + '</span>' : '';
+            var ctaHtml = '';
+            if (c.detail) {
+              var speakerCount = 0;
+              (c.detail.items || []).forEach(function (it) { speakerCount += (it.people || []).length; });
+              var ctaBg = speakerCount + (speakerCount === 1 ? ' лектор' : ' лектора') + ' · Виж детайли';
+              var ctaEn = speakerCount + (speakerCount === 1 ? ' speaker' : ' speakers') + ' · View details';
+              ctaHtml = '<div class="prog-ev-cta">' +
+                '<span class="prog-ev-cta-dot"></span>' +
+                '<span data-bg="' + ctaBg.replace(/"/g, '&quot;') + '" data-en="' + ctaEn.replace(/"/g, '&quot;') + '">' + ctaBg + '</span>' +
+                '<span class="prog-ev-cta-arrow" aria-hidden="true"></span></div>';
+            }
             var roomEn = c.room === HALL_BG ? HALL_BG_EN : (c.room === HALL_VN ? HALL_VN_EN : c.room);
-            card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + c.room + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + c.title.bg + '</div>' + tagHtml;
+            card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + c.room + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + c.title.bg + '</div>' + tagHtml + ctaHtml;
+            if (c.detail) {
+              card.setAttribute('role', 'button');
+              card.setAttribute('tabindex', '0');
+              card.addEventListener('click', function () { if (window.openSessionModal) window.openSessionModal(c, d); });
+              card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (window.openSessionModal) window.openSessionModal(c, d); }
+              });
+            }
             cardsWrap.appendChild(card);
           });
           cell.appendChild(cardsWrap);
@@ -5027,7 +5319,7 @@
             grid.appendChild(head);
 
             for (var i = 0; i < commonN; i++) {
-              var cell = buildSlotCell(d.slots[i], colIdx, true);
+              var cell = buildSlotCell(d.slots[i], colIdx, true, d);
               cell.style.gridRow = String(i + 2);
               grid.appendChild(cell);
             }
@@ -5046,7 +5338,7 @@
             col.id = 'prog-tail-col-' + d.id;
 
             for (var j = commonN; j < d.slots.length; j++) {
-              var cell = buildSlotCell(d.slots[j], colIdx, false);
+              var cell = buildSlotCell(d.slots[j], colIdx, false, d);
               cell.dataset.slotIdx = j;
               col.appendChild(cell);
             }
@@ -5062,7 +5354,7 @@
             mobileGrid.appendChild(mHead);
 
             d.slots.forEach(function (s) {
-              var mCell = buildSlotCell(s, colIdx, false);
+              var mCell = buildSlotCell(s, colIdx, false, d);
               mCell.style.gridColumn = '';
               mobileGrid.appendChild(mCell);
             });
@@ -5707,6 +5999,18 @@
         </div>
       </div>
     </div>
+    <!-- Session Detail Modal (Program timeline "second level of detail") -->
+    <div class="modal-overlay" id="session-modal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="session-modal-title" tabindex="-1">
+        <button class="modal-close" onclick="closeModal('session-modal')" aria-label="Close">&times;</button>
+        <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ПРОГРАМА" data-en="CONNEXUS 2026 &middot; PROGRAMME">CONNEXUS 2026
+          &middot; ПРОГРАМА</span>
+        <span class="session-modal-day" id="session-modal-day"></span>
+        <h2 id="session-modal-title"></h2>
+        <span class="session-modal-room" id="session-modal-room"></span>
+        <div id="session-modal-body"></div>
+      </div>
+    </div>
     <!-- Back to Top -->
     <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
 
@@ -6122,6 +6426,67 @@
           setTimeout(end, 320);
         }
         window.closeModal = closeModal;
+
+        // Program timeline "second level of detail": renders the sub-sessions/
+        // speakers/moderator breakdown for a session card into #session-modal-body.
+        function renderSessionDetail(card) {
+          var html = '';
+          var accentColor = card.room === HALL_VN ? 'var(--navy)' : 'var(--teal)';
+          (card.detail.items || []).forEach(function (item) {
+            html += '<div class="session-detail-item" style="border-left-color:' + accentColor + '">';
+            html += '<div class="session-detail-time">' + item.time + '</div>';
+            html += '<div class="session-detail-title" data-bg="' + item.title.bg.replace(/"/g, '&quot;') + '" data-en="' + item.title.en.replace(/"/g, '&quot;') + '">' + item.title.bg + '</div>';
+            if (item.note) {
+              html += '<div class="session-detail-note" data-bg="' + item.note.bg.replace(/"/g, '&quot;') + '" data-en="' + item.note.en.replace(/"/g, '&quot;') + '">' + item.note.bg + '</div>';
+            }
+            if (item.people && item.people.length) {
+              html += '<div class="session-detail-people">';
+              item.people.forEach(function (p) {
+                var noteHtml = p.note ? '<span class="session-detail-person-note" data-bg="(' + p.note.bg.replace(/"/g, '&quot;') + ')" data-en="(' + p.note.en.replace(/"/g, '&quot;') + ')">(' + p.note.bg + ')</span>' : '';
+                var modBadge = p.isModerator ? '<span class="session-detail-mod-label" data-bg="Модератор" data-en="Moderator">Модератор</span>' : '';
+                html += '<div class="session-detail-person' + (p.isModerator ? ' is-moderator' : '') + '">' +
+                  '<div class="session-detail-person-name"><span>' + p.name + '</span>' + modBadge + '</div>' +
+                  '<div class="session-detail-role" data-bg="' + p.role.bg.replace(/"/g, '&quot;') + '" data-en="' + p.role.en.replace(/"/g, '&quot;') + '">' + p.role.bg + '</div>' +
+                  noteHtml +
+                  '</div>';
+              });
+              html += '</div>';
+            }
+            html += '</div>';
+          });
+          return html;
+        }
+
+        function openSessionModal(card, day) {
+          if (!card || !card.detail) return;
+          var dayEl = document.getElementById('session-modal-day');
+          var titleEl = document.getElementById('session-modal-title');
+          var roomEl = document.getElementById('session-modal-room');
+          var body = document.getElementById('session-modal-body');
+          if (dayEl) {
+            if (day) {
+              dayEl.setAttribute('data-bg', day.label.bg + ' · ' + day.date.bg);
+              dayEl.setAttribute('data-en', day.label.en + ' · ' + day.date.en);
+            } else {
+              dayEl.removeAttribute('data-bg');
+              dayEl.removeAttribute('data-en');
+              dayEl.textContent = '';
+            }
+          }
+          if (titleEl) {
+            titleEl.setAttribute('data-bg', card.title.bg);
+            titleEl.setAttribute('data-en', card.title.en);
+          }
+          if (roomEl && card.room) {
+            var roomEn = card.room === HALL_BG ? HALL_BG_EN : (card.room === HALL_VN ? HALL_VN_EN : card.room);
+            roomEl.setAttribute('data-bg', card.room);
+            roomEl.setAttribute('data-en', roomEn);
+          }
+          if (body) body.innerHTML = renderSessionDetail(card);
+          setLang(currentLang);
+          openModal('session-modal');
+        }
+        window.openSessionModal = openSessionModal;
 
         // Close modal on overlay click
         document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
