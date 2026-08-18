@@ -5724,8 +5724,8 @@
               </li>
               <li data-bg="Дигитални материали" data-en="Digital materials">Дигитални материали</li>
             </ul>
-            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
-              data-en="Register now">Регистрирай се</button>
+            <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
+              data-en="Buy Ticket">Купи Билет</a>
           </div>
 
           <!-- VIP -->
@@ -5744,8 +5744,8 @@
                 зона</li>
               <li data-bg="VIP обяд с лекторите" data-en="VIP lunch with the speakers">VIP обяд с лекторите</li>
             </ul>
-            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
-              data-en="Register now">Регистрирай се</button>
+            <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
+              data-en="Buy Ticket">Купи Билет</a>
           </div>
 
           <!-- ULTRA VIP -->
@@ -5765,8 +5765,8 @@
               <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Достъп до Networking Party
               </li>
             </ul>
-            <button class="btn btn-primary open-register-modal" data-modal-open="register" style="width:100%" data-bg="Регистрирай се"
-              data-en="Register now">Регистрирай се</button>
+            <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
+              data-en="Buy Ticket">Купи Билет</a>
           </div>
         </div>
       </div>
@@ -6151,6 +6151,13 @@
           // Update select options
           document.querySelectorAll('select option[data-bg][data-en]').forEach(function (opt) {
             opt.textContent = lang === 'bg' ? opt.getAttribute('data-bg') : opt.getAttribute('data-en');
+          });
+
+          // Update ticket purchase links to the language-matching sales page
+          document.querySelectorAll('.bstf-ticket-buy-link').forEach(function (link) {
+            link.href = lang === 'en'
+              ? 'https://urboapp.com/en/e25066-connexus-black-sea-tech-forum-2026-varna/entrance'
+              : 'https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance';
           });
         }
 
