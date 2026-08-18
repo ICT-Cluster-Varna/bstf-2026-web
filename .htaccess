@@ -4,8 +4,13 @@
 # caching). These rules force the browser to re-check the server for HTML on
 # every visit, so a fresh deploy shows up immediately.
 #
-# Apache only. On IIS / Nginx / static hosts this file is simply ignored
-# (no error). The <IfModule> guards mean it also can't break Apache if the
+# !! NOT ACTIVE ON THE CURRENT SERVER !!
+# The live site runs on IIS behind Cloudflare, which ignores .htaccess
+# entirely. The cache policy that is actually in effect lives in
+# web.config at the site root -- edit that one. This file is kept only
+# so the policy survives a future move to Apache.
+#
+# The <IfModule> guards mean it also can't break Apache if the
 # mod_headers / mod_expires modules aren't loaded.
 
 # --- HTML documents: never trust the cache, always revalidate ---

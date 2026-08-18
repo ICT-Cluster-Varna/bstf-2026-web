@@ -101,6 +101,44 @@ If a same-day edit needs a second cache-bust, append a suffix instead of faking 
 
 Do NOT switch this to a dynamic `Date.now()`/`document.write()` scheme — that was tried and rejected: it disables browser caching entirely and `document.write` is a deprecated, parser-blocking pattern.
 
+### HTML cache headers — `web.config` (IIS)
+
+`?v=` solves stale *assets*. It cannot solve a stale **HTML document** — the HTML is the file that
+*carries* the new `?v=` strings, so if it is cached the new versions are never seen. That is handled
+by HTTP headers instead:
+
+- **`web.config` at the site root is the live cache policy.** HTML (and anything else not listed
+  below) is served `Cache-Control: max-age=120, must-revalidate` — the browser trusts its copy for
+  2 minutes, then must re-check with the server. A revalidation that finds no change is a `304`
+  with a 0-byte body, so a returning visitor never re-downloads an unchanged page, and anyone who
+  comes back more than 2 minutes later always gets the current deploy.
+- Do **not** read this as "the site has no cache". `no-cache`/`must-revalidate` means *revalidate*,
+  not *do not store* — that would be `no-store`. Measured on the live site: full page 53 KB gzipped
+  / ~190 ms, revalidation 0 bytes / ~180 ms. Almost all of that 180 ms is origin round-trip, since
+  Cloudflare serves HTML as `DYNAMIC`; that is what the 2-minute window buys back for in-session
+  navigation. The ~35 MB of images/videos/3d-model is never revalidated at all.
+- `images/`, `videos/`, `shared/`, `data/`, `3d-model/` keep `max-age=2678400` (31 days). Safe
+  because everything in them is referenced with `?v=YYYYMMDD`.
+- **Exception:** `data/promo-codes.json` is on the same 2-minute policy as the HTML. `index.html`/`en/index.html` fetch it as a
+  bare `fetch('data/promo-codes.json')` with no `?v=`, so under the 31-day rule an edited promo code
+  would not reach a returning visitor for a month.
+
+`.htaccess` in this repo is **inert** — the server is IIS, not Apache. Do not "fix" caching there.
+The `<meta http-equiv="Cache-Control">` tags in the page `<head>`s are also inert; browsers ignore
+meta cache directives for the document itself. Neither is worth removing, but neither does anything.
+
+Verify after a deploy (expect `max-age=120, must-revalidate` on the first, `max-age=2678400` on the second):
+
+```bash
+curl -sS -o /dev/null -D - https://www.blackseatech.org/ | grep -i cache
+curl -sS -o /dev/null -D - https://www.blackseatech.org/shared/site-chrome.js | grep -i cache
+```
+
+If HTML still comes back as `max-age=2592000` after `web.config` is uploaded, the value is coming
+from **Cloudflare**, not the origin — set Caching → Configuration → Browser Cache TTL to
+*Respect Existing Headers*, then purge the cache.
+
+
 ## Tag Manager (always do this automatically)
 
 No build step exists, so the GTM container is hardcoded (script + `<noscript>` iframe) in every page rather than shared from one place. If the GTM ID `GTM-K6JDS83T` ever changes, update it in all 6 files:
