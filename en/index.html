@@ -2,6 +2,7 @@
 <html lang="en">
 
   <head>
+    <base href="/en/">
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || []; w[l].push({
@@ -4274,10 +4275,10 @@
       <!-- SECTION 1: Hero -->
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
-          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="images/hero-poster-new.jpg?v=20260731"
-            data-poster-mobile="images/hero-poster-mobile.jpg?v=20260731"
-            data-src-desktop="videos/hero-bg-new-clean.mp4?v=20260731"
-            data-src-mobile="videos/hero-bg-mobile-clean.mp4?v=20260731"></video>
+          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="../images/hero-poster-new.jpg?v=20260731"
+            data-poster-mobile="../images/hero-poster-mobile.jpg?v=20260731"
+            data-src-desktop="../videos/hero-bg-new-clean.mp4?v=20260731"
+            data-src-mobile="../videos/hero-bg-mobile-clean.mp4?v=20260731"></video>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
         <div class="cx-hero-bg-overlay"></div>
@@ -6101,7 +6102,8 @@
 
         // === Lang toggle click ===
         document.querySelectorAll('.lang-toggle a').forEach(function (btn) {
-          btn.addEventListener('click', function () {
+          btn.addEventListener('click', function (e) {
+            if (btn.getAttribute('href') === '#') e.preventDefault();
             setLang(btn.dataset.lang);
           });
         });
@@ -6486,7 +6488,7 @@
           if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
           var originalText = btn ? btn.textContent : '';
           if (btn) { btn.disabled = true; btn.textContent = bstfFormMsg({ bg: 'Изпращане...', en: 'Sending...' }); }
-          fetch('send-email.asp', {
+          fetch('../send-email.asp', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(fields).toString()
