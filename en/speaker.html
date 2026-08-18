@@ -1668,7 +1668,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
         var originalText = btn ? btn.textContent : '';
         if (btn) { btn.disabled = true; btn.textContent = bstfFormMsg({ bg: 'Изпращане...', en: 'Sending...' }); }
-        fetch('send-email.asp', {
+        fetch('../send-email.asp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(fields).toString()
