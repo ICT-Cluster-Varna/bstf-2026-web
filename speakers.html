@@ -19,19 +19,23 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=20260818">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=20260818">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=20260818">
-  <meta name="description" content="CONNEXUS 2026 (Black Sea Technology Forum) - Speakers">
+  <meta name="description" content="CONNEXUS 2026 (Черноморски технологичен форум) - Лектори">
+  <link rel="canonical" href="https://blackseatech.org/speakers.html">
+  <link rel="alternate" hreflang="bg" href="https://blackseatech.org/speakers.html">
+  <link rel="alternate" hreflang="en" href="https://blackseatech.org/en/speakers.html">
+  <link rel="alternate" hreflang="x-default" href="https://blackseatech.org/speakers.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CONNEXUS 2026">
   <meta property="og:title" content="Лектори — CONNEXUS 2026">
-  <meta property="og:description" content="CONNEXUS 2026 (Black Sea Technology Forum) - Speakers">
-  <meta property="og:url" content="https://bstf2026.bg/speakers.html">
-  <meta property="og:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
+  <meta property="og:description" content="CONNEXUS 2026 (Черноморски технологичен форум) - Лектори">
+  <meta property="og:url" content="https://blackseatech.org/speakers.html">
+  <meta property="og:image" content="https://blackseatech.org/images/og-cover.jpg?v=20260731">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Лектори — CONNEXUS 2026">
-  <meta name="twitter:description" content="CONNEXUS 2026 (Black Sea Technology Forum) - Speakers">
-  <meta name="twitter:image" content="https://bstf2026.bg/images/og-cover.jpg?v=20260731">
+  <meta name="twitter:description" content="CONNEXUS 2026 (Черноморски технологичен форум) - Лектори">
+  <meta name="twitter:image" content="https://blackseatech.org/images/og-cover.jpg?v=20260731">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
@@ -395,7 +399,7 @@
       overflow: hidden
     }
 
-    .lang-toggle button {
+    .lang-toggle a {
       padding: 6px 12px;
       font-size: 0.8rem;
       font-weight: 600;
@@ -404,7 +408,7 @@
       color: var(--text)
     }
 
-    .lang-toggle button.active {
+    .lang-toggle a.active {
       background: var(--navy);
       color: var(--white)
     }
@@ -1580,7 +1584,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="shared/site-chrome.js?v=20260817-2"></script>
+  <script src="shared/site-chrome.js?v=20260818-2"></script>
   <script>SiteChrome.renderNav('speakers');</script>
 
   <!-- Page Hero -->
@@ -1831,7 +1835,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         localStorage.setItem('bstf-lang', lang);
         document.documentElement.lang = lang;
         document.title = lang === 'bg' ? '\u041b\u0435\u043a\u0442\u043e\u0440\u0438 \u2014 CONNEXUS 2026' : 'Speakers \u2014 CONNEXUS 2026';
-        document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+        document.querySelectorAll('.lang-toggle a').forEach(function (btn) {
           btn.classList.toggle('active', btn.dataset.lang === lang);
         });
         document.querySelectorAll('[data-bg][data-en]').forEach(function (el) {
@@ -1846,7 +1850,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       }
       window.setLang = setLang;
-      document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+      document.querySelectorAll('.lang-toggle a').forEach(function (btn) {
         btn.addEventListener('click', function () { setLang(btn.dataset.lang); });
       });
       setLang(currentLang);

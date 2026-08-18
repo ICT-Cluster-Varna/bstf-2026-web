@@ -11,12 +11,42 @@
     sponsors: { isHome: false, activeNavKey: 'sponsors' }
   };
 
+  var PAGE_FILE = {
+    home: 'index.html',
+    speakers: 'speakers.html',
+    speaker: 'speaker.html',
+    sponsors: 'sponsors.html'
+  };
+
   function cfgFor(pageKey) {
     return PAGES[pageKey] || PAGES.home;
   }
 
   function href(cfg, anchor) {
     return cfg.isHome ? anchor : 'index.html' + anchor;
+  }
+
+  // Cross-tree link for the BG/EN nav toggle: each language now lives at its
+  // own URL (root = BG, /en/ = EN) instead of an in-page JS swap, so the
+  // toggle must navigate to the sibling file in the other tree.
+  function otherTreeLink(pageKey, lang) {
+    var file = PAGE_FILE[pageKey] || PAGE_FILE.home;
+    // Preserve the current query string (e.g. speaker.html?slug=...) and hash
+    // so switching language keeps you on the same speaker/anchor instead of
+    // dropping back to the page with no selection.
+    var suffix = window.location.search + window.location.hash;
+    return (lang === 'bg' ? 'en/' + file : '../' + file) + suffix;
+  }
+
+  function langToggleHtml(pageKey, lang) {
+    var bgHref = lang === 'bg' ? '#' : otherTreeLink(pageKey, lang);
+    var enHref = lang === 'en' ? '#' : otherTreeLink(pageKey, lang);
+    var bgCls = lang === 'bg' ? ' class="active"' : '';
+    var enCls = lang === 'en' ? ' class="active"' : '';
+    return '<div class="lang-toggle">' +
+      '<a href="' + bgHref + '"' + bgCls + ' data-lang="bg">BG</a>' +
+      '<a href="' + enHref + '"' + enCls + ' data-lang="en">EN</a>' +
+      '</div>';
   }
 
   function navLinksHtml(cfg) {
@@ -35,20 +65,21 @@
   function logoHtml(cfg) {
     if (cfg.isHome) {
       return '<a href="#" class="logo cx-nav-logo">' +
-        '<img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--white">' +
-        '<img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--black">' +
+        '<img src="/images/Connexus - WHITE.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--white">' +
+        '<img src="/images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--black">' +
         '<span class="cx-nav-tagline">black sea tech forum</span>' +
         '</a>';
     }
     return '<a href="index.html" class="cx-nav-logo">' +
-      '<img src="images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img">' +
+      '<img src="/images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img">' +
       '<span class="cx-nav-tagline"><span class="cx-nav-tagline-inner">black sea tech forum</span></span>' +
       '</a>';
   }
 
-  function renderNav(pageKey) {
+  function renderNav(pageKey, lang) {
     var root = document.getElementById('site-nav-root');
     if (!root) return;
+    lang = lang || 'bg';
     var cfg = cfgFor(pageKey);
     var links = navLinksHtml(cfg);
     root.outerHTML =
@@ -57,7 +88,7 @@
       logoHtml(cfg) +
       '<div class="nav-links">' + links + '</div>' +
       '<div class="nav-right">' +
-      '<div class="lang-toggle"><button class="active" data-lang="bg">BG</button><button data-lang="en">EN</button></div>' +
+      langToggleHtml(pageKey, lang) +
       '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>' +
       '<button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>' +
       '</div>' +
@@ -80,7 +111,7 @@
       '<div class="container">' +
       '<div class="footer-grid">' +
       '<div class="footer-brand">' +
-      '<img src="images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:14px">' +
+      '<img src="/images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:14px">' +
       '<p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px" data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>' +
       '<p style="font-size:0.75rem;color:rgba(255,255,255,0.6)" data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен форум</p>' +
       '<p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:8px" data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии от 7-мо поколение без граници</p>' +
