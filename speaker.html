@@ -2,6 +2,7 @@
 <html lang="bg">
 
 <head>
+  <base href="/">
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1570,7 +1571,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     (function () {
       'use strict';
-      var currentLang = localStorage.getItem('bstf-lang') || 'bg';
+      var currentLang = 'bg';
       function setLang(lang) {
         currentLang = lang;
         localStorage.setItem('bstf-lang', lang);
@@ -1596,7 +1597,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       window.setLang = setLang;
       document.querySelectorAll('.lang-toggle a').forEach(function (btn) {
-        btn.addEventListener('click', function () { setLang(btn.dataset.lang); });
+        btn.addEventListener('click', function (e) { if (btn.getAttribute('href') === '#') e.preventDefault(); setLang(btn.dataset.lang); });
       });
       setLang(currentLang);
 
