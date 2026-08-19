@@ -1638,10 +1638,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="../data/speakers-data.js?v=20260814"></script>
+      <script type="text/javascript" src="../data/speakers-data.js?v=20260819-2"></script>
       <script>
         (function () {
           'use strict';
+
+          var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
+          function pick(bg, en) { return LANG === 'en' ? en : bg; }
 
           function esc(s) {
             return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
@@ -1650,7 +1653,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           function renderTrackJump(track) {
             return '<a class="track-jump" href="#track-' + track.id + '">' +
               '<span class="tj-dot"></span>' +
-              '<span data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
+              '<span data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + pick(track.labelBg, track.labelEn) + '</span>' +
               '</a>';
           }
 
@@ -1658,12 +1661,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return '<a class="spk-card" style="--i:' + index + '" data-track="' + track.id + '" data-spk="' + spk.id + '" href="speaker.html#' + encodeURIComponent(spk.id) + '">' +
               '<div class="spk-photo"><img loading="lazy" decoding="async" src="' + spk.img + '" alt="' + esc(spk.alt) + '" style="object-position:' + spk.objectPosition + '"></div>' +
               '<div class="spk-body">' +
-              '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + track.labelBg + '</span>' +
-              '<div class="spk-name" data-bg="' + esc(spk.name) + '" data-en="' + esc(spk.nameEn || spk.name) + '">' + spk.name + '</div>' +
-              '<div class="spk-role">' + spk.role + '</div>' +
+              '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + pick(track.labelBg, track.labelEn) + '</span>' +
+              '<div class="spk-name" data-bg="' + esc(spk.name) + '" data-en="' + esc(spk.nameEn || spk.name) + '">' + pick(spk.name, spk.nameEn || spk.name) + '</div>' +
+              '<div class="spk-role">' + pick(spk.role, spk.roleEn || spk.role) + '</div>' +
               '<div class="spk-topic">' +
-              '<div class="spk-topic-label" data-bg="Тема" data-en="Topic">Тема</div>' +
-              '<span data-bg="' + esc(spk.topicBg) + '" data-en="' + esc(spk.topicEn) + '">' + spk.topicBg + '</span>' +
+              '<div class="spk-topic-label" data-bg="Тема" data-en="Topic">' + pick('Тема', 'Topic') + '</div>' +
+              '<span data-bg="' + esc(spk.topicBg) + '" data-en="' + esc(spk.topicEn) + '">' + pick(spk.topicBg, spk.topicEn) + '</span>' +
               '</div>' +
               '</div>' +
               '</a>';
@@ -1673,9 +1676,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             var speakers = window.bstfSpeakersByTrack(track.id);
             return '<div class="track-section" id="track-' + track.id + '">' +
               '<div class="track-band" data-track="' + track.id + '">' +
-              '<span class="track-band-name" data-bg="' + esc(track.nameBg) + '" data-en="' + esc(track.nameEn) + '">' + track.nameBg + '</span>' +
+              '<span class="track-band-name" data-bg="' + esc(track.nameBg) + '" data-en="' + esc(track.nameEn) + '">' + pick(track.nameBg, track.nameEn) + '</span>' +
               '<span class="track-band-sep"></span>' +
-              '<span class="track-band-desc" data-bg="' + esc(track.descBg) + '" data-en="' + track.descEn + '">' + track.descBg + '</span>' +
+              '<span class="track-band-desc" data-bg="' + esc(track.descBg) + '" data-en="' + track.descEn + '">' + pick(track.descBg, track.descEn) + '</span>' +
               '</div>' +
               '<div class="spk-grid">' + speakers.map(function (s, i) { return renderCard(s, track, i); }).join('') + '</div>' +
               '</div>';
@@ -1714,7 +1717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           data-en="Register now">Register now</button>
         <a href="index.html#program" class="btn btn-outline"
           style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж програмата"
-          data-en="View program">View program</a>
+          data-en="See program">See program</a>
       </div>
     </div>
   </section>
@@ -1782,9 +1785,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option value="transport" data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Transport of the Future</option>
             <option value="smart-city" data-bg="Умен град" data-en="Smart City">Smart City</option>
             <option value="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Cybersecurity</option>
-            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Automation and Robotics</option>
+            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Automation & Robotics</option>
             <option value="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
-            <option value="marine" data-bg="Морски технологии" data-en="Marine Technologies">Marine Technologies</option>
+            <option value="marine" data-bg="Морски технологии" data-en="Marine Tech">Marine Tech</option>
             <option value="biotech" data-bg="BioTech" data-en="BioTech">BioTech</option>
           </select>
         </div>

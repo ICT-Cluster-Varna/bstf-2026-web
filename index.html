@@ -664,7 +664,7 @@
       .prog-filterbar {
         position: sticky;
         top: 92px;
-        z-index: 25;
+        z-index: 30;
         display: flex;
         justify-content: flex-end;
         margin: -8px 0 20px
@@ -806,6 +806,49 @@
         width: 7px;
         height: 7px;
         border-radius: 50%
+      }
+
+      .prog-hall-legend-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: var(--light-gray);
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 6px 14px;
+        margin: 0;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        color: inherit;
+        cursor: pointer;
+        transition: var(--transition)
+      }
+
+      .prog-hall-legend-btn[data-hall="bg"]:hover {
+        border-color: var(--teal)
+      }
+
+      .prog-hall-legend-btn[data-hall="vn"]:hover {
+        border-color: var(--navy)
+      }
+
+      .prog-hall-legend-btn.selected[data-hall="bg"] {
+        background: var(--teal);
+        color: var(--white)
+      }
+
+      .prog-hall-legend-btn.selected[data-hall="vn"] {
+        background: var(--navy);
+        color: var(--white)
+      }
+
+      .prog-hall-legend-btn.selected i {
+        background: var(--white) !important
+      }
+
+      .prog-hall-legend-btn.inactive {
+        opacity: 0.4
       }
 
       /* Every row of this grid is one shared "step" across all 3 days, placed
@@ -4412,7 +4455,7 @@
       <section class="cx-patron-band">
         <div class="cx-hero-inner cx-patron-band-inner">
           <img src="images/gerp-image.png?v=20260731" alt="Държавен герб на Република България"
-            class="cx-patron-band-crest">
+            class="cx-patron-band-crest" width="487" height="410">
           <div class="cx-patron-band-text">
             <p data-bg="ПОД ПАТРОНАЖА НА ПРЕЗИДЕНТА НА" data-en="UNDER THE PATRONAGE OF THE PRESIDENT OF">ПОД ПАТРОНАЖА НА
               ПРЕЗИДЕНТА НА</p>
@@ -4430,7 +4473,7 @@
             data-bg="ЗАПАЗИ МЯСТО" data-en="RESERVE A SPOT">ЗАПАЗИ МЯСТО</button>
           <h2
             style="font-family:'hyperspace-race-variable','myriad-pro','Archivo',sans-serif;font-variation-settings:'wdth' 140;font-size:2.4rem;font-weight:800;color:var(--navy);margin-bottom:16px;text-wrap:balance"
-            data-bg="Там, където Изтокът среща Запада" data-en="Where the East Meets the West.">Там,
+            data-bg="Там, където Изтокът среща Запада." data-en="Where the East Meets the West.">Там,
             където Изтокът среща Запада.</h2>
           <p class="home-cta-copy"
             data-bg="3 дни, 11 тематични области, 30+ държави. Не пропускайте бъдещето на AI, морски технологии и умни градове."
@@ -4450,7 +4493,7 @@
           <div class="hall-row" style="display:flex;gap:60px;align-items:center">
             <div style="flex:1">
               <p style="font-size:1.25rem;font-weight:700;color:var(--teal-contrast);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
-                data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала „България"</p>
+                data-bg="Зала &bdquo;България&ldquo;" data-en="Hall Bulgaria">Зала „България“</p>
               <p class="hall-row-desc" style="color:var(--text-light);font-size:1.125rem;line-height:1.7;margin:0"
                 data-bg="Основната сцена за хоризонтални технологии - AI, IoT, роботика, киберсигурност."
                 data-en="The main stage for horizontal technologies - AI, IoT, robotics, cybersecurity.">Основната сцена
@@ -4481,7 +4524,7 @@
           <div class="hall-row" style="display:flex;gap:60px;align-items:center">
             <div style="flex:1">
               <p style="font-size:1.25rem;font-weight:700;color:var(--teal-contrast);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
-                data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала „Черно море"</p>
+                data-bg="Зала &bdquo;Черно море&ldquo;" data-en="Hall Cherno More">Зала „Черно море“</p>
               <p class="hall-row-desc" style="color:var(--text-light);font-size:1.125rem;line-height:1.7;margin:0"
                 data-bg="Заедно с фоайето - домакин на изложението и стартъп зоната."
                 data-en="Together with the foyer - hosting the expo and startup zone.">Заедно с фоайето - домакин на
@@ -4511,7 +4554,7 @@
           <div class="hall-row" style="display:flex;gap:60px;align-items:center">
             <div style="flex:1">
               <p style="font-size:1.25rem;font-weight:700;color:var(--teal-contrast);text-transform:uppercase;letter-spacing:0.06em;margin:0 0 6px"
-                data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна"</p>
+                data-bg="Зала &bdquo;Варна&ldquo;" data-en="Hall Varna">Зала „Варна“</p>
               <p class="hall-row-desc" style="color:var(--text-light);font-size:1.125rem;line-height:1.7;margin:0"
                 data-bg="Паралелната програма със секторни и вертикални теми."
                 data-en="The parallel programme with sector and vertical topics.">Паралелната програма със секторни и
@@ -4563,7 +4606,7 @@
             <img src="images/streams/transport.png?v=20260731" alt="Transport" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Транспорт на бъдещето"
-              data-en="Future of Transport">Транспорт на бъдещето</div>
+              data-en="Transport of the Future">Транспорт на бъдещето</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
             <img src="images/streams/smart_city.png?v=20260731" alt="Smart City" loading="lazy" decoding="async"
@@ -4602,26 +4645,26 @@
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/gaming.png?v=20260731" alt="Gaming" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/gaming.png?v=20260819" alt="Gaming" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Гейминг" data-en="Gaming">Гейминг
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/regional-innovation-policies.png?v=20260731" alt="Regional Innovation Policies"
+            <img src="images/streams/regional-innovation-policies.png?v=20260819" alt="Regional Innovation Policies"
               loading="lazy" decoding="async" width="80" height="80"
               style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Регионални иновационни политики"
               data-en="Regional Innovation Policies">Регионални иновационни политики</div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/tourism.png?v=20260731" alt="Tourism" loading="lazy" decoding="async" width="80"
+            <img src="images/streams/tourism.png?v=20260819" alt="Tourism" loading="lazy" decoding="async" width="80"
               height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Туризъм" data-en="Tourism">Туризъм
             </div>
           </div>
           <div class="stream-card" style="text-align:center;padding:20px 12px;border-radius:var(--radius)">
-            <img src="images/streams/networking.png?v=20260731" alt="Networking" loading="lazy" decoding="async"
+            <img src="images/streams/networking.png?v=20260819" alt="Networking" loading="lazy" decoding="async"
               width="80" height="80" style="width:80px;height:80px;object-fit:contain;margin:0 auto 12px">
             <div style="font-weight:600;font-size:0.9rem;color:var(--navy)" data-bg="Нетуъркинг" data-en="Networking">
               Нетуъркинг</div>
@@ -4844,6 +4887,18 @@
                     decoding="async" width="420" height="112">
                 </a>
               </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="http://faktor.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-faktor.png?v=20260819" alt="Faktor.bg" loading="lazy"
+                    decoding="async" width="319" height="75">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--media">
+                <a href="https://dir.bg/" target="_blank" rel="noopener">
+                  <img src="images/media-partner-dirbg.png?v=20260819" alt="Dir.bg" loading="lazy"
+                    decoding="async" width="505" height="171">
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -4902,6 +4957,10 @@
           </button>
           <div class="prog-fb-panel" id="progFilterPanel">
             <div class="prog-fb-row">
+              <span class="prog-fb-label" data-bg="Зала" data-en="Hall">Зала</span>
+              <div class="prog-fb-pills" id="progHallPills"></div>
+            </div>
+            <div class="prog-fb-row">
               <span class="prog-fb-label" data-bg="Тематична област" data-en="Thematic Area">Тематична област</span>
               <div class="prog-fb-pills" id="progTrackPills"></div>
             </div>
@@ -4910,11 +4969,11 @@
           </div>
         </div>
 
-        <div class="prog-hall-legend">
-          <span><i style="background:var(--teal)"></i><span data-bg="Зала „България“" data-en="Hall Bulgaria">Зала
-              „България“</span></span>
-          <span><i style="background:var(--navy)"></i><span data-bg="Зала „Варна“" data-en="Hall Varna">Зала
-              „Варна“</span></span>
+        <div class="prog-hall-legend" id="progHallLegend">
+          <button type="button" class="prog-hall-legend-btn" data-hall="bg" aria-pressed="false"><i style="background:var(--teal)"></i><span data-bg="Зала „България“" data-en="Hall Bulgaria">Зала
+              „България“</span></button>
+          <button type="button" class="prog-hall-legend-btn" data-hall="vn" aria-pressed="false"><i style="background:var(--navy)"></i><span data-bg="Зала „Варна“" data-en="Hall Varna">Зала
+              „Варна“</span></button>
         </div>
 
         <div class="prog-grid" id="progGrid"></div>
@@ -4939,6 +4998,9 @@
       var HALL_BG = 'Зала „България“', HALL_BG_EN = 'Hall Bulgaria';
       var HALL_VN = 'Зала „Варна“', HALL_VN_EN = 'Hall Varna';
 
+      var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
+      function pick(bg, en) { return LANG === 'en' ? en : bg; }
+
       var PROGRAM_DAYS = [
         {
           id: 1, date: { bg: '5 октомври', en: '5 October' }, label: { bg: 'Ден 1', en: 'Day 1' },
@@ -4952,15 +5014,15 @@
                       time: '13:00 – 13:10',
                       title: { bg: 'Откриване: ключов момент за европейските иновации', en: 'Opening: A pivotal moment for European innovation' },
                       people: [
-                        { name: 'Emil Tsankov', role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' } },
-                        { name: 'Boyko Takov', role: { bg: 'Изпълнителен директор, Изпълнителна агенция за насърчаване на малките и средните предприятия', en: 'Executive Director, Executive Agency for the Promotion of Small and Medium-sized Enterprises' } }
+                        { name: { bg: 'Емил Цанков', en: 'Emil Tsankov' }, role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' } },
+                        { name: { bg: 'Бойко Таков', en: 'Boyko Takov' }, role: { bg: 'Изпълнителен директор, Изпълнителна агенция за насърчаване на малките и средните предприятия', en: 'Executive Director, Executive Agency for the Promotion of Small and Medium-sized Enterprises' } }
                       ]
                     },
                     {
                       time: '13:10 – 13:30',
                       title: { bg: 'Ключова реч: Полюси на растеж в Черноморския регион – визия за европейски иновации, технологичен суверенитет и индустриална трансформация', en: 'Keynote address: Black Sea growth poles – A Vision for European innovation, tech sovereignty and industrial transformation' },
                       people: [
-                        { name: 'Iliana Iotova', role: { bg: 'Президент на Република България', en: 'President of the Republic of Bulgaria' } }
+                        { name: { bg: 'Илияна Йотова', en: 'Iliana Iotova' }, role: { bg: 'Президент на Република България', en: 'President of the Republic of Bulgaria' } }
                       ]
                     }
                   ]
@@ -4976,8 +5038,8 @@
                       time: '13:30 – 14:00',
                       title: { bg: 'Към европейска иновационна екосистема: как Европа да се конкурира и сътрудничи със САЩ и Китай', en: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China' },
                       people: [
-                        { name: 'Lars Frølund', role: { bg: 'Лектор, Масачузетски технологичен институт; стратегически съветник, NATO Innovation Fund', en: 'Lecturer, Massachusetts Institute of Technology; Strategic Advisor, NATO Innovation Fund' } },
-                        { name: 'Ruslan Stefanov', role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
+                        { name: { bg: 'Lars Frølund', en: 'Lars Frølund' }, role: { bg: 'Лектор, Масачузетски технологичен институт; стратегически съветник, NATO Innovation Fund', en: 'Lecturer, Massachusetts Institute of Technology; Strategic Advisor, NATO Innovation Fund' } },
+                        { name: { bg: 'Руслан Стефанов', en: 'Ruslan Stefanov' }, role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
                       ]
                     }
                   ]
@@ -4987,7 +5049,7 @@
             { time: '14:00 – 14:10', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             {
               time: '14:10 – 15:30', kind: 'single', block: { id: 'block-1-d1', bg: 'Ден 1 · Блок 1', en: 'Day 1 · Block 1' }, cards: [{
-                room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Регионални политики за иновации', en: 'Block 1 (80 min) – Regional Innovation Policies' }, track: null,
+                room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Регионални иновационни политики', en: 'Block 1 (80 min) – Regional Innovation Policies' }, track: null,
                 detail: {
                   items: [
                     {
@@ -4995,16 +5057,16 @@
                       title: { bg: 'Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги на доставки', en: 'Digital & AI transformation for industrial growth: Secure European supply chains' },
                       note: { bg: 'Чакаме потвърждение от лекторите.', en: 'Speakers to be confirmed.' },
                       people: [
-                        { name: 'Ruslan Stefanov', role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
+                        { name: { bg: 'Руслан Стефанов', en: 'Ruslan Stefanov' }, role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
                       ]
                     },
                     {
                       time: '14:45 – 15:30',
                       title: { bg: 'Към черноморска иновационна екосистема: трансфер на технологии и възможности за мащабиране', en: 'Towards a Black Sea innovation ecosystem: Technology transfer and scale up opportunities' },
                       people: [
-                        { name: 'Ekaterina Zaharieva', role: { bg: 'Еврокомисар по въпросите на стартиращите предприятия, научните изследвания и иновациите', en: 'European Commissioner for Startups, Research and Innovation' }, note: { bg: 'видео послание', en: 'video message' } },
-                        { name: 'Svetoslava Georgieva', role: { bg: 'Председател на Съвета на директорите, European Innovation Council Fund', en: 'Board Chair, European Innovation Council Fund' } },
-                        { name: 'Emil Tsankov', role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' }, isModerator: true }
+                        { name: { bg: 'Екатерина Захариева', en: 'Ekaterina Zaharieva' }, role: { bg: 'Еврокомисар по въпросите на стартиращите предприятия, научните изследвания и иновациите', en: 'European Commissioner for Startups, Research and Innovation' }, note: { bg: 'видео послание', en: 'video message' } },
+                        { name: { bg: 'Светослава Георгиева', en: 'Svetoslava Georgieva' }, role: { bg: 'Председател на Съвета на директорите, European Innovation Council Fund', en: 'Board Chair, European Innovation Council Fund' } },
+                        { name: { bg: 'Емил Цанков', en: 'Emil Tsankov' }, role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' }, isModerator: true }
                       ]
                     }
                   ]
@@ -5014,23 +5076,23 @@
             { time: '15:30 – 15:45', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             {
               time: '15:45 – 17:05', kind: 'single', block: { id: 'block-2-d1', bg: 'Ден 1 · Блок 2', en: 'Day 1 · Block 2' }, cards: [{
-                room: HALL_VN, title: { bg: 'Блок 2 (80 мин) – Регионални политики за иновации', en: 'Block 2 (80 min) – Regional Innovation Policies' }, track: null,
+                room: HALL_VN, title: { bg: 'Блок 2 (80 мин) – Регионални иновационни политики', en: 'Block 2 (80 min) – Regional Innovation Policies' }, track: null,
                 detail: {
                   items: [
                     {
                       time: '15:45 – 16:15',
                       title: { bg: 'От стратегия към изпълнение: ефективни политики за дигиталната трансформация на европейските региони', en: 'From strategy to delivery: Effective policymaking for digital transformation of Europe’s regions' },
                       people: [
-                        { name: 'Paul Lambert', role: { bg: 'Посланик на Белгия в България', en: 'Ambassador of Belgium to Bulgaria' } },
-                        { name: 'Georgi Dobrev', role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
+                        { name: { bg: 'Paul Lambert', en: 'Paul Lambert' }, role: { bg: 'Посланик на Белгия в България', en: 'Ambassador of Belgium to Bulgaria' } },
+                        { name: { bg: 'Георги Добрев', en: 'Georgi Dobrev' }, role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
                       ]
                     },
                     {
                       time: '16:15 – 17:05',
                       title: { bg: 'Иновационната и геоикономическа роля на Европейския съюз в Черноморския регион', en: 'The European Union’s innovation and geoeconomic power in the Black Sea region' },
                       people: [
-                        { name: 'Michael Roux', role: { bg: 'Посланик за Източното партньорство и Черно море, Министерство на Европа и външните работи на Франция', en: 'Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France' } },
-                        { name: 'Kalina Tcolova', role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
+                        { name: { bg: 'Michael Roux', en: 'Michael Roux' }, role: { bg: 'Посланик за Източното партньорство и Черно море, Министерство на Европа и външните работи на Франция', en: 'Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France' } },
+                        { name: { bg: 'Калина Цолова', en: 'Kalina Tsolova' }, role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
                       ]
                     }
                   ]
@@ -5052,7 +5114,7 @@
             {
               time: '10:30 – 11:50', kind: 'double', block: { id: 'block-1-d2', bg: 'Блок 1', en: 'Block 1' }, cards: [
                 { room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес', en: 'Block 1 (80 min) – Secure Data, Resilient Chains & Cyber-Resilient Business' }, track: 'cybersecurity' },
-                { room: HALL_VN, title: { bg: 'Морски технологии', en: 'Marine Technologies' }, track: 'marine' }
+                { room: HALL_VN, title: { bg: 'Морски технологии', en: 'Marine Tech' }, track: 'marine' }
               ]
             },
             { time: '11:50 – 13:00', kind: 'break', label: { bg: 'Пауза / Обяд / Networking', en: 'Break / Lunch / Networking' } },
@@ -5113,7 +5175,7 @@
         var usedTracks = {};
         PROGRAM_DAYS.forEach(function (d) { d.slots.forEach(function (s) { (s.cards || []).forEach(function (c) { if (c.track) usedTracks[c.track] = true; }); }); });
 
-        var state = { tracks: {} };
+        var state = { tracks: {}, hall: null };
         function selectedTrackCount() { return Object.keys(state.tracks).length; }
 
         // Filter bar: dropdown toggle
@@ -5150,8 +5212,53 @@
           closeFilterPanel();
         });
         function updateFilterBadge() {
-          filterBadge.hidden = !(selectedTrackCount() > 0);
+          filterBadge.hidden = !(selectedTrackCount() > 0 || !!state.hall);
         }
+
+        // Hall filter: one shared state.hall drives both the always-visible
+        // legend above the grid (click to isolate that hall, click again to
+        // show both) and the "Зала" pills inside the Filters panel — they
+        // stay in sync with each other via setHallFilter().
+        var hallLegend = document.getElementById('progHallLegend');
+        var hallBtns = hallLegend ? Array.prototype.slice.call(hallLegend.querySelectorAll('[data-hall]')) : [];
+        function hallForBtn(btn) { return btn.dataset.hall === 'bg' ? HALL_BG : HALL_VN; }
+        function syncHallLegend() {
+          hallBtns.forEach(function (btn) {
+            var hall = hallForBtn(btn);
+            var selected = state.hall === hall;
+            btn.classList.toggle('selected', selected);
+            btn.classList.toggle('inactive', !!state.hall && !selected);
+            btn.setAttribute('aria-pressed', String(selected));
+          });
+        }
+        var hallPillsWrap = document.getElementById('progHallPills');
+        function makeHallPill(bg, en, val) {
+          var b = document.createElement('button');
+          b.className = 'prog-fb-pill' + (val === null ? ' active' : '');
+          b.type = 'button';
+          b.dataset.hallVal = val || '';
+          b.setAttribute('data-bg', bg);
+          b.setAttribute('data-en', en);
+          b.textContent = pick(bg, en);
+          b.addEventListener('click', function () { setHallFilter(val); });
+          return b;
+        }
+        hallPillsWrap.appendChild(makeHallPill('Всички', 'All', null));
+        hallPillsWrap.appendChild(makeHallPill(HALL_BG, HALL_BG_EN, HALL_BG));
+        hallPillsWrap.appendChild(makeHallPill(HALL_VN, HALL_VN_EN, HALL_VN));
+        function syncHallPills() {
+          Array.prototype.forEach.call(hallPillsWrap.children, function (p) {
+            var val = p.dataset.hallVal || null;
+            p.classList.toggle('active', val === null ? !state.hall : state.hall === val);
+          });
+        }
+        function setHallFilter(hall) {
+          state.hall = (hall === null) ? null : (state.hall === hall ? null : hall);
+          syncHallLegend(); syncHallPills(); updateFilterBadge(); render();
+        }
+        hallBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () { setHallFilter(hallForBtn(btn)); });
+        });
 
         // Filter bar: track pills
         var pillsWrap = document.getElementById('progTrackPills');
@@ -5162,7 +5269,7 @@
           b.dataset.val = val || '';
           b.setAttribute('data-bg', bg);
           b.setAttribute('data-en', en);
-          b.textContent = bg;
+          b.textContent = pick(bg, en);
           b.addEventListener('click', function () { toggleTrackFilter(val); });
           return b;
         }
@@ -5172,7 +5279,8 @@
         });
 
         document.getElementById('progClearBtn').addEventListener('click', function () {
-          state.tracks = {}; syncPills(); updateFilterBadge(); render();
+          state.tracks = {}; syncPills();
+          setHallFilter(null);
           closeFilterPanel();
         });
 
@@ -5200,7 +5308,9 @@
         var mobileGrid = document.getElementById('progGridMobile');
 
         function cardMatches(card) {
-          return selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
+          var trackOk = selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
+          var hallOk = !state.hall || card.room === state.hall;
+          return trackOk && hallOk;
         }
 
         function buildHeaderCell(d, colIdx) {
@@ -5211,7 +5321,7 @@
           cell.style.gridRow = '1';
           var head = document.createElement('div');
           head.className = 'prog-day-col-head';
-          head.innerHTML = '<span class="meta"><h3 data-bg="' + d.label.bg + '" data-en="' + d.label.en + '">' + d.label.bg + '</h3><span class="date" data-bg="' + d.date.bg + '" data-en="' + d.date.en + '">' + d.date.bg + '</span></span>';
+          head.innerHTML = '<span class="meta"><h3 data-bg="' + d.label.bg + '" data-en="' + d.label.en + '">' + pick(d.label.bg, d.label.en) + '</h3><span class="date" data-bg="' + d.date.bg + '" data-en="' + d.date.en + '">' + pick(d.date.bg, d.date.en) + '</span></span>';
           cell.appendChild(head);
           return cell;
         }
@@ -5230,7 +5340,7 @@
             br.className = 'prog-break-row';
             br.setAttribute('data-bg', s.label.bg);
             br.setAttribute('data-en', s.label.en);
-            br.textContent = s.label.bg;
+            br.textContent = pick(s.label.bg, s.label.en);
             cell.appendChild(breakTime);
             cell.appendChild(br);
             return cell;
@@ -5249,27 +5359,25 @@
               ptag.className = 'parallel-tag';
               ptag.setAttribute('data-bg', 'По същото време');
               ptag.setAttribute('data-en', 'At the same time');
-              ptag.textContent = 'По същото време';
+              ptag.textContent = pick('По същото време', 'At the same time');
               cardsWrap.appendChild(ptag);
             }
             var match = cardMatches(c, s.block);
             var card = document.createElement('div');
             card.className = 'prog-ev-card' + (match ? '' : ' dim') + (c.detail ? ' prog-ev-card--expandable' : '');
             card.style.setProperty('--room-dot', c.room === HALL_VN ? 'var(--navy)' : 'var(--teal)');
-            var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + trackNameById[c.track].bg + '</span>' : '';
+            var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + pick(trackNameById[c.track].bg, trackNameById[c.track].en) + '</span>' : '';
             var ctaHtml = '';
             if (c.detail) {
-              var speakerCount = 0;
-              (c.detail.items || []).forEach(function (it) { speakerCount += (it.people || []).length; });
-              var ctaBg = speakerCount + (speakerCount === 1 ? ' лектор' : ' лектора') + ' · Виж детайли';
-              var ctaEn = speakerCount + (speakerCount === 1 ? ' speaker' : ' speakers') + ' · View details';
+              var ctaBg = 'Виж детайли';
+              var ctaEn = 'View details';
               ctaHtml = '<div class="prog-ev-cta">' +
                 '<span class="prog-ev-cta-dot"></span>' +
-                '<span data-bg="' + ctaBg.replace(/"/g, '&quot;') + '" data-en="' + ctaEn.replace(/"/g, '&quot;') + '">' + ctaBg + '</span>' +
+                '<span data-bg="' + ctaBg.replace(/"/g, '&quot;') + '" data-en="' + ctaEn.replace(/"/g, '&quot;') + '">' + pick(ctaBg, ctaEn) + '</span>' +
                 '<span class="prog-ev-cta-arrow" aria-hidden="true"></span></div>';
             }
             var roomEn = c.room === HALL_BG ? HALL_BG_EN : (c.room === HALL_VN ? HALL_VN_EN : c.room);
-            card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + c.room + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + c.title.bg + '</div>' + tagHtml + ctaHtml;
+            card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + pick(c.room, roomEn) + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + pick(c.title.bg, c.title.en) + '</div>' + tagHtml + ctaHtml;
             if (c.detail) {
               card.setAttribute('role', 'button');
               card.setAttribute('tabindex', '0');
@@ -5518,8 +5626,8 @@
           <div>
             <h2 class="home-speakers-title" data-bg="Лектори" data-en="Speakers">Лектори</h2>
             <p class="home-speakers-intro"
-              data-bg="Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света."
-              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond.">
+              data-bg="Практици, учени и стратегически лидери от региона на Черно&nbsp;море и света - на една сцена."
+              data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond - on one stage.">
               Практици,
               учени и стратегически лидери от региона на Черно&nbsp;море и света - на една
               сцена.</p>
@@ -5654,7 +5762,7 @@
                 </div>
                 <div>
                   <strong data-bg="Хотел &bdquo;Черно море&ldquo;, Варна" data-en="Hotel Cherno More, Varna">Хотел
-                    „Черно море", Варна</strong>
+                    „Черно море“, Варна</strong>
                   <span data-bg="България" data-en="Bulgaria">България</span>
                 </div>
               </div>
@@ -5888,7 +5996,7 @@
         <form class="modal-form" id="exhibitor-form" onsubmit="submitExhibitor(); return false;">
           <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ИЗЛОЖЕНИЕ" data-en="CONNEXUS 2026 &middot; EXHIBITION">CONNEXUS
             2026 &middot; ИЗЛОЖЕНИЕ</span>
-          <h2 id="exhibitor-modal-title" data-bg="Стани изложител" data-en="Become an Exhibitor">Стани изложител</h2>
+          <h2 id="exhibitor-modal-title" data-bg="Стани изложител" data-en="Become an exhibitor">Стани изложител</h2>
           <p class="modal-desc" data-bg="Заявете щанд на CONNEXUS 2026 изложението."
             data-en="Apply for a booth at the CONNEXUS 2026 expo.">Заявете щанд на CONNEXUS 2026 изложението.</p>
           <a href="sponsors.html" class="modal-pricing-link" data-bg="Виж пълните цени и пакети &rarr;"
@@ -5986,7 +6094,7 @@
               <option data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
               <option data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Автоматизация и роботика</option>
               <option data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
-              <option data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
+              <option data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</option>
               <option data-bg="BioTech" data-en="BioTech">BioTech</option>
               <option data-bg="Гейминг" data-en="Gaming">Гейминг</option>
               <option data-bg="Регионални иновационни политики" data-en="Regional Innovation Policies">Регионални
@@ -6044,6 +6152,9 @@
     <script>
       (function () {
         'use strict';
+
+        var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
+        function pick(bg, en) { return LANG === 'en' ? en : bg; }
 
         // === Partner Promo Codes ===
         // Always records which partner referred a registration (via ?promo= URL param
@@ -6464,18 +6575,18 @@
           (card.detail.items || []).forEach(function (item) {
             html += '<div class="session-detail-item" style="border-left-color:' + accentColor + '">';
             html += '<div class="session-detail-time">' + item.time + '</div>';
-            html += '<div class="session-detail-title" data-bg="' + item.title.bg.replace(/"/g, '&quot;') + '" data-en="' + item.title.en.replace(/"/g, '&quot;') + '">' + item.title.bg + '</div>';
+            html += '<div class="session-detail-title" data-bg="' + item.title.bg.replace(/"/g, '&quot;') + '" data-en="' + item.title.en.replace(/"/g, '&quot;') + '">' + pick(item.title.bg, item.title.en) + '</div>';
             if (item.note) {
-              html += '<div class="session-detail-note" data-bg="' + item.note.bg.replace(/"/g, '&quot;') + '" data-en="' + item.note.en.replace(/"/g, '&quot;') + '">' + item.note.bg + '</div>';
+              html += '<div class="session-detail-note" data-bg="' + item.note.bg.replace(/"/g, '&quot;') + '" data-en="' + item.note.en.replace(/"/g, '&quot;') + '">' + pick(item.note.bg, item.note.en) + '</div>';
             }
             if (item.people && item.people.length) {
               html += '<div class="session-detail-people">';
               item.people.forEach(function (p) {
-                var noteHtml = p.note ? '<span class="session-detail-person-note" data-bg="(' + p.note.bg.replace(/"/g, '&quot;') + ')" data-en="(' + p.note.en.replace(/"/g, '&quot;') + ')">(' + p.note.bg + ')</span>' : '';
-                var modBadge = p.isModerator ? '<span class="session-detail-mod-label" data-bg="Модератор" data-en="Moderator">Модератор</span>' : '';
+                var noteHtml = p.note ? '<span class="session-detail-person-note" data-bg="(' + p.note.bg.replace(/"/g, '&quot;') + ')" data-en="(' + p.note.en.replace(/"/g, '&quot;') + ')">(' + pick(p.note.bg, p.note.en) + ')</span>' : '';
+                var modBadge = p.isModerator ? '<span class="session-detail-mod-label" data-bg="Модератор" data-en="Moderator">' + pick('Модератор', 'Moderator') + '</span>' : '';
                 html += '<div class="session-detail-person' + (p.isModerator ? ' is-moderator' : '') + '">' +
-                  '<div class="session-detail-person-name"><span>' + p.name + '</span>' + modBadge + '</div>' +
-                  '<div class="session-detail-role" data-bg="' + p.role.bg.replace(/"/g, '&quot;') + '" data-en="' + p.role.en.replace(/"/g, '&quot;') + '">' + p.role.bg + '</div>' +
+                  '<div class="session-detail-person-name"><span data-bg="' + p.name.bg.replace(/"/g, '&quot;') + '" data-en="' + p.name.en.replace(/"/g, '&quot;') + '">' + pick(p.name.bg, p.name.en) + '</span>' + modBadge + '</div>' +
+                  '<div class="session-detail-role" data-bg="' + p.role.bg.replace(/"/g, '&quot;') + '" data-en="' + p.role.en.replace(/"/g, '&quot;') + '">' + pick(p.role.bg, p.role.en) + '</div>' +
                   noteHtml +
                   '</div>';
               });

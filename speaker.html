@@ -1311,10 +1311,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260814"></script>
+  <script src="data/speakers-data.js?v=20260819-2"></script>
   <script>
     (function () {
       'use strict';
+
+      var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
+      function pick(bg, en) { return LANG === 'en' ? en : bg; }
 
       function esc(s) {
         return String(s == null ? '' : s)
@@ -1339,7 +1342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         for (var i = 0; i < len; i++) {
           var bgText = bg[i] || en[i] || '';
           var enText = en[i] || bg[i] || '';
-          html += '<p data-bg="' + esc(bgText) + '" data-en="' + esc(enText) + '">' + esc(bgText) + '</p>';
+          html += '<p data-bg="' + esc(bgText) + '" data-en="' + esc(enText) + '">' + esc(pick(bgText, enText)) + '</p>';
         }
         return html;
       }
@@ -1348,8 +1351,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var bg = textBg || textEn;
         var en = textEn || textBg;
         return '<div class="sp-topic">' +
-          '<span class="sp-topic-label" data-bg="' + esc(labelBg) + '" data-en="' + esc(labelEn) + '">' + esc(labelBg) + '</span>' +
-          '<span data-bg="' + esc(bg) + '" data-en="' + esc(en) + '">' + esc(bg) + '</span>' +
+          '<span class="sp-topic-label" data-bg="' + esc(labelBg) + '" data-en="' + esc(labelEn) + '">' + esc(pick(labelBg, labelEn)) + '</span>' +
+          '<span data-bg="' + esc(bg) + '" data-en="' + esc(en) + '">' + esc(pick(bg, en)) + '</span>' +
           '</div>';
       }
 
@@ -1359,7 +1362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var bioHtml = renderParagraphs(speaker.bioBg, speaker.bioEn);
         if (bioHtml) {
           sections += '<div class="sp-section">' +
-            '<h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3>' +
+            '<h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">' + pick('За лектора', 'About the speaker') + '</h3>' +
             '<div class="sp-bio">' + bioHtml + '</div>' +
             '</div>';
         }
@@ -1371,7 +1374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             sessionHtml += renderTextBlock('Основни изводи за аудиторията', 'Key Takeaways', speaker.takeawaysBg, speaker.takeawaysEn);
           }
           sections += '<div class="sp-section">' +
-            '<h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3>' +
+            '<h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">' + pick('За лекцията', 'About the talk') + '</h3>' +
             sessionHtml +
             '</div>';
         }
@@ -1398,27 +1401,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         heroTrack.setAttribute('data-bg', track.labelBg);
         heroTrack.setAttribute('data-en', track.labelEn);
-        heroTrack.textContent = track.labelBg;
+        heroTrack.textContent = pick(track.labelBg, track.labelEn);
         heroName.setAttribute('data-bg', speaker.name);
         heroName.setAttribute('data-en', speaker.nameEn || speaker.name);
-        heroName.innerHTML = esc(speaker.name);
-        heroRole.innerHTML = esc(speaker.role);
+        heroName.innerHTML = esc(pick(speaker.name, speaker.nameEn || speaker.name));
+        heroRole.innerHTML = esc(pick(speaker.role, speaker.roleEn || speaker.role));
 
         root.innerHTML =
           '<div class="sp-profile" data-track="' + track.id + '">' +
           '<div class="sp-card">' +
-          '<div class="sp-photo"><img loading="eager" decoding="async" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
+          '<div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
           '<div class="sp-body">' +
-          '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + esc(track.labelBg) + '</span>' +
-          '<h2 class="sp-name" data-bg="' + esc(speaker.name) + '" data-en="' + esc(speaker.nameEn || speaker.name) + '">' + esc(speaker.name) + '</h2>' +
-          '<div class="sp-role" data-bg="' + esc(speaker.role) + '" data-en="' + esc(speaker.roleEn || speaker.role) + '">' + esc(speaker.role) + '</div>' +
+          '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + esc(pick(track.labelBg, track.labelEn)) + '</span>' +
+          '<h2 class="sp-name" data-bg="' + esc(speaker.name) + '" data-en="' + esc(speaker.nameEn || speaker.name) + '">' + esc(pick(speaker.name, speaker.nameEn || speaker.name)) + '</h2>' +
+          '<div class="sp-role" data-bg="' + esc(speaker.role) + '" data-en="' + esc(speaker.roleEn || speaker.role) + '">' + esc(pick(speaker.role, speaker.roleEn || speaker.role)) + '</div>' +
           '<div class="sp-topic">' +
-          '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span>' +
-          '<span data-bg="' + esc(speaker.topicBg) + '" data-en="' + esc(speaker.topicEn) + '">' + esc(speaker.topicBg) + '</span>' +
+          '<span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">' + pick('Тема на лекцията', 'Talk Topic') + '</span>' +
+          '<span data-bg="' + esc(speaker.topicBg) + '" data-en="' + esc(speaker.topicEn) + '">' + esc(pick(speaker.topicBg, speaker.topicEn)) + '</span>' +
           '</div>' +
           '<div class="sp-cta-row">' +
-          '<a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="View program">Виж програмата</a>' +
-          '<a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a>' +
+          '<a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">' + pick('Виж програмата', 'See program') + '</a>' +
+          '<a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">' + pick('Всички лектори', 'All speakers') + '</a>' +
           '</div>' +
           '</div>' +
           '</div>' +
@@ -1427,21 +1430,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } else {
         heroTrack.setAttribute('data-bg', 'CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ');
         heroTrack.setAttribute('data-en', 'CONNEXUS 2026 · VARNA · OCT 5-7');
-        heroTrack.textContent = 'CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ';
+        heroTrack.textContent = pick('CONNEXUS 2026 · ВАРНА · 5-7 ОКТОМВРИ', 'CONNEXUS 2026 · VARNA · OCT 5-7');
         heroName.setAttribute('data-bg', 'Лекторът не е намерен');
         heroName.setAttribute('data-en', 'Speaker not found');
-        heroName.textContent = 'Лекторът не е намерен';
+        heroName.textContent = pick('Лекторът не е намерен', 'Speaker not found');
         heroRole.setAttribute('data-bg', 'Профилът, който търсите, не съществува или е преместен.');
         heroRole.setAttribute('data-en', 'The profile you are looking for does not exist or has moved.');
-        heroRole.textContent = 'Профилът, който търсите, не съществува или е преместен.';
+        heroRole.textContent = pick('Профилът, който търсите, не съществува или е преместен.', 'The profile you are looking for does not exist or has moved.');
 
         root.innerHTML =
           '<div class="sp-not-found">' +
-          '<h2 data-bg="Няма намерен лектор" data-en="No speaker found">Няма намерен лектор</h2>' +
+          '<h2 data-bg="Няма намерен лектор" data-en="No speaker found">' + pick('Няма намерен лектор', 'No speaker found') + '</h2>' +
           '<p data-bg="Проверете връзката или разгледайте пълния списък с лектори на CONNEXUS 2026."' +
           ' data-en="Check the link or browse the full CONNEXUS 2026 speaker list.">' +
-          'Проверете връзката или разгледайте пълния списък с лектори на CONNEXUS 2026.</p>' +
-          '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">Към всички лектори</a>' +
+          pick('Проверете връзката или разгледайте пълния списък с лектори на CONNEXUS 2026.', 'Check the link or browse the full CONNEXUS 2026 speaker list.') + '</p>' +
+          '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">' + pick('Към всички лектори', 'Back to all speakers') + '</a>' +
           '</div>';
       }
     })();
@@ -1459,7 +1462,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           data-en="Register now">Регистрирай се</button>
         <a href="index.html#program" class="btn btn-outline"
           style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж програмата"
-          data-en="View program">Виж програмата</a>
+          data-en="See program">Виж програмата</a>
       </div>
     </div>
   </section>
@@ -1532,9 +1535,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option value="transport" data-bg="Транспорт на бъдещето" data-en="Transport of the Future">Транспорт на бъдещето</option>
             <option value="smart-city" data-bg="Умен град" data-en="Smart City">Умен град</option>
             <option value="cybersecurity" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</option>
-            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation and Robotics">Автоматизация и роботика</option>
+            <option value="automation-robotics" data-bg="Автоматизация и роботика" data-en="Automation & Robotics">Автоматизация и роботика</option>
             <option value="agritech" data-bg="AgriTech" data-en="AgriTech">AgriTech</option>
-            <option value="marine" data-bg="Морски технологии" data-en="Marine Technologies">Морски технологии</option>
+            <option value="marine" data-bg="Морски технологии" data-en="Marine Tech">Морски технологии</option>
             <option value="biotech" data-bg="BioTech" data-en="BioTech">BioTech</option>
           </select>
         </div>

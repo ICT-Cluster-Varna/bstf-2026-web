@@ -444,7 +444,7 @@
     },
     {
       id: 'cemile-usta', track: 'marine',
-      img: '/images/speakers/cemile-usta.jpg?v=20260730', alt: 'Cemile Köseler Usta',
+      img: '/images/speakers/cemile-usta.jpg?v=20260819b', alt: 'Cemile Köseler Usta',
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
       role: 'Deputy Manager, Technology & Digitalisation @ Istanbul Chamber of Industry',

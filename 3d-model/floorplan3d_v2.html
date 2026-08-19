@@ -1130,17 +1130,18 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260811-2"></script>
-  <script src="bsmepa_logo.js?v=20260811-2"></script>
-  <script src="toprentacar_logo.js?v=20260811-2"></script>
-  <script src="electrohold_logo.js?v=20260811-2"></script>
-  <script src="netpeak_logo.js?v=20260811-2"></script>
-  <script src="researchmetrics_logo.js?v=20260811-2"></script>
-  <script src="nearshore_logo.js?v=20260811-2"></script>
+  <script src="stands.js?v=20260819"></script>
+  <script src="bsmepa_logo.js?v=20260819"></script>
+  <script src="toprentacar_logo.js?v=20260819"></script>
+  <script src="electrohold_logo.js?v=20260819"></script>
+  <script src="netpeak_logo.js?v=20260819"></script>
+  <script src="researchmetrics_logo.js?v=20260819"></script>
+  <script src="nearshore_logo.js?v=20260819"></script>
+  <script src="omnilinx_logo.js?v=20260819"></script>
   <!-- //fix -->
-  <script src="./libs/three.min.js?v=20260811-2"></script>
-  <script src="./libs/OrbitControls-global.js?v=20260811-2"></script>
-  <script src="data.js?v=20260811-2"></script>
+  <script src="./libs/three.min.js?v=20260819"></script>
+  <script src="./libs/OrbitControls-global.js?v=20260819"></script>
+  <script src="data.js?v=20260819"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -2781,6 +2782,18 @@
         markDirty();
       };
       img.src = window.NEARSHORE_LOGO_SRC;
+    })();
+
+    // -- Stand 11 – Omnilinx logo on facade ------------------
+    (() => {
+      const m11 = standMeshes.find(m => m.userData.n === 11);
+      if (!m11) return;
+      const img = new Image();
+      img.onload = () => {
+        groups.stand.add(makeSignPanel(m11, img, { company: 'Omnilinx', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        markDirty();
+      };
+      img.src = window.OMNILINX_LOGO_SRC;
     })();
 
 
