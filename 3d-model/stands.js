@@ -16,7 +16,8 @@ window.STANDS_DATA = {
     7:  { company: 'ResearchMetrics',                    logo: 'Logos/ResearchMetrics.png',           status: 'occupied', website: '', description: '' },
     8:  { company: 'ITRM Consult',                       logo: 'Logos/ITR Management Consult.png',    status: 'occupied', website: '', description: '' },
     12: { company: 'Netpeak & PR Market',                logo: 'Logos/Netpeak_logo.svg',              status: 'occupied', website: '', description: '' },
-    13: { company: 'Electrohold',                        logo: 'Logos/ElectroHold_Logo_Sales.svg',    status: 'occupied', website: '', description: '' }
+    13: { company: 'Electrohold',                        logo: 'Logos/ElectroHold_Logo_Sales.svg',    status: 'occupied', website: '', description: '' },
+    11: { company: 'Omnilinx',                           logo: 'Logos/omnilinx.svg',                  status: 'occupied', website: 'https://omnilinx.com/en/', description: '' }
   },
   stand_info: {
     1:  { tier: 'Stage Partner',  tierHex: '#8064A2', description: DESC_STAGE,  price: 18000, premium: true  },

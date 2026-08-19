@@ -664,7 +664,7 @@
       .prog-filterbar {
         position: sticky;
         top: 92px;
-        z-index: 25;
+        z-index: 30;
         display: flex;
         justify-content: flex-end;
         margin: -8px 0 20px
@@ -806,6 +806,49 @@
         width: 7px;
         height: 7px;
         border-radius: 50%
+      }
+
+      .prog-hall-legend-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: var(--light-gray);
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 6px 14px;
+        margin: 0;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        color: inherit;
+        cursor: pointer;
+        transition: var(--transition)
+      }
+
+      .prog-hall-legend-btn[data-hall="bg"]:hover {
+        border-color: var(--teal)
+      }
+
+      .prog-hall-legend-btn[data-hall="vn"]:hover {
+        border-color: var(--navy)
+      }
+
+      .prog-hall-legend-btn.selected[data-hall="bg"] {
+        background: var(--teal);
+        color: var(--white)
+      }
+
+      .prog-hall-legend-btn.selected[data-hall="vn"] {
+        background: var(--navy);
+        color: var(--white)
+      }
+
+      .prog-hall-legend-btn.selected i {
+        background: var(--white) !important
+      }
+
+      .prog-hall-legend-btn.inactive {
+        opacity: 0.4
       }
 
       /* Every row of this grid is one shared "step" across all 3 days, placed
@@ -4914,6 +4957,10 @@
           </button>
           <div class="prog-fb-panel" id="progFilterPanel">
             <div class="prog-fb-row">
+              <span class="prog-fb-label" data-bg="Зала" data-en="Hall">Зала</span>
+              <div class="prog-fb-pills" id="progHallPills"></div>
+            </div>
+            <div class="prog-fb-row">
               <span class="prog-fb-label" data-bg="Тематична област" data-en="Thematic Area">Тематична област</span>
               <div class="prog-fb-pills" id="progTrackPills"></div>
             </div>
@@ -4922,11 +4969,11 @@
           </div>
         </div>
 
-        <div class="prog-hall-legend">
-          <span><i style="background:var(--teal)"></i><span data-bg="Зала „България“" data-en="Hall Bulgaria">Зала
-              „България“</span></span>
-          <span><i style="background:var(--navy)"></i><span data-bg="Зала „Варна“" data-en="Hall Varna">Зала
-              „Варна“</span></span>
+        <div class="prog-hall-legend" id="progHallLegend">
+          <button type="button" class="prog-hall-legend-btn" data-hall="bg" aria-pressed="false"><i style="background:var(--teal)"></i><span data-bg="Зала „България“" data-en="Hall Bulgaria">Зала
+              „България“</span></button>
+          <button type="button" class="prog-hall-legend-btn" data-hall="vn" aria-pressed="false"><i style="background:var(--navy)"></i><span data-bg="Зала „Варна“" data-en="Hall Varna">Зала
+              „Варна“</span></button>
         </div>
 
         <div class="prog-grid" id="progGrid"></div>
@@ -5128,7 +5175,7 @@
         var usedTracks = {};
         PROGRAM_DAYS.forEach(function (d) { d.slots.forEach(function (s) { (s.cards || []).forEach(function (c) { if (c.track) usedTracks[c.track] = true; }); }); });
 
-        var state = { tracks: {} };
+        var state = { tracks: {}, hall: null };
         function selectedTrackCount() { return Object.keys(state.tracks).length; }
 
         // Filter bar: dropdown toggle
@@ -5165,8 +5212,53 @@
           closeFilterPanel();
         });
         function updateFilterBadge() {
-          filterBadge.hidden = !(selectedTrackCount() > 0);
+          filterBadge.hidden = !(selectedTrackCount() > 0 || !!state.hall);
         }
+
+        // Hall filter: one shared state.hall drives both the always-visible
+        // legend above the grid (click to isolate that hall, click again to
+        // show both) and the "Зала" pills inside the Filters panel — they
+        // stay in sync with each other via setHallFilter().
+        var hallLegend = document.getElementById('progHallLegend');
+        var hallBtns = hallLegend ? Array.prototype.slice.call(hallLegend.querySelectorAll('[data-hall]')) : [];
+        function hallForBtn(btn) { return btn.dataset.hall === 'bg' ? HALL_BG : HALL_VN; }
+        function syncHallLegend() {
+          hallBtns.forEach(function (btn) {
+            var hall = hallForBtn(btn);
+            var selected = state.hall === hall;
+            btn.classList.toggle('selected', selected);
+            btn.classList.toggle('inactive', !!state.hall && !selected);
+            btn.setAttribute('aria-pressed', String(selected));
+          });
+        }
+        var hallPillsWrap = document.getElementById('progHallPills');
+        function makeHallPill(bg, en, val) {
+          var b = document.createElement('button');
+          b.className = 'prog-fb-pill' + (val === null ? ' active' : '');
+          b.type = 'button';
+          b.dataset.hallVal = val || '';
+          b.setAttribute('data-bg', bg);
+          b.setAttribute('data-en', en);
+          b.textContent = pick(bg, en);
+          b.addEventListener('click', function () { setHallFilter(val); });
+          return b;
+        }
+        hallPillsWrap.appendChild(makeHallPill('Всички', 'All', null));
+        hallPillsWrap.appendChild(makeHallPill(HALL_BG, HALL_BG_EN, HALL_BG));
+        hallPillsWrap.appendChild(makeHallPill(HALL_VN, HALL_VN_EN, HALL_VN));
+        function syncHallPills() {
+          Array.prototype.forEach.call(hallPillsWrap.children, function (p) {
+            var val = p.dataset.hallVal || null;
+            p.classList.toggle('active', val === null ? !state.hall : state.hall === val);
+          });
+        }
+        function setHallFilter(hall) {
+          state.hall = (hall === null) ? null : (state.hall === hall ? null : hall);
+          syncHallLegend(); syncHallPills(); updateFilterBadge(); render();
+        }
+        hallBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () { setHallFilter(hallForBtn(btn)); });
+        });
 
         // Filter bar: track pills
         var pillsWrap = document.getElementById('progTrackPills');
@@ -5187,7 +5279,8 @@
         });
 
         document.getElementById('progClearBtn').addEventListener('click', function () {
-          state.tracks = {}; syncPills(); updateFilterBadge(); render();
+          state.tracks = {}; syncPills();
+          setHallFilter(null);
           closeFilterPanel();
         });
 
@@ -5215,7 +5308,9 @@
         var mobileGrid = document.getElementById('progGridMobile');
 
         function cardMatches(card) {
-          return selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
+          var trackOk = selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
+          var hallOk = !state.hall || card.room === state.hall;
+          return trackOk && hallOk;
         }
 
         function buildHeaderCell(d, colIdx) {
@@ -5274,10 +5369,8 @@
             var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + pick(trackNameById[c.track].bg, trackNameById[c.track].en) + '</span>' : '';
             var ctaHtml = '';
             if (c.detail) {
-              var speakerCount = 0;
-              (c.detail.items || []).forEach(function (it) { speakerCount += (it.people || []).length; });
-              var ctaBg = speakerCount + (speakerCount === 1 ? ' лектор' : ' лектора') + ' · Виж детайли';
-              var ctaEn = speakerCount + (speakerCount === 1 ? ' speaker' : ' speakers') + ' · View details';
+              var ctaBg = 'Виж детайли';
+              var ctaEn = 'View details';
               ctaHtml = '<div class="prog-ev-cta">' +
                 '<span class="prog-ev-cta-dot"></span>' +
                 '<span data-bg="' + ctaBg.replace(/"/g, '&quot;') + '" data-en="' + ctaEn.replace(/"/g, '&quot;') + '">' + pick(ctaBg, ctaEn) + '</span>' +
