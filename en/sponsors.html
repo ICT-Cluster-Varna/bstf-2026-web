@@ -328,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Navigation -->
 <div id="site-nav-root"></div>
-<script src="../shared/site-chrome.js?v=20260820"></script>
+<script src="../shared/site-chrome.js?v=20260820-2"></script>
 <script>SiteChrome.renderNav('sponsors', 'en');</script>
 
 <!-- Page Hero -->
@@ -645,7 +645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p data-bg="Свържете се с нас за персонализирано предложение." data-en="Contact us for a customized proposal.">Contact us for a customized proposal.</p>
     <div class="prefooter-buttons">
       <button type="button" class="btn btn-white" onclick="openModal('contact-modal')" data-bg="Свържете се с нас" data-en="Contact us">Contact us</button>
-      <a href="#floor-plan" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж изложението" data-en="View exhibition">View exhibition</a>
+      <a href="sponsors.html#floor-plan" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж изложението" data-en="View exhibition">View exhibition</a>
     </div>
   </div>
 </section>
@@ -1048,7 +1048,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '../3d-model/floorplan3d_v2.html?v=20260820-2&lang=en';
+    iframe.src = '../3d-model/floorplan3d_v2.html?v=20260820-3&lang=en';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');

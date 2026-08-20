@@ -4336,7 +4336,7 @@
 
     <!-- Navigation -->
     <div id="site-nav-root"></div>
-    <script src="shared/site-chrome.js?v=20260820"></script>
+    <script src="shared/site-chrome.js?v=20260820-2"></script>
     <script>SiteChrome.renderNav('home');</script>
 
     <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
@@ -6531,7 +6531,9 @@
           var savedTicket = null;
           try { savedTicket = localStorage.getItem('bstf-ticket'); } catch (e) {}
           if (savedTicket) {
-            var savedCard = document.querySelector('.ticket-card[data-ticket="' + savedTicket + '"]');
+            var savedCard = Array.prototype.filter.call(document.querySelectorAll('.ticket-card'), function (c) {
+              return c.dataset.ticket === savedTicket;
+            })[0];
             if (savedCard) {
               document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
               savedCard.classList.add('active');

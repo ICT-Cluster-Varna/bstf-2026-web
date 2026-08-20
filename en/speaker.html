@@ -800,37 +800,37 @@
 
       .sp-body {
         padding: 32px;
-        align-items: flex-start;
-        text-align: left
+        align-items: center;
+        text-align: center
       }
 
       .sp-details {
         padding: 32px 28px;
-        text-align: left
+        text-align: center
       }
 
       .back-to-speakers,
       .sp-cta-row {
-        justify-content: flex-start
+        justify-content: center
       }
 
       .back-to-speakers,
       .sp-track-pill {
-        margin-left: 0;
-        margin-right: 0
+        margin-left: auto;
+        margin-right: auto
       }
 
       .sp-topic {
         border-left: 3px solid rgba(0, 205, 255, 0.28);
         border-top: none;
         border-radius: 0 10px 10px 0;
-        text-align: left
+        text-align: center
       }
 
       .sp-section-title,
       .sp-bio p,
       .sp-role {
-        text-align: left
+        text-align: center
       }
 
       .sp-cta-row {
@@ -1284,7 +1284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="../shared/site-chrome.js?v=20260820"></script>
+  <script src="../shared/site-chrome.js?v=20260820-2"></script>
   <script>SiteChrome.renderNav('speaker', 'en');</script>
 
   <!-- Page Hero -->
@@ -1393,7 +1393,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // doesn't reload the document, so without this the profile shown would be
       // stuck on whichever speaker loaded first until a manual refresh.
       function renderSpeakerFromHash() {
-      var id = decodeURIComponent(window.location.hash.replace(/^#/, '')) || getParam('id');
+      var rawHash = window.location.hash.replace(/^#/, '');
+      var id;
+      try { id = decodeURIComponent(rawHash); } catch (e) { id = rawHash; }
+      id = id || getParam('id');
       var speaker = id ? window.bstfGetSpeaker(id) : null;
       var track = speaker ? window.bstfGetTrack(speaker.track) : null;
       var root = document.getElementById('sp-root');
@@ -1416,7 +1419,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         root.innerHTML =
           '<div class="sp-profile" data-track="' + track.id + '">' +
           '<div class="sp-card">' +
-          '<div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="' + speaker.img + '" alt="' + esc(speaker.alt) + '" style="object-position:' + speaker.objectPosition + '"></div>' +
+          '<div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="' + esc(speaker.img) + '" alt="' + esc(speaker.alt) + '" style="object-position:' + esc(speaker.objectPosition) + '"></div>' +
           '<div class="sp-body">' +
           '<span class="sp-track-pill" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + esc(pick(track.labelBg, track.labelEn)) + '</span>' +
           '<h2 class="sp-name" data-bg="' + esc(speaker.name) + '" data-en="' + esc(speaker.nameEn || speaker.name) + '">' + esc(pick(speaker.name, speaker.nameEn || speaker.name)) + '</h2>' +
