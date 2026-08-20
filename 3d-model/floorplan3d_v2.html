@@ -1167,7 +1167,7 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260820"></script>
+  <script src="stands.js?v=20260820-2"></script>
   <script src="bsmepa_logo.js?v=20260819"></script>
   <script src="toprentacar_logo.js?v=20260819"></script>
   <script src="electrohold_logo.js?v=20260819"></script>
@@ -1210,7 +1210,7 @@
       freeStand: 'Free stand', holdForDetails: 'Hold for details',
       includes: 'Includes', packagePrice: 'Package price', standOccupied: 'This stand is occupied',
       requestPackage: 'Request package', showSettings: 'Show settings', hideSettings: 'Hide settings',
-      exitWalkthrough: 'Exit walkthrough', exploreIn3d: 'Explore the hall in 3D'
+      exitWalkthrough: 'Exit walkthrough', exploreIn3d: 'Explore the hall in 3D', stand: 'Stand'
     };
     function t3d(key, bgFallback) { return (window.LANG === 'en' && T3D[key]) ? T3D[key] : bgFallback; }
     (function () {
@@ -3006,7 +3006,7 @@
       const hit = ray.intersectObjects(standMeshes, false)[0];
       if (hit) {
         const u = hit.object.userData;
-        _ttNum.textContent = 'Щанд #' + u.n;
+        _ttNum.textContent = t3d('stand', 'Щанд') + ' #' + u.n;
         _ttName.textContent = u.company || t3d('freeStand', 'Свободен щанд');
         if (u.logo) { _ttLogo.src = u.logo; _ttLogo.style.display = 'block'; }
         else _ttLogo.style.display = 'none';
@@ -3060,7 +3060,7 @@
       band.style.background = `linear-gradient(135deg, ${tierHex} 0%, ${tierHex}cc 100%)`;
 
       document.getElementById('popup-tier-label').textContent = tierName;
-      document.getElementById('popup-stand-num').textContent = 'Щанд № ' + u.n;
+      document.getElementById('popup-stand-num').textContent = t3d('stand', 'Щанд') + ' № ' + u.n;
 
       // ── Company row ──
       const companyRow = document.getElementById('popup-company-row');
@@ -3119,7 +3119,7 @@
           cta.onclick = function (ev) {
             if (window.parent && window.parent !== window) {
               ev.preventDefault();
-              window.parent.postMessage({ type: 'bstf3d', action: 'reserveStand', stand: u.n, tier: tierName, price: info.price }, '*');
+              window.parent.postMessage({ type: 'bstf3d', action: 'reserveStand', stand: u.n, tier: tierName, price: info.price }, window.location.origin);
             }
           };
         }

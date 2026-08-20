@@ -1585,7 +1585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="../shared/site-chrome.js?v=20260820"></script>
+  <script src="../shared/site-chrome.js?v=20260820-2"></script>
   <script>SiteChrome.renderNav('speakers', 'en');</script>
 
   <!-- Page Hero -->
@@ -1647,26 +1647,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           function pick(bg, en) { return LANG === 'en' ? en : bg; }
 
           function esc(s) {
-            return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+            return String(s == null ? '' : s)
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#39;');
           }
 
           function renderTrackJump(track) {
-            return '<a class="track-jump" href="#track-' + track.id + '">' +
+            return '<a class="track-jump" href="speakers.html#track-' + track.id + '">' +
               '<span class="tj-dot"></span>' +
-              '<span data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + pick(track.labelBg, track.labelEn) + '</span>' +
+              '<span data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + esc(pick(track.labelBg, track.labelEn)) + '</span>' +
               '</a>';
           }
 
           function renderCard(spk, track, index) {
             return '<a class="spk-card" style="--i:' + index + '" data-track="' + track.id + '" data-spk="' + spk.id + '" href="speaker.html#' + encodeURIComponent(spk.id) + '">' +
-              '<div class="spk-photo"><img loading="lazy" decoding="async" width="400" height="533" src="' + spk.img + '" alt="' + esc(spk.alt) + '" style="object-position:' + spk.objectPosition + '"></div>' +
+              '<div class="spk-photo"><img loading="lazy" decoding="async" width="400" height="533" src="' + esc(spk.img) + '" alt="' + esc(spk.alt) + '" style="object-position:' + esc(spk.objectPosition) + '"></div>' +
               '<div class="spk-body">' +
-              '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + pick(track.labelBg, track.labelEn) + '</span>' +
-              '<div class="spk-name" data-bg="' + esc(spk.name) + '" data-en="' + esc(spk.nameEn || spk.name) + '">' + pick(spk.name, spk.nameEn || spk.name) + '</div>' +
-              '<div class="spk-role">' + pick(spk.role, spk.roleEn || spk.role) + '</div>' +
+              '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + esc(pick(track.labelBg, track.labelEn)) + '</span>' +
+              '<div class="spk-name" data-bg="' + esc(spk.name) + '" data-en="' + esc(spk.nameEn || spk.name) + '">' + esc(pick(spk.name, spk.nameEn || spk.name)) + '</div>' +
+              '<div class="spk-role">' + esc(pick(spk.role, spk.roleEn || spk.role)) + '</div>' +
               '<div class="spk-topic">' +
               '<div class="spk-topic-label" data-bg="Тема" data-en="Topic">' + pick('Тема', 'Topic') + '</div>' +
-              '<span data-bg="' + esc(spk.topicBg) + '" data-en="' + esc(spk.topicEn) + '">' + pick(spk.topicBg, spk.topicEn) + '</span>' +
+              '<span data-bg="' + esc(spk.topicBg) + '" data-en="' + esc(spk.topicEn) + '">' + esc(pick(spk.topicBg, spk.topicEn)) + '</span>' +
               '</div>' +
               '</div>' +
               '</a>';
@@ -1676,9 +1681,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             var speakers = window.bstfSpeakersByTrack(track.id);
             return '<div class="track-section" id="track-' + track.id + '">' +
               '<div class="track-band" data-track="' + track.id + '">' +
-              '<span class="track-band-name" data-bg="' + esc(track.nameBg) + '" data-en="' + esc(track.nameEn) + '">' + pick(track.nameBg, track.nameEn) + '</span>' +
+              '<span class="track-band-name" data-bg="' + esc(track.nameBg) + '" data-en="' + esc(track.nameEn) + '">' + esc(pick(track.nameBg, track.nameEn)) + '</span>' +
               '<span class="track-band-sep"></span>' +
-              '<span class="track-band-desc" data-bg="' + esc(track.descBg) + '" data-en="' + track.descEn + '">' + pick(track.descBg, track.descEn) + '</span>' +
+              '<span class="track-band-desc" data-bg="' + esc(track.descBg) + '" data-en="' + esc(track.descEn) + '">' + esc(pick(track.descBg, track.descEn)) + '</span>' +
               '</div>' +
               '<div class="spk-grid">' + speakers.map(function (s, i) { return renderCard(s, track, i); }).join('') + '</div>' +
               '</div>';

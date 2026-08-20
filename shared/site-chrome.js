@@ -38,6 +38,17 @@
     return cfg.isHome ? anchor : 'index.html' + anchor;
   }
 
+  // The href strings built below are attacker-influenced (location.search/hash
+  // come straight from the URL), so escape before they land inside an
+  // HTML attribute value via outerHTML. Browsers already percent-encode the
+  // characters that would break out of an attribute, but that's a platform
+  // behavior, not something this file should rely on as its only defense.
+  function escAttr(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
   // Cross-tree link for the BG/EN nav toggle: each language now lives at its
   // own URL (root = BG, /en/ = EN) instead of an in-page JS swap, so the
   // toggle must navigate to the sibling file in the other tree.
@@ -47,7 +58,7 @@
     // so switching language keeps you on the same speaker/anchor instead of
     // dropping back to the page with no selection.
     var suffix = window.location.search + window.location.hash;
-    return (lang === 'bg' ? 'en/' + file : '../' + file) + suffix;
+    return escAttr((lang === 'bg' ? 'en/' + file : '../' + file) + suffix);
   }
 
   function langToggleHtml(pageKey, lang) {

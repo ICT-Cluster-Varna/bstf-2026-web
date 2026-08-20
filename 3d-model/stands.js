@@ -23,8 +23,8 @@ const DESC_EXPO   = _EN
 
 window.STANDS_DATA = {
   exhibitors: {
-    2:  { company: 'Резервиран за пакет Gold Partner',   logo: '',                                    status: 'reserved', website: '', description: '' },
-    4:  { company: 'Резервиран за пакет Silver Partner', logo: '',                                    status: 'reserved', website: '', description: '' },
+    2:  { company: _EN ? 'Reserved for Gold Partner package' : 'Резервиран за пакет Gold Partner',   logo: '',                                    status: 'reserved', website: '', description: '' },
+    4:  { company: _EN ? 'Reserved for Silver Partner package' : 'Резервиран за пакет Silver Partner', logo: '',                                    status: 'reserved', website: '', description: '' },
     6:  { company: 'Top-Rent-A-Car',                     logo: 'Logos/toprentacar.png',               status: 'partner',  website: '', description: '' },
     7:  { company: 'ResearchMetrics',                    logo: 'Logos/ResearchMetrics.png',           status: 'occupied', website: '', description: '' },
     8:  { company: 'ITRM Consult',                       logo: 'Logos/ITR Management Consult.png',    status: 'occupied', website: '', description: '' },
