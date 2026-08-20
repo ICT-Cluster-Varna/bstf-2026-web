@@ -1198,12 +1198,36 @@
       }
 
       .session-detail-person {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
         padding-left: 12px;
         border-left: 2px solid rgba(11, 57, 84, 0.12)
       }
 
       .session-detail-person.is-moderator {
         border-left-color: var(--teal-deep)
+      }
+
+      .session-detail-person-avatar {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--navy);
+        color: var(--white);
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      .session-detail-person-body {
+        flex: 1;
+        min-width: 0
       }
 
       .session-detail-person-name {
@@ -6491,6 +6515,16 @@
         }
         window.closeModal = closeModal;
 
+        // Avatar initials always derive from the Latin (en) name, even when the
+        // page is displaying Bulgarian text, to match the approved mockup (e.g.
+        // "Иляна Йотова" -> "II", from "Iliana Iotova").
+        function personInitials(nameEn) {
+          var words = (nameEn || '').trim().split(/\s+/).filter(Boolean);
+          if (!words.length) return '';
+          if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+          return (words[0][0] + words[words.length - 1][0]).toUpperCase();
+        }
+
         // Program timeline "second level of detail": renders the sub-sessions/
         // speakers/moderator breakdown for a session card into #session-modal-body.
         function renderSessionDetail(card) {
@@ -6509,9 +6543,12 @@
                 var noteHtml = p.note ? '<span class="session-detail-person-note" data-bg="(' + p.note.bg.replace(/"/g, '&quot;') + ')" data-en="(' + p.note.en.replace(/"/g, '&quot;') + ')">(' + pick(p.note.bg, p.note.en) + ')</span>' : '';
                 var modBadge = p.isModerator ? '<span class="session-detail-mod-label" data-bg="Модератор" data-en="Moderator">' + pick('Модератор', 'Moderator') + '</span>' : '';
                 html += '<div class="session-detail-person' + (p.isModerator ? ' is-moderator' : '') + '">' +
+                  '<div class="session-detail-person-avatar" aria-hidden="true">' + personInitials(p.name.en) + '</div>' +
+                  '<div class="session-detail-person-body">' +
                   '<div class="session-detail-person-name"><span data-bg="' + p.name.bg.replace(/"/g, '&quot;') + '" data-en="' + p.name.en.replace(/"/g, '&quot;') + '">' + pick(p.name.bg, p.name.en) + '</span>' + modBadge + '</div>' +
                   '<div class="session-detail-role" data-bg="' + p.role.bg.replace(/"/g, '&quot;') + '" data-en="' + p.role.en.replace(/"/g, '&quot;') + '">' + pick(p.role.bg, p.role.en) + '</div>' +
                   noteHtml +
+                  '</div>' +
                   '</div>';
               });
               html += '</div>';
