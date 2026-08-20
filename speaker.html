@@ -1284,7 +1284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="shared/site-chrome.js?v=20260818-2"></script>
+  <script src="shared/site-chrome.js?v=20260820"></script>
   <script>SiteChrome.renderNav('speaker');</script>
 
   <!-- Page Hero -->
@@ -1311,7 +1311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <script src="data/speakers-data.js?v=20260819-2"></script>
+  <script src="data/speakers-data.js?v=20260820"></script>
   <script>
     (function () {
       'use strict';
@@ -1387,6 +1387,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // /speaker.html?id=x to /speaker and drop the query string entirely. Hash fragments
       // never touch the server and survive redirects, so they work everywhere.
       // ?id= is still read as a fallback for any old bookmarked/query-style links.
+      //
+      // Wrapped in a function (not run once inline) and re-run on 'hashchange' —
+      // a link to a different #slug on this same page only changes the hash, it
+      // doesn't reload the document, so without this the profile shown would be
+      // stuck on whichever speaker loaded first until a manual refresh.
+      function renderSpeakerFromHash() {
       var id = decodeURIComponent(window.location.hash.replace(/^#/, '')) || getParam('id');
       var speaker = id ? window.bstfGetSpeaker(id) : null;
       var track = speaker ? window.bstfGetTrack(speaker.track) : null;
@@ -1447,6 +1453,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           '<a class="btn btn-primary" href="speakers.html" data-bg="Към всички лектори" data-en="Back to all speakers">' + pick('Към всички лектори', 'Back to all speakers') + '</a>' +
           '</div>';
       }
+      }
+      renderSpeakerFromHash();
+      window.addEventListener('hashchange', renderSpeakerFromHash);
     })();
   </script>
 
@@ -1458,8 +1467,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         data-en="Join the leading technology conference in the Black Sea region.">Присъединете се към водещата
         технологична конференция в Черноморския регион.</p>
       <div class="prefooter-buttons">
-        <button class="btn btn-white" onclick="openModal('register-modal')" data-bg="Регистрирай се"
-          data-en="Register now">Регистрирай се</button>
+        <a href="index.html#tickets" class="btn btn-white" data-bg="Регистрирай се"
+          data-en="Register now">Регистрирай се</a>
         <a href="index.html#program" class="btn btn-outline"
           style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж програмата"
           data-en="See program">Виж програмата</a>

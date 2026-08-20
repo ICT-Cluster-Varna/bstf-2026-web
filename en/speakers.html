@@ -1585,7 +1585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="../shared/site-chrome.js?v=20260818-2"></script>
+  <script src="../shared/site-chrome.js?v=20260820"></script>
   <script>SiteChrome.renderNav('speakers', 'en');</script>
 
   <!-- Page Hero -->
@@ -1638,7 +1638,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="../data/speakers-data.js?v=20260819-2"></script>
+      <script type="text/javascript" src="../data/speakers-data.js?v=20260820"></script>
       <script>
         (function () {
           'use strict';
@@ -1659,7 +1659,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           function renderCard(spk, track, index) {
             return '<a class="spk-card" style="--i:' + index + '" data-track="' + track.id + '" data-spk="' + spk.id + '" href="speaker.html#' + encodeURIComponent(spk.id) + '">' +
-              '<div class="spk-photo"><img loading="lazy" decoding="async" src="' + spk.img + '" alt="' + esc(spk.alt) + '" style="object-position:' + spk.objectPosition + '"></div>' +
+              '<div class="spk-photo"><img loading="lazy" decoding="async" width="400" height="533" src="' + spk.img + '" alt="' + esc(spk.alt) + '" style="object-position:' + spk.objectPosition + '"></div>' +
               '<div class="spk-body">' +
               '<span class="spk-track" data-bg="' + esc(track.labelBg) + '" data-en="' + esc(track.labelEn) + '">' + pick(track.labelBg, track.labelEn) + '</span>' +
               '<div class="spk-name" data-bg="' + esc(spk.name) + '" data-en="' + esc(spk.nameEn || spk.name) + '">' + pick(spk.name, spk.nameEn || spk.name) + '</div>' +
@@ -1713,8 +1713,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p data-bg="Присъединете се към водещата технологична конференция в Черноморския регион."
         data-en="Join the leading technology conference in the Black Sea region.">Join the leading technology conference in the Black Sea region.</p>
       <div class="prefooter-buttons">
-        <button class="btn btn-white" onclick="openModal('register-modal')" data-bg="Регистрирай се"
-          data-en="Register now">Register now</button>
+        <a href="index.html#tickets" class="btn btn-white" data-bg="Регистрирай се"
+          data-en="Register now">Register now</a>
         <a href="index.html#program" class="btn btn-outline"
           style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж програмата"
           data-en="See program">See program</a>
@@ -1724,7 +1724,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Footer -->
   <div id="site-footer-root"></div>
-  <script>SiteChrome.renderFooter('speakers');</script>
+  <script>SiteChrome.renderFooter('speakers', 'en');</script>
 
   <!-- Registration Modal -->
   <div class="modal-overlay" id="register-modal">

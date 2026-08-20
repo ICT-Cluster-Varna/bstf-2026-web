@@ -328,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Navigation -->
 <div id="site-nav-root"></div>
-<script src="../shared/site-chrome.js?v=20260818-2"></script>
+<script src="../shared/site-chrome.js?v=20260820"></script>
 <script>SiteChrome.renderNav('sponsors', 'en');</script>
 
 <!-- Page Hero -->
@@ -652,7 +652,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Footer -->
 <div id="site-footer-root"></div>
-<script>SiteChrome.renderFooter('sponsors');</script>
+<script>SiteChrome.renderFooter('sponsors', 'en');</script>
 
 <!-- Exhibitor Modal (opened from 3D viewer stand reservation) -->
 <div class="modal-overlay" id="exhibitor-modal">
@@ -1048,7 +1048,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
   act.addEventListener('click', function() {
     if (iframe) return;
     iframe = document.createElement('iframe');
-    iframe.src = '3d-model/floorplan3d_v2.html?v=20260811-2';
+    iframe.src = '../3d-model/floorplan3d_v2.html?v=20260820-2&lang=en';
     iframe.title = '3D Exhibition Floor Plan';
     iframe.setAttribute('allow', 'fullscreen; accelerometer; gyroscope; screen-wake-lock');
     iframe.setAttribute('allowfullscreen', '');
@@ -1070,6 +1070,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
 
   // Bridge: "Резервирай щанд" inside the 3D viewer opens the exhibitor inquiry modal.
   window.addEventListener('message', function(ev) {
+    if (ev.origin !== window.location.origin) return;
     var d = ev.data || {};
     if (d.type === 'bstf3d' && d.action === 'reserveStand') {
       if (document.fullscreenElement) { document.exitFullscreen(); }

@@ -4,13 +4,15 @@
       "code": "ARDES",
       "company": "Ardes",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Ardes"
     },
     {
       "code": "VARNAPRENEURS",
       "company": "Varnapreneurs",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Varnapreneurs"
     },
     {
       "code": "ABSCLOUD",
@@ -72,7 +74,8 @@
       "code": "VTECH",
       "company": "ВИТЕХ",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "VTECH"
     },
     {
       "code": "VIVACOM",
@@ -120,13 +123,15 @@
       "code": "MULTIMEDIA",
       "company": "Мултимедия.БГ",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Multimedia.BG"
     },
     {
       "code": "NAUTICBLUE",
       "company": "НаутикБлу",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "NauticBlue"
     },
     {
       "code": "NETPEAK",
@@ -209,7 +214,8 @@
       "code": "TOPRENTACAR",
       "company": "Top Rent A Car",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Top Rent A Car"
     },
     {
       "code": "TCV",
@@ -243,13 +249,15 @@
       "code": "FANCYSTUDIO",
       "company": "Фенси-студио ООД",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Fancy Studio"
     },
     {
       "code": "SHOPMETRICS",
       "company": "Шопметрикс Европа",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "ShopMetrics Europe"
     },
     {
       "code": "SHU",
@@ -262,7 +270,8 @@
       "code": "UNBELIEVABLE",
       "company": "Unbelievable Digital",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Unbelievable Digital"
     },
     {
       "code": "UNICORNSYSTEMS",
@@ -338,7 +347,8 @@
       "code": "VUM",
       "company": "Висше Училище по Мениджмънт",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "Higher School of Management"
     },
     {
       "code": "5EG",
@@ -505,7 +515,8 @@
       "code": "EASTACCELERATOR",
       "company": "Фондация \"Източен Акселератор\"",
       "discountPercent": 10,
-      "discountVisible": true
+      "discountVisible": true,
+      "companyEn": "East Accelerator Foundation"
     },
     {
       "code": "SMARTVARNA",
