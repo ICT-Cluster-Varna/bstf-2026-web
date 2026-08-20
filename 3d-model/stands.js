@@ -3,10 +3,23 @@
 const _li = (t) => `<li><span class="pb-check">&#x2713;</span>${t}</li>`;
 const _ul = (...items) => `<ul class="popup-benefits">${items.map(_li).join('')}</ul>`;
 
-const DESC_STAGE  = _ul('Брандиране на основната сцена', 'Именуване на сцена', 'Брандиране във VIP зала', 'Брандиран панел / фирмена сесия', '5 мин. слот', '1 ULTRA VIP + 2 VIP + 4 Full Event');
-const DESC_GOLD   = _ul('Premium щанд', 'Панелно участие', 'Startup / Recruitment сцена', 'Лого в програма и материали', '1 VIP + 4 Full Event билети');
-const DESC_SILVER = _ul('Expo щанд', 'Startup / Recruitment сцена', 'Лого в сайта и материали', '1 VIP + 3 Full Event билети');
-const DESC_EXPO   = _ul('Expo щанд (3×3 м)', 'Лого в сайта на събитието', 'Matchmaking апликация', '1 Full Event билет');
+// Popup benefit lists — Tier-1 (visitor-facing) bilingual text. window.LANG is
+// set by the tiny inline script in floorplan3d_v2.html (from the ?lang= param
+// the parent page passes into the iframe src) before this file loads.
+const _EN = window.LANG === 'en';
+
+const DESC_STAGE  = _EN
+  ? _ul('Main stage branding', 'Stage naming', 'VIP hall branding', 'Branded panel / company session', '5-minute slot', '1 ULTRA VIP + 2 VIP + 4 Full Event')
+  : _ul('Брандиране на основната сцена', 'Именуване на сцена', 'Брандиране във VIP зала', 'Брандиран панел / фирмена сесия', '5 мин. слот', '1 ULTRA VIP + 2 VIP + 4 Full Event');
+const DESC_GOLD   = _EN
+  ? _ul('Premium booth', 'Panel participation', 'Startup / Recruitment stage', 'Logo in program & materials', '1 VIP + 4 Full Event tickets')
+  : _ul('Premium щанд', 'Панелно участие', 'Startup / Recruitment сцена', 'Лого в програма и материали', '1 VIP + 4 Full Event билети');
+const DESC_SILVER = _EN
+  ? _ul('Expo booth', 'Startup / Recruitment stage', 'Logo on website & materials', '1 VIP + 3 Full Event tickets')
+  : _ul('Expo щанд', 'Startup / Recruitment сцена', 'Лого в сайта и материали', '1 VIP + 3 Full Event билети');
+const DESC_EXPO   = _EN
+  ? _ul('Expo booth (3×3 m)', 'Logo on event website', 'Matchmaking app', '1 Full Event ticket')
+  : _ul('Expo щанд (3×3 м)', 'Лого в сайта на събитието', 'Matchmaking апликация', '1 Full Event билет');
 
 window.STANDS_DATA = {
   exhibitors: {

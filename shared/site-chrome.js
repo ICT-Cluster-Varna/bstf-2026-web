@@ -22,6 +22,18 @@
     return PAGES[pageKey] || PAGES.home;
   }
 
+  // Single source of truth for "which language string do I show." Nav/footer
+  // render the correct text immediately from this, instead of always emitting
+  // Bulgarian and relying on each page's own applyTranslations() TreeWalker to
+  // flip it after the fact — that made the chrome's language correctness depend
+  // on a separate script existing and running in time, with no fallback if it
+  // didn't. data-bg/data-en attributes are still written on every element so
+  // the existing per-page TreeWalker keeps working unchanged (it will just find
+  // the text already matches and do nothing).
+  function pick(bg, en, lang) {
+    return lang === 'en' ? en : bg;
+  }
+
   function href(cfg, anchor) {
     return cfg.isHome ? anchor : 'index.html' + anchor;
   }
@@ -49,7 +61,7 @@
       '</div>';
   }
 
-  function navLinksHtml(cfg) {
+  function navLinksHtml(cfg, lang) {
     var links = [
       { key: 'program', href: href(cfg, '#program'), bg: 'Програма', en: 'Program' },
       { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
@@ -58,7 +70,7 @@
     ];
     return links.map(function (l) {
       var cls = l.key === cfg.activeNavKey ? ' class="active"' : '';
-      return '<a href="' + l.href + '"' + cls + ' data-bg="' + l.bg + '" data-en="' + l.en + '">' + l.bg + '</a>';
+      return '<a href="' + l.href + '"' + cls + ' data-bg="' + l.bg + '" data-en="' + l.en + '">' + pick(l.bg, l.en, lang) + '</a>';
     }).join('');
   }
 
@@ -81,7 +93,8 @@
     if (!root) return;
     lang = lang || 'bg';
     var cfg = cfgFor(pageKey);
-    var links = navLinksHtml(cfg);
+    var links = navLinksHtml(cfg, lang);
+    var ctaText = pick('Купи Билет', 'Buy Ticket', lang);
     root.outerHTML =
       '<nav class="main-nav">' +
       '<div class="nav-inner">' +
@@ -89,7 +102,7 @@
       '<div class="nav-links">' + links + '</div>' +
       '<div class="nav-right">' +
       langToggleHtml(pageKey, lang) +
-      '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>' +
+      '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</button>' +
       '<button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>' +
       '</div>' +
       '</div>' +
@@ -97,13 +110,14 @@
       '<div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>' +
       '<div class="mobile-nav" id="mobile-nav">' +
       links +
-      '<a href="' + href(cfg, '#tickets') + '" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</a>' +
+      '<a href="' + href(cfg, '#tickets') + '" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</a>' +
       '</div>';
   }
 
-  function renderFooter(pageKey) {
+  function renderFooter(pageKey, lang) {
     var root = document.getElementById('site-footer-root');
     if (!root) return;
+    lang = lang || 'bg';
     var cfg = cfgFor(pageKey);
     var year = new Date().getFullYear();
     root.outerHTML =
@@ -113,29 +127,29 @@
       '<div class="footer-brand">' +
       '<img src="/images/Connexus - WHITE.svg?v=20260731" alt="Connexus" style="height:28px;margin-bottom:14px">' +
       '<p class="footer-tagline" style="font-size:9px;font-weight:600;letter-spacing:0.6em;white-space:nowrap;color:rgba(255,255,255,0.85);margin-bottom:12px" data-bg="black sea tech forum" data-en="black sea tech forum">black sea tech forum</p>' +
-      '<p style="font-size:0.75rem;color:rgba(255,255,255,0.6)" data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">Черноморски технологичен форум</p>' +
-      '<p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:8px" data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">Технологии от 7-мо поколение без граници</p>' +
+      '<p style="font-size:0.75rem;color:rgba(255,255,255,0.6)" data-bg="Черноморски технологичен форум" data-en="Black Sea Technology Forum">' + pick('Черноморски технологичен форум', 'Black Sea Technology Forum', lang) + '</p>' +
+      '<p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:8px" data-bg="Технологии от 7-мо поколение без граници" data-en="7th-gen technologies without borders">' + pick('Технологии от 7-мо поколение без граници', '7th-gen technologies without borders', lang) + '</p>' +
       '</div>' +
       '<div class="footer-col">' +
-      '<h4 data-bg="Събитие" data-en="Event">Събитие</h4>' +
-      '<a href="' + href(cfg, '#program') + '" data-bg="Програма" data-en="Program">Програма</a>' +
-      '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>' +
-      '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">Място</a>' +
-      '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">Билети</a>' +
-      '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>' +
-      '<a href="' + href(cfg, '#contact') + '" data-bg="Контакти" data-en="Contact">Контакти</a>' +
+      '<h4 data-bg="Събитие" data-en="Event">' + pick('Събитие', 'Event', lang) + '</h4>' +
+      '<a href="' + href(cfg, '#program') + '" data-bg="Програма" data-en="Program">' + pick('Програма', 'Program', lang) + '</a>' +
+      '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
+      '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">' + pick('Място', 'Venue', lang) + '</a>' +
+      '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">' + pick('Билети', 'Tickets', lang) + '</a>' +
+      '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
+      '<a href="' + href(cfg, '#contact') + '" data-bg="Контакти" data-en="Contact">' + pick('Контакти', 'Contact', lang) + '</a>' +
       '</div>' +
       '<div class="footer-col">' +
-      '<h4 data-bg="Правни" data-en="Legal">Правни</h4>' +
-      '<a href="privacy-policy.html" data-bg="Политика за поверителност" data-en="Privacy Policy">Политика за поверителност</a>' +
-      '<a href="terms-and-conditions.html" data-bg="Условия за ползване" data-en="Terms of Use">Условия за ползване</a>' +
+      '<h4 data-bg="Правни" data-en="Legal">' + pick('Правни', 'Legal', lang) + '</h4>' +
+      '<a href="privacy-policy.html" data-bg="Политика за поверителност" data-en="Privacy Policy">' + pick('Политика за поверителност', 'Privacy Policy', lang) + '</a>' +
+      '<a href="terms-and-conditions.html" data-bg="Условия за ползване" data-en="Terms of Use">' + pick('Условия за ползване', 'Terms of Use', lang) + '</a>' +
       '</div>' +
       '<div class="footer-col">' +
-      '<h4 data-bg="Контакт" data-en="Contact">Контакт</h4>' +
+      '<h4 data-bg="Контакт" data-en="Contact">' + pick('Контакт', 'Contact', lang) + '</h4>' +
       '<div class="footer-email-row">' +
       '<a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a>' +
       '<button type="button" class="copy-email-btn" data-email="bstf@ictclustervarna.com" aria-label="Copy email" title="Copy email"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>' +
-      '<span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">Копирано!</span>' +
+      '<span class="copy-email-msg" hidden data-bg="Копирано!" data-en="Copied!">' + pick('Копирано!', 'Copied!', lang) + '</span>' +
       '</div>' +
       '<a href="tel:+359876658296">+359 876 658 296</a>' +
       '<div class="footer-social" style="display:flex;gap:12px;margin-top:16px;justify-content:center">' +
@@ -145,8 +159,8 @@
       '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
-      '<span data-bg="&copy; ' + year + ' Черноморски технологичен форум. Всички права запазени." data-en="&copy; ' + year + ' Black Sea Technology Forum. All rights reserved.">&copy; ' + year + ' Черноморски технологичен форум. Всички права запазени.</span>' +
-      '<span data-bg="Организирано от ИКТ Клъстер - Варна" data-en="Organized by ICT Cluster - Varna">Организирано от ИКТ Клъстер - Варна</span>' +
+      '<span data-bg="&copy; ' + year + ' Черноморски технологичен форум. Всички права запазени." data-en="&copy; ' + year + ' Black Sea Technology Forum. All rights reserved.">' + pick('&copy; ' + year + ' Черноморски технологичен форум. Всички права запазени.', '&copy; ' + year + ' Black Sea Technology Forum. All rights reserved.', lang) + '</span>' +
+      '<span data-bg="Организирано от ИКТ Клъстер - Варна" data-en="Organized by ICT Cluster - Varna">' + pick('Организирано от ИКТ Клъстер - Варна', 'Organized by ICT Cluster - Varna', lang) + '</span>' +
       '</div>' +
       '</div>' +
       '</footer>';

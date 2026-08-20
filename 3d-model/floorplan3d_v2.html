@@ -907,6 +907,40 @@
     <div class="lo-sub">Зареждане на 3D изложението…</div>
     <div class="lo-err" id="loErr">Проблем при зареждането. Проверете интернет връзката и презаредете страницата.</div>
   </div>
+  <script>
+    // window.LANG: set as early as possible (before stands.js loads). Only
+    // covers Tier-1 visitor-facing text — the settings/editor panel (#ui)
+    // stays Bulgarian, it's a build tool, not a visitor feature.
+    //
+    // Two independent signals, in priority order:
+    // 1. ?lang= on THIS file's own URL (set by sponsors.html/en/sponsors.html
+    //    when they create the iframe).
+    // 2. document.referrer — the parent page's actual address as the browser
+    //    itself recorded it when it navigated into this iframe. This does NOT
+    //    depend on the parent's <script> having the &lang= fix — it stays
+    //    correct even if the browser is showing a stale cached copy of
+    //    sponsors.html/en/sponsors.html whose JS still builds the old,
+    //    lang-less iframe src.
+    window.LANG = (function () {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'en' || q === 'bg') return q;
+      } catch (e) {}
+      try {
+        if (/\/en\//.test(document.referrer)) return 'en';
+      } catch (e) {}
+      return 'bg';
+    })();
+    (function () {
+      var en = window.LANG === 'en';
+      var sub = document.querySelector('#loadOverlay .lo-sub');
+      if (sub) sub.textContent = en ? 'Loading the 3D exhibition…' : 'Зареждане на 3D изложението…';
+      var err = document.getElementById('loErr');
+      if (err) err.textContent = en
+        ? 'There was a problem loading. Please check your internet connection and reload the page.'
+        : 'Проблем при зареждането. Проверете интернет връзката и презаредете страницата.';
+    })();
+  </script>
   <script>setTimeout(function () { var o = document.getElementById('loadOverlay'), e = document.getElementById('loErr'); if (o && !o.classList.contains('done') && e) e.style.display = 'block'; }, 15000);</script>
   <button id="uiPin" title="Покажи настройки">&#9776;</button>
   <div id="ui">
@@ -917,7 +951,7 @@
     <h2>View</h2>
     <div class="row"><button id="btn3d" class="on">3D view</button><button id="btnTop">Top edit</button></div>
     <button id="btnEnterWT">🚶 Влез в залата</button>
-    <div id="wtHint">WASD / мишка за оглед · плъзнете за движение · Esc за изход</div>
+    <div id="wtHint"><span id="wtHintLabel">WASD / мишка за оглед · плъзнете за движение · Esc за изход</span></div>
 
     <h2>Expo stands</h2>
     <label><input type="checkbox" id="t_stand" checked><span class="sw" style="background:#7ed321"></span>Show
@@ -925,13 +959,13 @@
     <label><input type="checkbox" id="t_snum" checked><span class="sw" style="background:#fff"></span>Show
       numbers</label>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;margin-top:5px;font-size:11px;color:#8fa1b3">
-      <span><span
+      <span id="chkLegFree"><span
           style="display:inline-block;width:9px;height:9px;background:#2ECC71;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Свободен</span>
-      <span><span
+      <span id="chkLegOccupied"><span
           style="display:inline-block;width:9px;height:9px;background:#7F8C8D;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Зает</span>
-      <span><span
+      <span id="chkLegReserved"><span
           style="display:inline-block;width:9px;height:9px;background:#F39C12;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Резервиран</span>
-      <span><span
+      <span id="chkLegFree2"><span
           style="display:inline-block;width:9px;height:9px;background:#1F618D;border-radius:50%;vertical-align:middle;margin-right:3px"></span>Свободен</span>
     </div>
     <div class="row"><button id="sMinus">� all</button><span id="scaleVal">100%</span><button id="sPlus">+ all</button>
@@ -1037,12 +1071,12 @@
         <div id="popup-logo-wrap"></div>
         <div>
           <div id="popup-name"></div>
-          <div id="popup-name-sub">Партньор / Partner</div>
+          <div id="popup-name-sub">Партньор</div>
         </div>
       </div>
       <!-- Benefits -->
       <div id="popup-benefits-card">
-        <div id="popup-benefits-title">Включва / Includes</div>
+        <div id="popup-benefits-title">Включва</div>
         <div id="popup-desc"></div>
       </div>
       <!-- Price -->
@@ -1053,19 +1087,22 @@
       <!-- CTA -->
       <a id="popup-cta" href="mailto:bstf@ictclustervarna.com" target="_blank">Заявете пакет</a>
       <div id="popup-occupied-banner">Щандът е зает</div>
+      <!-- Tier-1 static strings above render in Bulgarian by default; the init
+           script below (search LANG_INIT) overwrites them to English when
+           window.LANG === 'en'. -->
     </div>
   </div>
 
   <!-- Legend -->
   <div id="standLegend">
-    <div class="leg-row"><span class="leg-dot" style="background:#2ECC71"></span>Свободен</div>
-    <div class="leg-row"><span class="leg-dot" style="background:#7F8C8D"></span>Зает</div>
-    <div class="leg-row"><span class="leg-dot" style="background:#F39C12"></span>Резервиран</div>
-    <div class="leg-row"><span class="leg-dot" style="background:#1F618D"></span>Партньор</div>
+    <div class="leg-row"><span class="leg-dot" style="background:#2ECC71"></span><span id="legFree">Свободен</span></div>
+    <div class="leg-row"><span class="leg-dot" style="background:#7F8C8D"></span><span id="legOccupied">Зает</span></div>
+    <div class="leg-row"><span class="leg-dot" style="background:#F39C12"></span><span id="legReserved">Резервиран</span></div>
+    <div class="leg-row"><span class="leg-dot" style="background:#1F618D"></span><span id="legPartner">Партньор</span></div>
   </div>
 
   <!-- Walkthrough overlays -->
-  <div id="wtExit">⬅ Изход от разходката</div>
+  <div id="wtExit"><span id="wtExitLabel">⬅ Изход от разходката</span></div>
   <button id="floatEnterWT">
     <span class="fwt-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -1074,7 +1111,7 @@
         <path d="M6 20h12" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" />
       </svg>
     </span>
-    Разгледай залата 3D
+    <span id="floatEnterWTLabel">Разгледай залата 3D</span>
   </button>
   <div id="wtReticle"></div>
 
@@ -1130,7 +1167,7 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260819"></script>
+  <script src="stands.js?v=20260820"></script>
   <script src="bsmepa_logo.js?v=20260819"></script>
   <script src="toprentacar_logo.js?v=20260819"></script>
   <script src="electrohold_logo.js?v=20260819"></script>
@@ -1161,6 +1198,44 @@
         return this;
       };
     }
+
+    // ---- LANG_INIT: Tier-1 visitor-facing text (window.LANG set earlier, in
+    // the tiny inline script right after #loadOverlay, before stands.js loads).
+    // The settings/editor panel (#ui — Layers, wall/column select, furniture,
+    // export/save) is intentionally left Bulgarian-only: it's a build tool
+    // for whoever configures the floor plan, not a visitor-facing feature.
+    const T3D = {
+      enterRoom: 'Enter the hall', wtHint: 'WASD / mouse to look around · drag to move · Esc to exit',
+      free: 'Free', occupied: 'Occupied', reserved: 'Reserved', partner: 'Partner',
+      freeStand: 'Free stand', holdForDetails: 'Hold for details',
+      includes: 'Includes', packagePrice: 'Package price', standOccupied: 'This stand is occupied',
+      requestPackage: 'Request package', showSettings: 'Show settings', hideSettings: 'Hide settings',
+      exitWalkthrough: 'Exit walkthrough', exploreIn3d: 'Explore the hall in 3D'
+    };
+    function t3d(key, bgFallback) { return (window.LANG === 'en' && T3D[key]) ? T3D[key] : bgFallback; }
+    (function () {
+      if (window.LANG !== 'en') return;
+      document.getElementById('uiPin').title = t3d('showSettings');
+      document.getElementById('uiHide').title = t3d('hideSettings');
+      document.getElementById('btnEnterWT').textContent = '🚶 ' + t3d('enterRoom');
+      document.getElementById('wtHintLabel').textContent = t3d('wtHint');
+      document.getElementById('chkLegFree').lastChild.textContent = t3d('free');
+      document.getElementById('chkLegOccupied').lastChild.textContent = t3d('occupied');
+      document.getElementById('chkLegReserved').lastChild.textContent = t3d('reserved');
+      document.getElementById('chkLegFree2').lastChild.textContent = t3d('free');
+      document.getElementById('legFree').textContent = t3d('free');
+      document.getElementById('legOccupied').textContent = t3d('occupied');
+      document.getElementById('legReserved').textContent = t3d('reserved');
+      document.getElementById('legPartner').textContent = t3d('partner');
+      document.getElementById('wtExitLabel').textContent = '⬅ ' + t3d('exitWalkthrough');
+      document.getElementById('floatEnterWTLabel').textContent = t3d('exploreIn3d');
+      document.getElementById('popup-name-sub').textContent = t3d('partner');
+      document.getElementById('popup-benefits-title').textContent = t3d('includes');
+      document.getElementById('popup-price-eyebrow').textContent = t3d('packagePrice');
+      document.getElementById('popup-cta').textContent = t3d('requestPackage');
+      document.getElementById('popup-occupied-banner').textContent = t3d('standOccupied');
+    })();
+
     // DATA loaded externally — see data.js
 
     // ---- center on actual ENVELOPE footprint when available, otherwise wall footprint ----
@@ -1775,14 +1850,16 @@
       { x: 95500, y: -26500, bg: '#a06aff', bg2: 'ЧЕРНО МОРЕ', en: 'Cherno More' },
       { x: 20000, y: -29000, bg: '#ffb850', bg2: 'РЕСТОРАНТ', en: 'Restaurant' },
       { x: 18065, y: -10000, bg: '#e8823a', bg2: 'КУХНЯ', en: 'Kitchen' },
-      { x: 82000, y: -4000, bg: '#dbeafe', bg2: 'VIP 1', en: 'Зала Галата' },
+      { x: 82000, y: -4000, bg: '#dbeafe', bg2: 'VIP 1', en: 'Galata Hall' },
       { x: 39000, y: -27000, bg: '#dbeafe', bg2: 'VIP 2', en: 'Conference Room' },
       { x: 94870, y: -16000, bg: '#dbeafe', bg2: 'VIP 3', en: 'Conference Room' },
       { x: 1000, y: -29000, bg: '#dbeafe', bg2: 'VIP 4', en: 'Conference Room' },
     ];
     groups.halls = new THREE.Group();
     for (const h of HALLS) {
-      const s = hallSprite(h.bg, h.bg2, h.en);
+      // hallSprite draws line1 bold/large, line2 smaller — show the current
+      // site language on top, the other language underneath.
+      const s = window.LANG === 'en' ? hallSprite(h.bg, h.en, h.bg2) : hallSprite(h.bg, h.bg2, h.en);
       s.position.set(WX(h.x), 7.5, WZ(h.y));
       groups.halls.add(s);
     }
@@ -2423,9 +2500,14 @@
         groups.ghostzones.add(outline);
 
         if (!z.hideLabel) {
+          const _isEn = window.LANG === 'en';
           const _glc = z.label === 'ТОАЛЕТНИ' ? '#9CA3AF' : z.label === 'СЛУЖЕБНИ' ? '#A1A1AA' : '#6B7280';
-          const _gl1 = z.label === 'ТОАЛЕТНИ' ? 'WC' : z.label === 'КУХНЯ' || z.label === 'ЗОНА ЗАКУСКИ' ? 'КУХНЯ' : z.label === 'СЛУЖЕБНИ' ? 'СЛУЖЕБНИ' : z.label;
-          const _gl2 = z.label === 'ТОАЛЕТНИ' ? 'ТОАЛЕТНИ' : z.label === 'КУХНЯ' || z.label === 'ЗОНА ЗАКУСКИ' ? 'Kitchen' : z.label === 'СЛУЖЕБНИ' ? 'Service' : '';
+          // 'WC' is language-neutral and always primary; the other zones show
+          // the current site language on top, Bulgarian/English underneath.
+          const _glBg = z.label === 'ТОАЛЕТНИ' ? 'ТОАЛЕТНИ' : z.label === 'КУХНЯ' || z.label === 'ЗОНА ЗАКУСКИ' ? 'КУХНЯ' : z.label === 'СЛУЖЕБНИ' ? 'СЛУЖЕБНИ' : z.label;
+          const _glEn = z.label === 'ТОАЛЕТНИ' ? 'Restrooms' : z.label === 'КУХНЯ' || z.label === 'ЗОНА ЗАКУСКИ' ? 'Kitchen' : z.label === 'СЛУЖЕБНИ' ? 'Service' : '';
+          const _gl1 = z.label === 'ТОАЛЕТНИ' ? 'WC' : (_isEn ? _glEn : _glBg);
+          const _gl2 = z.label === 'ТОАЛЕТНИ' ? (_isEn ? _glEn : _glBg) : (_isEn ? _glBg : _glEn);
           const glabel = hallSprite(_glc, _gl1, _gl2);
           glabel.position.set(WX(z.x), 7.5, WZ(z.y));
           groups.halls.add(glabel);
@@ -2451,7 +2533,9 @@
       reserved: { col: 0xF39C12, emi: 0x3d2a03 },
       partner: { col: 0xffffff, emi: 0x444444 },
     };
-    const STATUS_LABELS = { free: 'Свободен', occupied: 'Зает', reserved: 'Резервиран', partner: 'Партньор' };
+    const STATUS_LABELS = window.LANG === 'en'
+      ? { free: t3d('free'), occupied: t3d('occupied'), reserved: t3d('reserved'), partner: t3d('partner') }
+      : { free: 'Свободен', occupied: 'Зает', reserved: 'Резервиран', partner: 'Партньор' };
     const STATUS_HEX = { free: '#2ECC71', occupied: '#7F8C8D', reserved: '#F39C12', partner: '#1F618D' };
 
     const OCC_COL = 0x7F8C8D, OCC_EMI = 0x1c2122;
@@ -2923,12 +3007,12 @@
       if (hit) {
         const u = hit.object.userData;
         _ttNum.textContent = 'Щанд #' + u.n;
-        _ttName.textContent = u.company || 'Свободен щанд';
+        _ttName.textContent = u.company || t3d('freeStand', 'Свободен щанд');
         if (u.logo) { _ttLogo.src = u.logo; _ttLogo.style.display = 'block'; }
         else _ttLogo.style.display = 'none';
         const label = STATUS_LABELS[u.status] || u.status;
         const hex = STATUS_HEX[u.status] || '#fff';
-        _ttBadge.innerHTML = `<span class="tt-badge" style="background:${hex}22;color:${hex};border:1px solid ${hex}55">${label}</span><br><span style="font-size:10px;color:#4a6a8a;margin-top:4px;display:block">Задръж за подробности</span>`;
+        _ttBadge.innerHTML = `<span class="tt-badge" style="background:${hex}22;color:${hex};border:1px solid ${hex}55">${label}</span><br><span style="font-size:10px;color:#4a6a8a;margin-top:4px;display:block">${t3d('holdForDetails', 'Задръж за подробности')}</span>`;
         const px = ev.clientX + 16, py = ev.clientY - 12;
         _tooltip.style.left = Math.min(px, window.innerWidth - 270) + 'px';
         _tooltip.style.top = Math.max(8, py) + 'px';
@@ -3017,7 +3101,7 @@
       const isOccupied = u.status === 'occupied' || u.status === 'partner' || u.status === 'reserved';
       if (isOccupied) {
         cta.style.display = 'none';
-        occupiedBanner.textContent = u.status === 'reserved' ? 'Резервиран' : 'Щандът е зает';
+        occupiedBanner.textContent = u.status === 'reserved' ? t3d('reserved', 'Резервиран') : t3d('standOccupied', 'Щандът е зает');
         occupiedBanner.style.display = 'block';
       } else {
         occupiedBanner.style.display = 'none';
@@ -3702,7 +3786,7 @@
           wtEuler.setFromQuaternion(cam.quaternion);
           _wtYawVel = 0; _wtPitchVel = 0;
           _buildCollision();
-          document.getElementById('btnEnterWT').textContent = '🚶 Влез в залата';
+          document.getElementById('btnEnterWT').textContent = '🚶 ' + t3d('enterRoom', 'Влез в залата');
         }
         markDirty();
       }

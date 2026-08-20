@@ -4335,7 +4335,7 @@
 
     <!-- Navigation -->
     <div id="site-nav-root"></div>
-    <script src="shared/site-chrome.js?v=20260818-2"></script>
+    <script src="shared/site-chrome.js?v=20260820"></script>
     <script>SiteChrome.renderNav('home');</script>
 
     <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
@@ -4368,11 +4368,10 @@
                   Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и
                   света.</p>
                 <div class="cx-hero-buttons">
-                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,'#tickets')"
-                    data-bg="Купи Билет" data-en="Buy Ticket">
+                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')">
                     <span data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</span> <span
                       aria-hidden="true">&rarr;</span></button>
-                  <a href="#program" class="btn btn-outline cx-hero-btn" data-bg="Виж програмата" data-en="See program">
+                  <a href="#program" class="btn btn-outline cx-hero-btn">
                     <span data-bg="Виж програмата" data-en="See program">Виж програмата</span> <span
                       aria-hidden="true">&darr;</span></a>
                 </div>
@@ -4492,7 +4491,7 @@
       <!-- CTA Banner -->
       <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
         <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-content:center; align-items:center">
-          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,'#tickets')" class="btn btn-primary"
+          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')" class="btn btn-primary"
             style="padding:16px 40px;font-size:1.1rem;border-radius:8px;margin-bottom:28px;display:inline-block"
             data-bg="ЗАПАЗИ МЯСТО" data-en="RESERVE A SPOT">ЗАПАЗИ МЯСТО</button>
           <h2
@@ -5157,7 +5156,7 @@
             },
             { time: '16:05 – 16:20', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
             { time: '16:20 – 16:50', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Обобщаващ панел', en: 'Summary Panel' }, track: null }] },
-            { time: '20:00 – 22:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Парти – ресторант х-л „Черно море“', en: 'Party – Hotel Cherno More restaurant' }, track: null }] }
+            { time: '20:00 – 22:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Networking парти – ресторант х-л „Черно море“', en: 'Networking Party – Hotel Cherno More restaurant' }, track: null }] }
           ]
         },
         {
@@ -5632,7 +5631,7 @@
                 </svg>
               </div>
               <p class="event-meta" data-bg="6 октомври вечер" data-en="Oct 6 evening">6 октомври вечер</p>
-              <h3 data-bg="Парти" data-en="Party">Парти</h3>
+              <h3 data-bg="Networking парти" data-en="Networking Party">Networking парти</h3>
               <p data-bg="Парти за нетуъркинг и забавление." data-en="Party for networking and fun.">Парти за
                 нетуъркинг и забавление.</p>
             </div>
@@ -5926,7 +5925,7 @@
         <h2 data-bg="Ще се видим във Варна." data-en="See you in Varna.">Ще се видим във Варна.</h2>
         <p data-bg="5-7 окт 2026 • CONNEXUS" data-en="5-7 Oct 2026 • CONNEXUS">5-7 окт 2026 • CONNEXUS</p>
         <div class="prefooter-buttons">
-          <button class="btn btn-primary open-register-modal" data-modal-open="register" data-bg="Регистрирай се" data-en="Register now">Регистрирай
+          <button class="btn btn-primary" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')" data-bg="Регистрирай се" data-en="Register now">Регистрирай
             се</button>
           <button class="btn btn-outline open-exhibitor-modal" data-modal-open="exhibitor"
             style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител"
@@ -6169,7 +6168,7 @@
 
     <!-- Mobile Sticky CTA -->
     <div id="bstf-mob-cta">
-      <button class="btn open-register-modal" data-modal-open="register"
+      <button class="btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')"
         style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
         data-bg="Регистрирай се" data-en="Register now">Регистрирай се</button>
     </div>
@@ -6216,7 +6215,7 @@
           var showDiscount = !!(promo && promo.discountVisible);
           var pct = showDiscount ? (Number(promo.discountPercent) || 0) : 0;
           if (pct <= 0 || pct >= 100) showDiscount = false;
-          var company = (showDiscount && promo.company) ? bstfEscapeHtml(promo.company) : '';
+          var company = (showDiscount && promo.company) ? bstfEscapeHtml(currentLang === 'en' ? (promo.companyEn || promo.company) : promo.company) : '';
 
           document.querySelectorAll('.ticket-price[data-base-price]').forEach(function (priceEl) {
             var base = Number(priceEl.getAttribute('data-base-price'));
@@ -6241,7 +6240,7 @@
               if (company) {
                 var source = document.createElement('span');
                 source.className = 'ticket-discount-source';
-                source.innerHTML = 'Осигурено от <strong>' + company + '</strong>';
+                source.innerHTML = bstfFormMsg({ bg: 'Осигурено от <strong>' + company + '</strong>', en: 'Provided by <strong>' + company + '</strong>' });
                 priceEl.appendChild(source);
               }
             } else {
@@ -6495,7 +6494,7 @@
               if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
-                history.replaceState(null, null, hash);
+                history.replaceState(null, null, location.pathname + location.search + hash);
               }
             }
           });
@@ -6900,7 +6899,7 @@
             var t = document.getElementById('tickets');
             if (t) {
               t.scrollIntoView({ behavior: 'smooth' });
-              history.replaceState(null, null, '#tickets');
+              history.replaceState(null, null, location.pathname + location.search + '#tickets');
             }
           });
         }
@@ -6952,11 +6951,27 @@
             var id = link.getAttribute('href').substring(1);
             linkMap[id] = link;
           });
+          // Keep the BG/EN toggle link's hash in sync with whichever section is
+          // currently on screen, so switching language lands on the same
+          // section instead of wherever the hash happened to be at page load.
+          var langLink = document.querySelector('.lang-toggle a:not([href="#"])');
           function setActive(id) {
             navLinks.forEach(function (l) { l.classList.remove('active'); });
             if (linkMap[id]) linkMap[id].classList.add('active');
+            if (langLink) {
+              var href = langLink.getAttribute('href');
+              var hashIdx = href.indexOf('#');
+              var base = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
+              langLink.setAttribute('href', base + '#' + id);
+            }
           }
           var sectionIds = Object.keys(linkMap);
+          // Track a few more real sections beyond the ones the nav links to
+          // directly — only for the language-toggle hash above, nav
+          // highlighting still only lights up for ids present in linkMap.
+          ['sponsors', 'speakers', 'expo', 'venue', 'tickets'].forEach(function (id) {
+            if (sectionIds.indexOf(id) === -1 && document.getElementById(id)) sectionIds.push(id);
+          });
           if (!sectionIds.length) return;
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
