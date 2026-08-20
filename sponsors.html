@@ -1070,6 +1070,7 @@ window.addEventListener('pageshow',function(e){if(e.persisted)window.location.re
 
   // Bridge: "Резервирай щанд" inside the 3D viewer opens the exhibitor inquiry modal.
   window.addEventListener('message', function(ev) {
+    if (ev.origin !== window.location.origin) return;
     var d = ev.data || {};
     if (d.type === 'bstf3d' && d.action === 'reserveStand') {
       if (document.fullscreenElement) { document.exitFullscreen(); }
