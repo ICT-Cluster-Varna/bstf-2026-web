@@ -39,7 +39,8 @@
   <meta name="twitter:image" content="https://blackseatech.org/images/og-cover.jpg?v=20260731">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css">
+  <link rel="preload" href="https://use.typekit.net/oqj4tys.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://use.typekit.net/oqj4tys.css"></noscript>
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -1641,7 +1642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Track sections + speaker cards (rendered from data/speakers-data.js) -->
       <div id="tracks-container"></div>
 
-      <script type="text/javascript" src="data/speakers-data.js?v=20260820"></script>
+      <script type="text/javascript" src="data/speakers-data.js?v=20260821-3"></script>
       <script>
         (function () {
           'use strict';
@@ -2020,7 +2021,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Smooth page transitions
       document.querySelectorAll('a[href]').forEach(function (link) {
         var href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+        if (!href || href.startsWith('#') || href.split('#')[0] === location.pathname.split('/').pop() || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
         link.addEventListener('click', function (e) {
           if (e.ctrlKey || e.metaKey || e.shiftKey) return;
           e.preventDefault();
