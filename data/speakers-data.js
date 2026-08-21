@@ -94,6 +94,17 @@
       descEn: 'Smart systems, robotics and IoT integration',
       dot: '#00cdff',
       countPluralBg: 'лектора'
+    },
+    {
+      id: 'agritech',
+      nameBg: 'АГРОТЕХНОЛОГИИ',
+      nameEn: 'AGRITECH',
+      labelBg: 'Агротехнологии',
+      labelEn: 'AgriTech',
+      descBg: 'Технологии за прецизно и устойчиво земеделие',
+      descEn: 'Technologies for precision and sustainable agriculture',
+      dot: '#00cdff',
+      countPluralBg: 'лектора'
     }
   ];
 
@@ -575,6 +586,28 @@
       ],
       sessionDescEn: 'Panel discussion - "The European Union\'s innovation attraction power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Paul Lambert, Ambassador of Belgium to Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
       sessionDescBg: 'Панелна дискусия - „Иновационната привлекателност на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+    },
+
+    // ── AgriTech ──
+    {
+      id: 'ilia-iordanov', track: 'agritech',
+      img: '/images/speakers/ilia-iordanov.jpg?v=20260821', alt: 'Ilia Iordanov',
+      objectPosition: 'center 8%',
+      name: 'Илия Йорданов',
+      nameEn: 'Ilia Iordanov',
+      role: 'Co-founder @ ONDO',
+      topicBg: 'Технологии в земеделието - внедряване на AI',
+      topicEn: 'Technology in agriculture - implementing AI',
+      bioEn: [
+        'Ilia Iordanov is co-founder of ONDO - a Bulgarian technology company for irrigation, fertigation and climate control automation. He works towards more efficient and sustainable agriculture through innovative solutions deployed in more than 8 countries across Europe and Africa.'
+      ],
+      bioBg: [
+        'Илия Йорданов е съосновател на ONDO – българска технологична компания за автоматизация на напояването, торенето и климатичния контрол. Работи за по-ефективно и устойчиво земеделие чрез иновативни решения, внедрени в над 8 държави в Европа и Африка.'
+      ],
+      sessionDescBg: 'Как изкуственият интелект и автоматизацията променят съвременното земеделие – от събирането и анализа на данни до прецизното управление на напояването, торенето и климата. Темата представя практическия опит на ONDO и ползите за по-ефективно, устойчиво и рентабилно производство.',
+      sessionDescEn: "How artificial intelligence and automation are transforming modern agriculture - from data collection and analysis to precision management of irrigation, fertigation and climate. The talk presents ONDO's practical experience and the benefits for more efficient, sustainable and profitable production.",
+      takeawaysBg: 'Как AI и автоматизацията подпомагат решенията за напояване, торене и климатичен контрол. Практически стъпки за внедряване на нови технологии в реално земеделско стопанство. Как технологиите намаляват разходите и използваните ресурси и повишават добивите.',
+      takeawaysEn: 'How AI and automation support decisions on irrigation, fertigation and climate control. Practical steps for implementing new technologies on a real farm. How technology reduces costs and resource use while increasing yields.'
     }
   ];
 
