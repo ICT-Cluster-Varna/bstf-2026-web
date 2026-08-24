@@ -1,6 +1,9 @@
 /*
  * BSTF 2026 - single source of truth for speaker & track data.
- * Consumed by speakers.html (listing) and speaker.html (detail page).
+ * Consumed by speakers.html (listing) at runtime, and by the speaker-page
+ * generator at build time to produce the static speakers/{slug}/index.html
+ * and en/speakers/{slug}/index.html pages (speaker.html itself is now just
+ * a redirect shim and no longer reads this file).
  * Loaded as a plain <script> (not a module) so it works over file:// too.
  */
 (function (global) {
