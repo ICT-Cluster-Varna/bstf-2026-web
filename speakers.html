@@ -2067,7 +2067,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       window.setLang = setLang;
       document.querySelectorAll('.lang-toggle a').forEach(function (btn) {
-        btn.addEventListener('click', function (e) { if (btn.getAttribute('href') === '#') e.preventDefault(); setLang(btn.dataset.lang); });
+        btn.addEventListener('click', function (e) { if (btn.getAttribute('href') === '#') { e.preventDefault(); setLang(btn.dataset.lang); } });
       });
       setLang(currentLang);
 
