@@ -589,8 +589,8 @@
     },
     {
       id: 'michael-roux', track: 'regional-innovation-policy',
-      img: '/images/speakers/michael-roux.jpg?v=20260824', alt: 'Michaël Roux',
-      objectPosition: 'center 12%',
+      img: '/images/speakers/michael-roux.jpg?v=20260824-2', alt: 'Michaël Roux',
+      objectPosition: 'center 48%',
       name: 'Michaël Roux',
       role: 'Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France',
       topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
