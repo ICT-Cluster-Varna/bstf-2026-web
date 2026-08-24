@@ -28,6 +28,8 @@ window.STANDS_DATA = {
     6:  { company: 'Top-Rent-A-Car',                     logo: 'Logos/toprentacar.png',               status: 'partner',  website: '', description: '' },
     7:  { company: 'ResearchMetrics',                    logo: 'Logos/ResearchMetrics.png',           status: 'occupied', website: '', description: '' },
     8:  { company: 'ITRM Consult',                       logo: 'Logos/ITR Management Consult.png',    status: 'occupied', website: '', description: '' },
+    9:  { company: 'DXC',                                logo: 'Logos/dxc.png',                       status: 'occupied', website: '', description: '' },
+    10: { company: 'SIS Technology',                     logo: 'Logos/sis-technology.png',            status: 'occupied', website: '', description: '' },
     12: { company: 'Netpeak & PR Market',                logo: 'Logos/Netpeak_logo.svg',              status: 'occupied', website: '', description: '' },
     13: { company: 'Electrohold',                        logo: 'Logos/ElectroHold_Logo_Sales.svg',    status: 'occupied', website: '', description: '' },
     11: { company: 'Omnilinx',                           logo: 'Logos/omnilinx.svg',                  status: 'occupied', website: 'https://omnilinx.com/en/', description: '' },

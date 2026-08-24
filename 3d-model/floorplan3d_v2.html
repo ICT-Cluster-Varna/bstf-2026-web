@@ -1167,18 +1167,20 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260821"></script>
-  <script src="bsmepa_logo.js?v=20260821"></script>
-  <script src="toprentacar_logo.js?v=20260819"></script>
-  <script src="electrohold_logo.js?v=20260819"></script>
-  <script src="netpeak_logo.js?v=20260819"></script>
-  <script src="researchmetrics_logo.js?v=20260819"></script>
-  <script src="nearshore_logo.js?v=20260819"></script>
-  <script src="omnilinx_logo.js?v=20260819"></script>
+  <script src="stands.js?v=20260824"></script>
+  <script src="bsmepa_logo.js?v=20260824"></script>
+  <script src="toprentacar_logo.js?v=20260824"></script>
+  <script src="electrohold_logo.js?v=20260824"></script>
+  <script src="netpeak_logo.js?v=20260824"></script>
+  <script src="researchmetrics_logo.js?v=20260824"></script>
+  <script src="nearshore_logo.js?v=20260824"></script>
+  <script src="omnilinx_logo.js?v=20260824"></script>
+  <script src="dxc_logo.js?v=20260824"></script>
+  <script src="sistechnology_logo.js?v=20260824"></script>
   <!-- //fix -->
-  <script src="./libs/three.min.js?v=20260819"></script>
-  <script src="./libs/OrbitControls-global.js?v=20260819"></script>
-  <script src="data.js?v=20260819"></script>
+  <script src="./libs/three.min.js?v=20260824"></script>
+  <script src="./libs/OrbitControls-global.js?v=20260824"></script>
+  <script src="data.js?v=20260824"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -2880,6 +2882,29 @@
       img.src = window.OMNILINX_LOGO_SRC;
     })();
 
+    // -- Stand 9 – DXC logo on facade ------------------
+    (() => {
+      const m9 = standMeshes.find(m => m.userData.n === 9);
+      if (!m9) return;
+      const img = new Image();
+      img.onload = () => {
+        groups.stand.add(makeSignPanel(m9, img, { company: 'DXC', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        markDirty();
+      };
+      img.src = window.DXC_LOGO_SRC;
+    })();
+
+    // -- Stand 10 – SIS Technology logo on facade ------------------
+    (() => {
+      const m10 = standMeshes.find(m => m.userData.n === 10);
+      if (!m10) return;
+      const img = new Image();
+      img.onload = () => {
+        groups.stand.add(makeSignPanel(m10, img, { company: 'SIS Technology', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        markDirty();
+      };
+      img.src = window.SISTECHNOLOGY_LOGO_SRC;
+    })();
 
 
     // group scale = scale spacing (about centroid) + size together
