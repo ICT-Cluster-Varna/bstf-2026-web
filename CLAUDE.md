@@ -71,11 +71,21 @@ All 9 requirements from the SEO/UX audit are implemented:
 
 ## Shared Nav/Footer Component
 
-`index.html`, `speakers.html`, `speaker.html`, and `sponsors.html` no longer carry their own `<nav>`/`<footer>` markup inline. Each has an empty `<div id="site-nav-root"></div>` / `<div id="site-footer-root"></div>` placeholder, a `<script src="shared/site-chrome.js?v=YYYYMMDD">` include, and one init call: `SiteChrome.renderNav('home'|'speakers'|'speaker'|'sponsors')` / `SiteChrome.renderFooter(...)`. `shared/site-chrome.js` derives all per-page differences (in-page anchor vs `index.html#anchor` hrefs, active nav link, home-only dual white/black logo) from that single pageKey string — added 2026-08-05 to de-duplicate markup that previously had to be hand-edited in 4 places. The render calls must run before any other inline script that queries `.main-nav`/`.main-footer` elements (mobile-menu toggle, language toggle, copy-to-clipboard), since those still live in each page's own script and assume the elements already exist — this works because the script tags execute in document order and the render calls are placed where the old inline nav/footer markup used to be. Modal markup/JS is intentionally NOT part of this shared component (see below).
+`index.html`, `speakers.html`, `speakers/{slug}/index.html` (see below), and `sponsors.html` no longer carry their own `<nav>`/`<footer>` markup inline. Each has an empty `<div id="site-nav-root"></div>` / `<div id="site-footer-root"></div>` placeholder, a `<script src="shared/site-chrome.js?v=YYYYMMDD">` include, and one init call: `SiteChrome.renderNav('home'|'speakers'|'speaker'|'sponsors', lang, overridePath)` / `SiteChrome.renderFooter(...)`. `shared/site-chrome.js` derives all per-page differences (in-page anchor vs `index.html#anchor` hrefs, active nav link, home-only dual white/black logo) from that single pageKey string — added 2026-08-05 to de-duplicate markup that previously had to be hand-edited in 4 places. The optional 3rd `overridePath` argument (added 2026-08-24) exists because per-speaker pages don't have one fixed filename for the BG⇄EN toggle to link to — each generated page passes its own `speakers/{slug}/` so `otherTreeLink()` builds the correct cross-language URL; every other caller omits it and falls back to the static `PAGE_FILE` map as before. The render calls must run before any other inline script that queries `.main-nav`/`.main-footer` elements (mobile-menu toggle, language toggle, copy-to-clipboard), since those still live in each page's own script and assume the elements already exist — this works because the script tags execute in document order and the render calls are placed where the old inline nav/footer markup used to be. Modal markup/JS is intentionally NOT part of this shared component (see below).
+
+## Per-Speaker Pages (`speakers/{slug}/`, `en/speakers/{slug}/`)
+
+As of 2026-08-24, each speaker has a real, server-delivered page at `speakers/{slug}/index.html` (BG) and `en/speakers/{slug}/index.html` (EN) — 26 speakers × 2 languages = 52 files — instead of the old single `speaker.html#slug` hash-routed page. **These files are generated, not hand-edited.** They're produced by a Node script from `data/speakers-data.js` (content) and a copy of the old `speaker.html`/`en/speaker.html` markup (CSS, modals, GTM, footer JS — all preserved verbatim as the template shell). Each page carries a per-speaker `<title>`/meta description (formula: `{Name}, лектор на CONNEXUS 2026` / `{Name}, speaker at CONNEXUS 2026`; meta description: `{Name}, {first-clause of role}, на CONNEXUS 2026, 5-7 октомври, Варна. Тема: {topic}.` and EN equivalent), per-speaker canonical/hreflang/OG tags, and a `ProfilePage`+`Person` JSON-LD block.
+
+To add/edit a speaker: change `data/speakers-data.js` only, then re-run the generator to regenerate all 52 files (do not hand-edit files under `speakers/`/`en/speakers/` — a regeneration will silently overwrite manual edits). The generator also owns `document.title`'s language-toggle value inside each page (baked as two static strings, no runtime lookup) — this is intentionally different from `speakers.html`/`sponsors.html`, which look up their title strings from a small in-page `if` rather than a data file, because a speaker page has no equivalent small fixed set.
+
+`speaker.html`/`en/speaker.html` still exist but are now thin **redirect shims** (`<meta name="robots" content="noindex">`): they read `location.hash` (or `?id=`) and `location.replace()` to the matching `speakers/{slug}/`, falling back to `speakers.html` if no slug is present. This preserves already-indexed/bookmarked/shared old-style links. Do not delete these two files or restore their old hash-rendering logic.
+
+`speakers.html`/`en/speakers.html`'s speaker cards (`renderCard()`) and their `CollectionPage` JSON-LD `itemListElement[].url` fields point at the new `speakers/{slug}/` URLs — keep both in sync if the URL scheme ever changes again.
 
 ## Modals — Per-Page, Not Shared
 
-Each page still defines its own modal markup and `openModal`/`closeModal`/focus-trap JS. `speakers.html`/`speaker.html` share a near-identical implementation (Tab-key focus trap, `role="dialog" aria-modal="true"`). `index.html` has a materially different implementation (CSS closing-animation via a `.closing` class, heavier client-side validation, promo-code lookup) — its focus-trap was ported in on 2026-08-05 but the closing-animation behavior was deliberately left as index.html-only rather than reconciled across files. `sponsors.html` has 4 modals (exhibitor, contact, soldout, register) using the same focus-trap pattern as speakers.html/speaker.html. All modal "forms" are real `<form>` elements with `type="submit"` CTA buttons (as of 2026-08-05) so native `required`/`type="email"` validation fires before the existing `submitX()` fetch logic runs; the `submitX()` functions themselves are unchanged. Do not attempt to merge modal markup into `shared/site-chrome.js` without first deciding which page's JS behavior (index.html's vs. the other three's) becomes canonical.
+Each page still defines its own modal markup and `openModal`/`closeModal`/focus-trap JS. `speakers.html` and every generated `speakers/{slug}/index.html` share a near-identical implementation (Tab-key focus trap, `role="dialog" aria-modal="true"`) — each of the 52 speaker pages carries its own copy, inherited verbatim from the old `speaker.html` template by the generator (see above), not shared at runtime. `index.html` has a materially different implementation (CSS closing-animation via a `.closing` class, heavier client-side validation, promo-code lookup) — its focus-trap was ported in on 2026-08-05 but the closing-animation behavior was deliberately left as index.html-only rather than reconciled across files. `sponsors.html` has 4 modals (exhibitor, contact, soldout, register) using the same focus-trap pattern as speakers.html/speakers/{slug}/. All modal "forms" are real `<form>` elements with `type="submit"` CTA buttons (as of 2026-08-05) so native `required`/`type="email"` validation fires before the existing `submitX()` fetch logic runs; the `submitX()` functions themselves are unchanged. Do not attempt to merge modal markup into `shared/site-chrome.js` without first deciding which page's JS behavior (index.html's vs. the other three's) becomes canonical.
 
 ## Parked Pages — Do Not Touch or Analyze
 
@@ -91,11 +101,10 @@ Every deployable file uses static `?v=YYYYMMDD` cache-busting query strings on s
 
 - `expo.html` — `floorplan3d_v2.html?v=YYYYMMDD` (iframe src)
 - `3d-model/floorplan3d_v2.html` — all `<script src="...?v=YYYYMMDD">` tags
-- `speaker.html` — `data/speakers-data.js?v=YYYYMMDD`
-- `speakers.html` — `data/speakers-data.js?v=YYYYMMDD`
+- `speakers.html` — `data/speakers-data.js?v=YYYYMMDD` (`speaker.html` no longer loads this file — it's now a redirect shim, see above)
 - `index.html`, `expo.html`, `speakers.html`, `sponsors.html` — `og:image`/`twitter:image` URL (`images/og-cover.jpg?v=YYYYMMDD`), only if `og-cover.jpg` itself changes
 - **All local image references** (`<img src="images/...">` and CSS `background:url('images/...')`) across `index.html`, `expo.html`, and `sponsors.html` — every one carries `?v=YYYYMMDD` (added 2026-07-03, per client request since deploys are manual via Cloudflare and edge-cached images were showing stale). Bump every one of these when its file changes; new `<img>`/`url()` references to `images/` must get a `?v=YYYYMMDD` from the start.
-- `index.html`, `speakers.html`, `speaker.html`, `sponsors.html` — `shared/site-chrome.js?v=YYYYMMDD` (added 2026-08-05). Bump in all 4 files whenever `shared/site-chrome.js` changes.
+- `index.html`, `speakers.html`, `sponsors.html` — `shared/site-chrome.js?v=YYYYMMDD` (added 2026-08-05). Bump in these 3 files, plus **re-run the speaker-page generator** (see "Per-Speaker Pages" above) whenever `shared/site-chrome.js` changes — the 52 generated files carry their own copy of this `<script src>` line and won't pick up a bump otherwise.
 
 If a same-day edit needs a second cache-bust, append a suffix instead of faking a date, e.g. `20260702-2`.
 
@@ -141,11 +150,13 @@ from **Cloudflare**, not the origin — set Caching → Configuration → Browse
 
 ## Tag Manager (always do this automatically)
 
-No build step exists, so the GTM container is hardcoded (script + `<noscript>` iframe) in every page rather than shared from one place. If the GTM ID `GTM-K6JDS83T` ever changes, update it in all 6 files:
+No build step exists, so the GTM container is hardcoded (script + `<noscript>` iframe) in every page rather than shared from one place. If the GTM ID `GTM-K6JDS83T` ever changes, update it in all 6 hand-authored files, plus the speaker-page template + regenerate:
 
 - `index.html`
 - `sponsors.html`
 - `speakers.html`
-- `speaker.html`
+- `speaker.html` (now a thin redirect shim, but still carries GTM)
 - `participants.html`
 - `expo.html`
+
+The 52 generated `speakers/{slug}/index.html` files also carry GTM (inherited from the old `speaker.html` template at generation time) — update the ID in the generator script's template source, then re-run it, rather than hand-editing any of the 52 files.

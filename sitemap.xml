@@ -42,16 +42,316 @@
   </url>
 
   <url>
-    <loc>https://www.blackseatech.org/speaker.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speaker.html"/>
+    <loc>https://www.blackseatech.org/speakers/martin-kuvandzhiev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/martin-kuvandzhiev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/martin-kuvandzhiev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/martin-kuvandzhiev/"/>
   </url>
   <url>
-    <loc>https://www.blackseatech.org/en/speaker.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speaker.html"/>
+    <loc>https://www.blackseatech.org/en/speakers/martin-kuvandzhiev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/martin-kuvandzhiev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/martin-kuvandzhiev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/martin-kuvandzhiev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/teade-punter/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/teade-punter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/teade-punter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/teade-punter/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/teade-punter/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/teade-punter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/teade-punter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/teade-punter/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/alexander-minchev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/alexander-minchev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/alexander-minchev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/alexander-minchev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/alexander-minchev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/alexander-minchev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/alexander-minchev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/alexander-minchev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/hristian-daskalov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/hristian-daskalov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/hristian-daskalov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/hristian-daskalov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/hristian-daskalov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/hristian-daskalov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/hristian-daskalov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/hristian-daskalov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/dragomir-vatkov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dragomir-vatkov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dragomir-vatkov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/dragomir-vatkov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/dragomir-vatkov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dragomir-vatkov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dragomir-vatkov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/dragomir-vatkov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/yasen-tanev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/yasen-tanev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/yasen-tanev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/yasen-tanev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/yasen-tanev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/yasen-tanev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/yasen-tanev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/yasen-tanev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/stanislav-simeonov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/stanislav-simeonov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/stanislav-simeonov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/stanislav-simeonov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/stanislav-simeonov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/stanislav-simeonov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/stanislav-simeonov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/stanislav-simeonov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/kristina-eskenazi/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kristina-eskenazi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kristina-eskenazi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/kristina-eskenazi/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/kristina-eskenazi/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kristina-eskenazi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kristina-eskenazi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/kristina-eskenazi/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/dimitar-karlovski/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dimitar-karlovski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dimitar-karlovski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/dimitar-karlovski/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/dimitar-karlovski/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dimitar-karlovski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dimitar-karlovski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/dimitar-karlovski/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/trifon-tsekov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/trifon-tsekov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/trifon-tsekov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/trifon-tsekov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/trifon-tsekov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/trifon-tsekov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/trifon-tsekov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/trifon-tsekov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/anton-tonchev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/anton-tonchev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/anton-tonchev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/anton-tonchev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/anton-tonchev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/anton-tonchev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/anton-tonchev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/anton-tonchev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/elitsa-encheva/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/elitsa-encheva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/elitsa-encheva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/elitsa-encheva/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/elitsa-encheva/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/elitsa-encheva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/elitsa-encheva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/elitsa-encheva/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/krastena-nikolova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/krastena-nikolova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/krastena-nikolova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/krastena-nikolova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/krastena-nikolova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/krastena-nikolova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/krastena-nikolova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/krastena-nikolova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/kristina-bliznakova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kristina-bliznakova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kristina-bliznakova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/kristina-bliznakova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/kristina-bliznakova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kristina-bliznakova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kristina-bliznakova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/kristina-bliznakova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/oskan-tasinov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/oskan-tasinov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/oskan-tasinov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/oskan-tasinov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/oskan-tasinov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/oskan-tasinov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/oskan-tasinov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/oskan-tasinov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/svetlin-stoyanov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/svetlin-stoyanov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/svetlin-stoyanov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/svetlin-stoyanov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/svetlin-stoyanov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/svetlin-stoyanov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/svetlin-stoyanov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/svetlin-stoyanov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/cemile-usta/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/cemile-usta/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/cemile-usta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/cemile-usta/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/cemile-usta/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/cemile-usta/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/cemile-usta/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/cemile-usta/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/elitza-stoilova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/elitza-stoilova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/elitza-stoilova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/elitza-stoilova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/elitza-stoilova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/elitza-stoilova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/elitza-stoilova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/elitza-stoilova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/andrey-lilov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/andrey-lilov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/andrey-lilov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/andrey-lilov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/andrey-lilov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/andrey-lilov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/andrey-lilov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/andrey-lilov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/kalina-tsolova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kalina-tsolova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kalina-tsolova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/kalina-tsolova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/kalina-tsolova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kalina-tsolova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kalina-tsolova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/kalina-tsolova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/georgi-dobrev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/georgi-dobrev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/georgi-dobrev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/georgi-dobrev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/georgi-dobrev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/georgi-dobrev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/georgi-dobrev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/georgi-dobrev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/ruslan-stefanov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ruslan-stefanov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ruslan-stefanov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/ruslan-stefanov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/ruslan-stefanov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ruslan-stefanov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ruslan-stefanov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/ruslan-stefanov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/paul-lambert/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/paul-lambert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/paul-lambert/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/paul-lambert/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/paul-lambert/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/paul-lambert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/paul-lambert/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/paul-lambert/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/michael-roux/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/michael-roux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/michael-roux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/michael-roux/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/michael-roux/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/michael-roux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/michael-roux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/michael-roux/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/lars-frolund/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/lars-frolund/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/lars-frolund/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/lars-frolund/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/lars-frolund/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/lars-frolund/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/lars-frolund/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/lars-frolund/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/ilia-iordanov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ilia-iordanov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ilia-iordanov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/ilia-iordanov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/ilia-iordanov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ilia-iordanov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ilia-iordanov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/ilia-iordanov/"/>
   </url>
 
 </urlset>

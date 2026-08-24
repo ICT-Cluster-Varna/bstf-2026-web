@@ -52,18 +52,21 @@
   // Cross-tree link for the BG/EN nav toggle: each language now lives at its
   // own URL (root = BG, /en/ = EN) instead of an in-page JS swap, so the
   // toggle must navigate to the sibling file in the other tree.
-  function otherTreeLink(pageKey, lang) {
-    var file = PAGE_FILE[pageKey] || PAGE_FILE.home;
-    // Preserve the current query string (e.g. speaker.html?slug=...) and hash
-    // so switching language keeps you on the same speaker/anchor instead of
-    // dropping back to the page with no selection.
+  function otherTreeLink(pageKey, lang, overridePath) {
+    // overridePath is used by generated per-speaker pages (speakers/{slug}/index.html),
+    // which don't have a single fixed filename in PAGE_FILE -- each slug needs its own
+    // cross-language target (e.g. speakers/martin-kuvandzhiev/), not the shared 'speaker.html'.
+    var file = overridePath || PAGE_FILE[pageKey] || PAGE_FILE.home;
+    // Preserve the current query string and hash (e.g. legacy ?id=... links) so
+    // switching language keeps you on the same selection instead of dropping back
+    // to the page with nothing selected.
     var suffix = window.location.search + window.location.hash;
     return escAttr((lang === 'bg' ? 'en/' + file : '../' + file) + suffix);
   }
 
-  function langToggleHtml(pageKey, lang) {
-    var bgHref = lang === 'bg' ? '#' : otherTreeLink(pageKey, lang);
-    var enHref = lang === 'en' ? '#' : otherTreeLink(pageKey, lang);
+  function langToggleHtml(pageKey, lang, overridePath) {
+    var bgHref = lang === 'bg' ? '#' : otherTreeLink(pageKey, lang, overridePath);
+    var enHref = lang === 'en' ? '#' : otherTreeLink(pageKey, lang, overridePath);
     var bgCls = lang === 'bg' ? ' class="active"' : '';
     var enCls = lang === 'en' ? ' class="active"' : '';
     return '<div class="lang-toggle">' +
@@ -99,7 +102,7 @@
       '</a>';
   }
 
-  function renderNav(pageKey, lang) {
+  function renderNav(pageKey, lang, overridePath) {
     var root = document.getElementById('site-nav-root');
     if (!root) return;
     lang = lang || 'bg';
@@ -112,7 +115,7 @@
       logoHtml(cfg) +
       '<div class="nav-links">' + links + '</div>' +
       '<div class="nav-right">' +
-      langToggleHtml(pageKey, lang) +
+      langToggleHtml(pageKey, lang, overridePath) +
       '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</button>' +
       '<button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>' +
       '</div>' +
