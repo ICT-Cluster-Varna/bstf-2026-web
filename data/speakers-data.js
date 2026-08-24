@@ -572,8 +572,8 @@
       objectPosition: 'center 12%',
       name: 'Paul Lambert',
       role: 'Ambassador of the Kingdom of Belgium to the Republic of Bulgaria',
-      topicBg: 'Иновационната привлекателност на Европейския съюз в Черноморския регион',
-      topicEn: "The European Union's innovation attraction power in the Black Sea region",
+      topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
+      topicEn: "The European Union's innovation and geoeconomic power in the Black Sea region",
       bioEn: [
         'Paul Lambert combines over 25 years of diplomatic experience. Most recently, from summer 2020 till summer 2024, as Deputy DG ICT, Mr. Lambert was heading the cybersecurity department at the Belgian Ministry of Foreign Affairs. He pushed for high user acceptance of broad cybersecurity to achieve long-lasting changes (mass roll-out of modern endpoints, introduction of an anti-phishing platform, a DLP scheme, phasing out of Bring Your Own Devices) and pushed for a pilot project on the use of AI to render official data more readily available.',
         'During his previous tenure, from 2016 till 2020, Mr. Lambert was the Belgian Consul General in Shanghai, where he contributed to the success of a large Trade Mission which led to new commercial ventures in the sports area, notably regarding football.',
@@ -582,10 +582,48 @@
       bioBg: [
         'Пол Ламбърт съчетава над 25 години дипломатически опит. Най-скоро, от лятото на 2020 г. до лятото на 2024 г., като заместник генерален директор „ИКТ“, г-н Ламбърт ръководи отдела по киберсигурност в белгийското Министерство на външните работи. Той работи за високо ниво на приемане от потребителите на широкообхватни мерки за киберсигурност с цел постигане на трайни промени (масово внедряване на съвременни крайни устройства, въвеждане на платформа срещу фишинг, DLP схема, извеждане от употреба на политиката „донеси своето устройство“ (BYOD)) и подкрепя пилотен проект за използване на AI за по-лесен достъп до официални данни.',
         'През предходния си мандат, от 2016 до 2020 г., г-н Ламбърт е бил генерален консул на Белгия в Шанхай, където допринася за успеха на голяма търговска мисия, довела до нови търговски начинания в областта на спорта, по-специално във футбола.',
-        'На CONNEXUS 2026 посланик Ламбърт се присъединява към панела „Иновационната привлекателност на Европейския съюз в Черноморския регион“, заедно с Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+        'На CONNEXUS 2026 посланик Ламбърт се присъединява към панела „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“, заедно с Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
       ],
       sessionDescEn: 'Panel discussion - "The European Union\'s innovation attraction power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Paul Lambert, Ambassador of Belgium to Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
-      sessionDescBg: 'Панелна дискусия - „Иновационната привлекателност на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+    },
+    {
+      id: 'michael-roux', track: 'regional-innovation-policy',
+      img: '/images/speakers/michael-roux.jpg?v=20260824-2', alt: 'Michaël Roux',
+      objectPosition: 'center 48%',
+      name: 'Michaël Roux',
+      role: 'Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France',
+      topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
+      topicEn: "The European Union's innovation and geoeconomic power in the Black Sea region",
+      bioEn: [
+        'Michaël Roux, born in 1966, is a career French diplomat and a graduate of the National School of Statistics and Economic Administration (France). Before joining the French Ministry for Europe and Foreign Affairs in 2002, he worked as a consultant, notably for the European Commission and the World Bank, on projects including the pre-accession of Bulgaria and Romania and various TACIS programmes across Europe, Africa and Asia.',
+        'As a career diplomat since 2002, he served as desk officer for the directorate for Africa and the Indian Ocean in Paris, Deputy Head of Mission in Mauritius (2005-2008) and in Ukraine (2008-2012), and Deputy Director for Southern Africa and the Indian Ocean (2012-2016). He was Ambassador of France to the Kyrgyz Republic (2016-2020) and to the Republic of Liberia (2020-2023), and has served as Ambassador for the Eastern Partnership and the Black Sea since 2023.',
+        'At CONNEXUS 2026, Ambassador Roux joins the panel "The European Union\'s innovation attraction power in the Black Sea region", together with Paul Lambert, Ambassador of the Kingdom of Belgium to the Republic of Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.'
+      ],
+      bioBg: [
+        'Michaël Roux, роден през 1966 г., е кариерен френски дипломат и завършва Националното училище по статистика и икономическа администрация на Франция. Преди да се присъедини към френското Министерство на Европа и външните работи през 2002 г., той работи като консултант, включително за Европейската комисия и Световната банка, по проекти, свързани с предприсъединяването на България и Румъния, както и различни програми TACIS в Европа, Африка и Азия.',
+        'Като кариерен дипломат от 2002 г. насам, той е служител в дирекция „Африка и Индийски океан“ в Париж, заместник-ръководител на мисията в Мавриций (2005-2008 г.) и в Украйна (2008-2012 г.), както и заместник-директор за Южна Африка и Индийски океан (2012-2016 г.). Бил е посланик на Франция в Киргизката република (2016-2020 г.) и в Република Либерия (2020-2023 г.), а от 2023 г. е посланик за Източното партньорство и Черноморския регион.',
+        'На CONNEXUS 2026 посланик Roux се присъединява към панела „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“, заедно с Пол Ламбърт, посланик на Кралство Белгия в Република България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+      ],
+      sessionDescEn: 'Panel discussion - "The European Union\'s innovation attraction power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Paul Lambert, Ambassador of Belgium to Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
+      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+    },
+    {
+      id: 'lars-frolund', track: 'regional-innovation-policy',
+      img: '/images/speakers/lars-frolund.jpg?v=20260824', alt: 'Dr. Lars Frølund',
+      objectPosition: 'center 15%',
+      name: 'Dr. Lars Frølund',
+      role: 'Lecturer @ MIT | Strategic Advisor @ NATO Innovation Fund',
+      topicBg: 'Към европейска иновационна екосистема: как Европа може да се конкурира и партнира със САЩ и Китай',
+      topicEn: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China',
+      bioEn: [
+        'Dr. Lars Frølund is a Deep Tech Investment expert and executive. His expertise lies at the intersection of mission-driven innovation (incl. defense and security), grant & venture capital investments into deep tech ventures, and the geopolitical/strategic aspects of technological capacity building at the national and international level.',
+        'He is a Distinguished Senior Lecturer at the Massachusetts Institute of Technology (MIT) and an adjunct professor at the Niels Bohr Institute, Copenhagen University.'
+      ],
+      bioBg: [
+        'Д-р Lars Frølund е експерт и ръководител в областта на инвестициите в дълбоки технологии (deep tech). Опитът му се намира в пресечната точка на мисийно-ориентираните иновации (вкл. отбрана и сигурност), грантовите и рисковите капиталови инвестиции в дълбокотехнологични проекти, и геополитическите/стратегическите аспекти на изграждането на технологичен капацитет на национално и международно ниво.',
+        'Той е Distinguished Senior Lecturer в Масачузетския технологичен институт (MIT) и хоноруван професор в Института „Нилс Бор“ към Университета на Копенхаген.'
+      ]
     },
 
     // ── AgriTech ──

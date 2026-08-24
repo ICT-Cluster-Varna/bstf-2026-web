@@ -3,55 +3,55 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://blackseatech.org/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/"/>
+    <loc>https://www.blackseatech.org/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/"/>
   </url>
   <url>
-    <loc>https://blackseatech.org/en/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/"/>
-  </url>
-
-  <url>
-    <loc>https://blackseatech.org/sponsors.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/sponsors.html"/>
-  </url>
-  <url>
-    <loc>https://blackseatech.org/en/sponsors.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/sponsors.html"/>
+    <loc>https://www.blackseatech.org/en/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/"/>
   </url>
 
   <url>
-    <loc>https://blackseatech.org/speakers.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/speakers.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/speakers.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/speakers.html"/>
+    <loc>https://www.blackseatech.org/sponsors.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/sponsors.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/sponsors.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/sponsors.html"/>
   </url>
   <url>
-    <loc>https://blackseatech.org/en/speakers.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/speakers.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/speakers.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/speakers.html"/>
+    <loc>https://www.blackseatech.org/en/sponsors.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/sponsors.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/sponsors.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/sponsors.html"/>
   </url>
 
   <url>
-    <loc>https://blackseatech.org/speaker.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/speaker.html"/>
+    <loc>https://www.blackseatech.org/speakers.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers.html"/>
   </url>
   <url>
-    <loc>https://blackseatech.org/en/speaker.html</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://blackseatech.org/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blackseatech.org/en/speaker.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackseatech.org/speaker.html"/>
+    <loc>https://www.blackseatech.org/en/speakers.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackseatech.org/speaker.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speaker.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speaker.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speaker.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speaker.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speaker.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speaker.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speaker.html"/>
   </url>
 
 </urlset>
