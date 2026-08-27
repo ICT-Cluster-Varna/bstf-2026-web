@@ -108,6 +108,17 @@
       descEn: 'Technologies for precision and sustainable agriculture',
       dot: '#00cdff',
       countPluralBg: 'лектора'
+    },
+    {
+      id: 'transport',
+      nameBg: 'БЪДЕЩЕТО НА ТРАНСПОРТА',
+      nameEn: 'FUTURE OF TRANSPORT',
+      labelBg: 'Бъдеще на транспорта',
+      labelEn: 'Future of Transport',
+      descBg: 'Микромобилност, споделени модели и устойчиво градско придвижване',
+      descEn: 'Micromobility, shared models and sustainable urban transport',
+      dot: '#00cdff',
+      countPluralBg: 'лектора'
     }
   ];
 
@@ -649,6 +660,30 @@
       sessionDescEn: "How artificial intelligence and automation are transforming modern agriculture - from data collection and analysis to precision management of irrigation, fertigation and climate. The talk presents ONDO's practical experience and the benefits for more efficient, sustainable and profitable production.",
       takeawaysBg: 'Как AI и автоматизацията подпомагат решенията за напояване, торене и климатичен контрол. Практически стъпки за внедряване на нови технологии в реално земеделско стопанство. Как технологиите намаляват разходите и използваните ресурси и повишават добивите.',
       takeawaysEn: 'How AI and automation support decisions on irrigation, fertigation and climate control. Practical steps for implementing new technologies on a real farm. How technology reduces costs and resource use while increasing yields.'
+    },
+
+    // ── Future of Transport ──
+    {
+      id: 'hristo-hristov', track: 'transport',
+      img: '/images/speakers/hristo-hristov.jpg?v=20260827', alt: 'Hristo Hristov',
+      objectPosition: 'center top',
+      name: 'Христо Христов',
+      nameEn: 'Hristo Hristov',
+      role: 'Commercial and Operational Manager @ TopMobility',
+      roleBg: 'Търговски и оперативен мениджър @ TopMobility',
+      roleEn: 'Commercial and Operational Manager @ TopMobility',
+      topicBg: 'Бъдещето на мобилността: от притежанието към достъпа',
+      topicEn: 'The Future of Mobility: From Ownership to Access',
+      bioBg: [
+        'Христо Христов е търговски и оперативен мениджър в TopMobility с над 7 години опит във велосипедния сектор и микромобилността. Отговаря за търговското развитие, стратегическите партньорства, дигиталната услуга и изграждането на устойчив модел за градска мобилност в България.'
+      ],
+      bioEn: [
+        'Hristo Hristov is Commercial and Operational Manager at TopMobility with over 7 years of experience in the bicycle sector and micromobility. He oversees commercial development, strategic partnerships, digital services, and the building of a sustainable urban mobility model in Bulgaria.'
+      ],
+      sessionDescBg: 'Темата разглежда как се променя начинът, по който хората възприемат и използват транспорта. Все по-често фокусът се измества от притежанието на конкретно превозно средство към достъпа до различни форми на мобилност според нуждите. Ще бъдат засегнати ролята на технологиите, споделените модели, устойчивото придвижване и променящите се потребителски навици. Темата поставя въпроса как ще изглежда мобилността в бъдеще и дали достъпът постепенно ще се превърне в по-важен от собствеността.',
+      sessionDescEn: 'The talk explores how the way people perceive and use transport is changing. Increasingly, the focus is shifting from owning a specific vehicle to accessing various forms of mobility based on needs. The role of technology, shared models, sustainable mobility, and changing consumer habits will be addressed. The session raises the question of what mobility will look like in the future and whether access will gradually become more important than ownership.',
+      takeawaysBg: 'Аудиторията ще получи по-ясна представа за това как и защо се променят моделите на мобилност и какво стои зад прехода от притежание към достъп. Ще разгледаме как технологиите, устойчивостта и новите потребителски навици влияят върху избора ни на транспорт. Участниците ще научат за предимствата на различните модели на придвижване и ще могат да преценят кога притежанието е необходимо и как достъпът до мобилността може да бъде по-гъвкав и ефективен избор.',
+      takeawaysEn: 'Attendees will gain a clearer understanding of how and why mobility models are changing and what drives the transition from ownership to access. We will explore how technology, sustainability, and new consumer habits influence our transport choices. Participants will learn about the advantages of different mobility models and be able to assess when ownership is necessary and how access to mobility can be a more flexible and effective choice.'
     }
   ];
 

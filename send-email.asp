@@ -108,12 +108,12 @@ function fieldRowsHtml(fields) {
     var raw = f.value || "-";
     var displayValue = f.multiline ? nl2br(raw) : escapeHtml(raw);
     var isLast = (i === fields.length - 1);
-    html += "<tr><td style='padding:16px 40px 0 40px;font-family:IBM Plex Mono,Courier New,monospace;" +
+    html += "<tr><td style='padding:16px 40px 0 40px;font-family:Science Gothic,Courier New,monospace;" +
       "font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#00a0cc;'>" +
       escapeHtml(f.label) + "</td></tr>";
     var valueStyle = "padding:4px 40px " + (isLast ? "20px" : "16px") + " 40px;" +
       (isLast ? "" : "border-bottom:1px solid #EDF7FA;") +
-      "font-family:Inter,Segoe UI,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1a1a2e;";
+      "font-family:Science Gothic,Segoe UI,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1a1a2e;";
     html += "<tr><td style='" + valueStyle + "'>" + displayValue + "</td></tr>";
   }
   return html;
@@ -122,22 +122,22 @@ function fieldRowsHtml(fields) {
 function emailHeaderHtml(eyebrow) {
   return "<tr><td height='4' style='background-color:#00cdff;font-size:1px;line-height:1px;' bgcolor='#00cdff'>&nbsp;</td></tr>" +
     "<tr><td style='background-color:#0B3954;padding:28px 40px 22px 40px;' bgcolor='#0B3954'>" +
-    "<div style='font-family:Space Grotesk,Segoe UI,Arial,sans-serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.5px;'>CONNEXUS 2026</div>" +
-    "<div style='font-family:IBM Plex Mono,Courier New,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#00cdff;margin-top:6px;'>" +
+    "<div style='font-family:Science Gothic,Segoe UI,Arial,sans-serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.5px;'>CONNEXUS 2026</div>" +
+    "<div style='font-family:Science Gothic,Courier New,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#00cdff;margin-top:6px;'>" +
     escapeHtml(eyebrow) + "</div></td></tr>";
 }
 
 function emailTitleHtml(title, sourceNote) {
   return "<tr><td style='background-color:#EDF7FA;padding:20px 40px;border-bottom:1px solid #d9e9ee;' bgcolor='#EDF7FA'>" +
-    "<div style='font-family:Space Grotesk,Segoe UI,Arial,sans-serif;font-size:20px;font-weight:700;color:#0B3954;'>" +
+    "<div style='font-family:Science Gothic,Segoe UI,Arial,sans-serif;font-size:20px;font-weight:700;color:#0B3954;'>" +
     escapeHtml(title) + "</div>" +
-    "<div style='font-family:Inter,Segoe UI,Arial,sans-serif;font-size:13px;color:#666666;margin-top:4px;'>" +
+    "<div style='font-family:Science Gothic,Segoe UI,Arial,sans-serif;font-size:13px;color:#666666;margin-top:4px;'>" +
     escapeHtml(sourceNote) + "</div></td></tr>";
 }
 
 function emailFooterHtml(replyToEmail) {
   return "<tr><td style='background-color:#F5F7F9;padding:20px 40px;text-align:center;" +
-    "font-family:Inter,Segoe UI,Arial,sans-serif;font-size:12px;color:#666666;border-top:1px solid #e2eef2;' bgcolor='#F5F7F9'>" +
+    "font-family:Science Gothic,Segoe UI,Arial,sans-serif;font-size:12px;color:#666666;border-top:1px solid #e2eef2;' bgcolor='#F5F7F9'>" +
     "Автоматично известие от формата на <span style='color:#0B3954;font-weight:600;'>bstf2026.bg</span><br>" +
     "Отговорете директно на този имейл, за да пишете на " + escapeHtml(replyToEmail) + "." +
     "</td></tr>";
