@@ -353,5 +353,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ilia-iordanov/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/ilia-iordanov/"/>
   </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/hristo-hristov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/hristo-hristov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/hristo-hristov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/hristo-hristov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/hristo-hristov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/hristo-hristov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/hristo-hristov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/speakers/hristo-hristov/"/>
+  </url>
 
 </urlset>
