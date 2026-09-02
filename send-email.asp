@@ -18,8 +18,8 @@ Response.CacheControl = "no-cache";
 // "onboarding@resend.dev" is Resend's shared sandbox sender - it works before domain verification.
 var FROM_EMAIL = "CONNEXUS 2026 <onboarding@resend.dev>";
 
-// Where every form submission is sent for now.
-var TO_EMAIL = "ssabev@shopmetrics.com";
+// Where every form submission is sent.
+var TO_EMAIL = "blackseatech@ictclustervarna.com";
 
 function jsonEscape(s) {
   s = String(s);
