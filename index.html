@@ -1093,6 +1093,399 @@
         }
       }
 
+      /* --- Program: full schedule, fully expanded (2026-09-03 docx) --- */
+      .prog2-overview {
+        max-width: 1000px;
+        margin: 32px auto 40px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: var(--white)
+      }
+
+      .prog2-overview-row {
+        display: grid;
+        grid-template-columns: 130px 1.3fr 1fr 1.5fr
+      }
+
+      .prog2-overview-row>div {
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(11, 57, 84, 0.08);
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.45
+      }
+
+      .prog2-overview-day-date {
+        display: block;
+        color: var(--text-light);
+        font-size: 0.8rem;
+        margin-top: 2px
+      }
+
+      .prog2-overview-head {
+        background: var(--navy)
+      }
+
+      .prog2-overview-head>div {
+        color: var(--white);
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-bottom: none
+      }
+
+      .prog2-overview-row:last-child>div {
+        border-bottom: none
+      }
+
+      .prog2-overview-policy {
+        margin: 10px 0 0
+      }
+
+      .prog2-tracks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto 56px
+      }
+
+      .prog2-track-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 22px 24px;
+        box-shadow: var(--shadow)
+      }
+
+      .prog2-track-card h3 {
+        color: var(--navy);
+        font-size: 1rem;
+        margin-bottom: 12px
+      }
+
+      .prog2-track-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px
+      }
+
+      .prog2-track-card li {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.5
+      }
+
+      .prog2-track-card li strong {
+        color: var(--teal-contrast)
+      }
+
+      .prog2-days {
+        display: flex;
+        flex-direction: column;
+        gap: 56px
+      }
+
+      .prog2-day {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        overflow: hidden
+      }
+
+      .prog2-day-header {
+        background: var(--navy);
+        color: var(--white);
+        padding: 24px 28px
+      }
+
+      .prog2-day-header h3 {
+        font-size: 1.3rem;
+        margin-bottom: 4px
+      }
+
+      .prog2-day-meta {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.75)
+      }
+
+      .prog2-day-question {
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em
+      }
+
+      .prog2-day-date {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.75)
+      }
+
+      .prog2-row {
+        display: grid;
+        grid-template-columns: 110px 1fr 1fr;
+        border-top: 1px solid rgba(11, 57, 84, 0.08)
+      }
+
+      .prog2-row-single {
+        grid-template-columns: 110px 1fr
+      }
+
+      .prog2-row-colhead {
+        background: var(--light-blue);
+        border-top: none;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: var(--navy)
+      }
+
+      .prog2-row-colhead>div {
+        padding: 10px 16px
+      }
+
+      .prog2-row-break {
+        grid-template-columns: 1fr;
+        background: var(--navy)
+      }
+
+      .prog2-time {
+        padding: 16px;
+        font-size: 0.76rem;
+        font-weight: 600;
+        color: var(--teal-contrast);
+        font-family: var(--font-normal);
+        border-right: 1px solid rgba(11, 57, 84, 0.06)
+      }
+
+      /* Client feedback (2026-09-03): keep this layout, but the display font
+         ('Science Gothic', inherited from body) is hard to read as body copy.
+         Use a normal, readable font for all Program-section text; keep the
+         display font only on real headers (h2/h3 — day titles, section title,
+         track-card/closing titles). */
+      .program-section {
+        --font-normal: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-family: var(--font-normal)
+      }
+
+      .program-section h2,
+      .program-section h3 {
+        font-family: 'Science Gothic', sans-serif
+      }
+
+      .prog2-break-label {
+        padding: 10px 16px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--white);
+        text-align: center
+      }
+
+      .prog2-cell {
+        padding: 16px 18px;
+        border-right: 1px solid rgba(11, 57, 84, 0.06)
+      }
+
+      .prog2-cell:last-child {
+        border-right: none
+      }
+
+      .prog2-cell-empty {
+        color: rgba(11, 57, 84, 0.25);
+        text-align: center
+      }
+
+      .prog2-cell-room-tag {
+        display: none
+      }
+
+      .prog2-heading {
+        font-weight: 700;
+        color: var(--navy);
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+        line-height: 1.35
+      }
+
+      .prog2-block {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(11, 57, 84, 0.1)
+      }
+
+      .prog2-block--first {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none
+      }
+
+      /* Every "Label: value" line (Objectives, Contributors, Moderator,
+         Speaker, Themes, Format, Participants, ...) shares this base style —
+         bold upright label, upright value — matching the source document,
+         where only the "Objectives" line is italic (see --obj below). */
+      .prog2-line {
+        font-size: 0.82rem;
+        color: var(--text-light);
+        margin: 0 0 6px;
+        line-height: 1.5
+      }
+
+      .prog2-line strong {
+        color: var(--text);
+        font-weight: 700
+      }
+
+      .prog2-line--obj,
+      .prog2-line--obj strong {
+        font-style: italic
+      }
+
+      .prog2-overview-row>div:first-child span:not(.prog2-overview-day-date) {
+        font-weight: 700
+      }
+
+      .prog2-overview-row:not(.prog2-overview-head)>div:nth-child(3) {
+        font-style: italic
+      }
+
+      .prog2-session-title {
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: var(--dark);
+        margin: 10px 0 4px;
+        line-height: 1.4
+      }
+
+      .prog2-person-line {
+        font-size: 0.82rem;
+        color: var(--text);
+        margin: 0 0 4px;
+        line-height: 1.4
+      }
+
+      .prog2-person-name {
+        font-weight: 700
+      }
+
+      .prog2-plain {
+        font-size: 0.82rem;
+        color: var(--text-light);
+        margin: 0 0 6px;
+        line-height: 1.5
+      }
+
+      .prog2-day-footer {
+        background: var(--light-blue);
+        padding: 16px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px
+      }
+
+      .prog2-day-footer p {
+        font-size: 0.78rem;
+        color: var(--text-light);
+        margin: 0
+      }
+
+      .prog2-day-footer strong {
+        color: var(--navy)
+      }
+
+      .prog2-closing {
+        max-width: 900px;
+        margin: 56px auto 0;
+        text-align: center
+      }
+
+      .prog2-closing h3 {
+        color: var(--navy);
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em
+      }
+
+      .prog2-closing p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        line-height: 1.6
+      }
+
+      @media(max-width:900px) {
+        .prog2-overview-row {
+          grid-template-columns: 1fr
+        }
+
+        .prog2-overview-row>div {
+          border-bottom: none;
+          padding: 6px 16px
+        }
+
+        .prog2-overview-row:not(.prog2-overview-head) {
+          border-bottom: 1px solid rgba(11, 57, 84, 0.08)
+        }
+
+        .prog2-overview-head {
+          display: none
+        }
+
+        .prog2-overview-row>div:first-child {
+          font-weight: 700;
+          color: var(--navy);
+          padding-top: 14px
+        }
+
+        .prog2-overview-row>div:last-child {
+          padding-bottom: 14px
+        }
+
+        .prog2-tracks {
+          grid-template-columns: 1fr
+        }
+
+        .prog2-row,
+        .prog2-row-single,
+        .prog2-row-break {
+          grid-template-columns: 1fr
+        }
+
+        .prog2-time {
+          border-right: none;
+          border-bottom: 1px solid rgba(11, 57, 84, 0.06)
+        }
+
+        .prog2-cell {
+          border-right: none;
+          border-bottom: 1px solid rgba(11, 57, 84, 0.06)
+        }
+
+        .prog2-cell:last-child {
+          border-bottom: none
+        }
+
+        .prog2-row-colhead {
+          display: none
+        }
+
+        .prog2-cell-room-tag {
+          display: block;
+          font-size: 0.68rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: var(--teal-contrast);
+          margin-bottom: 8px
+        }
+      }
+
       /* --- Program: unified timeline (Smart Timeline) --- */
       .prog-filterbar {
         position: sticky;
@@ -5399,640 +5792,608 @@
     </section>
 
     <!--
-      SECTION 5: Program (3-Day Grid / "Smart Timeline") — the sole, permanent live design.
-      The legacy day-tabs/.schedule-table design has been removed. Renders Day 1/2/3 as
-      side-by-side columns so the whole programme reads in one view on desktop; stacks to
-      one column below 1000px.
-
-      Structure:
-      - PROGRAM_TRACKS: the 9 topical tracks available as filter pills (e.g. AI, Cybersecurity).
-      - PROGRAM_DAYS: source of truth for the schedule — 3 day objects, each with a `slots`
-        array. Every slot is either kind:'break' (a single-column coffee/lunch row) or
-        kind:'single'/'double' (1 or 2 side-by-side session cards). `block` groups slots that
-        share a filterable "Block" (used by the Block <select> in the filter bar).
-      - renderProgramTimeline() (IIFE below): wires up the filter bar (track pills + block
-        select), then calls render() to build the DOM from PROGRAM_DAYS/PROGRAM_TRACKS.
-        render() re-runs on every filter change, wiping and rebuilding #progGrid.
-      - window.bstfSetProgramTrack: called from the Home page's "Направления" (Tracks) cards
-        so clicking one scrolls here and pre-filters to that track.
+      SECTION 5: Program (Full 3-Day Schedule, fully expanded)
+      Replaces the old filter/track-pill/click-to-open-modal "Smart Timeline" grid.
+      Per client request (2026-09-03, BSTF-Varna-2026-Program.docx): everything —
+      objectives, contributors, speakers, moderators — must render inline with no
+      tabs and no clicks required to see it. The static markup below (overview
+      table, hall/track intro, closing note) carries data-bg/data-en pairs like
+      the rest of the site; the day-by-day schedule itself is data-driven — see
+      PROGRAM_SCHEDULE in the script block at the end of this section.
     -->
     <section class="program-section" id="program">
       <div class="container">
-        <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Programme">3-дневна програма</h2>
-        <p class="section-subtitle text-center" data-bg="Основна програма + Секторни теми, работещи паралелно."
-          data-en="Main Track + Sector Topics running in parallel.">Основна програма + Секторни теми, работещи паралелно.
-        </p>
-        <p class="program-update-note" data-bg="Програмата подлежи на постоянна актуализация."
-          data-en="The programme is subject to ongoing updates.">Програмата подлежи на постоянна актуализация.</p>
+        <h2 class="section-title text-center" data-bg="3-дневна програма" data-en="3-Day Program">3-дневна програма</h2>
+        <p class="section-subtitle text-center" data-bg="Основно направление (Зала „България“) + Международен бизнес обмен (Зала „Варна“), работещи паралелно."
+          data-en="Main Track (Hall Bulgaria) + International Business Exchange (Hall Varna), running in parallel.">Основно направление (Зала „България“) + Международен бизнес обмен (Зала „Варна“), работещи паралелно.</p>
+        <p class="program-update-note" data-bg="Програмата подлежи на постоянна актуализация." data-en="The program is subject to ongoing updates.">Програмата подлежи на постоянна актуализация.</p>
 
-        <div class="prog-filterbar" id="progFilterBar">
-          <button class="prog-fb-toggle" id="progFilterToggle" type="button" aria-expanded="false">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-            </svg>
-            <span data-bg="Филтри" data-en="Filters">Филтри</span>
-            <span class="prog-fb-badge" id="progFilterBadge" hidden></span>
-          </button>
-          <div class="prog-fb-panel" id="progFilterPanel">
-            <div class="prog-fb-row">
-              <span class="prog-fb-label" data-bg="Зала" data-en="Hall">Зала</span>
-              <div class="prog-fb-pills" id="progHallPills"></div>
+        <div class="prog2-overview">
+          <div class="prog2-overview-row prog2-overview-head">
+            <div data-bg="Ден" data-en="Day">Ден</div>
+            <div data-bg="Фокус на програмата" data-en="Program Focus">Фокус на програмата</div>
+            <div data-bg="Основен въпрос" data-en="Central Question">Основен въпрос</div>
+            <div data-bg="Очакван резултат" data-en="Expected Outcome">Очакван резултат</div>
+          </div>
+          <div class="prog2-overview-row">
+            <div><span data-bg="Ден 1" data-en="Day 1">Ден 1</span><span class="prog2-overview-day-date" data-bg="5 октомври" data-en="5 October">5 октомври</span></div>
+            <div data-bg="Нови възможности за растеж и ефективност чрез изкуствен интелект и технологии" data-en="New Opportunities for Growth and Efficiency Through AI and Technology">Нови възможности за растеж и ефективност чрез изкуствен интелект и технологии</div>
+            <div data-bg="Защо бизнесът трябва да действа сега?" data-en="Why should businesses act now?">Защо бизнесът трябва да действа сега?</div>
+            <div data-bg="Ръководителите определят къде технологиите могат да генерират растеж, ефективност и конкурентно предимство – и кои възможности оправдават инвестиция или изискват мерки в областта на публичните политики."
+              data-en="Leaders identify where technology can generate growth, efficiency, and competitive advantage - and which opportunities justify investment or require policy action.">Ръководителите определят къде технологиите могат да генерират растеж, ефективност и конкурентно предимство – и кои възможности оправдават инвестиция или изискват мерки в областта на публичните политики.</div>
+          </div>
+          <div class="prog2-overview-row">
+            <div><span data-bg="Ден 2" data-en="Day 2">Ден 2</span><span class="prog2-overview-day-date" data-bg="6 октомври" data-en="6 October">6 октомври</span></div>
+            <div data-bg="От възможност към внедряване: изкуствен интелект, автоматизация и сигурни операции" data-en="From Opportunity to Implementation: AI, Automation, and Secure Operations">От възможност към внедряване: изкуствен интелект, автоматизация и сигурни операции</div>
+            <div data-bg="Какво може да бъде внедрено и как?" data-en="What can be implemented, and how?">Какво може да бъде внедрено и как?</div>
+            <div data-bg="Оперативните и техническите ръководители разглеждат практически приложения, подходи за внедряване, финансови инструменти и мерки за контрол на риска."
+              data-en="Operational and technical leaders explore practical applications, implementation approaches, financing instruments, and risk controls.">Оперативните и техническите ръководители разглеждат практически приложения, подходи за внедряване, финансови инструменти и мерки за контрол на риска.</div>
+          </div>
+          <div class="prog2-overview-row">
+            <div><span data-bg="Ден 3" data-en="Day 3">Ден 3</span><span class="prog2-overview-day-date" data-bg="7 октомври" data-en="7 October">7 октомври</span></div>
+            <div data-bg="Нови хоризонти: изграждане на бизнеса на утрешния ден, задвижван от изкуствен интелект" data-en="New Horizons: Building the AI-Enabled Business of Tomorrow">Нови хоризонти: изграждане на бизнеса на утрешния ден, задвижван от изкуствен интелект</div>
+            <div data-bg="Какво следва?" data-en="What comes next?">Какво следва?</div>
+            <div>
+              <span data-bg="Организациите разбират способностите, инфраструктурата и партньорствата, необходими за следващото поколение бизнес, основан на изкуствен интелект."
+                data-en="Organizations understand the capabilities, infrastructure, and partnerships required for the next generation of AI-enabled business.">Организациите разбират способностите, инфраструктурата и партньорствата, необходими за следващото поколение бизнес, основан на изкуствен интелект.</span>
+              <p class="prog2-overview-policy" data-bg="Мерки в областта на публичните политики: Въз основа на проблемните области и препоръките, идентифицирани по време на Форума, ще бъде разработено и публикувано предложение за мерки в подкрепа на внедряването на изкуствен интелект, цифровата инфраструктура, уменията на работната сила, финансирането на иновациите, киберсигурността и трансграничното сътрудничество в Черноморския регион."
+                data-en="Policy Action: Based on the problem areas and recommendations identified during the Forum, a proposal for policy measures supporting AI adoption, digital infrastructure, workforce skills, innovation financing, cybersecurity, and cross-border cooperation in the Black Sea region will be developed and published.">Мерки в областта на публичните политики: Въз основа на проблемните области и препоръките, идентифицирани по време на Форума, ще бъде разработено и публикувано предложение за мерки в подкрепа на внедряването на изкуствен интелект, цифровата инфраструктура, уменията на работната сила, финансирането на иновациите, киберсигурността и трансграничното сътрудничество в Черноморския регион.</p>
             </div>
-            <div class="prog-fb-row">
-              <span class="prog-fb-label" data-bg="Тематична област" data-en="Thematic Area">Тематична област</span>
-              <div class="prog-fb-pills" id="progTrackPills"></div>
-            </div>
-            <button class="prog-fb-clear" id="progClearBtn" data-bg="изчисти филтрите" data-en="clear filters">изчисти
-              филтрите</button>
           </div>
         </div>
 
-        <div class="prog-hall-legend" id="progHallLegend">
-          <button type="button" class="prog-hall-legend-btn" data-hall="bg" aria-pressed="false"><i style="background:var(--teal)"></i><span data-bg="Зала „България“" data-en="Hall Bulgaria">Зала
-              „България“</span></button>
-          <button type="button" class="prog-hall-legend-btn" data-hall="vn" aria-pressed="false"><i style="background:var(--navy)"></i><span data-bg="Зала „Варна“" data-en="Hall Varna">Зала
-              „Варна“</span></button>
+        <div class="prog2-tracks">
+          <div class="prog2-track-card">
+            <h3 data-bg="Зала „България“ – Бизнес направление" data-en="Hall &quot;Bulgaria&quot; – Business Track">Зала „България“ – Бизнес направление</h3>
+            <ul>
+              <li><strong data-bg="Ден 1" data-en="Day 1">Ден 1</strong> — <span data-bg="собственици на компании, изпълнителни директори, членове на бордове, инвеститори, висши ръководители по стратегия и иновации, както и производствени и технологични директори, отговорни за инвестиционните приоритети."
+                  data-en="company owners, CEOs, board members, investors, senior strategy and innovation leaders, and production and technology executives responsible for investment priorities.">собственици на компании, изпълнителни директори, членове на бордове, инвеститори, висши ръководители по стратегия и иновации, както и производствени и технологични директори, отговорни за инвестиционните приоритети.</span></li>
+              <li><strong data-bg="Ден 2" data-en="Day 2">Ден 2</strong> — <span data-bg="COO, CTO, CIO, CISO, производствени и оперативни мениджъри, специалисти по автоматизация и данни, екипи по киберсигурност, експортни мениджъри и ръководители, отговорни за внедряването."
+                  data-en="COOs, CTOs, CIOs, CISOs, production and operations managers, automation and data specialists, cybersecurity teams, export managers, and executives responsible for implementation.">COO, CTO, CIO, CISO, производствени и оперативни мениджъри, специалисти по автоматизация и данни, екипи по киберсигурност, експортни мениджъри и ръководители, отговорни за внедряването.</span></li>
+              <li><strong data-bg="Ден 3" data-en="Day 3">Ден 3</strong> — <span data-bg="собственици на компании, изпълнителни директори, CIO, CTO, ръководители на иновации, мениджъри по цифрова трансформация, собственици на процеси, проектни мениджъри и специалисти по инфраструктура, които подготвят следващия етап от внедряването на изкуствен интелект."
+                  data-en="company owners, CEOs, CIOs, CTOs, innovation leaders, digital transformation managers, process owners, project managers, and infrastructure specialists preparing the next stage of AI adoption.">собственици на компании, изпълнителни директори, CIO, CTO, ръководители на иновации, мениджъри по цифрова трансформация, собственици на процеси, проектни мениджъри и специалисти по инфраструктура, които подготвят следващия етап от внедряването на изкуствен интелект.</span></li>
+            </ul>
+          </div>
+          <div class="prog2-track-card">
+            <h3 data-bg="Зала „Варна“ – Направление „Международен бизнес обмен“" data-en="Hall &quot;Varna&quot; – International Business Exchange Track">Зала „Варна“ – Направление „Международен бизнес обмен“</h3>
+            <ul>
+              <li><strong data-bg="Ден 1" data-en="Day 1">Ден 1</strong> — <span data-bg="Белгия, Франция и международно сътрудничество в областта на биотехнологиите, здравеопазването и устойчивите индустрии."
+                  data-en="Belgium, France, and international cooperation in biotechnology, health care, and sustainable industries.">Белгия, Франция и международно сътрудничество в областта на биотехнологиите, здравеопазването и устойчивите индустрии.</span></li>
+              <li><strong data-bg="Ден 2" data-en="Day 2">Ден 2</strong> — <span data-bg="Нидерландия, Турция и международно сътрудничество в областта на туризма и технологиите за пътуване."
+                  data-en="The Netherlands, Türkiye, and international cooperation in tourism and travel technologies.">Нидерландия, Турция и международно сътрудничество в областта на туризма и технологиите за пътуване.</span></li>
+              <li><strong data-bg="Ден 3" data-en="Day 3">Ден 3</strong> — <span data-bg="Обединеното кралство, с акцент върху търговски партньорства, инвестиции, технологичен трансфер и конкретни съвместни инициативи."
+                  data-en="The United Kingdom, with an emphasis on commercial partnerships, investment, technology transfer, and concrete joint initiatives.">Обединеното кралство, с акцент върху търговски партньорства, инвестиции, технологичен трансфер и конкретни съвместни инициативи.</span></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="prog-grid" id="progGrid"></div>
-        <div class="prog-grid-tail" id="progGridTail"></div>
-        <div class="prog-grid-mobile" id="progGridMobile"></div>
+        <div class="prog2-days" id="progDays"></div>
+
+        <div class="prog2-closing">
+          <h3 data-bg="Резултат от Форума в областта на публичните политики" data-en="Forum Policy Output">Резултат от Форума в областта на публичните политики</h3>
+          <p data-bg="Въз основа на проблемните области и препоръките, идентифицирани през трите дни, Форумът ще разработи и публикува предложение за мерки в областта на публичните политики в подкрепа на внедряването на изкуствен интелект, цифровата инфраструктура, уменията на работната сила, финансирането на иновациите, киберсигурността и трансграничното сътрудничество в Черноморския регион."
+            data-en="Based on the problem areas and recommendations identified during the three days, the Forum will develop and publish a proposal for policy measures supporting AI adoption, digital infrastructure, workforce skills, innovation financing, cybersecurity, and cross-border cooperation in the Black Sea region.">Въз основа на проблемните области и препоръките, идентифицирани през трите дни, Форумът ще разработи и публикува предложение за мерки в областта на публичните политики в подкрепа на внедряването на изкуствен интелект, цифровата инфраструктура, уменията на работната сила, финансирането на иновациите, киберсигурността и трансграничното сътрудничество в Черноморския регион.</p>
+        </div>
       </div>
     </section>
 
     <script>
-      var PROGRAM_TRACKS = [
-        { id: 'ai', bg: 'Изкуствен интелект', en: 'Artificial Intelligence' },
-        { id: 'cybersecurity', bg: 'Киберсигурност', en: 'Cybersecurity' },
-        { id: 'smart-city', bg: 'Умен град', en: 'Smart City' },
-        { id: 'biotech', bg: 'BioTech', en: 'BioTech' },
-        { id: 'marine', bg: 'Морски технологии', en: 'Marine Tech' },
-        { id: 'tourism', bg: 'Туризъм', en: 'Tourism' },
-        { id: 'regional-innovation-policy', bg: 'Регионални иновационни политики', en: 'Regional Innovation Policies' },
-        { id: 'automation', bg: 'Автоматизация и роботика', en: 'Automation & Robotics' },
-        { id: 'agritech', bg: 'AgriTech', en: 'AgriTech' }
-      ];
+      (function () {
+        var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
+        function pick(bg, en) { return LANG === 'en' ? en : bg; }
+        function el(tag, className) { var e = document.createElement(tag); if (className) e.className = className; return e; }
+        function t(node, bg, en) { node.setAttribute('data-bg', bg); node.setAttribute('data-en', en); node.textContent = pick(bg, en); return node; }
 
-      var HALL_BG = 'Зала „България“', HALL_BG_EN = 'Hall Bulgaria';
-      var HALL_VN = 'Зала „Варна“', HALL_VN_EN = 'Hall Varna';
+        function renderPersonLine(p) {
+          var line = el('div', 'prog2-person-line');
+          var name = el('span', 'prog2-person-name'); t(name, p.name.bg, p.name.en); line.appendChild(name);
+          if (p.role && (p.role.bg || p.role.en)) {
+            line.appendChild(document.createTextNode(p.sep || pick(' – ', ' - ')));
+            var role = el('span'); t(role, p.role.bg, p.role.en); line.appendChild(role);
+          }
+          return line;
+        }
 
-      var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
-      function pick(bg, en) { return LANG === 'en' ? en : bg; }
+        function renderLabelLine(ln) {
+          var line = el('div', 'prog2-line' + (ln.variant === 'obj' ? ' prog2-line--obj' : ''));
+          var lbl = el('strong'); t(lbl, ln.label.bg, ln.label.en); line.appendChild(lbl);
+          var val = el('span'); t(val, ln.value.bg, ln.value.en); line.appendChild(val);
+          return line;
+        }
 
-      var PROGRAM_DAYS = [
-        {
-          id: 1, date: { bg: '5 октомври', en: '5 October' }, label: { bg: 'Ден 1', en: 'Day 1' },
-          slots: [
-            {
-              time: '13:00 – 13:30', kind: 'single', cards: [{
-                room: HALL_BG, title: { bg: 'Официално откриване', en: 'Official Opening' }, track: null,
-                detail: {
-                  items: [
+        function renderBlockLine(ln) {
+          if (ln.kind === 'title') { var h = el('div', 'prog2-session-title'); t(h, ln.bg, ln.en); return h; }
+          if (ln.kind === 'person') { return renderPersonLine(ln); }
+          if (ln.kind === 'label') { return renderLabelLine(ln); }
+          var p = el('div', 'prog2-plain'); t(p, ln.bg, ln.en); return p;
+        }
+
+        function renderBlock(b, isFirst) {
+          var blockEl = el('div', 'prog2-block' + (isFirst ? ' prog2-block--first' : ''));
+          var heading = el('div', 'prog2-heading'); t(heading, b.heading.bg, b.heading.en); blockEl.appendChild(heading);
+          (b.lines || []).forEach(function (ln) { blockEl.appendChild(renderBlockLine(ln)); });
+          return blockEl;
+        }
+
+        function renderCell(cell) {
+          var wrap = el('div', 'prog2-cell');
+          if (!cell) { var dash = el('div', 'prog2-cell-empty'); dash.textContent = '-'; wrap.appendChild(dash); return wrap; }
+          cell.blocks.forEach(function (b, bi) { wrap.appendChild(renderBlock(b, bi === 0)); });
+          return wrap;
+        }
+
+        function renderRow(row) {
+          if (row.kind === 'break') {
+            // Source table shows this as one merged bar spanning the full
+            // row width — time and label combined, not a separate time
+            // column plus per-hall cells.
+            var br = el('div', 'prog2-row prog2-row-break');
+            var brLabel = el('div', 'prog2-break-label');
+            t(brLabel, row.time + ' · ' + row.label.bg, row.time + ' · ' + row.label.en);
+            br.appendChild(brLabel);
+            return br;
+          }
+          // Always render both hall columns, even when one side has no
+          // session — the source table shows "-" there rather than
+          // collapsing to a single wide column.
+          var r = el('div', 'prog2-row');
+          var time = el('div', 'prog2-time'); time.textContent = row.time;
+          r.appendChild(time);
+          var leftCell = renderCell(row.left);
+          leftCell.classList.add('prog2-cell--bg');
+          var leftTag = el('div', 'prog2-cell-room-tag'); t(leftTag, 'Зала „България“', 'Hall Bulgaria'); leftCell.insertBefore(leftTag, leftCell.firstChild);
+          r.appendChild(leftCell);
+          var rightCell = renderCell(row.right);
+          rightCell.classList.add('prog2-cell--vn');
+          var rightTag = el('div', 'prog2-cell-room-tag'); t(rightTag, 'Зала „Варна“', 'Hall Varna'); rightCell.insertBefore(rightTag, rightCell.firstChild);
+          r.appendChild(rightCell);
+          return r;
+        }
+
+        function renderDay(day) {
+          var section = el('div', 'prog2-day');
+          var header = el('div', 'prog2-day-header');
+          var h3 = el('h3'); t(h3, day.title.bg, day.title.en); header.appendChild(h3);
+          var meta = el('div', 'prog2-day-meta');
+          var q = el('span', 'prog2-day-question'); t(q, day.question.bg, day.question.en); meta.appendChild(q);
+          meta.appendChild(document.createTextNode(' · '));
+          var d = el('span', 'prog2-day-date'); t(d, day.date.bg, day.date.en); meta.appendChild(d);
+          header.appendChild(meta);
+          section.appendChild(header);
+
+          var colHead = el('div', 'prog2-row prog2-row-colhead');
+          colHead.appendChild(el('div'));
+          var h1 = el('div'); t(h1, 'Зала „България“ – Бизнес направление', 'Hall "Bulgaria" – Business Track'); colHead.appendChild(h1);
+          var h2 = el('div'); t(h2, 'Зала „Варна“ – Международен бизнес обмен', 'Hall "Varna" – International Business Exchange'); colHead.appendChild(h2);
+          section.appendChild(colHead);
+
+          day.rows.forEach(function (row) { section.appendChild(renderRow(row)); });
+
+          var footer = el('div', 'prog2-day-footer');
+          var p1 = el('p');
+          var l1 = el('strong'); t(l1, 'Аудитория на Бизнес направлението: ', 'Business Track audience: '); p1.appendChild(l1);
+          var v1 = el('span'); t(v1, day.audience.bg, day.audience.en); p1.appendChild(v1);
+          footer.appendChild(p1);
+          var p2 = el('p');
+          var l2 = el('strong'); t(l2, 'Фокус на Международния бизнес обмен: ', 'International Business Exchange focus: '); p2.appendChild(l2);
+          var v2 = el('span'); t(v2, day.exchangeFocus.bg, day.exchangeFocus.en); p2.appendChild(v2);
+          footer.appendChild(p2);
+          section.appendChild(footer);
+
+          return section;
+        }
+
+        // ---- small builders for the lines[] arrays (kept terse below) ----
+        function T(bg, en) { return { bg: bg, en: en }; }
+        function TITLE(bg, en) { return { kind: 'title', bg: bg, en: en }; }
+        function PERSON(nameBg, nameEn, roleBg, roleEn, sep) { return { kind: 'person', name: T(nameBg, nameEn), role: T(roleBg || '', roleEn || ''), sep: sep }; }
+        function LABEL(labelBg, labelEn, valueBg, valueEn) { return { kind: 'label', label: T(labelBg, labelEn), value: T(valueBg, valueEn) }; }
+        function PLAIN(bg, en) { return { kind: 'plain', bg: bg, en: en }; }
+        function OBJ(bg, en) { var l = LABEL('Цели: ', 'Objectives: ', bg, en); l.variant = 'obj'; return l; }
+
+        var PROGRAM_SCHEDULE = [
+          {
+            title: T('Ден 1 – Нови възможности за растеж и ефективност чрез изкуствен интелект и технологии', 'Day 1 – New Opportunities for Growth and Efficiency Through AI and Technology'),
+            question: T('Защо?', 'Why?'),
+            date: T('5 октомври 2026 г.', '5 October 2026'),
+            audience: T('Собственици на компании, изпълнителни директори, членове на бордове, инвеститори, висши ръководители по стратегия и иновации, както и производствени и технологични директори, отговорни за инвестиционните приоритети.', 'Company owners, CEOs, board members, investors, senior strategy and innovation leaders, and production and technology executives responsible for investment priorities.'),
+            exchangeFocus: T('Белгия, Франция и международно сътрудничество в областта на биотехнологиите, здравеопазването и устойчивите индустрии.', 'Belgium, France, and international cooperation in biotechnology, health care, and sustainable industries.'),
+            rows: [
+              {
+                time: '13:00 – 13:30', left: {
+                  blocks: [{
+                    heading: T('Официално откриване', 'Official Opening'),
+                    lines: [
+                      OBJ('Да се утвърди стратегическата визия на Форума и Черноморският регион да се позиционира като източник на европейски иновации, технологичен суверенитет и индустриален растеж.', "Establish the Forum’s strategic vision and position the Black Sea region as a source of European innovation, technology sovereignty, and industrial growth."),
+                      TITLE('Откриване: повратен момент за европейските иновации', 'Opening: A Pivotal Moment for European Innovation'),
+                      PERSON('Емил Цанков', 'Emil Tsankov', 'председател на Управителния съвет, ИКТ Клъстер Варна', 'Chairman of the Board, ICT Cluster Varna'),
+                      PERSON('Бойко Таков', 'Boyko Takov', 'изпълнителен директор, ИАНМСП', 'Executive Director, BSMEPA'),
+                      TITLE('Черноморски полюси на растеж: визия за европейски иновации, технологичен суверенитет и индустриална трансформация', 'Black Sea Growth Poles: A Vision for European Innovation, Technology Sovereignty, and Industrial Transformation'),
+                      PERSON('Илияна Йотова', 'Iliana Iotova', 'президент на Република България', 'President of the Republic of Bulgaria')
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '13:30 – 14:00', left: {
+                  blocks: [{
+                    heading: T('Към европейска иновационна екосистема: как Европа може да се конкурира и да си сътрудничи със САЩ и Китай?', 'Toward a European Innovation Ecosystem: How Can Europe Compete and Collaborate with the United States and China?'),
+                    lines: [
+                      OBJ('Да се разгледа как Европа може да засили иновационния си капацитет, като същевременно изгражда ефективни технологични и инвестиционни партньорства с останалите водещи иновационни екосистеми в света.', "Examine how Europe can strengthen its innovation capacity while building effective technology and investment partnerships with the world’s other major innovation ecosystems."),
+                      LABEL('Лектор: ', 'Speaker: ', 'Lars Frølund, MIT и NATO Innovation Fund', 'Lars Frølund, MIT and NATO Innovation Fund'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Руслан Стефанов', 'Ruslan Stefanov')
+                    ]
+                  }]
+                }
+              },
+              { time: '14:00 – 14:10', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '14:10 – 15:30',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 1: Мащабиране на бъдещето на Европа – към черноморска иновационна екосистема', "Block 1: Scaling Europe’s Future - Toward a Black Sea Innovation Ecosystem"),
+                    lines: [
+                      OBJ('Да се покаже как индустриалната трансформация, сигурните вериги на доставки, технологичният трансфер и финансирането на растежа могат да подкрепят свързана черноморска иновационна екосистема.', 'Show how industrial transformation, secure supply chains, technology transfer, and growth financing can support a connected Black Sea innovation ecosystem.'),
+                      TITLE('Цифрова трансформация и изкуствен интелект за индустриален растеж: сигурни европейски вериги на доставки', 'Digital and AI Transformation for Industrial Growth: Secure European Supply Chains'),
+                      PERSON('Robin Peeters', 'Robin Peeters', 'заместник-посланик на Нидерландия', 'Deputy Ambassador of the Netherlands'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Татяна Новосьолова', 'Tatyana Novossiolova'),
+                      TITLE('Към черноморска иновационна екосистема: технологичен трансфер и възможности за мащабиране', 'Toward a Black Sea Innovation Ecosystem: Technology Transfer and Scale-Up Opportunities'),
+                      PERSON('Екатерина Захариева', 'Ekaterina Zaharieva', 'видеообръщение', 'video message'),
+                      PERSON('Светослава Георгиева', 'Svetoslava Georgieva'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков', 'Emil Tsankov')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Биотехнологии, здраве и устойчиви индустрии', 'Biotechnology, Health, and Sustainable Industries'),
+                    lines: [
+                      OBJ('Да се свържат научните и медицинските иновации с компании, инвеститори и институции, способни да превърнат изследванията в мащабируеми продукти и устойчиви индустрии.', 'Connect scientific and medical innovation with companies, investors, and institutions capable of transforming research into scalable products and sustainable industries.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Кристина Ескенази; Трифон Цеков; Димитър Карловски; проф. Елица Енчева; проф. Антон Тончев; проф. Кристина Близнакова; проф. Кръстена Николова; доц. Оскан Тасинов', 'Kristina Eskenazi; Trifon Tsekov; Dimitar Karlovski; Prof. Elitsa Encheva; Prof. Anton Tonchev; Prof. Kristina Bliznakova; Prof. Krastena Nikolova; Assoc. Prof. Oskan Tasinov'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Кристина Ескенази', 'Kristina Eskenazi')
+                    ]
+                  }]
+                }
+              },
+              { time: '15:30 – 15:45', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '15:45 – 17:05',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 2: Приложен изкуствен интелект – от възможност към оперативни резултати', 'Block 2: Applied AI - From Opportunity to Operational Results'),
+                    lines: [
+                      OBJ("Да се демонстрира как компаниите могат да преминат от осъзнаване на потенциала на изкуствения интелект към избор на подходящи бизнес приложения и постигане на измерими, устойчиви резултати.", "Demonstrate how companies can move from recognizing AI’s potential to selecting appropriate business applications and achieving measurable, sustainable results."),
+                      TITLE('Как компаниите внедряват изкуствен интелект устойчиво', 'How Companies Implement AI Sustainably'),
+                      PERSON('Gilad Barash', 'Gilad Barash'),
+                      LABEL('Допълнителни участници и модератор: ', 'Additional contributors and moderator: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [
                     {
-                      time: '13:00 – 13:10',
-                      title: { bg: 'Откриване: ключов момент за европейските иновации', en: 'Opening: A pivotal moment for European innovation' },
-                      people: [
-                        { name: { bg: 'Емил Цанков', en: 'Emil Tsankov' }, role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' } },
-                        { name: { bg: 'Бойко Таков', en: 'Boyko Takov' }, role: { bg: 'Изпълнителен директор, Изпълнителна агенция за насърчаване на малките и средните предприятия', en: 'Executive Director, Executive Agency for the Promotion of Small and Medium-sized Enterprises' } }
+                      heading: T('Българо-белгийски бизнес обмен', 'Bulgaria–Belgium Business Exchange'),
+                      lines: [
+                        OBJ('Да се проучи как институционалното и бизнес сътрудничеството може да ускори цифровата трансформация и да създаде практически възможности между България и Белгия.', 'Explore how institutional and business cooperation can accelerate digital transformation and create practical opportunities between Bulgaria and Belgium.'),
+                        LABEL('Участник: ', 'Contributor: ', 'Paul Lambert, посланик на Белгия в България', 'Paul Lambert, Ambassador of Belgium to Bulgaria'),
+                        LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев', 'Georgi Dobrev')
                       ]
                     },
                     {
-                      time: '13:10 – 13:30',
-                      title: { bg: 'Ключова реч: Полюси на растеж в Черноморския регион – визия за европейски иновации, технологичен суверенитет и индустриална трансформация', en: 'Keynote address: Black Sea growth poles – A Vision for European innovation, tech sovereignty and industrial transformation' },
-                      people: [
-                        { name: { bg: 'Илияна Йотова', en: 'Iliana Iotova' }, role: { bg: 'Президент на Република България', en: 'President of the Republic of Bulgaria' } }
+                      heading: T('Българо-френски бизнес обмен', 'Bulgaria–France Business Exchange'),
+                      lines: [
+                        OBJ('Да се разгледат възможностите за инвестиции, иновации и стратегическо сътрудничество между България и Франция в рамките на Черноморския регион.', 'Examine opportunities for investment, innovation, and strategic cooperation between Bulgaria and France within the Black Sea region.'),
+                        LABEL('Участници: ', 'Contributors: ', 'Michael Roux; Stefan Muntoiu, Jan De Nul', 'Michael Roux; Stefan Muntoiu, Jan De Nul'),
+                        LABEL('Модератор: ', 'Moderator: ', 'Калина Цолова', 'Kalina Tcolova')
                       ]
                     }
                   ]
                 }
-              }]
-            },
-            {
-              time: '13:30 – 14:00', kind: 'single', block: { id: 'keynote-d1', bg: 'Ден 1 · Keynote', en: 'Day 1 · Keynote' }, cards: [{
-                room: HALL_BG, title: { bg: 'Към европейска иновационна екосистема: как Европа да се конкурира и сътрудничи със САЩ и Китай', en: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China' }, track: null,
-                detail: {
-                  items: [
-                    {
-                      time: '13:30 – 14:00',
-                      title: { bg: 'Към европейска иновационна екосистема: как Европа да се конкурира и сътрудничи със САЩ и Китай', en: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China' },
-                      people: [
-                        { name: { bg: 'Lars Frølund', en: 'Lars Frølund' }, role: { bg: 'Лектор, Масачузетски технологичен институт; стратегически съветник, NATO Innovation Fund', en: 'Lecturer, Massachusetts Institute of Technology; Strategic Advisor, NATO Innovation Fund' } },
-                        { name: { bg: 'Руслан Стефанов', en: 'Ruslan Stefanov' }, role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
-                      ]
-                    }
-                  ]
+              },
+              { time: '17:05 – 17:15', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '17:15 – 17:45', left: {
+                  blocks: [{
+                    heading: T('Обобщаващ панел', 'Summary Panel'),
+                    lines: [
+                      OBJ('Да се обобщят стратегическите въпроси, повдигнати през Ден 1, и да се определят възможностите, пречките и бизнес приоритетите, които да бъдат пренесени в Ден 2.', 'Consolidate the strategic issues raised during Day 1 and identify the opportunities, obstacles, and business priorities to be carried into Day 2.'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков', 'Emil Tsankov'),
+                      LABEL('Участници: ', 'Participants: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
                 }
-              }]
-            },
-            { time: '14:00 – 14:10', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            {
-              time: '14:10 – 15:30', kind: 'single', block: { id: 'block-1-d1', bg: 'Ден 1 · Блок 1', en: 'Day 1 · Block 1' }, cards: [{
-                room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Регионални иновационни политики', en: 'Block 1 (80 min) – Regional Innovation Policies' }, track: null,
-                detail: {
-                  items: [
+              },
+              {
+                time: '18:00 – 20:00', left: {
+                  blocks: [{
+                    heading: T('TechnoStart Motivator', 'TechnoStart Motivator'),
+                    lines: [
+                      OBJ('Да се вдъхновят учащите да проучат възможностите за кариера и стартиращ бизнес във високите технологии в Черноморския регион.', 'Inspire students to explore career and startup opportunities in advanced technologies across the Black Sea region.')
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '20:00 – 22:00', left: {
+                  blocks: [{
+                    heading: T('Гала коктейл', 'Gala Cocktail'),
+                    lines: [
+                      PLAIN('Основен ресторант, хотел „Черно море“', 'Main restaurant, Hotel Cherno More')
+                    ]
+                  }]
+                }
+              }
+            ]
+          },
+          {
+            title: T('Ден 2 – От възможност към внедряване: изкуствен интелект, автоматизация и сигурни операции', 'Day 2 – From Opportunity to Implementation: AI, Automation, and Secure Operations'),
+            question: T('Какво и как?', 'What and how?'),
+            date: T('6 октомври 2026 г.', '6 October 2026'),
+            audience: T('COO, CTO, CIO, CISO, производствени и оперативни мениджъри, специалисти по автоматизация и данни, екипи по киберсигурност, експортни мениджъри и ръководители, отговорни за внедряването.', 'COOs, CTOs, CIOs, CISOs, production and operations managers, automation and data specialists, cybersecurity teams, export managers, and executives responsible for implementation.'),
+            exchangeFocus: T('Нидерландия, Турция и международно сътрудничество в областта на туризма и технологиите за пътуване.', 'The Netherlands, Türkiye, and international cooperation in tourism and travel technologies.'),
+            rows: [
+              {
+                time: '9:00 – 9:15', left: {
+                  blocks: [{
+                    heading: T('Откриване и обобщение на Ден 1', 'Opening and Summary of Day 1'),
+                    lines: [
+                      OBJ('Да се свържат стратегическите възможности, идентифицирани през Ден 1, с технологиите, методите за внедряване и финансовите инструменти, представени през Ден 2.', 'Connect the strategic opportunities identified during Day 1 with the technologies, implementation methods, and financing instruments presented during Day 2.')
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '9:15 – 10:35',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 1: Изкуственият интелект и автоматизацията като отговор на растящите разходи и недостига на ресурси', 'Block 1: AI and Automation as a Response to Rising Costs and Resource Shortages'),
+                    lines: [
+                      OBJ('Да се покаже как изкуственият интелект и автоматизацията могат да намалят оперативните разходи, да отговорят на недостига на работна ръка и ресурси и да увеличат капацитета на съществуващите екипи чрез практически бизнес и производствени приложения.', 'Show how AI and automation can reduce operating costs, address labour and resource shortages, and increase the capacity of existing teams through practical business and manufacturing applications.'),
+                      TITLE('Приложен бизнес изкуствен интелект – от тъмните векове към агентното бъдеще', 'Applied Business AI - From the Dark Ages to the Agentic Future'),
+                      PERSON('Д-р Arthur Kordon', 'Dr Arthur Kordon', 'Kordon Consulting.', 'Kordon Consulting.', ', '),
+                      PLAIN('Практическа рамка за превръщането на модели на изкуствен интелект и технологични възможности в устойчиви бизнес резултати. Възможно е да бъде предложен последващ уъркшоп.', 'A practical framework for transforming AI models and technology opportunities into sustainable business results. A follow-up workshop may be offered.'),
+                      TITLE('Изкуственият интелект като лабораторен асистент: от рецептура до готов материал', 'AI as a Laboratory Assistant: From Formulation to Finished Material'),
+                      PERSON('Strateg', 'Strateg', 'Одеса, Украйна.', 'Odesa, Ukraine.', ', '),
+                      PLAIN('Практически случай, показващ как химиците на Strateg използват изкуствен интелект за разработване на рецептури за материали, които след това се тестват и усъвършенстват в лабораторията. Мостри от продуктите могат да подпомогнат практическа демонстрация.', "A practical case showing how Strateg’s chemists use AI to develop material formulations, which are then tested and refined in the laboratory. Product samples can support a hands-on demonstration."),
+                      TITLE('Блокчейн, финтех и изкуствен интелект: следващата вълна от иновации', 'Blockchain, Fintech, and AI: The Next Wave of Innovation'),
+                      PERSON('Мартин Куванджиев', 'Martin Kuvandzhiev'),
+                      LABEL('Модератор и допълнителни участници: ', 'Moderator and additional contributors: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Българо-нидерландски бизнес обмен: сигурност и устойчивост в Черноморския регион', 'Bulgaria–Netherlands Business Exchange: Security and Resilience in the Black Sea Region'),
+                    lines: [
+                      OBJ('Да се идентифицират възможности за сътрудничество в областта на стратегическата сигурност, морската устойчивост и защитата на бизнеса и регионалната инфраструктура.', 'Identify opportunities for cooperation in strategic security, maritime resilience, and the protection of business and regional infrastructure.'),
+                      LABEL('Теми: ', 'Themes: ', 'Справяне със стратегическата несигурност в Черноморския регион; киберустойчивост в оспорвани морски региони', 'Tackling Strategic Insecurity in the Black Sea Region; Cyber Resilience in Contested Maritime Regions'),
+                      LABEL('Участник: ', 'Contributor: ', 'Robin Peeters', 'Robin Peeters'),
+                      LABEL('Модератори: ', 'Moderators: ', 'Руслан Стефанов и Татяна Новосьолова', 'Ruslan Stefanov and Tatyana Novossiolova'),
+                      LABEL('Допълнителни лектори: ', 'Additional speakers: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                }
+              },
+              { time: '10:35 – 10:50', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '10:50 – 12:10',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 2: Сигурни данни, устойчиви вериги на доставки и киберустойчив бизнес', 'Block 2: Secure Data, Resilient Supply Chains, and Cyber-Resilient Business'),
+                    lines: [
+                      OBJ('Да се обясни как компаниите могат да защитят своите данни, цифрови идентичности, инфраструктура и вериги на доставки, разглеждайки киберсигурността и регулациите като основа за устойчивостта на бизнеса.', 'Explain how companies can protect their data, digital identities, infrastructure, and supply chains while treating cybersecurity and regulation as foundations for business resilience.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Драгомир Ватков, QIAGEN; Християн Даскалов; Ясен Танев; Александър Минчев и Neterra; Paul Lambert; Йоана Колева', 'Dragomir Vatkov, QIAGEN; Hristiyan Daskalov; Yasen Tanev; Alexander Minchev and Neterra; Paul Lambert; Yoana Koleva'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Драгомир Ватков', 'Dragomir Vatkov')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Българо-нидерландски бизнес обмен: критична инфраструктура и сигурност на изкуствения интелект', 'Bulgaria–Netherlands Business Exchange: Critical Infrastructure and AI Security'),
+                    lines: [
+                      OBJ('Да се развият възможности за сътрудничество при защитата на критичната инфраструктура, иновациите в киберсигурността и публично-частните отговори на новите рискове, свързани с изкуствения интелект.', 'Develop opportunities for cooperation on critical infrastructure protection, cybersecurity innovation, and public-private responses to emerging AI-related risks.'),
+                      LABEL('Теми: ', 'Themes: ', 'Интелигентни решения за защита на критичната инфраструктура; публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект', 'Smart Solutions for Critical Infrastructure Protection; Public-Private Cooperation for Cybersecurity and AI Security Innovation'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев', 'Georgi Dobrev'),
+                      LABEL('Лектори: ', 'Speakers: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                }
+              },
+              { time: '12:10 – 13:00', kind: 'break', label: T('Обяд и нетуъркинг', 'Lunch and Networking') },
+              {
+                time: '13:00 – 14:20',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 3: Автоматизация – роботика, интелигентен град и интелигентно земеделие', 'Block 3: Automation - Robotics, Smart City, and Smart Agriculture'),
+                    lines: [
+                      OBJ('Да се демонстрира как роботиката, свързаните системи, цифровите близнаци и изкуственият интелект могат да подобрят градските услуги, земеделието, мобилността и други физически операции.', 'Demonstrate how robotics, connected systems, digital twins, and AI can improve urban services, agriculture, mobility, and other physical operations.'),
+                      LABEL('Участници: ', 'Contributors: ', 'проф. Teade Punter – интеграция на интелигентни системи; Калин Костадинов, GATE – цифров близнак на София; проф. Кисимов, УНСС – дигитализация и големи данни; Илия Йорданов, ONDO – изкуствен интелект в земеделието; Христо Христов, TopMobility – бъдещето на мобилността', 'Prof. Teade Punter - Smart System Integration; Kalin Kostadinov, GATE - Digital Twin of Sofia; Prof. Kisimov, UNWE - Digitalization and Big Data; Iliya Yordanov, ONDO - AI in Agriculture; Hristo Hristov, TopMobility - The Future of Mobility'),
+                      LABEL('Модератор: ', 'Moderator: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Българо-турски бизнес обмен: технологичен трансфер и достъп до нови пазари', 'Bulgaria–Türkiye Business Exchange: Technology Transfer and Access to New Markets'),
+                    lines: [
+                      OBJ('Да се свържат български и турски компании, университети, клъстери и институции около технологичния трансфер, индустриалното сътрудничество и достъпа до регионалните и близкоизточните пазари.', 'Connect Bulgarian and Turkish companies, universities, clusters, and institutions around technology transfer, industrial cooperation, and access to regional and Middle Eastern markets.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Kerem Ozbek; проф. д-р Rengin, Университет Къркларели; BULTISHAD/Mobilis Bulgaria; BİSİAD; посланик и представители на министерства – предстои уточняване', 'Kerem Ozbek; Prof. Dr Rengin, Kirklareli University; BULTISHAD/Mobilis Bulgaria; BİSİAD; ambassador and ministerial representatives TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Kerem Ozbek', 'Kerem Ozbek')
+                    ]
+                  }]
+                }
+              },
+              { time: '14:20 – 15:00', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '15:00 – 16:20',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 4: Финансиране, износ, нови пазари и рискови фондове', 'Block 4: Financing, Exports, New Markets, and Venture Funds'),
+                    lines: [
+                      OBJ('Да се помогне на компаниите да разберат публичните, инвестиционните и рисково-управленските инструменти, с които разполагат в подкрепа на иновациите, износа и навлизането на нови пазари.', 'Help companies understand the public, investment, and risk-management instruments available to support innovation, exports, and entry into new markets.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Национален иновационен фонд; Агенция по заетостта; Фонд на фондовете; Българска агенция за експортно застраховане', 'National Innovation Fund; Employment Agency; Fund of Funds; Bulgarian Export Insurance Agency'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Бойко Таков', 'Boyko Takov')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Българо-турски бизнес обмен: иновационни екосистеми и съвместни проекти', 'Bulgaria–Türkiye Business Exchange: Innovation Ecosystems and Joint Projects'),
+                    lines: [
+                      OBJ('Институционалните отношения да се превърнат в практическо сътрудничество чрез технологични паркове, високотехнологични клъстери, проекти на Европейския съюз и преки партньорства между компании.', 'Turn institutional relationships into practical collaboration through technology parks, high-tech clusters, European Union projects, and direct company partnerships.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Miray Şanlı – Technopark İzmir; представител на High Tech Cluster; български лектор по проекти на Европейския съюз; допълнителен лектор – предстои уточняване', 'Miray Şanlı - Technopark İzmir; High Tech Cluster representative; Bulgarian speaker on European Union projects; additional speaker TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Светослав Стаменов', 'Svetoslav Stamenov')
+                    ]
+                  }]
+                }
+              },
+              { time: '16:20 – 16:30', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '16:30 – 17:40',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 5: Морски технологии', 'Block 5: Maritime Technologies'),
+                    lines: [
+                      OBJ('Да се покаже как изкуственият интелект, оперативните данни и цифровите системи трансформират корабостроенето, управлението на флота, морската безопасност и конкурентоспособността на морската икономика.', 'Show how AI, operational data, and digital systems are transforming shipbuilding, fleet management, maritime safety, and the competitiveness of the maritime economy.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Светлин Стоянов, MTG Dolphin – изкуствен интелект в корабостроенето; Cemile Koseler Usta, Истанбулска индустриална камара; Григор Кънчев, Unity Ship Management – трансформация на технологичните данни; Grimaldi – предстои уточняване; DNV – предстои уточняване', 'Svetlin Stoyanov, MTG Dolphin - AI in Shipbuilding; Cemile Koseler Usta, Istanbul Chamber of Industry; Grigor Kanchev, Unity Ship Management - Technology Data Transformation; Grimaldi - TBD; DNV - TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Туризъм', 'Tourism'),
+                    lines: [
+                      OBJ('Да се свържат туроператорите и технологичните компании около услуги, подпомогнати от изкуствен интелект, интелигентни дестинации, цифрови преживявания за гостите и по-ефективни операции в туризма.', 'Connect tourism operators and technology companies around AI-supported services, smart destinations, digital guest experiences, and more efficient tourism operations.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Андрей Лилов, URBO Studio – интелигентен туризъм; Елица Стоилова, UMNI.bg – изкуствен интелект в туризма; Антон Михалев, Eurodesign Systems – интелигентна стая', 'Andrey Lilov, URBO Studio - Smart Tourism; Elitsa Stoilova, UMNI.bg - AI in Tourism; Anton Mihalev, Eurodesign Systems - Smart Room'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Станислав Иванов', 'Stanislav Ivanov')
+                    ]
+                  }]
+                }
+              },
+              { time: '17:40 – 17:50', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '17:50 – 18:10', left: {
+                  blocks: [{
+                    heading: T('Обобщаващ панел', 'Summary Panel'),
+                    lines: [
+                      OBJ('Да се обобщят практическите изводи от деня и да се определят технологиите, партньорствата и възможностите за финансиране, които компаниите могат да започнат да оценяват незабавно.', "Consolidate the day’s practical lessons and identify the technologies, partnerships, and financing routes companies can begin evaluating immediately.")
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '20:00 – 22:00', left: {
+                  blocks: [{
+                    heading: T('Форум парти', 'Forum Party'),
+                    lines: [
+                      PLAIN('Основен ресторант, хотел „Черно море“', 'Main restaurant, Hotel Cherno More')
+                    ]
+                  }]
+                }
+              }
+            ]
+          },
+          {
+            title: T('Ден 3 – Нови хоризонти: изграждане на бизнеса на утрешния ден, задвижван от изкуствен интелект', 'Day 3 – New Horizons: Building the AI-Enabled Business of Tomorrow'),
+            question: T('Какво следва?', 'What comes next?'),
+            date: T('7 октомври 2026 г.', '7 October 2026'),
+            audience: T('Собственици на компании, изпълнителни директори, CIO, CTO, ръководители на иновации, мениджъри по цифрова трансформация, собственици на процеси, проектни мениджъри и специалисти по инфраструктура, които подготвят следващия етап от внедряването на изкуствен интелект.', 'Company owners, CEOs, CIOs, CTOs, innovation leaders, digital transformation managers, process owners, project managers, and infrastructure specialists preparing the next stage of AI adoption.'),
+            exchangeFocus: T('Обединеното кралство, с акцент върху търговски партньорства, инвестиции, технологичен трансфер и конкретни съвместни инициативи.', 'The United Kingdom, with an emphasis on commercial partnerships, investment, technology transfer, and concrete joint initiatives.'),
+            rows: [
+              {
+                time: '9:00 – 9:15', left: {
+                  blocks: [{
+                    heading: T('Откриване и обобщение на Ден 2', 'Opening and Summary of Day 2'),
+                    lines: [
+                      OBJ('Дискусията да премине от настоящите възможности за внедряване към организационните способности, инфраструктурата и партньорствата, от които компаниите ще имат нужда след това.', 'Move the discussion from current implementation opportunities toward the organizational capabilities, infrastructure, and partnerships companies will need next.')
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '9:15 – 10:35',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 1: Оптимизация на бизнес процесите – геймификация, изкуствен интелект и други', 'Block 1: Business Process Optimization - Gamification, AI, and More'),
+                    lines: [
+                      OBJ('Да се покаже как организациите могат да подобрят снабдяването, ангажираността, вземането на решения и други бизнес процеси чрез агенти с изкуствен интелект, автоматизация и геймификация.', 'Show how organizations can improve procurement, engagement, decision-making, and other business processes through AI agents, automation, and gamification.'),
+                      LABEL('Участници: ', 'Contributors: ', 'Цветан Русимов, Imperia Online; Геновева Христова, CreaTech; Eric Hints, Loquiz; Dominik Petek, ProCom – агенти с изкуствен интелект в снабдяването', 'Tsvetan Rusimov, Imperia Online; Genoveva Hristova, CreaTech; Eric Hints, Loquiz; Dominik Petek, ProCom - AI Agents in Procurement'),
+                      LABEL('Модератор: ', 'Moderator: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Българо-британски бизнес обмен: технологично и търговско сътрудничество', 'Bulgaria–United Kingdom Business Exchange: Technology and Commercial Cooperation'),
+                    lines: [
+                      OBJ('Да се идентифицират възможности за партньорства, инвестиции, технологичен трансфер и достъп до клиенти и иновационни екосистеми в България и Обединеното кралство.', 'Identify opportunities for partnerships, investment, technology transfer, and access to customers and innovation ecosystems in Bulgaria and the United Kingdom.'),
+                      LABEL('Участници: ', 'Participants: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
+                }
+              },
+              { time: '10:35 – 10:50', kind: 'break', label: T('Почивка', 'Break') },
+              {
+                time: '10:50 – 12:10',
+                left: {
+                  blocks: [
                     {
-                      time: '14:10 – 14:45',
-                      title: { bg: 'Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги на доставки', en: 'Digital & AI transformation for industrial growth: Secure European supply chains' },
-                      note: { bg: 'Чакаме потвърждение от лекторите.', en: 'Speakers to be confirmed.' },
-                      people: [
-                        { name: { bg: 'Руслан Стефанов', en: 'Ruslan Stefanov' }, role: { bg: 'Директор „Стратегия и иновации“, Applied Research and Communications Fund', en: 'Director of Strategy and Innovation, Applied Research and Communications Fund' }, isModerator: true }
+                      heading: T('Блок 2: Нови хоризонти – какво следва?', 'Block 2: New Horizons - What Comes Next?'),
+                      lines: [
+                        OBJ('Да се разгледа как изкуственият интелект се превръща в постоянен оперативен слой около хората и организациите и как бизнесът да избира между персонална, локална, on-premises, хибридна и облачна инфраструктура.', 'Examine how AI is becoming a permanent operational layer around people and organizations, and how businesses should choose among personal, local, on-premises, hybrid, and cloud infrastructure.'),
+                        PLAIN('Сесията ще представи рамка за вземане на решения, която свързва бизнес изискванията с изчислителния капацитет, сигурността, организационните данни, разходите и мащабируемостта.', 'The session will present a decision framework connecting business requirements with computing capacity, security, organizational data, cost, and scalability.'),
+                        LABEL('Формат: ', 'Format: ', 'Визионерска основна презентация, практическа демонстрация, експертна дискусия и рамка за 90-дневен пилотен проект.', 'Visionary keynote, practical demonstration, expert discussion, and a framework for a 90-day pilot.'),
+                        LABEL('Участници и модератор: ', 'Contributors and moderator: ', 'предстои уточняване', 'TBD')
                       ]
                     },
                     {
-                      time: '14:45 – 15:30',
-                      title: { bg: 'Към черноморска иновационна екосистема: трансфер на технологии и възможности за мащабиране', en: 'Towards a Black Sea innovation ecosystem: Technology transfer and scale up opportunities' },
-                      people: [
-                        { name: { bg: 'Екатерина Захариева', en: 'Ekaterina Zaharieva' }, role: { bg: 'Еврокомисар по въпросите на стартиращите предприятия, научните изследвания и иновациите', en: 'European Commissioner for Startups, Research and Innovation' }, note: { bg: 'видео послание', en: 'video message' } },
-                        { name: { bg: 'Светослава Георгиева', en: 'Svetoslava Georgieva' }, role: { bg: 'Председател на Съвета на директорите, European Innovation Council Fund', en: 'Board Chair, European Innovation Council Fund' } },
-                        { name: { bg: 'Емил Цанков', en: 'Emil Tsankov' }, role: { bg: 'Председател на УС, ICT Cluster Varna', en: 'Chairman of the Board, ICT Cluster Varna' }, isModerator: true }
-                      ]
+                      heading: T('Закриване на Черноморски технологичен форум Варна 2026', 'Closing of Black Sea Technology Forum Varna 2026'),
+                      lines: []
                     }
                   ]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Българо-британски бизнес обмен: от контакти към съвместни инициативи', 'Bulgaria–United Kingdom Business Exchange: From Contacts to Joint Initiatives'),
+                    lines: [
+                      OBJ('Отношенията, установени по време на Форума, да се превърнат в потенциални търговски партньорства, съвместни проекти, инвестиционни възможности и структурирани последващи дейности.', 'Convert the relationships established during the Forum into potential commercial partnerships, joint projects, investment opportunities, and structured follow-up activities.'),
+                      LABEL('Участници: ', 'Participants: ', 'предстои уточняване', 'TBD')
+                    ]
+                  }]
                 }
-              }]
-            },
-            { time: '15:30 – 15:45', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            {
-              time: '15:45 – 17:05', kind: 'single', block: { id: 'block-2-d1', bg: 'Ден 1 · Блок 2', en: 'Day 1 · Block 2' }, cards: [{
-                room: HALL_VN, title: { bg: 'Блок 2 (80 мин) – Регионални иновационни политики', en: 'Block 2 (80 min) – Regional Innovation Policies' }, track: null,
-                detail: {
-                  items: [
-                    {
-                      time: '15:45 – 16:15',
-                      title: { bg: 'От стратегия към изпълнение: ефективни политики за дигиталната трансформация на европейските региони', en: 'From strategy to delivery: Effective policymaking for digital transformation of Europe’s regions' },
-                      people: [
-                        { name: { bg: 'Paul Lambert', en: 'Paul Lambert' }, role: { bg: 'Посланик на Белгия в България', en: 'Ambassador of Belgium to Bulgaria' } },
-                        { name: { bg: 'Георги Добрев', en: 'Georgi Dobrev' }, role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
-                      ]
-                    },
-                    {
-                      time: '16:15 – 17:05',
-                      title: { bg: 'Иновационната и геоикономическа роля на Европейския съюз в Черноморския регион', en: 'The European Union’s innovation and geoeconomic power in the Black Sea region' },
-                      people: [
-                        { name: { bg: 'Michael Roux', en: 'Michael Roux' }, role: { bg: 'Посланик за Източното партньорство и Черно море, Министерство на Европа и външните работи на Франция', en: 'Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France' } },
-                        { name: { bg: 'Калина Цолова', en: 'Kalina Tsolova' }, role: { bg: 'Анализатор, Applied Research and Communications Fund', en: 'Analyst, Applied Research and Communications Fund' }, isModerator: true }
-                      ]
-                    }
-                  ]
-                }
-              }]
-            },
-            { time: '17:05 – 17:15', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            { time: '17:15 – 17:45', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Обобщаващ панел', en: 'Summary Panel' }, track: null }] },
-            { time: '18:00 – 20:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Техностар Мотиватор', en: 'TechnoStar Motivator' }, track: null }] },
-            { time: '20:00 – 22:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Гала коктейл – ресторант х-л „Черно море“', en: 'Gala Cocktail – Hotel Cherno More restaurant' }, track: null }] }
-          ]
-        },
-        {
-          id: 2, date: { bg: '6 октомври', en: '6 October' }, label: { bg: 'Ден 2', en: 'Day 2' },
-          slots: [
-            { time: '09:30 – 09:50', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Откриване и обобщение от Ден 1', en: 'Opening & Day 1 Recap' }, track: null }] },
-            { time: '09:50 – 10:15', kind: 'single', block: { id: 'keynote-d2', bg: 'Keynote', en: 'Keynote' }, cards: [{ room: HALL_BG, title: { bg: 'Keynote – Съвременни предизвикателства и новите бизнес модели', en: 'Keynote – Contemporary Challenges and New Business Models' }, track: null }] },
-            { time: '10:15 – 10:30', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            {
-              time: '10:30 – 11:50', kind: 'double', block: { id: 'block-1-d2', bg: 'Блок 1', en: 'Block 1' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Сигурни данни, устойчиви вериги и киберустойчив бизнес', en: 'Block 1 (80 min) – Secure Data, Resilient Chains & Cyber-Resilient Business' }, track: 'cybersecurity' },
-                { room: HALL_VN, title: { bg: 'Морски технологии', en: 'Marine Tech' }, track: 'marine' }
-              ]
-            },
-            { time: '11:50 – 13:00', kind: 'break', label: { bg: 'Пауза / Обяд / Networking', en: 'Break / Lunch / Networking' } },
-            {
-              time: '13:00 – 14:20', kind: 'double', block: { id: 'block-2-d2', bg: 'Блок 2', en: 'Block 2' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 2 (80 мин) – Управление с данни: IoT + логистика', en: 'Block 2 (80 min) – Data-Driven Management: IoT + Logistics' }, track: 'smart-city' },
-                { room: HALL_VN, title: { bg: 'Биотехнологии, здраве и устойчиви индустрии', en: 'Biotechnologies, Health & Sustainable Industries' }, track: 'biotech' }
-              ]
-            },
-            { time: '14:20 – 15:00', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            {
-              time: '15:00 – 16:05', kind: 'double', block: { id: 'block-3-d2', bg: 'Блок 3', en: 'Block 3' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 3 (65 мин) – Роботика', en: 'Block 3 (65 min) – Robotics' }, track: 'automation' },
-                { room: HALL_VN, title: { bg: 'Туризъм', en: 'Tourism' }, track: 'tourism' }
-              ]
-            },
-            { time: '16:05 – 16:20', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            { time: '16:20 – 16:50', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Обобщаващ панел', en: 'Summary Panel' }, track: null }] },
-            { time: '20:00 – 22:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Networking парти – ресторант х-л „Черно море“', en: 'Networking Party – Hotel Cherno More restaurant' }, track: null }] }
-          ]
-        },
-        {
-          id: 3, date: { bg: '7 октомври', en: '7 October' }, label: { bg: 'Ден 3', en: 'Day 3' },
-          slots: [
-            { time: '09:30 – 09:50', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Откриване и обобщение от Ден 2', en: 'Opening & Day 2 Recap' }, track: null }] },
-            { time: '09:50 – 10:15', kind: 'single', block: { id: 'keynote-d3', bg: 'Keynote', en: 'Keynote' }, cards: [{ room: HALL_BG, title: { bg: 'Keynote – Какво следва?', en: 'Keynote – What’s Next?' }, track: null }] },
-            { time: '10:15 – 10:30', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            {
-              time: '10:30 – 11:50', kind: 'double', block: { id: 'block-1-d3', bg: 'Блок 1', en: 'Block 1' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 1 (80 мин) – Финансиране, износ, нови пазари', en: 'Block 1 (80 min) – Financing, Export, New Markets' }, track: null },
-                { room: HALL_VN, title: { bg: 'Образование', en: 'Education' }, track: null }
-              ]
-            },
-            { time: '11:50 – 13:00', kind: 'break', label: { bg: 'Пауза / Обяд / Networking', en: 'Break / Lunch / Networking' } },
-            {
-              time: '13:00 – 14:20', kind: 'double', block: { id: 'block-2-d3', bg: 'Блок 2', en: 'Block 2' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 2 (80 мин) – Индустрия', en: 'Block 2 (80 min) – Industry' }, track: null },
-                { room: HALL_VN, title: { bg: 'Образование', en: 'Education' }, track: null }
-              ]
-            },
-            { time: '14:20 – 15:00', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            {
-              time: '15:00 – 16:05', kind: 'double', block: { id: 'block-3-d3', bg: 'Блок 3', en: 'Block 3' }, cards: [
-                { room: HALL_BG, title: { bg: 'Блок 3 (65 мин) – Нови хоризонти…', en: 'Block 3 (65 min) – New Horizons…' }, track: null },
-                { room: HALL_VN, title: { bg: 'Умно земеделие', en: 'Smart Agriculture' }, track: 'agritech' }
-              ]
-            },
-            { time: '16:05 – 16:20', kind: 'break', label: { bg: 'Кафе пауза & Expo networking', en: 'Coffee break & Expo networking' } },
-            { time: '16:20 – 17:00', kind: 'single', cards: [{ room: HALL_BG, title: { bg: 'Закриване на Черноморски технологичен форум Варна 2026', en: 'Closing of Black Sea Technology Forum Varna 2026' }, track: null }] }
-          ]
-        }
-      ];
-
-      (function renderProgramTimeline() {
-        var trackNameById = {};
-        PROGRAM_TRACKS.forEach(function (t) { trackNameById[t.id] = t; });
-
-        var usedTracks = {};
-        PROGRAM_DAYS.forEach(function (d) { d.slots.forEach(function (s) { (s.cards || []).forEach(function (c) { if (c.track) usedTracks[c.track] = true; }); }); });
-
-        var state = { tracks: {}, hall: null };
-        function selectedTrackCount() { return Object.keys(state.tracks).length; }
-
-        // Filter bar: dropdown toggle
-        var filterToggle = document.getElementById('progFilterToggle');
-        var filterPanel = document.getElementById('progFilterPanel');
-        var filterBadge = document.getElementById('progFilterBadge');
-        var filterAutoCloseTimer = null;
-        function clearFilterAutoClose() {
-          if (filterAutoCloseTimer) { clearTimeout(filterAutoCloseTimer); filterAutoCloseTimer = null; }
-        }
-        function closeFilterPanel() {
-          clearFilterAutoClose();
-          filterPanel.classList.remove('open');
-          filterToggle.classList.remove('active');
-          filterToggle.setAttribute('aria-expanded', 'false');
-        }
-        // Multi-select: don't close on every pill tap (would block picking several
-        // tracks at once). Instead, auto-close a short pause after the last tap so
-        // it still feels automatic; each new tap resets the pause.
-        function scheduleFilterAutoClose() {
-          clearFilterAutoClose();
-          filterAutoCloseTimer = setTimeout(closeFilterPanel, 1100);
-        }
-        filterToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          clearFilterAutoClose();
-          var open = filterPanel.classList.toggle('open');
-          filterToggle.classList.toggle('active', open);
-          filterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-        document.addEventListener('click', function (e) {
-          if (!filterPanel.classList.contains('open')) return;
-          if (filterPanel.contains(e.target) || filterToggle.contains(e.target)) return;
-          closeFilterPanel();
-        });
-        function updateFilterBadge() {
-          filterBadge.hidden = !(selectedTrackCount() > 0 || !!state.hall);
-        }
-
-        // Hall filter: one shared state.hall drives both the always-visible
-        // legend above the grid (click to isolate that hall, click again to
-        // show both) and the "Зала" pills inside the Filters panel — they
-        // stay in sync with each other via setHallFilter().
-        var hallLegend = document.getElementById('progHallLegend');
-        var hallBtns = hallLegend ? Array.prototype.slice.call(hallLegend.querySelectorAll('[data-hall]')) : [];
-        function hallForBtn(btn) { return btn.dataset.hall === 'bg' ? HALL_BG : HALL_VN; }
-        function syncHallLegend() {
-          hallBtns.forEach(function (btn) {
-            var hall = hallForBtn(btn);
-            var selected = state.hall === hall;
-            btn.classList.toggle('selected', selected);
-            btn.classList.toggle('inactive', !!state.hall && !selected);
-            btn.setAttribute('aria-pressed', String(selected));
-          });
-        }
-        var hallPillsWrap = document.getElementById('progHallPills');
-        function makeHallPill(bg, en, val) {
-          var b = document.createElement('button');
-          b.className = 'prog-fb-pill' + (val === null ? ' active' : '');
-          b.type = 'button';
-          b.dataset.hallVal = val || '';
-          b.setAttribute('data-bg', bg);
-          b.setAttribute('data-en', en);
-          b.textContent = pick(bg, en);
-          b.addEventListener('click', function () { setHallFilter(val); });
-          return b;
-        }
-        hallPillsWrap.appendChild(makeHallPill('Всички', 'All', null));
-        hallPillsWrap.appendChild(makeHallPill(HALL_BG, HALL_BG_EN, HALL_BG));
-        hallPillsWrap.appendChild(makeHallPill(HALL_VN, HALL_VN_EN, HALL_VN));
-        function syncHallPills() {
-          Array.prototype.forEach.call(hallPillsWrap.children, function (p) {
-            var val = p.dataset.hallVal || null;
-            p.classList.toggle('active', val === null ? !state.hall : state.hall === val);
-          });
-        }
-        function setHallFilter(hall) {
-          state.hall = (hall === null) ? null : (state.hall === hall ? null : hall);
-          syncHallLegend(); syncHallPills(); updateFilterBadge(); render();
-        }
-        hallBtns.forEach(function (btn) {
-          btn.addEventListener('click', function () { setHallFilter(hallForBtn(btn)); });
-        });
-
-        // Filter bar: track pills
-        var pillsWrap = document.getElementById('progTrackPills');
-        function makePill(bg, en, val) {
-          var b = document.createElement('button');
-          b.className = 'prog-fb-pill' + (val === null ? ' active' : '');
-          b.type = 'button';
-          b.dataset.val = val || '';
-          b.setAttribute('data-bg', bg);
-          b.setAttribute('data-en', en);
-          b.textContent = pick(bg, en);
-          b.addEventListener('click', function () { toggleTrackFilter(val); });
-          return b;
-        }
-        pillsWrap.appendChild(makePill('Всички', 'All', null));
-        PROGRAM_TRACKS.filter(function (t) { return usedTracks[t.id]; }).forEach(function (t) {
-          pillsWrap.appendChild(makePill(t.bg, t.en, t.id));
-        });
-
-        document.getElementById('progClearBtn').addEventListener('click', function () {
-          state.tracks = {}; syncPills();
-          setHallFilter(null);
-          closeFilterPanel();
-        });
-
-        // "Всички" (val === null) resets the whole selection; any other pill
-        // toggles independently of the rest, so several tracks can be active
-        // together — click an already-active one again to drop just that one.
-        function toggleTrackFilter(trackId) {
-          if (trackId === null) { state.tracks = {}; }
-          else if (state.tracks[trackId]) { delete state.tracks[trackId]; }
-          else { state.tracks[trackId] = true; }
-          syncPills(); updateFilterBadge(); render();
-          if (trackId === null) { closeFilterPanel(); }
-          else { scheduleFilterAutoClose(); }
-        }
-        function syncPills() {
-          var noneSelected = selectedTrackCount() === 0;
-          Array.prototype.forEach.call(pillsWrap.children, function (p) {
-            var val = p.dataset.val || null;
-            p.classList.toggle('active', val === null ? noneSelected : !!state.tracks[val]);
-          });
-        }
-
-        var grid = document.getElementById('progGrid');
-        var tailGrid = document.getElementById('progGridTail');
-        var mobileGrid = document.getElementById('progGridMobile');
-
-        function cardMatches(card) {
-          var trackOk = selectedTrackCount() === 0 || (card.track && state.tracks[card.track]);
-          var hallOk = !state.hall || card.room === state.hall;
-          return trackOk && hallOk;
-        }
-
-        function buildHeaderCell(d, colIdx) {
-          var cell = document.createElement('div');
-          cell.className = 'prog-cell prog-cell-head prog-col-' + (colIdx + 1);
-          cell.id = 'prog-day-' + d.id;
-          cell.style.gridColumn = String(colIdx + 1);
-          cell.style.gridRow = '1';
-          var head = document.createElement('div');
-          head.className = 'prog-day-col-head';
-          head.innerHTML = '<span class="meta"><h3 data-bg="' + d.label.bg + '" data-en="' + d.label.en + '">' + pick(d.label.bg, d.label.en) + '</h3><span class="date" data-bg="' + d.date.bg + '" data-en="' + d.date.en + '">' + pick(d.date.bg, d.date.en) + '</span></span>';
-          cell.appendChild(head);
-          return cell;
-        }
-
-        function buildSlotCell(s, colIdx, withColDivider, d) {
-          var cell = document.createElement('div');
-          cell.className = 'prog-cell' + (withColDivider ? ' prog-col-' + (colIdx + 1) : '');
-          cell.style.gridColumn = String(colIdx + 1);
-
-          if (s.kind === 'break') {
-            cell.classList.add('prog-break-cell');
-            var breakTime = document.createElement('div');
-            breakTime.className = 'prog-slot-time';
-            breakTime.textContent = s.time;
-            var br = document.createElement('div');
-            br.className = 'prog-break-row';
-            br.setAttribute('data-bg', s.label.bg);
-            br.setAttribute('data-en', s.label.en);
-            br.textContent = pick(s.label.bg, s.label.en);
-            cell.appendChild(breakTime);
-            cell.appendChild(br);
-            return cell;
+              }
+            ]
           }
+        ];
 
-          var time = document.createElement('div');
-          time.className = 'prog-slot-time';
-          time.textContent = s.time;
-          cell.appendChild(time);
-
-          var cardsWrap = document.createElement('div');
-          cardsWrap.className = 'prog-slot-cards';
-          s.cards.forEach(function (c, i) {
-            if (s.kind === 'double' && i === 1) {
-              var ptag = document.createElement('div');
-              ptag.className = 'parallel-tag';
-              ptag.setAttribute('data-bg', 'По същото време');
-              ptag.setAttribute('data-en', 'At the same time');
-              ptag.textContent = pick('По същото време', 'At the same time');
-              cardsWrap.appendChild(ptag);
-            }
-            var match = cardMatches(c, s.block);
-            var card = document.createElement('div');
-            card.className = 'prog-ev-card' + (match ? '' : ' dim') + (c.detail ? ' prog-ev-card--expandable' : '');
-            card.style.setProperty('--room-dot', c.room === HALL_VN ? 'var(--navy)' : 'var(--teal)');
-            var tagHtml = c.track && trackNameById[c.track] ? '<span class="tag" data-bg="' + trackNameById[c.track].bg + '" data-en="' + trackNameById[c.track].en + '">' + pick(trackNameById[c.track].bg, trackNameById[c.track].en) + '</span>' : '';
-            var ctaHtml = '';
-            if (c.detail) {
-              var ctaBg = 'Виж детайли';
-              var ctaEn = 'View details';
-              ctaHtml = '<div class="prog-ev-cta">' +
-                '<span class="prog-ev-cta-dot"></span>' +
-                '<span data-bg="' + ctaBg.replace(/"/g, '&quot;') + '" data-en="' + ctaEn.replace(/"/g, '&quot;') + '">' + pick(ctaBg, ctaEn) + '</span>' +
-                '<span class="prog-ev-cta-arrow" aria-hidden="true"></span></div>';
-            }
-            var roomEn = c.room === HALL_BG ? HALL_BG_EN : (c.room === HALL_VN ? HALL_VN_EN : c.room);
-            card.innerHTML = '<div class="room" data-bg="' + c.room + '" data-en="' + roomEn + '">' + pick(c.room, roomEn) + '</div><div class="title" data-bg="' + c.title.bg.replace(/"/g, '&quot;') + '" data-en="' + c.title.en.replace(/"/g, '&quot;') + '">' + pick(c.title.bg, c.title.en) + '</div>' + tagHtml + ctaHtml;
-            if (c.detail) {
-              card.setAttribute('role', 'button');
-              card.setAttribute('tabindex', '0');
-              card.addEventListener('click', function () { if (window.openSessionModal) window.openSessionModal(c, d); });
-              card.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (window.openSessionModal) window.openSessionModal(c, d); }
-              });
-            }
-            cardsWrap.appendChild(card);
-          });
-          cell.appendChild(cardsWrap);
-          return cell;
+        var progDaysContainer = document.getElementById('progDays');
+        if (progDaysContainer) {
+          PROGRAM_SCHEDULE.forEach(function (day) { progDaysContainer.appendChild(renderDay(day)); });
         }
 
-        // How many leading slots have the exact same kind (single/double/
-        // break) across all 3 days — that's the part of the programme that's
-        // genuinely parallel (Opening → Keynote → Break → Block 1 → Break →
-        // Block 2 → Break, here). Past that point the days structurally
-        // diverge (Day 1 wraps into evening events with fewer blocks than
-        // Day 2/3) — no amount of stretching, centering, or staggering made
-        // that divergent part look right, because it isn't actually aligned
-        // data. It renders as 3 independent columns instead (see render()).
-        function commonPrefixLength() {
-          var minLen = Math.min.apply(null, PROGRAM_DAYS.map(function (d) { return d.slots.length; }));
-          var n = 0;
-          for (; n < minLen; n++) {
-            var kind0 = PROGRAM_DAYS[0].slots[n].kind;
-            if (!PROGRAM_DAYS.every(function (d) { return d.slots[n].kind === kind0; })) break;
-          }
-          return n;
-        }
-
-        // Three render targets, one per layout need — same PROGRAM_DAYS
-        // data and the same buildHeaderCell/buildSlotCell builders feed
-        // all three, but each lays the cells out differently:
-        //   - renderDesktopAligned: Day 1/2/3 headers + the leading run of
-        //     slots whose kind matches across all 3 days, placed on real
-        //     synced CSS Grid rows (explicit grid-row per cell) so e.g.
-        //     every day's first coffee break lands at the same height.
-        //     Only possible because these cells are siblings in one grid
-        //     with matching row numbers — the reason this is its own pass.
-        //   - renderDesktopTail: once the days structurally diverge (Day 1
-        //     wraps into fewer/different evening events than Day 2/3),
-        //     forcing them onto shared rows produced bad stretching/gaps,
-        //     so each day flows independently here instead — still 3 CSS
-        //     Grid columns, no shared rows.
-        //   - renderMobileLinear: below the 1000px breakpoint the two
-        //     desktop containers above would stack as separate blocks —
-        //     Day1-aligned, Day2-aligned, Day3-aligned, Day1-tail, ... —
-        //     which reads out of chronological order. This pass instead
-        //     renders each day's header + every slot (aligned prefix and
-        //     tail together) as one uninterrupted list.
-        function render() {
-          grid.innerHTML = '';
-          tailGrid.innerHTML = '';
-          mobileGrid.innerHTML = '';
-          var commonN = commonPrefixLength();
-          renderDesktopAligned(commonN);
-          renderDesktopTail(commonN);
-          renderMobileLinear();
-          equalizeTailRows(commonN);
-        }
-
-        function renderDesktopAligned(commonN) {
-          PROGRAM_DAYS.forEach(function (d, colIdx) {
-            var head = buildHeaderCell(d, colIdx);
-            head.style.gridRow = '1';
-            grid.appendChild(head);
-
-            for (var i = 0; i < commonN; i++) {
-              var cell = buildSlotCell(d.slots[i], colIdx, true, d);
-              cell.style.gridRow = String(i + 2);
-              grid.appendChild(cell);
-            }
-          });
-        }
-
-        function renderDesktopTail(commonN) {
-          // The divider class goes on the .prog-tail-col CONTAINER only
-          // (one continuous line for the whole column) — NOT on each
-          // individual cell too, which was drawing a short border-left per
-          // card with visible gaps between them (the earlier "leftover
-          // divider" bug).
-          PROGRAM_DAYS.forEach(function (d, colIdx) {
-            var col = document.createElement('div');
-            col.className = 'prog-tail-col prog-col-' + (colIdx + 1);
-            col.id = 'prog-tail-col-' + d.id;
-
-            for (var j = commonN; j < d.slots.length; j++) {
-              var cell = buildSlotCell(d.slots[j], colIdx, false, d);
-              cell.dataset.slotIdx = j;
-              col.appendChild(cell);
-            }
-            tailGrid.appendChild(col);
-          });
-        }
-
-        function renderMobileLinear() {
-          PROGRAM_DAYS.forEach(function (d, colIdx) {
-            var mHead = buildHeaderCell(d, colIdx);
-            mHead.style.gridColumn = '';
-            mHead.style.gridRow = '';
-            mobileGrid.appendChild(mHead);
-
-            d.slots.forEach(function (s) {
-              var mCell = buildSlotCell(s, colIdx, false, d);
-              mCell.style.gridColumn = '';
-              mobileGrid.appendChild(mCell);
-            });
-          });
-        }
-
-        // Day 2 and Day 3 keep running the identical run of session kinds
-        // for a while even after Day 1 breaks away for good (Block 3 ->
-        // break -> closing session — see commonPrefixLength above for why
-        // Day 1 can't join in). But since the tail columns above are just
-        // two independent flows, a differently-long card title on one day
-        // shifts everything below it out of step with the other — most
-        // visibly the closing coffee break landing at two different
-        // heights. Force each matching pair to share the taller one's
-        // height so that run of rows stays level, the same guarantee the
-        // aligned grid above gives the fully-common prefix. Skipped below
-        // the 1000px breakpoint, where the tail collapses to one stacked
-        // column and Day 2/Day 3 are no longer side by side.
-        //
-        // Matching on `kind` alone isn't enough — Day 2's 16:20-16:50
-        // summary panel and Day 3's 16:20-17:00 closing ceremony are both
-        // kind:'single' at the same row index, but they're not actually
-        // the same moment. Syncing their heights forced Day 2's short
-        // panel up to the closing ceremony's taller box, leaving a slab of
-        // empty space inside it before the next real row (20:00 Парти).
-        // Requiring the times to match too stops the sync right where the
-        // days genuinely stop running in parallel.
-        function equalizeTailRows(commonN) {
-          var d2 = PROGRAM_DAYS[1], d3 = PROGRAM_DAYS[2];
-          if (!d2 || !d3) return;
-          var col2 = document.getElementById('prog-tail-col-' + d2.id);
-          var col3 = document.getElementById('prog-tail-col-' + d3.id);
-          if (!col2 || !col3) return;
-          var minLen = Math.min(d2.slots.length, d3.slots.length);
-          var narrow = window.innerWidth <= 1000;
-          for (var j = commonN; j < minLen; j++) {
-            if (d2.slots[j].kind !== d3.slots[j].kind || d2.slots[j].time !== d3.slots[j].time) break;
-            var cell2 = col2.querySelector('[data-slot-idx="' + j + '"]');
-            var cell3 = col3.querySelector('[data-slot-idx="' + j + '"]');
-            if (!cell2 || !cell3) continue;
-            cell2.style.minHeight = '';
-            cell3.style.minHeight = '';
-            if (narrow) continue;
-            var h = Math.max(cell2.offsetHeight, cell3.offsetHeight) + 'px';
-            cell2.style.minHeight = h;
-            cell3.style.minHeight = h;
+        // Keep each "Day N" row lined up between the Hall Bulgaria and Hall
+        // Varna track cards — their text lengths differ, so left unset the
+        // flex-column <ul>s would drift out of sync row by row.
+        function equalizeTrackRows() {
+          var lists = document.querySelectorAll('.prog2-track-card ul');
+          if (lists.length < 2) return;
+          var items = Array.prototype.map.call(lists, function (ul) { return ul.querySelectorAll('li'); });
+          var rows = Math.min.apply(null, items.map(function (l) { return l.length; }));
+          items.forEach(function (l) { Array.prototype.forEach.call(l, function (li) { li.style.minHeight = ''; }); });
+          if (window.innerWidth <= 900) return;
+          for (var i = 0; i < rows; i++) {
+            var maxH = 0;
+            items.forEach(function (l) { maxH = Math.max(maxH, l[i].getBoundingClientRect().height); });
+            items.forEach(function (l) { l[i].style.minHeight = maxH + 'px'; });
           }
         }
-
-        render();
-
-        var tailResizeTimer;
+        equalizeTrackRows();
+        var trackRowResizeTimer;
         window.addEventListener('resize', function () {
-          clearTimeout(tailResizeTimer);
-          tailResizeTimer = setTimeout(function () { equalizeTailRows(commonPrefixLength()); }, 150);
+          clearTimeout(trackRowResizeTimer);
+          trackRowResizeTimer = setTimeout(equalizeTrackRows, 150);
         });
-
-        // Expose so Home "Направления" cards can pre-filter the timeline.
-        // Coming from a Home card is a fresh "show me just this track" pick,
-        // not an add-on to whatever was already selected in the panel.
-        window.bstfSetProgramTrack = function (trackId) {
-          if (!usedTracks[trackId]) return;
-          state.tracks = {};
-          state.tracks[trackId] = true;
-          syncPills();
-          updateFilterBadge();
-          render();
-          var target = document.getElementById('prog-day-1');
-          (target || document.getElementById('program')).scrollIntoView({ behavior: 'smooth', block: 'start' });
-        };
       })();
     </script>
 
