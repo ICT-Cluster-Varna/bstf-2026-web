@@ -1478,11 +1478,28 @@
 
         .prog2-cell-room-tag {
           display: block;
-          font-size: 0.68rem;
+          font-size: 0.75rem;
           font-weight: 700;
           text-transform: uppercase;
           color: var(--teal-contrast);
           margin-bottom: 8px
+        }
+
+        /* A cell with no session for this hall ("-" placeholder) costs a
+           whole extra stacked block once columns become rows on mobile.
+           There's nothing to read there, so drop it instead of making
+           people scroll past an empty "HALL X / -" row. */
+        .prog2-cell--empty {
+          display: none
+        }
+
+        /* Match .prog2-cell's side padding so the footer text lines up with
+           the schedule content directly above it instead of looking shifted.
+           Lives here (not the 768px block) because the row/overview grids
+           already stack at this width — the misalignment is visible as soon
+           as columns become rows, not just on narrow phones. */
+        .prog2-day-footer {
+          padding: 16px 18px
         }
       }
 
@@ -3613,6 +3630,27 @@
         .prefooter-cta,
         footer.main-footer {
           text-align: center
+        }
+
+        /* Undo the text-align:center above for the fully-expanded Program
+           schedule — centering long Objectives/Contributors paragraphs makes
+           them ragged and hard to scan on phones. Left-align matches how the
+           section already renders at 769-900px (stacked but not centered). */
+        .prog2-overview,
+        .prog2-tracks,
+        .prog2-days {
+          text-align: left
+        }
+
+        /* The long day titles ("Day 1 - New Opportunities for Growth...")
+           wrap to 4-5 lines at the desktop font-size, turning the navy
+           banner into almost half the screen before any content shows. */
+        .prog2-day-header {
+          padding: 18px 20px
+        }
+
+        .prog2-day-header h3 {
+          font-size: 1.05rem
         }
 
         footer.main-footer {
@@ -5916,7 +5954,7 @@
         }
 
         function renderCell(cell) {
-          var wrap = el('div', 'prog2-cell');
+          var wrap = el('div', 'prog2-cell' + (cell ? '' : ' prog2-cell--empty'));
           if (!cell) { var dash = el('div', 'prog2-cell-empty'); dash.textContent = '-'; wrap.appendChild(dash); return wrap; }
           cell.blocks.forEach(function (b, bi) { wrap.appendChild(renderBlock(b, bi === 0)); });
           return wrap;
@@ -7759,7 +7797,13 @@
             if (e.ctrlKey || e.metaKey || e.shiftKey) return;
             e.preventDefault();
             document.body.classList.add('page-exit');
-            setTimeout(function () { window.location.href = href; }, 120);
+            // Re-read the href at click time, not the value captured when this
+            // listener was attached — the BG/EN toggle's href is kept live-
+            // updated by the scroll-spy below (to the current section's hash),
+            // and using the stale closure value was dropping that section on
+            // every language switch, landing the user back at page top.
+            var target = link.getAttribute('href');
+            setTimeout(function () { window.location.href = target; }, 120);
           });
         });
 
