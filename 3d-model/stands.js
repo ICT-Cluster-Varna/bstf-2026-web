@@ -33,6 +33,7 @@ window.STANDS_DATA = {
     12: { company: 'Netpeak & PR Market',                logo: 'Logos/Netpeak_logo.svg',              status: 'occupied', website: '', description: '' },
     13: { company: 'Electrohold',                        logo: 'Logos/ElectroHold_Logo_Sales.svg',    status: 'occupied', website: '', description: '' },
     11: { company: 'Omnilinx',                           logo: 'Logos/omnilinx.svg',                  status: 'occupied', website: 'https://omnilinx.com/en/', description: '' },
+    16: { company: 'Postbank',                          logo: 'Logos/postbank.png',                  status: 'occupied', website: '', description: '' },
     17: { company: _EN ? 'BSMEPA' : 'ИАНМСП', logo: '../images/bsmepa_logo.svg', status: 'partner', website: 'https://sme.government.bg/', description: '' },
     18: { company: _EN ? 'BSMEPA' : 'ИАНМСП', logo: '../images/bsmepa_logo.svg', status: 'partner', website: 'https://sme.government.bg/', description: '' },
     19: { company: _EN ? 'BSMEPA' : 'ИАНМСП', logo: '../images/bsmepa_logo.svg', status: 'partner', website: 'https://sme.government.bg/', description: '' },
