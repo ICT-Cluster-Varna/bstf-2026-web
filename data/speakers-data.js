@@ -627,7 +627,7 @@
       img: '/images/speakers/lars-frolund.jpg?v=20260824', alt: 'Dr. Lars Frølund',
       objectPosition: 'center 15%',
       name: 'Dr. Lars Frølund',
-      role: 'Lecturer @ MIT | Strategic Advisor @ NATO Innovation Fund',
+      role: 'Lecturer @ MIT',
       topicBg: 'Към европейска иновационна екосистема: как Европа може да се конкурира и партнира със САЩ и Китай',
       topicEn: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China',
       bioEn: [
