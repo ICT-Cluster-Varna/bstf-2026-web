@@ -142,9 +142,8 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
   role: 'Deputy Head of Mission, Embassy of the Kingdom of the Netherlands in Sofia',
   topicBg: 'TODO — уточни темата/панела',
   topicEn: 'TODO — confirm panel/topic title',
-  bioBg: [
-    'TODO — превод на биографията'
-  ],
+  bioBg: [], // ще се добави превод по-късно от Симо
+
   bioEn: [
     'Robin Peeters is a Dutch diplomat who currently serves as Deputy Head of Mission at the Embassy of the Kingdom of the Netherlands in Sofia. He holds advanced degrees in law and international affairs from the University of Amsterdam and Sciences Po Paris.',
     'Prior to his post in Sofia, his career with the Netherlands Ministry of Foreign Affairs included roles as Private Secretary to the UN Senior Humanitarian and Reconstruction Coordinator for Gaza, Political Coordinator at the Permanent Representation to the UN in New York, Advisor to the President of the UN General Assembly, and First Secretary in Moscow.'
@@ -168,9 +167,8 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
   role: 'Business Development Manager @ Jan De Nul',
   topicBg: 'TODO — уточни темата/панела',
   topicEn: 'TODO — confirm panel/topic title',
-  bioBg: [
-    'TODO — превод на биографията'
-  ],
+  bioBg: [], // ще се добави превод по-късно от Симо
+
   bioEn: [
     'Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which specialises in offshore energy construction, dredging solutions and other major construction projects on an international scale.',
     'A highly experienced team leader in senior management, he brings professional experience spanning multiple domains, including shipping, construction, oil and gas, administration, consulting and HR.'
@@ -325,7 +323,7 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
 | 2 | Каква е точната тема/заглавие на панела за Стефан Монтьо (за полето `topicBg`/`topicEn`)? | Организационен екип |
 | 3 | Правилен ли е тракът `marine` за Стефан Монтьо или трябва друг трак? | Организационен екип |
 | 4 | Правилен ли е тракът `regional-innovation-policy` за Робин Питърс или трябва друг трак? | Организационен екип |
-| 5 | Нужен ли е BG превод на биографиите на Робин Питърс и Стефан Монтьо или само EN? | Организационен екип |
+| 5 | ~~Нужен ли е BG превод на биографиите на Робин Питърс и Стефан Монтьо?~~ **Решено:** засега само EN; Симо ще преведе по-късно. | — |
 
 ---
 
