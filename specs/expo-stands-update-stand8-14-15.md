@@ -126,7 +126,7 @@ window.TID_ENGINEERING_LOGO_SRC = 'data:image/png;base64,XXXXXXXX...';
 
 ### 2а — Нов logo JS файл: `3d-model/arcfund_logo.js`
 
-Нужно е ARCFund лого файл. **Очаква се от организационния екип.**
+Изтегли логото от сайта на ARCFund: **https://arcfund.net/**
 
 Конвертирай го в base64 PNG и създай `3d-model/arcfund_logo.js`:
 
@@ -172,11 +172,11 @@ window.ARCFUND_LOGO_SRC = 'data:image/png;base64,XXXXXXXX...';
     })();
 ```
 
-> **Бележка за цветовете:** `bg` и `accent` по-горе са начални стойности. Провери с ARCFund брандинг цветове и коригирай при нужда (напр. синьото на ARCFund). Гледай `Stand 9 – DXC` или `Stand 10 – SIS Technology` за референтен стил.
+> **Бележка за цветовете:** Извади основните цветове директно от ARCFund логото (изтеглено от `arcfund.net`) и ги използвай за `bg` и `accent`. Гледай `Stand 9 – DXC` или `Stand 10 – SIS Technology` за референтен стил на параметрите.
 
 ### 2г — Добави лого PNG в `3d-model/Logos/`
 
-- `3d-model/Logos/arcfund.png` — получи от организационния екип.
+- `3d-model/Logos/arcfund.png` — изтегли от **https://arcfund.net/**
 
 ---
 
@@ -198,11 +198,13 @@ window.ARCFUND_LOGO_SRC = 'data:image/png;base64,XXXXXXXX...';
 
 ## Отворени въпроси
 
-| # | Въпрос | Отговорник |
+*Всички въпроси са изяснени — няма блокери.*
+
+| # | Въпрос | Решение |
 |---|---|---|
-| 1 | ARCFund лого файл — откъде идва? (PNG/SVG за base64 конвертиране) | Организационен екип |
-| 2 | ARCFund брандинг цветове за `bg`/`accent` на 3D панела? | Организационен екип |
-| 3 | ТиД Инженеринг лого — да се вземе от сайта им или ще го предоставят? | Организационен екип |
+| 1 | ARCFund лого — откъде? | От `arcfund.net` |
+| 2 | ARCFund `bg`/`accent` цветове? | Извади от логото |
+| 3 | ТиД Инженеринг лого — откъде? | От `tid-engineering.bg` |
 
 ---
 
