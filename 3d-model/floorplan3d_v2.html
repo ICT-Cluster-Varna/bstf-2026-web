@@ -1182,6 +1182,7 @@
   <script src="./libs/three.min.js?v=20260910-2"></script>
   <script src="./libs/OrbitControls-global.js?v=20260910-2"></script>
   <script src="data.js?v=20260910-2"></script>
+  <script src="postbank_logo.js?v=20260910-2"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -2926,6 +2927,16 @@
         markDirty();
       };
       img.src = window.ARCFUND_LOGO_SRC;
+    // -- Stand 16 – Postbank logo on facade ------------------
+    (() => {
+      const m16 = standMeshes.find(m => m.userData.n === 16);
+      if (!m16) return;
+      const img = new Image();
+      img.onload = () => {
+        groups.stand.add(makeSignPanel(m16, img, { face: 'left', company: 'Postbank', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        markDirty();
+      };
+      img.src = window.POSTBANK_LOGO_SRC;
     })();
 
 
