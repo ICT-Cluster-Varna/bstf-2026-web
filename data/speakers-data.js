@@ -164,6 +164,24 @@
       takeawaysBg: 'Значението на архитектурното и системното мислене при прилагането на AI.'
     },
 
+    {
+      id: 'gilad-barash', track: 'ai',
+      img: '/images/speakers/gilad-barash.jpg?v=20260910', alt: 'Gilad Barash',
+      objectPosition: 'center top',
+      name: 'Gilad Barash',
+      role: 'Data & AI Strategy Consultant @ Matrix IFS',
+      roleBg: 'Консултант по стратегии за данни и изкуствен интелект @ Matrix IFS',
+      roleEn: 'Data & AI Strategy Consultant @ Matrix IFS',
+      topicBg: 'Как компаниите внедряват изкуствен интелект устойчиво',
+      topicEn: 'How Companies Implement AI Sustainably',
+      bioEn: [
+        'Gilad Barash is a Data & AI Strategy Consultant with over 15 years of experience helping organizations use Data and AI for actual business impact. Leading data and business transformation at Matrix IFS, he has worked across construction, pharma, maritime, and health-tech - identifying use-cases, designing AI pilots and translating complex business requirements into strategies that organizations can execute. A frequent speaker at international conferences and host of the "Who\'s Your Data?" podcast, Gilad brings an implementor\'s perspective to CONNEXUS: not what AI can theoretically do, but what it actually takes to make it work.'
+      ],
+      bioBg: [
+        'Gilad Barash е консултант по стратегии за данни и изкуствен интелект с над 15 години опит в подпомагането на организации да използват данните и AI за реален бизнес ефект. Ръководи трансформацията на данните и бизнеса в Matrix IFS и е работил в сектори като строителство, фармация, морска индустрия и здравни технологии - идентифицира приложения, проектира пилотни AI проекти и превръща сложни бизнес изисквания в стратегии, които организациите могат да изпълнят. Чест лектор на международни конференции и водещ на подкаста „Who\'s Your Data?“, Gilad носи на CONNEXUS гледната точка на практика: не какво теоретично може изкуственият интелект, а какво реално е нужно, за да проработи.'
+      ]
+    },
+
     // ── Cybersecurity ──
     {
       id: 'alexander-minchev', track: 'cybersecurity',
@@ -252,21 +270,23 @@
       takeawaysEn: 'Understanding the relationship between NIS2/the Cybersecurity Act, the AI Act, the Cyber Resilience Act and existing information security management frameworks. A practical approach for moving from "paper compliance" to real risk management and improved cyber resilience. Identifying the common controls and processes that allow multiple regulatory requirements to be covered at once. Building a continuous-compliance model that helps businesses adapt to new regulations without a significant increase in administrative burden.'
     },
     {
-      id: 'stanislav-simeonov', track: 'cybersecurity',
-      img: '/images/speakers/stanislav-simeonov.jpg?v=20260730', alt: 'Stanislav Simeonov',
+      id: 'ivaylo-konev', track: 'cybersecurity',
+      img: '/images/speakers/ivaylo-konev.jpg?v=20260910', alt: 'Ivaylo Konev',
       objectPosition: 'center 15%',
-      name: 'Станислав Симеонов',
-      nameEn: 'Stanislav Simeonov',
-      role: 'Product Manager, Cloud, IT Services & Cybersecurity @ Neterra',
-      topicBg: 'Киберсигурност (съвместна лекция с Александър Минчев)',
-      topicEn: 'Cybersecurity (joint talk with Alexander Minchev)',
-      bioEn: [
-        'Stanislav Simeonov is a Product Manager for "Cloud, IT Services, and Cybersecurity" at Neterra. His previous experience as a Cloud Infrastructure Engineer and Cloud Specialist, focused on AWS services, helps him turn complex data protection and cloud environment requirements into easy-to-implement, scalable products for Neterra customers.',
-        'He holds a master\'s degree in engineering with specializations in "Cyber Investigation" and "Communication Networks," which makes him a skilled analyst of cyber incidents beyond the firewalls.'
-      ],
+      name: 'Ивайло Конев',
+      nameEn: 'Ivaylo Konev',
+      role: 'Pre-sales Engineer @ Neterra',
+      topicBg: 'Физическите аспекти на сигурността на данните (съвместна лекция с Александър Минчев)',
+      topicEn: 'The Physical Aspects of Data Security (joint talk with Alexander Minchev)',
       bioBg: [
-        'Станислав Симеонов е Product Manager за „Cloud, IT Services and Cybersecurity“ в Нетера. Предишният му опит като Cloud Infrastructure Engineer и Cloud Specialist, фокусиран върху AWS услуги, му помага да превръща сложните изисквания за защита на данните и облачна инфраструктура в лесни за внедряване, мащабируеми продукти за клиентите на Нетера.',
-        'Той притежава магистърска степен по инженерство със специализации „Разследване на кибер престъпления“ (Cyber Investigation) и „Комуникационни мрежи“, което го прави опитен анализатор на кибер инциденти отвъд защитните стени.'
+        'Ивайло Конев е Pre-sales Engineer в Нетера с над 20 години опит в IT сектора. През последните години е фокусиран върху проектирането и изграждането на комплексни инфраструктурни решения, като работи активно с мрежови технологии и оборудване на Cisco, Meraki, Fortinet и Juniper, както и със сървърни и сторидж платформи на Dell, Lenovo, Supermicro и HPE.',
+        'Опитът му в системната интеграция му позволява да превръща бизнес и техническите изисквания на клиентите в надеждни, мащабируеми и практически приложими решения.',
+        'Ивайло е инженер по „Компютърни системи и технологии“ от Технически университет – София. През годините е покривал професионални сертификации като Cisco CCNA и Fortinet NSE 1 и NSE 3, както и редица специализирани обучения в областта на мрежовите и инфраструктурните технологии.'
+      ],
+      bioEn: [
+        'Ivaylo Konev is a Pre-sales Engineer at Neterra with more than 20 years of experience in the IT industry. In recent years, his work has focused on designing and delivering complex infrastructure solutions, with hands-on expertise in networking technologies and solutions from Cisco, Meraki, Fortinet, and Juniper, as well as server and storage platforms from Dell, Lenovo, Supermicro, and HPE.',
+        'His background in system integration enables him to translate business and technical requirements into reliable, scalable, and practical IT solutions.',
+        'Ivaylo holds an engineering degree in Computer Systems and Technologies from the Technical University of Sofia. Over the years, he has also earned professional certifications such as Cisco CCNA and Fortinet NSE 1 and NSE 3, along with various specialized trainings in networking and IT infrastructure technologies.'
       ]
     },
 
@@ -483,6 +503,24 @@
       ]
     },
 
+    {
+      id: 'stefan-muntoiu', track: 'marine',
+      img: '/images/speakers/stefan-muntoiu.jpg?v=20260910', alt: 'Stefan Muntoiu',
+      objectPosition: 'center top',
+      name: 'Stefan Muntoiu',
+      role: 'Business Development Manager @ Jan De Nul',
+      roleBg: 'Мениджър бизнес развитие @ Jan De Nul',
+      roleEn: 'Business Development Manager @ Jan De Nul',
+      topicBg: 'Българо-френски бизнес обмен: инвестиции и стратегическо сътрудничество',
+      topicEn: 'Bulgaria-France Business Exchange: Investment and Strategic Cooperation',
+      bioEn: [
+        'Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which specialises in offshore energy construction, dredging solutions and other major construction projects on an international scale. A highly experienced team leader in senior management, he brings professional experience spanning multiple domains, including shipping, construction, oil and gas, administration, consulting and HR.'
+      ],
+      bioBg: [
+        'Stefan Muntoiu е Business Development Manager в Jan De Nul Group - компания, специализирана в изграждането на офшорни енергийни съоръжения, драгажни решения и други мащабни международни строителни проекти. Той е високо опитен ръководител на екипи на висше управленско ниво и носи професионален опит в редица области, сред които корабоплаване, строителство, нефт и газ, администрация, консултиране и управление на човешки ресурси.'
+      ]
+    },
+
     // ── Tourism ──
     {
       id: 'elitza-stoilova', track: 'tourism',
@@ -637,6 +675,24 @@
       bioBg: [
         'Д-р Lars Frølund е експерт и ръководител в областта на инвестициите в дълбоки технологии (deep tech). Опитът му се намира в пресечната точка на мисийно-ориентираните иновации (вкл. отбрана и сигурност), грантовите и рисковите капиталови инвестиции в дълбокотехнологични проекти, и геополитическите/стратегическите аспекти на изграждането на технологичен капацитет на национално и международно ниво.',
         'Той е Distinguished Senior Lecturer в Масачузетския технологичен институт (MIT) и хоноруван професор в Института „Нилс Бор“ към Университета на Копенхаген.'
+      ]
+    },
+
+    {
+      id: 'robin-peeters', track: 'regional-innovation-policy',
+      img: '/images/speakers/robin-peeters.jpg?v=20260910', alt: 'Robin Peeters',
+      objectPosition: 'center top',
+      name: 'Robin Peeters',
+      role: 'Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria',
+      roleBg: 'Заместник-посланик на Кралство Нидерландия в България',
+      roleEn: 'Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria',
+      topicBg: 'Цифрова трансформация и изкуствен интелект за индустриален растеж: сигурни европейски вериги на доставки',
+      topicEn: 'Digital and AI Transformation for Industrial Growth: Secure European Supply Chains',
+      bioEn: [
+        'Robin Peeters is a Dutch diplomat who currently serves as Deputy Head of Mission at the Embassy of the Kingdom of the Netherlands in Sofia. He holds advanced degrees in law and international affairs from the University of Amsterdam and Sciences Po Paris. Prior to his post in Sofia, his career with the Netherlands Ministry of Foreign Affairs included roles as Private Secretary to the UN Senior Humanitarian and Reconstruction Coordinator for Gaza, Political Coordinator at the Permanent Representation to the UN in New York, Advisor to the President of the UN General Assembly, and First Secretary in Moscow.'
+      ],
+      bioBg: [
+        'Robin Peeters е нидерландски дипломат, който в момента е заместник-ръководител на мисията в посолството на Кралство Нидерландия в София. Има магистърски степени по право и международни отношения от Университета на Амстердам и Sciences Po Париж. Преди назначението си в София кариерата му в нидерландското Министерство на външните работи включва позициите личен секретар на старшия координатор на ООН по хуманитарните въпроси и възстановяването на Газа, политически координатор в Постоянното представителство към ООН в Ню Йорк, съветник на председателя на Общото събрание на ООН и първи секретар в Москва.'
       ]
     },
 

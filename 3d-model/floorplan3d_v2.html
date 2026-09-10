@@ -1165,20 +1165,22 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260827-12"></script>
-  <script src="bsmepa_logo.js?v=20260827-12"></script>
-  <script src="toprentacar_logo.js?v=20260827-12"></script>
-  <script src="electrohold_logo.js?v=20260827-12"></script>
-  <script src="netpeak_logo.js?v=20260827-12"></script>
-  <script src="researchmetrics_logo.js?v=20260827-12"></script>
-  <script src="nearshore_logo.js?v=20260827-12"></script>
-  <script src="omnilinx_logo.js?v=20260827-12"></script>
-  <script src="dxc_logo.js?v=20260827-12"></script>
-  <script src="sistechnology_logo.js?v=20260827-12"></script>
+  <script src="stands.js?v=20260910"></script>
+  <script src="bsmepa_logo.js?v=20260910"></script>
+  <script src="toprentacar_logo.js?v=20260910"></script>
+  <script src="electrohold_logo.js?v=20260910"></script>
+  <script src="netpeak_logo.js?v=20260910"></script>
+  <script src="researchmetrics_logo.js?v=20260910"></script>
+  <script src="nearshore_logo.js?v=20260910"></script>
+  <script src="omnilinx_logo.js?v=20260910"></script>
+  <script src="dxc_logo.js?v=20260910"></script>
+  <script src="sistechnology_logo.js?v=20260910"></script>
+  <script src="arcfund_logo.js?v=20260910"></script>
+  <script src="tid_logo.js?v=20260910"></script>
   <!-- //fix -->
-  <script src="./libs/three.min.js?v=20260827-12"></script>
-  <script src="./libs/OrbitControls-global.js?v=20260827-12"></script>
-  <script src="data.js?v=20260827-12"></script>
+  <script src="./libs/three.min.js?v=20260910"></script>
+  <script src="./libs/OrbitControls-global.js?v=20260910"></script>
+  <script src="data.js?v=20260910"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -2855,17 +2857,18 @@
       img.src = window.RESEARCHMETRICS_LOGO_SRC;
     })();
 
-    // -- Stand 8 – ITRM Consult / Nearshore (front + back) --
+    // -- Stand 8 – T&D Engineering (front + back) --
+    // Took over this stand from ITRM Consult / Nearshore on 2026-09-10.
     (() => {
       const m8 = standMeshes.find(m => m.userData.n === 8);
       if (!m8) return;
       const img = new Image();
       img.onload = () => {
-        groups.stand.add(makeSignPanel(m8, img, { face: 'front', company: 'ITRM Consult' }));
-        groups.stand.add(makeSignPanel(m8, img, { face: 'back', company: 'ITRM Consult' }));
+        groups.stand.add(makeSignPanel(m8, img, { face: 'front', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        groups.stand.add(makeSignPanel(m8, img, { face: 'back', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
         markDirty();
       };
-      img.src = window.NEARSHORE_LOGO_SRC;
+      img.src = window.TID_LOGO_SRC;
     })();
 
     // -- Stand 11 – Omnilinx logo on facade ------------------
@@ -2902,6 +2905,21 @@
         markDirty();
       };
       img.src = window.SISTECHNOLOGY_LOGO_SRC;
+    })();
+
+    // -- Stands 14 & 15 – ARC Fund logo on facade ------------------
+    // No `company` caption here on purpose: the ARCF artwork is already a full
+    // wordmark, and the caption colour (light blue) is meant for dark panels.
+    (() => {
+      const img = new Image();
+      img.onload = () => {
+        for (const n of [14, 15]) {
+          const m = standMeshes.find(s => s.userData.n === n);
+          if (m) groups.stand.add(makeSignPanel(m, img, { face: 'left', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        }
+        markDirty();
+      };
+      img.src = window.ARCFUND_LOGO_SRC;
     })();
 
 
