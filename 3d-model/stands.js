@@ -26,7 +26,7 @@ window.STANDS_DATA = {
     2:  { company: _EN ? 'Reserved for Gold Partner package' : 'Резервиран за пакет Gold Partner',   logo: '',                                    status: 'reserved', website: '', description: '' },
     4:  { company: _EN ? 'Reserved for Silver Partner package' : 'Резервиран за пакет Silver Partner', logo: '',                                    status: 'reserved', website: '', description: '' },
     6:  { company: 'Top-Rent-A-Car',                     logo: 'Logos/toprentacar.png',               status: 'partner',  website: '', description: '' },
-    7:  { company: _EN ? 'ENERGO-PRO' : 'Енерго-Про',        logo: '',                                    status: 'occupied', website: '', description: '' },
+    7:  { company: _EN ? 'ENERGO-PRO' : 'Енерго-Про',        logo: 'Logos/energo-pro.jpg',                status: 'occupied', website: '', description: '' },
     8:  { company: _EN ? 'ITRM Consult' : 'ИТР Мениджмънт Консулт ООД', logo: 'Logos/ITR Management Consult.png', status: 'occupied', website: '', description: '' },
     9:  { company: 'DXC',                                logo: 'Logos/dxc.png',                       status: 'occupied', website: '', description: '' },
     10: { company: 'SIS Technology',                     logo: 'Logos/sis-technology.png',            status: 'occupied', website: '', description: '' },
