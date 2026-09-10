@@ -252,21 +252,23 @@
       takeawaysEn: 'Understanding the relationship between NIS2/the Cybersecurity Act, the AI Act, the Cyber Resilience Act and existing information security management frameworks. A practical approach for moving from "paper compliance" to real risk management and improved cyber resilience. Identifying the common controls and processes that allow multiple regulatory requirements to be covered at once. Building a continuous-compliance model that helps businesses adapt to new regulations without a significant increase in administrative burden.'
     },
     {
-      id: 'stanislav-simeonov', track: 'cybersecurity',
-      img: '/images/speakers/stanislav-simeonov.jpg?v=20260730', alt: 'Stanislav Simeonov',
+      id: 'ivaylo-konev', track: 'cybersecurity',
+      img: '/images/speakers/ivaylo-konev.jpg?v=20260910', alt: 'Ivaylo Konev',
       objectPosition: 'center 15%',
-      name: 'Станислав Симеонов',
-      nameEn: 'Stanislav Simeonov',
-      role: 'Product Manager, Cloud, IT Services & Cybersecurity @ Neterra',
-      topicBg: 'Киберсигурност (съвместна лекция с Александър Минчев)',
-      topicEn: 'Cybersecurity (joint talk with Alexander Minchev)',
-      bioEn: [
-        'Stanislav Simeonov is a Product Manager for "Cloud, IT Services, and Cybersecurity" at Neterra. His previous experience as a Cloud Infrastructure Engineer and Cloud Specialist, focused on AWS services, helps him turn complex data protection and cloud environment requirements into easy-to-implement, scalable products for Neterra customers.',
-        'He holds a master\'s degree in engineering with specializations in "Cyber Investigation" and "Communication Networks," which makes him a skilled analyst of cyber incidents beyond the firewalls.'
-      ],
+      name: 'Ивайло Конев',
+      nameEn: 'Ivaylo Konev',
+      role: 'Pre-sales Engineer @ Neterra',
+      topicBg: 'Физическите аспекти на сигурността на данните (съвместна лекция с Александър Минчев)',
+      topicEn: 'The Physical Aspects of Data Security (joint talk with Alexander Minchev)',
       bioBg: [
-        'Станислав Симеонов е Product Manager за „Cloud, IT Services and Cybersecurity“ в Нетера. Предишният му опит като Cloud Infrastructure Engineer и Cloud Specialist, фокусиран върху AWS услуги, му помага да превръща сложните изисквания за защита на данните и облачна инфраструктура в лесни за внедряване, мащабируеми продукти за клиентите на Нетера.',
-        'Той притежава магистърска степен по инженерство със специализации „Разследване на кибер престъпления“ (Cyber Investigation) и „Комуникационни мрежи“, което го прави опитен анализатор на кибер инциденти отвъд защитните стени.'
+        'Ивайло Конев е Pre-sales Engineer в Нетера с над 20 години опит в IT сектора. През последните години е фокусиран върху проектирането и изграждането на комплексни инфраструктурни решения, като работи активно с мрежови технологии и оборудване на Cisco, Meraki, Fortinet и Juniper, както и със сървърни и сторидж платформи на Dell, Lenovo, Supermicro и HPE.',
+        'Опитът му в системната интеграция му позволява да превръща бизнес и техническите изисквания на клиентите в надеждни, мащабируеми и практически приложими решения.',
+        'Ивайло е инженер по „Компютърни системи и технологии“ от Технически университет – София. През годините е покривал професионални сертификации като Cisco CCNA и Fortinet NSE 1 и NSE 3, както и редица специализирани обучения в областта на мрежовите и инфраструктурните технологии.'
+      ],
+      bioEn: [
+        'Ivaylo Konev is a Pre-sales Engineer at Neterra with more than 20 years of experience in the IT industry. In recent years, his work has focused on designing and delivering complex infrastructure solutions, with hands-on expertise in networking technologies and solutions from Cisco, Meraki, Fortinet, and Juniper, as well as server and storage platforms from Dell, Lenovo, Supermicro, and HPE.',
+        'His background in system integration enables him to translate business and technical requirements into reliable, scalable, and practical IT solutions.',
+        'Ivaylo holds an engineering degree in Computer Systems and Technologies from the Technical University of Sofia. Over the years, he has also earned professional certifications such as Cisco CCNA and Fortinet NSE 1 and NSE 3, along with various specialized trainings in networking and IT infrastructure technologies.'
       ]
     },
 
