@@ -26,7 +26,7 @@ window.STANDS_DATA = {
     // Stands 1 and 3 are the long 3.5 m ones and each was bought by two
     // companies, so `logo` is an array here — the popup renders every entry,
     // the hover tooltip only the first (it has room for one thumbnail).
-    1:  { company: 'Ardes.bg & Samsung',                 logo: ['../images/partner-ardes.png', '../images/partner-samsung.png'], status: 'partner', website: '', description: '' },
+    1:  { company: 'Ardes.bg & Samsung',                 logo: ['../images/partner-ardes.png?v=20260914', '../images/partner-samsung.png?v=20260914'], status: 'partner', website: '', description: '' },
     2:  { company: _EN ? 'Reserved for Gold Partner package' : 'Резервиран за пакет Gold Partner',   logo: '',                                    status: 'reserved', website: '', description: '' },
     3:  { company: 'ALSO & Microsoft',                   logo: '',                                    status: 'partner', website: '', description: '' },
     4:  { company: _EN ? 'Reserved for Silver Partner package' : 'Резервиран за пакет Silver Partner', logo: '',                                    status: 'reserved', website: '', description: '' },
@@ -40,7 +40,7 @@ window.STANDS_DATA = {
         11: { company: _EN ? 'T&D Engineering' : 'ТиД Инженеринг ЕООД', logo: 'Logos/tid-engineering.png', status: 'occupied', website: 'https://www.tid-engineering.bg/', description: '' },
     14: { company: 'ARC Fund',                           logo: '../images/ARCF_logo.svg',             status: 'partner',  website: 'https://arcfund.net/bg/', description: '' },
     15: { company: 'ARC Fund',                           logo: '../images/ARCF_logo.svg',             status: 'partner',  website: 'https://arcfund.net/bg/', description: '' },
-    16: { company: 'Postbank',                          logo: 'Logos/postbank.png',                  status: 'occupied', website: '', description: '' },
+    16: { company: 'Postbank',                          logo: 'Logos/postbank.png?v=20260914',       status: 'occupied', website: '', description: '' },
     17: { company: _EN ? 'BSMEPA' : 'ИАНМСП', logo: '../images/bsmepa_logo.svg', status: 'partner', website: 'https://sme.government.bg/', description: '' },
     18: { company: _EN ? 'BSMEPA' : 'ИАНМСП', logo: '../images/bsmepa_logo.svg', status: 'partner', website: 'https://sme.government.bg/', description: '' },
     19: { company: _EN ? 'BSMEPA' : 'ИАНМСП', logo: '../images/bsmepa_logo.svg', status: 'partner', website: 'https://sme.government.bg/', description: '' },
