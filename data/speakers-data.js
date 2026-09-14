@@ -143,6 +143,27 @@
       ]
     },
     {
+      id: 'dominik-petek', track: 'ai',
+      img: '/images/speakers/dominik-petek.jpg?v=20260914', alt: 'Dominik Petek',
+      objectPosition: '30% center',
+      name: 'Dominik Petek',
+      role: 'Founder & Managing Director @ ProCom / CPO Value Lab',
+      topicBg: 'От хайпа към реалната стойност: AI агенти в ежедневното снабдяване',
+      topicEn: 'From Hype to Hard Value: AI Agents in Everyday Procurement',
+      bioEn: [
+        'Dominik Petek is the founder and managing director of ProCom / CPO Value Lab in Munich, a consulting firm specializing in strategic procurement, procurement transformation, and AI-driven sourcing solutions. Since 2013 he has built the CPO Value Lab platform as a "Procurement Operating System" for mid-size and large enterprises, and developed and commercialized Agentic AI offerings for strategic procurement — from use-case design and technology selection to implementation support.',
+        'He advises CPOs and CFOs on procurement transformation, building organizations, processes, and digital capabilities, and has delivered strategic procurement and sourcing projects for major clients including GSK, Deutsche Glasfaser, Sky, E.ON, and Stratec SE.'
+      ],
+      bioBg: [
+        'Dominik Petek е основател и управляващ директор на ProCom / CPO Value Lab в Мюнхен — консултантска компания в областта на стратегическото снабдяване, трансформацията на снабдяването и решенията за сорсинг, базирани на изкуствен интелект. От 2013 г. изгражда платформата CPO Value Lab като „операционна система за снабдяване“ за средни и големи предприятия и разработва и извежда на пазара Agentic AI решения за стратегическо снабдяване — от дизайн на случаи на употреба и избор на технологии до подкрепа при внедряването.',
+        'Консултира CPO и CFO по трансформацията на снабдяването — изграждане на организации, процеси и дигитални способности. Реализирал е проекти в областта на стратегическото снабдяване и сорсинга за големи клиенти, сред които GSK, Deutsche Glasfaser, Sky, E.ON и Stratec SE.'
+      ],
+      sessionDescEn: 'Procurement is one of the best places to put AI agents to work — structured decisions, rich data, and value you can measure. This talk walks through five real situations from daily procurement, from validating supplier price increases to taming maverick spend, each with the concrete outcome and the watch-outs that make it work.',
+      sessionDescBg: 'Снабдяването е едно от най-подходящите места за прилагане на AI агенти — структурирани решения, богати данни и стойност, която може да бъде измерена. Лекцията преминава през пет реални ситуации от ежедневната работа по снабдяване — от проверката на исканията на доставчици за повишение на цените до овладяването на неконтролираните разходи (maverick spend) — като за всяка от тях се представят конкретният резултат и рисковете, които трябва да се имат предвид.',
+      takeawaysEn: "Attendees will learn where AI agents genuinely fit in procurement — and how to tell a real use case from hype. They'll take away a practical sense of what these agents can and can't do today, and what it takes to make them work in daily operations. And they'll leave able to spot the first high-value use case in their own organization.",
+      takeawaysBg: 'Участниците ще научат къде AI агентите наистина намират място в снабдяването и как да разграничат реалния случай на употреба от хайпа. Ще си тръгнат с практическа представа какво могат и какво не могат тези агенти днес и какво е необходимо, за да заработят в ежедневните операции. И ще могат да разпознаят първия случай на употреба с висока стойност в собствената си организация.'
+    },
+    {
       id: 'teade-punter', track: 'automation',
       img: '/images/speakers/teade-punter.jpg?v=20260730', alt: 'Teade Punter',
       objectPosition: '65% 15%',
