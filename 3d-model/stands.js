@@ -23,7 +23,12 @@ const DESC_EXPO   = _EN
 
 window.STANDS_DATA = {
   exhibitors: {
+    // Stands 1 and 3 are the long 3.5 m ones and each was bought by two
+    // companies, so `logo` is an array here — the popup renders every entry,
+    // the hover tooltip only the first (it has room for one thumbnail).
+    1:  { company: 'Ardes.bg & Samsung',                 logo: ['../images/partner-ardes.png', '../images/partner-samsung.png'], status: 'partner', website: '', description: '' },
     2:  { company: _EN ? 'Reserved for Gold Partner package' : 'Резервиран за пакет Gold Partner',   logo: '',                                    status: 'reserved', website: '', description: '' },
+    3:  { company: 'ALSO & Microsoft',                   logo: '',                                    status: 'partner', website: '', description: '' },
     4:  { company: _EN ? 'Reserved for Silver Partner package' : 'Резервиран за пакет Silver Partner', logo: '',                                    status: 'reserved', website: '', description: '' },
     6:  { company: 'Top-Rent-A-Car',                     logo: 'Logos/toprentacar.png',               status: 'partner',  website: '', description: '' },
     7:  { company: _EN ? 'ENERGO-PRO' : 'Енерго-Про',        logo: 'Logos/energo-pro.jpg',                status: 'occupied', website: '', description: '' },

@@ -1165,7 +1165,7 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260910-3"></script>
+  <script src="stands.js?v=20260914"></script>
   <script src="bsmepa_logo.js?v=20260910-3"></script>
   <script src="toprentacar_logo.js?v=20260910-3"></script>
   <script src="electrohold_logo.js?v=20260910-3"></script>
@@ -1182,7 +1182,9 @@
   <script src="./libs/three.min.js?v=20260910-3"></script>
   <script src="./libs/OrbitControls-global.js?v=20260910-3"></script>
   <script src="data.js?v=20260910-3"></script>
-  <script src="postbank_logo.js?v=20260910-3"></script>
+  <script src="postbank_logo.js?v=20260914"></script>
+  <script src="ardes_logo.js?v=20260914"></script>
+  <script src="samsung_logo.js?v=20260914"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -2747,8 +2749,21 @@
       });
     }
 
+    // Draw `img` centred inside the box (bx, by, bw, bh), preserving aspect.
+    function drawLogoFitted(ctx, img, bx, by, bw, bh) {
+      const sc = Math.min(bw / img.width, bh / img.height);
+      const dw = img.width * sc, dh = img.height * sc;
+      ctx.drawImage(img, bx + (bw - dw) / 2, by + (bh - dh) / 2, dw, dh);
+    }
+
+    // `img` may be a single Image or an array of two, for a stand shared by two
+    // companies (stands 1 and 3). Two logos are stacked one above the other by
+    // default rather than placed side by side: the panel is only ~1.7:1, and all
+    // of these marks are wide wordmarks, so half-width cells would shrink them
+    // far more than half-height ones do. Pass layout:'side' to override.
     function makeSignPanelMat(img, opts) {
-      const { bg = '#071629', accent = '#1a6bd0', cw = 512, ch = 512, company = '' } = opts || {};
+      const { bg = '#071629', accent = '#1a6bd0', cw = 512, ch = 512, company = '', layout = 'stacked' } = opts || {};
+      const imgs = Array.isArray(img) ? img : [img];
       const cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
       const ctx = cv.getContext('2d');
       const r = Math.min(cw, ch) * 0.05;
@@ -2760,10 +2775,35 @@
       ctx.globalAlpha = 1;
       const pad = cw * 0.10;
       const logoH = company ? ch * 0.70 : ch * 0.82;
-      const sc = Math.min((cw - pad * 2) / img.width, logoH / img.height);
-      const dw = img.width * sc, dh = img.height * sc;
       const offsetY = company ? -ch * 0.05 : 0;
-      ctx.drawImage(img, (cw - dw) / 2, (ch / 2 - dh / 2) + offsetY, dw, dh);
+      const boxX = pad, boxW = cw - pad * 2;
+      const boxH = logoH, boxY = (ch - logoH) / 2 + offsetY;
+      if (imgs.length < 2) {
+        drawLogoFitted(ctx, imgs[0], boxX, boxY, boxW, boxH);
+      } else {
+        // Hairline between the two marks so they read as two companies sharing
+        // the stand, not as one lockup.
+        const sideBySide = layout === 'side';
+        const gap = (sideBySide ? boxW : boxH) * 0.12;
+        ctx.save();
+        ctx.strokeStyle = accent; ctx.globalAlpha = 0.30; ctx.lineWidth = 2;
+        ctx.beginPath();
+        if (sideBySide) {
+          const cellW = (boxW - gap) / 2;
+          drawLogoFitted(ctx, imgs[0], boxX, boxY, cellW, boxH);
+          drawLogoFitted(ctx, imgs[1], boxX + cellW + gap, boxY, cellW, boxH);
+          ctx.moveTo(boxX + cellW + gap / 2, boxY + boxH * 0.08);
+          ctx.lineTo(boxX + cellW + gap / 2, boxY + boxH * 0.92);
+        } else {
+          const cellH = (boxH - gap) / 2;
+          drawLogoFitted(ctx, imgs[0], boxX, boxY, boxW, cellH);
+          drawLogoFitted(ctx, imgs[1], boxX, boxY + cellH + gap, boxW, cellH);
+          ctx.moveTo(boxX + boxW * 0.08, boxY + cellH + gap / 2);
+          ctx.lineTo(boxX + boxW * 0.92, boxY + cellH + gap / 2);
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
       if (company) {
         const fs = Math.round(Math.min(cw, ch) * 0.065);
         ctx.font = `600 ${fs}px "Segoe UI",system-ui,sans-serif`;
@@ -2772,23 +2812,27 @@
         ctx.fillText(company, cw / 2, ch * 0.90);
       }
       const tex = new THREE.CanvasTexture(cv); tex.anisotropy = 16; tex.needsUpdate = true;
-      return new THREE.MeshLambertMaterial({
-        map: tex, emissiveMap: tex, color: 0xffffff,
-        emissive: new THREE.Color(.05, .10, .22), emissiveIntensity: 1.2,
-        roughness: .15, metalness: 0.05
-      });
+      // Unlit on purpose. The hall is lit by a 1.2 hemisphere plus two
+      // directionals, which together push a white sign panel well past 1.0 and
+      // clamp the bright channel — Ardes.bg's red came out pink and the whole
+      // panel looked hazy. A backlit lightbox should not take scene light
+      // anyway, so MeshBasicMaterial reproduces the artwork's brand colours
+      // exactly, at any time of day and from any angle.
+      return new THREE.MeshBasicMaterial({ map: tex, color: 0xffffff, toneMapped: false });
     }
 
     function makeSignPanel(m, img, opts) {
-      const { face = 'front', bg, accent, company } = opts || {};
+      const { face = 'front', bg, accent, company, layout } = opts || {};
       const bw = m.userData.baseW, bd = m.userData.baseD;
       const panelD = 0.06;
       const faceWidth = (face === 'left' ? bd : bw) * S;
       const panelW = faceWidth * 0.80;
       const panelH = STAND_H * 0.60;
-      const ch = 512;
-      const cw = Math.min(1024, Math.round(ch * panelW / panelH));
-      const logoMat = makeSignPanelMat(img, { bg, accent, cw, ch, company });
+      // 1024 rather than 512: in the walkthrough you stand right in front of
+      // these panels, and a 512px texture was visibly soft up close.
+      const ch = 1024;
+      const cw = Math.min(2048, Math.round(ch * panelW / panelH));
+      const logoMat = makeSignPanelMat(img, { bg, accent, cw, ch, company, layout });
       const casingMat = new THREE.MeshLambertMaterial({ color: 0x111122, emissive: 0x050510, emissiveIntensity: 0.5, roughness: 0.5 });
       const faceIdx = { left: 1, right: 0, back: 5, front: 4 }[face] ?? 4;
       const mats = Array(6).fill(casingMat);
@@ -2929,15 +2973,50 @@
       img.src = window.ARCFUND_LOGO_SRC;
       })();
     // -- Stand 16 – Postbank logo on facade ------------------
+    // No `company` caption since the 2026-09-14 artwork swap: the new logo is
+    // already a full wordmark with its own tagline, so the caption just
+    // repeated it (same reasoning as ENERGO-PRO and T&D above).
     (() => {
       const m16 = standMeshes.find(m => m.userData.n === 16);
       if (!m16) return;
       const img = new Image();
       img.onload = () => {
-        groups.stand.add(makeSignPanel(m16, img, { face: 'left', company: 'Postbank', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        groups.stand.add(makeSignPanel(m16, img, { face: 'left', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
         markDirty();
       };
       img.src = window.POSTBANK_LOGO_SRC;
+    })();
+
+    // -- Stands 1 & 3 – two companies per stand ------------------
+    // These two are the long 3.5 m stands, so their sign panel sits on a lateral
+    // face and every mark on them is a wide wordmark. See makeSignPanelMat for
+    // why the two logos stack instead of sitting side by side. No `company`
+    // caption: the artwork is already the wordmark, and the caption colour
+    // (light blue) is meant for the dark panels, not these white ones.
+    function loadImages(srcs, cb) {
+      const out = new Array(srcs.length);
+      let left = srcs.length;
+      srcs.forEach((src, i) => {
+        const im = new Image();
+        im.onload = () => { out[i] = im; if (--left === 0) cb(out); };
+        im.onerror = () => { if (--left === 0) cb(out.filter(Boolean)); };
+        im.src = src;
+      });
+    }
+    (() => {
+      const SHARED = [
+        { n: 1, srcs: [window.ARDES_LOGO_SRC, window.SAMSUNG_LOGO_SRC] }
+        // { n: 3, srcs: [window.ALSO_LOGO_SRC, window.MICROSOFT_LOGO_SRC] }
+      ];
+      for (const { n, srcs } of SHARED) {
+        const m = standMeshes.find(s => s.userData.n === n);
+        if (!m || srcs.some(s => !s)) continue;
+        loadImages(srcs, (imgs) => {
+          if (!imgs.length) return;
+          groups.stand.add(makeSignPanel(m, imgs, { face: 'left', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+          markDirty();
+        });
+      }
     })();
 
 
@@ -3067,7 +3146,10 @@
         const u = hit.object.userData;
         _ttNum.textContent = t3d('stand', 'Щанд') + ' #' + u.n;
         _ttName.textContent = u.company || t3d('freeStand', 'Свободен щанд');
-        if (u.logo) { _ttLogo.src = u.logo; _ttLogo.style.display = 'block'; }
+        // One thumbnail fits here, so a two-company stand shows only its first
+        // logo — the name line next to it already reads "A & B".
+        const _ttSrc = Array.isArray(u.logo) ? u.logo[0] : u.logo;
+        if (_ttSrc) { _ttLogo.src = _ttSrc; _ttLogo.style.display = 'block'; }
         else _ttLogo.style.display = 'none';
         const label = STATUS_LABELS[u.status] || u.status;
         const hex = STATUS_HEX[u.status] || '#fff';
@@ -3128,12 +3210,16 @@
         document.getElementById('popup-name').textContent = u.company;
         const logoWrap = document.getElementById('popup-logo-wrap');
         logoWrap.innerHTML = '';
-        if (u.logo) {
-          const img = document.createElement('img');
-          img.src = u.logo; img.alt = u.company;
-          img.style.cssText = 'max-height:38px;max-width:38px;object-fit:contain';
-          img.onerror = () => { logoWrap.innerHTML = initialsDiv(u.company, tierHex); };
-          logoWrap.appendChild(img);
+        // `logo` is an array on the stands shared by two companies (1 and 3).
+        const logos = (Array.isArray(u.logo) ? u.logo : [u.logo]).filter(Boolean);
+        if (logos.length) {
+          for (const src of logos) {
+            const img = document.createElement('img');
+            img.src = src; img.alt = u.company;
+            img.style.cssText = 'max-height:38px;max-width:38px;object-fit:contain';
+            img.onerror = () => { img.remove(); if (!logoWrap.children.length) logoWrap.innerHTML = initialsDiv(u.company, tierHex); };
+            logoWrap.appendChild(img);
+          }
         } else {
           logoWrap.innerHTML = initialsDiv(u.company, tierHex);
         }
