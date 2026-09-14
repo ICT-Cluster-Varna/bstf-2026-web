@@ -314,6 +314,12 @@
       line-height: 1.3
     }
 
+    /* Two marks on the stands shared by two companies (1 and 3) — stacked, and
+       each capped shorter so the hover card does not grow. */
+    #tt-logo-wrap.is-dual .tt-logo {
+      max-height: 30px;
+    }
+
     #standTooltip .tt-logo {
       width: 100%;
       max-height: 52px;
@@ -489,6 +495,22 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+    }
+
+    /* Stands shared by two companies (1 and 3). The box is sized for one mark,
+       so two side by side overflowed and `overflow:hidden` simply cut the second
+       one off — stack them instead, and widen the box since every one of these
+       is a horizontal wordmark. */
+    #popup-logo-wrap.is-dual {
+      width: 68px;
+      flex-direction: column;
+      gap: 3px;
+      padding: 3px 4px;
+    }
+
+    #popup-logo-wrap.is-dual img {
+      max-height: 16px !important;
+      max-width: 60px !important;
     }
 
     #popup-name {
@@ -1048,7 +1070,7 @@
 
   <div id="standTooltip">
     <div class="tt-num" id="tt-num"></div>
-    <img class="tt-logo" id="tt-logo" src="" alt="" style="display:none" />
+    <div id="tt-logo-wrap" style="display:none"></div>
     <div class="tt-name" id="tt-name"></div>
     <div id="tt-badge"></div>
   </div>
@@ -1185,6 +1207,8 @@
   <script src="postbank_logo.js?v=20260914"></script>
   <script src="ardes_logo.js?v=20260914"></script>
   <script src="samsung_logo.js?v=20260914"></script>
+  <script src="also_logo.js?v=20260914"></script>
+  <script src="microsoft_logo.js?v=20260914"></script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -3005,8 +3029,8 @@
     }
     (() => {
       const SHARED = [
-        { n: 1, srcs: [window.ARDES_LOGO_SRC, window.SAMSUNG_LOGO_SRC] }
-        // { n: 3, srcs: [window.ALSO_LOGO_SRC, window.MICROSOFT_LOGO_SRC] }
+        { n: 1, srcs: [window.ARDES_LOGO_SRC, window.SAMSUNG_LOGO_SRC] },
+        { n: 3, srcs: [window.ALSO_LOGO_SRC, window.MICROSOFT_LOGO_SRC] }
       ];
       for (const { n, srcs } of SHARED) {
         const m = standMeshes.find(s => s.userData.n === n);
@@ -3135,7 +3159,7 @@
     // ---- stand hover tooltip ----
     const _tooltip = document.getElementById('standTooltip');
     const _ttNum = document.getElementById('tt-num');
-    const _ttLogo = document.getElementById('tt-logo');
+    const _ttLogo = document.getElementById('tt-logo-wrap');
     const _ttName = document.getElementById('tt-name');
     const _ttBadge = document.getElementById('tt-badge');
     dom.addEventListener('pointermove', ev => {
@@ -3146,11 +3170,15 @@
         const u = hit.object.userData;
         _ttNum.textContent = t3d('stand', 'Щанд') + ' #' + u.n;
         _ttName.textContent = u.company || t3d('freeStand', 'Свободен щанд');
-        // One thumbnail fits here, so a two-company stand shows only its first
-        // logo — the name line next to it already reads "A & B".
-        const _ttSrc = Array.isArray(u.logo) ? u.logo[0] : u.logo;
-        if (_ttSrc) { _ttLogo.src = _ttSrc; _ttLogo.style.display = 'block'; }
-        else _ttLogo.style.display = 'none';
+        const _ttSrcs = (Array.isArray(u.logo) ? u.logo : [u.logo]).filter(Boolean);
+        _ttLogo.innerHTML = '';
+        _ttLogo.classList.toggle('is-dual', _ttSrcs.length > 1);
+        for (const src of _ttSrcs) {
+          const im = document.createElement('img');
+          im.className = 'tt-logo'; im.src = src; im.alt = '';
+          _ttLogo.appendChild(im);
+        }
+        _ttLogo.style.display = _ttSrcs.length ? 'block' : 'none';
         const label = STATUS_LABELS[u.status] || u.status;
         const hex = STATUS_HEX[u.status] || '#fff';
         _ttBadge.innerHTML = `<span class="tt-badge" style="background:${hex}22;color:${hex};border:1px solid ${hex}55">${label}</span><br><span style="font-size:10px;color:#4a6a8a;margin-top:4px;display:block">${t3d('holdForDetails', 'Задръж за подробности')}</span>`;
@@ -3212,6 +3240,7 @@
         logoWrap.innerHTML = '';
         // `logo` is an array on the stands shared by two companies (1 and 3).
         const logos = (Array.isArray(u.logo) ? u.logo : [u.logo]).filter(Boolean);
+        logoWrap.classList.toggle('is-dual', logos.length > 1);
         if (logos.length) {
           for (const src of logos) {
             const img = document.createElement('img');
