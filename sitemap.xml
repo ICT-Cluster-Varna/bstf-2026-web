@@ -66,6 +66,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/dominik-petek/"/>
   </url>
   <url>
+    <loc>https://www.blackseatech.org/speakers/gilad-barash/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/gilad-barash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/gilad-barash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/gilad-barash/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/gilad-barash/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/gilad-barash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/gilad-barash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/gilad-barash/"/>
+  </url>
+  <url>
     <loc>https://www.blackseatech.org/speakers/teade-punter/</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/teade-punter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/teade-punter/"/>
@@ -352,6 +364,30 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/lars-frolund/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/lars-frolund/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/lars-frolund/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/robin-peeters/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/robin-peeters/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/robin-peeters/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/robin-peeters/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/robin-peeters/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/robin-peeters/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/robin-peeters/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/robin-peeters/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/stefan-muntoiu/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/stefan-muntoiu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/stefan-muntoiu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/stefan-muntoiu/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/stefan-muntoiu/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/stefan-muntoiu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/stefan-muntoiu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/stefan-muntoiu/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/ilia-iordanov/</loc>
