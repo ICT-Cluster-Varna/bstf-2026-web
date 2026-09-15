@@ -164,6 +164,23 @@
       takeawaysBg: 'Участниците ще научат къде AI агентите наистина намират място в снабдяването и как да разграничат реалния случай на употреба от хайпа. Ще си тръгнат с практическа представа какво могат и какво не могат тези агенти днес и какво е необходимо, за да заработят в ежедневните операции. И ще могат да разпознаят първия случай на употреба с висока стойност в собствената си организация.'
     },
     {
+      id: 'gilad-barash', track: 'ai',
+      img: '/images/speakers/gilad-barash.jpg?v=20260915', alt: 'Gilad Barash',
+      objectPosition: 'center top',
+      name: 'Gilad Barash',
+      role: 'Data & AI Strategy Consultant @ Matrix IFS',
+      roleBg: 'Консултант по стратегии за данни и изкуствен интелект @ Matrix IFS',
+      roleEn: 'Data & AI Strategy Consultant @ Matrix IFS',
+      topicBg: 'Как компаниите внедряват изкуствен интелект устойчиво',
+      topicEn: 'How Companies Implement AI Sustainably',
+      bioEn: [
+        'Gilad Barash is a Data & AI Strategy Consultant with over 15 years of experience helping organizations use Data and AI for actual business impact. Leading data and business transformation at Matrix IFS, he has worked across construction, pharma, maritime, and health-tech - identifying use-cases, designing AI pilots and translating complex business requirements into strategies that organizations can execute. A frequent speaker at international conferences and host of the "Who\'s Your Data?" podcast, Gilad brings an implementor\'s perspective to CONNEXUS: not what AI can theoretically do, but what it actually takes to make it work.'
+      ],
+      bioBg: [
+        'Gilad Barash е консултант по стратегии за данни и изкуствен интелект с над 15 години опит в подпомагането на организации да използват данните и AI за реален бизнес ефект. Ръководи трансформацията на данните и бизнеса в Matrix IFS и е работил в сектори като строителство, фармация, морска индустрия и здравни технологии - идентифицира приложения, проектира пилотни AI проекти и превръща сложни бизнес изисквания в стратегии, които организациите могат да изпълнят. Чест лектор на международни конференции и водещ на подкаста „Who\'s Your Data?“, Gilad носи на CONNEXUS гледната точка на практика: не какво теоретично може изкуственият интелект, а какво реално е нужно, за да проработи.'
+      ]
+    },
+    {
       id: 'teade-punter', track: 'automation',
       img: '/images/speakers/teade-punter.jpg?v=20260730', alt: 'Teade Punter',
       objectPosition: '65% 15%',
@@ -614,15 +631,15 @@
       bioEn: [
         'Paul Lambert combines over 25 years of diplomatic experience. Most recently, from summer 2020 till summer 2024, as Deputy DG ICT, Mr. Lambert was heading the cybersecurity department at the Belgian Ministry of Foreign Affairs. He pushed for high user acceptance of broad cybersecurity to achieve long-lasting changes (mass roll-out of modern endpoints, introduction of an anti-phishing platform, a DLP scheme, phasing out of Bring Your Own Devices) and pushed for a pilot project on the use of AI to render official data more readily available.',
         'During his previous tenure, from 2016 till 2020, Mr. Lambert was the Belgian Consul General in Shanghai, where he contributed to the success of a large Trade Mission which led to new commercial ventures in the sports area, notably regarding football.',
-        'At CONNEXUS 2026, Ambassador Lambert joins the panel "The European Union\'s innovation attraction power in the Black Sea region", together with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.'
+        'At CONNEXUS 2026, Ambassador Lambert joins the panel "The European Union\'s innovation and geoeconomic power in the Black Sea region", together with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Stefan Muntoiu, Business Development Manager at Jan De Nul Group. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.'
       ],
       bioBg: [
         'Пол Ламбърт съчетава над 25 години дипломатически опит. Най-скоро, от лятото на 2020 г. до лятото на 2024 г., като заместник генерален директор „ИКТ“, г-н Ламбърт ръководи отдела по киберсигурност в белгийското Министерство на външните работи. Той работи за високо ниво на приемане от потребителите на широкообхватни мерки за киберсигурност с цел постигане на трайни промени (масово внедряване на съвременни крайни устройства, въвеждане на платформа срещу фишинг, DLP схема, извеждане от употреба на политиката „донеси своето устройство“ (BYOD)) и подкрепя пилотен проект за използване на AI за по-лесен достъп до официални данни.',
         'През предходния си мандат, от 2016 до 2020 г., г-н Ламбърт е бил генерален консул на Белгия в Шанхай, където допринася за успеха на голяма търговска мисия, довела до нови търговски начинания в областта на спорта, по-специално във футбола.',
-        'На CONNEXUS 2026 посланик Ламбърт се присъединява към панела „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“, заедно с Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+        'На CONNEXUS 2026 посланик Ламбърт се присъединява към панела „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“, заедно с Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Stefan Muntoiu, мениджър бизнес развитие в Jan De Nul Group. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
       ],
-      sessionDescEn: 'Panel discussion - "The European Union\'s innovation attraction power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Paul Lambert, Ambassador of Belgium to Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
-      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+      sessionDescEn: 'Panel discussion - "The European Union\'s innovation and geoeconomic power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, Paul Lambert, Ambassador of Belgium to Bulgaria, and Stefan Muntoiu, Business Development Manager, Jan De Nul Group. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
+      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, Пол Ламбърт, посланик на Белгия в България, и Stefan Muntoiu, мениджър бизнес развитие в Jan De Nul Group. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
     },
     {
       id: 'michael-roux', track: 'regional-innovation-policy',
@@ -635,15 +652,15 @@
       bioEn: [
         'Michaël Roux, born in 1966, is a career French diplomat and a graduate of the National School of Statistics and Economic Administration (France). Before joining the French Ministry for Europe and Foreign Affairs in 2002, he worked as a consultant, notably for the European Commission and the World Bank, on projects including the pre-accession of Bulgaria and Romania and various TACIS programmes across Europe, Africa and Asia.',
         'As a career diplomat since 2002, he served as desk officer for the directorate for Africa and the Indian Ocean in Paris, Deputy Head of Mission in Mauritius (2005-2008) and in Ukraine (2008-2012), and Deputy Director for Southern Africa and the Indian Ocean (2012-2016). He was Ambassador of France to the Kyrgyz Republic (2016-2020) and to the Republic of Liberia (2020-2023), and has served as Ambassador for the Eastern Partnership and the Black Sea since 2023.',
-        'At CONNEXUS 2026, Ambassador Roux joins the panel "The European Union\'s innovation attraction power in the Black Sea region", together with Paul Lambert, Ambassador of the Kingdom of Belgium to the Republic of Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.'
+        'At CONNEXUS 2026, Ambassador Roux joins the panel "The European Union\'s innovation and geoeconomic power in the Black Sea region", together with Paul Lambert, Ambassador of the Kingdom of Belgium to the Republic of Bulgaria, and Stefan Muntoiu, Business Development Manager at Jan De Nul Group. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.'
       ],
       bioBg: [
         'Michaël Roux, роден през 1966 г., е кариерен френски дипломат и завършва Националното училище по статистика и икономическа администрация на Франция. Преди да се присъедини към френското Министерство на Европа и външните работи през 2002 г., той работи като консултант, включително за Европейската комисия и Световната банка, по проекти, свързани с предприсъединяването на България и Румъния, както и различни програми TACIS в Европа, Африка и Азия.',
         'Като кариерен дипломат от 2002 г. насам, той е служител в дирекция „Африка и Индийски океан“ в Париж, заместник-ръководител на мисията в Мавриций (2005-2008 г.) и в Украйна (2008-2012 г.), както и заместник-директор за Южна Африка и Индийски океан (2012-2016 г.). Бил е посланик на Франция в Киргизката република (2016-2020 г.) и в Република Либерия (2020-2023 г.), а от 2023 г. е посланик за Източното партньорство и Черноморския регион.',
-        'На CONNEXUS 2026 посланик Roux се присъединява към панела „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“, заедно с Пол Ламбърт, посланик на Кралство Белгия в Република България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+        'На CONNEXUS 2026 посланик Roux се присъединява към панела „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“, заедно с Пол Ламбърт, посланик на Кралство Белгия в Република България, и Stefan Muntoiu, мениджър бизнес развитие в Jan De Nul Group. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
       ],
-      sessionDescEn: 'Panel discussion - "The European Union\'s innovation attraction power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, and Paul Lambert, Ambassador of Belgium to Bulgaria. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
-      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, и Пол Ламбърт, посланик на Белгия в България. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+      sessionDescEn: 'Panel discussion - "The European Union\'s innovation and geoeconomic power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, Paul Lambert, Ambassador of Belgium to Bulgaria, and Stefan Muntoiu, Business Development Manager, Jan De Nul Group. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
+      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, Пол Ламбърт, посланик на Белгия в България, и Stefan Muntoiu, мениджър бизнес развитие в Jan De Nul Group. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
     },
     {
       id: 'lars-frolund', track: 'regional-innovation-policy',
@@ -661,6 +678,42 @@
         'Д-р Lars Frølund е експерт и ръководител в областта на инвестициите в дълбоки технологии (deep tech). Опитът му се намира в пресечната точка на мисийно-ориентираните иновации (вкл. отбрана и сигурност), грантовите и рисковите капиталови инвестиции в дълбокотехнологични проекти, и геополитическите/стратегическите аспекти на изграждането на технологичен капацитет на национално и международно ниво.',
         'Той е Distinguished Senior Lecturer в Масачузетския технологичен институт (MIT) и хоноруван професор в Института „Нилс Бор“ към Университета на Копенхаген.'
       ]
+    },
+    {
+      id: 'robin-peeters', track: 'regional-innovation-policy',
+      img: '/images/speakers/robin-peeters.jpg?v=20260915', alt: 'Robin Peeters',
+      objectPosition: 'center top',
+      name: 'Robin Peeters',
+      role: 'Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria',
+      roleBg: 'Заместник-посланик на Кралство Нидерландия в България',
+      roleEn: 'Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria',
+      topicBg: 'Цифрова трансформация и изкуствен интелект за индустриален растеж: сигурни европейски вериги на доставки',
+      topicEn: 'Digital and AI Transformation for Industrial Growth: Secure European Supply Chains',
+      bioEn: [
+        'Robin Peeters is a Dutch diplomat who currently serves as Deputy Head of Mission at the Embassy of the Kingdom of the Netherlands in Sofia. He holds advanced degrees in law and international affairs from the University of Amsterdam and Sciences Po Paris. Prior to his post in Sofia, his career with the Netherlands Ministry of Foreign Affairs included roles as Private Secretary to the UN Senior Humanitarian and Reconstruction Coordinator for Gaza, Political Coordinator at the Permanent Representation to the UN in New York, Advisor to the President of the UN General Assembly, and First Secretary in Moscow.'
+      ],
+      bioBg: [
+        'Robin Peeters е нидерландски дипломат, който в момента е заместник-ръководител на мисията в посолството на Кралство Нидерландия в София. Има магистърски степени по право и международни отношения от Университета на Амстердам и Sciences Po Париж. Преди назначението си в София кариерата му в нидерландското Министерство на външните работи включва позициите личен секретар на старшия координатор на ООН по хуманитарните въпроси и възстановяването на Газа, политически координатор в Постоянното представителство към ООН в Ню Йорк, съветник на председателя на Общото събрание на ООН и първи секретар в Москва.'
+      ]
+    },
+    {
+      id: 'stefan-muntoiu', track: 'regional-innovation-policy',
+      img: '/images/speakers/stefan-muntoiu.jpg?v=20260915', alt: 'Stefan Muntoiu',
+      objectPosition: 'center top',
+      name: 'Stefan Muntoiu',
+      role: 'Business Development Manager @ Jan De Nul Group',
+      roleBg: 'Мениджър бизнес развитие @ Jan De Nul Group',
+      roleEn: 'Business Development Manager @ Jan De Nul Group',
+      topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
+      topicEn: "The European Union's innovation and geoeconomic power in the Black Sea region",
+      bioEn: [
+        'Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which specialises in offshore energy construction, dredging solutions and other major construction projects on an international scale. A highly experienced team leader in senior management, he brings professional experience spanning multiple domains, including shipping, construction, oil and gas, administration, consulting and HR.'
+      ],
+      bioBg: [
+        'Stefan Muntoiu е Business Development Manager в Jan De Nul Group - компания, специализирана в изграждането на офшорни енергийни съоръжения, драгажни решения и други мащабни международни строителни проекти. Той е високо опитен ръководител на екипи на висше управленско ниво и носи професионален опит в редица области, сред които корабоплаване, строителство, нефт и газ, администрация, консултиране и управление на човешки ресурси.'
+      ],
+      sessionDescEn: 'Panel discussion - "The European Union\'s innovation and geoeconomic power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, Paul Lambert, Ambassador of Belgium to Bulgaria, and Stefan Muntoiu, Business Development Manager, Jan De Nul Group. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
+      sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, Пол Ламбърт, посланик на Белгия в България, и Stefan Muntoiu, мениджър бизнес развитие в Jan De Nul Group. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
     },
 
     // ── AgriTech ──
