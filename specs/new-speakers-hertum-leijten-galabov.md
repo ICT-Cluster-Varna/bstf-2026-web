@@ -12,9 +12,11 @@
 
 | Лектор | Slug | Трак | Език на предоставеното био |
 |---|---|---|---|
-| Jeroen van Hertum | `jeroen-van-hertum` | **предстои** (виж Липсваща информация) | само EN |
-| Dr. Martijn Leijten | `martijn-leijten` | **предстои** (виж Липсваща информация) | само EN |
+| Jeroen van Hertum | `jeroen-van-hertum` | `regional-innovation-policy` ✓ | само EN |
+| Dr. Martijn Leijten | `martijn-leijten` | `regional-innovation-policy` ✓ | само EN |
 | Гълъбин Гълъбов | `galabin-galabov` | `regional-innovation-policy` ✓ | само BG |
+
+> **Уточнено (2026-09-15):** и двамата нидерландски лектори са в трак **Политики** (`regional-innovation-policy`) и участват в **„Българо-нидерландски бизнес обмен: критична инфраструктура и сигурност на ИИ"** — 06.10, 10:50–12:10, Блок 2, зала „Варна". Техните теми са двете теми на този панел (виж по-долу). Този панел вече съществува в програмата, а полето „Лектори" е „предстои уточняване" — виж **Задача 7 (програма)**.
 
 > **Изписване на имена:** двамата нидерландски лектори — **само латиница** (както Paul Lambert / Michaël Roux / Lars Frølund): `name` без `nameEn`, еднакво в BG и EN. Гълъбин Гълъбов — `name` (кирилица) + `nameEn` (латиница).
 
@@ -22,8 +24,11 @@
 
 ## Лектор 1 — Jeroen van Hertum
 
-**Позиция (предложение, за потвърждение):** Board Member @ Dutch Bulgarian Chamber of Commerce / Founder @ Sourcelab
-**Тема:** *не е предоставена — предстои (виж Липсваща информация)*
+**Позиция (потвърдена):** Board Member @ Dutch Bulgarian Chamber of Commerce *(водеща роля — потвърдено 2026-09-15)*
+**Трак:** `regional-innovation-policy` (Политики)
+**Тема (EN):** Public-Private Cooperation for Cybersecurity and AI Security Innovation
+**Тема (BG):** Публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект
+**Участие:** 06.10, 10:50–12:10, Блок 2, зала „Варна" — „Българо-нидерландски бизнес обмен: критична инфраструктура и сигурност на ИИ"
 
 **Био (EN, предоставено):**
 > Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands. Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.
@@ -34,8 +39,11 @@
 
 ## Лектор 2 — Dr. Martijn Leijten
 
-**Позиция:** Assistant Professor @ TU Delft (Technology, Policy & Management)
-**Тема:** *не е предоставена — предстои (виж Липсваща информация)*
+**Позиция:** Assistant Professor @ TU Delft (Faculty of Technology, Policy & Management)
+**Трак:** `regional-innovation-policy` (Политики)
+**Тема (EN):** Smart Solutions for Critical Infrastructure Protection
+**Тема (BG):** Интелигентни решения за защита на критичната инфраструктура
+**Участие:** 06.10, 10:50–12:10, Блок 2, зала „Варна" — „Българо-нидерландски бизнес обмен: критична инфраструктура и сигурност на ИИ"
 
 **Био (EN, предоставено):**
 > Dr. Martijn Leijten is an assistant professor of Organisation and Governance of the faculty of Technology, Policy and Management of Delft University of Technology (the Netherlands) and acts as scientific coordinator of Next Generation Infrastructures, a research platform of six public infrastructure providers in the field of transport, energy and drinking water in the Netherlands. He researches complex projects and technology transition processes and teaches both in academia and in the public and private sector.
@@ -69,7 +77,7 @@
 
 ### Задача 1 — Добавяне на тримата в `data/speakers-data.js`
 
-Добави обектите в масива `SPEAKERS`. Гълъбин — в групата `regional-innovation-policy` (напр. след `lars-frolund`). Двамата нидерландци — в групата на избрания за тях трак (виж Липсваща информация).
+Добави обектите в масива `SPEAKERS`. И тримата са в трак `regional-innovation-policy` (напр. след `lars-frolund`).
 
 **Гълъбин Гълъбов** (готов, освен EN преводите):
 
@@ -100,13 +108,13 @@
 
 ```js
 {
-  id: 'jeroen-van-hertum', track: 'TODO',
+  id: 'jeroen-van-hertum', track: 'regional-innovation-policy',
   img: '/images/speakers/jeroen-van-hertum.jpg?v=20260910', alt: 'Jeroen van Hertum',
   objectPosition: 'center top',
   name: 'Jeroen van Hertum',
-  role: 'Board Member @ Dutch Bulgarian Chamber of Commerce / Founder @ Sourcelab', // за потвърждение
-  topicBg: 'TODO — тема',
-  topicEn: 'TODO — тема',
+  role: 'Board Member @ Dutch Bulgarian Chamber of Commerce',
+  topicBg: 'Публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект',
+  topicEn: 'Public-Private Cooperation for Cybersecurity and AI Security Innovation',
   bioEn: [
     'Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands.',
     'Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.'
@@ -119,13 +127,13 @@
 
 ```js
 {
-  id: 'martijn-leijten', track: 'TODO',
+  id: 'martijn-leijten', track: 'regional-innovation-policy',
   img: '/images/speakers/martijn-leijten.jpg?v=20260910', alt: 'Dr. Martijn Leijten',
   objectPosition: 'center top',
   name: 'Dr. Martijn Leijten',
   role: 'Assistant Professor @ TU Delft',
-  topicBg: 'TODO — тема',
-  topicEn: 'TODO — тема',
+  topicBg: 'Интелигентни решения за защита на критичната инфраструктура',
+  topicEn: 'Smart Solutions for Critical Infrastructure Protection',
   bioEn: [
     'Dr. Martijn Leijten is an assistant professor of Organisation and Governance of the faculty of Technology, Policy and Management of Delft University of Technology (the Netherlands) and acts as scientific coordinator of Next Generation Infrastructures, a research platform of six public infrastructure providers in the field of transport, energy and drinking water in the Netherlands. He researches complex projects and technology transition processes and teaches both in academia and in the public and private sector.'
   ],
@@ -185,15 +193,35 @@
 
 ---
 
+### Задача 7 — Промяна в програмата: лектори на „Българо-нидерландски бизнес обмен"
+
+**Файлове:** `index.html` **и** `en/index.html` — блокът `PROGRAM_SCHEDULE`, зала „Варна", слот **10:50 – 12:10** (Ден 2, 06.10). Графикът е дублиран в двата файла (двуезично чрез `T('bg','en')`) — редактирай **и двата**.
+
+Панелът вече съществува (`index.html` ~ред 6361), но полето „Лектори" е „предстои уточняване". Замени го с двамата:
+
+**Текущо:**
+```js
+LABEL('Лектори: ', 'Speakers: ', 'предстои уточняване', 'TBD')
+```
+
+**Ново:**
+```js
+LABEL('Лектори: ', 'Speakers: ', 'Jeroen van Hertum, Dutch Bulgarian Chamber of Commerce; Dr. Martijn Leijten, TU Delft', 'Jeroen van Hertum, Dutch Bulgarian Chamber of Commerce; Dr. Martijn Leijten, TU Delft')
+```
+
+> Темите на двамата лектори **вече са изброени** в реда `Теми:` на този панел („Интелигентни решения за защита на критичната инфраструктура; публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект") — не се пипа.
+
+---
+
 ## ⚠️ Липсваща информация (за колегите — да се допълни)
 
 | # | Какво липсва | За кого | Бележка |
 |---|---|---|---|
-| 1 | **Тематично направление (трак)** | Jeroen van Hertum | Съдържанието клони към „Киберсигурност" (цифрова идентичност, eIDAS), но не е потвърдено. |
-| 2 | **Тематично направление (трак)** | Dr. Martijn Leijten | Профил: инфраструктурни преходи + политики (транспорт/енергия/води). Кой трак? |
-| 3 | **Тема на лекцията (session title, BG + EN)** | Jeroen van Hertum | Не е предоставена. |
-| 4 | **Тема на лекцията (session title, BG + EN)** | Dr. Martijn Leijten | Не е предоставена. |
-| 5 | **Потвърждение на позицията (role)** | Jeroen van Hertum | Board Member на камарата, или Founder на Sourcelab — кое да е водещо? |
+| 1 | ~~Трак~~ | Jeroen van Hertum | **Решено (2026-09-15):** `regional-innovation-policy` (Политики). |
+| 2 | ~~Трак~~ | Dr. Martijn Leijten | **Решено (2026-09-15):** `regional-innovation-policy` (Политики). |
+| 3 | ~~Тема~~ | Jeroen van Hertum | **Решено:** Public-Private Cooperation for Cybersecurity and AI Security Innovation. |
+| 4 | ~~Тема~~ | Dr. Martijn Leijten | **Решено:** Smart Solutions for Critical Infrastructure Protection. |
+| 5 | ~~Позиция (role)~~ | Jeroen van Hertum | **Решено:** Board Member @ Dutch Bulgarian Chamber of Commerce (водеща). |
 | 6 | **Снимка** | и тримата | `jeroen-van-hertum.jpg`, `martijn-leijten.jpg`, `galabin-galabov.jpg` |
 | 7 | **EN превод** на био/тема/описание/ползи | Гълъбин Гълъбов | Предоставено е само на BG. |
 | 8 | **BG превод** на био | Jeroen van Hertum, Dr. Martijn Leijten | Предоставено е само на EN. |

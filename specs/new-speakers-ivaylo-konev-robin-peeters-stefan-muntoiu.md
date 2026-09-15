@@ -10,7 +10,7 @@
 
 1. **Замяна:** Станислав Симеонов → Ивайло Конев (cybersecurity трак, съвместна лекция с Александър Минчев).
 2. **Добавяне:** Робин Питърс — Deputy Ambassador на Нидерландия, участва в два панела.
-3. **Добавяне:** Стефан Монтьо — Business Development Manager, Jan De Nul, участва в панел Блок 2, Ден 1.
+3. **Добавяне:** Стефан Монтьо — Business Development Manager, Jan De Nul Group, участва в **нов** „Българо-румънски бизнес обмен" (зала Варна, 05.10, 15:45–17:05). Изисква и **промяна в програмата** — виж Задача 10.
 4. **Дизайн (отделна задача):** Вили да изработи визии за social media за тримата нови лектори.
 
 Снимки и презентации за тримата са качени в:  
@@ -79,21 +79,22 @@ Robin Peeters is a Dutch diplomat who currently serves as Deputy Head of Mission
 | Пълно име (BG) | Стефан Монтьо |
 | Пълно име (EN) | Stefan Muntoiu |
 | Slug | `stefan-muntoiu` |
-| Позиция (BG) | Business Development Manager @ Jan De Nul |
-| Позиция (EN) | Business Development Manager @ Jan De Nul |
-| Трак | `marine` *(Jan De Nul е офшор енергетика и драгиране — уточни ако е различен)* |
+| Позиция (BG) | Business Development Manager @ Jan De Nul Group |
+| Позиция (EN) | Business Development Manager @ Jan De Nul Group |
+| Трак | `regional-innovation-policy` ✓ *(както Paul Lambert / Michaël Roux — бизнес обмените в зала Варна)* |
 | Снимка | `images/speakers/stefan-muntoiu.jpg` *(от ARCFund_Bios)* |
 
-**Участие в програмата:**
-- **Ден 1, Блок 2, Зала Варна:** Панел *Bulgarian-French Business Exchange*
+**Участие в програмата (потвърдено):**
+- **Профилна карта (topic):** EU панелът „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион" (както Paul Lambert / Michaël Roux).
+- **Зала „Варна":** нов панел *Българо-румънски бизнес обмен / Bulgaria–Romania Business Exchange* — Stefan е румънец, затова е изведен от „Българо-френски бизнес обмен" (там остава само Michael Roux) в отделен българо-румънски. Виж **Задача 10**.
 
-**Тема (BG):** *(уточни — вероятно заглавието на панела, в който участва)*  
-**Тема (EN):** *(уточни — вероятно заглавието на панела, в който участва)*
+**Тема (BG):** Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион  
+**Тема (EN):** The European Union's innovation and geoeconomic power in the Black Sea region
 
 **Биография (EN):**  
 Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which specialises in offshore energy construction, dredging solutions and other major construction projects on an international scale. A highly experienced team leader in senior management, he brings professional experience spanning multiple domains, including shipping, construction, oil and gas, administration, consulting and HR.
 
-**Биография (BG):** *(очаква превод — или потвърди с организационния екип)*
+**Биография (BG):** *(предоставена — виж Задача 3)*
 
 ---
 
@@ -153,28 +154,29 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
 
 ---
 
-### Задача 3 — Добавяне на Стефан Монтьо в `data/speakers-data.js`
+### Задача 3 — Добавяне на Стефан Монтьо в `data/speakers-data.js` ✅ ИЗПЪЛНЕНО
 
-Добави след последния лектор в трак `marine`:
+> **Статус (2026-09-15):** Stefan вече е в `data/speakers-data.js` (ред ~700) с трак `regional-innovation-policy`, темата на EU панела и **готово BG био**. Реално внедреният запис:
 
 ```js
 {
-  id: 'stefan-muntoiu', track: 'marine',
-  img: '/images/speakers/stefan-muntoiu.jpg?v=20260908', alt: 'Stefan Muntoiu',
+  id: 'stefan-muntoiu', track: 'regional-innovation-policy',
+  img: '/images/speakers/stefan-muntoiu.jpg?v=20260915', alt: 'Stefan Muntoiu',
   objectPosition: 'center top',
-  name: 'Стефан Монтьо',
-  nameEn: 'Stefan Muntoiu',
-  role: 'Business Development Manager @ Jan De Nul',
-  topicBg: 'TODO — уточни темата/панела',
-  topicEn: 'TODO — confirm panel/topic title',
-  bioBg: [], // ще се добави превод по-късно от Симо
-
-  bioEn: [
-    'Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which specialises in offshore energy construction, dredging solutions and other major construction projects on an international scale.',
-    'A highly experienced team leader in senior management, he brings professional experience spanning multiple domains, including shipping, construction, oil and gas, administration, consulting and HR.'
-  ]
+  name: 'Stefan Muntoiu',
+  role: 'Business Development Manager @ Jan De Nul Group',
+  roleBg: 'Мениджър бизнес развитие @ Jan De Nul Group',
+  roleEn: 'Business Development Manager @ Jan De Nul Group',
+  topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
+  topicEn: "The European Union's innovation and geoeconomic power in the Black Sea region",
+  bioEn: [ /* ... предоставеното EN био ... */ ],
+  bioBg: [ /* ... готов BG превод ... */ ],
+  sessionDescEn: '... панелна дискусия с Michael Roux, Paul Lambert и Stefan Muntoiu, модератор Emil Tsankov ...',
+  sessionDescBg: '... същото на BG ...'
 },
 ```
+
+> Забележка: изписването на името е латиница (`name: 'Stefan Muntoiu'`, без кирилско `nameBg`), както е установеният модел за чуждестранните лектори.
 
 ---
 
@@ -286,7 +288,7 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
   "@type": "Person",
   "name": "Stefan Muntoiu",
   "jobTitle": "Business Development Manager",
-  "worksFor": { "@type": "Organization", "name": "Jan De Nul" },
+  "worksFor": { "@type": "Organization", "name": "Jan De Nul Group" },
   "image": "https://www.blackseatech.org/images/speakers/stefan-muntoiu.jpg"
 }
 ```
@@ -300,6 +302,28 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
 | `speakers.html` | `?v=` на `data/speakers-data.js` → `20260908` |
 | `en/speakers.html` | `?v=` на `../data/speakers-data.js` → `20260908` |
 | Всички 52 генерирани speaker файлове | Пусни генератора — не редактирай на ръка |
+
+---
+
+### Задача 10 — Промяна в програмата: нов „Българо-румънски бизнес обмен" ✅ ИЗПЪЛНЕНО
+
+> **Статус (2026-09-15):** Вече внедрено в `index.html` (~ред 6319) и `en/index.html` (~ред 6294). Направено е точно както се искаше:
+> - Stefan **изведен** от „Българо-френски бизнес обмен" — там остава само Michael Roux (модератор Калина Цолова). ✓
+> - **Нов блок** „Българо-румънски бизнес обмен" в зала „Варна" със Stefan Muntoiu, Jan De Nul Group. ✓
+>
+> Реално внедреният нов блок:
+> ```js
+> {
+>   heading: T('Българо-румънски бизнес обмен', 'Bulgaria–Romania Business Exchange'),
+>   lines: [
+>     LABEL('Участник: ', 'Contributor: ', 'Stefan Muntoiu, Jan De Nul Group', 'Stefan Muntoiu, Jan De Nul Group')
+>   ]
+> }
+> ```
+
+**Незадължителни допълнения** (по преценка на организаторите — сега липсват в блока):
+- Ред за **цел** (`OBJ`), напр.: „Да се разгледат възможностите за инвестиции, иновации и стратегическо сътрудничество между България и Румъния в рамките на Черноморския регион."
+- Ред за **модератор** (`LABEL('Модератор: ', 'Moderator: ', ...)`).
 
 ---
 
@@ -320,10 +344,12 @@ Stefan Muntoiu is a Business Development Manager at Jan De Nul Group, which spec
 | # | Въпрос | Отговорник |
 |---|---|---|
 | 1 | Каква е точната тема/заглавие на панела за Робин Питърс (за полето `topicBg`/`topicEn`)? | Организационен екип |
-| 2 | Каква е точната тема/заглавие на панела за Стефан Монтьо (за полето `topicBg`/`topicEn`)? | Организационен екип |
-| 3 | Правилен ли е тракът `marine` за Стефан Монтьо или трябва друг трак? | Организационен екип |
+| 2 | ~~Тема/панел за Стефан Монтьо?~~ **Решено (2026-09-15):** нов „Българо-румънски бизнес обмен", зала Варна, 05.10 15:45–17:05. | ✓ |
+| 3 | ~~Трак за Стефан Монтьо (`marine`?)~~ **Решено (2026-09-15):** `regional-innovation-policy` (както другите бизнес обмени). | ✓ |
 | 4 | Правилен ли е тракът `regional-innovation-policy` за Робин Питърс или трябва друг трак? | Организационен екип |
 | 5 | ~~Нужен ли е BG превод на биографиите на Робин Питърс и Стефан Монтьо?~~ **Решено:** засега само EN; Симо ще преведе по-късно. | — |
+| 6 | *(по избор)* **Модератор** на новия „Българо-румънски бизнес обмен" — блокът е внедрен без такъв ред. | Организационен екип |
+| 7 | *(по избор)* Дали да се добави **цел** (`OBJ`) на новия обмен — сега блокът е само с участник. | Организационен екип |
 
 ---
 
