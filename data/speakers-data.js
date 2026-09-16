@@ -181,6 +181,26 @@
       ]
     },
     {
+      id: 'genoveva-christova', track: 'ai',
+      img: '/images/speakers/genoveva-christova.jpg?v=20260916', alt: 'Genoveva Christova',
+      objectPosition: 'center top',
+      name: 'Геновева Христова',
+      nameEn: 'Genoveva Christova',
+      role: 'President @ CreaTech Bulgaria | Managing Director @ Ligna Group',
+      roleBg: 'Председател @ CreaTech Bulgaria | Управител @ Ligna Group',
+      roleEn: 'President @ CreaTech Bulgaria | Managing Director @ Ligna Group',
+      topicBg: 'От Евровизия до изкуствения интелект: креативните индустрии като лаборатория за бъдещето на бизнеса',
+      topicEn: 'From Eurovision to AI: Creative Industries as a Laboratory for the Future of Business',
+      bioBg: [
+        'Геновева Христова-Мъри е председател на CreaTech Bulgaria и Български мебелен клъстер и управител на Ligna Group. Има богат опит в развитието на клъстери, предприемачеството, международното сътрудничество, бизнес развитието и иновационните екосистеми.'
+      ],
+      bioEn: [
+        'Genoveva Christova-Murray is President of CreaTech Bulgaria and the Bulgarian Furniture Cluster and Managing Director of Ligna Group. She has extensive experience in cluster development, entrepreneurship, international cooperation, business development and innovation ecosystems.'
+      ],
+      sessionDescBg: 'Креативните индустрии са мястото, където технологиите, творчеството и новите бизнес модели често се срещат първи. От Евровизия и живите събития до гейминга, имърсив преживяванията и изкуствения интелект, те дават представа как бизнесът може да ангажира публика, да изгражда общности и да създава нови форми на стойност. Лекцията разглежда какво могат да научат другите индустрии от креативния сектор - и защо творчеството се превръща в ключово конкурентно предимство в ерата на изкуствения интелект.',
+      sessionDescEn: 'Creative industries are where technology, creativity, and new business models often meet first. From Eurovision and live entertainment to gaming, immersive experiences, and AI, they offer a glimpse into how businesses can engage audiences, build communities, and create new forms of value. This talk explores what other industries can learn from the creative sector - and why creativity is becoming a key competitive advantage in the age of AI.'
+    },
+    {
       id: 'teade-punter', track: 'automation',
       img: '/images/speakers/teade-punter.jpg?v=20260730', alt: 'Teade Punter',
       objectPosition: '65% 15%',
@@ -308,6 +328,28 @@
         'His background in system integration enables him to translate business and technical requirements into reliable, scalable, and practical IT solutions.',
         'Ivaylo holds an engineering degree in Computer Systems and Technologies from the Technical University of Sofia. Over the years, he has also earned professional certifications such as Cisco CCNA and Fortinet NSE 1 and NSE 3, along with various specialized trainings in networking and IT infrastructure technologies.'
       ]
+    },
+    {
+      id: 'yoana-koleva', track: 'cybersecurity',
+      img: '/images/speakers/yoana-koleva.jpg?v=20260916', alt: 'Yoana Koleva',
+      objectPosition: 'center top',
+      name: 'Йоана Колева',
+      nameEn: 'Yoana Koleva',
+      role: 'AI and Data Manager @ GATE Institute',
+      roleBg: 'Мениджър „AI и данни“ @ Институт GATE',
+      roleEn: 'AI and Data Manager @ GATE Institute',
+      topicBg: 'Сигурни данни, устойчиви вериги на доставки и киберустойчив бизнес',
+      topicEn: 'Secure Data, Resilient Supply Chains and Cyber-Resilient Business',
+      bioBg: [
+        'Йоана Колева е мениджър „AI и данни“ в Институт GATE, където отговаря за целия жизнен цикъл на данните: от тяхното събиране и защита до извличането на стойност. Има над 10 години международен опит в Лондон в ръководене на стратегически проекти за обработка на данни и бизнес трансформация чрез анализи.'
+      ],
+      bioEn: [
+        'Yoana Koleva is AI and Data Manager at GATE Institute, where she is responsible for the full data lifecycle - from collection and protection through to extracting value. She brings over 10 years of international experience in London leading strategic data processing projects and business transformation through analytics.'
+      ],
+      sessionDescBg: 'Сигурността на данните започва много преди кибер защитата: с правилното им управление, ясен контрол, качество, класификация и политики за достъп още от момента на събиране. Без стабилно управление дори най-добрата техническа защита работи върху хаотична и рискова основа. „Пространства за данни“ е модел, който показва как устойчивото и сигурно споделяне на данни между организации е възможно именно защото се гради върху доверие, стандарти и контролиран достъп, а не само върху технически ограничения. Целта е да се покаже, че киберустойчивостта на бизнеса зависи от веригата на управление на данните като цяло, а не само от защитните механизми на отделните звена.',
+      sessionDescEn: 'Data security begins long before cyber defence: with proper data governance, clear control, quality, classification and access policies from the moment data is collected. Without solid governance, even the best technical protection is built on a chaotic and risky foundation. Data Spaces is a model showing how sustainable and secure data sharing between organisations becomes possible precisely because it is built on trust, standards and controlled access, and not only on technical restrictions. The aim is to show that the cyber resilience of a business depends on the data governance chain as a whole, and not only on the protective mechanisms of individual units.',
+      takeawaysBg: 'Аудиторията ще получи практични насоки как да управлява данните си с ясни модели за класификация и контрол на достъп като основа за истинска сигурност, а не само технически преглед. Ще разбере защо сигурността на данните не е само технически въпрос, а започва именно с правилното им управление. Ще получи конкретен модел (Data Spaces) за това как организациите могат да споделят данни сигурно и устойчиво, вместо да избягват споделянето от страх. Ще си тръгне с разбирането, че киберустойчивостта на бизнеса зависи от цялата верига на управление на данните: от вътрешните процеси до партньорствата с други организации. Организациите ще получат практическа рамка за самооценка, която ще им помогне да разберат дали проблемите с данните в тяхната организация идват от липса на технология или от липса на управление и ясни процеси.',
+      takeawaysEn: 'The audience will gain practical guidance on managing their data with clear classification and access-control models as the foundation of real security, rather than just a technical review. They will understand why data security is not only a technical question, but starts with proper data governance. They will take away a concrete model (Data Spaces) for how organisations can share data securely and sustainably instead of avoiding sharing out of fear. They will leave understanding that the cyber resilience of a business depends on the entire data governance chain: from internal processes to partnerships with other organisations. Organisations will receive a practical self-assessment framework to help them determine whether their data problems stem from a lack of technology or from a lack of governance and clear processes.'
     },
 
     // ── BioTech ──
@@ -687,8 +729,8 @@
       role: 'Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria',
       roleBg: 'Заместник-посланик на Кралство Нидерландия в България',
       roleEn: 'Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria',
-      topicBg: 'Цифрова трансформация и изкуствен интелект за индустриален растеж: сигурни европейски вериги на доставки',
-      topicEn: 'Digital and AI Transformation for Industrial Growth: Secure European Supply Chains',
+      topicBg: 'Справяне със стратегическата несигурност в Черноморския регион',
+      topicEn: 'Tackling Strategic Insecurity in the Black Sea Region',
       bioEn: [
         'Robin Peeters is a Dutch diplomat who currently serves as Deputy Head of Mission at the Embassy of the Kingdom of the Netherlands in Sofia. He holds advanced degrees in law and international affairs from the University of Amsterdam and Sciences Po Paris. Prior to his post in Sofia, his career with the Netherlands Ministry of Foreign Affairs included roles as Private Secretary to the UN Senior Humanitarian and Reconstruction Coordinator for Gaza, Political Coordinator at the Permanent Representation to the UN in New York, Advisor to the President of the UN General Assembly, and First Secretary in Moscow.'
       ],
@@ -714,6 +756,60 @@
       ],
       sessionDescEn: 'Panel discussion - "The European Union\'s innovation and geoeconomic power in the Black Sea region" - with Michael Roux, Ambassador for the Eastern Partnership and the Black Sea, Ministry for Europe and Foreign Affairs of France, Paul Lambert, Ambassador of Belgium to Bulgaria, and Stefan Muntoiu, Business Development Manager, Jan De Nul Group. Moderated by Emil Tsankov, Chairman of the Board, ICT Cluster Varna.',
       sessionDescBg: 'Панелна дискусия - „Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион“ - с участието на Michael Roux, посланик за Източното партньорство и Черноморския регион в Министерството на Европа и външните работи на Франция, Пол Ламбърт, посланик на Белгия в България, и Stefan Muntoiu, мениджър бизнес развитие в Jan De Nul Group. Модератор: Емил Цанков, председател на Управителния съвет на ICT Cluster Varna.'
+    },
+    {
+      id: 'jeroen-van-hertum', track: 'regional-innovation-policy',
+      img: '/images/speakers/jeroen-van-hertum.jpg?v=20260916', alt: 'Jeroen van Hertum',
+      objectPosition: 'center top',
+      name: 'Jeroen van Hertum',
+      role: 'Board Member @ Dutch Bulgarian Chamber of Commerce',
+      topicBg: 'Публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект',
+      topicEn: 'Public-Private Cooperation for Cybersecurity and AI Security Innovation',
+      bioEn: [
+        'Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands.',
+        'Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.'
+      ],
+      bioBg: [
+        'Jeroen van Hertum е член на борда на Нидерландско-българската търговска камара - мостът между нидерландската и българската бизнес общност, където работи по трансгранично технологично сътрудничество, ниършоринг и свързването на българския технологичен сектор със западноевропейските пазари. Той е и основател на Sourcelab - европейска технологична консултантска компания, която работи между София и Нидерландия.',
+        'В продължение на над тридесет години изгражда съвременни цифрови продукти за стартъпи, финтех компании, банки и големи предприятия - от малки екипи, които разработват бързо, до регулирани институции, които носят реален риск. Нидерландец по произход и установен в България от 2010 г., той е фокусиран върху цифровото доверие и европейската цифрова идентичност: eIDAS, квалифицираните електронни подписи и създаващия се Европейски портфейл за цифрова идентичност. Тезата му е, че доверието се превръща в бизнес предимство, а не в разход за съответствие.'
+      ]
+    },
+    {
+      id: 'martijn-leijten', track: 'regional-innovation-policy',
+      img: '/images/speakers/martijn-leijten.jpg?v=20260916', alt: 'Martijn Leijten',
+      objectPosition: 'center top',
+      name: 'Dr. Martijn Leijten',
+      role: 'Assistant Professor, Faculty of Technology, Policy and Management @ Delft University of Technology',
+      topicBg: 'Интелигентни решения за защита на критичната инфраструктура',
+      topicEn: 'Smart Solutions for Critical Infrastructure Protection',
+      bioEn: [
+        'Dr. Martijn Leijten is an assistant professor of Organisation and Governance of the faculty of Technology, Policy and Management of Delft University of Technology (the Netherlands) and acts as scientific coordinator of Next Generation Infrastructures, a research platform of six public infrastructure providers in the field of transport, energy and drinking water in the Netherlands. He researches complex projects and technology transition processes and teaches both in academia and in the public and private sector.'
+      ],
+      bioBg: [
+        'Д-р Martijn Leijten е асистент-професор по организация и управление във Факултета по технологии, политики и управление на Технологичния университет в Делфт (Нидерландия) и научен координатор на Next Generation Infrastructures - изследователска платформа на шест публични инфраструктурни оператора в областта на транспорта, енергетиката и питейните води в Нидерландия. Изследва сложни проекти и процеси на технологичен преход и преподава както в академична среда, така и в публичния и частния сектор.'
+      ]
+    },
+    {
+      id: 'galabin-galabov', track: 'regional-innovation-policy',
+      img: '/images/speakers/galabin-galabov.jpg?v=20260916', alt: 'Galabin Galabov',
+      objectPosition: 'center top',
+      name: 'Гълъбин Гълъбов',
+      nameEn: 'Galabin Galabov',
+      role: 'Chairman of the Board and CEO @ Bulgarian Export Insurance Agency (BAEZ)',
+      roleBg: 'Председател на УС и ИД @ Българска агенция за експортно застраховане (БАЕЗ)',
+      roleEn: 'Chairman of the Board and CEO @ Bulgarian Export Insurance Agency (BAEZ)',
+      topicBg: 'Финансови инструменти за подкрепа на експортния и МСП бизнеса от страна на Българска агенция за експортно застраховане',
+      topicEn: 'Financial Instruments from the Bulgarian Export Insurance Agency in Support of Exporters and SMEs',
+      bioBg: [
+        'Мениджър с над 30 години професионален опит в областта на финансите, а понастоящем Председател на УС и ИД на Българска агенция за експортно застраховане ЕАД.'
+      ],
+      bioEn: [
+        'A manager with over 30 years of professional experience in finance, currently Chairman of the Management Board and Executive Director of the Bulgarian Export Insurance Agency EAD.'
+      ],
+      sessionDescBg: 'Представяне на инструментите, които БАЕЗ предоставя за подкрепа на експортно ориентираните фирми, както и застраховка на кредити за оборотни нужди на фирми от сегмента МСП.',
+      sessionDescEn: 'A presentation of the instruments BAEZ provides in support of export-oriented companies, as well as insurance of working capital loans for companies in the SME segment.',
+      takeawaysBg: 'Българска агенция за експортно застраховане предоставя различни инструменти за споделяне риска на българските експортьори, който те поемат при продажба на отложено плащане, както и на банките при финансиране на експортни сделки и улесняване на оборотно кредитиране на фирми от МСП сегмента. В допълнение Агенцията предоставя застраховки тип гаранция, които дават възможност за замяна на банковите гаранции в страната и чужбина за участие в търг, добро изпълнение и поддръжка.',
+      takeawaysEn: 'The Bulgarian Export Insurance Agency offers a range of instruments for sharing the risk that Bulgarian exporters take on when selling on deferred payment terms, as well as the risk banks take on when financing export deals and facilitating working capital lending to companies in the SME segment. In addition, the Agency provides guarantee-type insurance, which makes it possible to replace bank guarantees in Bulgaria and abroad for tender participation, performance and maintenance.'
     },
 
     // ── AgriTech ──
