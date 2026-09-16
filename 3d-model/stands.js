@@ -27,9 +27,10 @@ window.STANDS_DATA = {
     // companies, so `logo` is an array here — the popup renders every entry,
     // the hover tooltip only the first (it has room for one thumbnail).
     1:  { company: 'Ardes.bg & Samsung',                 logo: ['../images/partner-ardes.png?v=20260914', '../images/partner-samsung.png?v=20260914'], status: 'partner', website: '', description: '' },
-    2:  { company: _EN ? 'Reserved for Gold Partner package' : 'Резервиран за пакет Gold Partner',   logo: '',                                    status: 'reserved', website: '', description: '' },
+    2:  { company: 'RobotoPlus',                          logo: 'Logos/robotoplus.jpg?v=20260916',                    status: 'partner',  website: 'https://robotoplus.com/', description: '' },
     3:  { company: 'ALSO & Microsoft',                   logo: ['Logos/also.png?v=20260914', 'Logos/microsoft.svg?v=20260914'], status: 'partner', website: '', description: '' },
-    4:  { company: _EN ? 'Reserved for Silver Partner package' : 'Резервиран за пакет Silver Partner', logo: '',                                    status: 'reserved', website: '', description: '' },
+    4:  { company: 'Brain++ AI Factory',                 logo: 'Logos/brainpp_logo.png?v=20260916',                  status: 'partner',  website: 'https://brainplusplus.bg/', description: '' },
+    5:  { company: 'URBO CITY',                          logo: 'Logos/urbo-city.png?v=20260916',                     status: 'partner',  website: 'https://urbo.bg/', description: '' },
     6:  { company: 'Top-Rent-A-Car',                     logo: 'Logos/toprentacar.png?v=20260914',               status: 'partner',  website: '', description: '' },
     7:  { company: _EN ? 'ENERGO-PRO' : 'Енерго-Про',        logo: 'Logos/energo-pro.jpg?v=20260914',                status: 'occupied', website: '', description: '' },
     8:  { company: _EN ? 'ITRM Consult' : 'ИТР Мениджмънт Консулт ООД', logo: 'Logos/ITR Management Consult.png?v=20260914', status: 'occupied', website: '', description: '' },
