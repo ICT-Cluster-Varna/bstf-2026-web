@@ -15,6 +15,38 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/"/>
   </url>
 
+  <!-- Legal pages (SEO task 2026-09, item 3). Placed HERE, above the
+       speakers.html entries, on purpose: everything after the
+       .../en/speakers.html <url> block is rewritten from scratch by
+       .claude/skills/add-speaker/scripts/generate-speaker-pages.js on every
+       speaker regeneration, so an entry added down there would silently
+       disappear. -->
+  <url>
+    <loc>https://www.blackseatech.org/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/privacy-policy.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackseatech.org/terms-and-conditions.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/terms-and-conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/terms-and-conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/terms-and-conditions.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/terms-and-conditions.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/terms-and-conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/terms-and-conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/terms-and-conditions.html"/>
+  </url>
+
   <url>
     <loc>https://www.blackseatech.org/sponsors.html</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/sponsors.html"/>
@@ -76,6 +108,18 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/gilad-barash/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/gilad-barash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/gilad-barash/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/genoveva-christova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/genoveva-christova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/genoveva-christova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/genoveva-christova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/genoveva-christova/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/genoveva-christova/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/genoveva-christova/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/genoveva-christova/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/teade-punter/</loc>
@@ -148,6 +192,18 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ivaylo-konev/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ivaylo-konev/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/ivaylo-konev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/yoana-koleva/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/yoana-koleva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/yoana-koleva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/yoana-koleva/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/yoana-koleva/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/yoana-koleva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/yoana-koleva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/yoana-koleva/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/kristina-eskenazi/</loc>
@@ -388,6 +444,42 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/stefan-muntoiu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/stefan-muntoiu/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/stefan-muntoiu/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/jeroen-van-hertum/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/jeroen-van-hertum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/jeroen-van-hertum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/jeroen-van-hertum/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/jeroen-van-hertum/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/jeroen-van-hertum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/jeroen-van-hertum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/jeroen-van-hertum/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/martijn-leijten/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/martijn-leijten/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/martijn-leijten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/martijn-leijten/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/martijn-leijten/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/martijn-leijten/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/martijn-leijten/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/martijn-leijten/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/galabin-galabov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/galabin-galabov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/galabin-galabov/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/galabin-galabov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/ilia-iordanov/</loc>
