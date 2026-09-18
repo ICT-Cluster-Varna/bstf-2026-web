@@ -199,6 +199,28 @@
       ],
       sessionDescBg: 'Креативните индустрии са мястото, където технологиите, творчеството и новите бизнес модели често се срещат първи. От Евровизия и живите събития до гейминга, имърсив преживяванията и изкуствения интелект, те дават представа как бизнесът може да ангажира публика, да изгражда общности и да създава нови форми на стойност. Лекцията разглежда какво могат да научат другите индустрии от креативния сектор - и защо творчеството се превръща в ключово конкурентно предимство в ерата на изкуствения интелект.',
       sessionDescEn: 'Creative industries are where technology, creativity, and new business models often meet first. From Eurovision and live entertainment to gaming, immersive experiences, and AI, they offer a glimpse into how businesses can engage audiences, build communities, and create new forms of value. This talk explores what other industries can learn from the creative sector - and why creativity is becoming a key competitive advantage in the age of AI.'
+    },    {
+      id: 'arthur-kordon', track: 'ai',
+      img: '/images/speakers/arthur-kordon.jpg?v=20260918', alt: 'Arthur Kordon',
+      objectPosition: 'center top',
+      name: 'Dr. Arthur Kordon',
+      role: 'International Expert in Applied Artificial Intelligence @ Kordon Consulting',
+      roleBg: 'Международен експерт по приложен изкуствен интелект @ Kordon Consulting',
+      roleEn: 'International Expert in Applied Artificial Intelligence @ Kordon Consulting',
+      topicBg: 'Приложен бизнес изкуствен интелект - от тъмните векове към агентното бъдеще',
+      topicEn: 'Applied Business AI - From the Dark Ages to the Agentic Future',
+      bioBg: [
+        'Д-р Артур Кордон е международно признат експерт и един от пионерите в прилагането на изкуствения интелект в индустрията. Той свързва научните достижения в областта на AI с реалните потребности на бизнеса, превръщайки технологиите в практически решения с измерима икономическа стойност.',
+        'Сред реализираните от него приложения са дигитални двойници, системи за предиктивна поддръжка, интелигентен анализ за намаляване на енергийните разходи, прогнозиране на цените на суровини и оптимизиране на офис пространства.',
+        'Д-р Кордон участва в международни научни и програмни комитети към IEEE и IFAC. Притежава американски патент и е автор на повече от 70 публикации, три книги и 16 глави в специализирани издания в областта на приложния изкуствен интелект и науката за данните.'
+      ],
+      bioEn: [
+        'Dr. Arthur Kordon is an internationally recognized expert and one of the pioneers of applying artificial intelligence in industry. He connects scientific advances in AI with the real needs of business, turning technology into practical solutions with measurable economic value.',
+        'His delivered applications include digital twins, predictive maintenance systems, intelligent analytics for reducing energy costs, raw material price forecasting, and office space optimization.',
+        'Dr. Kordon serves on international scientific and program committees of the IEEE and IFAC. He holds a US patent and is the author of more than 70 publications, three books, and 16 chapters in specialized editions in the field of applied artificial intelligence and data science.'
+      ],
+      sessionDescBg: 'Практическа рамка за превръщането на модели на изкуствен интелект и технологични възможности в устойчиви бизнес резултати. Лекцията е част от Блок 1 на Ден 2 - „Изкуственият интелект и автоматизацията като отговор на растящите разходи и недостига на ресурси“. Възможно е да бъде предложен последващ уъркшоп.',
+      sessionDescEn: 'A practical framework for transforming AI models and technology opportunities into sustainable business results. The talk is part of Day 2, Block 1 - "AI and Automation as a Response to Rising Costs and Resource Shortages". A follow-up workshop may be offered.'
     },
     {
       id: 'teade-punter', track: 'automation',
