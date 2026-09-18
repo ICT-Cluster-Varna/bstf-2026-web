@@ -209,6 +209,8 @@
       roleEn: 'International Expert in Applied Artificial Intelligence @ Kordon Consulting',
       topicBg: 'Приложен бизнес изкуствен интелект - от тъмните векове към агентното бъдеще',
       topicEn: 'Applied Business AI - From the Dark Ages to the Agentic Future',
+      workshopTopicBg: 'Темата предстои да бъде обявена',
+      workshopTopicEn: 'Topic to be announced',
       bioBg: [
         'Д-р Артур Кордон е международно признат експерт и един от пионерите в прилагането на изкуствения интелект в индустрията. Той свързва научните достижения в областта на AI с реалните потребности на бизнеса, превръщайки технологиите в практически решения с измерима икономическа стойност.',
         'Сред реализираните от него приложения са дигитални двойници, системи за предиктивна поддръжка, интелигентен анализ за намаляване на енергийните разходи, прогнозиране на цените на суровини и оптимизиране на офис пространства.',
@@ -219,8 +221,8 @@
         'His delivered applications include digital twins, predictive maintenance systems, intelligent analytics for reducing energy costs, raw material price forecasting, and office space optimization.',
         'Dr. Kordon serves on international scientific and program committees of the IEEE and IFAC. He holds a US patent and is the author of more than 70 publications, three books, and 16 chapters in specialized editions in the field of applied artificial intelligence and data science.'
       ],
-      sessionDescBg: 'Практическа рамка за превръщането на модели на изкуствен интелект и технологични възможности в устойчиви бизнес резултати. Лекцията е част от Блок 1 на Ден 2 - „Изкуственият интелект и автоматизацията като отговор на растящите разходи и недостига на ресурси“. Възможно е да бъде предложен последващ уъркшоп.',
-      sessionDescEn: 'A practical framework for transforming AI models and technology opportunities into sustainable business results. The talk is part of Day 2, Block 1 - "AI and Automation as a Response to Rising Costs and Resource Shortages". A follow-up workshop may be offered.'
+      sessionDescBg: 'Практическа рамка за превръщането на модели на изкуствен интелект и технологични възможности в устойчиви бизнес резултати.',
+      sessionDescEn: 'A practical framework for transforming AI models and technology opportunities into sustainable business results.'
     },
     {
       id: 'teade-punter', track: 'automation',
