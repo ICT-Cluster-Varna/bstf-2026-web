@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страницата не е намерена (404) | CONNEXUS 2026</title>
+
+  <!--
+    Branded 404 page — SEO task blackseatech.org, September 2026, item 6.
+    Replaces the bare IIS "404 - File or directory not found" screen.
+
+    Served by web.config's <httpErrors> with responseMode="ExecuteURL", which
+    keeps the real 404 status code while showing this content. That means the
+    browser's address bar still holds the URL the visitor asked for (e.g.
+    /speakers/typo/), NOT /404.html — so EVERY path in this file must be
+    root-absolute ("/images/...", "/speakers.html"). A relative path would
+    resolve against the broken URL and 404 in turn. Deliberately no <base>
+    tag either, for the same reason.
+
+    Self-contained on purpose: no shared CSS file exists in this project (every
+    page inlines its own <style>), and shared/site-chrome.js renders nav/footer
+    markup that depends on those inline styles. Pulling it in here would need a
+    copy of ~1200 lines of CSS to render correctly; a small standalone page has
+    less that can break on the one page a visitor sees when something is
+    already broken.
+  -->
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=20260818">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=20260818">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png?v=20260818">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=20260818">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0B3954;
+      --navy-deep: #0d4a6e;
+      --teal: #00cdff;
+      --teal-deep: #00a0cc;
+      --white: #FFFFFF;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --dot-grid: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box }
+
+    body {
+      font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--navy);
+      background-image: var(--dot-grid);
+      background-size: 24px 24px;
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px }
+
+    /* --- nav --- */
+    .nf-nav {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(11, 57, 84, 0.85);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nf-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .nf-nav-inner img { height: 30px; display: block }
+
+    .nf-links { display: flex; align-items: center; gap: 26px; flex-wrap: wrap }
+
+    .nf-links a {
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.25s ease;
+    }
+
+    .nf-links a:hover,
+    .nf-links a:focus-visible { color: var(--teal) }
+
+    /* --- main --- */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 72px 0 88px;
+      text-align: center;
+    }
+
+    .nf-code {
+      font-family: 'Science Gothic', 'Exo 2', sans-serif;
+      font-size: clamp(5.5rem, 18vw, 11rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--white) 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'Science Gothic', 'Exo 2', sans-serif;
+      font-size: clamp(1.4rem, 4.5vw, 2.1rem);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .nf-lead {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 46ch;
+      margin: 0 auto 34px;
+    }
+
+    .nf-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+      color: var(--navy);
+    }
+
+    .btn-ghost {
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      color: var(--white);
+    }
+
+    .btn:hover,
+    .btn:focus-visible { transform: translateY(-2px) }
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible { border-color: var(--teal); color: var(--teal) }
+
+    /* --- footer --- */
+    .nf-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 22px 0;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .nf-footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nf-footer a { color: rgba(255, 255, 255, 0.7); text-decoration: none }
+    .nf-footer a:hover, .nf-footer a:focus-visible { color: var(--teal) }
+
+    @media (max-width: 640px) {
+      .nf-nav-inner { flex-direction: column; align-items: flex-start; gap: 14px }
+      .nf-links { gap: 18px }
+      .nf-links a { font-size: 0.85rem }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nf-nav">
+    <div class="container nf-nav-inner">
+      <a href="/" aria-label="CONNEXUS 2026"><img src="/images/Connexus - WHITE.svg?v=20260731" alt="CONNEXUS 2026"></a>
+      <div class="nf-links">
+        <a href="/#program" data-bg="Програма" data-en="Program">Програма</a>
+        <a href="/speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
+        <a href="/#venue" data-bg="Място" data-en="Venue">Място</a>
+        <a href="/#tickets" data-bg="Билети" data-en="Tickets">Билети</a>
+        <a href="/sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
+        <a href="/#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="nf-code">404</div>
+      <h1 data-bg="Тази страница не съществува" data-en="This page doesn&#39;t exist">Тази страница не съществува</h1>
+      <p class="nf-lead"
+         data-bg="Адресът е грешен или страницата е преместена. Върнете се на началната страница или разгледайте лекторите на CONNEXUS 2026."
+         data-en="The address is wrong or the page has moved. Head back to the homepage, or browse the CONNEXUS 2026 speakers.">
+        Адресът е грешен или страницата е преместена. Върнете се на началната страница или разгледайте лекторите на CONNEXUS 2026.
+      </p>
+      <div class="nf-actions">
+        <a href="/" class="btn btn-primary" data-bg="Към началната страница" data-en="Go to homepage">Към началната страница</a>
+        <a href="/speakers.html" class="btn btn-ghost" data-bg="Виж лекторите" data-en="See the speakers">Виж лекторите</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="nf-footer">
+    <div class="container nf-footer-inner">
+      <span data-bg="&copy; 2026 Черноморски технологичен форум" data-en="&copy; 2026 Black Sea Technology Forum">&copy; 2026 Черноморски технологичен форум</span>
+      <!--
+        The links to /privacy-policy.html and /terms-and-conditions.html that the
+        site-wide footer carries are deliberately NOT here yet: both pages are
+        still untracked and answer 404 on the live site (SEO task item 3). A page
+        whose whole job is to rescue a 404 must not send the visitor into two more.
+        Put them back, together with the entries in the language map below, in the
+        same deploy that ships the legal pages.
+      -->
+    </div>
+  </footer>
+
+  <script>
+    // The visitor's language comes from the URL they actually asked for, which
+    // ExecuteURL leaves untouched in location.pathname: /en/anything -> English.
+    // Same data-bg/data-en attribute convention the rest of the site uses, so
+    // the copy above stays editable in one place per string.
+    (function () {
+      if (!/^\/en(\/|$)/i.test(location.pathname)) return;
+      document.documentElement.lang = 'en';
+      document.title = 'Page not found (404) | CONNEXUS 2026';
+      var nodes = document.querySelectorAll('[data-en]');
+      for (var i = 0; i < nodes.length; i++) nodes[i].innerHTML = nodes[i].getAttribute('data-en');
+      // Keep an English visitor inside the English tree.
+      var map = {
+        '/': '/en/',
+        '/#program': '/en/#program',
+        '/#venue': '/en/#venue',
+        '/#tickets': '/en/#tickets',
+        '/#contact': '/en/#contact',
+        '/speakers.html': '/en/speakers.html',
+        '/sponsors.html': '/en/sponsors.html'
+      };
+      var links = document.querySelectorAll('a[href^="/"]');
+      for (var j = 0; j < links.length; j++) {
+        var to = map[links[j].getAttribute('href')];
+        if (to) links[j].setAttribute('href', to);
+      }
+    })();
+  </script>
+</body>
+
+</html>
