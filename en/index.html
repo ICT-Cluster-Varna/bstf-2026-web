@@ -7236,7 +7236,7 @@
         // === Partner Promo Codes ===
         // Always records which partner referred a registration (via ?promo= URL param
         // or the form field), even when no discount is shown to the visitor.
-        var bstfPromo = { list: [], urlCode: '' };
+        var bstfPromo = { list: [], urlCode: '', ticketUrls: {} };
 
         function bstfGetUrlPromo() {
           try {
@@ -7262,6 +7262,46 @@
           return String(str).replace(/[&<>"']/g, function (c) {
             return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
           });
+        }
+
+        // === Ticket purchase links ===
+        // Urbo sells the tickets on a per-language page, and each discount tier the
+        // partners get has its own Urbo listing with the reduced prices baked in
+        // (`ticketUrlsByDiscount` in data/promo-codes.json, keyed by discount
+        // percent; a single code can override it with its own `ticketUrl`). So a
+        // visitor arriving on `?promo=ARDES` does not just see the discounted price
+        // here — "Купи Билет" takes them straight to the −10% listing.
+        var BSTF_TICKET_URL = {
+          bg: 'https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance',
+          en: 'https://urboapp.com/en/e25066-connexus-black-sea-tech-forum-2026-varna/entrance'
+        };
+
+        function bstfPickLangUrl(map, lang) {
+          if (!map) return '';
+          return (lang === 'en' ? (map.en || map.bg) : (map.bg || map.en)) || '';
+        }
+
+        // Pass the promo whose discount is currently *shown*; anything else
+        // (no code, unknown code, hidden discount) must pass null so the links
+        // fall back to the full-price page.
+        function bstfApplyTicketLinks(promo) {
+          var lang = currentLang === 'en' ? 'en' : 'bg';
+          var pct = promo ? (Number(promo.discountPercent) || 0) : 0;
+          var url = bstfPickLangUrl(promo && promo.ticketUrl, lang)
+            || bstfPickLangUrl(pct ? bstfPromo.ticketUrls[String(pct)] : null, lang)
+            || BSTF_TICKET_URL[lang];
+
+          document.querySelectorAll('.bstf-ticket-buy-link').forEach(function (link) {
+            link.href = url;
+          });
+        }
+
+        // The code in play right now: what the visitor typed in the form wins
+        // over the one the ?promo= URL brought them in with.
+        function bstfActiveCode() {
+          var input = document.getElementById('reg-promo');
+          var typed = input ? (input.value || '').trim() : '';
+          return typed || bstfPromo.urlCode;
         }
 
         function applyPromoDisplay(code) {
@@ -7301,6 +7341,8 @@
               current.innerHTML = '&euro;' + base;
             }
           });
+
+          bstfApplyTicketLinks(showDiscount ? promo : null);
         }
 
         function bstfInitPromo() {
@@ -7319,9 +7361,10 @@
           }).then(function (data) {
             if (!data || !Array.isArray(data.promoCodes)) return;
             bstfPromo.list = data.promoCodes;
+            bstfPromo.ticketUrls = data.ticketUrlsByDiscount || {};
             // Re-run against whatever the field currently holds (URL pre-fill or
             // an edit the visitor already made while the JSON was loading).
-            applyPromoDisplay(promoInput ? promoInput.value : bstfPromo.urlCode);
+            applyPromoDisplay(bstfActiveCode());
           }).catch(function () { /* no promo file / offline: silently no visual change */ });
         }
         bstfInitPromo();
@@ -7356,12 +7399,10 @@
             opt.textContent = lang === 'bg' ? opt.getAttribute('data-bg') : opt.getAttribute('data-en');
           });
 
-          // Update ticket purchase links to the language-matching sales page
-          document.querySelectorAll('.bstf-ticket-buy-link').forEach(function (link) {
-            link.href = lang === 'en'
-              ? 'https://urboapp.com/en/e25066-connexus-black-sea-tech-forum-2026-varna/entrance'
-              : 'https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance';
-          });
+          // Re-render the ticket prices/links for the new language: this also
+          // re-resolves the promo discount, so the "Provided by <partner>" note
+          // and the Urbo target both follow the language switch.
+          applyPromoDisplay(bstfActiveCode());
         }
 
         // === Lang toggle click ===

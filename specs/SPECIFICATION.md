@@ -1220,8 +1220,8 @@ Hover на всички: `transform: translateY(-2px)` + по-силна сян�
 
 | Подсистема | Какво прави |
 |---|---|
-| **Промокодове** | `bstfGetUrlPromo()` чете `?promo=`; `fetch('data/promo-codes.json')` (без `?v=`); `bstfFindPromo(code)`; `applyPromoDisplay(code)` — идемпотентно преизчислява цените на билетите: зачертава старата, показва новата, добавя `Вашата отстъпка: N%` и `Осигурено от <b>{компания}</b>`. Ако кодът е празен/невалиден — връща цените в изходно състояние. |
-| **Език** | `setLang(lang)` — записва `localStorage['bstf-lang']`, сменя `documentElement.lang`, обхожда `[data-bg][data-en]` и подменя `innerHTML` (или `placeholder` за input/textarea), обновява `<option>` текстовете, пренасочва `.bstf-ticket-buy-link` към BG/EN версията на urboapp. |
+| **Промокодове** | `bstfGetUrlPromo()` чете `?promo=`; `fetch('data/promo-codes.json')` (без `?v=`); `bstfFindPromo(code)`; `applyPromoDisplay(code)` — идемпотентно преизчислява цените на билетите: зачертава старата, показва новата, добавя `Вашата отстъпка: N%` и `Осигурено от <b>{компания}</b>`, и накрая вика `bstfApplyTicketLinks()`, който насочва всички `.bstf-ticket-buy-link` към Urbo страницата на съответната отстъпка (виж §5.5). Ако кодът е празен/невалиден — връща цените и линковете в изходно състояние. |
+| **Език** | `setLang(lang)` — записва `localStorage['bstf-lang']`, сменя `documentElement.lang`, обхожда `[data-bg][data-en]` и подменя `innerHTML` (или `placeholder` за input/textarea), обновява `<option>` текстовете, и прерисува цените/линковете на билетите чрез `applyPromoDisplay(bstfActiveCode())`, така че `.bstf-ticket-buy-link` сочи към BG/EN версията на urboapp страницата, отговаряща на активния промокод. |
 | **Мобилно меню** | Отваряне/затваряне, backdrop, затваряне при клик върху линк, промяна на фона на nav при скрол |
 | **Hero видео** | Избира desktop/mobile източник и постер според `matchMedia('(max-width: 900px)')`; при `saveData`/2G или `prefers-reduced-motion` изобщо не зарежда видео; IntersectionObserver пауза/възобновяване извън екрана (без рестарт от кадър 0); rAF-throttled parallax (`translate3d(0, 0→12%, 0) scale(1.06→1.12)`) само на десктоп; пре-синхронизира се при преминаване на breakpoint-а |
 | **Плавен скрол** | Прихваща `a[href^="#"]`, скролва и обновява hash-а с `history.replaceState` |
@@ -1416,13 +1416,23 @@ Hint: `Пълно сравнение на включените придобив�
 Формат:
 
 ```json
-{ "promoCodes": [
+{ "ticketUrlsByDiscount": {
+    "10": { "bg": "https://urboapp.com/bg/e25401-…-10-percent",
+            "en": "https://urboapp.com/en/e25401-…-10-percent" } },
+  "promoCodes": [
     { "code": "ARDES", "company": "Ardes", "discountPercent": 10,
       "discountVisible": true, "companyEn": "Ardes" }, … ] }
 ```
 
 **76 кода**, всички с `discountPercent: 10` и `discountVisible: true`.
 Активират се само през URL параметъра `?promo=CODE` (в UI няма поле за въвеждане).
+
+`ticketUrlsByDiscount` мапва **процент отстъпка → собствена Urbo страница** (Urbo държи отстъпката
+в отделно събитие с намалени цени, не като купон). Затова `?promo=ARDES` не само показва
+намалената цена, но и пренасочва всички бутони „Купи Билет" към −‒10% събитието
+(`e25401-…-10-percent`) вместо към пълната цена (`e25066-…/entrance`). Отделен код може да
+надпише мапа със свое `ticketUrl: { bg, en }`. Код с `discountVisible: false` (комисионен модел)
+не получава намалената страница — линкът би разкрил отстъпката, която съзнателно не се показва.
 Файлът се дърпа с `fetch('data/promo-codes.json')` **без** `?v=` — затова `web.config` му дава
 отделна 2-минутна cache политика (виж §5.8).
 При липса на файл / офлайн — `catch` без визуална промяна.

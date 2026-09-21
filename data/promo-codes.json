@@ -1,4 +1,10 @@
 {
+  "ticketUrlsByDiscount": {
+    "10": {
+      "bg": "https://urboapp.com/bg/e25401-connexus-black-sea-tech-forum-2026-varna-10-percent",
+      "en": "https://urboapp.com/en/e25401-connexus-black-sea-tech-forum-2026-varna-10-percent"
+    }
+  },
   "promoCodes": [
     {
       "code": "ARDES",
