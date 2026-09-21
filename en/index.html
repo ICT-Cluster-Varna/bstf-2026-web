@@ -7236,7 +7236,7 @@
         // === Partner Promo Codes ===
         // Always records which partner referred a registration (via ?promo= URL param
         // or the form field), even when no discount is shown to the visitor.
-        var bstfPromo = { list: [], urlCode: '', ticketUrls: {} };
+        var bstfPromo = { list: [], urlCode: '' };
 
         function bstfGetUrlPromo() {
           try {
@@ -7265,12 +7265,13 @@
         }
 
         // === Ticket purchase links ===
-        // Urbo sells the tickets on a per-language page, and each discount tier the
-        // partners get has its own Urbo listing with the reduced prices baked in
-        // (`ticketUrlsByDiscount` in data/promo-codes.json, keyed by discount
-        // percent; a single code can override it with its own `ticketUrl`). So a
-        // visitor arriving on `?promo=ARDES` does not just see the discounted price
-        // here — "Купи Билет" takes them straight to the −10% listing.
+        // Urbo sells the tickets on a per-language page and has no coupon field at
+        // all: a discount there is a whole separate Urbo listing with the reduced
+        // prices baked in. So a promo code has to change the *link*, not just the
+        // price shown here — and only a code that carries its own `ticketUrl` in
+        // data/promo-codes.json gets one. Today that is ARDES alone (the −10%
+        // listing); every other code keeps the full-price page, because no other
+        // partner has a listing of their own on Urbo.
         var BSTF_TICKET_URL = {
           bg: 'https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance',
           en: 'https://urboapp.com/en/e25066-connexus-black-sea-tech-forum-2026-varna/entrance'
@@ -7282,14 +7283,11 @@
         }
 
         // Pass the promo whose discount is currently *shown*; anything else
-        // (no code, unknown code, hidden discount) must pass null so the links
-        // fall back to the full-price page.
+        // (no code, unknown code, hidden discount, or a code without a listing of
+        // its own) falls back to the full-price page.
         function bstfApplyTicketLinks(promo) {
           var lang = currentLang === 'en' ? 'en' : 'bg';
-          var pct = promo ? (Number(promo.discountPercent) || 0) : 0;
-          var url = bstfPickLangUrl(promo && promo.ticketUrl, lang)
-            || bstfPickLangUrl(pct ? bstfPromo.ticketUrls[String(pct)] : null, lang)
-            || BSTF_TICKET_URL[lang];
+          var url = bstfPickLangUrl(promo && promo.ticketUrl, lang) || BSTF_TICKET_URL[lang];
 
           document.querySelectorAll('.bstf-ticket-buy-link').forEach(function (link) {
             link.href = url;
@@ -7361,7 +7359,6 @@
           }).then(function (data) {
             if (!data || !Array.isArray(data.promoCodes)) return;
             bstfPromo.list = data.promoCodes;
-            bstfPromo.ticketUrls = data.ticketUrlsByDiscount || {};
             // Re-run against whatever the field currently holds (URL pre-fill or
             // an edit the visitor already made while the JSON was loading).
             applyPromoDisplay(bstfActiveCode());
