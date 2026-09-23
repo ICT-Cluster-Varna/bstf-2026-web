@@ -5,7 +5,11 @@
       "company": "Ardes",
       "discountPercent": 10,
       "discountVisible": true,
-      "companyEn": "Ardes"
+      "companyEn": "Ardes",
+      "ticketUrl": {
+        "bg": "https://urboapp.com/bg/e25401-connexus-black-sea-tech-forum-2026-varna-10-percent",
+        "en": "https://urboapp.com/en/e25401-connexus-black-sea-tech-forum-2026-varna-10-percent"
+      }
     },
     {
       "code": "VARNAPRENEURS",
