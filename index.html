@@ -7321,10 +7321,11 @@
 
         function bstfFindPromo(code) {
           if (!code) return null;
-          var trimmed = code.trim();
+          // Case-insensitive: "ardes" or "Ardes" must still find ARDES.
+          var trimmed = code.trim().toUpperCase();
           if (!trimmed) return null;
           for (var i = 0; i < bstfPromo.list.length; i++) {
-            if ((bstfPromo.list[i].code || '') === trimmed) return bstfPromo.list[i];
+            if ((bstfPromo.list[i].code || '').toUpperCase() === trimmed) return bstfPromo.list[i];
           }
           return null;
         }
@@ -7949,6 +7950,8 @@
             promoSource = 'url';
           }
           var matchedPromo = bstfFindPromo(finalPromoCode);
+          // Report the code as spelled in promo-codes.json, not as the visitor typed it.
+          if (matchedPromo) finalPromoCode = matchedPromo.code;
           var promoCompany = matchedPromo ? matchedPromo.company : '';
           // Whether this code gives the buyer a lower price (discountVisible)
           // or the buyer pays full price and the partner earns a commission
