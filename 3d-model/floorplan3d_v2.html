@@ -1187,13 +1187,13 @@
   }
 }
   </script>
-  <script src="stands.js?v=20260916"></script>
+  <script src="stands.js?v=20260925"></script>
   <script src="bsmepa_logo.js?v=20260910-3"></script>
   <script src="toprentacar_logo.js?v=20260910-3"></script>
   <script src="electrohold_logo.js?v=20260910-3"></script>
   <script src="netpeak_logo.js?v=20260910-3"></script>
   <script src="researchmetrics_logo.js?v=20260910-3"></script>
-  <script src="nearshore_logo.js?v=20260910-3"></script>
+  <script src="fsas_logo.js?v=20260925"></script>
   <script src="omnilinx_logo.js?v=20260910-3"></script>
   <script src="dxc_logo.js?v=20260910-3"></script>
   <script src="sistechnology_logo.js?v=20260910-3"></script>
@@ -2933,17 +2933,20 @@
       img.src = window.ENERGOPRO_LOGO_SRC;
     })();
 
-    // -- Stand 8 – ITRM Consult / Nearshore (front + back) --
+    // -- Stand 8 – Fsas Technologies (front + back) --
+    // Took this stand over from ITRM Consult on 2026-09-25. No `company`
+    // caption: the artwork is already a wordmark, and the caption colour
+    // (light blue) is meant for the dark panels, not this white one.
     (() => {
       const m8 = standMeshes.find(m => m.userData.n === 8);
       if (!m8) return;
       const img = new Image();
       img.onload = () => {
-        groups.stand.add(makeSignPanel(m8, img, { face: 'front', company: 'ITRM Consult' }));
-        groups.stand.add(makeSignPanel(m8, img, { face: 'back', company: 'ITRM Consult' }));
+        groups.stand.add(makeSignPanel(m8, img, { face: 'front', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
+        groups.stand.add(makeSignPanel(m8, img, { face: 'back', bg: '#ffffff', accent: 'rgba(30,100,200,0.8)' }));
         markDirty();
       };
-      img.src = window.NEARSHORE_LOGO_SRC;
+      img.src = window.FSAS_LOGO_SRC;
     })();
 
     // -- Stand 11 – T&D Engineering logo on facade ------------------
