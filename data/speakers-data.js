@@ -835,6 +835,96 @@
       takeawaysBg: 'Българска агенция за експортно застраховане предоставя различни инструменти за споделяне риска на българските експортьори, който те поемат при продажба на отложено плащане, както и на банките при финансиране на експортни сделки и улесняване на оборотно кредитиране на фирми от МСП сегмента. В допълнение Агенцията предоставя застраховки тип гаранция, които дават възможност за замяна на банковите гаранции в страната и чужбина за участие в търг, добро изпълнение и поддръжка.',
       takeawaysEn: 'The Bulgarian Export Insurance Agency offers a range of instruments for sharing the risk that Bulgarian exporters take on when selling on deferred payment terms, as well as the risk banks take on when financing export deals and facilitating working capital lending to companies in the SME segment. In addition, the Agency provides guarantee-type insurance, which makes it possible to replace bank guarantees in Bulgaria and abroad for tender participation, performance and maintenance.'
     },
+    {
+      id: 'neven-dilkov', track: 'regional-innovation-policy',
+      img: '/images/speakers/neven-dilkov.jpg?v=20260925', alt: 'Neven Dilkov',
+      objectPosition: 'center top',
+      name: 'Невен Дилков',
+      nameEn: 'Neven Dilkov',
+      role: 'Founder & CEO @ Neterra | Founder @ NetIX',
+      roleBg: 'Основател и изпълнителен директор @ Neterra | Основател @ NetIX',
+      roleEn: 'Founder & CEO @ Neterra | Founder @ NetIX',
+      topicBg: 'Към европейска иновационна екосистема: как Европа може да се конкурира и партнира със САЩ и Китай',
+      topicEn: 'Towards a European innovation ecosystem: How can Europe compete and collaborate with the US and China',
+      bioEn: [
+        'Neven Dilkov is a visionary entrepreneur and a global leader in the telecommunications industry with over 30 years of experience. As the founder and CEO of Neterra, he has built an independent global network spanning 220 locations in 75+ countries, serving hundreds of global enterprises and 9 of the world’s 10 largest telecoms. Under his leadership, Neterra has been recognized as the Best Connectivity Provider in Central and Eastern Europe for three consecutive years (2023, 2024, and 2025) and has become a Starlink Authorized Reseller.',
+        'Neven is also the founder of NetIX, one of the top 10 global Internet Exchange platforms, which revolutionized how networks exchange traffic internationally. His ecosystem of innovative ventures includes Sofia Data Center, Neterra.Cloud, and Neterra.TV.',
+        'A respected voice in European policy, Neven served two successful mandates as Chairman of the Board of ecta (European Competitive Telecommunications Association) and continues to contribute as a Board Member. He was also a member of the Forbes Business Council through 2025.',
+        'Neven holds a degree in Computer Science and Mathematics (summa cum laude) from West Virginia Wesleyan College and has studied at Tsinghua University (China) and Sofia Technical University. He is fluent in English, Bulgarian, and Mandarin Chinese.'
+      ],
+      bioBg: [
+        'Невен Дилков е предприемач с визия и глобален лидер в телекомуникационната индустрия с над 30 години опит. Като основател и изпълнителен директор на Neterra той изгражда независима глобална мрежа с 220 точки на присъствие в над 75 държави, която обслужва стотици международни компании и 9 от 10-те най-големи телекома в света. Под негово ръководство Neterra е отличена за най-добър доставчик на свързаност в Централна и Източна Европа три поредни години (2023, 2024 и 2025) и става оторизиран дистрибутор на Starlink.',
+        'Невен е и основател на NetIX - една от 10-те най-големи глобални платформи за обмен на интернет трафик (Internet Exchange), която променя начина, по който мрежите обменят трафик в международен мащаб. Екосистемата му от иновативни проекти включва още Sofia Data Center, Neterra.Cloud и Neterra.TV.',
+        'Уважаван глас в европейските политики, Невен е бил два мандата председател на Управителния съвет на ecta (Европейската асоциация на конкурентните телекомуникационни оператори) и продължава да участва в работата ѝ като член на борда. До 2025 г. е член и на Forbes Business Council.',
+        'Завършил е компютърни науки и математика с отличие (summa cum laude) в West Virginia Wesleyan College, учил е и в Университета Цинхуа (Китай) и в Техническия университет - София. Владее свободно английски, български и китайски (мандарин).'
+      ]
+    },
+    {
+      id: 'svetoslava-georgieva', track: 'regional-innovation-policy',
+      img: '/images/speakers/svetoslava-georgieva.jpg?v=20260925', alt: 'Svetoslava Georgieva',
+      objectPosition: 'center top',
+      name: 'Светослава Георгиева',
+      nameEn: 'Svetoslava Georgieva',
+      role: 'Board Chair @ European Innovation Council Fund',
+      roleBg: 'Председател на борда @ European Innovation Council Fund',
+      roleEn: 'Board Chair @ European Innovation Council Fund',
+      topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
+      topicEn: "The European Union's innovation and geoeconomic power in the Black Sea region",
+      bioEn: [
+        'Svetoslava has extensive experience in finance, both in the public and the private sector.',
+        'She is the Chair of the EIC Fund, the VC arm of Europe’s flagship innovation programme supporting breakthrough technologies and innovations with a EUR 10bn budget. She is a Member of the Investment Committee of InvestEU, the European Commission’s programme that aims to mobilise over €372 billion in investments. She was the Bulgarian representative in the Pan-European Guarantee Fund (EGF) managed by the EIB Group and established in the context of the COVID-19 pandemic. She was the executive director of the Fund of Funds in Bulgaria, which manages a portfolio of c. EUR 600 million of debt and equity mandates, where she was responsible for the establishment, fund manager selection and oversight of five VC funds, three debt funds and two risk-sharing mandates for infrastructure and micro finance.',
+        'Prior to that, she gained international experience in finance and in European institutions. She worked in banking and equity investments in London, and in the European Commission in Brussels, dealing with EU economic governance and state aid for banks in Greece, Italy, Slovenia, Bulgaria.'
+      ],
+      bioBg: [
+        'Светослава има богат опит във финансите - както в публичния, така и в частния сектор.',
+        'Тя е председател на EIC Fund - фонда за рисков капитал към водещата европейска програма за иновации, която подкрепя пробивни технологии и иновации с бюджет от 10 млрд. евро. Член е на Инвестиционния комитет на InvestEU - програмата на Европейската комисия, която цели да мобилизира над 372 млрд. евро инвестиции. Била е представител на България в Паневропейския гаранционен фонд (EGF), управляван от Групата на ЕИБ и създаден в отговор на пандемията от COVID-19. Била е изпълнителен директор на Фонда на фондовете в България, който управлява портфейл от около 600 млн. евро в дългови и капиталови мандати - там отговаря за създаването, избора на фонд мениджъри и надзора на пет фонда за рисков капитал, три дългови фонда и два мандата за споделяне на риска в инфраструктурата и микрофинансирането.',
+        'Преди това натрупва международен опит във финансите и в европейските институции. Работи в банковия сектор и в капиталовите инвестиции в Лондон, както и в Европейската комисия в Брюксел, където се занимава с икономическото управление на ЕС и държавната помощ за банки в Гърция, Италия, Словения и България.'
+      ]
+    },
+    {
+      id: 'ivo-zimbilev', track: 'regional-innovation-policy',
+      img: '/images/speakers/ivo-zimbilev.jpg?v=20260925', alt: 'Ivo Zimbilev',
+      objectPosition: 'center top',
+      name: 'Иво Зимбилев',
+      nameEn: 'Ivo Zimbilev',
+      role: 'Chief Executive Officer @ Cloud Office',
+      roleBg: 'Изпълнителен директор @ Cloud Office',
+      roleEn: 'Chief Executive Officer @ Cloud Office',
+      topicBg: 'От стратегия към изпълнение: ефективни политики за дигиталната трансформация на европейските региони',
+      topicEn: 'From strategy to delivery: Effective policymaking for digital transformation of Europe’s regions',
+      bioEn: [
+        'Ivo Zimbilev is an entrepreneur and business leader in cloud technologies. As Co-founder and CEO of Cloud Office, he has scaled the organization into one of the fastest-growing cloud transformation companies in Central and Eastern Europe. Over the past few years the company has successfully completed more than 400 complex cloud transformations, and is the digital innovation partner of more than 800 companies in Europe. Ivo has led Cloud Office’s market expansion into Greece, Cyprus and the United Kingdom, and is the driving force behind Cloud Office’s successful partnerships with global leaders such as Google, Amazon Web Services, JumpCloud, GitLab, and others.'
+      ],
+      bioBg: [
+        'Иво Зимбилев е предприемач и бизнес лидер в областта на облачните технологии. Като съосновател и изпълнителен директор на Cloud Office, той превръща организацията в една от най-бързо развиващите се компании за облачна трансформация в Централна и Източна Европа. През последните пет години Cloud Office успешно завършва над 400 комплексни облачни трансформации и е партньор в дигиталните иновации на над 800 компании в Европа. Иво Зимбилев ръководи пазарното разширяване на Cloud Office в Гърция, Кипър и Обединеното кралство и е движещата сила зад успешните партньорства с глобални лидери като Google, Amazon Web Services, JumpCloud, GitLab и други.'
+      ],
+      sessionDescBg: 'Иво Зимбилев участва в два панела: „От стратегия към изпълнение: ефективни политики за дигиталната трансформация на европейските региони“ (5 октомври) и „Киберустойчивост в спорните морски региони“ (6 октомври).',
+      sessionDescEn: 'Ivo Zimbilev takes part in two panels: "From strategy to delivery: Effective policymaking for digital transformation of Europe’s regions" (5 October) and "Cyber resilience in contested maritime regions" (6 October).'
+    },
+    {
+      id: 'tatyana-ivanova', track: 'regional-innovation-policy',
+      img: '/images/speakers/tatyana-ivanova.jpg?v=20260925', alt: 'Tatyana Ivanova',
+      objectPosition: 'center top',
+      name: 'Татяна Иванова',
+      nameEn: 'Tatyana Ivanova',
+      role: 'Country Innovation Leader @ KBC Bulgaria | Member of the Management Board @ UBB',
+      roleBg: 'Лидер по иновациите за България @ KBC Group | Член на Управителния съвет @ ОББ',
+      roleEn: 'Country Innovation Leader @ KBC Bulgaria | Member of the Management Board @ UBB',
+      topicBg: 'Ускоряване на черноморската иновационна екосистема: технологичен трансфер и възможности за мащабиране',
+      topicEn: 'Supercharging the Black Sea innovation ecosystem: Technology transfer and scale-up opportunities',
+      bioEn: [
+        'Member of the Country Team of KBC Group for Bulgaria, Member of the Management Board of UBB, Innovation Leader of KBC Group in Bulgaria, Executive Director Digital Channels, Data and Operations of UBB.',
+        'Tatyana Ivanova started her career 20 years ago in Société Generale and built since then a broad and international career in various subsidiaries of the Group. She was, amongst others, Retail Director in the Republic of Macedonia, worked several years as Head of Sales promotion in Russia, as Marketing manager in the HQs Paris, as well as Head of Marketing and Digital banking in Société Generale, Bulgaria.',
+        'She joined UBB at the beginning of November 2018 as Director of the Retail Banking and Digital Sales Directorate. At the beginning of 2020 she was appointed Management Board Member and Executive Officer Marketing and Distribution – Retail banking. In November 2022 she was elected Executive Director for Digitization, Data and Operations of UBB, and in April 2023 she assumed the role of Innovation Leader of KBC Group in Bulgaria.',
+        'Member of the Board of Directors of CSC AD. Tatyana holds an EMBA from HEC Paris.'
+      ],
+      bioBg: [
+        'Член на Country Team на KBC Group за България, член на Управителния съвет на ОББ, лидер по иновациите на KBC Group в България и изпълнителен директор „Дигитални канали, данни и операции“ на ОББ.',
+        'Татяна Иванова започва кариерата си преди 20 години в Société Générale и оттогава изгражда широка международна кариера в различни дъщерни дружества на групата. Сред позициите ѝ са директор „Банкиране на дребно“ в Република Македония, няколко години ръководител „Промоция на продажбите“ в Русия, маркетинг мениджър в централата в Париж, както и ръководител „Маркетинг и дигитално банкиране“ в Société Générale Експресбанк, България.',
+        'Присъединява се към ОББ в началото на ноември 2018 г. като директор на дирекция „Банкиране на дребно и дигитални продажби“. В началото на 2020 г. е назначена за член на Управителния съвет и изпълнителен директор „Маркетинг и дистрибуция - банкиране на дребно“. През ноември 2022 г. е избрана за изпълнителен директор „Дигитализация, данни и операции“ на ОББ, а през април 2023 г. поема ролята на лидер по иновациите на KBC Group в България.',
+        'Член на Съвета на директорите на „Сис Си“ АД (CSC AD). Притежава EMBA от HEC Paris.'
+      ]
+    },
 
     // ── AgriTech ──
     {
