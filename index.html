@@ -6299,6 +6299,12 @@
           if (ln.kind === 'title') { var h = el('div', 'prog2-session-title'); t(h, ln.bg, ln.en); return h; }
           if (ln.kind === 'person') { return renderPersonLine(ln); }
           if (ln.kind === 'label') { return renderLabelLine(ln); }
+          if (ln.kind === 'button') {
+            var a = el('a', 'btn btn-primary btn-sm prog2-cta-btn');
+            a.href = ln.href; a.target = '_blank'; a.rel = 'noopener';
+            t(a, ln.label.bg, ln.label.en);
+            return a;
+          }
           var p = el('div', 'prog2-plain'); t(p, ln.bg, ln.en); return p;
         }
 
@@ -6326,6 +6332,15 @@
             t(brLabel, row.time + ' · ' + row.label.bg, row.time + ' · ' + row.label.en);
             br.appendChild(brLabel);
             return br;
+          }
+          if (row.single) {
+            // A side activity that isn't tied to either hall track (e.g. the
+            // Varna walking tour) — one wide cell, no per-hall room tag.
+            var sr = el('div', 'prog2-row prog2-row-single');
+            var stime = el('div', 'prog2-time'); stime.textContent = row.time;
+            sr.appendChild(stime);
+            sr.appendChild(renderCell(row.left));
+            return sr;
           }
           // Always render both hall columns, even when one side has no
           // session — the source table shows "-" there rather than
@@ -6384,131 +6399,162 @@
         function LABEL(labelBg, labelEn, valueBg, valueEn) { return { kind: 'label', label: T(labelBg, labelEn), value: T(valueBg, valueEn) }; }
         function PLAIN(bg, en) { return { kind: 'plain', bg: bg, en: en }; }
         function OBJ(bg, en) { var l = LABEL('Цели: ', 'Objectives: ', bg, en); l.variant = 'obj'; return l; }
+        function BUTTON(labelBg, labelEn, href) { return { kind: 'button', label: T(labelBg, labelEn), href: href }; }
 
         var PROGRAM_SCHEDULE = [
           {
-            title: T('Ден 1 – Нови възможности за растеж и ефективност чрез изкуствен интелект и технологии', 'Day 1 – New Opportunities for Growth and Efficiency Through AI and Technology'),
+            title: T('Ден 1', 'Day 1'),
             question: T('Защо?', 'Why?'),
             date: T('5 октомври 2026 г.', '5 October 2026'),
             audience: T('Собственици на компании, изпълнителни директори, членове на бордове, инвеститори, висши ръководители по стратегия и иновации, както и производствени и технологични директори, отговорни за инвестиционните приоритети.', 'Company owners, CEOs, board members, investors, senior strategy and innovation leaders, and production and technology executives responsible for investment priorities.'),
             exchangeFocus: T('Белгия, Франция и международно сътрудничество в областта на биотехнологиите, здравеопазването и устойчивите индустрии.', 'Belgium, France, and international cooperation in biotechnology, health care, and sustainable industries.'),
             rows: [
               {
-                time: '13:00 – 13:30', left: {
+                time: '13:00 – 13:30',
+                left: {
                   blocks: [{
                     heading: T('Официално откриване', 'Official Opening'),
                     lines: [
-                      OBJ('Да се утвърди стратегическата визия на Форума и Черноморският регион да се позиционира като източник на европейски иновации, технологичен суверенитет и индустриален растеж.', "Establish the Forum’s strategic vision and position the Black Sea region as a source of European innovation, technology sovereignty, and industrial growth."),
-                      TITLE('Откриване: повратен момент за европейските иновации', 'Opening: A Pivotal Moment for European Innovation'),
+                      LABEL('13:00 – 13:03: ', '13:00 – 13:03: ', 'Музикален флашмоб', 'Musical flash mob'),
+                      LABEL('13:03 – 13:05: ', '13:03 – 13:05: ', 'Технологиите без граници започват с хора без граници', 'Borderless technologies begin with borderless people'),
+                      PERSON('Светослав Стаменов', 'Svetoslav Stamenov'),
+                      TITLE('13:05 – 13:10: Откриване: повратен момент за европейските иновации', '13:05 – 13:10: Opening: A Pivotal Moment for European Innovation'),
                       PERSON('Емил Цанков', 'Emil Tsankov', 'председател на Управителния съвет, ИКТ Клъстер Варна', 'Chairman of the Board, ICT Cluster Varna'),
-                      PERSON('д-р Бойко Таков', 'Dr. Boyko Takov', 'изпълнителен директор, ИАНМСП', 'Executive Director, BSMEPA'),
-                      TITLE('Черноморски полюси на растеж: визия за европейски иновации, технологичен суверенитет и индустриална трансформация', 'Black Sea Growth Poles: A Vision for European Innovation, Technology Sovereignty, and Industrial Transformation'),
-                      PERSON('Илияна Йотова', 'Iliana Iotova', 'президент на Република България', 'President of the Republic of Bulgaria')
+                      PERSON('Бойко Таков', 'Boyko Takov', 'изпълнителен директор, Изпълнителна агенция за насърчаване на малките и средните предприятия', 'Executive Director, Executive Agency for the Promotion of Small and Medium-sized Enterprises'),
+                      TITLE('13:10 – 13:30: Черноморски полюси на растеж: визия за европейски иновации, технологичен суверенитет и индустриална трансформация', '13:10 – 13:30: Keynote Address: Black Sea Growth Poles: A Vision for European Innovation, Tech Sovereignty, and Industrial Transformation'),
+                      PERSON('Илияна Йотова', 'Iliana Iotova', 'президент на Република България', 'President of the Republic of Bulgaria'),
+                      PERSON('Иван Василев', 'Ivan Vasilev', 'министър на иновациите и растежа', 'Minister of Innovation and Growth of Bulgaria')
                     ]
                   }]
                 }
               },
               {
-                time: '13:30 – 14:00', left: {
-                  blocks: [{
-                    heading: T('Към европейска иновационна екосистема: как Европа може да се конкурира и да си сътрудничи със САЩ и Китай?', 'Toward a European Innovation Ecosystem: How Can Europe Compete and Collaborate with the United States and China?'),
-                    lines: [
-                      OBJ('Да се разгледа как Европа може да засили иновационния си капацитет, като същевременно изгражда ефективни технологични и инвестиционни партньорства с останалите водещи иновационни екосистеми в света.', "Examine how Europe can strengthen its innovation capacity while building effective technology and investment partnerships with the world’s other major innovation ecosystems."),
-                      LABEL('Лектор: ', 'Speaker: ', 'Lars Frølund, MIT', 'Lars Frølund, MIT'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Руслан Стефанов', 'Ruslan Stefanov')
-                    ]
-                  }]
-                }
-              },
-              { time: '14:00 – 14:10', kind: 'break', label: T('Почивка', 'Break') },
-              {
-                time: '14:10 – 15:30',
+                time: '13:30 – 14:00',
                 left: {
                   blocks: [{
-                    heading: T('Блок 1: Мащабиране на бъдещето на Европа – към черноморска иновационна екосистема', "Block 1: Scaling Europe’s Future - Toward a Black Sea Innovation Ecosystem"),
+                    heading: T('Към европейска иновационна екосистема: как Европа може да се конкурира и да си сътрудничи със САЩ и Китай', 'Towards a European Innovation Ecosystem: How Can Europe Compete and Collaborate with the US and China'),
                     lines: [
-                      OBJ('Да се покаже как индустриалната трансформация, сигурните вериги на доставки, технологичният трансфер и финансирането на растежа могат да подкрепят свързана черноморска иновационна екосистема.', 'Show how industrial transformation, secure supply chains, technology transfer, and growth financing can support a connected Black Sea innovation ecosystem.'),
-                      TITLE('Цифрова трансформация и изкуствен интелект за индустриален растеж: сигурни европейски вериги на доставки', 'Digital and AI Transformation for Industrial Growth: Secure European Supply Chains'),
-                      PERSON('Robin Peeters', 'Robin Peeters', 'заместник-посланик на Нидерландия', 'Deputy Ambassador of the Netherlands'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Татяна Новосьолова', 'Tatyana Novossiolova'),
-                      TITLE('Към черноморска иновационна екосистема: технологичен трансфер и възможности за мащабиране', 'Toward a Black Sea Innovation Ecosystem: Technology Transfer and Scale-Up Opportunities'),
-                      PERSON('Екатерина Захариева', 'Ekaterina Zaharieva', 'видеообръщение', 'video message'),
-                      PERSON('Светослава Георгиева', 'Svetoslava Georgieva'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков', 'Emil Tsankov')
+                      PERSON('Lars Frølund', 'Lars Frølund', 'преподавател, Масачузетски технологичен институт; стратегически съветник, NATO Innovation Fund', 'Lecturer, Massachusetts Institute of Technology; Strategic Advisor, NATO Innovation Fund'),
+                      PERSON('Невен Дилков', 'Neven Dilkov', 'изпълнителен директор, Нетера', 'Chief Executive Officer, Neterra'),
+                      PERSON('Петър Статев', 'Peter Statev', 'председател, Петаскейл суперкомпютър „Дискавъри“', 'Chairman, PetaScale Supercomputer "Discoverer"'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Руслан Стефанов, директор „Стратегия и иновации“, Фондация „Приложни изследвания и комуникации“', 'Ruslan Stefanov, Director of Strategy and Innovation, ARC Fund')
                     ]
                   }]
+                }
+              },
+              { time: '14:00 – 14:25', kind: 'break', label: T('Пауза', 'Break') },
+              {
+                time: '14:25 – 15:45',
+                left: {
+                  blocks: [
+                    {
+                      heading: T('Блок 1 (80 мин): Digital Transformation', 'Block 1 (80 min): Digital Transformation'),
+                      lines: [
+                        TITLE('14:25 – 15:00: Иновационната и геоикономическа мощ на ЕС в Черноморския регион', '14:25 – 15:00: The European Union’s Innovation and Geoeconomic Power in the Black Sea Region'),
+                        PERSON('Marie Dumoulin', 'Marie Dumoulin', 'посланик на Франция в България', 'Ambassador of France to Bulgaria'),
+                        PERSON('Paul Lambert', 'Paul Lambert', 'посланик на Белгия в България', 'Ambassador of Belgium to Bulgaria'),
+                        PERSON('Светослава Георгиева', 'Svetoslava Georgieva', 'председател на борда, European Innovation Council Fund', 'Board Chair, European Innovation Council Fund'),
+                        LABEL('Модератор: ', 'Moderator: ', 'Калина Цолова, анализатор, Фондация „Приложни изследвания и комуникации“', 'Kalina Tcolova, Analyst, Applied Research and Communications Fund'),
+                        TITLE('15:00 – 15:45: От стратегия към изпълнение: ефективни политики за цифровата трансформация на европейските региони', '15:00 – 15:45: From Strategy to Delivery: Effective Policymaking for Digital Transformation of Europe’s Regions'),
+                        PERSON('Aurel-Cătălin Giulescu', 'Aurel-Cătălin Giulescu', 'председател на Органа за цифровизация на Румъния', 'President of the Authority for the Digitalization of Romania'),
+                        PERSON('Иво Зимбилев', 'Ivo Zimbilev', 'изпълнителен директор, Cloud Office', 'Chief Executive Officer, Cloud Office'),
+                        PERSON('Stefan Muntoiu', 'Stefan Muntoiu', 'Business Development Manager, Jan De Nul', 'Business Development Manager, Jan De Nul'),
+                        LABEL('Модератор: ', 'Moderator: ', 'д-р Татяна Новосьолова, анализатор, Център за изследване на демокрацията', 'Dr. Tatyana Novossiolova, Analyst, Center for the Study of Democracy')
+                      ]
+                    }
+                  ]
                 },
                 right: {
                   blocks: [{
                     heading: T('Биотехнологии, здраве и устойчиви индустрии', 'Biotechnology, Health, and Sustainable Industries'),
                     lines: [
-                      OBJ('Да се свържат научните и медицинските иновации с компании, инвеститори и институции, способни да превърнат изследванията в мащабируеми продукти и устойчиви индустрии.', 'Connect scientific and medical innovation with companies, investors, and institutions capable of transforming research into scalable products and sustainable industries.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Кристина Ескенази; Трифон Цеков; Димитър Карловски; проф. Елица Енчева; проф. Антон Тончев; проф. Кристина Близнакова; проф. Кръстена Николова; доц. Оскан Тасинов', 'Kristina Eskenazi; Trifon Tsekov; Dimitar Karlovski; Prof. Elitsa Encheva; Prof. Anton Tonchev; Prof. Kristina Bliznakova; Prof. Krastena Nikolova; Assoc. Prof. Oskan Tasinov'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Кристина Ескенази', 'Kristina Eskenazi')
+                      TITLE('Future of Health & Life Sciences: от научните постижения до мащабируемата иновация', 'Future of Health & Life Sciences: From Research Excellence to Scalable Innovation'),
+                      PERSON('Кристина Ескенази', 'Kristina Eskenazi', 'председател, Health & Life Sciences Cluster Bulgaria', 'Chair, Health & Life Sciences Cluster Bulgaria'),
+                      TITLE('Практически случай: From Data Silos to Clinical Evidence: Federated Learning for Medical Software', 'Practical Use Case: From Data Silos to Clinical Evidence: Federated Learning for Medical Software'),
+                      PERSON('Трифон Цеков', 'Trifon Tsekov', '3-Fi Medical', '3-Fi Medical'),
+                      TITLE('Практически случай: Mitochondria as Chi: May the Force Be with You', 'Practical Use Case: Mitochondria as Chi: May the Force Be with You'),
+                      PERSON('Димитър Карловски', 'Dimitar Karlovski', 'Mitopia', 'Mitopia'),
+                      TITLE('Imaging Tumor Like Never Before', 'Imaging Tumor Like Never Before'),
+                      PERSON('проф. Елица Енчева', 'Prof. Elitsa Encheva', 'МУ – Варна', 'Medical University of Varna'),
+                      TITLE('Zoom into the Micro-World, and Beyond', 'Zoom into the Micro-World, and Beyond'),
+                      PERSON('проф. Антон Тончев', 'Prof. Anton Tonchev', 'МУ – Варна', 'Medical University of Varna'),
+                      TITLE('Early Screening of Breast Cancer', 'Early Screening of Breast Cancer'),
+                      PERSON('проф. Кристина Близнакова', 'Prof. Kristina Bliznakova', 'МУ – Варна', 'Medical University of Varna'),
+                      TITLE('Изкуствен интелект в подкрепа на детското хранене: от научните данни до персонализираните препоръки', 'AI in Support of Child Nutrition: From Scientific Data to Personalized Recommendations'),
+                      PERSON('проф. Ружа Панчева', 'Prof. Ruzha Pancheva', 'МУ – Варна', 'Medical University of Varna'),
+                      TITLE('WineX - More Than Wine', 'WineX - More Than Wine'),
+                      PERSON('доц. Оскан Тасинов', 'Assoc. Prof. Oskan Tasinov', 'МУ – Варна', 'Medical University of Varna'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Кристина Ескенази, председател, Health & Life Sciences Cluster Bulgaria', 'Kristina Eskenazi, Chair, Health & Life Sciences Cluster Bulgaria')
                     ]
                   }]
                 }
               },
-              { time: '15:30 – 15:45', kind: 'break', label: T('Почивка', 'Break') },
+              { time: '15:45 – 16:10', kind: 'break', label: T('Пауза', 'Break') },
               {
-                time: '15:45 – 17:05',
+                time: '16:10 – 17:30',
                 left: {
                   blocks: [{
-                    heading: T('Блок 2: Приложен изкуствен интелект – от възможност към оперативни резултати', 'Block 2: Applied AI - From Opportunity to Operational Results'),
+                    heading: T('Блок 2 (80 мин): История на проглеждането – приложен изкуствен интелект: от възможност до оперативни резултати', 'Block 2 (80 min): The Story of Seeing Clearly - Applied AI: From Opportunity to Operational Results'),
                     lines: [
-                      OBJ("Да се демонстрира как компаниите могат да преминат от осъзнаване на потенциала на изкуствения интелект към избор на подходящи бизнес приложения и постигане на измерими, устойчиви резултати.", "Demonstrate how companies can move from recognizing AI’s potential to selecting appropriate business applications and achieving measurable, sustainable results."),
-                      TITLE('Как компаниите внедряват изкуствен интелект устойчиво', 'How Companies Implement AI Sustainably'),
-                      PERSON('Gilad Barash', 'Gilad Barash'),
-                      LABEL('Допълнителни участници и модератор: ', 'Additional contributors and moderator: ', 'предстои уточняване', 'TBD')
+                      TITLE('Keynote: Enabler for Opportunities: Bulgarian AI BRAIN++ Factory – Why/What & How', 'Keynote: Enabler for Opportunities: Bulgarian AI BRAIN++ Factory – Why/What & How'),
+                      PERSON('Симеон Стоянов', 'Simeon Stoyanov', 'BRAIN++', 'BRAIN++'),
+                      LABEL('AI инструменти: ', 'AI Tools: ', 'ALSO Bulgaria, Microsoft', 'ALSO Bulgaria, Microsoft'),
+                      TITLE('Ако енергията можеше да мисли? AI – от прогнозиране до автономни енергийни решения', 'What If Energy Could Think? AI - From Forecasting to Autonomous Energy Decisions'),
+                      PERSON('Илия Желязков', 'Iliya Zhelyazkov', 'TiD-Engineering', 'TiD-Engineering'),
+                      LABEL('Интелигентно управление в енергията – от данните към решенията: ', 'Intelligent Energy Management - From Data to Decisions: ', 'ЕнергоПро', 'EnergoPro'),
+                      PERSON('Доброслав Димитров', 'Dobroslav Dimitrov', 'изпълнителен директор и съосновател, Raisen Technology', 'Chief Executive Officer and Co-Founder, Raisen Technology'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Симеон Стоянов, BRAIN++', 'Simeon Stoyanov, BRAIN++')
                     ]
                   }]
                 },
                 right: {
                   blocks: [
                     {
-                      heading: T('Българо-белгийско-нидерландски бизнес обмен', 'Bulgaria–Belgium–Netherlands Business Exchange'),
+                      heading: T('Обмен между България, Белгия, Нидерландия, Франция и Румъния', 'Exchange Between Bulgaria, Belgium, the Netherlands, France, and Romania'),
                       lines: [
-                        OBJ('Да се проучи как институционалното и бизнес сътрудничеството може да ускори цифровата трансформация и да създаде практически възможности между България, Белгия и Нидерландия.', 'Explore how institutional and business cooperation can accelerate digital transformation and create practical opportunities between Bulgaria, Belgium and the Netherlands.'),
-                        LABEL('Участници: ', 'Contributors: ', 'Paul Lambert, посланик на Белгия в България; Robin Peeters, заместник-посланик на Кралство Нидерландия в България', 'Paul Lambert, Ambassador of Belgium to Bulgaria; Robin Peeters, Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria'),
-                        LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев', 'Georgi Dobrev')
-                      ]
-                    },
-                    {
-                      heading: T('Българо-френско-румънски бизнес обмен', 'Bulgaria–France–Romania Business Exchange'),
-                      lines: [
-                        OBJ('Да се разгледат възможностите за инвестиции, иновации и стратегическо сътрудничество между България, Франция и Румъния в рамките на Черноморския регион.', 'Examine opportunities for investment, innovation, and strategic cooperation between Bulgaria, France and Romania within the Black Sea region.'),
-                        LABEL('Участници: ', 'Contributors: ', 'Michael Roux; Stefan Muntoiu, Jan De Nul Group', 'Michael Roux; Stefan Muntoiu, Jan De Nul Group'),
-                        LABEL('Модератор: ', 'Moderator: ', 'Калина Цолова', 'Kalina Tcolova')
+                        TITLE('16:10 – 16:40: Digital & AI Transformation for Industrial Growth: Secure European Supply Chains', '16:10 – 16:40: Digital & AI Transformation for Industrial Growth: Secure European Supply Chains'),
+                        PERSON('Jeroen van Hertum', 'Jeroen van Hertum', 'член на борда, Нидерландско-българска търговска камара', 'Board Member, Dutch Bulgarian Chamber of Commerce'),
+                        PERSON('Доброслав Димитров', 'Dobroslav Dimitrov', 'изпълнителен директор и съосновател, Raisen Technology', 'CEO and Co-Founder, Raisen Technology'),
+                        LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев, анализатор, Фондация „Приложни изследвания и комуникации“', 'Georgi Dobrev, Analyst, Applied Research and Communications Fund'),
+                        TITLE('16:40 – 17:30: Supercharging the Black Sea Innovation Ecosystem: Technology Transfer and Scale-Up Opportunities', '16:40 – 17:30: Supercharging the Black Sea Innovation Ecosystem: Technology Transfer and Scale-Up Opportunities'),
+                        PERSON('Пламен Борисов', 'Plamen Borisov', 'директор „Стратегически проекти“, Солвей Соди', 'Director for Strategic Projects, Solvay Sodi'),
+                        PERSON('Татяна Иванова', 'Tatyana Ivanova', 'лидер по иновациите за България, KBC Group', 'Country Innovation Leader at KBC Bulgaria'),
+                        LABEL('Модератор: ', 'Moderator: ', 'Robin Peeters, заместник-посланик на Кралство Нидерландия в България', 'Robin Peeters, Deputy Ambassador of the Kingdom of the Netherlands to Bulgaria')
                       ]
                     }
                   ]
                 }
               },
-              { time: '17:05 – 17:15', kind: 'break', label: T('Почивка', 'Break') },
               {
-                time: '17:15 – 17:45', left: {
+                time: '18:00 – 20:00',
+                left: {
                   blocks: [{
-                    heading: T('Обобщаващ панел', 'Summary Panel'),
+                    heading: T('ТЕХНОСТАРТ Мотиватор', 'TechnoStart Motivator'),
+                    lines: []
+                  }]
+                }
+              },
+              {
+                time: '18:30 – 19:30/20:00',
+                single: true,
+                left: {
+                  blocks: [{
+                    heading: T('Туристическа обиколка на Варна', 'Varna Walking Tour'),
                     lines: [
-                      OBJ('Да се обобщят стратегическите въпроси, повдигнати през Ден 1, и да се определят възможностите, пречките и бизнес приоритетите, които да бъдат пренесени в Ден 2.', 'Consolidate the strategic issues raised during Day 1 and identify the opportunities, obstacles, and business priorities to be carried into Day 2.'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков', 'Emil Tsankov'),
-                      LABEL('Участници: ', 'Participants: ', 'предстои уточняване', 'TBD')
+                      PLAIN('Открийте скрития чар на Варна на една незабравима разходка през историческото сърце на града – от храма „Свети Никола“ и старинните църкви на стария град до площад „Независимост“, Драматичния театър, Катедралата и емблематичния градски часовник. Разходете се по улица „Преслав“, разгледайте Къщата на архитекта и потънете в старите квартали на Варна – всеки от тях със своя характер, история и очарователни кътчета за откриване.', 'Discover the hidden charm of Varna on a fascinating walking tour through the city’s historic heart, from St. Nicholas Church and the beautiful old-town temples to Independence Square, the Theatre, the Cathedral, and the iconic City Clock. Wander along Preslav Street, admire the House of the Architect, and explore Varna’s old neighbourhoods, each with its own character, stories, and charming little corners waiting to be discovered.'),
+                      LABEL('Начало: ', 'Start: ', '18:30 ч.', '18:30'),
+                      LABEL('Край: ', 'End: ', 'приблизително 19:30 – 20:00 ч.', 'approximately 19:30 – 20:00'),
+                      LABEL('Тръгване и връщане: ', 'Departure and return: ', 'хотел „Черно море“', 'Hotel Cherno More'),
+                      LABEL('Език: ', 'Language: ', 'английски', 'English'),
+                      LABEL('Група: ', 'Group size: ', 'между 10 и 20 души', '10–20 people'),
+                      BUTTON('Запиши се', 'Sign Up', 'https://forms.gle/GjQaFEpUUH5cowZo6')
                     ]
                   }]
                 }
               },
               {
-                time: '18:00 – 20:00', left: {
-                  blocks: [{
-                    heading: T('TechnoStart Motivator', 'TechnoStart Motivator'),
-                    lines: [
-                      OBJ('Да се вдъхновят учащите да проучат възможностите за кариера и стартиращ бизнес във високите технологии в Черноморския регион.', 'Inspire students to explore career and startup opportunities in advanced technologies across the Black Sea region.')
-                    ]
-                  }]
-                }
-              },
-              {
-                time: '20:00 – 22:00', left: {
+                time: '20:00 – 22:00',
+                left: {
                   blocks: [{
                     heading: T('Гала коктейл', 'Gala Cocktail'),
                     lines: [
@@ -6520,38 +6566,37 @@
             ]
           },
           {
-            title: T('Ден 2 – От възможност към внедряване: изкуствен интелект, автоматизация и сигурни операции', 'Day 2 – From Opportunity to Implementation: AI, Automation, and Secure Operations'),
+            title: T('Ден 2', 'Day 2'),
             question: T('Какво и как?', 'What and how?'),
             date: T('6 октомври 2026 г.', '6 October 2026'),
             audience: T('COO, CTO, CIO, CISO, производствени и оперативни мениджъри, специалисти по автоматизация и данни, екипи по киберсигурност, експортни мениджъри и ръководители, отговорни за внедряването.', 'COOs, CTOs, CIOs, CISOs, production and operations managers, automation and data specialists, cybersecurity teams, export managers, and executives responsible for implementation.'),
             exchangeFocus: T('Нидерландия, Турция и международно сътрудничество в областта на туризма и технологиите за пътуване.', 'The Netherlands, Türkiye, and international cooperation in tourism and travel technologies.'),
             rows: [
               {
-                time: '9:00 – 9:15', left: {
+                time: '09:00 – 09:10',
+                left: {
                   blocks: [{
-                    heading: T('Откриване и обобщение на Ден 1', 'Opening and Summary of Day 1'),
-                    lines: [
-                      OBJ('Да се свържат стратегическите възможности, идентифицирани през Ден 1, с технологиите, методите за внедряване и финансовите инструменти, представени през Ден 2.', 'Connect the strategic opportunities identified during Day 1 with the technologies, implementation methods, and financing instruments presented during Day 2.')
-                    ]
+                    heading: T('Откриване и обобщение от Ден 1', 'Opening and Summary of Day 1'),
+                    lines: []
                   }]
                 }
               },
               {
-                time: '9:15 – 10:35',
+                time: '09:10 – 10:30',
                 left: {
                   blocks: [{
-                    heading: T('Блок 1: Изкуственият интелект и автоматизацията като отговор на растящите разходи и недостига на ресурси', 'Block 1: AI and Automation as a Response to Rising Costs and Resource Shortages'),
+                    heading: T('Блок 1 (80 мин): AI и автоматизация като отговор на растящи разходи и недостиг на ресурси', 'Block 1 (80 min): AI and Automation as a Response to Rising Costs and Resource Shortages'),
                     lines: [
-                      OBJ('Да се покаже как изкуственият интелект и автоматизацията могат да намалят оперативните разходи, да отговорят на недостига на работна ръка и ресурси и да увеличат капацитета на съществуващите екипи чрез практически бизнес и производствени приложения.', 'Show how AI and automation can reduce operating costs, address labour and resource shortages, and increase the capacity of existing teams through practical business and manufacturing applications.'),
-                      TITLE('Приложен бизнес изкуствен интелект – от тъмните векове към агентното бъдеще', 'Applied Business AI - From the Dark Ages to the Agentic Future'),
-                      PERSON('Д-р Arthur Kordon', 'Dr Arthur Kordon', 'Kordon Consulting.', 'Kordon Consulting.', ', '),
-                      PLAIN('Практическа рамка за превръщането на модели на изкуствен интелект и технологични възможности в устойчиви бизнес резултати. Възможно е да бъде предложен последващ уъркшоп.', 'A practical framework for transforming AI models and technology opportunities into sustainable business results. A follow-up workshop may be offered.'),
-                      TITLE('Изкуственият интелект като лабораторен асистент: от рецептура до готов материал', 'AI as a Laboratory Assistant: From Formulation to Finished Material'),
-                      PERSON('Strateg', 'Strateg', 'Одеса, Украйна.', 'Odesa, Ukraine.', ', '),
-                      PLAIN('Практически случай, показващ как химиците на Strateg използват изкуствен интелект за разработване на рецептури за материали, които след това се тестват и усъвършенстват в лабораторията. Мостри от продуктите могат да подпомогнат практическа демонстрация.', "A practical case showing how Strateg’s chemists use AI to develop material formulations, which are then tested and refined in the laboratory. Product samples can support a hands-on demonstration."),
+                      TITLE('Keynote: Как компаниите внедряват изкуствен интелект устойчиво', 'Keynote: How Companies Implement AI Sustainably'),
+                      PERSON('Gilad Barash', 'Gilad Barash', 'Matrix DnA, Senior Data/AI Strategist', 'Matrix DnA, Senior Data/AI Strategist'),
+                      TITLE('Applied Business AI — From the Dark Ages to the Agentic Future', 'Applied Business AI — From the Dark Ages to the Agentic Future'),
+                      PERSON('Д-р Arthur Kordon', 'Dr Arthur Kordon', 'Kordon Consulting', 'Kordon Consulting'),
                       TITLE('Блокчейн, финтех и изкуствен интелект: следващата вълна от иновации', 'Blockchain, Fintech, and AI: The Next Wave of Innovation'),
                       PERSON('Мартин Куванджиев', 'Martin Kuvandzhiev'),
-                      LABEL('Модератор и допълнителни участници: ', 'Moderator and additional contributors: ', 'предстои уточняване', 'TBD')
+                      TITLE('MEAVO’s AI Journey: Building a Unified Enterprise Platform in 6 Months to Power End-to-End Operations—from Supply Chain and Manufacturing to Sales and Customer Support', 'MEAVO’s AI Journey: Building a Unified Enterprise Platform in 6 Months to Power End-to-End Operations—from Supply Chain and Manufacturing to Sales and Customer Support'),
+                      PERSON('Тодор Маджаров', 'Todor Madzharov', 'MEAVO', 'MEAVO'),
+                      LABEL('AI инструменти: ', 'AI Tools: ', 'Ардес/Самсунг', 'Ardes/Samsung'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Gilad Barash, Matrix DnA, Senior Data/AI Strategist', 'Gilad Barash, Matrix DnA, Senior Data/AI Strategist')
                     ]
                   }]
                 },
@@ -6559,129 +6604,166 @@
                   blocks: [{
                     heading: T('Българо-нидерландски бизнес обмен: сигурност и устойчивост в Черноморския регион', 'Bulgaria–Netherlands Business Exchange: Security and Resilience in the Black Sea Region'),
                     lines: [
-                      OBJ('Да се идентифицират възможности за сътрудничество в областта на стратегическата сигурност, морската устойчивост и защитата на бизнеса и регионалната инфраструктура.', 'Identify opportunities for cooperation in strategic security, maritime resilience, and the protection of business and regional infrastructure.'),
-                      LABEL('Теми: ', 'Themes: ', 'Справяне със стратегическата несигурност в Черноморския регион; киберустойчивост в оспорвани морски региони', 'Tackling Strategic Insecurity in the Black Sea Region; Cyber Resilience in Contested Maritime Regions'),
-                      LABEL('Участник: ', 'Contributor: ', 'Robin Peeters', 'Robin Peeters'),
-                      LABEL('Модератори: ', 'Moderators: ', 'Руслан Стефанов и Татяна Новосьолова', 'Ruslan Stefanov and Tatyana Novossiolova'),
-                      LABEL('Допълнителни лектори: ', 'Additional speakers: ', 'предстои уточняване', 'TBD')
+                      TITLE('09:10 – 09:50: Справяне със стратегическата несигурност в Черноморския регион', '09:10 – 09:50: Tackling Strategic Insecurity in the Black Sea Region'),
+                      PERSON('Albert Veenstra', 'Albert Veenstra', 'професор по търговия и логистика, Ерасмус университет Ротердам', 'Professor of Trade and Logistics, Erasmus University Rotterdam'),
+                      LABEL('Лектор: ', 'Speaker: ', 'предстои уточняване, Висше военноморско училище „Никола Йонков Вапцаров“', 'TBD, "Nikola Ionkov Vaptsarov" Naval Academy'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев, анализатор, Фондация „Приложни изследвания и комуникации“', 'Georgi Dobrev, Analyst, ARC Fund'),
+                      TITLE('09:50 – 10:30: Интелигентни решения за защита на критичната инфраструктура', '09:50 – 10:30: Smart Solutions for Critical Infrastructure Protection'),
+                      PERSON('Dr. Martijn Leijten', 'Dr. Martijn Leijten', 'доцент, Факултет по технологии, политики и мениджмънт, Технически университет – Делфт', 'Assistant Professor, Faculty of Technology, Policy and Management, Delft University of Technology'),
+                      PERSON('Драгомир Вътков', 'Dragomir Vatkov', 'Lead Cyber Security Architect, SABSA', 'Lead Cyber Security Architect, SABSA'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков, председател на Управителния съвет, ИКТ Клъстер Варна', 'Emil Tsankov, Chairman of the Board, ICT Cluster - Varna')
                     ]
                   }]
                 }
               },
-              { time: '10:35 – 10:50', kind: 'break', label: T('Почивка', 'Break') },
+              { time: '10:30 – 10:55', kind: 'break', label: T('Пауза', 'Break') },
               {
-                time: '10:50 – 12:10',
+                time: '10:55 – 12:15',
                 left: {
                   blocks: [{
-                    heading: T('Блок 2: Сигурни данни, устойчиви вериги на доставки и киберустойчив бизнес', 'Block 2: Secure Data, Resilient Supply Chains, and Cyber-Resilient Business'),
+                    heading: T('Блок 2 (80 мин): Сигурни данни, устойчиви вериги и киберустойчив бизнес', 'Block 2 (80 min): Secure Data, Resilient Supply Chains, and Cyber-Resilient Business'),
                     lines: [
-                      OBJ('Да се обясни как компаниите могат да защитят своите данни, цифрови идентичности, инфраструктура и вериги на доставки, разглеждайки киберсигурността и регулациите като основа за устойчивостта на бизнеса.', 'Explain how companies can protect their data, digital identities, infrastructure, and supply chains while treating cybersecurity and regulation as foundations for business resilience.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Драгомир Вътков, QIAGEN; Християн Даскалов; Ясен Танев; Александър Минчев и Ивайло Конев, Neterra; Paul Lambert; Йоана Колева', 'Dragomir Vatkov, QIAGEN; Hristiyan Daskalov; Yasen Tanev; Alexander Minchev and Ivaylo Konev, Neterra; Paul Lambert; Yoana Koleva'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Драгомир Вътков', 'Dragomir Vatkov')
+                      TITLE('Keynote: The Invisible Architecture: How Cyber Security Foundations Determine Resilience in an Unpredictable World', 'Keynote: The Invisible Architecture: How Cyber Security Foundations Determine Resilience in an Unpredictable World'),
+                      PERSON('Драгомир Вътков', 'Dragomir Vatkov', 'Director Cyber Security Architecture, QIAGEN', 'Director Cyber Security Architecture, QIAGEN'),
+                      TITLE('Човекът като фактор', 'The Human Factor'),
+                      PERSON('проф. Илин Савов', 'Prof. Ilin Savov'),
+                      TITLE('The Physical Aspects of Data Security', 'The Physical Aspects of Data Security'),
+                      PERSON('Александър Минчев', 'Alexander Minchev', 'Абиликс', 'Abilix'),
+                      PERSON('Ивайло Конев', 'Ivaylo Konev', 'Netera', 'Netera'),
+                      LABEL('DPO/AI: ', 'DPO/AI: ', 'Йоана Колева', 'Yoana Koleva'),
+                      TITLE('Европейските портфейли за цифрова самоличност са тук - възможности и рискове за граждани, държава, бизнес', 'European Digital Identity Wallets Are Here - Opportunities and Risks for Citizens, State, and Business'),
+                      PERSON('Християн Даскалов', 'Hristiyan Daskalov'),
+                      TITLE('Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност', 'Help, Not a Burden: Turning Regulatory Requirements into Real Cybersecurity'),
+                      PERSON('Ясен Танев', 'Yasen Tanev'),
+                      LABEL('Foundations Matter: ', 'Foundations Matter: ', 'Paul Lambert, посланик на Белгия в България', 'Paul Lambert, Ambassador of Belgium to Bulgaria'),
+                      LABEL('Federated AI Data Lake CHAIN++: ', 'Federated AI Data Lake CHAIN++: ', 'BRAIN++', 'BRAIN++'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Драгомир Вътков, QIAGEN', 'Dragomir Vatkov, QIAGEN')
                     ]
                   }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('Българо-нидерландски бизнес обмен: критична инфраструктура и сигурност на изкуствения интелект', 'Bulgaria–Netherlands Business Exchange: Critical Infrastructure and AI Security'),
+                    heading: T('Българо-нидерландски бизнес обмен', 'Bulgaria–Netherlands Business Exchange'),
                     lines: [
-                      OBJ('Да се развият възможности за сътрудничество при защитата на критичната инфраструктура, иновациите в киберсигурността и публично-частните отговори на новите рискове, свързани с изкуствения интелект.', 'Develop opportunities for cooperation on critical infrastructure protection, cybersecurity innovation, and public-private responses to emerging AI-related risks.'),
-                      LABEL('Теми: ', 'Themes: ', 'Интелигентни решения за защита на критичната инфраструктура; публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект', 'Smart Solutions for Critical Infrastructure Protection; Public-Private Cooperation for Cybersecurity and AI Security Innovation'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев', 'Georgi Dobrev'),
-                      LABEL('Лектори: ', 'Speakers: ', 'Dr. Martijn Leijten, Технологичен университет – Делфт; Jeroen van Hertum, Нидерландско-българска търговска камара', 'Dr. Martijn Leijten, Delft University of Technology; Jeroen van Hertum, Dutch Bulgarian Chamber of Commerce')
+                      TITLE('10:55 – 11:35: Киберустойчивост в оспорвани морски региони', '10:55 – 11:35: Cyber Resilience in Contested Maritime Regions'),
+                      PERSON('Иво Зимбилев', 'Ivo Zimbilev', 'изпълнителен директор, Cloud Office', 'Chief Executive Officer, Cloud Office'),
+                      LABEL('Лектор: ', 'Speaker: ', 'предстои уточняване', 'TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Калина Цолова, анализатор, Фондация „Приложни изследвания и комуникации“', 'Kalina Tcolova, Analyst, ARC Fund'),
+                      TITLE('11:35 – 12:15: Публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект', '11:35 – 12:15: Public-Private Cooperation for Cybersecurity and AI Security Innovation'),
+                      PERSON('Jeroen van Hertum', 'Jeroen van Hertum', 'член на борда, Нидерландско-българска търговска камара', 'Board Member, Dutch Bulgarian Chamber of Commerce'),
+                      PERSON('Кирил Кирилов', 'Kiril Kirilov', 'оперативен мениджър, BRAIN++', 'Operations Manager, BRAIN++'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Татяна Новосьолова, старши анализатор, Център за изследване на демокрацията', 'Tatyana Novossiolova, Senior Analyst, CSD')
                     ]
                   }]
                 }
               },
-              { time: '12:10 – 13:00', kind: 'break', label: T('Обяд и нетуъркинг', 'Lunch and Networking') },
+              { time: '12:15 – 13:15', kind: 'break', label: T('Обяд / Networking', 'Lunch / Networking') },
               {
-                time: '13:00 – 14:20',
+                time: '13:15 – 14:35',
                 left: {
                   blocks: [{
-                    heading: T('Блок 3: Автоматизация – роботика, интелигентен град и интелигентно земеделие', 'Block 3: Automation - Robotics, Smart City, and Smart Agriculture'),
+                    heading: T('Блок 3 (80 мин): Автоматизация: Роботика + Смарт земеделие', 'Block 3 (80 min): Automation: Robotics + Smart Agriculture'),
                     lines: [
-                      OBJ('Да се демонстрира как роботиката, свързаните системи, цифровите близнаци и изкуственият интелект могат да подобрят градските услуги, земеделието, мобилността и други физически операции.', 'Demonstrate how robotics, connected systems, digital twins, and AI can improve urban services, agriculture, mobility, and other physical operations.'),
-                      LABEL('Участници: ', 'Contributors: ', 'проф. Teade Punter – интеграция на интелигентни системи; Калин Костадинов, GATE – цифров близнак на София; проф. Кисимов, УНСС – дигитализация и големи данни; Илия Йорданов, ONDO – изкуствен интелект в земеделието; Христо Христов, TopMobility – бъдещето на мобилността', 'Prof. Teade Punter - Smart System Integration; Kalin Kostadinov, GATE - Digital Twin of Sofia; Prof. Kisimov, UNWE - Digitalization and Big Data; Iliya Yordanov, ONDO - AI in Agriculture; Hristo Hristov, TopMobility - The Future of Mobility'),
-                      LABEL('Модератор: ', 'Moderator: ', 'предстои уточняване', 'TBD')
+                      LABEL('Smart System Integration: ', 'Smart System Integration: ', 'Prof. Teade Punter, High Tech Embedded Software, Fontys University of Applied Science, Айндховен, Нидерландия', 'Prof. Teade Punter, High Tech Embedded Software, Fontys University of Applied Science, Eindhoven, the Netherlands'),
+                      TITLE('Градски данни и AI в услуги: „digital twin“ и оперативно управление (трафик, отпадъци, енергия)', 'Urban Data and AI in Services: "Digital Twin" and Operational Management (Traffic, Waste, Energy)'),
+                      PERSON('Калин Костадинов', 'Kalin Kostadinov', 'р-л „Дигитален двойник на София“, GATE Институт към СУ', 'Manager, "Digital Twin of Sofia", GATE Institute at Sofia University'),
+                      LABEL('Примерът на Robotoplus: ', 'The Robotoplus Example: ', 'Константин, Robotoplus', 'Konstantin, Robotoplus'),
+                      TITLE('Дигитализация на икономиката в среда на големите данни', 'Digitalization of the Economy in a Big Data Environment'),
+                      PERSON('проф. Валентин Кисимов', 'Prof. Valentin Kisimov', 'УНСС, р-л лаборатория', 'UNWE, Head of Laboratory'),
+                      TITLE('Технологии в земеделието - внедряване на AI', 'Technologies in Agriculture - AI Adoption'),
+                      PERSON('Илия Йорданов', 'Iliya Yordanov', 'ONDO, съосновател', 'ONDO, Co-Founder'),
+                      LABEL('Japan’s Approach Based on Society 5.0: ', 'Japan’s Approach Based on Society 5.0: ', 'Mitsuru Horinouchi, First Secretary, Embassy of Japan in Bulgaria', 'Mitsuru Horinouchi, First Secretary, Embassy of Japan in Bulgaria'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Тодор Тодоров', 'Todor Todorov')
                     ]
                   }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('Българо-турски бизнес обмен: технологичен трансфер и достъп до нови пазари', 'Bulgaria–Türkiye Business Exchange: Technology Transfer and Access to New Markets'),
+                    heading: T('Бизнес обмен между България и Турция: трансфер на технологии и достъп до нови пазари', 'Business Exchange Between Bulgaria and Türkiye: Technology Transfer and Access to New Markets'),
                     lines: [
-                      OBJ('Да се свържат български и турски компании, университети, клъстери и институции около технологичния трансфер, индустриалното сътрудничество и достъпа до регионалните и близкоизточните пазари.', 'Connect Bulgarian and Turkish companies, universities, clusters, and institutions around technology transfer, industrial cooperation, and access to regional and Middle Eastern markets.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Kerem Ozbek; проф. д-р Rengin, Университет Къркларели; BULTISHAD/Mobilis Bulgaria; BİSİAD; посланик и представители на министерства – предстои уточняване', 'Kerem Ozbek; Prof. Dr Rengin, Kirklareli University; BULTISHAD/Mobilis Bulgaria; BİSİAD; ambassador and ministerial representatives TBD'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Kerem Ozbek', 'Kerem Ozbek')
+                      LABEL('Chamber Vision: ', 'Chamber Vision: ', 'Mr. Burhan Nemutlu, председател, BULTİŞAD', 'Mr. Burhan Nemutlu, Chairman, BULTİŞAD'),
+                      LABEL('Technology Transfer, Collaboration Opportunities: ', 'Technology Transfer, Collaboration Opportunities: ', 'Prof. Dr. Rengin, ректор, Университет Къркларели', 'Prof. Dr. Rengin, Rector, Kirklareli University'),
+                      LABEL('Investments in Türkiye / Third Countries Market / Middle East Market: ', 'Investments in Türkiye / Third Countries Market / Middle East Market: ', 'Hristo Daskalov, Mobilis Bulgaria', 'Hristo Daskalov, Mobilis Bulgaria'),
+                      LABEL('CyberSec4OT Project: ', 'CyberSec4OT Project: ', 'EDIH Trakia Bulgaria', 'EDIH Trakia Bulgaria'),
+                      PERSON('Dr. Martijn Leijten', 'Dr. Martijn Leijten', 'доцент, Факултет по технологии, политики и мениджмънт, Технически университет – Делфт', 'Assistant Professor, Faculty of Technology, Policy and Management, Delft University of Technology'),
+                      LABEL('Тема: ', 'Topic: ', 'предстои уточняване', 'TBD'),
+                      LABEL('EU Projects: ', 'EU Projects: ', 'български лектор – предстои уточняване', 'Bulgarian speaker – TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Mr. Kerem Ozbek, „Kambro BG“ ЕООД', 'Mr. Kerem Ozbek, "Kambro BG" EOOD')
                     ]
                   }]
                 }
               },
-              { time: '14:20 – 15:00', kind: 'break', label: T('Почивка', 'Break') },
+              { time: '14:35 – 15:00', kind: 'break', label: T('Пауза', 'Break') },
               {
                 time: '15:00 – 16:20',
                 left: {
                   blocks: [{
-                    heading: T('Блок 4: Финансиране, износ, нови пазари и рискови фондове', 'Block 4: Financing, Exports, New Markets, and Venture Funds'),
+                    heading: T('Блок 3 (80 мин): Финансиране, износ, нови пазари, венчърни фондове', 'Block 3 (80 min): Financing, Exports, New Markets, Venture Funds'),
                     lines: [
-                      OBJ('Да се помогне на компаниите да разберат публичните, инвестиционните и рисково-управленските инструменти, с които разполагат в подкрепа на иновациите, износа и навлизането на нови пазари.', 'Help companies understand the public, investment, and risk-management instruments available to support innovation, exports, and entry into new markets.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Национален иновационен фонд; Агенция по заетостта; Фонд на фондовете; Българска агенция за експортно застраховане', 'National Innovation Fund; Employment Agency; Fund of Funds; Bulgarian Export Insurance Agency'),
-                      LABEL('Модератор: ', 'Moderator: ', 'д-р Бойко Таков', 'Dr. Boyko Takov')
+                      LABEL('Национален иновационен фонд (НИФ): ', 'National Innovation Fund: ', 'Антон Тодоров, председател на Изпълнителния съвет', 'Anton Todorov, Chairman of the Executive Board'),
+                      LABEL('Агенция по заетостта (АЗ): ', 'Employment Agency: ', 'Габриела Горанова-Димчева, заместник изпълнителен директор', 'Gabriela Goranova-Dimcheva, Deputy Executive Director'),
+                      LABEL('Фонд на фондовете: ', 'Fund of Funds: ', 'уточняване на конкретно лице', 'specific person TBD'),
+                      LABEL('Българска агенция за експортно застраховане (БАЕЗ): ', 'Bulgarian Export Insurance Agency: ', 'уточняване на конкретно лице', 'specific person TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'д-р Бойко Таков, директор, ИАНМСП', 'Dr. Boyko Takov, Director, BSMEPA')
                     ]
                   }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('Българо-турски бизнес обмен: иновационни екосистеми и съвместни проекти', 'Bulgaria–Türkiye Business Exchange: Innovation Ecosystems and Joint Projects'),
+                    heading: T('Бизнес обмен между България и Турция: иновационни екосистеми и съвместни проекти', 'Business Exchange Between Bulgaria and Türkiye: Innovation Ecosystems and Joint Projects'),
                     lines: [
-                      OBJ('Институционалните отношения да се превърнат в практическо сътрудничество чрез технологични паркове, високотехнологични клъстери, проекти на Европейския съюз и преки партньорства между компании.', 'Turn institutional relationships into practical collaboration through technology parks, high-tech clusters, European Union projects, and direct company partnerships.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Miray Şanlı – Technopark İzmir; представител на High Tech Cluster; български лектор по проекти на Европейския съюз; допълнителен лектор – предстои уточняване', 'Miray Şanlı - Technopark İzmir; High Tech Cluster representative; Bulgarian speaker on European Union projects; additional speaker TBD'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Светослав Стаменов', 'Svetoslav Stamenov')
+                      LABEL('Technology Transfer from Teknopark İzmir: ', 'Technology Transfer from Teknopark İzmir: ', 'Miray Şanlı', 'Miray Şanlı'),
+                      PERSON('Jeroen van Hertum', 'Jeroen van Hertum', 'член на борда, Нидерландско-българска търговска камара', 'Board Member, Dutch Bulgarian Chamber of Commerce'),
+                      LABEL('BİSİAD – Informatics Sector Businessmen and Professionals Association: ', 'BİSİAD – Informatics Sector Businessmen and Professionals Association: ', 'Бурса – индустриален център на Турция', 'Bursa - Industrial Center of Türkiye'),
+                      LABEL('High Tech Cluster: ', 'High Tech Cluster: ', 'предстои уточняване', 'TBD'),
+                      LABEL('AI-Based Regulatory Technology (RegTech) Startup Defy: ', 'AI-Based Regulatory Technology (RegTech) Startup Defy: ', 'Suat Özkan, основател', 'Suat Özkan, founder'),
+                      TITLE('Дигиталният хъб като портал към AI фабрики', 'The Digital Hub as a Gateway to AI Factories'),
+                      PERSON('Герасим Славов', 'Gerasim Slavov', 'BRAIN++', 'BRAIN++'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Светослав Стаменов, член на борда, ИКТ Клъстер Варна', 'Svetoslav Stamenov, Board Member, ICT Cluster – Varna')
                     ]
                   }]
                 }
               },
-              { time: '16:20 – 16:30', kind: 'break', label: T('Почивка', 'Break') },
+              { time: '16:20 – 16:40', kind: 'break', label: T('Пауза', 'Break') },
               {
-                time: '16:30 – 17:40',
+                time: '16:40 – 18:00',
                 left: {
                   blocks: [{
-                    heading: T('Блок 5: Морски технологии', 'Block 5: Maritime Technologies'),
+                    heading: T('Блок 4 (80 мин): Морски технологии', 'Block 4 (80 min): Maritime Technologies'),
                     lines: [
-                      OBJ('Да се покаже как изкуственият интелект, оперативните данни и цифровите системи трансформират корабостроенето, управлението на флота, морската безопасност и конкурентоспособността на морската икономика.', 'Show how AI, operational data, and digital systems are transforming shipbuilding, fleet management, maritime safety, and the competitiveness of the maritime economy.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Светлин Стоянов, MTG Dolphin – изкуствен интелект в корабостроенето; Cemile Koseler Usta, Истанбулска индустриална камара; Григор Кънчев, Unity Ship Management – трансформация на технологичните данни; Grimaldi – предстои уточняване; DNV – предстои уточняване', 'Svetlin Stoyanov, MTG Dolphin - AI in Shipbuilding; Cemile Koseler Usta, Istanbul Chamber of Industry; Grigor Kanchev, Unity Ship Management - Technology Data Transformation; Grimaldi - TBD; DNV - TBD'),
-                      LABEL('Модератор: ', 'Moderator: ', 'предстои уточняване', 'TBD')
+                      LABEL('AI в корабостроенето: ', 'AI in Shipbuilding: ', 'Светлин Стоянов, управител, МТГ Делфин 1', 'Svetlin Stoyanov, Manager, MTG Dolphin 1'),
+                      PERSON('Cemile Koseler Usta', 'Cemile Koseler Usta', 'Istanbul Chamber of Industry (Techn. & Digit. Dept)', 'Istanbul Chamber of Industry (Techn. & Digit. Dept)'),
+                      LABEL('Technology Data Transform: ', 'Technology Data Transform: ', 'Григор Кънчев, IT Manager, Unity Ship Management', 'Grigor Kanchev, IT Manager, Unity Ship Management'),
+                      LABEL('Autonomous Maritime Systems Build for Real-World Missions: ', 'Autonomous Maritime Systems Build for Real-World Missions: ', 'Borislav Teberov, основател, Pontic Dynamic', 'Borislav Teberov, Founder, Pontic Dynamic'),
+                      LABEL('Navigating the Future with Autonomous Ships: ', 'Navigating the Future with Autonomous Ships: ', 'Associate Professor Ismail Bayezit, Istanbul Technical University', 'Associate Professor Ismail Bayezit, Istanbul Technical University'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Viktoria Harizanova, Marine Cluster Bulgaria', 'Viktoria Harizanova, Marine Cluster Bulgaria')
                     ]
                   }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('Туризъм', 'Tourism'),
+                    heading: T('Туризъм и умен град', 'Tourism and Smart City'),
                     lines: [
-                      OBJ('Да се свържат туроператорите и технологичните компании около услуги, подпомогнати от изкуствен интелект, интелигентни дестинации, цифрови преживявания за гостите и по-ефективни операции в туризма.', 'Connect tourism operators and technology companies around AI-supported services, smart destinations, digital guest experiences, and more efficient tourism operations.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Андрей Лилов, URBO Studio – интелигентен туризъм; Елица Стоилова, UMNI.bg – изкуствен интелект в туризма; Антон Михалев, Eurodesign Systems – интелигентна стая', 'Andrey Lilov, URBO Studio - Smart Tourism; Elitsa Stoilova, UMNI.bg - AI in Tourism; Anton Mihalev, Eurodesign Systems - Smart Room'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Станислав Иванов', 'Stanislav Ivanov')
-                    ]
-                  }]
-                }
-              },
-              { time: '17:40 – 17:50', kind: 'break', label: T('Почивка', 'Break') },
-              {
-                time: '17:50 – 18:10', left: {
-                  blocks: [{
-                    heading: T('Обобщаващ панел', 'Summary Panel'),
-                    lines: [
-                      OBJ('Да се обобщят практическите изводи от деня и да се определят технологиите, партньорствата и възможностите за финансиране, които компаниите могат да започнат да оценяват незабавно.', "Consolidate the day’s practical lessons and identify the technologies, partnerships, and financing routes companies can begin evaluating immediately.")
+                      LABEL('High-Tech Experiences in Tourism: ', 'High-Tech Experiences in Tourism: ', 'Станислав Иванов, президент, International Federation for IT and Travel & Tourism', 'Stanislav Ivanov, President, International Federation for IT and Travel & Tourism'),
+                      LABEL('Smart Tourism: ', 'Smart Tourism: ', 'Андрей Лилов, УРБО Студио', 'Andrey Lilov, URBO Studio'),
+                      LABEL('AI in Tourism: ', 'AI in Tourism: ', 'Елица Стоилова, УМНИ.бг', 'Elitsa Stoilova, UMNI.bg'),
+                      TITLE('Бъдещето на мобилността: от притежанието към достъпа', 'The Future of Mobility: From Ownership to Access'),
+                      PERSON('Христо Христов', 'Hristo Hristov', 'търговски и оперативен мениджър, TopMobility', 'Commercial and Operations Manager, TopMobility'),
+                      TITLE('Smart City Dubai Through the Eyes of a Resident', 'Smart City Dubai Through the Eyes of a Resident'),
+                      PERSON('Ass. Prof. Veselina Yankova', 'Ass. Prof. Veselina Yankova', 'Higher Colleges of Technology, UAE', 'Higher Colleges of Technology, UAE'),
+                      LABEL('BRAIN++: ', 'BRAIN++: ', 'в процес на уточняване', 'TBD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Станислав Иванов, президент, International Federation of Information Technologies in Travel and Tourism', 'Stanislav Ivanov, President, International Federation of Information Technologies in Travel and Tourism')
                     ]
                   }]
                 }
               },
               {
-                time: '20:00 – 22:00', left: {
+                time: '20:00 – 22:00',
+                left: {
                   blocks: [{
-                    heading: T('Форум парти', 'Forum Party'),
+                    heading: T('Парти', 'Party'),
                     lines: [
-                      PLAIN('Основен ресторант, хотел „Черно море“', 'Main restaurant, Hotel Cherno More')
+                      PLAIN('Зала „България“, хотел „Черно море“', 'Hall "Bulgaria", Hotel Cherno More')
                     ]
                   }]
                 }
@@ -6689,71 +6771,165 @@
             ]
           },
           {
-            title: T('Ден 3 – Нови хоризонти: изграждане на бизнеса на утрешния ден, задвижван от изкуствен интелект', 'Day 3 – New Horizons: Building the AI-Enabled Business of Tomorrow'),
+            title: T('Ден 3', 'Day 3'),
             question: T('Какво следва?', 'What comes next?'),
             date: T('7 октомври 2026 г.', '7 October 2026'),
             audience: T('Собственици на компании, изпълнителни директори, CIO, CTO, ръководители на иновации, мениджъри по цифрова трансформация, собственици на процеси, проектни мениджъри и специалисти по инфраструктура, които подготвят следващия етап от внедряването на изкуствен интелект.', 'Company owners, CEOs, CIOs, CTOs, innovation leaders, digital transformation managers, process owners, project managers, and infrastructure specialists preparing the next stage of AI adoption.'),
             exchangeFocus: T('Обединеното кралство, с акцент върху търговски партньорства, инвестиции, технологичен трансфер и конкретни съвместни инициативи.', 'The United Kingdom, with an emphasis on commercial partnerships, investment, technology transfer, and concrete joint initiatives.'),
             rows: [
               {
-                time: '9:00 – 9:15', left: {
+                time: '09:00 – 09:10',
+                left: {
                   blocks: [{
-                    heading: T('Откриване и обобщение на Ден 2', 'Opening and Summary of Day 2'),
-                    lines: [
-                      OBJ('Дискусията да премине от настоящите възможности за внедряване към организационните способности, инфраструктурата и партньорствата, от които компаниите ще имат нужда след това.', 'Move the discussion from current implementation opportunities toward the organizational capabilities, infrastructure, and partnerships companies will need next.')
-                    ]
+                    heading: T('Откриване и обобщение от Ден 2', 'Opening and Summary of Day 2'),
+                    lines: []
                   }]
                 }
               },
               {
-                time: '9:15 – 10:35',
+                time: '09:10 – 10:30',
                 left: {
                   blocks: [{
-                    heading: T('Блок 1: Оптимизация на бизнес процесите – геймификация, изкуствен интелект и други', 'Block 1: Business Process Optimization - Gamification, AI, and More'),
+                    heading: T('Блок 1 (80 мин): Оптимизация на бизнес процеси – геймификация, AI и още', 'Block 1 (80 min): Business Process Optimization - Gamification, AI, and More'),
                     lines: [
-                      OBJ('Да се покаже как организациите могат да подобрят снабдяването, ангажираността, вземането на решения и други бизнес процеси чрез агенти с изкуствен интелект, автоматизация и геймификация.', 'Show how organizations can improve procurement, engagement, decision-making, and other business processes through AI agents, automation, and gamification.'),
-                      LABEL('Участници: ', 'Contributors: ', 'Цветан Русимов, Imperia Online; Геновева Христова, CreaTech; Eric Hints, Loquiz; Dominik Petek, ProCom – агенти с изкуствен интелект в снабдяването', 'Tsvetan Rusimov, Imperia Online; Genoveva Christova, CreaTech; Eric Hints, Loquiz; Dominik Petek, ProCom - AI Agents in Procurement'),
-                      LABEL('Модератор: ', 'Moderator: ', 'предстои уточняване', 'TBD')
+                      LABEL('AI Can Build It. Who Will Want It?: ', 'AI Can Build It. Who Will Want It?: ', 'Цветан Русимов, Империя Онлайн', 'Tsvetan Rusimov, Imperia Online'),
+                      LABEL('From Eurovision to AI: Creative Industries as a Laboratory for the Future of Business: ', 'From Eurovision to AI: Creative Industries as a Laboratory for the Future of Business: ', 'Геновева Христова, Креатех', 'Genoveva Christova, CreaTech'),
+                      LABEL('AI Agents in Procurement: ', 'AI Agents in Procurement: ', 'Dominik Petek, Manager, ProCom – Procurement & Commercial Consulting', 'Dominik Petek, Manager, ProCom – Procurement & Commercial Consulting'),
+                      LABEL('Zvezdelin Borisov, BRAIN++: ', 'Zvezdelin Borisov, BRAIN++: ', 'предстои уточняване', 'TBD'),
+                      LABEL('AI as a Laboratory Assistant: From Formulation to Finished Material: ', 'AI as a Laboratory Assistant: From Formulation to Finished Material: ', 'Strateg, Одеса, Украйна', 'Strateg, Odesa, Ukraine'),
+                      LABEL('AI не се намира просто на едно място: ', 'AI Is Not Found in Just One Place: ', 'Теодор Ставров, Лирекс БГ', 'Teodor Stavrov, Lirex BG'),
+                      LABEL('Модератор: ', 'Moderator: ', 'д-р Артур Кордон', 'Dr. Arthur Kordon')
                     ]
                   }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('Българо-британски бизнес обмен: технологично и търговско сътрудничество', 'Bulgaria–United Kingdom Business Exchange: Technology and Commercial Cooperation'),
+                    heading: T('AI Workshop', 'AI Workshop'),
                     lines: [
-                      OBJ('Да се идентифицират възможности за партньорства, инвестиции, технологичен трансфер и достъп до клиенти и иновационни екосистеми в България и Обединеното кралство.', 'Identify opportunities for partnerships, investment, technology transfer, and access to customers and innovation ecosystems in Bulgaria and the United Kingdom.'),
-                      LABEL('Участници: ', 'Participants: ', 'предстои уточняване', 'TBD')
+                      LABEL('Лектори и зала: ', 'Speakers and room: ', 'предстои уточняване', 'TBD')
                     ]
                   }]
                 }
               },
-              { time: '10:35 – 10:50', kind: 'break', label: T('Почивка', 'Break') },
+              { time: '10:30 – 10:55', kind: 'break', label: T('Пауза', 'Break') },
               {
-                time: '10:50 – 12:10',
+                time: '10:55 – 12:15',
                 left: {
-                  blocks: [
-                    {
-                      heading: T('Блок 2: Нови хоризонти – какво следва?', 'Block 2: New Horizons - What Comes Next?'),
-                      lines: [
-                        OBJ('Да се разгледа как изкуственият интелект се превръща в постоянен оперативен слой около хората и организациите и как бизнесът да избира между персонална, локална, on-premises, хибридна и облачна инфраструктура.', 'Examine how AI is becoming a permanent operational layer around people and organizations, and how businesses should choose among personal, local, on-premises, hybrid, and cloud infrastructure.'),
-                        PLAIN('Сесията ще представи рамка за вземане на решения, която свързва бизнес изискванията с изчислителния капацитет, сигурността, организационните данни, разходите и мащабируемостта.', 'The session will present a decision framework connecting business requirements with computing capacity, security, organizational data, cost, and scalability.'),
-                        LABEL('Формат: ', 'Format: ', 'Визионерска основна презентация, практическа демонстрация, експертна дискусия и рамка за 90-дневен пилотен проект.', 'Visionary keynote, practical demonstration, expert discussion, and a framework for a 90-day pilot.'),
-                        LABEL('Участници и модератор: ', 'Contributors and moderator: ', 'предстои уточняване', 'TBD')
-                      ]
-                    },
-                    {
-                      heading: T('Закриване на Черноморски технологичен форум Варна 2026', 'Closing of Black Sea Technology Forum Varna 2026'),
-                      lines: []
-                    }
-                  ]
+                  blocks: [{
+                    heading: T('Блок 2 (80 мин): AI в дигиталния маркетинг и още', 'Block 2 (80 min): AI in Digital Marketing and More'),
+                    lines: [
+                      LABEL('Keynote: ', 'Keynote: ', 'Николай Петканов, Mbrand', 'Nikolay Petkanov, Mbrand'),
+                      LABEL('Как модерните бизнеси ще използват AI през следващите 5 години: ', 'How Modern Businesses Will Use AI Over the Next 5 Years: ', 'Николай Вълев, маркетинг и бизнес стратег', 'Nikolay Valev, Marketing and Business Strategist'),
+                      LABEL('Ивелина Вълчева, инфлуенсър: ', 'Ivelina Valcheva, influencer: ', 'предстои уточняване', 'TBD'),
+                      LABEL('От съдържание към действие - как AI променя маркетинга: ', 'From Content to Action - How AI Is Changing Marketing: ', 'Александър Гошев, Netpeak', 'Alexander Goshev, Netpeak'),
+                      LABEL('The LinkedIn Advantage - Your Digital Reputation Starts on LinkedIn: ', 'The LinkedIn Advantage - Your Digital Reputation Starts on LinkedIn: ', 'Малгоржата Бржоска', 'Małgorzata Brzoska'),
+                      LABEL('Intrapreneurship: ', 'Intrapreneurship: ', 'Станислав Фотев, „Хайделберг Материалс Девня“ АД', 'Stanislav Fotev, "Heidelberg Materials Devnya" AD'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Николай Петканов, Mbrand', 'Nikolay Petkanov, Mbrand')
+                    ]
+                  }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('Българо-британски бизнес обмен: от контакти към съвместни инициативи', 'Bulgaria–United Kingdom Business Exchange: From Contacts to Joint Initiatives'),
+                    heading: T('AI Workshop', 'AI Workshop'),
                     lines: [
-                      OBJ('Отношенията, установени по време на Форума, да се превърнат в потенциални търговски партньорства, съвместни проекти, инвестиционни възможности и структурирани последващи дейности.', 'Convert the relationships established during the Forum into potential commercial partnerships, joint projects, investment opportunities, and structured follow-up activities.'),
-                      LABEL('Участници: ', 'Participants: ', 'предстои уточняване', 'TBD')
+                      LABEL('Лектори и зала: ', 'Speakers and room: ', 'предстои уточняване', 'TBD')
                     ]
+                  }]
+                }
+              },
+              {
+                time: '',
+                left: {
+                  blocks: [{
+                    heading: T('12:15 – 13:15 · Пауза', '12:15 – 13:15 · Break'),
+                    lines: []
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('13:00 – 14:40 · Trade Opportunities in Bulgaria and the UK', '13:00 – 14:40 · Trade Opportunities in Bulgaria and the UK'),
+                    lines: []
+                  }]
+                }
+              },
+              {
+                time: '13:15 – 14:35',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 3 (80 мин): Нови хоризонти…. Какво следва?', 'Block 3 (80 min): New Horizons…. What Comes Next?'),
+                    lines: [
+                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'Симеон Стоянов, BRAIN++', 'Simeon Stoyanov, BRAIN++'),
+                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'доц. д-р Тодорова, БАН', 'Assoc. Prof. Todorova, BAS'),
+                      LABEL('Опитът на Швейцария в дигитализацията: ', 'Switzerland’s Experience in Digitalization: ', 'Радой Павлов', 'Radoy Pavlov'),
+                      PLAIN('Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса.', 'Formulating recommendations and a roadmap for the digital transformation of business.'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков, председател на Управителния съвет, ИКТ Клъстер Варна', 'Emil Tsankov, Chairman of the Board, ICT Cluster Varna')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('Trade Opportunities in Bulgaria and the UK', 'Trade Opportunities in Bulgaria and the UK'),
+                    lines: [
+                      TITLE('13:15 – 13:40: Welcoming Remarks', '13:15 – 13:40: Welcoming Remarks'),
+                      PERSON('Rozalina Ayrakova', 'Rozalina Ayrakova', 'Deputy Country Director for Trade', 'Deputy Country Director for Trade'),
+                      PERSON('Blagomir Kotsev', 'Blagomir Kotsev', 'кмет на Варна (за потвърждение)', 'Mayor of Varna (to be confirmed)'),
+                      PERSON('Albena Lyubomirova', 'Albena Lyubomirova', 'BBCC Ambassador Varna', 'BBCC Ambassador Varna'),
+                      TITLE('13:40 – 14:00: Trends and Opportunities for Bilateral Trade Between the UK and Bulgaria', '13:40 – 14:00: Trends and Opportunities for Bilateral Trade Between the UK and Bulgaria'),
+                      PERSON('Rozalina Ayrakova', 'Rozalina Ayrakova', 'Deputy Country Director for Trade, British Embassy Sofia', 'Deputy Country Director for Trade, British Embassy Sofia'),
+                      PERSON('Elena Yordanova', 'Elena Yordanova', 'Deputy Executive Director, BBCC', 'Deputy Executive Director, BBCC'),
+                      TITLE('14:00 – 14:40: Success Stories Panel with Local Business Representatives', '14:00 – 14:40: Success Stories Panel with Local Business Representatives'),
+                      LABEL('EasyPay: ', 'EasyPay: ', 'представена от Lora Dicheva', 'represented by Lora Dicheva'),
+                      LABEL('Axiomy: ', 'Axiomy: ', 'представена от Nikolay Stoykov', 'represented by Nikolay Stoykov'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Hristina Trifonova, Vivacom', 'Hristina Trifonova, Vivacom')
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '',
+                left: {
+                  blocks: [{
+                    heading: T('14:35 – 15:00 · Пауза', '14:35 – 15:00 · Break'),
+                    lines: []
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('14:40 – 15:40 · Пауза', '14:40 – 15:40 · Break'),
+                    lines: []
+                  }]
+                }
+              },
+              {
+                time: '15:00 – 16:00',
+                left: {
+                  blocks: [{
+                    heading: T('Блок 4 (60 мин): Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', 'Block 4 (60 min): Formulating Recommendations and a Roadmap for the Digital Transformation of Business'),
+                    lines: [
+                      PERSON('Емил Цанков', 'Emil Tsankov', 'председател на Управителния съвет, ИКТ Клъстер Варна', 'Chairman of the Board, ICT Cluster Varna'),
+                      PERSON('Руслан Стефанов', 'Ruslan Stefanov', 'директор „Стратегия и иновации“, Фондация „Приложни изследвания и комуникации“', 'Director of Strategy and Innovation, ARC Fund'),
+                      PERSON('Симеон Стоянов', 'Simeon Stoyanov', 'BRAIN++', 'BRAIN++'),
+                      PERSON('Светослав Стаменов', 'Svetoslav Stamenov', 'член на борда, ИКТ Клъстер Варна', 'Board Member, ICT Cluster – Varna'),
+                      LABEL('Модератор: ', 'Moderator: ', 'Светослав Стаменов, член на борда, ИКТ Клъстер Варна', 'Svetoslav Stamenov, Board Member, ICT Cluster – Varna')
+                    ]
+                  }]
+                },
+                right: {
+                  blocks: [{
+                    heading: T('15:40 – 16:00: Trade Opportunities in Bulgaria and the UK', '15:40 – 16:00: Trade Opportunities in Bulgaria and the UK'),
+                    lines: [
+                      TITLE('Partnership Between Business and Higher Education', 'Partnership Between Business and Higher Education'),
+                      LABEL('Участници: ', 'Participants: ', 'Икономически университет – Варна; Висше училище по мениджмънт – Варна', 'University of Economics – Varna; Varna University of Management')
+                    ]
+                  }]
+                }
+              },
+              {
+                time: '16:00 – 16:15',
+                left: {
+                  blocks: [{
+                    heading: T('Закриване на Черноморски технологичен форум Варна 2026', 'Closing of the Black Sea Technology Forum Varna 2026'),
+                    lines: []
                   }]
                 }
               }
