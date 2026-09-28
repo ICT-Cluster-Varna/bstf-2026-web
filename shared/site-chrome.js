@@ -8,14 +8,16 @@
     home: { isHome: true, activeNavKey: null },
     speakers: { isHome: false, activeNavKey: 'speakers' },
     speaker: { isHome: false, activeNavKey: 'speakers' },
-    sponsors: { isHome: false, activeNavKey: 'sponsors' }
+    sponsors: { isHome: false, activeNavKey: 'sponsors' },
+    workshops: { isHome: false, activeNavKey: 'workshops' }
   };
 
   var PAGE_FILE = {
     home: 'index.html',
     speakers: 'speakers.html',
     speaker: 'speaker.html',
-    sponsors: 'sponsors.html'
+    sponsors: 'sponsors.html',
+    workshops: 'workshops.html'
   };
 
   function cfgFor(pageKey) {
@@ -78,6 +80,7 @@
   function navLinksHtml(cfg, lang) {
     var links = [
       { key: 'program', href: href(cfg, '#program'), bg: 'Програма', en: 'Program' },
+      { key: 'workshops', href: 'workshops.html', bg: 'Обучения', en: 'Workshops' },
       { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
       { key: 'sponsors', href: 'sponsors.html', bg: 'Изложители', en: 'Exhibitors' },
       { key: 'contact', href: href(cfg, '#contact'), bg: 'Контакти', en: 'Contact' }
@@ -86,6 +89,31 @@
       var cls = l.key === cfg.activeNavKey ? ' class="active"' : '';
       return '<a href="' + l.href + '"' + cls + ' data-bg="' + l.bg + '" data-en="' + l.en + '">' + pick(l.bg, l.en, lang) + '</a>';
     }).join('');
+  }
+
+  // Five links plus the language toggle and the ticket button need about
+  // 1000px in one row; each page's own CSS only collapses the nav at 768px.
+  // Between the two, tighten the spacing and, below 1000px, move the links
+  // into the existing hamburger menu instead of letting the row run off-screen.
+  // Kept here because it depends on how many links this file renders.
+  var NAV_FIT_CSS =
+    '@media (min-width:769px) and (max-width:1120px){' +
+    'nav.main-nav .nav-inner{padding:0 20px}' +
+    'nav.main-nav .nav-links{gap:20px}' +
+    'nav.main-nav .nav-right{margin-left:20px;gap:10px}' +
+    'nav.main-nav .nav-register-btn{white-space:nowrap}' +
+    '}' +
+    '@media (min-width:769px) and (max-width:1000px){' +
+    'nav.main-nav .nav-links{display:none}' +
+    'nav.main-nav .mobile-menu-btn{display:flex}' +
+    '}';
+
+  function injectNavFitCss() {
+    if (document.getElementById('site-chrome-nav-fit')) return;
+    var style = document.createElement('style');
+    style.id = 'site-chrome-nav-fit';
+    style.textContent = NAV_FIT_CSS;
+    document.head.appendChild(style);
   }
 
   function logoHtml(cfg) {
@@ -109,6 +137,7 @@
     var cfg = cfgFor(pageKey);
     var links = navLinksHtml(cfg, lang);
     var ctaText = pick('Купи Билет', 'Buy Ticket', lang);
+    injectNavFitCss();
     root.outerHTML =
       '<nav class="main-nav">' +
       '<div class="nav-inner">' +
@@ -147,6 +176,7 @@
       '<div class="footer-col">' +
       '<h4 data-bg="Събитие" data-en="Event">' + pick('Събитие', 'Event', lang) + '</h4>' +
       '<a href="' + href(cfg, '#program') + '" data-bg="Програма" data-en="Program">' + pick('Програма', 'Program', lang) + '</a>' +
+      '<a href="workshops.html" data-bg="Обучения" data-en="Workshops">' + pick('Обучения', 'Workshops', lang) + '</a>' +
       '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
       '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">' + pick('Място', 'Venue', lang) + '</a>' +
       '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">' + pick('Билети', 'Tickets', lang) + '</a>' +

@@ -61,6 +61,19 @@
   </url>
 
   <url>
+    <loc>https://www.blackseatech.org/workshops.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/workshops.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/workshops.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/workshops.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/workshops.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/workshops.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/workshops.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/workshops.html"/>
+  </url>
+
+  <url>
     <loc>https://www.blackseatech.org/speakers.html</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers.html"/>
