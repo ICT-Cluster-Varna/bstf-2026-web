@@ -1,0 +1,141 @@
+{
+  "_comment": "Обученията на workshops.html. Нова карта: копирайте един обект в workshops[]. Регистрация с Google линк: settings.registration = {\"type\": \"link\", \"url\": \"https://...\"} и status \"open\" на картите.",
+
+  "settings": {
+    "contactEmail": "bstf@ictclustervarna.com",
+    "contactPhone": "+359 876 658 296",
+    "registration": {
+      "type": "modal",
+      "endpoint": null
+    }
+  },
+
+  "topics": {
+    "ai":                           { "label": { "bg": "Изкуствен интелект", "en": "Artificial Intelligence" }, "graphic": "ai-network", "icon": "/images/streams/ai.png" },
+    "transport":                    { "label": { "bg": "Бъдеще на транспорта", "en": "Future of Transport" }, "graphic": "growth", "icon": "/images/streams/transport.png" },
+    "smart_city":                   { "label": { "bg": "Умен град", "en": "Smart City" }, "graphic": "growth", "icon": "/images/streams/smart_city.png" },
+    "cybersecurity":                { "label": { "bg": "Киберсигурност", "en": "Cybersecurity" }, "graphic": "shield", "icon": "/images/streams/cybersecurity.png" },
+    "automation":                   { "label": { "bg": "Автоматизация и роботика", "en": "Automation & Robotics" }, "graphic": "flow", "icon": "/images/streams/automation.png" },
+    "agritech":                     { "label": { "bg": "Агротехнологии", "en": "AgriTech" }, "graphic": "agri", "icon": "/images/streams/agritech.png" },
+    "marine_tech":                  { "label": { "bg": "Морски технологии", "en": "Marine Tech" }, "graphic": "ship", "icon": "/images/streams/marine_tech.png" },
+    "biotech":                      { "label": { "bg": "Биотехнологии", "en": "BioTech" }, "graphic": "growth", "icon": "/images/streams/biotech.png" },
+    "gaming":                       { "label": { "bg": "Гейминг", "en": "Gaming" }, "graphic": "megaphone", "icon": "/images/streams/gaming.png" },
+    "regional-innovation-policies": { "label": { "bg": "Регионални иновационни политики", "en": "Regional Innovation Policies" }, "graphic": "coins", "icon": "/images/streams/regional-innovation-policies.png" },
+    "tourism":                      { "label": { "bg": "Туризъм", "en": "Tourism" }, "graphic": "chat", "icon": "/images/streams/tourism.png" },
+    "marketing":                    { "label": { "bg": "Маркетинг и продажби", "en": "Marketing & Sales" }, "graphic": "megaphone", "icon": null }
+  },
+
+  "halls": {
+    "bulgaria":    { "bg": "Зала „България“", "en": "Bulgaria Hall" },
+    "cherno-more": { "bg": "Зала „Черно море“", "en": "Black Sea Hall" },
+    "varna":       { "bg": "Зала „Варна“", "en": "Varna Hall" }
+  },
+
+  "workshops": [
+    {
+      "id": "winning-ads-ai",
+      "visible": true,
+      "date": "2026-10-07",
+      "start": "13:00",
+      "end": "14:30",
+      "hall": {"bg": "Хотел „Черно море“", "en": "Hotel Cherno More"},
+      "topic": "marketing",
+      "title": {"bg": "Процес за намиране и създаване на печеливши реклами с помощта на AI", "en": "A process for finding and creating winning ads using AI"},
+      "summary": {"bg": "Научи как да откриваш работещи рекламни модели, да разбираш защо те работят и да ги превръщаш в оригинални кампании за своя бизнес — по-бързо, по-умно и с по-малко излишни тестове.", "en": "Learn how to discover effective ad models, understand why they work, and turn them into original campaigns for your business—faster, smarter, and with fewer wasted tests."},
+      "details": {
+        "description": {"bg": "Повечето реклами не губят, защото са лошо направени. Губят, защото са създадени на сляпо. В този практически уъркшоп Николай Вълев ще покаже процес за откриване, анализ и адаптиране на рекламни идеи, които вече работят на пазара — без да копираш конкуренцията и без да изгаряш бюджета си в случайни тестове. Ще видиш как AI може да превърне наблюденията от пазара в по-силни рекламни ъгли, послания, сценарии и варианти за тестване. Достъп: с регистрацията от конференцията.", "en": "Most ads don't fail because they are poorly made. They fail because they were created blindly. In this hands-on workshop, Nikolay Valev will demonstrate a process for discovering, analyzing, and adapting ad ideas that are already working in the market—without copying the competition or burning your budget on random tests. You will see how AI can turn market insights into stronger ad angles, messages, scripts, and testing variations. Access: included with conference registration."},
+        "learn": [
+          {"bg": "Как да откриваш реклами, които заслужават внимание — в твоята ниша и извън нея.", "en": "Spotting ads worth your attention—both within your niche and beyond."},
+          {"bg": "Как да разчиташ защо една реклама вероятно работи: аудитория, проблем, оферта, кукичка, визия и призив за действие.", "en": "Deconstructing why an ad likely works: audience, problem, offer, hook, visuals, and call to action."},
+          {"bg": "Как да превръщаш една добра идея в множество оригинални рекламни ъгли за своя бранд.", "en": "Turning a single good idea into multiple original ad angles for your brand."},
+          {"bg": "Как да използваш AI, за да създаваш по-бързо варианти на текстове, сценарии и визуални посоки.", "en": "Using AI to rapidly generate variations of copy, scripts, and visual concepts."},
+          {"bg": "Как да подреждаш тестовете си така, че да учиш от всяка кампания, вместо просто да „пускаш реклами“.", "en": "Structuring your tests so you learn from every campaign, rather than just \"running ads.\""},
+          {"bg": "Как да изградиш собствена библиотека от рекламни прозрения, която да използваш отново и отново.", "en": "Building your own library of ad insights to use again and again."}
+        ],
+        "audience": {"bg": "За предприемачи, маркетинг специалисти, собственици на бизнес, експерти и създатели на продукти, които инвестират в Meta, Google или други дигитални реклами. Не е нужно да си рекламен специалист.", "en": "For entrepreneurs, marketers, business owners, experts, and product creators who invest in Meta, Google, or other digital advertising. You don't need to be an advertising specialist."}
+      },
+      "presenters": [
+        {
+          "name": {"bg": "Николай Вълев", "en": "Nikolay Valev"},
+          "role": {"bg": "Маркетолог и бизнес стратег, автор на „Златна треска“", "en": "Marketer and business strategist, author of Gold Rush"},
+          "photo": "/images/speakers/nikolay-valev.jpg",
+          "bio": {"bg": "Николай Вълев е маркетолог и бизнес стратег с повече от 10 години опит в дигиталния маркетинг, позиционирането и монетизирането на експертиза. Автор е на книгата „Златна треска“ и създател на обучителни програми за личен бранд, онлайн бизнес, реклама и AI.", "en": "Nikolay Valev is a marketer and business strategist with over 10 years of experience in digital marketing, positioning, and monetizing expertise. He is the author of the book Gold Rush and the creator of training programs focused on personal branding, online business, advertising, and AI."}
+        }
+      ],
+      "cover": {"type": "graphic", "graphic": "megaphone", "bg": "#193852"},
+      "seats": {"total": null, "left": null},
+      "status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/ZRDBNzAbxEcVYyNo6"}
+    },
+    {
+      "id": "linkedin-content-sprint",
+      "visible": true,
+      "date": "2026-10-07",
+      "start": "13:00",
+      "end": "14:30",
+      "hall": {"bg": "Хотел „Черно море“", "en": "Hotel Cherno More"},
+      "topic": "marketing",
+      "title": {"bg": "LinkedIn Content Sprint", "en": "LinkedIn Content Sprint"},
+      "summary": {"bg": "Изградете своята LinkedIn стратегия. Създайте съдържание за 90 дни. Планирайте първите си публикации още преди края на уъркшопа.", "en": "Build your LinkedIn strategy. Create 90 days of content. Schedule your first posts before you leave."},
+      "details": {
+        "description": {"bg": "Това е 100% практически LinkedIn уъркшоп. Заедно с Megan Brzoska ще изградите LinkedIn стратегия, базирана на вашия опит, професионални цели и хората, до които искате да достигнете. Ще получите достъп до практичен инструмент за създаване на съдържание, ще научите как да го използвате, ще създадете първите си публикации и ще ги планирате още преди края на уъркшопа. Ще си тръгнете със система, която можете да продължите да използвате дълго след CONNEXUS. Език: английски. Достъп: с билет за събитието.", "en": "This is a 100% practical LinkedIn workshop. Together with Megan Brzoska, you will build a LinkedIn strategy around your expertise, professional goals and the people you want to reach. You will get access to a practical content tool, learn how to use it, create your first content and schedule it before the workshop ends. You will leave with a system you can continue using long after CONNEXUS. Language: English. Access: event registration ticket."},
+        "learn": [
+          {"bg": "LinkedIn стратегия: ще знаете какво искате да постигнете, до кого трябва да достигнете и как LinkedIn се вписва в тази цел.", "en": "A LinkedIn strategy: you will know what you are trying to achieve, who you need to reach and how LinkedIn fits into that objective."},
+          {"bg": "90-дневна стратегическа система за съдържание: структуриран подход към това за какво да говорите и защо.", "en": "A 90-day strategic content system: a structured approach to what you should talk about and why."},
+          {"bg": "Практичен инструмент за създаване на съдържание, който ще знаете как да използвате самостоятелно и след уъркшопа.", "en": "A practical content creation tool you understand how to use independently after the workshop."},
+          {"bg": "Система, която познава вашия стил: AI без генерично съдържание, което звучи като всички останали.", "en": "A system that knows your voice: AI without generic content that sounds like everyone else."},
+          {"bg": "Първото ви съдържание — създадено още по време на сесията.", "en": "Your first content, created during the session."},
+          {"bg": "Първите ви публикации — планирани преди да си тръгнете.", "en": "Your first posts, scheduled before you leave."}
+        ],
+        "audience": {"bg": "LinkedIn Content Sprint е създаден за основатели, собственици на бизнес, ръководители, консултанти, експерти и амбициозни професионалисти, които искат LinkedIn да се превърне в стратегическа част от техния бизнес или кариера. Не ви е необходим предишен опит в създаването на съдържание.", "en": "The LinkedIn Content Sprint is designed for founders, business owners, executives, consultants, experts and ambitious professionals who want LinkedIn to become a strategic part of their business or career. You do not need previous content creation experience."}
+      },
+      "presenters": [
+        {
+          "name": {"bg": "Megan Brzoska", "en": "Megan Brzoska"},
+          "role": {"bg": "Специалист по AI и маркетинг, personal и employer branding", "en": "AI and marketing professional, personal and employer branding"},
+          "photo": "/images/speakers/megan-brzoska.jpg",
+          "bio": {"bg": "Megan Brzoska е специалист по AI и маркетинг с фокус върху personal branding и employer branding. Тя помага на бизнеса да комбинира AI, LinkedIn и съвременни маркетинг стратегии, за да изгради по-силна дигитална репутация, да увеличи видимостта си и да подкрепи измеримия бизнес растеж. Работила е с бизнеси във Великобритания и Европа и е била лектор на големи европейски сцени, включително Advertising Week и ICE.", "en": "Megan Brzoska is an AI and marketing professional specialising in personal and employer branding. She helps businesses combine AI, LinkedIn and modern marketing strategies to strengthen their digital reputation, increase visibility and support measurable business growth. She has worked with businesses across the UK and Europe and has spoken on major European stages, including Advertising Week and ICE."}
+        }
+      ],
+      "cover": {"type": "graphic", "graphic": "content-calendar", "bg": "#1d4660"},
+      "seats": {"total": null, "left": null},
+      "status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/7DNMsMkJWQLYgk486"}
+    },
+    {
+      "id": "ai-fraud-deepfakes",
+      "visible": true,
+      "date": "2026-10-07",
+      "start": "13:15",
+      "end": "14:00",
+      "hall": {"bg": "Хотел „Черно море“", "en": "Hotel Cherno More"},
+      "topic": "cybersecurity",
+      "title": {"bg": "Ще одобрите ли този превод? - AI измами, deepfake и последната линия на защита", "en": "Would you approve this payment? - AI fraud, Deepfakes, and the Last Line of Defense"},
+      "summary": {"bg": "Научи как съвременните AI-базирани измами атакуват не само технологиите, а доверието, комуникацията и бизнес процесите — и как организацията може да се защити с ясни и приложими мерки.", "en": "Learn how modern AI-enabled fraud targets not only technology, but also trust, communication, and business processes — and how organizations can defend themselves with clear, practical controls."},
+      "details": {
+        "description": {"bg": "Получаваш спешно съобщение от изпълнителния директор. Следва телефонен разговор или кратка видеосреща. Гласът е неговият. Лицето също. Искането е логично — трябва да бъде извършен важен превод и няма време за забавяне. Ще го одобриш ли? С развитието на генеративния изкуствен интелект подобни сценарии вече не изискват сложна техническа атака срещу корпоративната инфраструктура. В този практически уъркшоп Обретен Обретенов ще постави участниците именно в подобна ситуация. Ще анализираме как изглежда една модерна AI-подпомагана измама, къде се провалят традиционните механизми за защита и как могат да бъдат изградени процеси, които остават устойчиви дори когато вече не можем да вярваме безусловно на глас, видео, имейл или съобщение. В ерата на AI вече не е достатъчно да удостоверяваме само потребителя. Трябва да удостоверяваме и бизнес намерението. Достъп: с регистрацията от конференцията.", "en": "You receive an urgent message from the CEO. It is followed by a phone call or a short video meeting. The voice sounds like theirs. The face looks right too. The request appears reasonable — an important payment needs to be made, and there is no time to lose. Would you approve it? With the rapid development of generative AI, scenarios like this no longer require a sophisticated technical attack against corporate infrastructure. In this practical workshop, Obreten Obretenov will place participants directly into such a scenario. We will examine what a modern AI-assisted fraud attempt looks like, where traditional security controls may fail, and how organizations can build processes that remain resilient even when we can no longer blindly trust a voice, a video, an email, or a message. In the age of AI, it is no longer enough to authenticate only the user. We also need to authenticate business intent. Access: included with conference registration."},
+        "learn": [
+          {"bg": "Как да разпознаваш основните характеристики на AI-подпомаганите BEC, phishing и deepfake измами.", "en": "Recognize the main characteristics of AI-assisted BEC, phishing, and deepfake fraud."},
+          {"bg": "Как да оценяваш подозрителни финансови и административни искания, без да разчиташ единствено на това дали съобщението „изглежда истинско“.", "en": "Assess suspicious financial and administrative requests without relying solely on whether the message “looks legitimate.”"},
+          {"bg": "Защо MFA, email security и останалите технически контроли не могат сами да предотвратят всяка подобна атака.", "en": "Understand why MFA, email security, and other technical controls alone cannot prevent every type of attack."},
+          {"bg": "Как да използваш независима верификация, trusted communication channels и принципа на dual approval при чувствителни операции.", "en": "Use independent verification, trusted communication channels, and dual approval for sensitive operations."},
+          {"bg": "Как да определяш кои бизнес процеси в организацията са най-податливи на атаки срещу доверието.", "en": "Identify which business processes within an organization are most vulnerable to attacks against trust."},
+          {"bg": "Как да изградиш кратък практически модел за защита срещу AI-базирани социално-инженерни атаки, който може да бъде приложен и в малки, и в големи организации.", "en": "Build a short, practical defense model against AI-enabled social engineering attacks that can be applied in both small and large organizations."}
+        ],
+        "audience": {"bg": "За собственици и ръководители на компании, финансови и оперативни мениджъри, IT и киберсигурност специалисти, както и служители, които участват в чувствителни бизнес процеси. Особено полезен е за организации, в които се извършват финансови преводи и плащания, променят се банкови сметки или платежни инструкции и голяма част от работата минава през имейл, Teams, WhatsApp, Viber или други комуникационни платформи. Не е необходимо да имаш технически познания по киберсигурност. Нужно е единствено да вземаш решения, при които доверието има значение.", "en": "For business owners and executives, financial and operational managers, IT and cybersecurity professionals, as well as employees involved in sensitive business processes. It is especially useful for organizations where payments are made, bank account details or payment instructions change, and much of the daily work takes place through email, Teams, WhatsApp, Viber, or other communication platforms. No technical cybersecurity background is required. You only need to make decisions where trust matters."}
+      },
+      "presenters": [
+        {
+          "name": {"bg": "Обретен Обретенов", "en": "Obreten Obretenov"},
+          "role": {"bg": "Основател на Commodor Cybersecurity, преподавател по „Компютърна сигурност“", "en": "Founder of Commodor Cybersecurity, lecturer in Ethical Hacking"},
+          "photo": "/images/speakers/obreten-obretenov.jpg",
+          "bio": {"bg": "Обретен Обретенов е специалист по информационна и киберсигурност с практически опит в защитата на финансови системи, управление на киберриска, реакция при инциденти, vulnerability management и изграждане на организационни мерки за сигурност. Той е основател на Commodor Cybersecurity и преподавател по „Компютърна сигурност“, като работата му е насочена към превръщането на киберсигурността от техническа тема в разбираеми и приложими бизнес решения.", "en": "Obreten Obretenov is an information and cybersecurity professional with hands-on experience in protecting financial systems, cyber risk management, incident response, vulnerability management, and the development of organizational security measures. He is the founder of Commodor Cybersecurity and a lecturer in Ethical Hacking, with a strong focus on turning cybersecurity from a purely technical topic into understandable and practical business solutions."}
+        }
+      ],
+      "cover": {"type": "graphic", "graphic": "shield", "bg": "#15344a"},
+      "seats": {"total": null, "left": null},
+      "status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/kEzXfWT489zmgC2n9"}
+    }
+  ]
+}

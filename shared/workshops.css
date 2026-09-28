@@ -1,0 +1,1305 @@
+/* Workshops page (workshops.html, en/workshops.html). Uses the site variables
+   from each page's inline <style>; only colours the site has no token for are set here. */
+
+.ws-page {
+  --ws-border: #e2e8ee;
+  --ws-border-strong: #c9d6e2;
+  --ws-chip: #eef3f7;
+  --ws-soft: #f6f9fb;
+  --ws-sky-soft: #e8f6fd;
+  --ws-warn-bg: #fff1de;
+  --ws-warn: #8a4500;
+  --ws-cover: #193852;
+  --ws-shadow: 0 10px 30px rgba(11, 57, 84, 0.07);
+  --ws-dots: radial-gradient(rgba(93, 202, 250, 0.28) 1.2px, transparent 1.3px);
+  background: #f9fafc
+}
+
+.ws-page [hidden] {
+  display: none !important
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0
+}
+
+.ws-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px
+}
+
+.ws-ico {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--teal-contrast)
+}
+
+.ws-ico--lg {
+  width: 18px;
+  height: 18px
+}
+
+.ws-ico--sm {
+  width: 14px;
+  height: 14px
+}
+
+/* ---------- hero ---------- */
+
+.ws-hero {
+  position: relative;
+  margin-top: 72px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0f2233;
+  color: var(--white)
+}
+
+.ws-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 60%
+}
+
+.ws-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 28, 42, 0.5)
+}
+
+.ws-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  padding-top: 48px;
+  padding-bottom: 48px
+}
+
+.ws-hero-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35)
+}
+
+.ws-hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fd6fb;
+  text-wrap: balance
+}
+
+.ws-hero h1 {
+  font-size: 4.75rem;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--white)
+}
+
+.ws-hero-desc {
+  font-size: 1.19rem;
+  line-height: 1.55;
+  color: #e3edf5
+}
+
+.ws-how {
+  width: 420px;
+  flex-shrink: 0;
+  background: var(--white);
+  color: var(--text);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25)
+}
+
+.ws-how-title {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px
+}
+
+.ws-how-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none
+}
+
+.ws-how-steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.94rem;
+  line-height: 1.4
+}
+
+.ws-how-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--ws-sky-soft);
+  color: var(--teal-contrast);
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0
+}
+
+/* ---------- grid ---------- */
+
+.ws-list {
+  padding: 56px 0 80px
+}
+
+.ws-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px
+}
+
+.ws-grid-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--white);
+  border: 1px dashed var(--ws-border-strong);
+  border-radius: 18px;
+  font-size: 1rem;
+  color: var(--text)
+}
+
+.ws-contact {
+  padding-top: 44px;
+  text-align: center;
+  font-size: 0.94rem;
+  color: var(--text-light)
+}
+
+.ws-contact a {
+  font-weight: 700;
+  color: var(--teal-contrast);
+  text-decoration: underline;
+  text-underline-offset: 3px
+}
+
+.ws-contact a:hover {
+  color: var(--navy)
+}
+
+/* ---------- card ---------- */
+
+.ws-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--ws-border);
+  border-radius: 18px;
+  box-shadow: var(--ws-shadow);
+  container-type: inline-size
+}
+
+/* The cover clips its own image; the card does not clip, so the presenter
+   photo that overlaps the cover is never cut off. */
+.ws-cover {
+  position: relative;
+  height: 170px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 17px 17px 0 0;
+  background-color: var(--ws-cover);
+  background-image: var(--ws-dots);
+  background-size: 16px 16px
+}
+
+.ws-cover-graphic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: right center
+}
+
+.ws-cover-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover
+}
+
+.ws-cover-icon {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  transform: translateY(-50%)
+}
+
+.ws-cover-html {
+  position: absolute;
+  inset: 0
+}
+
+.ws-cover-html > svg,
+.ws-cover-html > img {
+  width: 100%;
+  height: 100%
+}
+
+.ws-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 24px 24px
+}
+
+.ws-presenter-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px
+}
+
+.ws-avatars {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  margin-top: -46px
+}
+
+.ws-avatar {
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: 0 6px 16px rgba(11, 57, 84, 0.18);
+  background: var(--ws-sky-soft)
+}
+
+.ws-avatar + .ws-avatar {
+  width: 80px;
+  height: 80px;
+  margin-left: -24px
+}
+
+.ws-avatar--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--teal-contrast);
+  background: #dff3fc
+}
+
+.ws-avatar + .ws-avatar--initials {
+  font-size: 1.2rem
+}
+
+.ws-presenter-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 12px
+}
+
+.ws-presenter-name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy)
+}
+
+.ws-presenter-role {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--text-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.ws-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  list-style: none;
+  padding-top: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text)
+}
+
+.ws-meta li {
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+
+.ws-meta--sm {
+  font-size: 0.8rem;
+  padding-top: 6px
+}
+
+.ws-card-title {
+  font-size: 1.31rem;
+  line-height: 1.28;
+  color: var(--navy)
+}
+
+.ws-card-summary {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--text-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.ws-card-spacer {
+  flex-grow: 1
+}
+
+.ws-status-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-height: 28px;
+  font-size: 0.875rem;
+  color: var(--text-light)
+}
+
+.ws-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy);
+  background: var(--ws-chip);
+  border-radius: 999px;
+  padding: 5px 12px
+}
+
+.ws-chip--full {
+  color: var(--ws-warn);
+  background: var(--ws-warn-bg)
+}
+
+.ws-seats {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px
+}
+
+.ws-seats .ws-ico {
+  color: currentColor
+}
+
+.ws-seats--low {
+  color: var(--ws-warn);
+  font-weight: 700
+}
+
+/* ---------- buttons ---------- */
+
+.ws-actions {
+  display: flex;
+  gap: 10px
+}
+
+.ws-actions > * {
+  flex: 1 1 0;
+  min-width: 0
+}
+
+.ws-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 7px 12px;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium)
+}
+
+.ws-btn .ws-ico {
+  color: currentColor
+}
+
+.ws-btn:focus-visible,
+.ws-back:focus-visible,
+.ws-card a:focus-visible,
+.ws-contact a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px
+}
+
+.ws-btn--outline {
+  background: var(--white);
+  border-color: var(--ws-border-strong);
+  color: var(--navy)
+}
+
+.ws-btn--outline:hover {
+  border-color: var(--navy);
+  background: var(--ws-soft)
+}
+
+.ws-btn--primary {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white)
+}
+
+.ws-btn--primary:hover {
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(11, 57, 84, 0.22)
+}
+
+.ws-btn--soft {
+  background: var(--ws-chip);
+  border-color: var(--ws-chip);
+  color: var(--navy)
+}
+
+.ws-btn--soft:hover {
+  background: #e1eaf1;
+  border-color: #e1eaf1
+}
+
+.ws-btn--disabled,
+.ws-btn:disabled {
+  background: var(--ws-chip);
+  border-color: var(--ws-chip);
+  color: #5d6b78;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none
+}
+
+.ws-btn--lg {
+  width: 100%;
+  min-height: 54px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px
+}
+
+/* ---------- loading skeleton ---------- */
+
+.ws-skel .ws-cover {
+  background: #e3eaf0
+}
+
+.ws-skel .ws-avatar {
+  display: block;
+  background: #edf2f6
+}
+
+.ws-skel-line,
+.ws-skel-btn {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: #edf2f6
+}
+
+.ws-skel-line--lg {
+  height: 18px
+}
+
+.ws-skel-btn {
+  height: 48px;
+  border-radius: 10px
+}
+
+.ws-skel .ws-cover,
+.ws-skel .ws-avatar,
+.ws-skel-line,
+.ws-skel-btn {
+  animation: wsPulse 1.4s ease-in-out infinite
+}
+
+@keyframes wsPulse {
+  50% {
+    opacity: 0.55
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ws-skel .ws-cover,
+  .ws-skel .ws-avatar,
+  .ws-skel-line,
+  .ws-skel-btn {
+    animation: none
+  }
+}
+
+/* ---------- workshop page (workshop.html) ---------- */
+
+.ws-detail-page {
+  padding: 104px 0 72px
+}
+
+/* Back link, panel and "More workshops" share one 960px column. */
+.ws-back-row,
+.ws-detail-slot,
+.ws-more {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.ws-back-row {
+  margin-bottom: 20px
+}
+
+.ws-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--teal-contrast);
+  border-radius: 6px
+}
+
+.ws-back:hover {
+  color: var(--navy)
+}
+
+.ws-back .ws-ico {
+  color: currentColor
+}
+
+.ws-detail {
+  background: var(--white);
+  border: 1px solid var(--ws-border);
+  border-radius: 22px;
+  box-shadow: var(--ws-shadow)
+}
+
+.ws-d-cover {
+  height: 190px;
+  border-radius: 21px 21px 0 0
+}
+
+.ws-d-cover.ws-cover--photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(12, 28, 42, 0.7) 0%, rgba(12, 28, 42, 0.15) 70%)
+}
+
+.ws-d-cover-text {
+  position: absolute;
+  left: 40px;
+  top: 28px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px
+}
+
+.ws-d-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fd6fb
+}
+
+.ws-skel .ws-d-body {
+  display: block
+}
+
+.ws-skel .ws-d-main {
+  gap: 14px
+}
+
+.ws-d-body {
+  display: flex;
+  gap: 40px;
+  padding: 32px 40px 40px
+}
+
+.ws-d-main {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px
+}
+
+.ws-d-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
+
+.ws-d-title {
+  font-size: 2rem;
+  line-height: 1.22;
+  font-weight: 700;
+  color: var(--navy)
+}
+
+.ws-d-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none
+}
+
+.ws-d-meta li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--ws-chip);
+  border-radius: 999px;
+  padding: 8px 14px
+}
+
+.ws-d-meta li.ws-d-meta--low,
+.ws-d-meta li.ws-d-meta--full {
+  color: var(--ws-warn);
+  background: var(--ws-warn-bg)
+}
+
+.ws-d-meta--low .ws-ico {
+  color: currentColor
+}
+
+.ws-d-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.ws-d-section--learn {
+  gap: 14px
+}
+
+.ws-d-heading {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy)
+}
+
+.ws-d-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text)
+}
+
+.ws-d-learn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none
+}
+
+.ws-d-learn li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text)
+}
+
+.ws-d-check {
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--ws-sky-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.ws-d-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px
+}
+
+.ws-d-boxes--single {
+  grid-template-columns: minmax(0, 1fr)
+}
+
+.ws-d-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--ws-soft);
+  border: 1px solid var(--ws-border);
+  border-radius: 14px;
+  padding: 18px
+}
+
+.ws-d-box p {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--text)
+}
+
+.ws-d-box-head {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.ws-d-aside {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+/* Overlaps the cover band; it sits in the same scroll box, so it is not cut off. */
+.ws-d-presenters {
+  position: relative;
+  z-index: 1;
+  margin-top: -102px;
+  background: var(--white);
+  border: 1px solid var(--ws-border);
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(11, 57, 84, 0.1)
+}
+
+.ws-d-label {
+  line-height: 1.2;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 14px
+}
+
+.ws-d-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px
+}
+
+.ws-d-person + .ws-d-person {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ws-border)
+}
+
+.ws-d-avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: 0 6px 16px rgba(11, 57, 84, 0.18);
+  background: var(--ws-sky-soft)
+}
+
+.ws-d-avatar.ws-avatar--initials {
+  font-size: 2rem
+}
+
+.ws-d-person-name {
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy)
+}
+
+.ws-d-person-role {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-light)
+}
+
+.ws-d-person-bio {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text)
+}
+
+.ws-d-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--ws-soft);
+  border: 1px solid var(--ws-border);
+  border-radius: 18px;
+  padding: 22px
+}
+
+.ws-d-cta-seats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--navy)
+}
+
+.ws-d-cta-seats.ws-seats--low {
+  color: var(--ws-warn)
+}
+
+.ws-d-cta-seats.ws-seats--low .ws-ico {
+  color: currentColor
+}
+
+.ws-d-cta-note {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-light)
+}
+
+.ws-share .ws-ico {
+  color: currentColor
+}
+
+.ws-d-mobilebar {
+  display: none
+}
+
+.ws-more {
+  margin-top: 64px
+}
+
+@media (min-width: 768px) {
+  .ws-more .ws-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+.ws-more-title {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 24px
+}
+
+/* ---------- registration modal ---------- */
+
+.ws-reg-summary {
+  margin: 6px 0 22px;
+  padding: 14px 16px;
+  background: var(--ws-soft);
+  border: 1px solid var(--ws-border);
+  border-radius: 14px
+}
+
+.ws-reg-summary-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--navy)
+}
+
+.ws-reg-summary .ws-chip {
+  margin-top: 10px
+}
+
+.ws-field-error {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #c0392b
+}
+
+.form-group input.field-invalid {
+  border-color: #c0392b
+}
+
+.ws-fieldset {
+  border: 0;
+  min-width: 0
+}
+
+.ws-fieldset legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text)
+}
+
+.ws-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px
+}
+
+.form-group label.ws-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--text);
+  cursor: pointer
+}
+
+.form-group .ws-check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  accent-color: var(--navy);
+  cursor: pointer
+}
+
+.form-group .ws-check input:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px
+}
+
+.form-group.required label.ws-check::after {
+  content: none
+}
+
+.ws-check .ws-req {
+  color: #c0392b
+}
+
+.ws-reg .form-submit {
+  width: 100%;
+  margin-top: 8px
+}
+
+.ws-reg-error {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #c0392b
+}
+
+.ws-reg-success {
+  text-align: center;
+  padding: 40px 20px
+}
+
+.ws-reg-success h3 {
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 8px
+}
+
+.ws-reg-success h3:focus {
+  outline: none
+}
+
+.ws-reg-success p {
+  font-size: 0.9rem;
+  color: var(--text-light)
+}
+
+.ws-reg-success-contacts a {
+  color: inherit;
+  text-decoration: underline
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1199.98px) {
+  .ws-wrap {
+    padding: 0 40px
+  }
+
+  .ws-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  .ws-how {
+    width: 360px
+  }
+
+  .ws-hero-inner {
+    gap: 40px
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ws-hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px
+  }
+
+  .ws-how {
+    width: auto;
+    max-width: 520px
+  }
+
+  .ws-d-body {
+    gap: 28px;
+    padding: 28px 28px 32px
+  }
+
+  .ws-d-aside {
+    width: 250px
+  }
+
+  .ws-d-title {
+    font-size: 1.6rem
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ws-wrap {
+    padding: 0 16px
+  }
+
+  .ws-hero {
+    min-height: 520px
+  }
+
+  .ws-hero-inner {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    gap: 20px
+  }
+
+  .ws-hero-text {
+    gap: 14px
+  }
+
+  .ws-hero h1 {
+    font-size: 2.75rem
+  }
+
+  .ws-hero-eyebrow {
+    font-size: 0.72rem
+  }
+
+  .ws-hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.5
+  }
+
+  .ws-how {
+    max-width: none;
+    padding: 20px
+  }
+
+  .ws-how-title {
+    margin-bottom: 12px
+  }
+
+  .ws-how-steps {
+    gap: 10px
+  }
+
+  .ws-how-steps li {
+    font-size: 0.875rem
+  }
+
+  .ws-list {
+    padding: 40px 0 64px
+  }
+
+  .ws-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px
+  }
+
+  .ws-card-body {
+    padding: 0 18px 20px
+  }
+
+  .ws-contact {
+    padding-top: 36px
+  }
+
+  /* The registration modal becomes a full-screen sheet. */
+  #ws-register-modal {
+    padding: 0
+  }
+
+  #ws-register-modal .modal {
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0
+  }
+
+  .ws-detail-page {
+    padding: 88px 0 48px
+  }
+
+  .ws-back-row {
+    margin-bottom: 14px
+  }
+
+  /* Edge to edge on phones. */
+  .ws-detail {
+    margin: 0 -16px;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0
+  }
+
+  .ws-d-cover {
+    height: 170px;
+    border-radius: 0
+  }
+
+  .ws-d-cover-text {
+    left: 16px;
+    top: 18px
+  }
+
+  .ws-more {
+    margin-top: 48px
+  }
+
+  .ws-d-body {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px 28px
+  }
+
+  .ws-d-title {
+    font-size: 1.5rem
+  }
+
+  .ws-d-boxes {
+    grid-template-columns: minmax(0, 1fr)
+  }
+
+  .ws-d-aside {
+    width: auto
+  }
+
+  .ws-d-presenters {
+    margin-top: 0
+  }
+
+  /* On phones the action is pinned to the bottom of the screen instead. */
+  .ws-has-mobilebar .ws-d-cta-action {
+    display: none
+  }
+
+  .ws-has-mobilebar {
+    padding-bottom: 80px
+  }
+
+  .ws-d-mobilebar {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: var(--white);
+    border-top: 1px solid var(--ws-border);
+    box-shadow: 0 -6px 16px rgba(11, 57, 84, 0.08)
+  }
+}
+
+/* Narrow cards (3 columns just above 1200px, 2 columns at 768px, phones):
+   the site font is wide, so tighten the buttons. The fixed height fits two
+   lines, so a wrapped label keeps the buttons level across the row. */
+@container (max-width: 389px) {
+  .ws-card-body {
+    padding: 0 18px 20px
+  }
+
+  .ws-actions {
+    gap: 8px
+  }
+
+  .ws-actions .ws-btn {
+    font-size: 0.82rem;
+    padding: 8px 6px;
+    gap: 6px
+  }
+
+  .ws-actions .ws-btn .ws-ico {
+    display: none
+  }
+}
