@@ -28,7 +28,10 @@
   "halls": {
     "bulgaria":    { "bg": "Зала „България“", "en": "Bulgaria Hall" },
     "cherno-more": { "bg": "Зала „Черно море“", "en": "Black Sea Hall" },
-    "varna":       { "bg": "Зала „Варна“", "en": "Varna Hall" }
+    "varna":       { "bg": "Зала „Варна“", "en": "Varna Hall" },
+    "odessos":     { "bg": "Зала „Одесос“, хотел „Черно море“", "en": "Odessos Hall, Hotel Cherno More" },
+    "vip-3":       { "bg": "Зала VIP 3, хотел „Черно море“ (до ресторанта)", "en": "VIP 3 Hall, Hotel Cherno More (next to the restaurant)" },
+    "galata":      { "bg": "Зала „Галата“, хотел „Черно море“", "en": "Galata Hall, Hotel Cherno More" }
   },
 
   "workshops": [
@@ -36,9 +39,9 @@
       "id": "winning-ads-ai",
       "visible": true,
       "date": "2026-10-07",
-      "start": "13:00",
-      "end": "14:30",
-      "hall": {"bg": "Хотел „Черно море“", "en": "Hotel Cherno More"},
+      "start": "13:15",
+      "end": "14:45",
+      "hall": "odessos",
       "topic": "marketing",
       "title": {"bg": "Процес за намиране и създаване на печеливши реклами с помощта на AI", "en": "A process for finding and creating winning ads using AI"},
       "summary": {"bg": "Научи как да откриваш работещи рекламни модели, да разбираш защо те работят и да ги превръщаш в оригинални кампании за своя бизнес — по-бързо, по-умно и с по-малко излишни тестове.", "en": "Learn how to discover effective ad models, understand why they work, and turn them into original campaigns for your business—faster, smarter, and with fewer wasted tests."},
@@ -71,9 +74,9 @@
       "id": "linkedin-content-sprint",
       "visible": true,
       "date": "2026-10-07",
-      "start": "13:00",
-      "end": "14:30",
-      "hall": {"bg": "Хотел „Черно море“", "en": "Hotel Cherno More"},
+      "start": "13:15",
+      "end": "14:45",
+      "hall": "vip-3",
       "topic": "marketing",
       "title": {"bg": "LinkedIn Content Sprint", "en": "LinkedIn Content Sprint"},
       "summary": {"bg": "Изградете своята LinkedIn стратегия. Създайте съдържание за 90 дни. Планирайте първите си публикации още преди края на уъркшопа.", "en": "Build your LinkedIn strategy. Create 90 days of content. Schedule your first posts before you leave."},
@@ -108,7 +111,7 @@
       "date": "2026-10-07",
       "start": "13:15",
       "end": "14:00",
-      "hall": {"bg": "Хотел „Черно море“", "en": "Hotel Cherno More"},
+      "hall": "galata",
       "topic": "cybersecurity",
       "title": {"bg": "Ще одобрите ли този превод? - AI измами, deepfake и последната линия на защита", "en": "Would you approve this payment? - AI fraud, Deepfakes, and the Last Line of Defense"},
       "summary": {"bg": "Научи как съвременните AI-базирани измами атакуват не само технологиите, а доверието, комуникацията и бизнес процесите — и как организацията може да се защити с ясни и приложими мерки.", "en": "Learn how modern AI-enabled fraud targets not only technology, but also trust, communication, and business processes — and how organizations can defend themselves with clear, practical controls."},
