@@ -209,8 +209,8 @@
       roleEn: 'International Expert in Applied Artificial Intelligence @ Kordon Consulting',
       topicBg: 'Приложен бизнес изкуствен интелект - от тъмните векове към агентното бъдеще',
       topicEn: 'Applied Business AI - From the Dark Ages to the Agentic Future',
-      workshopTopicBg: 'Темата предстои да бъде обявена',
-      workshopTopicEn: 'Topic to be announced',
+      workshopTopicBg: 'Адаптиране на бизнеса към модерен начин на работа, задвижван от AI',
+      workshopTopicEn: 'Adjusting the Business towards a Modern AI-driven Mode of Operation',
       bioBg: [
         'Д-р Артур Кордон е международно признат експерт и един от пионерите в прилагането на изкуствения интелект в индустрията. Той свързва научните достижения в областта на AI с реалните потребности на бизнеса, превръщайки технологиите в практически решения с измерима икономическа стойност.',
         'Сред реализираните от него приложения са дигитални двойници, системи за предиктивна поддръжка, интелигентен анализ за намаляване на енергийните разходи, прогнозиране на цените на суровини и оптимизиране на офис пространства.',

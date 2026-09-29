@@ -139,6 +139,42 @@
       "seats": {"total": null, "left": null},
       "status": "open",
       "registration": {"type": "link", "url": "https://forms.gle/kEzXfWT489zmgC2n9"}
+    },
+    {
+      "id": "modern-ai-business",
+      "visible": true,
+      "date": "2026-10-07",
+      "start": "09:10",
+      "end": "10:30",
+      "hall": "varna",
+      "topic": "ai",
+      "title": {"bg": "Адаптиране на бизнеса към модерен начин на работа, задвижван от AI", "en": "Adjusting the Business towards a Modern AI-driven Mode of Operation"},
+      "summary": {"bg": "Цялостен и реалистичен подход за адаптиране към новите, сравнително евтини възможности за ускоряване на производителността с модерен AI.", "en": "A comprehensive, realistic approach for adapting to the new, relatively cheap opportunities to accelerate productivity with modern AI."},
+      "details": {
+        "description": {"bg": "Последните технологични пробиви в автоматичното генериране на код, бързата разработка и индустриалното внедряване на AI агенти отварят вратата към мащабни бизнес приложения. Основното предизвикателство обаче е да се върви в крак с огромния нов потенциал на модерния AI и да се разбира той. Ще споделим и обсъдим съвети, базирани на поуки от богатия опит с множество индустриални AI приложения в четири големи американски корпорации. Фокусът ще бъде върху цялостен, реалистичен подход за адаптиране към новите, сравнително евтини възможности за ускоряване на производителността с модерен AI.", "en": "Recent technological breakthroughs in automatic code generation, rapid development, and the industrial adoption of AI-based agents are opening the door to large-scale business applications. The key challenge, however, is keeping pace and understanding the enormous new potential of modern AI. We will share and discuss advice based on lessons from extensive experience with many AI industrial applications across four large US corporations. The focus will be on a comprehensive, realistic approach for adapting to the new, relatively cheap opportunities to accelerate productivity with modern AI."},
+        "learn": [
+          {"bg": "Споделен опит от различни случаи на употреба на бизнес AI приложения в четири големи американски корпорации.", "en": "Shared experience from various use cases of business AI applications across four big American corporations."},
+          {"bg": "Поуки от адаптирането на бизнеса при въвеждането на AI.", "en": "Lessons learned during business adjustment towards AI introduction in a business."},
+          {"bg": "Оценка на възможностите и предизвикателствата в настоящата динамична среда на модерния AI.", "en": "Estimate of the opportunities and challenges of the current dynamic environment of modern AI."},
+          {"bg": "Предложен подход за ефективно адаптиране на бизнеса към модерния AI.", "en": "A proposed approach for effectively adapting the business to modern AI."},
+          {"bg": "Оценка на потенциалните усилия за внедряване на модерен AI във вашия бизнес.", "en": "Evaluate potential efforts for modern AI adoption in your business."},
+          {"bg": "Разбиране защо ускоряването на производителността с модерен AI е от решаващо значение в новата конкурентна среда.", "en": "Understanding the ultimate importance of the need to accelerate productivity with modern AI in the new competitive landscape."}
+        ],
+        "audience": {"bg": "За всеки, който иска бизнесът му да оцелее, да остане конкурентоспособен и да просперира в близкото бъдеще чрез модерен AI. За всеки, който има смелостта и творческата енергия да изгради нов бизнес, използвайки възможностите на модерния AI.", "en": "For everyone who wants their business to survive, stay competitive, and prosper in the near future by using modern AI. For everyone with the guts and creative energy to build a new business using modern AI opportunities."}
+      },
+      "presenters": [
+        {
+          "name": {"bg": "Dr. Arthur Kordon", "en": "Dr. Arthur Kordon"},
+          "role": {"bg": "Международен експерт по приложен изкуствен интелект, Kordon Consulting", "en": "International Expert in Applied Artificial Intelligence, Kordon Consulting"},
+          "photo": "/images/speakers/arthur-kordon.jpg",
+          "photoPosition": "center 25%",
+          "bio": {"bg": "Д-р Артур Кордон е международно признат експерт и един от пионерите в прилагането на изкуствения интелект в индустрията. Той свързва научните достижения в областта на AI с реалните потребности на бизнеса, превръщайки технологиите в практически решения с измерима икономическа стойност. Сред реализираните от него приложения са дигитални двойници, системи за предиктивна поддръжка, интелигентен анализ за намаляване на енергийните разходи, прогнозиране на цените на суровини и оптимизиране на офис пространства. Д-р Кордон участва в международни научни и програмни комитети към IEEE и IFAC. Притежава американски патент и е автор на повече от 70 публикации, три книги и 16 глави в специализирани издания в областта на приложния изкуствен интелект и науката за данните.", "en": "Dr. Arthur Kordon is an internationally recognized expert and one of the pioneers of applying artificial intelligence in industry. He connects scientific advances in AI with the real needs of business, turning technology into practical solutions with measurable economic value. His delivered applications include digital twins, predictive maintenance systems, intelligent analytics for reducing energy costs, raw material price forecasting, and office space optimization. Dr. Kordon serves on international scientific and program committees of the IEEE and IFAC. He holds a US patent and is the author of more than 70 publications, three books, and 16 chapters in specialized editions in the field of applied artificial intelligence and data science."}
+        }
+      ],
+      "cover": {"type": "graphic", "graphic": "ai-network", "bg": "#173a56"},
+      "seats": {"total": null, "left": null},
+      "status": "soon",
+      "registration": null
     }
   ]
 }
