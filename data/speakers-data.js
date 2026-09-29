@@ -128,7 +128,7 @@
       id: 'martin-kuvandzhiev', track: 'ai',
       img: '/images/speakers/martin-kuvandzhiev-2.png?v=20260730', alt: 'Martin Kuvandzhiev',
       objectPosition: 'center 8%',
-      name: 'Мартин Куванджиев',
+      name: 'Мартин Кувънджиев',
       nameEn: 'Martin Kuvandzhiev',
       role: 'Founder @ Encorp | Co-founder, Bitcoin Gold',
       topicBg: 'Blockchain, fintech и AI: следващата вълна на иновации',
@@ -223,6 +223,253 @@
       ],
       sessionDescBg: 'Практическа рамка за превръщането на модели на изкуствен интелект и технологични възможности в устойчиви бизнес резултати.',
       sessionDescEn: 'A practical framework for transforming AI models and technology opportunities into sustainable business results.'
+    },
+    {
+      id: 'valentin-kisimov', track: 'ai',
+      img: '/images/speakers/valentin-kisimov.jpg?v=20260916', alt: 'Valentin Kisimov',
+      objectPosition: 'center top',
+      name: 'проф. Валентин Кисимов',
+      nameEn: 'Prof. Valentin Kisimov',
+      role: 'Professor, DSc @ University of National and World Economy (UNWE)',
+      roleBg: 'Професор, д.н. @ УНСС',
+      roleEn: 'Professor, DSc @ University of National and World Economy (UNWE)',
+      topicBg: 'Център за компетентност „Дигитализация на икономиката в среда на големи данни“ - дигитализация и подход с изкуствен интелект',
+      topicEn: 'Center of Competence "Digitalization of the Economy in Big Data Ecosystem" - Digitalization and AI Approach',
+      bioBg: [
+        'Проф. д.н. Валентин Кисимов преподава в Университета за национално и световно стопанство и работи по Центъра за компетентност „Дигитализация на икономиката в среда на големи данни“.'
+      ],
+      bioEn: [
+        'Prof. Valentin Kisimov, DSc, teaches at the University of National and World Economy and works on the Center of Competence "Digitalization of the Economy in Big Data Ecosystem".'
+      ],
+      sessionDescBg: 'Фокус на Центъра за компетентност, който използва системите за големи данни в дигитализацията на икономическите бизнес процеси и в прилагането на изкуствен интелект в икономиката.',
+      sessionDescEn: 'A focus on the Center of Competence, which applies big data systems to the digitalization of economic business processes and to the adoption of artificial intelligence across the economy.',
+      takeawaysBg: 'Как големите данни подпомагат дигитализацията на бизнес процесите и прилагането на изкуствен интелект.',
+      takeawaysEn: 'How big data supports the digitalization of business processes and the adoption of artificial intelligence.'
+    },
+    {
+      id: 'cvetan-rusimov', track: 'ai',
+      img: '/images/speakers/cvetan-rusimov.jpg?v=20260916', alt: 'Cvetan Rusimov',
+      objectPosition: 'center top',
+      name: 'Цветан Русимов',
+      nameEn: 'Cvetan Rusimov',
+      role: 'Chief Executive Officer @ Imperia Online | Board Member, CreaTech Bulgaria',
+      roleBg: 'Изпълнителен директор @ Imperia Online | Член на борда, CreaTech Bulgaria',
+      roleEn: 'Chief Executive Officer @ Imperia Online | Board Member, CreaTech Bulgaria',
+      topicBg: 'Изкуственият интелект може да го създаде. Но кой ще го иска?',
+      topicEn: 'AI Can Build It. Who Will Want It?',
+      bioEn: [
+        'Serial entrepreneur and gaming industry executive with 25 years of management experience. Board Member of CreaTech Bulgaria. Joined Imperia Online as Chief Operating Officer in 2008 and has served as Chief Executive Officer since 2023. Extensive experience in business development, product strategy, operational leadership, and building high-performing technology and product teams.'
+      ],
+      bioBg: [
+        'Сериен предприемач и ръководител в гейминг индустрията с 25 години управленски опит. Член на борда на CreaTech Bulgaria. Присъединява се към Imperia Online като оперативен директор през 2008 г. и е изпълнителен директор от 2023 г. Има богат опит в бизнес развитието, продуктовата стратегия, оперативното ръководство и изграждането на високоефективни технологични и продуктови екипи.'
+      ],
+      sessionDescEn: 'What happens when making a digital product gets easier - but making people care stays hard? Starting with Sensor Tower\'s State of Gaming 2026, a gaming CEO takes a fast, candid look at how AI could reshape games, iGaming, and all digital products over the next five years. Expect bigger ambitions for small teams, uncomfortable questions about jobs, and a look at what still makes a product worth choosing. We will explore what this means for businesses, universities, and cities across Bulgaria and the Black Sea region that want to develop talent and create products the world actually wants.',
+      sessionDescBg: 'Какво се случва, когато създаването на цифров продукт става по-лесно, а спечелването на вниманието на хората остава също толкова трудно? Тръгвайки от Sensor Tower State of Gaming 2026, изпълнителен директор в гейминга хвърля бърз и откровен поглед върху това как изкуственият интелект може да преобрази игрите, iGaming и всички цифрови продукти през следващите пет години. Очаквайте по-големи амбиции за малките екипи, неудобни въпроси за работните места и поглед върху това кое все още прави един продукт достоен за избор. Ще разгледаме какво означава това за бизнеса, университетите и градовете в България и Черноморския регион, които искат да развиват таланти и да създават продукти, които светът наистина иска.',
+      takeawaysEn: 'Why faster and cheaper production does not automatically deliver better products or more customers. How AI could reshape product creation and development teams by 2031. Which tasks face automation pressure, and how juniors become tomorrow\'s experts. How local talent can build and own globally competitive products.',
+      takeawaysBg: 'Защо по-бързото и по-евтино производство не води автоматично до по-добри продукти или повече клиенти. Как изкуственият интелект може да преобрази създаването на продукти и развойните екипи до 2031 г. Кои задачи са под натиска на автоматизацията и как младшите специалисти се превръщат в утрешните експерти. Как местните таланти могат да изграждат и притежават глобално конкурентни продукти.'
+    },
+    {
+      id: 'nikolay-valev', track: 'ai',
+      img: '/images/speakers/nikolay-valev-profile.jpg?v=20260929', alt: 'Nikolay Valev',
+      objectPosition: '70% center',
+      name: 'Николай Вълев',
+      nameEn: 'Nikolay Valev',
+      role: 'Founder @ Work Spot Ai',
+      roleBg: 'Основател @ Work Spot Ai',
+      roleEn: 'Founder @ Work Spot Ai',
+      topicBg: 'Как модерните бизнеси ще използват AI през следващите 5 години',
+      topicEn: 'How modern businesses will use AI over the next 5 years',
+      bioBg: [
+        'Николай Вълев е основател на софтуерната компания Work Spot Ai.'
+      ],
+      bioEn: [
+        'Nikolay Valev is the founder of the software company Work Spot Ai.'
+      ],
+      sessionDescBg: 'Кои инструменти и стратегии ще се наложи на бизнесите да използват, за да останат в новата реалност през 2030 г.?',
+      sessionDescEn: 'Which tools and strategies will businesses need to use in order to stay in the new reality of 2030?',
+      takeawaysBg: 'Маркетинг и тенденции.',
+      takeawaysEn: 'Marketing and trends.'
+    },
+    {
+      id: 'ruzha-pancheva', track: 'ai',
+      img: '/images/speakers/ruzha-pancheva.jpg?v=20260929', alt: 'Ruzha Pancheva',
+      objectPosition: 'center top',
+      name: 'проф. Ружа Панчева',
+      nameEn: 'Prof. Ruzha Pancheva',
+      role: 'Professor @ Medical University – Varna | Deputy Director of the Research Institute',
+      roleBg: 'Професор @ Медицински университет – Варна | Заместник-директор на Научноизследователския институт',
+      roleEn: 'Professor @ Medical University – Varna | Deputy Director of the Research Institute',
+      topicBg: 'Изкуствен интелект в подкрепа на детското хранене: от научните данни до персонализираните препоръки',
+      topicEn: 'Artificial intelligence in support of child nutrition: from scientific data to personalized recommendations',
+      bioBg: [
+        'Проф. д-р Ружа Панчева, д.м., е педиатър, детски гастроентеролог и специалист по хранене и диететика, професор в Медицинския университет – Варна и заместник-директор на Научноизследователския институт. Работи в областта на детското хранене, персонализираната оценка на хранителния статус и приложението на съвременни технологии в медицината.'
+      ],
+      bioEn: [
+        'Prof. Ruzha Pancheva, MD, PhD, is a pediatrician, pediatric gastroenterologist and specialist in nutrition and dietetics, Professor at the Medical University – Varna and Deputy Director of the Research Institute. Her work focuses on child nutrition, personalized assessment of nutritional status and the application of modern technologies in medicine.'
+      ],
+      sessionDescBg: 'Презентацията представя дигиталната платформа diet-autism-kids.bg, разработена в подкрепа на храненето при деца с аутизъм. Акцентът е върху използването на изкуствен интелект за структуриране на експертно знание, индивидуализиране на препоръките и подпомагане на родителите и специалистите при вземане на решения. Ще бъдат представени концепцията, научната основа и практическото приложение на платформата, както и потенциалът на AI за персонализирана диетична подкрепа.',
+      sessionDescEn: 'The presentation introduces the digital platform diet-autism-kids.bg, developed to support nutrition in children with autism. The focus is on using artificial intelligence to structure expert knowledge, individualize recommendations and support parents and specialists in decision-making. The concept, scientific basis and practical application of the platform will be presented, along with the potential of AI for personalized dietary support.',
+      takeawaysBg: 'Участниците ще видят как изкуственият интелект може да подпомага храненето на деца с аутизъм. Ще научат как работи платформата, как може да бъде полезна за родители и специалисти и какви са възможностите и ограниченията на AI при даване на хранителни препоръки.',
+      takeawaysEn: 'Participants will see how artificial intelligence can support the nutrition of children with autism. They will learn how the platform works, how it can be useful to parents and specialists, and what the possibilities and limitations of AI are in providing nutritional recommendations.'
+    },
+    {
+      id: 'todor-madzharov', track: 'ai',
+      img: '/images/speakers/todor-madzharov.jpg?v=20260929', alt: 'Todor Madzharov',
+      objectPosition: 'center top',
+      name: 'Тодор Маджаров',
+      nameEn: 'Todor Madzharov',
+      role: 'Co-founder @ MEAVO',
+      roleBg: 'Съосновател @ MEAVO',
+      roleEn: 'Co-founder @ MEAVO',
+      topicBg: 'Пътят на MEAVO с AI: изграждане на единна корпоративна платформа за 6 месеца, която задвижва операциите от край до край – от веригата на доставки и производството до продажбите и обслужването на клиенти',
+      topicEn: 'MEAVO’s AI Journey: Building a unified enterprise platform in 6 months to power end-to-end operations – from supply chain and manufacturing to sales and customer support',
+      bioBg: [
+        'Тодор Маджаров е съосновател на MEAVO – екологична марка, родена в коуъркинг пространство в Лондон. Възпитаник на Bayes Business School и експерт по growth маркетинг, той развива MEAVO в устойчиво глобално начинание, а днес помага на други основатели да изграждат мащабируеми организации с голямо въздействие.'
+      ],
+      bioEn: [
+        'Todor Madzharov is the co-founder of MEAVO, an eco-friendly brand born in a London coworking space. A Bayes Business School graduate and growth marketing expert, he scaled MEAVO into a sustainable global venture and now helps other founders build scalable, high-impact organisations.'
+      ],
+      sessionDescBg: 'През последните 6 до 9 месеца MEAVO трансформира бизнес операциите си, като използва изкуствен интелект, за да изгради напълно интегрирана, собствена ERP платформа. Сесията проследява пътя ни в разработването на цялостна екосистема от приложения, която оптимизира оперативните процеси – от веригата на доставки, производството и логистиката до продажбите, обслужването на клиенти и следпродажбеното обслужване.',
+      sessionDescEn: 'Over the past 6 to 9 months, MEAVO transformed its business operations by leveraging AI to build a fully integrated, custom ERP platform. This session explores our journey in developing an end-to-end ecosystem of applications – streamlining operational processes from supply chain, manufacturing and logistics to sales, customer support and after-sales service.',
+      takeawaysBg: 'Как да разпознаете къде изкуственият интелект може да създаде реална оперативна стойност. Как да изградите бизнес екосистема, задвижвана от AI. Как да превърнете AI от експеримент в ежедневна бизнес инфраструктура.',
+      takeawaysEn: 'How to identify where AI can create real operational value. How to build an AI-powered business ecosystem. How to turn AI from an experiment into everyday business infrastructure.'
+    },
+    {
+      id: 'nikolay-petkanov', track: 'ai',
+      img: '/images/speakers/nikolay-petkanov.jpg?v=20260929', alt: 'Nikolay Petkanov',
+      objectPosition: 'center top',
+      name: 'Николай Петканов',
+      nameEn: 'Nikolay Petkanov',
+      role: 'Founder & CEO @ MBRAND',
+      roleBg: 'Основател и изпълнителен директор @ MBRAND',
+      roleEn: 'Founder & CEO @ MBRAND',
+      topicBg: 'От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI',
+      topicEn: 'From attention to opportunity. How businesses earn trust and get chosen in the age of AI',
+      bioBg: [
+        'Николай Петканов е основател и изпълнителен директор на MBRAND, предприемач, бизнес и маркетинг консултант, обучител и лектор. С близо 30 години опит той помага на компаниите да превръщат дигиталната стратегия, AI и продажбите в устойчив растеж.'
+      ],
+      bioEn: [
+        'Nikolay Petkanov is the founder and CEO of MBRAND, an entrepreneur, business and marketing consultant, trainer and speaker. With nearly 30 years of experience, he helps companies turn digital strategy, AI and sales into sustainable growth.'
+      ],
+      sessionDescBg: 'AI ще направи съдържанието, рекламите, анализите и кампаниите по-лесни. Но няма да направи автоматично никого предпочитан. Как тогава клиентите ще избират?',
+      sessionDescEn: 'AI will make content, advertising, analytics and campaigns easier. But it will not automatically make anyone the preferred choice. So how will customers choose?',
+      takeawaysBg: 'Участниците ще си отговорят: коя е тази една възможност, която искам да създам през следващите 90 дни, и какво трябва да знаят хората за мен, за да я изберат?',
+      takeawaysEn: 'Participants will answer for themselves: what is the one opportunity I want to create over the next 90 days, and what do people need to know about me in order to choose it?'
+    },
+    {
+      id: 'megan-brzoska', track: 'ai',
+      img: '/images/speakers/megan-brzoska-profile.jpg?v=20260929', alt: 'Megan Brzoska',
+      objectPosition: 'center top',
+      name: 'Megan Brzoska',
+      role: 'AI & Marketing Professional | Employer & Personal Branding',
+      roleBg: 'Специалист по AI и маркетинг | Работодателска и лична марка',
+      roleEn: 'AI & Marketing Professional | Employer & Personal Branding',
+      topicBg: 'Предимството LinkedIn: дигиталната ви репутация започва от LinkedIn',
+      topicEn: 'The LinkedIn Advantage: Your Digital Reputation Starts on LinkedIn',
+      bioBg: [
+        'Megan Brzoska е специалист по AI и маркетинг с фокус върху работодателската и личната марка. Тя помага на бизнеса да използва AI и съвременни маркетингови стратегии, за да укрепи марката си, да повиши видимостта си и да превърне онлайн присъствието си в измерим ръст на приходите.'
+      ],
+      bioEn: [
+        'Megan Brzoska is an AI and marketing professional specialising in employer and personal branding. She helps businesses use AI and modern marketing strategies to strengthen their brand, increase visibility and turn their online presence into measurable revenue growth.'
+      ],
+      sessionDescBg: 'Дигиталната ви репутация започва още преди първия разговор - и често това се случва в LinkedIn. Лекцията разглежда как бизнесът и професионалистите могат да използват LinkedIn, за да изграждат авторитет, да повишават видимостта си и да създават доверие в голям мащаб. Ще научите как личната марка, работодателската марка и съвременните маркетингови стратегии работят заедно, за да влияят на решенията за покупка и да стимулират ръста на приходите.',
+      sessionDescEn: 'Your digital reputation starts before the first conversation - and LinkedIn is often where it begins. This talk explores how businesses and professionals can use LinkedIn to build authority, increase visibility and create trust at scale. You will discover how personal branding, employer branding and modern marketing strategies work together to influence buying decisions and drive revenue.',
+      takeawaysBg: 'Участниците ще научат как да изградят по-силна дигитална репутация в LinkedIn, как да създават съдържание, което повишава видимостта и доверието към тях, и как да използват личната марка като част от съвременна стратегия за растеж на бизнеса. Ще си тръгнат с практични идеи, които могат да приложат веднага, за да подобрят присъствието си в LinkedIn, да укрепят марката си и да подкрепят ръста на приходите.',
+      takeawaysEn: 'Attendees will learn how to build a stronger digital reputation on LinkedIn, create content that increases visibility and credibility, and use personal branding as part of a modern business growth strategy. They will leave with practical ideas they can immediately apply to improve their LinkedIn presence, strengthen their brand and support revenue growth.'
+    },
+    {
+      id: 'nadezhda-dinisheva', track: 'ai',
+      img: '/images/speakers/nadezhda-dinisheva.jpg?v=20260929', alt: 'Nadezhda Dinisheva',
+      objectPosition: 'center top',
+      name: 'Надежда Динишева',
+      nameEn: 'Nadezhda Dinisheva',
+      role: 'Certified Coach and Mentor | IT Sales and Business Partnerships Expert',
+      roleBg: 'Сертифициран коуч и ментор | Експерт по IT продажби и бизнес партньорства',
+      roleEn: 'Certified Coach and Mentor | IT Sales and Business Partnerships Expert',
+      topicBg: 'Моето изживяване с AI',
+      topicEn: 'My Experience with AI',
+      bioBg: [
+        'Надежда Динишева е експерт с дългогодишен международен опит в IT индустрията, продажбите и развитието на бизнес партньорства. Тя е сертифициран коуч и ментор с фокус върху лидерството, развитието на хора и бизнес трансформацията.'
+      ],
+      bioEn: [
+        'Nadezhda Dinisheva is an expert with many years of international experience in the IT industry, sales and business partnership development. She is a certified coach and mentor focused on leadership, people development and business transformation.'
+      ],
+      sessionDescBg: 'Един prompt в 7:36 сутринта промени начина, по който работя. Две години с ChatGPT и Copilot: какво правят отлично, къде грешат с пълна увереност и кои навици останаха трайно в ежедневието ми. Чуйте една лична история от моето AI пътешествие.',
+      sessionDescEn: 'One prompt at 7:36 in the morning changed the way I work. Two years with ChatGPT and Copilot: what they do brilliantly, where they get things wrong with complete confidence, and which habits have stuck in my daily routine for good. Hear a personal story from my AI journey.',
+      takeawaysBg: 'Стимулиране на желанието за тестване и използване на Microsoft 365 Copilot.',
+      takeawaysEn: 'Encouraging the audience to try out and start using Microsoft 365 Copilot.'
+    },
+    {
+      id: 'teodor-stavrov', track: 'ai',
+      img: '/images/speakers/teodor-stavrov.jpg?v=20260929', alt: 'Teodor Stavrov',
+      objectPosition: '45% center',
+      name: 'Теодор Ставров',
+      nameEn: 'Teodor Stavrov',
+      role: 'AI Team Manager @ LIREX BS',
+      roleBg: 'Мениджър на AI екип @ LIREX BS',
+      roleEn: 'AI Team Manager @ LIREX BS',
+      topicBg: 'AI не стои просто на едно място',
+      topicEn: 'AI Doesn\'t Just Sit in One Place',
+      bioBg: [
+        'Теодор Ставров има над 16 години професионален опит в IT технологиите, поддръжката на ИТ инфраструктури и управлението на екипи. Близо 10 години ръководи екипа за сървърна поддръжка в LIREX, а през последните 6 месеца развива AI & Automation екипа LISA.',
+        'Теодор е инженер по „Компютърни системи и технологии“ от Техническия университет - Варна. Притежава сертификати MCP и ITIL, както и редица професионални квалификации в областта на информационните технологии.'
+      ],
+      bioEn: [
+        'Teodor Stavrov has over 16 years of professional experience in IT technologies, IT infrastructure support and team management. For nearly 10 years, he has led the Server Support Team at LIREX, and over the past six months he has been developing the LISA AI & Automation team.',
+        'Teodor holds a degree in Computer Systems and Technology Engineering from the Technical University of Varna. He holds MCP and ITIL certifications, as well as a range of professional qualifications in the field of information technology.'
+      ],
+      sessionDescBg: 'В това представяне ще покажем как AI асистентът „LISA Bubble“ въвежда корпоративния AI в ежедневния работен процес, като свързва хората с необходимата им AI инфраструктура и информация. Ще разгледаме и как AI агентите и автоматизацията могат да работят с множество вътрешни и външни източници - да търсят, анализират, обединяват и проследяват информация и да предоставят необходимите данни в точния момент.',
+      sessionDescEn: 'In this presentation, we will show how the AI assistant "LISA Bubble" brings corporate AI into the everyday workflow, connecting people with the AI infrastructure and information they need. We will also explore how AI agents and automation can work across multiple internal and external sources - searching, analysing, combining and monitoring information, and delivering relevant insights when they are needed.',
+      takeawaysBg: 'Участниците ще придобият по-задълбочено разбиране за това как корпоративният AI и AI асистентите могат да подпомагат ежедневната работа. Представянето на AI асистента „LISA Bubble“ ще покаже как автоматизацията и достъпът до информация от различни източници могат да направят работните процеси по-ефективни, да освободят време от повтарящи се задачи и да осигурят достъп до необходимата информация в точния момент.',
+      takeawaysEn: 'Participants will gain a deeper understanding of how enterprise AI and AI assistants can support everyday work. The presentation of the AI assistant "LISA Bubble" will demonstrate how automation and access to information across multiple sources can make workflows more efficient, free up time spent on repetitive tasks, and ensure that relevant information is available when it matters most.'
+    },
+    {
+      id: 'kalin-kostadinov', track: 'smart-city',
+      img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
+      objectPosition: 'center top',
+      name: 'Калин Костадинов',
+      nameEn: 'Kalin Kostadinov',
+      role: 'City Living Lab Manager @ GATE Institute',
+      roleBg: 'Мениджър City Living Lab @ Институт GATE',
+      roleEn: 'City Living Lab Manager @ GATE Institute',
+      topicBg: 'От данни към решения: цифровият близнак на София и City Living Lab на практика',
+      topicEn: 'From Data to Decisions: Sofia\'s Digital Twin and City Living Lab in Practice',
+      bioEn: [
+        'City Living Lab Manager at GATE Institute. Leads the Lab\'s work on turning urban data into decisions - from sensor networks and mobile mapping to Sofia\'s 3D digital twin and privacy-preserving mobility data - across EU research projects and partnerships with cities and industry.'
+      ],
+      bioBg: [
+        'Калин Костадинов е мениджър на City Living Lab в Институт GATE. Ръководи работата на лабораторията по превръщането на градските данни в решения - от сензорни мрежи и мобилно картографиране до 3D цифровия близнак на София и данни за мобилност със запазена поверителност - в рамките на европейски изследователски проекти и партньорства с градове и индустрия.'
+      ],
+      sessionDescEn: 'GATE Institute\'s City Living Lab in Sofia works with the municipality to turn city data into better decisions for the city and its residents. The talk shows how this is done in practice: which data the Lab collects - noise and pedestrian sensors, LiDAR and 360 degree street scans - and how it comes together in a 3D digital twin of the city to answer concrete questions about pedestrian flows, noise, sensor placement and planning scenarios. We share lessons from Sofia on what a city needs to get started. The session then looks ahead to what the Lab is building next: CityRhythm, a travel-tracking app that detects residents\' journeys passively while only legally anonymous aggregates ever reach the city, and the data spaces and AI-ready tools that could let cities, researchers and companies build on shared city data.',
+      sessionDescBg: 'City Living Lab на Институт GATE в София работи заедно с общината, за да превърне градските данни в по-добри решения за града и неговите жители. Лекцията показва как това се случва на практика: какви данни събира лабораторията - сензори за шум и пешеходен поток, LiDAR и 360-градусово сканиране на улиците - и как те се обединяват в 3D цифров близнак на града, който отговаря на конкретни въпроси за пешеходните потоци, шума, разполагането на сензори и сценариите за планиране. Споделяме поуките от София за това какво е нужно на един град, за да започне. След това сесията поглежда напред към следващото, което лабораторията изгражда: CityRhythm - приложение, което пасивно засича пътуванията на жителите, като до града достигат само законово анонимни агрегирани данни, както и пространствата за данни и инструментите, готови за изкуствен интелект, които биха позволили на градове, изследователи и компании да надграждат върху споделени градски данни.',
+      takeawaysEn: 'Which data a city can realistically collect today - fixed sensors, mobile mapping, residents\' phones, municipal data - what each is good for and where it falls short. How a 3D digital twin becomes a working tool for city management rather than a showpiece: linking data to decisions on pedestrian flows, noise, sensor placement and planning scenarios. A privacy architecture for mobility data that never gives the city raw locations - only legally anonymous aggregates leave residents\' phones. A practical starting path for a city without a living lab, using data it already has. Where this is heading: data spaces and AI-ready tools that could let companies and researchers build on shared city data.',
+      takeawaysBg: 'Какви данни един град може реалистично да събира днес - стационарни сензори, мобилно картографиране, телефоните на жителите, общински данни - за какво е подходящ всеки източник и къде са границите му. Как 3D цифровият близнак се превръща в работещ инструмент за управление на града, а не във витрина: свързване на данните с решения за пешеходните потоци, шума, разполагането на сензори и сценариите за планиране. Архитектура за поверителност при данните за мобилност, при която градът никога не получава сурови локации - телефоните на жителите напускат само законово анонимни агрегирани данни. Практичен начален път за град без living lab, използвайки данните, с които вече разполага. Накъде води всичко това: пространства за данни и инструменти, готови за изкуствен интелект, които биха позволили на компании и изследователи да надграждат върху споделени градски данни.'
+    },
+    {
+      id: 'veselina-yankova', track: 'smart-city',
+      img: '/images/speakers/veselina-yankova.jpg?v=20260929', alt: 'Veselina Yankova',
+      objectPosition: 'center top',
+      name: 'д-р Веселина Янкова',
+      nameEn: 'Dr. Veselina Yankova',
+      role: 'Academic Program Chair, BSc Innovation and Entrepreneurship @ Higher Colleges of Technology (UAE)',
+      roleBg: 'Ръководител на бакалавърска програма „Иновации и предприемачество“ @ Higher Colleges of Technology (ОАЕ)',
+      roleEn: 'Academic Program Chair, BSc Innovation and Entrepreneurship @ Higher Colleges of Technology (UAE)',
+      topicBg: 'Градът, който спираш да забелязваш',
+      topicEn: 'The City You Stop Noticing',
+      bioBg: [
+        'Д-р Веселина Янкова е родена във Варна, където започва професионалния си път в Техническия университет - Варна. Има над 20 години академичен опит, като последните единадесет от тях са в Higher Colleges of Technology (HCT) - най-голямата институция за висше образование в Обединените арабски емирства, с над 23 000 студенти в седем кампуса, където е ръководител на бакалавърската програма „Иновации и предприемачество“.',
+        'Сред настоящите ѝ области на работа са предприемачеството като практика с фокус върху студентските стартъпи; партньорството с индустрията чрез курсове, разработвани и преподавани съвместно с практици, съвместни проекти и студентски стажове; както и интегрирането на изкуствения интелект в академичните курсове.',
+        'Д-р Янкова е Fellow на Higher Education Academy, Великобритания (FHEA), и член на Chartered Institute of Marketing, Великобритания. Сред професионалните ѝ квалификации са Microsoft Certified Educator, Digital Teaching and Learning (eTeacher) на Blackboard Academy, САЩ, и Competency Based Education на The Ohio State University, САЩ. Носител е на множество международни и национални награди, сред които ACBSP Teaching Excellence Award от американския акредитационен орган за бизнес образование, Curriculum Innovation Award за интегриране на AI и Empowerment Leader Award.'
+      ],
+      bioEn: [
+        'Dr. Veselina Yankova was born in Varna, where she began her professional career at the Technical University of Varna. She has over 20 years of academic experience, the last eleven of them at the Higher Colleges of Technology (HCT) - the largest higher education institution in the United Arab Emirates, with over 23,000 students across seven campuses - where she is Academic Program Chair of the BSc Innovation and Entrepreneurship program.',
+        'Her current areas of work include entrepreneurship as a practice, with a focus on student startups; partnership with industry, through courses co-designed and co-delivered with practitioners, joint projects and student internships; and the integration of artificial intelligence into academic courses.',
+        'Dr. Yankova is a Fellow of the Higher Education Academy, UK (FHEA) and a member of the Chartered Institute of Marketing, UK. Among her professional qualifications are Microsoft Certified Educator, Digital Teaching and Learning (eTeacher) of Blackboard Academy, USA, and Competency Based Education of The Ohio State University, USA. She has received numerous international and national awards, among them the ACBSP Teaching Excellence Award from the American accreditation body for business education, the Curriculum Innovation Award for AI integration, and the Empowerment Leader Award.'
+      ],
+      sessionDescBg: 'Най-доброто доказателство, че един град е умен, е, че жителите му престават да го забелязват. Д-р Янкова познава Дубай от две гледни точки: изследвала е рамката му за умен град и живее в него повече от десетилетие - и като жител отдавна е спряла да брои платформите и приложенията. Вместо това тя измерва онова, което тихо е изчезнало от ежедневието: опашката, пътуването през целия град, папката с хартиени документи, пазени в случай че някой ги поиска. Почти всичко, от което има нужда от града, днес тя прави от телефона си, и според нея това никога не е било основно технологично постижение - технологията е била достъпна за много градове - а въпрос на бързо решение и последователното му прилагане в голям мащаб. Това, което тя внася в дискусията, не е рецепта за други градове - след единадесет години живот извън България - а погледът на един жител върху това какво реално се променя, когато всичко това работи, и какво изисква то от хората, които живеят в този град.',
+      sessionDescEn: 'The best proof that a city is smart is that its residents stop noticing it. Dr. Yankova has two views of Dubai: she has researched its smart city framework, and she has lived inside it for over a decade - and as a resident she stopped counting platforms and apps long ago. What she measures instead is what has quietly disappeared from everyday life: the queue, the trip across town, the folder of paper documents kept in case someone asks for them. Almost everything she needs from the city she now does from a phone, and she argues that this was never mainly a technological achievement - the technology was available to many cities - but a matter of deciding quickly and carrying it through at scale. What she brings to the discussion is not a prescription for other cities, having lived away from Bulgaria for eleven years, but a resident\'s account of what actually changes when this works, and what it asks of the people living in it.',
+      takeawaysBg: 'Мярката на жителя за умен град: не броят на платформите и приложенията, а онова, което е изчезнало от ежедневието - опашката, пътуването през целия град, папката с документи, пазени в случай че някой ги поиска. Защо резултатът на Дубай е не толкова технологично постижение, колкото резултат от бързо взети решения и последователното им прилагане в голям мащаб - технологията е била достъпна за много градове. Какво изисква един работещ умен град от хората, които живеят в него, и какво се променя за тях на практика.',
+      takeawaysEn: 'A resident\'s measure of a smart city: not the number of platforms and apps, but what has disappeared from everyday life - the queue, the trip across town, the folder of documents kept in case someone asks. Why Dubai\'s result was less a technological achievement than one of deciding quickly and carrying it through at scale - the technology was available to many cities. What a working smart city asks of the people living inside it, and what changes for them in practice.'
     },
     {
       id: 'teade-punter', track: 'automation',
@@ -374,6 +621,54 @@
       sessionDescEn: 'Data security begins long before cyber defence: with proper data governance, clear control, quality, classification and access policies from the moment data is collected. Without solid governance, even the best technical protection is built on a chaotic and risky foundation. Data Spaces is a model showing how sustainable and secure data sharing between organisations becomes possible precisely because it is built on trust, standards and controlled access, and not only on technical restrictions. The aim is to show that the cyber resilience of a business depends on the data governance chain as a whole, and not only on the protective mechanisms of individual units.',
       takeawaysBg: 'Аудиторията ще получи практични насоки как да управлява данните си с ясни модели за класификация и контрол на достъп като основа за истинска сигурност, а не само технически преглед. Ще разбере защо сигурността на данните не е само технически въпрос, а започва именно с правилното им управление. Ще получи конкретен модел (Data Spaces) за това как организациите могат да споделят данни сигурно и устойчиво, вместо да избягват споделянето от страх. Ще си тръгне с разбирането, че киберустойчивостта на бизнеса зависи от цялата верига на управление на данните: от вътрешните процеси до партньорствата с други организации. Организациите ще получат практическа рамка за самооценка, която ще им помогне да разберат дали проблемите с данните в тяхната организация идват от липса на технология или от липса на управление и ясни процеси.',
       takeawaysEn: 'The audience will gain practical guidance on managing their data with clear classification and access-control models as the foundation of real security, rather than just a technical review. They will understand why data security is not only a technical question, but starts with proper data governance. They will take away a concrete model (Data Spaces) for how organisations can share data securely and sustainably instead of avoiding sharing out of fear. They will leave understanding that the cyber resilience of a business depends on the entire data governance chain: from internal processes to partnerships with other organisations. Organisations will receive a practical self-assessment framework to help them determine whether their data problems stem from a lack of technology or from a lack of governance and clear processes.'
+    },
+    {
+      id: 'ilin-savov', track: 'cybersecurity',
+      img: '/images/speakers/ilin-savov.jpg?v=20260916', alt: 'Ilin Savov',
+      objectPosition: 'center top',
+      name: 'Старши комисар проф. д-р Илин Савов, д.н.',
+      nameEn: 'Senior Commissioner Prof. Ilin Savov, PhD, DSc',
+      role: 'Rector @ Academy of the Ministry of Interior',
+      roleBg: 'Ректор @ Академия на МВР',
+      roleEn: 'Rector @ Academy of the Ministry of Interior',
+      topicBg: 'Бизнесът в центъра: Кибер превенция, човешко поведение и устойчивост в дигиталната буря',
+      topicEn: 'Business at the Centre: Cyber Prevention, Human Behaviour and Resilience in the Digital Storm',
+      bioBg: [
+        'Старши комисар проф. д-р Илин Савов, д.н. е назначен за ректор на Академията на МВР. Той е международен експерт по киберсигурност и киберпревенция, с над 25 години професионален и практически опит в службите за сигурност и МВР.'
+      ],
+      bioEn: [
+        'Senior Commissioner Prof. Ilin Savov, PhD, DSc has been appointed Rector of the Academy of the Ministry of Interior. He is an international expert in cybersecurity and cyber prevention, with over 25 years of professional and hands-on experience in the security services and the Ministry of Interior.'
+      ],
+      takeawaysBg: 'Насоки за преминаване от реактивна защита към превенция, киберустойчивост и по-бърз институционален отговор.',
+      takeawaysEn: 'Guidance on moving from reactive defence to prevention, cyber resilience and a faster institutional response.'
+    },
+    {
+      id: 'obreten-obretenov', track: 'cybersecurity',
+      img: '/images/speakers/obreten-obretenov-profile.jpg?v=20260929', alt: 'Obreten Obretenov',
+      objectPosition: 'center top',
+      name: 'Обретен Обретенов',
+      nameEn: 'Obreten Obretenov',
+      role: 'Founder @ Commodor Cybersecurity | Lecturer @ Nikola Vaptsarov Naval Academy',
+      roleBg: 'Основател @ Commodor Cybersecurity | Преподавател @ ВВМУ „Н. Й. Вапцаров“',
+      roleEn: 'Founder @ Commodor Cybersecurity | Lecturer @ Nikola Vaptsarov Naval Academy',
+      topicBg: 'Ще одобрите ли този превод? AI измами, deepfake и последната линия на защита',
+      topicEn: 'Would You Approve This Transfer? AI Fraud, Deepfakes and the Last Line of Defence',
+      bioBg: [
+        'Обретен Обретенов е специалист по информационна и киберсигурност с практически опит в защитата на финансови системи, управлението на киберриска, реакцията при инциденти, управлението на уязвимости и изграждането на организационни и технически мерки за сигурност.',
+        'В професионалната си дейност работи по теми, свързани с информационна сигурност, регулаторно съответствие, киберустойчивост и управление на риска във финансова среда. Паралелно с това е основател на Commodor Cybersecurity, където фокусът му е върху практични решения за подобряване на киберсигурността на бизнеса.',
+        'Обретен е и преподавател във ВВМУ „Н. Й. Вапцаров“, където води занятия в областта на компютърната сигурност.',
+        'Основен акцент в работата му е превръщането на сложните технически рискове в ясни и приложими бизнес решения. Интересите му включват социално инженерство, AI-базирани заплахи, устойчивост на бизнес процесите, защита на чувствителни данни и изграждане на ефективна култура на сигурност в организациите.'
+      ],
+      bioEn: [
+        'Obreten Obretenov is an information security and cybersecurity specialist with hands-on experience in protecting financial systems, cyber risk management, incident response, vulnerability management and building organisational and technical security measures.',
+        'In his professional work he focuses on information security, regulatory compliance, cyber resilience and risk management in a financial environment. In parallel, he is the founder of Commodor Cybersecurity, where his focus is on practical solutions that improve the cybersecurity of businesses.',
+        'Obreten is also a lecturer at the Nikola Vaptsarov Naval Academy, where he teaches computer security.',
+        'A central theme of his work is turning complex technical risks into clear, actionable business decisions. His interests include social engineering, AI-driven threats, business process resilience, protection of sensitive data and building an effective security culture within organisations.'
+      ],
+      sessionDescBg: 'Практически уъркшоп за AI-базирани измами, deepfake съдържание и социално инженерство, насочени към доверието и бизнес процесите в организациите. Участниците ще преминат през реалистичен сценарий с фалшива комуникация, спешно финансово искане и AI-подпомагана имитация на самоличност. Заедно ще анализираме къде традиционните механизми за защита могат да се окажат недостатъчни и какви проверки биха прекъснали атаката. В края ще изградим кратък практически модел за верификация и одобрение на чувствителни бизнес действия.',
+      sessionDescEn: 'A hands-on workshop on AI-driven fraud, deepfake content and social engineering that target trust and business processes within organisations. Participants will work through a realistic scenario involving fake communication, an urgent financial request and AI-assisted identity impersonation. Together we will analyse where traditional protection mechanisms may fall short and which checks would break the attack. At the end, we will build a short, practical model for verifying and approving sensitive business actions.',
+      takeawaysBg: 'AI прави социалното инженерство по-убедително, персонализирано и трудно за разпознаване. Техническите контроли сами по себе си не са достатъчни, когато атаката е насочена към доверието и бизнес процеса. При чувствителни действия трябва да се проверяват независимо както самоличността, така и самото искане. Независимата верификация, доверените комуникационни канали и двойното одобрение значително намаляват риска. Сигурният бизнес процес трябва да остане устойчив дори когато фалшивият глас, видео или съобщение изглеждат напълно автентични.',
+      takeawaysEn: 'AI makes social engineering more convincing, more personalised and harder to recognise. Technical controls on their own are not enough when the attack targets trust and the business process. For sensitive actions, both the identity and the request itself must be verified independently. Independent verification, trusted communication channels and dual approval significantly reduce the risk. A secure business process must stay resilient even when a fake voice, video or message looks completely authentic.'
     },
 
     // ── BioTech ──
@@ -633,6 +928,26 @@
         'Под негово ръководство URBO Studio развива решения за онлайн билети, резервации, плащания, контрол на достъпа, QR продажби, туристически платформи за общини и туристически обекти, музеи, атракции, хотели и организатори на събития.',
         'Днес Андрей работи върху следващата фаза в развитието на URBO Studio - интеграция на AI, автоматизации и нови модели за достъп, продажби и управление на преживяванията.'
       ]
+    },
+    {
+      id: 'stanislav-ivanov', track: 'tourism',
+      img: '/images/speakers/stanislav-ivanov.jpg?v=20260929', alt: 'Stanislav Ivanov',
+      objectPosition: 'center top',
+      name: 'Станислав Иванов',
+      nameEn: 'Stanislav Ivanov',
+      role: 'President @ International Federation for IT and Travel & Tourism | Director @ Zangador Research Institute',
+      roleBg: 'Президент @ International Federation for IT and Travel & Tourism | Директор @ Zangador Research Institute',
+      roleEn: 'President @ International Federation for IT and Travel & Tourism | Director @ Zangador Research Institute',
+      topicBg: 'Високотехнологични преживявания в туризма',
+      topicEn: 'High-tech experiences in tourism',
+      bioBg: [
+        'Станислав Иванов е президент на International Federation for IT and Travel & Tourism и директор на Zangador Research Institute.'
+      ],
+      bioEn: [
+        'Stanislav Ivanov is President of the International Federation for IT and Travel & Tourism and Director of Zangador Research Institute.'
+      ],
+      sessionDescBg: 'Туризмът вече не е само разглеждане на места - той е потапяне в тях. Изкуственият интелект, AR/VR, роботите и интелигентните технологии превръщат дестинациите в завладяващи, персонализирани преживявания, в които всеки посетител може да изследва, да взаимодейства и да запомня по различен начин. Нека видим как цялата туристическа екосистема ще промени из основи това, което днес наричаме „туризъм“.',
+      sessionDescEn: 'Tourism is no longer just about seeing places - it is about entering them. AI, AR/VR, robots and smart technologies are turning destinations into immersive, personalised experiences where every visitor can explore, interact and remember differently. Let\'s see how the entire tourism ecosystem will profoundly change what we now call "tourism".'
     },
 
     // ── Regional Innovation Policy ──
@@ -945,6 +1260,54 @@
         'Предишни позиции: директор на програма „Wider Europe“ в Европейския съвет за външна политика (ноември 2021 – август 2025 г.); заместник-директор за Русия и Източна Европа в дирекция „Континентална Европа“ (2018–2021 г.); анализатор в Центъра за стратегия, анализ и планиране на политиките към Министерството на Европа и външните работи на Франция (2016–2018 г.); дипломат по обмен, командирован в Министерството на външните работи на Германия (2015–2016 г.); политически съветник в посолството на Франция в Берлин (2013–2015 г.); втори съветник в посолството на Франция в Алжир (2009–2013 г.); служител в дирекция „Континентална Европа“ (2004–2007 г.).',
         'Образование: доктор по политически науки, Институт за политически науки в Париж; диплома по руски език и цивилизация, INALCO, Париж; следдипломна степен по сравнителна политология със специализация „Посткомунистическа Европа“, Институт за политически науки в Париж; френско-германска магистърска степен по политически и социални науки, Свободен университет в Берлин; бакалавърска степен по политически науки, Институт за политически науки в Париж.'
       ]
+    },
+    {
+      id: 'anton-todorov', track: 'regional-innovation-policy',
+      img: '/images/speakers/anton-todorov.jpg?v=20260929', alt: 'Anton Todorov',
+      objectPosition: 'center top',
+      name: 'Антон Тодоров',
+      nameEn: 'Anton Todorov',
+      role: 'Chairman of the Executive Board @ National Innovation Fund',
+      roleBg: 'Председател на Изпълнителния съвет @ Национален иновационен фонд',
+      roleEn: 'Chairman of the Executive Board @ National Innovation Fund',
+      topicBg: 'Възможности за финансиране чрез Националния иновационен фонд',
+      topicEn: 'Funding Opportunities via the National Innovation Fund',
+      bioBg: [
+        'Антон Тодоров е председател на Изпълнителния съвет на Националния иновационен фонд.',
+        'Има над 25 години професионален опит в разработването и реализацията на иновативни бизнес проекти за стартиращи и утвърдени предприятия, финансирани чрез частни рискови инвестиции и европейски програми.',
+        'Като изпълнителен директор на „Ню Ай“ ЕАД осигурява финансиране за иновативни проекти по национални и централизирани европейски програми, сред които EIC Accelerator, Horizon Europe, LIFE и други. Съосновател е на няколко европейски цифрови иновационни хъба. Управляващ партньор е в първата българска мрежа на бизнес ангели за рисково финансиране на стартиращи предприятия и създател на венчър студио за технологични и информационни компании.'
+      ],
+      bioEn: [
+        'Anton Todorov is Chairman of the Executive Board of the National Innovation Fund.',
+        'He has over 25 years of professional experience in developing and delivering innovative business projects for start-ups and established companies, financed through private venture investment and European programmes.',
+        'As Executive Director of New-I, he secures funding for innovative projects under national and centrally managed European programmes, including EIC Accelerator, Horizon Europe, LIFE and others. He is a co-founder of several European Digital Innovation Hubs, a managing partner in the first Bulgarian business angels network for venture financing of start-ups, and the creator of a venture studio for technology and information companies.'
+      ],
+      sessionDescBg: 'Източници за финансиране на иновации и ролята на Националния иновационен фонд като стратегически инструмент на иновационната политика. Текущи и очаквани конкурсни сесии. Стратегически инициативи и очаквания.',
+      sessionDescEn: 'Innovation funding and the role of the National Innovation Fund as a strategic innovation policy tool. Current and forthcoming calls for proposals. Strategic initiatives.',
+      takeawaysBg: 'Какви са текущите инструменти за финансиране на иновации през актуалните конкурсни сесии на НИФ, през Eurostars и през EIC Accelerator. Какви са приоритетите на НИФ и как можем да се подготвим по-добре като потенциални бенефициенти.',
+      takeawaysEn: 'What innovation funding sources exist today, and which are the immediate opportunities under open calls, Eurostars or the EIC Accelerator. What the Fund\'s priorities are and how to be better prepared as a potential beneficiary.'
+    },
+    {
+      id: 'dochka-vasileva', track: 'regional-innovation-policy',
+      img: '/images/speakers/dochka-vasileva.jpg?v=20260929', alt: 'Dochka Vasileva',
+      objectPosition: 'center top',
+      name: 'д-р инж. Дочка Василева',
+      nameEn: 'Dr. Eng. Dochka Vasileva',
+      role: 'Head of Project Planning and Institutional Cooperation @ Fund of Funds',
+      roleBg: 'Ръководител отдел „Проектно планиране и институционално сътрудничество“ @ Фонд на фондовете',
+      roleEn: 'Head of Project Planning and Institutional Cooperation @ Fund of Funds',
+      topicBg: 'Финансиране, износ, нови пазари и рискови фондове',
+      topicEn: 'Financing, Exports, New Markets and Venture Funds',
+      bioBg: [
+        'Д-р инж. Дочка Василева е ръководител отдел „Проектно планиране и институционално сътрудничество“ във Фонда на фондовете от 8 години. Има професионален опит в европейските политики в Белгия, както и в управлението на проекти в Германия и Великобритания. Тя е лектор в Софийския университет, УАСГ и Института за публична администрация. Подпомага младежкото предприемачество и е организатор на националния конкурс „Най-добър младежки стартъп в България“.'
+      ],
+      bioEn: [
+        'Dr. Eng. Dochka Vasileva has headed the Project Planning and Institutional Cooperation department at the Fund of Funds for 8 years. She has professional experience in European policy in Belgium, as well as in project management in Germany and the United Kingdom. She lectures at Sofia University, the University of Architecture, Civil Engineering and Geodesy (UACEG) and the Institute of Public Administration. She supports youth entrepreneurship and organises the national competition "Best Youth Start-up in Bulgaria".'
+      ],
+      sessionDescBg: 'Ще бъдат представени финансовите инструменти на Фонда на фондовете, насочени към стартъпи и компании с фокус върху иновации, дигитализация, стратегически технологии и технологичен трансфер.',
+      sessionDescEn: 'A presentation of the Fund of Funds\' financial instruments aimed at start-ups and companies focused on innovation, digitalisation, strategic technologies and technology transfer.',
+      takeawaysBg: 'Участниците във форума ще се запознаят с възможностите за финансиране на иновативни технологии в България.',
+      takeawaysEn: 'Participants will learn about the opportunities for financing innovative technologies in Bulgaria.'
     },
 
     // ── AgriTech ──
