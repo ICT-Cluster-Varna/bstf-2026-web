@@ -128,7 +128,7 @@
       id: 'martin-kuvandzhiev', track: 'ai',
       img: '/images/speakers/martin-kuvandzhiev-2.png?v=20260730', alt: 'Martin Kuvandzhiev',
       objectPosition: 'center 8%',
-      name: 'Мартин Куванджиев',
+      name: 'Мартин Кувънджиев',
       nameEn: 'Martin Kuvandzhiev',
       role: 'Founder @ Encorp | Co-founder, Bitcoin Gold',
       topicBg: 'Blockchain, fintech и AI: следващата вълна на иновации',
