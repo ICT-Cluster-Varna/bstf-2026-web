@@ -925,6 +925,27 @@
         'Член на Съвета на директорите на „Сис Си“ АД (CSC AD). Притежава EMBA от HEC Paris.'
       ]
     },
+    {
+      id: 'marie-dumoulin', track: 'regional-innovation-policy',
+      img: '/images/speakers/marie-dumoulin.jpg?v=20260929', alt: 'Marie Dumoulin',
+      objectPosition: 'center top',
+      name: 'Marie Dumoulin',
+      role: 'Ambassador of France to Bulgaria',
+      roleBg: 'Посланик на Франция в България',
+      roleEn: 'Ambassador of France to Bulgaria',
+      topicBg: 'Иновационната и геоикономическа мощ на Европейския съюз в Черноморския регион',
+      topicEn: "The European Union's innovation and geoeconomic power in the Black Sea region",
+      bioEn: [
+        'Marie Dumoulin has been Ambassador of France to Bulgaria since September 2025.',
+        'Previous positions: Wider Europe Programme Director, European Council on Foreign Relations (November 2021 – August 2025); Deputy Director for Russia and Eastern Europe, Directorate for Continental Europe (2018–2021); Analyst at the Centre for Strategy, Analysis and Policy Planning, French Ministry for Europe and Foreign Affairs (2016–2018); exchange diplomat seconded to the German Ministry of Foreign Affairs (2015–2016); Political Counsellor at the French Embassy in Berlin (2013–2015); Second Counsellor at the French Embassy in Algiers (2009–2013); Desk Officer, Directorate for Continental Europe (2004–2007).',
+        'Education: PhD in Political Science, Paris School of Political Science; degree in Russian language and civilization, INALCO, Paris; postgraduate degree in Comparative Politics with a specialization in “Post-communist Europe”, Paris School of Political Science; Franco-German MSc in Political and Social Sciences, Free University of Berlin; BSc in Political Science, Paris School of Political Science.'
+      ],
+      bioBg: [
+        'Marie Dumoulin е посланик на Франция в България от септември 2025 г.',
+        'Предишни позиции: директор на програма „Wider Europe“ в Европейския съвет за външна политика (ноември 2021 – август 2025 г.); заместник-директор за Русия и Източна Европа в дирекция „Континентална Европа“ (2018–2021 г.); анализатор в Центъра за стратегия, анализ и планиране на политиките към Министерството на Европа и външните работи на Франция (2016–2018 г.); дипломат по обмен, командирован в Министерството на външните работи на Германия (2015–2016 г.); политически съветник в посолството на Франция в Берлин (2013–2015 г.); втори съветник в посолството на Франция в Алжир (2009–2013 г.); служител в дирекция „Континентална Европа“ (2004–2007 г.).',
+        'Образование: доктор по политически науки, Институт за политически науки в Париж; диплома по руски език и цивилизация, INALCO, Париж; следдипломна степен по сравнителна политология със специализация „Посткомунистическа Европа“, Институт за политически науки в Париж; френско-германска магистърска степен по политически и социални науки, Свободен университет в Берлин; бакалавърска степен по политически науки, Институт за политически науки в Париж.'
+      ]
+    },
 
     // ── AgriTech ──
     {

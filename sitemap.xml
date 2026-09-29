@@ -555,6 +555,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/tatyana-ivanova/"/>
   </url>
   <url>
+    <loc>https://www.blackseatech.org/speakers/marie-dumoulin/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/marie-dumoulin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/marie-dumoulin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/marie-dumoulin/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/marie-dumoulin/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/marie-dumoulin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/marie-dumoulin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/marie-dumoulin/"/>
+  </url>
+  <url>
     <loc>https://www.blackseatech.org/speakers/ilia-iordanov/</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ilia-iordanov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ilia-iordanov/"/>
