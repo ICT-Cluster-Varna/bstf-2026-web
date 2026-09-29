@@ -173,8 +173,8 @@
       ],
       "cover": {"type": "graphic", "graphic": "ai-network", "bg": "#173a56"},
       "seats": {"total": null, "left": null},
-      "status": "soon",
-      "registration": null
+      "status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/SBGzT4jsJxre9f9J8"}
     }
   ]
 }
