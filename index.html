@@ -192,7 +192,7 @@
       "performer": [
         {
           "@type": "Person",
-          "name": "Мартин Кувънджиев",
+          "name": "Мартин Куванджиев",
           "jobTitle": "Founder",
           "worksFor": {
             "@type": "Organization",
@@ -323,6 +323,12 @@
             "name": "LIREX BS"
           },
           "image": "https://www.blackseatech.org/images/speakers/teodor-stavrov.jpg"
+        },
+        {
+          "@type": "Person",
+          "name": "Олександър Сивак",
+          "jobTitle": "Strateg, Одеса, Украйна",
+          "image": "https://www.blackseatech.org/images/speakers/oleksandr-syvak.jpg"
         },
         {
           "@type": "Person",
@@ -567,6 +573,7 @@
         {
           "@type": "Person",
           "name": "Станислав Иванов",
+          "honorificPrefix": "проф.",
           "jobTitle": "Президент",
           "worksFor": {
             "@type": "Organization",
@@ -738,6 +745,16 @@
             "name": "Фонд на фондовете"
           },
           "image": "https://www.blackseatech.org/images/speakers/dochka-vasileva.jpg"
+        },
+        {
+          "@type": "Person",
+          "name": "Филип Балкански",
+          "jobTitle": "Изпълнителен директор",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Codery"
+          },
+          "image": "https://www.blackseatech.org/images/speakers/philip-balkanski.jpg"
         },
         {
           "@type": "Person",
@@ -1679,6 +1696,94 @@
         color: var(--text-light);
         margin: 0 0 6px;
         line-height: 1.5
+      }
+
+      /* Side-event card (e.g. the Varna walking tour, block.layout =
+         'feature'): description on the left, a facts panel with icons and
+         the sign-up button on the right; stacks on narrow screens. */
+      .prog2-feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+        gap: 24px;
+        align-items: start;
+        margin-top: 8px
+      }
+
+      .prog2-feature-desc .prog2-plain {
+        font-size: 0.86rem;
+        line-height: 1.7;
+        margin: 0
+      }
+
+      .prog2-feature-panel {
+        background: var(--light-blue);
+        border: 1px solid rgba(11, 57, 84, 0.08);
+        border-radius: 12px;
+        padding: 18px
+      }
+
+      .prog2-facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 16px;
+        margin: 0 0 16px
+      }
+
+      .prog2-fact {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        min-width: 0
+      }
+
+      .prog2-fact--wide {
+        grid-column: 1 / -1
+      }
+
+      .prog2-fact svg {
+        flex: none;
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        color: var(--teal-contrast)
+      }
+
+      .prog2-fact dt {
+        margin: 0;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--text-light)
+      }
+
+      .prog2-fact dd {
+        margin: 2px 0 0;
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.35;
+        color: var(--navy)
+      }
+
+      .prog2-feature-panel .prog2-cta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 160, 204, 0.22)
+      }
+
+      .prog2-feature-panel .prog2-cta-btn svg {
+        width: 16px;
+        height: 16px
+      }
+
+      @media (max-width: 900px) {
+        .prog2-feature {
+          grid-template-columns: 1fr;
+          gap: 16px
+        }
       }
 
       .prog2-day-footer {
@@ -5647,7 +5752,7 @@
                 <line x1="12" y1="18" x2="12" y2="22" />
               </svg>
               <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="50" data-suffix="+">50+</span></div>
+                <div class="cx-stat-num"><span class="cx-count" data-count="60" data-suffix="+">60+</span></div>
                 <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">ЛЕКТОРИ</div>
                 <div class="cx-stat-desc" data-bg="Световни експерти, три зали."
                   data-en="World experts, three halls.">Световни експерти, три зали.</div>
@@ -6108,6 +6213,18 @@
                     width="600" height="163">
                 </a>
               </div>
+              <div class="partner-logo partner-logo--mobility">
+                <a href="https://devina.bg/" target="_blank" rel="noopener">
+                  <img src="images/logistics-partner-devina.jpg?v=20260930" alt="deVina" loading="lazy" decoding="async"
+                    width="600" height="486">
+                </a>
+              </div>
+              <div class="partner-logo partner-logo--mobility">
+                <a href="https://www.boshnakoff.bg/" target="_blank" rel="noopener">
+                  <img src="images/logistics-partner-boshnakoff.jpg?v=20260930" alt="Chateau Boshnakoff" loading="lazy" decoding="async"
+                    width="600" height="119">
+                </a>
+              </div>
             </div>
           </div>
 
@@ -6483,9 +6600,58 @@
           var p = el('div', 'prog2-plain'); t(p, ln.bg, ln.en); return p;
         }
 
+        // Icons for the facts panel of a 'feature' block, keyed by the EN label.
+        var FACT_ICON = {
+          'Start': '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+          'End': '<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>',
+          'Departure and return': '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+          'Language': '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/>',
+          'Group size': '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5"/><path d="M18 20a6 6 0 0 0-3-5.2"/>'
+        };
+        var FACT_WIDE = { 'Departure and return': true };
+        function svgIcon(paths) {
+          return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>';
+        }
+
+        // A side event shown as a card: free text on the left, the
+        // LABEL() lines as a facts panel on the right, BUTTON() at its foot.
+        function renderFeature(b) {
+          var feat = el('div', 'prog2-feature');
+          var desc = el('div', 'prog2-feature-desc');
+          var panel = el('div', 'prog2-feature-panel');
+          var facts = el('dl', 'prog2-facts');
+          var buttons = [];
+          (b.lines || []).forEach(function (ln) {
+            if (ln.kind === 'label') {
+              var key = ln.label.en.replace(/:\s*$/, '');
+              var fact = el('div', 'prog2-fact' + (FACT_WIDE[key] ? ' prog2-fact--wide' : ''));
+              fact.insertAdjacentHTML('beforeend', svgIcon(FACT_ICON[key] || '<circle cx="12" cy="12" r="3"/>'));
+              var box = el('div');
+              var dt = el('dt'); t(dt, ln.label.bg.replace(/:\s*$/, ''), key); box.appendChild(dt);
+              var dd = el('dd'); t(dd, ln.value.bg, ln.value.en); box.appendChild(dd);
+              fact.appendChild(box);
+              facts.appendChild(fact);
+            } else if (ln.kind === 'button') {
+              var a = el('a', 'btn btn-primary btn-sm prog2-cta-btn');
+              a.href = ln.href; a.target = '_blank'; a.rel = 'noopener';
+              var label = el('span'); t(label, ln.label.bg, ln.label.en); a.appendChild(label);
+              a.insertAdjacentHTML('beforeend', svgIcon('<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>'));
+              buttons.push(a);
+            } else {
+              desc.appendChild(renderBlockLine(ln));
+            }
+          });
+          panel.appendChild(facts);
+          buttons.forEach(function (a) { panel.appendChild(a); });
+          feat.appendChild(desc);
+          feat.appendChild(panel);
+          return feat;
+        }
+
         function renderBlock(b, isFirst) {
           var blockEl = el('div', 'prog2-block' + (isFirst ? ' prog2-block--first' : ''));
           var heading = el('div', 'prog2-heading'); t(heading, b.heading.bg, b.heading.en); blockEl.appendChild(heading);
+          if (b.layout === 'feature') { blockEl.appendChild(renderFeature(b)); return blockEl; }
           (b.lines || []).forEach(function (ln) { blockEl.appendChild(renderBlockLine(ln)); });
           return blockEl;
         }
@@ -6673,12 +6839,12 @@
                     heading: T('Блок 2 (80 мин): История на проглеждането: приложен изкуствен интелект – от възможност до оперативни резултати', 'Block 2 (80 min): The Story of Seeing Clearly - Applied AI: From Opportunity to Operational Results'),
                     lines: [
                       TITLE('Основен доклад: Катализатор на възможности: българската AI фабрика BRAIN++ – защо, какво и как', 'Keynote: Enabler for Opportunities: Bulgarian AI BRAIN++ Factory – Why/What & How'),
-                      PERSON('Симеон Стоянов', 'Simeon Stoyanov', 'BRAIN++', 'BRAIN++'),
+                      PERSON('проф. Симеон Стоянов', 'Prof. Simeon Stoyanov', 'BRAIN++', 'BRAIN++'),
                       LABEL('AI инструменти: ', 'AI Tools: ', 'ALSO Bulgaria, Microsoft', 'ALSO Bulgaria, Microsoft'),
                       TITLE('Ако енергията можеше да мисли? AI – от прогнозиране до автономни енергийни решения', 'What If Energy Could Think? AI - From Forecasting to Autonomous Energy Decisions'),
                       PERSON('Илия Желязков', 'Iliya Zhelyazkov', 'TiD-Engineering', 'TiD-Engineering'),
                       LABEL('Интелигентно управление в енергията: от данните към решенията: ', 'Intelligent Energy Management - From Data to Decisions: ', 'ЕнергоПро', 'EnergoPro'),
-                      LABEL('Модератор: ', 'Moderator: ', 'Симеон Стоянов, BRAIN++', 'Simeon Stoyanov, BRAIN++')
+                      LABEL('Модератор: ', 'Moderator: ', 'проф. Симеон Стоянов, BRAIN++', 'Prof. Simeon Stoyanov, BRAIN++')
                     ]
                   }]
                 },
@@ -6690,7 +6856,7 @@
                         TITLE('16:10 – 16:40: Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги за доставки', '16:10 – 16:40: Digital & AI Transformation for Industrial Growth: Secure European Supply Chains'),
                         PERSON('Jeroen van Hertum', 'Jeroen van Hertum', 'член на УС, Нидерландско-българска търговска камара', 'Board Member, Dutch Bulgarian Chamber of Commerce'),
                         PERSON('Peter Statev', 'Peter Statev', 'Chairman, PetaScale Supercomputer "Discoverer"', 'Chairman, PetaScale Supercomputer "Discoverer"'),
-                        PERSON('Philip Balkanski', 'Philip Balkanski', 'Chief Executive Officer, Codery', 'Chief Executive Officer, Codery'),
+                        PERSON('Филип Балкански', 'Philip Balkanski', 'изпълнителен директор, Codery', 'Chief Executive Officer, Codery'),
                         LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев, анализатор, Фондация „Приложни изследвания и комуникации“', 'Georgi Dobrev, Analyst, Applied Research and Communications Fund'),
                         TITLE('16:40 – 17:30: Ускоряване на черноморската иновационна екосистема: трансфер на технологии и възможности за растеж', '16:40 – 17:30: Supercharging the Black Sea Innovation Ecosystem: Technology Transfer and Scale-Up Opportunities'),
                         PERSON('Пламен Борисов', 'Plamen Borisov', 'директор „Стратегически проекти“, Солвей Соди', 'Director for Strategic Projects, Solvay Sodi'),
@@ -6748,9 +6914,9 @@
                       TITLE('Основен доклад: Как компаниите внедряват изкуствен интелект устойчиво', 'Keynote: How Companies Implement AI Sustainably'),
                       PERSON('Gilad Barash', 'Gilad Barash', 'Matrix DnA, старши стратег по данни и AI', 'Matrix DnA, Senior Data/AI Strategist'),
                       TITLE('Приложен бизнес AI – от Тъмните векове към агентното бъдеще', 'Applied Business AI — From the Dark Ages to the Agentic Future'),
-                      PERSON('Д-р Arthur Kordon', 'Dr Arthur Kordon', 'Kordon Consulting', 'Kordon Consulting'),
+                      PERSON('Д-р Артур Кордон', 'Dr Arthur Kordon', 'Kordon Consulting', 'Kordon Consulting'),
                       TITLE('Блокчейн, финтех и изкуствен интелект: следващата вълна от иновации', 'Blockchain, Fintech, and AI: The Next Wave of Innovation'),
-                      PERSON('Мартин Кувънджиев', 'Martin Kuvandzhiev'),
+                      PERSON('Мартин Куванджиев', 'Martin Kuvandzhiev'),
                       TITLE('AI пътят на MEAVO – единна корпоративна платформа за 6 месеца, която обслужва всички процеси: от веригата на доставки и производството до продажбите и обслужването на клиенти', 'MEAVO’s AI Journey: Building a Unified Enterprise Platform in 6 Months to Power End-to-End Operations—from Supply Chain and Manufacturing to Sales and Customer Support'),
                       PERSON('Тодор Маджаров', 'Todor Madzharov', 'MEAVO', 'MEAVO'),
                       LABEL('AI инструменти: ', 'AI Tools: ', 'Ардес/Самсунг', 'Ardes/Samsung'),
@@ -6764,7 +6930,7 @@
                     lines: [
                       TITLE('09:10 – 09:50: Справяне със стратегическата несигурност в Черноморския регион', '09:10 – 09:50: Tackling Strategic Insecurity in the Black Sea Region'),
                       PERSON('Albert Veenstra', 'Albert Veenstra', 'професор по търговия и логистика, Университет „Еразъм“ – Ротердам', 'Professor of Trade and Logistics, Erasmus University Rotterdam'),
-                      LABEL('Лектор: ', 'Speaker: ', 'предстои уточняване, Военноморско училище „Никола Йонков Вапцаров“', 'TBD, "Nikola Ionkov Vaptsarov" Naval Academy'),
+                      PERSON('доц. Димитър Николов', 'Assoc. Prof. Dimitar Nikolov', 'ВВМУ „Никола Йонков Вапцаров“', '"Nikola Vaptsarov" Naval Academy'),
                       LABEL('Модератор: ', 'Moderator: ', 'Георги Добрев, анализатор, Фондация ПИК', 'Georgi Dobrev, Analyst, ARC Fund'),
                       TITLE('09:50 – 10:30: Интелигентни решения за защита на критичната инфраструктура', '09:50 – 10:30: Smart Solutions for Critical Infrastructure Protection'),
                       PERSON('д-р Martijn Leijten', 'Dr. Martijn Leijten', 'главен асистент във Факултета по технологии, политики и мениджмънт на Технологичния университет', 'Assistant Professor, Faculty of Technology, Policy and Management, Delft University of Technology'),
@@ -6794,7 +6960,6 @@
                       TITLE('Помощ, а не тежест: Как да превърнем регулаторните изисквания в реална киберсигурност', 'Help, Not a Burden: Turning Regulatory Requirements into Real Cybersecurity'),
                       PERSON('Ясен Танев', 'Yasen Tanev'),
                       LABEL('Основите имат значение: ', 'Foundations Matter: ', 'Paul Lambert, посланик на Белгия в България', 'Paul Lambert, Ambassador of Belgium to Bulgaria'),
-                      LABEL('Федеративно AI езеро от данни CHAIN++: ', 'Federated AI Data Lake CHAIN++: ', 'BRAIN++', 'BRAIN++'),
                       LABEL('Модератор: ', 'Moderator: ', 'Драгомир Вътков, QIAGEN', 'Dragomir Vatkov, QIAGEN')
                     ]
                   }]
@@ -6805,11 +6970,12 @@
                     lines: [
                       TITLE('10:55 – 11:35: Киберустойчивост в спорните морски региони', '10:55 – 11:35: Cyber Resilience in Contested Maritime Regions'),
                       PERSON('Иво Зимбилев', 'Ivo Zimbilev', 'главен изпълнителен директор, Cloud Office', 'Chief Executive Officer, Cloud Office'),
-                      LABEL('Лектор: ', 'Speaker: ', 'предстои уточняване', 'TBD'),
+                      PERSON('Проф. Алберт Веенстра', 'Prof. Albert Veenstra', 'търговия и логистика, Университет „Еразъм“ в Ротердам', 'Trade and Logistics, Erasmus University Rotterdam'),
                       LABEL('Модератор: ', 'Moderator: ', 'Калина Цолова, анализатор, Фондация ПИК', 'Kalina Tcolova, Analyst, ARC Fund'),
                       TITLE('11:35 – 12:15: Публично-частно сътрудничество за иновации в киберсигурността и сигурността на AI', '11:35 – 12:15: Public-Private Cooperation for Cybersecurity and AI Security Innovation'),
                       PERSON('Jeroen van Hertum', 'Jeroen van Hertum', 'член на УС, Нидерландско-българска търговска камара', 'Board Member, Dutch Bulgarian Chamber of Commerce'),
                       PERSON('Кирил Кирилов', 'Kiril Kirilov', 'оперативен мениджър, BRAIN++', 'Operations Manager, BRAIN++'),
+                      PERSON('Ivan Goychev', 'Ivan Goychev', 'Deputy Mayor Digitalization and Information Systems, Sofia Municipality', 'Deputy Mayor for Digitalization and Information Systems, Sofia Municipality'),
                       LABEL('Модератор: ', 'Moderator: ', 'Татяна Новосьолова, старши анализатор, Център за изследване на демокрацията', 'Tatyana Novossiolova, Senior Analyst, CSD')
                     ]
                   }]
@@ -6827,6 +6993,7 @@
                       TITLE('Технологии в земеделието - внедряване на AI', 'Technologies in Agriculture - AI Adoption'),
                       PERSON('Илия Йорданов', 'Iliya Yordanov', 'ONDO, съосновател', 'ONDO, Co-Founder'),
                       LABEL('Подходът на Япония, основан на концепцията „Общество 5.0“: ', 'Japan’s Approach Based on Society 5.0: ', 'Mitsuru Horinouchi, първи секретар, Посолство на Япония в България', 'Mitsuru Horinouchi, First Secretary, Embassy of Japan in Bulgaria'),
+                      LABEL('Примерът на Ренесанс: ', 'The Renesans Example: ', 'Георги Николов, Renesans', 'Georgi Nikolov, Renesans'),
                       LABEL('Модератор: ', 'Moderator: ', 'Тодор Тодоров', 'Todor Todorov')
                     ]
                   }]
@@ -6836,10 +7003,11 @@
                     heading: T('Бизнес обмен между България и Турция: трансфер на технологии и достъп до нови пазари', 'Business Exchange Between Bulgaria and Türkiye: Technology Transfer and Access to New Markets'),
                     lines: [
                       LABEL('Визията на камарата: ', 'Chamber Vision: ', 'г-н Burhan Nemutlu, председател, BULTİŞAD', 'Mr. Burhan Nemutlu, Chairman, BULTİŞAD'),
+                      PERSON('Доукукан Ергюнер', 'Doğukan Ergüner', 'ръководител на направление „Изкуствен интелект“ в Дирекцията по комуникации към Президентството на Република Турция', 'Head of Artificial Intelligence, Directorate of Communications of the Presidency of the Republic of Türkiye'),
                       LABEL('Проект CyberSec4OT: ', 'CyberSec4OT Project: ', 'Християн Даскалов, EDIH „Тракия“ България', 'Hristiyan Daskalov, EDIH Trakia Bulgaria'),
                       PERSON('д-р Martijn Leijten', 'Dr. Martijn Leijten', 'главен асистент във Факултета по технологии, политики и мениджмънт на Технологичния университет', 'Assistant Professor, Faculty of Technology, Policy and Management, Delft University of Technology'),
                       LABEL('Тема: ', 'Topic: ', 'предстои уточняване', 'TBD'),
-                      LABEL('Проектно финансиране: ', 'Project Financing: ', 'Михаела Динева, Руслан Стефанов, ARC Fund', 'Mihaela Dineva, Ruslan Stefanov, ARC Fund'),
+                      LABEL('ЕС - проектно финансиране: ', 'EU Project Financing: ', 'Руслан Стефанов, ARC Fund', 'Ruslan Stefanov, ARC Fund'),
                       LABEL('Модератор: ', 'Moderator: ', 'г-н Kerem Ozbek, „Камбро БГ“ ЕООД', 'Mr. Kerem Ozbek, "Kambro BG" EOOD')
                     ]
                   }]
@@ -6852,7 +7020,7 @@
                   blocks: [{
                     heading: T('Блок 3 (80 мин): Финансиране, износ, нови пазари, венчърни фондове', 'Block 3 (80 min): Financing, Exports, New Markets, Venture Funds'),
                     lines: [
-                      LABEL('Национален иновационен фонд (НИФ): ', 'National Innovation Fund: ', 'г-н Антон Тодоров, председател на Изпълнителния съвет', 'Anton Todorov, Chairman of the Executive Board'),
+                      LABEL('Възможности за финансиране чрез НИФ: ', 'Funding Opportunities Through the NIF: ', 'г-н Антон Тодоров, председател на Изпълнителния съвет, Национален иновационен фонд (НИФ)', 'Anton Todorov, Chairman of the Executive Board, National Innovation Fund (NIF)'),
                       LABEL('Агенция по заетостта (АЗ): ', 'Employment Agency: ', 'Габриела Горанова-Димчева, заместник изпълнителен директор', 'Gabriela Goranova-Dimcheva, Deputy Executive Director'),
                       LABEL('Фонд на фондовете: ', 'Fund of Funds: ', 'уточняване на конкретно лице', 'specific person TBD'),
                       LABEL('Българска агенция за експортно застраховане (БАЕЗ): ', 'Bulgarian Export Insurance Agency: ', 'уточняване на конкретно лице', 'specific person TBD'),
@@ -6868,6 +7036,7 @@
                       PERSON('Jeroen van Hertum', 'Jeroen van Hertum', 'член на УС, Нидерландско-българска търговска камара', 'Board Member, Dutch Bulgarian Chamber of Commerce'),
                       TITLE('Дигиталният хъб като портал към AI фабрики', 'The Digital Hub as a Gateway to AI Factories'),
                       PERSON('Герасим Славов', 'Gerasim Slavov', 'BRAIN++', 'BRAIN++'),
+                      PERSON('Cemile Koseler Usta', 'Cemile Koseler Usta', 'Истанбулска индустриална камара (отдел „Технологии и дигитализация“)', 'Istanbul Chamber of Industry (Techn. & Digit. Dept)'),
                       LABEL('Международна инвестиция в България – пример: ', 'International Investment in Bulgaria – An Example: ', 'г-н Керем Йозбек, „Камбро БГ“ ЕООД', 'Mr. Kerem Ozbek, "Kambro BG" EOOD'),
                       LABEL('Модератор: ', 'Moderator: ', 'Светослав Стаменов, член на УС, ИКТ Клъстер – Варна', 'Svetoslav Stamenov, Board Member, ICT Cluster – Varna')
                     ]
@@ -6917,6 +7086,7 @@
                 left: {
                   blocks: [{
                     heading: T('Туристическа обиколка на Варна', 'Varna Walking Tour'),
+                    layout: 'feature',
                     lines: [
                       PLAIN('Открийте скрития чар на Варна на една незабравима разходка през историческото сърце на града – от храма „Свети Никола“ и старинните църкви на стария град до площад „Независимост“, Драматичния театър, Катедралата и емблематичния градски часовник. Разходете се по улица „Преслав“, разгледайте Къщата на архитекта и потънете в старите квартали на Варна – всеки от тях със своя характер, история и очарователни кътчета за откриване.', 'Discover the hidden charm of Varna on a fascinating walking tour through the city’s historic heart, from St. Nicholas Church and the beautiful old-town temples to Independence Square, the Theatre, the Cathedral, and the iconic City Clock. Wander along Preslav Street, admire the House of the Architect, and explore Varna’s old neighbourhoods, each with its own character, stories, and charming little corners waiting to be discovered.'),
                       LABEL('Начало: ', 'Start: ', '18:30 ч.', '18:30'),
@@ -6968,21 +7138,29 @@
                       LABEL('От Евровизия до AI: творческите индустрии като лаборатория за бъдещето на бизнеса: ', 'From Eurovision to AI: Creative Industries as a Laboratory for the Future of Business: ', 'Геновева Христова, Креатех', 'Genoveva Christova, CreaTech'),
                       LABEL('AI агенти в снабдяването: ', 'AI Agents in Procurement: ', 'Dominik Petek, мениджър, ProCom – консултиране в снабдяването и търговията', 'Dominik Petek, Manager, ProCom – Procurement & Commercial Consulting'),
                       LABEL('Звезделин Борисов, BRAIN++: ', 'Zvezdelin Borisov, BRAIN++: ', 'предстои уточняване', 'TBD'),
-                      LABEL('AI като лаборант – от рецептурата до готовия материал: ', 'AI as a Laboratory Assistant: From Formulation to Finished Material: ', 'Strateg, Одеса, Украйна', 'Strateg, Odesa, Ukraine'),
+                      LABEL('AI в лабораторията – от заданието до готовия модел: ', 'AI in the Laboratory – From Brief to Finished Model: ', 'Олександър Сивак, Ксения Середяк, Strateg, Одеса, Украйна', 'Oleksandr Syvak, Kseniia Serediak, Strateg, Odesa, Ukraine'),
                       LABEL('AI не се намира просто на едно място: ', 'AI Is Not Found in Just One Place: ', 'Теодор Ставров, Лирекс БГ', 'Teodor Stavrov, Lirex BG')
                     ]
                   }]
                 },
                 right: {
                   blocks: [{
-                    heading: T('AI работилница', 'AI Workshop'),
+                    heading: T('09:10 – 11:10 · AI работилница', '09:10 – 11:10 · AI Workshop'),
                     lines: [
-                      PERSON('д-р Артур Кордон', 'Dr. Arthur Kordon')
+                      PERSON('Д-р Артур Кордон', 'Dr. Arthur Kordon', 'Kordon Consulting', 'Kordon Consulting')
                     ]
                   }]
                 }
               },
-              { time: '10:30 – 10:55', kind: 'break', label: T('Пауза', 'Break') },
+              {
+                time: '',
+                left: {
+                  blocks: [{
+                    heading: T('10:30 – 10:55 · Пауза', '10:30 – 10:55 · Break'),
+                    lines: []
+                  }]
+                }
+              },
               {
                 time: '10:55 – 12:15',
                 left: {
@@ -6991,19 +7169,10 @@
                     lines: [
                       LABEL('Основен доклад: ', 'Keynote: ', 'Николай Петканов, Mbrand', 'Nikolay Petkanov, Mbrand'),
                       LABEL('Как модерните бизнеси ще използват AI през следващите 5 години: ', 'How Modern Businesses Will Use AI Over the Next 5 Years: ', 'Николай Вълев, маркетинг и бизнес стратег', 'Nikolay Valev, Marketing and Business Strategist'),
-                      LABEL('Ивелина Вълчева, инфлуенсър: ', 'Ivelina Valcheva, influencer: ', 'предстои уточняване', 'TBD'),
                       LABEL('От съдържание към действие - как AI променя маркетинга: ', 'From Content to Action - How AI Is Changing Marketing: ', 'Александър Гошев, Netpeak', 'Alexander Goshev, Netpeak'),
                       LABEL('Предимството LinkedIn – дигиталната ви репутация започва в LinkedIn: ', 'The LinkedIn Advantage - Your Digital Reputation Starts on LinkedIn: ', 'Малгоржата Бржоска', 'Małgorzata Brzoska'),
                       LABEL('Вътрешно предприемачество: ', 'Intrapreneurship: ', 'Станислав Фотев, „Хайделберг Матириълс Девня“ АД', 'Stanislav Fotev, "Heidelberg Materials Devnya" AD'),
                       LABEL('Модератор: ', 'Moderator: ', 'Николай Петканов, Mbrand', 'Nikolay Petkanov, Mbrand')
-                    ]
-                  }]
-                },
-                right: {
-                  blocks: [{
-                    heading: T('AI работилница', 'AI Workshop'),
-                    lines: [
-                      PERSON('д-р Артур Кордон', 'Dr. Arthur Kordon')
                     ]
                   }]
                 }
@@ -7029,10 +7198,11 @@
                   blocks: [{
                     heading: T('Блок 3 (80 мин): Нови хоризонти…. Какво следва?', 'Block 3 (80 min): New Horizons…. What Comes Next?'),
                     lines: [
-                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'Симеон Стоянов, BRAIN++', 'Simeon Stoyanov, BRAIN++'),
-                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'доц. д-р Тодорова, БАН', 'Assoc. Prof. Todorova, BAS'),
+                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'доц. д-р Марияна Тодорова, БАН', 'Assoc. Prof. Dr. Mariyana Todorova, BAS'),
+                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'проф. Симеон Стоянов, BRAIN++', 'Prof. Simeon Stoyanov, BRAIN++'),
                       LABEL('Опитът на Швейцария в дигитализацията: ', 'Switzerland’s Experience in Digitalization: ', 'Радой Павлов', 'Radoy Pavlov'),
-                      PLAIN('Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса.', 'Formulating recommendations and a roadmap for the digital transformation of business.'),
+                      LABEL('Какво предстои?!: ', 'What’s Coming?!: ', 'Д-р Артур Кордон, Kordon Consulting', 'Dr. Arthur Kordon, Kordon Consulting'),
+                      LABEL('Дискусия: ', 'Discussion: ', 'Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', 'Formulating recommendations and a roadmap for the digital transformation of business'),
                       LABEL('Модератор: ', 'Moderator: ', 'Емил Цанков, председател на УС, ИКТ Клъстер Варна', 'Emil Tsankov, Chairman of the Board, ICT Cluster Varna')
                     ]
                   }]
@@ -7077,9 +7247,11 @@
                   blocks: [{
                     heading: T('Блок 4 (80 мин): Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', 'Block 4 (80 min): Formulating Recommendations and a Roadmap for the Digital Transformation of Business'),
                     lines: [
+                      PERSON('доц. д-р Марияна Тодорова', 'Assoc. Prof. Dr. Mariyana Todorova', 'БАН', 'BAS'),
                       PERSON('Емил Цанков', 'Emil Tsankov', 'председател на УС, ИКТ Клъстер Варна', 'Chairman of the Board, ICT Cluster Varna'),
                       PERSON('Руслан Стефанов', 'Ruslan Stefanov', 'директор „Стратегия и иновации“, Фондация ПИК', 'Director of Strategy and Innovation, ARC Fund'),
-                      PERSON('Симеон Стоянов', 'Simeon Stoyanov', 'BRAIN++', 'BRAIN++'),
+                      PERSON('проф. Симеон Стоянов', 'Prof. Simeon Stoyanov', 'BRAIN++', 'BRAIN++'),
+                      PERSON('проф. д-р Йордан Сивков', 'Prof. Dr. Yordan Sivkov', 'ВВМУ „Н. Й. Вапцаров“', '"N. Y. Vaptsarov" Naval Academy'),
                       PERSON('Светослав Стаменов', 'Svetoslav Stamenov', 'член на УС, ИКТ Клъстер – Варна', 'Board Member, ICT Cluster – Varna'),
                       LABEL('Модератор: ', 'Moderator: ', 'Светослав Стаменов, член на УС, ИКТ Клъстер – Варна', 'Svetoslav Stamenov, Board Member, ICT Cluster – Varna')
                     ]
@@ -7214,12 +7386,12 @@
               сцена.</p>
             <div class="home-speakers-note">
               <p class="home-speakers-note-copy"
-                data-bg="50+ лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно море и извън него."
-                data-en="50+ speakers are already confirmed — practitioners, researchers and institutional leaders from the Black Sea region and beyond.">
-                50+ лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно
+                data-bg="60+ лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно море и извън него."
+                data-en="60+ speakers are already confirmed — practitioners, researchers and institutional leaders from the Black Sea region and beyond.">
+                60+ лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно
                 море и извън него.</p>
               <div class="home-speakers-stats">
-                <div class="home-speakers-stat"><span class="home-speakers-stat-value">50+</span><span
+                <div class="home-speakers-stat"><span class="home-speakers-stat-value">60+</span><span
                     class="home-speakers-stat-label" data-bg="лектори" data-en="speakers">лектори</span></div>
                 <div class="home-speakers-stat"><span class="home-speakers-stat-value">30+</span><span
                     class="home-speakers-stat-label" data-bg="панела" data-en="panels">панела</span>
