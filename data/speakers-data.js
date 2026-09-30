@@ -128,7 +128,7 @@
       id: 'martin-kuvandzhiev', track: 'ai',
       img: '/images/speakers/martin-kuvandzhiev-2.png?v=20260730', alt: 'Martin Kuvandzhiev',
       objectPosition: 'center 8%',
-      name: 'Мартин Кувънджиев',
+      name: 'Мартин Куванджиев',
       nameEn: 'Martin Kuvandzhiev',
       role: 'Founder @ Encorp | Co-founder, Bitcoin Gold',
       topicBg: 'Blockchain, fintech и AI: следващата вълна на иновации',
@@ -422,6 +422,26 @@
       sessionDescEn: 'In this presentation, we will show how the AI assistant "LISA Bubble" brings corporate AI into the everyday workflow, connecting people with the AI infrastructure and information they need. We will also explore how AI agents and automation can work across multiple internal and external sources - searching, analysing, combining and monitoring information, and delivering relevant insights when they are needed.',
       takeawaysBg: 'Участниците ще придобият по-задълбочено разбиране за това как корпоративният AI и AI асистентите могат да подпомагат ежедневната работа. Представянето на AI асистента „LISA Bubble“ ще покаже как автоматизацията и достъпът до информация от различни източници могат да направят работните процеси по-ефективни, да освободят време от повтарящи се задачи и да осигурят достъп до необходимата информация в точния момент.',
       takeawaysEn: 'Participants will gain a deeper understanding of how enterprise AI and AI assistants can support everyday work. The presentation of the AI assistant "LISA Bubble" will demonstrate how automation and access to information across multiple sources can make workflows more efficient, free up time spent on repetitive tasks, and ensure that relevant information is available when it matters most.'
+    },
+    {
+      id: 'oleksandr-syvak', track: 'ai',
+      img: '/images/speakers/oleksandr-syvak.jpg?v=20260930', alt: 'Oleksandr Syvak',
+      objectPosition: 'center top',
+      name: 'Олександър Сивак',
+      nameEn: 'Oleksandr Syvak',
+      role: 'Strateg, Odesa, Ukraine',
+      roleBg: 'Strateg, Одеса, Украйна',
+      roleEn: 'Strateg, Odesa, Ukraine',
+      topicBg: 'AI в лабораторията – от заданието до готовия модел',
+      topicEn: 'AI in the Laboratory – From Brief to Finished Model',
+      bioBg: [
+        'Олександър Сивак е от Strateg, Одеса, Украйна. На CONNEXUS 2026 представя заедно с Ксения Середяк темата „AI в лабораторията – от заданието до готовия модел“.'
+      ],
+      bioEn: [
+        'Oleksandr Syvak is with Strateg, Odesa, Ukraine. At CONNEXUS 2026 he presents "AI in the Laboratory – From Brief to Finished Model" together with Kseniia Serediak.'
+      ],
+      sessionDescBg: 'Част от Блок 1 „Оптимизация на бизнес процеси: геймификация, AI и още“ (7 октомври, 09:10 – 10:30, Зала „България“), заедно с Ксения Середяк, Strateg.',
+      sessionDescEn: 'Part of Block 1 "Business Process Optimization - Gamification, AI, and More" (7 October, 09:10 – 10:30, Hall "Bulgaria"), together with Kseniia Serediak, Strateg.'
     },
     {
       id: 'kalin-kostadinov', track: 'smart-city',
@@ -933,18 +953,18 @@
       id: 'stanislav-ivanov', track: 'tourism',
       img: '/images/speakers/stanislav-ivanov.jpg?v=20260929', alt: 'Stanislav Ivanov',
       objectPosition: 'center top',
-      name: 'Станислав Иванов',
-      nameEn: 'Stanislav Ivanov',
+      name: 'проф. Станислав Иванов',
+      nameEn: 'Prof. Stanislav Ivanov',
       role: 'President @ International Federation for IT and Travel & Tourism | Director @ Zangador Research Institute',
       roleBg: 'Президент @ International Federation for IT and Travel & Tourism | Директор @ Zangador Research Institute',
       roleEn: 'President @ International Federation for IT and Travel & Tourism | Director @ Zangador Research Institute',
       topicBg: 'Високотехнологични преживявания в туризма',
       topicEn: 'High-tech experiences in tourism',
       bioBg: [
-        'Станислав Иванов е президент на International Federation for IT and Travel & Tourism и директор на Zangador Research Institute.'
+        'Станислав Иванов е професор във Висше училище по мениджмънт, Варна, управител на Изследователски институт „Зангадор“ и президент на IFITT - Международната федерация за информационни технологии и туризъм. Главен редактор е на European Journal of Tourism Research и ROBONOMICS: The Journal of the Automated Economy. Научните му изследвания са насочени към робономика, приложение на роботи и изкуствен интелект в туризма, икономически и социални измерения на технологиите.'
       ],
       bioEn: [
-        'Stanislav Ivanov is President of the International Federation for IT and Travel & Tourism and Director of Zangador Research Institute.'
+        'Stanislav Ivanov is a Professor at Varna University of Management, Director of the Zangador Research Institute, and President of IFITT, the International Federation for IT and Travel & Tourism (2026-28). He is the Editor-in-Chief of the European Journal of Tourism Research and ROBONOMICS: The Journal of the Automated Economy. His research interests include robonomics, robots and AI in tourism, and the economic and social aspects of technology.'
       ],
       sessionDescBg: 'Туризмът вече не е само разглеждане на места - той е потапяне в тях. Изкуственият интелект, AR/VR, роботите и интелигентните технологии превръщат дестинациите в завладяващи, персонализирани преживявания, в които всеки посетител може да изследва, да взаимодейства и да запомня по различен начин. Нека видим как цялата туристическа екосистема ще промени из основи това, което днес наричаме „туризъм“.',
       sessionDescEn: 'Tourism is no longer just about seeing places - it is about entering them. AI, AR/VR, robots and smart technologies are turning destinations into immersive, personalised experiences where every visitor can explore, interact and remember differently. Let\'s see how the entire tourism ecosystem will profoundly change what we now call "tourism".'
@@ -1308,6 +1328,30 @@
       sessionDescEn: 'A presentation of the Fund of Funds\' financial instruments aimed at start-ups and companies focused on innovation, digitalisation, strategic technologies and technology transfer.',
       takeawaysBg: 'Участниците във форума ще се запознаят с възможностите за финансиране на иновативни технологии в България.',
       takeawaysEn: 'Participants will learn about the opportunities for financing innovative technologies in Bulgaria.'
+    },
+    {
+      id: 'philip-balkanski', track: 'regional-innovation-policy',
+      img: '/images/speakers/philip-balkanski.jpg?v=20260930', alt: 'Philip Balkanski',
+      objectPosition: 'center top',
+      name: 'Филип Балкански',
+      nameEn: 'Philip Balkanski',
+      role: 'Chief Executive Officer @ Codery',
+      roleBg: 'Изпълнителен директор @ Codery',
+      roleEn: 'Chief Executive Officer @ Codery',
+      topicBg: 'Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги за доставки',
+      topicEn: 'Digital & AI Transformation for Industrial Growth: Secure European Supply Chains',
+      bioBg: [
+        'Филип Балкански има над 17 години ръководен опит във финансовия и технологичния сектор на Обединеното кралство. Започва кариерата си в сливания и придобивания (нефт и газ) в J.P. Morgan, където изгражда строга аналитична рамка за оценка на сложни активи и работа със сложни корпоративни структури с висок залог.',
+        'След прехода си от финансите към технологиите основава Printt - потребителски технологичен стартъп, който достига над 2 милиона клиенти. Като изпълнителен директор той води компанията през етапи на бързо мащабиране, промени в посоката за постигане на product-market fit и в крайна сметка до успешен екзит чрез придобиване от голяма американска корпорация.',
+        'Днес, като изпълнителен директор на Codery, той съчетава дисциплината на инвестиционното банкиране с гъвкавостта на стартъпите, за да помага на големи компании да разширяват инженерния си капацитет. Фокусът му е стратегическият растеж и това екипите „Talent Pods“ на Codery да носят измерима възвръщаемост за партньорите.'
+      ],
+      bioEn: [
+        'Philip Balkanski brings over 17 years of leadership experience in the UK\'s financial and technology sectors. Beginning his career in Mergers & Acquisitions (Oil & Gas) at J.P. Morgan, Philip developed a rigorous analytical framework for valuing complex assets and navigating high-stakes corporate structures.',
+        'Transitioning from finance to technology, Philip founded Printt, a consumer-tech startup that grew to serve over 2 million customers. As CEO, he steered the company through rapid scaling phases, product-market fit pivots, and ultimately a successful exit to a major US corporation.',
+        'Today, as CEO of Codery, Philip leverages this unique blend of investment banking discipline and startup agility to help enterprise clients scale their engineering capabilities. He focuses on strategic growth, ensuring Codery\'s "Talent Pods" deliver measurable ROI for partners.'
+      ],
+      sessionDescBg: 'Панелна дискусия - „Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги за доставки“ (5 октомври, 16:10 - 16:40) - с участието на Jeroen van Hertum, член на УС на Нидерландско-българската търговска камара, Peter Statev, председател на Петаскейл суперкомпютър „Дискавъри“, и Филип Балкански, изпълнителен директор на Codery. Модератор: Георги Добрев, анализатор, Фондация „Приложни изследвания и комуникации“.',
+      sessionDescEn: 'Panel discussion - "Digital & AI Transformation for Industrial Growth: Secure European Supply Chains" (5 October, 16:10 - 16:40) - with Jeroen van Hertum, Board Member, Dutch Bulgarian Chamber of Commerce, Peter Statev, Chairman, PetaScale Supercomputer "Discoverer", and Philip Balkanski, Chief Executive Officer, Codery. Moderated by Georgi Dobrev, Analyst, Applied Research and Communications Fund.'
     },
 
     // ── AgriTech ──

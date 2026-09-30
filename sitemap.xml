@@ -255,6 +255,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/teodor-stavrov/"/>
   </url>
   <url>
+    <loc>https://www.blackseatech.org/speakers/oleksandr-syvak/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/oleksandr-syvak/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/oleksandr-syvak/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/oleksandr-syvak/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/oleksandr-syvak/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/oleksandr-syvak/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/oleksandr-syvak/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/oleksandr-syvak/"/>
+  </url>
+  <url>
     <loc>https://www.blackseatech.org/speakers/kalin-kostadinov/</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kalin-kostadinov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kalin-kostadinov/"/>
@@ -757,6 +769,18 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dochka-vasileva/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dochka-vasileva/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/dochka-vasileva/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/philip-balkanski/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/philip-balkanski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/philip-balkanski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/philip-balkanski/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/philip-balkanski/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/philip-balkanski/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/philip-balkanski/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/philip-balkanski/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/ilia-iordanov/</loc>
