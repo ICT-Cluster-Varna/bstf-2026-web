@@ -758,6 +758,32 @@
       takeawaysBg: 'AI прави социалното инженерство по-убедително, персонализирано и трудно за разпознаване. Техническите контроли сами по себе си не са достатъчни, когато атаката е насочена към доверието и бизнес процеса. При чувствителни действия трябва да се проверяват независимо както самоличността, така и самото искане. Независимата верификация, доверените комуникационни канали и двойното одобрение значително намаляват риска. Сигурният бизнес процес трябва да остане устойчив дори когато фалшивият глас, видео или съобщение изглеждат напълно автентични.',
       takeawaysEn: 'AI makes social engineering more convincing, more personalised and harder to recognise. Technical controls on their own are not enough when the attack targets trust and the business process. For sensitive actions, both the identity and the request itself must be verified independently. Independent verification, trusted communication channels and dual approval significantly reduce the risk. A secure business process must stay resilient even when a fake voice, video or message looks completely authentic.'
     },
+    {
+      id: 'dimitar-nikolov', track: 'cybersecurity',
+      img: '/images/speakers/dimitar-nikolov.jpg?v=20260930', alt: 'Dimitar Nikolov',
+      objectPosition: 'center center',
+      name: 'гл. ас. д-р Димитър Николов',
+      nameEn: 'Dr. Dimitar Nikolov',
+      role: 'Chief Assistant Professor @ Nikola Vaptsarov Naval Academy',
+      roleBg: 'Главен асистент @ ВВМУ „Н. Й. Вапцаров“',
+      roleEn: 'Chief Assistant Professor @ Nikola Vaptsarov Naval Academy',
+      topicBg: 'Справяне със стратегическата несигурност в Черноморския регион',
+      topicEn: 'Tackling Strategic Insecurity in the Black Sea Region',
+      bioBg: [
+        'Гл. ас. д-р Димитър Николов е преподавател и изследовател в областта на киберсигурността във ВВМУ „Н. Й. Вапцаров“, съчетаващ академичната си дейност с дългогодишен практически опит в международна корпоративна среда. Професионалното му развитие включва множество позиции в областта на киберсигурността, включително Red Team Lead в международна компания - позиция, свързана с дейности в областта на offensive security, penetration testing, Cyber Threat Intelligence и Adversary Emulation.',
+        'Притежава редица международно признати професионални квалификации и сертификати, сред които SpecterOps Adversary Tactics: Red Team Operations, SpecterOps Adversary Tactics: Mac Tradecraft, EC-Council Certified Ethical Hacker (CEH), EC-Council Certified Threat Intelligence Analyst (CTIA) и arcX Cyber Threat Intelligence Practitioner, както и специализирано обучение в областта на киберотбраната.',
+        'Научните и професионалните му интереси са насочени към киберсигурността, Red Team операциите, киберразузнаването, симулацията на действията на реални противници (Adversary Emulation), анализа на съвременни киберзаплахи и защитата на критични инфраструктури. Автор и съавтор е на научни разработки, посветени на държавно спонсорирани групи като Volt Typhoon и Salt Typhoon, използването на YARA и Sigma правила за откриване на злонамерена хакерска активност и практически обучения по киберсигурност. Публикациите му са свързани с ВВМУ и международни научни форуми.',
+        'Той е академичен координатор на международни обучения по penetration testing и ethical hacking във ВВМУ, а през 2025 г. е главен инструктор на курса „Cyber Range - Cybersecurity in Practice“, организиран от ВВМУ под егидата на European Security and Defence College.'
+      ],
+      bioEn: [
+        'Chief Assistant Professor Dr. Dimitar Nikolov is a lecturer and researcher in cybersecurity at the Nikola Vaptsarov Naval Academy, combining his academic work with many years of hands-on experience in an international corporate environment. His career includes a number of cybersecurity roles, among them Red Team Lead at an international company - a position covering offensive security, penetration testing, Cyber Threat Intelligence and Adversary Emulation.',
+        'He holds a number of internationally recognised professional qualifications and certifications, including SpecterOps Adversary Tactics: Red Team Operations, SpecterOps Adversary Tactics: Mac Tradecraft, EC-Council Certified Ethical Hacker (CEH), EC-Council Certified Threat Intelligence Analyst (CTIA) and arcX Cyber Threat Intelligence Practitioner, as well as specialised training in cyber defence.',
+        'His research and professional interests focus on cybersecurity, Red Team operations, cyber intelligence, the emulation of real-world adversaries (Adversary Emulation), the analysis of modern cyber threats and the protection of critical infrastructure. He is the author and co-author of research on state-sponsored groups such as Volt Typhoon and Salt Typhoon, on the use of YARA and Sigma rules to detect malicious hacking activity, and on practical cybersecurity training. His publications are associated with the Naval Academy and international scientific forums.',
+        'He is the academic coordinator of international penetration testing and ethical hacking courses at the Naval Academy, and in 2025 he was the lead instructor of the course "Cyber Range - Cybersecurity in Practice", organised by the Naval Academy under the auspices of the European Security and Defence College.'
+      ],
+      sessionDescBg: 'Панелна дискусия - „Справяне със стратегическата несигурност в Черноморския регион“ (6 октомври, 09:10 - 09:50, Зала „Варна“, Българо-нидерландски бизнес обмен) - с участието на Albert Veenstra, професор по търговия и логистика, Университет „Еразъм“ - Ротердам, и гл. ас. д-р Димитър Николов, ВВМУ „Н. Й. Вапцаров“. Модератор: Георги Добрев, анализатор, Фондация ПИК.',
+      sessionDescEn: 'Panel discussion - "Tackling Strategic Insecurity in the Black Sea Region" (6 October, 09:10 - 09:50, Hall "Varna", Bulgaria-Netherlands Business Exchange) - with Albert Veenstra, Professor of Trade and Logistics, Erasmus University Rotterdam, and Dr. Dimitar Nikolov, Nikola Vaptsarov Naval Academy. Moderated by Georgi Dobrev, Analyst, ARC Fund.'
+    },
 
     // ── BioTech ──
     {
