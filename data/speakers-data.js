@@ -444,6 +444,74 @@
       sessionDescEn: 'Part of Block 1 "Business Process Optimization - Gamification, AI, and More" (7 October, 09:10 – 10:30, Hall "Bulgaria"), together with Kseniia Serediak, Strateg.'
     },
     {
+      id: 'gerasim-slavov', track: 'ai',
+      img: '/images/speakers/gerasim-slavov.jpg?v=20260930', alt: 'Gerasim Slavov',
+      objectPosition: 'center top',
+      name: 'Герасим Й. Славов',
+      nameEn: 'Gerasim Y. Slavov',
+      role: 'InnovationAmp European Digital Innovation Hub | BRAIN++',
+      roleBg: 'Европейски цифров иновационен хъб InnovationAmp | BRAIN++',
+      roleEn: 'InnovationAmp European Digital Innovation Hub | BRAIN++',
+      topicBg: 'InnovationAmp: ускоряване на цифровата трансформация',
+      topicEn: 'InnovationAmp: Accelerating Digital Transformation',
+      bioBg: [
+        'Герасим Й. Славов има над 20 години управленски опит в телекомуникациите и медиите. Експертизата му включва стратегическо лидерство, цифрова трансформация, маркетинг и изграждане на партньорства с инвеститори, институции и индустрията.',
+        'Той е магистър по бизнес администрация от университета в Линкълн, Великобритания, по европеистика от университета в Лимерик, Ирландия, и по лингвистика от Софийския университет, както и бакалавър по международни отношения от Американския университет в България.'
+      ],
+      bioEn: [
+        'Gerasim Y. Slavov has over 20 years of management experience in telecommunications and media. His expertise includes strategic leadership, digital transformation, marketing and building partnerships with investors, institutions and industry.',
+        'He holds master\'s degrees in Business Administration from the University of Lincoln, UK, in European Studies from the University of Limerick, Ireland, and in Linguistics from Sofia University, as well as a bachelor\'s degree in International Relations from the American University in Bulgaria.'
+      ],
+      sessionDescBg: 'Много компании имат идеи за внедряване на изкуствен интелект и автоматизация, но трудно поемат риска и разходите за първата стъпка. InnovationAmp е Европейски цифров иновационен хъб (ЕЦИХ) и помага точно на този етап. Хъбът предлага тестване на технологии преди инвестицията, обучения, помощ при намиране на финансиране и достъп до мрежа от партньори. Тези услуги, заедно с изчислителните ресурси на фабриката за изкуствен интелект BRAIN++, намаляват риска и съкращават пътя от пилотен проект до пазарно решение.',
+      sessionDescEn: 'Many companies have ideas for adopting artificial intelligence and automation, but find it hard to take on the risk and cost of the first step. InnovationAmp is a European Digital Innovation Hub (EDIH) and helps precisely at this stage. The hub offers technology testing before investment, training, support in finding funding and access to a network of partners. Together with the computing resources of the BRAIN++ AI Factory, these services reduce risk and shorten the path from pilot project to market-ready solution.',
+      takeawaysBg: 'Тестване преди инвестиция: компанията може да провери технологично решение с експертите на хъба, преди да вложи собствени средства. Реално намаляване на разходите: услугите на ЕЦИХ се предоставят безплатно и се финансират от програма „Цифрова Европа“ и националния бюджет. Изчислителна мощ за AI: стартиращи компании и МСП могат да получат достъп до суперкомпютърни ресурси на EuroHPC чрез BRAIN++, без да купуват собствена инфраструктура. По-силна позиция пред инвеститори и фондове: с валидиран прототип, оценка на цифровата зрялост и ясен план за внедряване компанията има по-добри шансове пред НИФ, Фонда на фондовете или частни инвеститори. Умения за екипа: хъбът предлага обучения по AI, данни и киберсигурност, насочени към конкретните нужди на компанията. Достъп до европейската мрежа: над 200 хъба в ЕС улесняват намирането на партньори, технологии и нови пазари за износ. Ясна първа стъпка: аудиторията ще научи как да се свърже с InnovationAmp, какво да подготви и какво да очаква в първите седмици.',
+      takeawaysEn: 'Testing before investing: a company can validate a technology solution with the hub\'s experts before committing its own funds. Real cost reduction: EDIH services are provided free of charge and are funded by the Digital Europe Programme and the national budget. Computing power for AI: start-ups and SMEs can access EuroHPC supercomputing resources through BRAIN++ without buying their own infrastructure. A stronger position with investors and funds: with a validated prototype, a digital maturity assessment and a clear implementation plan, a company has better chances with the NIF, the Fund of Funds or private investors. Skills for the team: the hub offers training in AI, data and cybersecurity tailored to the company\'s specific needs. Access to the European network: more than 200 hubs across the EU make it easier to find partners, technologies and new export markets. A clear first step: the audience will learn how to get in touch with InnovationAmp, what to prepare and what to expect in the first weeks.'
+    },
+    {
+      id: 'stoyan-zlatkov', track: 'ai',
+      img: '/images/speakers/stoyan-zlatkov.jpg?v=20260930', alt: 'Stoyan Zlatkov',
+      objectPosition: 'center top',
+      name: 'Стоян Златков',
+      nameEn: 'Stoyan Zlatkov',
+      role: 'AI Ecosystem Architect @ BRAIN++ | Co-founder @ Flatimo',
+      roleBg: 'AI Ecosystem Architect @ BRAIN++ | Съосновател @ Flatimo',
+      roleEn: 'AI Ecosystem Architect @ BRAIN++ | Co-founder @ Flatimo',
+      topicBg: 'Бизнес обмен България–Обединено кралство: от контакти към съвместни инициативи',
+      topicEn: 'Bulgaria–United Kingdom Business Exchange: From Contacts to Joint Initiatives',
+      bioBg: [
+        'Стоян Златков е AI Ecosystem Architect в BRAIN++, AI фабриката на България в София Тех Парк, и съосновател на proptech платформата Flatimo. Бивш CFO на Interop.io и инвестиционен банкер, той притежава Executive MBA от INSEAD (Dean\'s List).'
+      ],
+      bioEn: [
+        'Stoyan Zlatkov is AI Ecosystem Architect at BRAIN++, Bulgaria\'s AI Factory at Sofia Tech Park, and co-founder of the proptech platform Flatimo. A former CFO of Interop.io and an investment banker, he holds an Executive MBA from INSEAD (Dean\'s List).'
+      ],
+      sessionDescBg: 'Сесията е посветена на превръщането на връзките, установени по време на Форума, в потенциални търговски партньорства, съвместни проекти, инвестиционни възможности и структурирани последващи действия.',
+      sessionDescEn: 'The session is about converting the relationships established during the Forum into potential commercial partnerships, joint projects, investment opportunities and structured follow-up activities.',
+      takeawaysBg: 'Повечето контакти от форуми изстиват в рамките на две седмици. Сделката обикновено отива при този, който пръв изпрати конкретно предложение, а не при този, който е провел най-добрия разговор. Партньорите от Обединеното кралство вземат решения по-бавно, но се ангажират по-сериозно. Очаквайте 3-6 месеца от първата среща до подписана сделка - и истински договор, а не ръкостискане. Най-бързият път към пазара на Обединеното кралство рядко минава през британско дружество. Дистрибутор, реселър или партньор със седалище в Обединеното кралство ви позволява да тествате търсенето, преди да натрупате постоянни разходи. Позицията на България пред британските компании вече е по-силна: приемането на еврото и пълноправното членство в Шенген премахват валутните и граничните пречки, а разходите и техническите таланти остават конкурентни. Търговията след Brexit е без мита, но не и без пречки. Правилата за произход, митническите документи и регистрацията по ДДС определят дали една сделка е наистина печеливша. Инвеститорите и партньорите ви оценяват по числата, преди да погледнат продукта ви. Изрядните финанси, ясната собственост и одитираните отчети отварят врати, които дори най-добрата презентация не може да отвори.',
+      takeawaysEn: 'Most forum contacts go cold within two weeks. The deal usually goes to whoever sends a specific proposal first, not to whoever had the best conversation. UK partners decide slower but commit harder. Expect 3-6 months from first meeting to signed deal, and a real contract, not a handshake. The fastest route into the UK is rarely a UK entity. A distributor, reseller or a UK-based partner lets you test demand before building overhead. Bulgaria\'s pitch to UK companies is now stronger: euro adoption and full Schengen membership remove currency and border friction, while costs and tech talent remain competitive. Post-Brexit trade is tariff-free but not friction-free. Rules of origin, customs paperwork and VAT registration decide whether a deal is actually profitable. Investors and partners judge you on your numbers before your product. Clean financials, clear ownership and audited accounts open doors that a great pitch cannot.'
+    },
+    {
+      id: 'ilia-jeliazkov', track: 'ai',
+      img: '/images/speakers/ilia-jeliazkov.jpg?v=20260930', alt: 'Ilia Jeliazkov',
+      objectPosition: 'center top',
+      name: 'Илия Желязков',
+      nameEn: 'Ilia Jeliazkov',
+      role: 'Software Engineer @ T&D Engineering',
+      roleBg: 'Софтуерен инженер @ T&D Engineering',
+      roleEn: 'Software Engineer @ T&D Engineering',
+      topicBg: 'Ако енергията можеше да мисли? AI - от прогнозиране до автономни енергийни решения',
+      topicEn: 'What If Energy Could Think? AI - From Forecasting to Autonomous Energy Decisions',
+      bioBg: [
+        'Илия Желязков е софтуерен инженер в T&D Engineering с опит в системите за управление, изкуствения интелект, вградените системи и управлението на инфраструктура. Настоящата му работа е фокусирана върху архитектурата Grid-One, AI в енергетиката, регулаторен RAG, агентни системи и инфраструктура за локални LLM.'
+      ],
+      bioEn: [
+        'Ilia Jeliazkov is a software engineer at T&D Engineering with a background in control systems, AI, embedded systems and infrastructure management. His current work focuses on Grid-One architecture, energy AI, regulatory RAG, agentic systems and local LLM infrastructure.'
+      ],
+      sessionDescBg: 'Съвременните енергийни системи все по-често съчетават възобновяемо производство, батерийно съхранение, зарядни станции за електромобили, индустриални товари и интелигентни сгради, но тези активи често се управляват поотделно. Презентацията разглежда как изкуственият интелект може да превърне данните в реално време, прогнозите, цените на електроенергията, състоянието на мрежата и оперативните ограничения в координирани енергийни решения. На примера на Grid-One като практическа архитектура T&D Engineering ще демонстрира прехода от мониторинг и прогнозиране към многокритериална оптимизация и автоматизирано управление. Платформата може да адаптира приоритетите на оптимизацията при промяна на пазарните условия, състоянието на активите и бизнес изискванията, като балансира разходи, приходи, надеждност, живот на активите и устойчивост. Автоматизираните решения остават в рамките на зададените от оператора политики и техническите ограничения.',
+      sessionDescEn: 'Modern energy systems increasingly combine renewable generation, battery storage, EV charging, industrial loads and smart buildings, yet these assets are often managed independently. This presentation explores how AI can transform real-time data, forecasts, electricity prices, grid conditions and operational constraints into coordinated energy decisions. Using Grid-One as a practical architecture, T&D Engineering will demonstrate the transition from monitoring and forecasting to multi-objective optimization and automated control. The platform can adapt optimization priorities as market conditions, asset health and business requirements change, balancing cost, revenue, reliability, asset life and sustainability. Automated decisions remain within operator-defined policies and technical limits.',
+      takeawaysBg: 'Аудиторията ще получи практическо разбиране за това как изкуственият интелект може да координира разпределени енергийни активи, да премести управлението на енергията от мониторинг към прогнозиране и автоматизирано управление и да балансира противоречиви бизнес и технически цели. Сесията ще покаже как приоритетите на оптимизацията могат да се адаптират динамично към пазарните условия, състоянието на активите и оперативните нужди, като остават в рамките на зададените от оператора и техническите ограничения. Участниците ще видят и как тези принципи се мащабират от отделни индустриални обекти и енергийни общности до портфейли от множество активи и виртуални електроцентрали.',
+      takeawaysEn: 'The audience will gain a practical understanding of how AI can coordinate distributed energy assets, move energy management from monitoring toward forecasting and automated control, and balance competing business and technical objectives. The session will show how optimization priorities can adapt dynamically to market conditions, asset health and operational needs while remaining within operator-defined and technical constraints. Attendees will also see how these principles scale from individual industrial sites and energy communities to multi-asset portfolios and virtual power plants.'
+    },
+    {
       id: 'kalin-kostadinov', track: 'smart-city',
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
       objectPosition: 'center top',
@@ -902,6 +970,50 @@
       bioBg: [
         'Джемиле Кьоселер Уста е заместник-ръководител на отдел „Технологии и дигитализация“ в Търговско-промишлената камара на Истанбул и експерт на Enterprise Europe Network (EEN). Движеща сила зад индустриалните иновации и дигиталната трансформация, тя подпомага МСП чрез стратегически партньорства, внедряване на технологии и възможности за финансиране от ЕС.'
       ]
+    },
+    {
+      id: 'ismail-bayezit', track: 'marine',
+      img: '/images/speakers/ismail-bayezit.jpg?v=20260930', alt: 'Ismail Bayezit',
+      objectPosition: 'center top',
+      name: 'доц. Ismail Bayezit',
+      nameEn: 'Assoc. Prof. Ismail Bayezit',
+      role: 'Associate Professor @ Istanbul Technical University',
+      roleBg: 'Доцент @ Истанбулски технически университет',
+      roleEn: 'Associate Professor @ Istanbul Technical University',
+      topicBg: 'Навигация към бъдещето с автономни кораби',
+      topicEn: 'Navigating the Future with Autonomous Ships',
+      bioBg: [
+        'Ismail Bayezit е доцент в Истанбулския технически университет (ITU), специализиран в автономните системи, насочването, навигацията и управлението. Той е директор на Лабораторията за моделно-базирано проектиране и управление към ITU и заместник-директор на Центъра за върхови постижения в авиационните изследвания на ITU и Turkish Aerospace Industries. Преди това е работил като главен изследовател в Изследователския център за автономни кораби на Samsung Heavy Industries, където се е фокусирал върху автономната навигация, избягването на сблъсъци, акостирането, насочването и управлението на автономни плавателни съдове. Научният и индустриалният му опит обхваща морската автономност, интелигентните превозни средства, безпилотните летателни апарати (UAV), моделно-базираното проектиране, дигиталните двойници и усъвършенстваните системи за управление, като свързва академичните изследвания с реални инженерни приложения и допринася за развитието на следващото поколение интелигентни транспортни технологии в множество области.'
+      ],
+      bioEn: [
+        'Ismail Bayezit is an Associate Professor at Istanbul Technical University, specializing in autonomous systems, guidance, navigation, and control. He serves as the Director of the ITU Model-Based Design and Control Laboratory and Deputy Director of the ITU–Turkish Aerospace Industries Center of Excellence for Aircraft Research. Previously, he worked as a Principal Researcher at Samsung Heavy Industries Autonomous Ship Research Center, focusing on autonomous navigation, collision avoidance, berthing, guidance, and control of autonomous vessels. His research and industrial experience spans marine autonomy, intelligent vehicles, UAVs, model-based design, digital twins, and advanced control systems, bridging academic research with real-world engineering applications and contributing to the development of next-generation intelligent transportation technologies across multiple domains.'
+      ],
+      sessionDescBg: 'Лекцията разглежда бързо развиващата се област на автономния морски транспорт и технологиите, които оформят следващото поколение интелигентни кораби. Тя ще представи ключовите постижения в автономната навигация, вземането на решения с помощта на изкуствен интелект, избягването на сблъсъци, насочването и управлението, както и автономното акостиране. Презентацията ще даде и обзор на актуалните тенденции и новите инициативи в морската автономност в Азия, Европа и Черноморския регион. Въз основа на реален опит в научноизследователската и развойната дейност лекцията ще обсъди предизвикателствата при прехода от алгоритми и симулации към надеждни автономни системи, работещи в открито море, и ще предложи поглед към бъдещето на безопасната, интелигентна и устойчива морска автономност.',
+      sessionDescEn: 'This talk explores the rapidly evolving field of autonomous maritime transportation and the technologies shaping the next generation of intelligent ships. It will highlight key developments in autonomous navigation, AI-based decision making, collision avoidance, guidance and control, and autonomous berthing. The presentation will also provide an overview of current trends and emerging initiatives in marine autonomy across Asia, Europe, and the Black Sea region. Drawing on real-world research and development experience, the talk will discuss the challenges of moving from algorithms and simulations to reliable autonomous systems operating at sea, while offering a perspective on the future of safe, intelligent, and sustainable maritime autonomy.',
+      takeawaysBg: 'Аудиторията ще придобие разбиране за ключовите технологии, актуалните тенденции и практическите предизвикателства, които оформят бъдещето на автономния морски транспорт. Лекцията ще свърже развитието в Азия, Европа и Черноморския регион с реалния опит в автономната навигация, избягването на сблъсъци, насочването и управлението, автономното акостиране и валидирането на системите. Тя ще очертае и пътя от изследванията и симулациите до надеждни автономни системи, работещи в открито море.',
+      takeawaysEn: 'The audience will gain an understanding of the key technologies, current trends, and practical challenges shaping the future of autonomous maritime transportation. The talk will connect developments in Asia, Europe, and the Black Sea region with real-world experience in autonomous navigation, collision avoidance, guidance and control, autonomous berthing, and system validation. It will also highlight the pathway from research and simulation to reliable autonomous systems operating at sea.'
+    },
+    {
+      id: 'borislav-teberov', track: 'marine',
+      img: '/images/speakers/borislav-teberov.jpg?v=20260930', alt: 'Borislav Teberov',
+      objectPosition: 'center top',
+      name: 'Борислав Теберов',
+      nameEn: 'Borislav Teberov',
+      role: 'Founder & CEO @ Pontic Dynamics',
+      roleBg: 'Основател и изпълнителен директор @ Pontic Dynamics',
+      roleEn: 'Founder & CEO @ Pontic Dynamics',
+      topicBg: 'Автономни морски системи за реални мисии',
+      topicEn: 'Autonomous Maritime Systems Built for Real-World Missions',
+      bioBg: [
+        'Борислав Теберов е основател на Pontic Dynamics - българска компания, която произвежда безекипажни надводни съдове (USV) и подсистеми за тях. Специализира в иновациите в морските системи, като системи против сблъсък, сливане на сензорни данни (sensor fusion), edge изчисления и предаване на данни от плавателния съд към UUV, UAV и сателит (включително подводна комуникация). Има над 15 години опит в секторите на полупроводниците, автомобилостроенето и космоса.'
+      ],
+      bioEn: [
+        'Borislav Teberov is the founder of Pontic Dynamics, a Bulgaria-based manufacturer of USVs and USV subsystems. He specialises in innovation in maritime systems such as anti-collision systems, sensor fusion, edge computing and data relay from the boat to UUVs, UAVs and satellites (including underwater communication). He has more than 15 years of experience in the semiconductor, automotive and space sectors.'
+      ],
+      sessionDescBg: 'Pontic Dynamics разработва инфраструктура за управление и модулен софтуер за безекипажни надводни съдове (USV). Основана от изпълнителния директор Борислав Теберов, компанията използва AI с участие на човека (Human-in-the-Loop), за да защитава моряците, а не да ги замества. Продуктовата ѝ линия включва софтуер за управление, AI навигационни модули, контролери за подсистеми, защитени записващи устройства за данни и платформи за edge изчисления. Бордовите механизми за безопасност (fail-safe) и пасивните инструменти като PD Sextant NG поддържат безопасността на съдовете при GPS спуфинг и прекъсване на мрежата. Като осигурява ясни одитни следи за застрахователите и провежда тестове в определени изпитателни зони (sandbox), Pontic Dynamics помага за безопасното развитие на автономното корабоплаване.',
+      sessionDescEn: 'Pontic Dynamics develops control infrastructure and modular software for unmanned surface vessels (USVs). Founded by CEO Borislav Teberov, the company uses Human-in-the-Loop AI to protect mariners rather than replace them. Its product line includes control software, AI navigation engines, subsystem controllers, secure data loggers, and edge computing platforms. Onboard fail-safes and passive tools like the PD Sextant NG keep vessels safe during GPS spoofing and network blackouts. By providing clear audit trails for insurers and testing in designated sandboxes, Pontic Dynamics helps safely advance autonomous shipping.',
+      takeawaysBg: 'Как AI с участие на човека (Human-in-the-Loop), устойчивата навигация и технологиите за безопасност (fail-safe) могат да направят автономното корабоплаване по-безопасно и надеждно, дори при GPS спуфинг и загуба на свързаност.',
+      takeawaysEn: 'How Human-in-the-Loop AI, resilient navigation, and fail-safe technologies can enable safer, trustworthy autonomous shipping, even during GPS spoofing and connectivity loss.'
     },
 
     // ── Tourism ──
