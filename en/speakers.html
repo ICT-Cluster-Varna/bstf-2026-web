@@ -2476,6 +2476,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       (function () {
         var sections = document.querySelectorAll('.track-section');
         if (!sections.length) return;
+        // Any overlap reveals a section: on phones a track with many speakers is
+        // over ten screens tall, so a ratio threshold would never be reached.
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
@@ -2483,7 +2485,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               io.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.08 });
+        }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
         sections.forEach(function (sec) {
           var rect = sec.getBoundingClientRect();
           if (rect.top < window.innerHeight) {

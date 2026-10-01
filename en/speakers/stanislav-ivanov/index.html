@@ -789,8 +789,14 @@
         max-width: 480px
       }
 
+      /* Whole photo on narrow screens: a 4:3 crop of a portrait left only the head */
       .sp-photo {
-        aspect-ratio: 4 / 3
+        aspect-ratio: auto
+      }
+
+      .sp-photo img {
+        display: block;
+        height: auto
       }
 
       .sp-body {
