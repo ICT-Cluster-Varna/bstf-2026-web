@@ -4611,94 +4611,89 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 14px;
       }
 
       .partner-logo a {
         display: flex;
         align-items: center;
-        gap: 14px;
       }
 
-      .partner-logo img {
-        height: 64px;
-        width: auto;
-        max-width: 190px;
+      /* Logo rows: centered category header + equal (borderless) grid cells. Each logo is sized
+         to the same visual area by shared/logo-wall.js; no per-logo CSS needed. */
+      .partner-row.partner-row--logos {
+        --cols: 4;
+        --tile-h: 104px;
+        --gap: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        padding: 30px 36px 36px;
+      }
+
+      /* Only media partners are smaller; every other row shares one size */
+      .partner-row.partner-row--media {
+        --cols: 6;
+        --tile-h: 84px;
+      }
+
+      .partner-row--logos .partner-row__label {
+        flex: none;
+        gap: 18px;
+      }
+
+      .partner-row--logos .partner-row__label::before,
+      .partner-row--logos .partner-row__label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(0, 205, 255, 0), rgba(0, 205, 255, 0.45));
+      }
+
+      .partner-row--logos .partner-row__label::after {
+        background: linear-gradient(90deg, rgba(0, 205, 255, 0.45), rgba(0, 205, 255, 0));
+      }
+
+      .partner-row--logos .partner-row__label span {
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+      }
+
+      .partner-row--logos .partner-row__divider {
+        display: none;
+      }
+
+      .partner-row--logos .partner-row__logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: var(--gap);
+      }
+
+      .partner-row--logos .partner-logo {
+        flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+        height: var(--tile-h);
+        box-sizing: border-box;
+        padding: 12px 10px;
+        overflow: hidden;
+      }
+
+      .partner-row--logos .partner-logo a {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+      }
+
+      .partner-row--logos .partner-logo a:focus-visible {
+        outline: 2px solid var(--teal-contrast);
+        outline-offset: 4px;
+        border-radius: 8px;
+      }
+
+      .partner-row--logos .partner-logo img {
+        height: auto;
+        max-width: 86%;
+        max-height: 64%;
         object-fit: contain;
-        display: block;
-      }
-
-      .partner-logo--ict img {
-        height: 72px;
-        max-width: 220px;
-      }
-
-      .partner-logo--bsmepa img {
-        height: 80px;
-        max-width: 210px;
-      }
-
-      .partner-logo--brainpp img {
-        height: 68px;
-      }
-
-      .partner-logo--arcf img {
-        height: 34px;
-      }
-
-      .partner-logo--varna img {
-        height: 88px;
-        max-width: 104px;
-      }
-
-      .partner-logo--mobility img {
-        height: 72px;
-        max-width: 210px;
-      }
-
-      .partner-logo--bultisad img {
-        height: 60px;
-        max-width: 220px;
-      }
-
-      .partner-logo--mcb img {
-        height: 76px;
-        max-width: 90px;
-      }
-
-      .partner-logo--orcci img {
-        height: 46px;
-        max-width: 200px;
-      }
-
-      .partner-logo--ardes img {
-        height: 58px;
-        max-width: 190px;
-      }
-
-      .partner-logo--samsung img {
-        height: 30px;
-        max-width: 200px;
-      }
-
-      .partner-logo--lazur img {
-        height: 46px;
-        max-width: 200px;
-      }
-
-      .partner-logo--para img {
-        height: 44px;
-        max-width: 160px;
-      }
-
-      .partner-logo--microsoft img {
-        height: 36px;
-        max-width: 200px;
-      }
-
-      .partner-logo--also img {
-        height: 52px;
-        max-width: 190px;
       }
 
       .partner-varna-text {
@@ -4761,55 +4756,37 @@
           font-size: 1.2rem;
         }
 
-        .partner-row__logos {
+        .partner-row.partner-row--logos {
+          align-items: stretch;
+          gap: 20px;
+          padding: 24px 16px 20px;
+          --cols: 2;
+          --tile-h: 88px;
+          --gap: 10px;
+        }
+
+        .partner-row.partner-row--media {
+          --cols: 3;
+          --tile-h: 64px;
+        }
+
+        .partner-row--logos .partner-row__label {
           width: 100%;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 18px 14px;
+          gap: 12px;
         }
 
-        .partner-row__logos .partner-logo {
-          flex: 0 1 132px;
-        }
-
-        .partner-row__logos .partner-logo--ict {
-          flex-basis: 140px;
-        }
-
-        .partner-row__logos .partner-logo--bsmepa {
-          flex-basis: 160px;
-        }
-
-        .partner-row__logos .partner-logo--brainpp,
-        .partner-row__logos .partner-logo--arcf {
-          flex-basis: 120px;
-        }
-
-        .partner-logo--ict img {
-          max-width: 150px;
-          height: 54px;
-        }
-
-        .partner-logo--bsmepa img {
-          max-width: 150px;
-          height: 58px;
-        }
-
-        .partner-logo--brainpp img {
-          height: 48px;
-        }
-
-        .partner-logo--arcf img {
-          height: 28px;
-        }
-
-        .partner-logo--mobility img {
-          height: 54px;
-          max-width: 165px;
+        .partner-row--logos .partner-logo {
+          padding: 8px;
         }
 
         .partner-crest-img {
           height: 96px;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .partner-row.partner-row--media {
+          --cols: 5;
         }
       }
 
@@ -5701,6 +5678,7 @@
     <!-- Navigation -->
     <div id="site-nav-root"></div>
     <script src="shared/site-chrome.js?v=20260924"></script>
+    <script src="shared/logo-wall.js?v=20260930-3" defer></script>
     <script>SiteChrome.renderNav('home');</script>
 
     <div class="hero-cta-wrap" style="min-height:100vh;min-height:100dvh;display:flex;flex-direction:column">
@@ -6096,7 +6074,7 @@
           </div>
 
           <!-- Organizers -->
-          <div class="partner-row">
+          <div class="partner-row partner-row--logos partner-row--organizers">
             <div class="partner-row__label">
               <span data-bg="Организатори" data-en="Organizers">Организатори</span>
             </div>
@@ -6135,7 +6113,7 @@
           </div>
 
           <!-- Partners -->
-          <div class="partner-row">
+          <div class="partner-row partner-row--logos partner-row--partners">
             <div class="partner-row__label">
               <span data-bg="Партньори" data-en="Partners">Партньори</span>
             </div>
@@ -6235,7 +6213,7 @@
           </div>
 
           <!-- Mobility partner -->
-          <div class="partner-row">
+          <div class="partner-row partner-row--logos partner-row--logistics">
             <div class="partner-row__label">
               <span data-bg="Логистични партньори" data-en="Logistics Partners">Логистични партньори</span>
             </div>
@@ -6287,7 +6265,7 @@
           </div>
 
           <!-- Media partners -->
-          <div class="partner-row">
+          <div class="partner-row partner-row--logos partner-row--media">
             <div class="partner-row__label">
               <span data-bg="Медийни партньори" data-en="Media Partners">Медийни партньори</span>
             </div>
