@@ -181,25 +181,6 @@
       ]
     },
     {
-      id: 'genoveva-christova', track: 'ai',
-      img: '/images/speakers/genoveva-christova.jpg?v=20260916', alt: 'Genoveva Christova',
-      objectPosition: 'center top',
-      name: 'Геновева Христова',
-      nameEn: 'Genoveva Christova',
-      role: 'President @ CreaTech Bulgaria | Managing Director @ Ligna Group',
-      roleBg: 'Председател @ CreaTech Bulgaria | Управител @ Ligna Group',
-      roleEn: 'President @ CreaTech Bulgaria | Managing Director @ Ligna Group',
-      topicBg: 'От Евровизия до изкуствения интелект: креативните индустрии като лаборатория за бъдещето на бизнеса',
-      topicEn: 'From Eurovision to AI: Creative Industries as a Laboratory for the Future of Business',
-      bioBg: [
-        'Геновева Христова-Мъри е председател на CreaTech Bulgaria и Български мебелен клъстер и управител на Ligna Group. Има богат опит в развитието на клъстери, предприемачеството, международното сътрудничество, бизнес развитието и иновационните екосистеми.'
-      ],
-      bioEn: [
-        'Genoveva Christova-Murray is President of CreaTech Bulgaria and the Bulgarian Furniture Cluster and Managing Director of Ligna Group. She has extensive experience in cluster development, entrepreneurship, international cooperation, business development and innovation ecosystems.'
-      ],
-      sessionDescBg: 'Креативните индустрии са мястото, където технологиите, творчеството и новите бизнес модели често се срещат първи. От Евровизия и живите събития до гейминга, имърсив преживяванията и изкуствения интелект, те дават представа как бизнесът може да ангажира публика, да изгражда общности и да създава нови форми на стойност. Лекцията разглежда какво могат да научат другите индустрии от креативния сектор - и защо творчеството се превръща в ключово конкурентно предимство в ерата на изкуствения интелект.',
-      sessionDescEn: 'Creative industries are where technology, creativity, and new business models often meet first. From Eurovision and live entertainment to gaming, immersive experiences, and AI, they offer a glimpse into how businesses can engage audiences, build communities, and create new forms of value. This talk explores what other industries can learn from the creative sector - and why creativity is becoming a key competitive advantage in the age of AI.'
-    },    {
       id: 'arthur-kordon', track: 'ai',
       img: '/images/speakers/arthur-kordon.jpg?v=20260918', alt: 'Arthur Kordon',
       objectPosition: 'center top',
