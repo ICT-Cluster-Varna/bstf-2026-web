@@ -512,6 +512,28 @@
       takeawaysEn: 'The audience will gain a practical understanding of how AI can coordinate distributed energy assets, move energy management from monitoring toward forecasting and automated control, and balance competing business and technical objectives. The session will show how optimization priorities can adapt dynamically to market conditions, asset health and operational needs while remaining within operator-defined and technical constraints. Attendees will also see how these principles scale from individual industrial sites and energy communities to multi-asset portfolios and virtual power plants.'
     },
     {
+      id: 'zvezdelin-borisov', track: 'ai',
+      img: '/images/speakers/zvezdelin-borisov.jpg?v=20261001', alt: 'Zvezdelin Borisov',
+      objectPosition: 'center top',
+      name: 'Звезделин Борисов',
+      nameEn: 'Zvezdelin Borisov',
+      role: 'BRAIN++',
+      roleBg: 'BRAIN++',
+      roleEn: 'BRAIN++',
+      topicBg: 'CHAIN++: федерирано езеро от данни за AI',
+      topicEn: 'Federated AI Data Lake CHAIN++',
+      bioBg: [
+        'Звезделин Борисов е технологичен ръководител с над 30 години опит в ИТ и услугите – от изграждането на интернет операции до управлението на компании като главен изпълнителен директор. Съчетава експертиза в развитието на бизнеса и продажбите с практическа задълбоченост в изкуствения интелект, проектирането и експлоатацията на ИТ инфраструктура и управлението на проекти.'
+      ],
+      bioEn: [
+        'Zvezdelin Borisov is a technology executive with more than 30 years in IT and services, from building internet operations to leading companies as CEO. He combines business development and sales expertise with hands-on depth in artificial intelligence, IT infrastructure design and operations, and project management.'
+      ],
+      sessionDescBg: 'BRAIN++ разработва базова инфраструктура за сигурно сътрудничество с данни и надеждна оценка на системи с изкуствен интелект. CHAIN++ осигурява федериран достъп до данни и приложимо управление на данните, а COMPL-AI подпомага оценката на AI системи спрямо изискванията за безопасност, прозрачност и регулаторно съответствие. Част от Блок 1 „Оптимизация на бизнес процеси: геймификация, AI и още“ (7 октомври, 09:10 – 10:30, Зала „България“).',
+      sessionDescEn: 'BRAIN++ is developing foundational infrastructure for secure data collaboration and trustworthy AI evaluation. CHAIN++ provides federated data access and enforceable governance, while COMPL-AI supports evaluation of AI systems against safety, transparency and regulatory expectations. Part of Block 1 "Business Process Optimization - Gamification, AI, and More" (7 October, 09:10 – 10:30, Hall "Bulgaria").',
+      takeawaysBg: 'CHAIN++ позволява на организациите да изграждат AI заедно, докато данните им остават под техен собствен контрол – често без да напускат тяхната инфраструктура. Споразуменията за споделяне на данни се превръщат в технически правила, които се прилагат автоматично: непозволените трансфери се блокират, преди да се случат, а всяко действие оставя одитна следа, защитена от манипулиране. В комбинация с COMPL-AI за оценка на създадените системи това дава на бизнеса, болниците, банките, публичните институции и изследователите надежден път с отворен код от споделените данни до AI, който отговаря на изискванията.',
+      takeawaysEn: 'CHAIN++ lets organizations build AI together while their data stays under their own control, often without leaving their infrastructure. Data-sharing agreements become enforceable technical rules: non-compliant transfers are blocked before they happen, and every action leaves a tamper-evident audit trail. Combined with COMPL-AI for evaluating the resulting systems, it gives businesses, hospitals, banks, public institutions and researchers a trusted, open-source path from shared data to compliant AI.'
+    },
+    {
       id: 'kalin-kostadinov', track: 'smart-city',
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
       objectPosition: 'center top',
