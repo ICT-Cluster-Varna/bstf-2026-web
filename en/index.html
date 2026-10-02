@@ -2867,6 +2867,65 @@
         color: var(--navy)
       }
 
+      /* Scarcity label above the buy button; the dot pulses unless reduced motion is on */
+      .ticket-urgency {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        align-self: center;
+        margin: 0 0 14px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(217, 45, 32, 0.28);
+        background: #fdecea;
+        color: #c4271b;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.2
+      }
+
+      .ticket-urgency::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+        flex-shrink: 0;
+        box-shadow: 0 0 0 0 rgba(217, 45, 32, 0.55);
+        animation: ticketUrgencyPulse 1.6s ease-out infinite
+      }
+
+      .ticket-urgency--last {
+        background: #d92d20;
+        border-color: #d92d20;
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(217, 45, 32, 0.3)
+      }
+
+      .ticket-urgency--last::before {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+        animation-name: ticketUrgencyPulseLight
+      }
+
+      @keyframes ticketUrgencyPulse {
+        70% { box-shadow: 0 0 0 7px rgba(217, 45, 32, 0) }
+        100% { box-shadow: 0 0 0 0 rgba(217, 45, 32, 0) }
+      }
+
+      @keyframes ticketUrgencyPulseLight {
+        70% { box-shadow: 0 0 0 7px rgba(255, 255, 255, 0) }
+        100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0) }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ticket-urgency::before {
+          animation: none
+        }
+      }
+
       .ticket-period {
         font-size: 0.82rem;
         color: var(--text-light);
@@ -7598,6 +7657,7 @@
               <li data-bg="Достъп до изложбената зона" data-en="Access to the exhibition zone">Access to the exhibition zone</li>
               <li data-bg="Дигитални материали" data-en="Digital materials">Digital materials</li>
             </ul>
+            <div class="ticket-urgency"><span data-bg="Ограничена наличност" data-en="Limited availability">Limited availability</span></div>
             <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
               data-en="Buy Ticket">Buy Ticket</a>
           </div>
@@ -7609,7 +7669,6 @@
             <div class="ticket-badge" data-bg="Популярен" data-en="Popular">Popular</div>
             <div class="ticket-header-row">
               <h3>VIP</h3>
-              <div class="ticket-period" data-bg="Ограничен брой" data-en="Limited availability">Limited availability</div>
             </div>
             <div class="ticket-price" data-base-price="399"><span class="ticket-price-current">&euro;399</span></div>
             <ul class="ticket-features">
@@ -7617,6 +7676,7 @@
               <li data-bg="Приоритетен достъп до VIP зона" data-en="Priority access to VIP zone">Priority access to VIP zone</li>
               <li data-bg="VIP обяд с лекторите" data-en="VIP lunch with the speakers">VIP lunch with the speakers</li>
             </ul>
+            <div class="ticket-urgency"><span data-bg="Ограничена наличност" data-en="Limited availability">Limited availability</span></div>
             <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
               data-en="Buy Ticket">Buy Ticket</a>
           </div>
@@ -7627,7 +7687,6 @@
             <div class="ticket-ribbon-corner"><span>3 DAYS PASS</span></div>
             <div class="ticket-header-row">
               <h3>ULTRA VIP</h3>
-              <div class="ticket-period" data-bg="Ограничен брой" data-en="Limited availability">Limited availability</div>
             </div>
             <div class="ticket-price" data-base-price="749"><span class="ticket-price-current">&euro;749</span></div>
             <ul class="ticket-features">
@@ -7637,6 +7696,7 @@
               <li data-bg="VIP обяд с лектори" data-en="VIP lunch with speakers">VIP lunch with speakers</li>
               <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Access to Networking Party</li>
             </ul>
+            <div class="ticket-urgency ticket-urgency--last"><span data-bg="Последни бройки" data-en="Last few left">Last few left</span></div>
             <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
               data-en="Buy Ticket">Buy Ticket</a>
           </div>
