@@ -635,7 +635,7 @@
       objectPosition: 'center 35%',
       name: 'Драгомир Вътков',
       nameEn: 'Dragomir Vatkov',
-      role: 'Lead Cyber Security Architect, SABSA',
+      role: 'QIAGEN',
       topicBg: 'Невидимата архитектура: как основите на киберсигурността определят устойчивостта',
       topicEn: 'The Invisible Architecture: How Cyber Security Foundations Determine Resilience',
       bioEn: [
