@@ -303,6 +303,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/zvezdelin-borisov/"/>
   </url>
   <url>
+    <loc>https://www.blackseatech.org/speakers/alexander-goshev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/alexander-goshev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/alexander-goshev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/alexander-goshev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/alexander-goshev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/alexander-goshev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/alexander-goshev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/alexander-goshev/"/>
+  </url>
+  <url>
     <loc>https://www.blackseatech.org/speakers/kalin-kostadinov/</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kalin-kostadinov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kalin-kostadinov/"/>
@@ -589,6 +601,18 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/borislav-teberov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/borislav-teberov/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/borislav-teberov/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/grigor-kanchev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/grigor-kanchev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/grigor-kanchev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/grigor-kanchev/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/grigor-kanchev/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/grigor-kanchev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/grigor-kanchev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/grigor-kanchev/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/elitza-stoilova/</loc>

@@ -515,6 +515,28 @@
       takeawaysEn: 'CHAIN++ lets organizations build AI together while their data stays under their own control, often without leaving their infrastructure. Data-sharing agreements become enforceable technical rules: non-compliant transfers are blocked before they happen, and every action leaves a tamper-evident audit trail. Combined with COMPL-AI for evaluating the resulting systems, it gives businesses, hospitals, banks, public institutions and researchers a trusted, open-source path from shared data to compliant AI.'
     },
     {
+      id: 'alexander-goshev', track: 'ai',
+      img: '/images/speakers/alexander-goshev.jpg?v=20261003', alt: 'Alexander Goshev',
+      objectPosition: 'center top',
+      name: 'Александър Гошев',
+      nameEn: 'Alexander Goshev',
+      role: 'Team Lead, Digital PR @ Netpeak Bulgaria & PRmarket.bg',
+      roleBg: 'Team Lead на Digital PR отдела @ Netpeak Bulgaria и PRmarket.bg',
+      roleEn: 'Team Lead, Digital PR @ Netpeak Bulgaria & PRmarket.bg',
+      topicBg: 'От съдържание към действие - как AI променя маркетинга',
+      topicEn: 'From Content to Action - How AI Is Changing Marketing',
+      bioBg: [
+        'Александър Гошев е Team Lead на Digital PR отдела в Netpeak Bulgaria и PRmarket.bg. Изгражда AI автоматизации, които поемат рутинната работа. Помага на брандове да присъстват в авторитетни медии и в отговорите на AI.'
+      ],
+      bioEn: [
+        'Alexander Goshev is Team Lead of the Digital PR department at Netpeak Bulgaria and PRmarket.bg. Alexander builds AI automations that take over routine work and helps brands appear in authoritative media and in the answers AI gives.'
+      ],
+      sessionDescBg: 'Доскоро AI се използваше основно само да пише вместо нас. Днес вече действа: чете пощата, проверява готовата работа и подготвя отговори. Презентацията показва как това работи всеки ден в Digital PR екипа на Netpeak Bulgaria и PRmarket.bg, с реални примери и числа. Тя разглежда и втората голяма промяна: хората все по-често питат AI, вместо да търсят в органичните резултати.',
+      sessionDescEn: 'Until recently, AI was used mainly to write for us. Today it acts: it reads the mail, checks finished work and prepares replies. The talk shows how this works every day in the Digital PR team of Netpeak Bulgaria and PRmarket.bg, with real examples and numbers. It also looks at the second big shift: people increasingly ask AI instead of searching the organic results.',
+      takeawaysBg: 'AI вече не само пише, а действа и започва да взема решения. Отговорността остава при хората: „AI подготвя, хората одобряват“. AI е толкова добър, колкото са източниците му: около 27% от линковете, които AI асистентите цитират, водят към статии в медии. За да ви споменава AI, трябва да присъствате в авторитетни медии. Рецепта в 5 стъпки за първия ви AI помощник за повтаряща се ежедневна задача. 5-минутна проверка какво казват ChatGPT, Gemini и Google за вас и как да го подобрите. Реални примери от работещ екип: какво да автоматизирате първо и къде решението остава при човек.',
+      takeawaysEn: 'AI no longer just writes: it acts and is starting to make decisions. Responsibility stays with people: “AI prepares, people approve”. AI is only as good as its sources: about 27% of the links AI assistants cite lead to media articles. For AI to mention you, you need to be present in authoritative media. A 5-step recipe for your first AI assistant for a repetitive daily task. A 5-minute check of what ChatGPT, Gemini and Google say about you, and how to improve it. Real examples from a working team: what to automate first and where the decision stays with a person.'
+    },
+    {
       id: 'kalin-kostadinov', track: 'smart-city',
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
       objectPosition: 'center top',
@@ -1043,6 +1065,28 @@
       sessionDescEn: 'Pontic Dynamics develops control infrastructure and modular software for unmanned surface vessels (USVs). Founded by CEO Borislav Teberov, the company uses Human-in-the-Loop AI to protect mariners rather than replace them. Its product line includes control software, AI navigation engines, subsystem controllers, secure data loggers, and edge computing platforms. Onboard fail-safes and passive tools like the PD Sextant NG keep vessels safe during GPS spoofing and network blackouts. By providing clear audit trails for insurers and testing in designated sandboxes, Pontic Dynamics helps safely advance autonomous shipping.',
       takeawaysBg: 'Как AI с участие на човека (Human-in-the-Loop), устойчивата навигация и технологиите за безопасност (fail-safe) могат да направят автономното корабоплаване по-безопасно и надеждно, дори при GPS спуфинг и загуба на свързаност.',
       takeawaysEn: 'How Human-in-the-Loop AI, resilient navigation, and fail-safe technologies can enable safer, trustworthy autonomous shipping, even during GPS spoofing and connectivity loss.'
+    },
+    {
+      id: 'grigor-kanchev', track: 'marine',
+      img: '/images/speakers/grigor-kanchev.jpg?v=20261003', alt: 'Grigor Kanchev',
+      objectPosition: 'center top',
+      name: 'Григор Кънчев',
+      nameEn: 'Grigor Kanchev',
+      role: 'IT and Comms Manager @ Unity Ship Management',
+      roleBg: 'Мениджър ИТ и комуникации @ Unity Ship Management',
+      roleEn: 'IT and Comms Manager @ Unity Ship Management',
+      topicBg: 'Новото морско ДНК на USM: технологии, иновации и човешко съвършенство',
+      topicEn: 'The New Maritime DNA at USM: Technology, Innovation, and Human Excellence',
+      bioBg: [
+        'Григор Кънчев завършва Висшето военноморско училище през 2010 г. и започва работа в Inmarsat като полеви инженер. През 2016 г. се връща в България и започва работа в Navibulgar като специалист по ИТ и комуникации, а от 2023 г. е мениджър ИТ и комуникации в Unity Ship Management. Има над 15 години опит в информационните технологии и комуникациите.'
+      ],
+      bioEn: [
+        'Grigor Kanchev graduated from the Naval Academy in 2010 and started working for Inmarsat as a field engineer. In 2016 Grigor returned to Bulgaria and joined Navibulgar as an IT and Comms specialist, and in 2023 moved to Unity Ship Management as IT and Comms Manager. Grigor has more than 15 years of experience in IT and communications.'
+      ],
+      sessionDescBg: 'Как съвременните технологии и AI могат да направят корабите ни по-безопасни и по-ефективни, а екипажите ни – по-щастливи.',
+      sessionDescEn: 'How modern technology and AI can make our ships safer, more efficient and our crewmembers happier.',
+      takeawaysBg: 'Внедряването на нови технологии е ключът към това да изпреварим бързо променящите се предизвикателства.',
+      takeawaysEn: 'Adopting new technology is key to staying ahead of the rapid challenges.'
     },
 
     // ── Tourism ──
