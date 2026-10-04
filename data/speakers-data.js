@@ -1550,6 +1550,28 @@
       sessionDescBg: 'Панелна дискусия - „Дигитална и AI трансформация за индустриален растеж: сигурни европейски вериги за доставки“ (5 октомври, 16:10 - 16:40) - с участието на Jeroen van Hertum, член на УС на Нидерландско-българската търговска камара, Peter Statev, председател на Петаскейл суперкомпютър „Дискавъри“, и Филип Балкански, изпълнителен директор на Codery. Модератор: Георги Добрев, анализатор, Фондация „Приложни изследвания и комуникации“.',
       sessionDescEn: 'Panel discussion - "Digital & AI Transformation for Industrial Growth: Secure European Supply Chains" (5 October, 16:10 - 16:40) - with Jeroen van Hertum, Board Member, Dutch Bulgarian Chamber of Commerce, Peter Statev, Chairman, PetaScale Supercomputer "Discoverer", and Philip Balkanski, Chief Executive Officer, Codery. Moderated by Georgi Dobrev, Analyst, Applied Research and Communications Fund.'
     },
+    {
+      id: 'hristo-daskalov', track: 'regional-innovation-policy',
+      img: '/images/speakers/hristo-daskalov.jpg?v=20261004', alt: 'Hristo Daskalov',
+      objectPosition: 'center top',
+      name: 'Христо Даскалов',
+      nameEn: 'Hristo Daskalov',
+      role: 'Managing Partner @ Fleet Services Group',
+      roleBg: 'Управляващ съдружник @ Fleet Services Group',
+      roleEn: 'Managing Partner @ Fleet Services Group',
+      topicBg: 'Инвестиции в Турция, пазарът на Близкия изток',
+      topicEn: 'Investments in Türkiye, Middle East Market',
+      bioBg: [
+        'Христо Даскалов е управляващ съдружник във Fleet Services Group.'
+      ],
+      bioEn: [
+        'Hristo Daskalov is Managing Partner of Fleet Services Group.'
+      ],
+      sessionDescBg: 'Опитът на българска технологична компания, инвестирала в Турция.',
+      sessionDescEn: 'The experience of a Bulgarian technology company investing in Türkiye.',
+      takeawaysBg: 'Рядък пример за българска компания, която придобива по-голям играч в Турция.',
+      takeawaysEn: 'A rare case of a Bulgarian company acquiring a bigger player in Türkiye.'
+    },
 
     // ── AgriTech ──
     {
