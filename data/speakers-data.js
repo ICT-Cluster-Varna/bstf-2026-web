@@ -421,8 +421,8 @@
       bioEn: [
         'Oleksandr Syvak is with Strateg, Odesa, Ukraine. At CONNEXUS 2026 he presents "AI in the Laboratory – From Brief to Finished Model" together with Kseniia Serediak.'
       ],
-      sessionDescBg: 'Част от Блок 1 „Оптимизация на бизнес процеси: геймификация, AI и още“ (7 октомври, 09:10 – 10:30, Зала „България“), заедно с Ксения Середяк, Strateg.',
-      sessionDescEn: 'Part of Block 1 "Business Process Optimization - Gamification, AI, and More" (7 October, 09:10 – 10:30, Hall "Bulgaria"), together with Kseniia Serediak, Strateg.'
+      sessionDescBg: 'Част от Блок 1 „AI и автоматизацията като отговор на растящите разходи и недостига на ресурси“ (6 октомври, 09:10 – 10:30, Зала „България“), заедно с Ксения Середяк, Strateg.',
+      sessionDescEn: 'Part of Block 1 "AI and Automation as a Response to Rising Costs and Resource Shortages" (6 October, 09:10 – 10:30, Hall "Bulgaria"), together with Kseniia Serediak, Strateg.'
     },
     {
       id: 'gerasim-slavov', track: 'ai',
