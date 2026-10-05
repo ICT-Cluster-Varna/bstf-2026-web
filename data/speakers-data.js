@@ -537,6 +537,42 @@
       takeawaysEn: 'AI no longer just writes: it acts and is starting to make decisions. Responsibility stays with people: “AI prepares, people approve”. AI is only as good as its sources: about 27% of the links AI assistants cite lead to media articles. For AI to mention you, you need to be present in authoritative media. A 5-step recipe for your first AI assistant for a repetitive daily task. A 5-minute check of what ChatGPT, Gemini and Google say about you, and how to improve it. Real examples from a working team: what to automate first and where the decision stays with a person.'
     },
     {
+      id: 'eva-petrova', track: 'ai',
+      img: '/images/speakers/eva-petrova.jpg?v=20261005', alt: 'Eva Petrova',
+      objectPosition: 'center top',
+      name: 'Ева Петрова',
+      nameEn: 'Eva Petrova',
+      role: 'Strategic Marketing & PR Expert',
+      roleBg: 'Експерт по стратегически маркетинг и PR',
+      roleEn: 'Strategic Marketing & PR Expert',
+      topicBg: 'Отговорно внедряване на AI: хора, процеси и данни',
+      topicEn: 'Responsible AI Adoption: People, Processes and Data',
+      bioBg: [
+        'Ева Петрова е експерт по стратегически маркетинг и PR с над 20 години опит в развитието на бизнеса във финтех, недвижимите имоти, електронната търговия и хотелиерството. Специализира в 360° кампании, управление на P&L, performance маркетинг и глобално позициониране. Изгражда стратегии, базирани на данни, които трансформират бизнеса.'
+      ],
+      bioEn: [
+        'Eva Petrova is a strategic marketing & PR expert with 20+ years driving growth across fintech, real estate, e-commerce, and hospitality. Expert in 360° campaigns, P&L, performance marketing, and global positioning. Builds data-driven strategies that transform businesses.'
+      ]
+    },
+    {
+      id: 'kristian-iliev', track: 'ai',
+      img: '/images/speakers/kristian-iliev.jpg?v=20261005', alt: 'Kristian Iliev',
+      objectPosition: 'center top',
+      name: 'Кристиан Илиев',
+      nameEn: 'Kristian Iliev',
+      role: 'Software Engineering & AI Specialist',
+      roleBg: 'Специалист по софтуерно инженерство и AI',
+      roleEn: 'Software Engineering & AI Specialist',
+      topicBg: 'Отговорно внедряване на AI: хора, процеси и данни',
+      topicEn: 'Responsible AI Adoption: People, Processes and Data',
+      bioBg: [
+        'Кристиан Илиев е специалист по софтуерно инженерство и AI с над 11 години опит в създаването на продукти в областта на уеб платформите, облачната инфраструктура и системите за данни. Специализира в приложения с големи езикови модели (LLM), AI агенти, интелигентна автоматизация и частна AI инфраструктура. Изгражда AI решения, които носят измерими бизнес резултати.'
+      ],
+      bioEn: [
+        'Kristian Iliev is a software engineering & AI specialist with 11+ years building products across web platforms, cloud infrastructure, and data systems. Expert in LLM applications, AI agents, intelligent automation, and private AI infrastructure. Builds AI solutions that deliver measurable business results.'
+      ]
+    },
+    {
       id: 'kalin-kostadinov', track: 'smart-city',
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
       objectPosition: 'center top',
