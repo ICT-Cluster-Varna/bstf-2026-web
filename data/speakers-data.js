@@ -548,10 +548,10 @@
       topicBg: 'Отговорно внедряване на AI: хора, процеси и данни',
       topicEn: 'Responsible AI Adoption: People, Processes and Data',
       bioBg: [
-        'Ева Петрова е експерт по стратегически маркетинг и PR с над 20 години опит в развитието на бизнеса във финтех, недвижимите имоти, електронната търговия и хотелиерството. Специализира в 360° кампании, управление на P&L, performance маркетинг и глобално позициониране. Изгражда стратегии, базирани на данни, които трансформират бизнеса.'
+        'Ева Петрова е експерт по стратегически маркетинг и PR с над 20 години опит в развитието на бизнеса във финтех, недвижимите имоти, електронната търговия и хотелиерството. Специализира в 360° кампании, performance маркетинг и глобално позициониране. Изгражда стратегии, базирани на данни, които трансформират бизнеса.'
       ],
       bioEn: [
-        'Eva Petrova is a strategic marketing & PR expert with 20+ years driving growth across fintech, real estate, e-commerce, and hospitality. Expert in 360° campaigns, P&L, performance marketing, and global positioning. Builds data-driven strategies that transform businesses.'
+        'Eva Petrova is a strategic marketing & PR expert with 20+ years driving growth across fintech, real estate, e-commerce, and hospitality. Expert in 360° campaigns, performance marketing, and global positioning. Builds data-driven strategies that transform businesses.'
       ]
     },
     {
