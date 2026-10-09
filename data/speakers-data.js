@@ -619,6 +619,23 @@
       takeawaysEn: 'The importance of architectural thinking and systems thinking when applying AI.',
       takeawaysBg: 'Значението на архитектурното и системното мислене при прилагането на AI.'
     },
+    {
+      id: 'mitsuru-horinouchi', track: 'automation',
+      img: '/images/speakers/mitsuru-horinouchi.jpg?v=20261009', alt: 'Mitsuru Horinouchi',
+      objectPosition: 'center top',
+      name: 'Mitsuru Horinouchi',
+      role: 'First Secretary and Head of the Economic Department @ Embassy of Japan in Bulgaria',
+      roleBg: 'Първи секретар и ръководител на икономическия отдел @ Посолство на Япония в България',
+      roleEn: 'First Secretary and Head of the Economic Department @ Embassy of Japan in Bulgaria',
+      topicBg: 'Подходът на Япония, основан на концепцията „Общество 5.0“',
+      topicEn: 'Japan\'s Approach: The Society 5.0 Concept',
+      bioBg: [
+        'Mitsuru Horinouchi е първи секретар и ръководител на икономическия отдел в посолството на Япония в България. На CONNEXUS 2026 той представя подхода на Япония, основан на концепцията „Общество 5.0“.'
+      ],
+      bioEn: [
+        'Mitsuru Horinouchi is First Secretary and Head of the Economic Department at the Embassy of Japan in Bulgaria. At CONNEXUS 2026 he presents Japan\'s approach based on the Society 5.0 concept.'
+      ]
+    },
 
     // ── Cybersecurity ──
     {
