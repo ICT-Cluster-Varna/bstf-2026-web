@@ -171,18 +171,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/nikolay-valev/"/>
   </url>
   <url>
-    <loc>https://www.blackseatech.org/speakers/ruzha-pancheva/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ruzha-pancheva/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
-  </url>
-  <url>
-    <loc>https://www.blackseatech.org/en/speakers/ruzha-pancheva/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ruzha-pancheva/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
-  </url>
-  <url>
     <loc>https://www.blackseatech.org/speakers/todor-madzharov/</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/todor-madzharov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/todor-madzharov/"/>
@@ -471,18 +459,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/obreten-obretenov/"/>
   </url>
   <url>
-    <loc>https://www.blackseatech.org/speakers/dimitar-nikolov/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dimitar-nikolov/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dimitar-nikolov/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/dimitar-nikolov/"/>
-  </url>
-  <url>
-    <loc>https://www.blackseatech.org/en/speakers/dimitar-nikolov/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/dimitar-nikolov/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/dimitar-nikolov/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/dimitar-nikolov/"/>
-  </url>
-  <url>
     <loc>https://www.blackseatech.org/speakers/kristina-eskenazi/</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kristina-eskenazi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kristina-eskenazi/"/>
@@ -565,6 +541,18 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/kristina-bliznakova/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/kristina-bliznakova/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/kristina-bliznakova/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers/ruzha-pancheva/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ruzha-pancheva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers/ruzha-pancheva/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/ruzha-pancheva/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/ruzha-pancheva/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/oskan-tasinov/</loc>
@@ -793,18 +781,6 @@
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/martijn-leijten/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/martijn-leijten/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/martijn-leijten/"/>
-  </url>
-  <url>
-    <loc>https://www.blackseatech.org/speakers/galabin-galabov/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/galabin-galabov/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
-  </url>
-  <url>
-    <loc>https://www.blackseatech.org/en/speakers/galabin-galabov/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers/galabin-galabov/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers/galabin-galabov/"/>
   </url>
   <url>
     <loc>https://www.blackseatech.org/speakers/neven-dilkov/</loc>

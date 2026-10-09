@@ -272,28 +272,6 @@
       takeawaysEn: 'Marketing and trends.'
     },
     {
-      id: 'ruzha-pancheva', track: 'ai',
-      img: '/images/speakers/ruzha-pancheva.jpg?v=20260929', alt: 'Ruzha Pancheva',
-      objectPosition: 'center top',
-      name: 'проф. Ружа Панчева',
-      nameEn: 'Prof. Ruzha Pancheva',
-      role: 'Professor @ Medical University – Varna | Deputy Director of the Research Institute',
-      roleBg: 'Професор @ Медицински университет – Варна | Заместник-директор на Научноизследователския институт',
-      roleEn: 'Professor @ Medical University – Varna | Deputy Director of the Research Institute',
-      topicBg: 'Изкуствен интелект в подкрепа на детското хранене: от научните данни до персонализираните препоръки',
-      topicEn: 'Artificial intelligence in support of child nutrition: from scientific data to personalized recommendations',
-      bioBg: [
-        'Проф. д-р Ружа Панчева, д.м., е педиатър, детски гастроентеролог и специалист по хранене и диететика, професор в Медицинския университет – Варна и заместник-директор на Научноизследователския институт. Работи в областта на детското хранене, персонализираната оценка на хранителния статус и приложението на съвременни технологии в медицината.'
-      ],
-      bioEn: [
-        'Prof. Ruzha Pancheva, MD, PhD, is a pediatrician, pediatric gastroenterologist and specialist in nutrition and dietetics, Professor at the Medical University – Varna and Deputy Director of the Research Institute. Her work focuses on child nutrition, personalized assessment of nutritional status and the application of modern technologies in medicine.'
-      ],
-      sessionDescBg: 'Презентацията представя дигиталната платформа diet-autism-kids.bg, разработена в подкрепа на храненето при деца с аутизъм. Акцентът е върху използването на изкуствен интелект за структуриране на експертно знание, индивидуализиране на препоръките и подпомагане на родителите и специалистите при вземане на решения. Ще бъдат представени концепцията, научната основа и практическото приложение на платформата, както и потенциалът на AI за персонализирана диетична подкрепа.',
-      sessionDescEn: 'The presentation introduces the digital platform diet-autism-kids.bg, developed to support nutrition in children with autism. The focus is on using artificial intelligence to structure expert knowledge, individualize recommendations and support parents and specialists in decision-making. The concept, scientific basis and practical application of the platform will be presented, along with the potential of AI for personalized dietary support.',
-      takeawaysBg: 'Участниците ще видят как изкуственият интелект може да подпомага храненето на деца с аутизъм. Ще научат как работи платформата, как може да бъде полезна за родители и специалисти и какви са възможностите и ограниченията на AI при даване на хранителни препоръки.',
-      takeawaysEn: 'Participants will see how artificial intelligence can support the nutrition of children with autism. They will learn how the platform works, how it can be useful to parents and specialists, and what the possibilities and limitations of AI are in providing nutritional recommendations.'
-    },
-    {
       id: 'todor-madzharov', track: 'ai',
       img: '/images/speakers/todor-madzharov.jpg?v=20260929', alt: 'Todor Madzharov',
       objectPosition: 'center top',
@@ -819,32 +797,6 @@
       takeawaysBg: 'AI прави социалното инженерство по-убедително, персонализирано и трудно за разпознаване. Техническите контроли сами по себе си не са достатъчни, когато атаката е насочена към доверието и бизнес процеса. При чувствителни действия трябва да се проверяват независимо както самоличността, така и самото искане. Независимата верификация, доверените комуникационни канали и двойното одобрение значително намаляват риска. Сигурният бизнес процес трябва да остане устойчив дори когато фалшивият глас, видео или съобщение изглеждат напълно автентични.',
       takeawaysEn: 'AI makes social engineering more convincing, more personalised and harder to recognise. Technical controls on their own are not enough when the attack targets trust and the business process. For sensitive actions, both the identity and the request itself must be verified independently. Independent verification, trusted communication channels and dual approval significantly reduce the risk. A secure business process must stay resilient even when a fake voice, video or message looks completely authentic.'
     },
-    {
-      id: 'dimitar-nikolov', track: 'cybersecurity',
-      img: '/images/speakers/dimitar-nikolov.jpg?v=20260930', alt: 'Dimitar Nikolov',
-      objectPosition: 'center center',
-      name: 'гл. ас. д-р Димитър Николов',
-      nameEn: 'Dr. Dimitar Nikolov',
-      role: 'Chief Assistant Professor @ Nikola Vaptsarov Naval Academy',
-      roleBg: 'Главен асистент @ ВВМУ „Н. Й. Вапцаров“',
-      roleEn: 'Chief Assistant Professor @ Nikola Vaptsarov Naval Academy',
-      topicBg: 'Справяне със стратегическата несигурност в Черноморския регион',
-      topicEn: 'Tackling Strategic Insecurity in the Black Sea Region',
-      bioBg: [
-        'Гл. ас. д-р Димитър Николов е преподавател и изследовател в областта на киберсигурността във ВВМУ „Н. Й. Вапцаров“, съчетаващ академичната си дейност с дългогодишен практически опит в международна корпоративна среда. Професионалното му развитие включва множество позиции в областта на киберсигурността, включително Red Team Lead в международна компания - позиция, свързана с дейности в областта на offensive security, penetration testing, Cyber Threat Intelligence и Adversary Emulation.',
-        'Притежава редица международно признати професионални квалификации и сертификати, сред които SpecterOps Adversary Tactics: Red Team Operations, SpecterOps Adversary Tactics: Mac Tradecraft, EC-Council Certified Ethical Hacker (CEH), EC-Council Certified Threat Intelligence Analyst (CTIA) и arcX Cyber Threat Intelligence Practitioner, както и специализирано обучение в областта на киберотбраната.',
-        'Научните и професионалните му интереси са насочени към киберсигурността, Red Team операциите, киберразузнаването, симулацията на действията на реални противници (Adversary Emulation), анализа на съвременни киберзаплахи и защитата на критични инфраструктури. Автор и съавтор е на научни разработки, посветени на държавно спонсорирани групи като Volt Typhoon и Salt Typhoon, използването на YARA и Sigma правила за откриване на злонамерена хакерска активност и практически обучения по киберсигурност. Публикациите му са свързани с ВВМУ и международни научни форуми.',
-        'Той е академичен координатор на международни обучения по penetration testing и ethical hacking във ВВМУ, а през 2025 г. е главен инструктор на курса „Cyber Range - Cybersecurity in Practice“, организиран от ВВМУ под егидата на European Security and Defence College.'
-      ],
-      bioEn: [
-        'Chief Assistant Professor Dr. Dimitar Nikolov is a lecturer and researcher in cybersecurity at the Nikola Vaptsarov Naval Academy, combining his academic work with many years of hands-on experience in an international corporate environment. His career includes a number of cybersecurity roles, among them Red Team Lead at an international company - a position covering offensive security, penetration testing, Cyber Threat Intelligence and Adversary Emulation.',
-        'He holds a number of internationally recognised professional qualifications and certifications, including SpecterOps Adversary Tactics: Red Team Operations, SpecterOps Adversary Tactics: Mac Tradecraft, EC-Council Certified Ethical Hacker (CEH), EC-Council Certified Threat Intelligence Analyst (CTIA) and arcX Cyber Threat Intelligence Practitioner, as well as specialised training in cyber defence.',
-        'His research and professional interests focus on cybersecurity, Red Team operations, cyber intelligence, the emulation of real-world adversaries (Adversary Emulation), the analysis of modern cyber threats and the protection of critical infrastructure. He is the author and co-author of research on state-sponsored groups such as Volt Typhoon and Salt Typhoon, on the use of YARA and Sigma rules to detect malicious hacking activity, and on practical cybersecurity training. His publications are associated with the Naval Academy and international scientific forums.',
-        'He is the academic coordinator of international penetration testing and ethical hacking courses at the Naval Academy, and in 2025 he was the lead instructor of the course "Cyber Range - Cybersecurity in Practice", organised by the Naval Academy under the auspices of the European Security and Defence College.'
-      ],
-      sessionDescBg: 'Панелна дискусия - „Справяне със стратегическата несигурност в Черноморския регион“ (6 октомври, 09:10 - 09:50, Зала „Варна“, Българо-нидерландски бизнес обмен) - с участието на Albert Veenstra, професор по търговия и логистика, Университет „Еразъм“ - Ротердам, и гл. ас. д-р Димитър Николов, ВВМУ „Н. Й. Вапцаров“. Модератор: Георги Добрев, анализатор, Фондация ПИК.',
-      sessionDescEn: 'Panel discussion - "Tackling Strategic Insecurity in the Black Sea Region" (6 October, 09:10 - 09:50, Hall "Varna", Bulgaria-Netherlands Business Exchange) - with Albert Veenstra, Professor of Trade and Logistics, Erasmus University Rotterdam, and Dr. Dimitar Nikolov, Nikola Vaptsarov Naval Academy. Moderated by Georgi Dobrev, Analyst, ARC Fund.'
-    },
 
     // ── BioTech ──
     {
@@ -1000,6 +952,28 @@
       sessionDescEn: 'Since 2020, breast cancer has been the most commonly diagnosed cancer worldwide, with early detection remaining a challenge - especially for women with dense breasts. To address this, we developed a novel imaging platform that combines a microfocus x-ray source with both photon-counting and energy-integrating detectors. The system features in-house software for detector control, robotic-assisted scanning, and image reconstruction, all guided by prior computational optimisation. Alongside the hardware, we designed and manufactured novel physical anthropomorphic breast phantoms that closely replicate tissue structures and lesions. The validated phantoms provide a reliable platform for testing the prototype, supporting the development of next-generation diagnostics.',
       takeawaysBg: 'Публиката ще научи повече за последните иновации в образната диагностика на гърдата. Освен това участниците ще получат представа за разработването на прототипни образни системи и антропоморфни фантоми на гърда.',
       takeawaysEn: 'The audience will learn about recent innovations in breast imaging. Further, participants will gain insight into the development of prototype imaging systems and anthropomorphic breast phantoms.'
+    },
+    {
+      id: 'ruzha-pancheva', track: 'biotech',
+      img: '/images/speakers/ruzha-pancheva.jpg?v=20260929', alt: 'Ruzha Pancheva',
+      objectPosition: 'center top',
+      name: 'проф. Ружа Панчева',
+      nameEn: 'Prof. Ruzha Pancheva',
+      role: 'Professor @ Medical University – Varna | Deputy Director of the Research Institute',
+      roleBg: 'Професор @ Медицински университет – Варна | Заместник-директор на Научноизследователския институт',
+      roleEn: 'Professor @ Medical University – Varna | Deputy Director of the Research Institute',
+      topicBg: 'Изкуствен интелект в подкрепа на детското хранене: от научните данни до персонализираните препоръки',
+      topicEn: 'Artificial intelligence in support of child nutrition: from scientific data to personalized recommendations',
+      bioBg: [
+        'Проф. д-р Ружа Панчева, д.м., е педиатър, детски гастроентеролог и специалист по хранене и диететика, професор в Медицинския университет – Варна и заместник-директор на Научноизследователския институт. Работи в областта на детското хранене, персонализираната оценка на хранителния статус и приложението на съвременни технологии в медицината.'
+      ],
+      bioEn: [
+        'Prof. Ruzha Pancheva, MD, PhD, is a pediatrician, pediatric gastroenterologist and specialist in nutrition and dietetics, Professor at the Medical University – Varna and Deputy Director of the Research Institute. Her work focuses on child nutrition, personalized assessment of nutritional status and the application of modern technologies in medicine.'
+      ],
+      sessionDescBg: 'Презентацията представя дигиталната платформа diet-autism-kids.bg, разработена в подкрепа на храненето при деца с аутизъм. Акцентът е върху използването на изкуствен интелект за структуриране на експертно знание, индивидуализиране на препоръките и подпомагане на родителите и специалистите при вземане на решения. Ще бъдат представени концепцията, научната основа и практическото приложение на платформата, както и потенциалът на AI за персонализирана диетична подкрепа.',
+      sessionDescEn: 'The presentation introduces the digital platform diet-autism-kids.bg, developed to support nutrition in children with autism. The focus is on using artificial intelligence to structure expert knowledge, individualize recommendations and support parents and specialists in decision-making. The concept, scientific basis and practical application of the platform will be presented, along with the potential of AI for personalized dietary support.',
+      takeawaysBg: 'Участниците ще видят как изкуственият интелект може да подпомага храненето на деца с аутизъм. Ще научат как работи платформата, как може да бъде полезна за родители и специалисти и какви са възможностите и ограниченията на AI при даване на хранителни препоръки.',
+      takeawaysEn: 'Participants will see how artificial intelligence can support the nutrition of children with autism. They will learn how the platform works, how it can be useful to parents and specialists, and what the possibilities and limitations of AI are in providing nutritional recommendations.'
     },
     {
       id: 'oskan-tasinov', track: 'biotech',
@@ -1380,28 +1354,6 @@
       bioBg: [
         'Д-р Martijn Leijten е асистент-професор по организация и управление във Факултета по технологии, политики и управление на Технологичния университет в Делфт (Нидерландия) и научен координатор на Next Generation Infrastructures - изследователска платформа на шест публични инфраструктурни оператора в областта на транспорта, енергетиката и питейните води в Нидерландия. Изследва сложни проекти и процеси на технологичен преход и преподава както в академична среда, така и в публичния и частния сектор.'
       ]
-    },
-    {
-      id: 'galabin-galabov', track: 'regional-innovation-policy',
-      img: '/images/speakers/galabin-galabov.jpg?v=20260916', alt: 'Galabin Galabov',
-      objectPosition: 'center top',
-      name: 'Гълъбин Гълъбов',
-      nameEn: 'Galabin Galabov',
-      role: 'Chairman of the Board and CEO @ Bulgarian Export Insurance Agency (BAEZ)',
-      roleBg: 'Председател на УС и ИД @ Българска агенция за експортно застраховане (БАЕЗ)',
-      roleEn: 'Chairman of the Board and CEO @ Bulgarian Export Insurance Agency (BAEZ)',
-      topicBg: 'Финансови инструменти за подкрепа на експортния и МСП бизнеса от страна на Българска агенция за експортно застраховане',
-      topicEn: 'Financial Instruments from the Bulgarian Export Insurance Agency in Support of Exporters and SMEs',
-      bioBg: [
-        'Мениджър с над 30 години професионален опит в областта на финансите, а понастоящем Председател на УС и ИД на Българска агенция за експортно застраховане ЕАД.'
-      ],
-      bioEn: [
-        'A manager with over 30 years of professional experience in finance, currently Chairman of the Management Board and Executive Director of the Bulgarian Export Insurance Agency EAD.'
-      ],
-      sessionDescBg: 'Представяне на инструментите, които БАЕЗ предоставя за подкрепа на експортно ориентираните фирми, както и застраховка на кредити за оборотни нужди на фирми от сегмента МСП.',
-      sessionDescEn: 'A presentation of the instruments BAEZ provides in support of export-oriented companies, as well as insurance of working capital loans for companies in the SME segment.',
-      takeawaysBg: 'Българска агенция за експортно застраховане предоставя различни инструменти за споделяне риска на българските експортьори, който те поемат при продажба на отложено плащане, както и на банките при финансиране на експортни сделки и улесняване на оборотно кредитиране на фирми от МСП сегмента. В допълнение Агенцията предоставя застраховки тип гаранция, които дават възможност за замяна на банковите гаранции в страната и чужбина за участие в търг, добро изпълнение и поддръжка.',
-      takeawaysEn: 'The Bulgarian Export Insurance Agency offers a range of instruments for sharing the risk that Bulgarian exporters take on when selling on deferred payment terms, as well as the risk banks take on when financing export deals and facilitating working capital lending to companies in the SME segment. In addition, the Agency provides guarantee-type insurance, which makes it possible to replace bank guarantees in Bulgaria and abroad for tender participation, performance and maintenance.'
     },
     {
       id: 'neven-dilkov', track: 'regional-innovation-policy',
