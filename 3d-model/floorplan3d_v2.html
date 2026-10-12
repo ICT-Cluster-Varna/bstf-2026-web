@@ -1240,7 +1240,7 @@
     const T3D = {
       enterRoom: 'Enter the hall', wtHint: 'WASD / mouse to look around · drag to move · Esc to exit',
       free: 'Free', occupied: 'Occupied', reserved: 'Reserved', partner: 'Partner',
-      freeStand: 'Free stand', holdForDetails: 'Hold for details',
+      freeStand: 'Free stand', soldOut: 'Sold out', holdForDetails: 'Hold for details',
       includes: 'Includes', packagePrice: 'Package price', standOccupied: 'This stand is occupied',
       requestPackage: 'Request package', showSettings: 'Show settings', hideSettings: 'Hide settings',
       exitWalkthrough: 'Exit walkthrough', exploreIn3d: 'Explore the hall in 3D', stand: 'Stand'
@@ -3316,16 +3316,13 @@
           cta.href = u.website;
           cta.onclick = null;
         } else {
-          cta.textContent = 'Резервирай щанд';
-          const subject = tierName + ' - Щанд ' + u.n + ' (€' + info.price.toLocaleString('de-DE') + ')';
-          const body = 'Щанд №: ' + u.n + '\nПакет: ' + tierName + '\nЦена: €' + info.price.toLocaleString('de-DE');
-          cta.href = `mailto:bstf@ictclustervarna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          cta.onclick = function (ev) {
-            if (window.parent && window.parent !== window) {
-              ev.preventDefault();
-              window.parent.postMessage({ type: 'bstf3d', action: 'reserveStand', stand: u.n, tier: tierName, price: info.price }, window.location.origin);
-            }
-          };
+          // CONNEXUS 2026 is over (2026-10-12): stands can no longer be reserved,
+          // so a stand without a website of its own is shown as sold out.
+          cta.style.display = 'none';
+          occupiedBanner.textContent = t3d('soldOut', 'Изчерпан');
+          occupiedBanner.style.display = 'block';
+          _openPopupShow();
+          return;
         }
         cta.style.display = 'block';
       }

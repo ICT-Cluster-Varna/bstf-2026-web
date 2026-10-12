@@ -1308,7 +1308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="shared/site-chrome.js?v=20260924"></script>
+  <script src="shared/site-chrome.js?v=20261012-2"></script>
   <script>SiteChrome.renderNav('speaker', 'bg', 'speakers/paul-lambert/');</script>
 
   <!-- Page Hero -->
@@ -1343,8 +1343,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         data-en="Join the leading technology conference in the Black Sea region.">Присъединете се към водещата
         технологична конференция в Черноморския регион.</p>
       <div class="prefooter-buttons">
-        <a href="index.html#tickets" class="btn btn-white" data-bg="Регистрирай се"
-          data-en="Register now">Регистрирай се</a>
         <a href="index.html#program" class="btn btn-outline"
           style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж програмата"
           data-en="See program">Виж програмата</a>
@@ -1356,47 +1354,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="site-footer-root"></div>
   <script>SiteChrome.renderFooter('speaker', 'bg', 'speakers/paul-lambert/');</script>
 
-  <!-- Registration Modal -->
-  <div class="modal-overlay" id="register-modal">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="register-modal-title" tabindex="-1">
-      <button class="modal-close" onclick="closeModal('register-modal')" aria-label="Close">&times;</button>
-      <form class="modal-form" id="register-form" onsubmit="submitRegister(); return false;">
-        <h2 id="register-modal-title" data-bg="Регистрация" data-en="Registration">Регистрация</h2>
-        <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на CONNEXUS 2026."
-          data-en="Fill in the form to reserve your spot at CONNEXUS 2026.">Попълнете формата, за да резервирате вашето
-          място на CONNEXUS 2026.</p>
-        <div class="form-group required"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input
-            type="text" id="reg-name" placeholder="John Doe" required aria-describedby="register-error"></div>
-        <div class="form-group required"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="reg-email"
-            placeholder="john@example.com" required aria-describedby="register-error"></div>
-        <div class="form-group"><label data-bg="Телефон" data-en="Phone">Телефон</label><input type="tel" id="reg-phone"
-            placeholder="+359 ..."></div>
-        <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
-          <select id="reg-ticket">
-            <option value="standard" data-bg="Full Event - 199 EUR" data-en="Full Event - 199 EUR">Full Event - 199 EUR
-            </option>
-            <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
-            <option value="ultra-vip" data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR
-            </option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary form-submit" data-bg="Регистрирай се"
-          data-en="Register">Регистрирай се</button>
-        <div class="form-error" id="register-error" role="alert" aria-live="assertive" style="display:none;color:#ff6b6b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
-      </form>
-      <div class="modal-success" id="register-success">
-        <div class="success-icon">&#x2713;</div>
-        <h3 id="register-success-title" tabindex="-1" data-bg="Регистрацията е успешна!"
-          data-en="Registration Successful!">Регистрацията е успешна!</h3>
-        <p data-bg="Ще се свържем с вас скоро."
-          data-en="We will get in touch with you shortly.">
-          Ще се свържем с вас скоро.</p>
-        <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6"><span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Или се свържете директно:</span><br><a href="mailto:bstf@ictclustervarna.com" style="color:inherit;text-decoration:underline">bstf@ictclustervarna.com</a><br><a href="tel:+359876658296" style="color:inherit;text-decoration:underline">+359 876 658 296</a></p>
-        <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('register-modal')" data-bg="Затвори"
-          data-en="Close">Затвори</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Speaker Application Modal -->
   <div class="modal-overlay" id="speaker-modal">
@@ -1449,12 +1406,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Back to Top -->
   <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
 
-  <!-- Mobile Sticky CTA -->
-  <div id="bstf-mob-cta">
-    <button class="btn" onclick="window.location.href='index.html#tickets'"
-      style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
-      data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
-  </div>
 
   <script>
     (function () {
@@ -1605,8 +1556,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       window.submitSpeaker = submitSpeaker;
 
-      var navRegBtn = document.getElementById('nav-cta-btn');
-      if (navRegBtn) { navRegBtn.addEventListener('click', function () { window.location.href = 'index.html#tickets'; }); }
 
       // Copy email fallback (mailto: fails silently with no mail client configured)
       document.querySelectorAll('.copy-email-btn').forEach(function (btn) {

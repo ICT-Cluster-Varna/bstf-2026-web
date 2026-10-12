@@ -1,0 +1,14 @@
+<!-- ===== ctaText | source: shared/site-chrome.js | removed 2026-10-12 ===== -->
+    var ctaText = pick('Купи Билет', 'Buy Ticket', lang);
+
+<!-- ===== nav "Купи Билет" button | source: shared/site-chrome.js | removed 2026-10-12 ===== -->
+      '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</button>' +
+
+<!-- ===== mobile nav "Купи Билет" button | source: shared/site-chrome.js | removed 2026-10-12 ===== -->
+      '<a href="' + href(cfg, '#tickets') + '" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</a>' +
+
+<!-- ===== footer "Билети" link | source: shared/site-chrome.js | removed 2026-10-12 ===== -->
+      '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">' + pick('Билети', 'Tickets', lang) + '</a>' +
+
+<!-- ===== comment (original text) | source: shared/site-chrome.js | removed 2026-10-12 ===== -->
+// Five links plus the language toggle and the ticket button need about

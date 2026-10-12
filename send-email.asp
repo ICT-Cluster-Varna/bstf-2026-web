@@ -201,6 +201,13 @@ if (String(Request.ServerVariables("REQUEST_METHOD")) !== "POST") {
 var formType = field("formType");
 var subject = "", htmlBody = "", textBody = "", replyTo = "";
 
+// CONNEXUS 2026 registration closed on 2026-10-12: the form is gone from every
+// page, so refuse direct posts as well. The branch below is kept for reference.
+if (formType === "register") {
+  Response.Status = "410 Gone";
+  sendJson(false, "Registration for CONNEXUS 2026 is closed");
+}
+
 if (formType === "register") {
   var rName = field("name"), rEmail = field("email"), rPhone = field("phone"), rTicket = field("ticket"),
       rCompanyType = field("companyType"), rPromoCode = field("promoCode"), rPromoSource = field("promoSource"),

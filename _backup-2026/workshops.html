@@ -1,0 +1,75 @@
+<!-- ===== #ws-register-modal (workshop registration form) | source: workshops.html | removed 2026-10-12 ===== -->
+  <!-- Workshop registration modal -->
+  <div class="modal-overlay" id="ws-register-modal">
+    <div class="modal ws-reg" role="dialog" aria-modal="true" aria-labelledby="ws-reg-title" tabindex="-1">
+      <button type="button" class="modal-close" data-ws-close aria-label="Затвори">&times;</button>
+      <form class="modal-form" id="ws-reg-form" novalidate>
+        <span class="modal-eyebrow" data-bg="CONNEXUS 2026 · ОБУЧЕНИЯ" data-en="CONNEXUS 2026 · WORKSHOPS">CONNEXUS 2026 · ОБУЧЕНИЯ</span>
+        <h2 id="ws-reg-title">Регистрация за обучение</h2>
+        <div class="ws-reg-summary" id="ws-reg-summary"></div>
+        <input type="hidden" name="workshop_id">
+        <input type="hidden" name="workshop_title">
+        <input type="hidden" name="waitlist" value="false">
+        <div class="form-group required">
+          <label for="ws-reg-name" data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label>
+          <input type="text" id="ws-reg-name" name="name" placeholder="John Doe" autocomplete="name" required aria-describedby="ws-reg-name-err">
+          <p class="ws-field-error" id="ws-reg-name-err" hidden></p>
+        </div>
+        <div class="form-group required">
+          <label for="ws-reg-email" data-bg="Имейл" data-en="Email">Имейл</label>
+          <input type="email" id="ws-reg-email" name="email" placeholder="john@example.com" autocomplete="email" required aria-describedby="ws-reg-email-err">
+          <p class="ws-field-error" id="ws-reg-email-err" hidden></p>
+        </div>
+        <div class="form-group">
+          <label for="ws-reg-phone" data-bg="Телефон" data-en="Phone">Телефон</label>
+          <input type="tel" id="ws-reg-phone" name="phone" placeholder="+359 ..." autocomplete="tel" inputmode="tel" aria-describedby="ws-reg-phone-err">
+          <p class="ws-field-error" id="ws-reg-phone-err" hidden></p>
+        </div>
+        <div class="form-group">
+          <label for="ws-reg-company" data-bg="Компания / Организация" data-en="Company / Organization">Компания / Организация</label>
+          <input type="text" id="ws-reg-company" name="company" autocomplete="organization">
+        </div>
+        <fieldset class="form-group ws-fieldset">
+          <legend data-bg="Имате ли билет за форума?" data-en="Do you have a ticket for the forum?">Имате ли билет за форума?</legend>
+          <div class="ws-options">
+            <label class="ws-check"><input type="radio" name="hasTicket" value="yes"><span data-bg="Да" data-en="Yes">Да</span></label>
+            <label class="ws-check"><input type="radio" name="hasTicket" value="not-yet"><span data-bg="Още не" data-en="Not yet">Още не</span></label>
+          </div>
+        </fieldset>
+        <div class="form-group required">
+          <label class="ws-check"><input type="checkbox" id="ws-reg-consent" name="consent" value="yes" required aria-describedby="ws-reg-consent-err"><span><span data-bg="Съгласявам се личните ми данни да бъдат обработвани за целите на регистрацията за обучението." data-en="I agree to my personal data being processed for the purpose of this workshop registration.">Съгласявам се личните ми данни да бъдат обработвани за целите на регистрацията за обучението.</span> <span class="ws-req" aria-hidden="true">*</span></span></label>
+          <p class="ws-field-error" id="ws-reg-consent-err" hidden></p>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit" id="ws-reg-submit">Запази място</button>
+        <div class="ws-reg-error" id="ws-reg-error" role="alert" aria-live="assertive" hidden></div>
+      </form>
+      <div class="ws-reg-success" id="ws-reg-success" hidden>
+        <div class="success-icon">&#x2713;</div>
+        <h3 id="ws-reg-success-title" tabindex="-1" data-bg="Регистрацията е успешна!" data-en="Registration Successful!">Регистрацията е успешна!</h3>
+        <p data-bg="Ще се свържем с вас скоро." data-en="We will get in touch with you shortly.">Ще се свържем с вас скоро.</p>
+        <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6"><span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Или се свържете директно:</span><br><span class="ws-reg-success-contacts" id="ws-reg-success-contacts"><a href="mailto:bstf@ictclustervarna.com">bstf@ictclustervarna.com</a><br><a href="tel:+359876658296">+359 876 658 296</a></span></p>
+        <button type="button" class="btn btn-outline" style="margin-top:20px" data-ws-close data-bg="Затвори" data-en="Close">Затвори</button>
+      </div>
+    </div>
+  </div>
+
+<!-- ===== #bstf-mob-cta (mobile sticky "Купи Билет") | source: workshops.html | removed 2026-10-12 ===== -->
+  <!-- Mobile Sticky CTA -->
+  <div id="bstf-mob-cta">
+    <button class="btn" onclick="window.location.href='index.html#tickets'"
+      style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
+      data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
+  </div>
+
+<!-- ===== nav-cta-btn click handler (-> index.html#tickets) | source: workshops.html | removed 2026-10-12 ===== -->
+      var navRegBtn = document.getElementById('nav-cta-btn');
+      if (navRegBtn) { navRegBtn.addEventListener('click', function () { window.location.href = 'index.html#tickets'; }); }
+
+<!-- ===== meta: "Местата са ограничени..." (original text, x3) | source: workshops.html | removed 2026-10-12 ===== -->
+ Местата са ограничени, всяко обучение е с отделна регистрация.
+
+<!-- ===== hero: "Местата са ограничени..." (original text, x2) | source: workshops.html | removed 2026-10-12 ===== -->
+ Местата са ограничени, затова всяко обучение е с отделна регистрация.
+
+<!-- ===== hero EN: "Seats are limited..." x1 | source: workshops.html | removed 2026-10-12 ===== -->
+Seats are limited, so each workshop has its own registration.

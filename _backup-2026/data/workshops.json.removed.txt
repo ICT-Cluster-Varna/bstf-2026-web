@@ -1,0 +1,15 @@
+<!-- ===== workshop status + Google Form registration link | source: data/workshops.json | removed 2026-10-12 ===== -->
+"status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/ZRDBNzAbxEcVYyNo6"}
+
+<!-- ===== workshop status + Google Form registration link | source: data/workshops.json | removed 2026-10-12 ===== -->
+"status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/7DNMsMkJWQLYgk486"}
+
+<!-- ===== workshop status + Google Form registration link | source: data/workshops.json | removed 2026-10-12 ===== -->
+"status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/kEzXfWT489zmgC2n9"}
+
+<!-- ===== workshop status + Google Form registration link | source: data/workshops.json | removed 2026-10-12 ===== -->
+"status": "open",
+      "registration": {"type": "link", "url": "https://forms.gle/SBGzT4jsJxre9f9J8"}
