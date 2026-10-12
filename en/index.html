@@ -4534,7 +4534,7 @@
         }
 
         .hero .cx-hero-title {
-          font-size: 2.1rem !important
+          font-size: min(2.1rem, 7.4vw) !important
         }
 
         .cx-hero-grid,
@@ -5185,11 +5185,17 @@
         -webkit-backface-visibility: hidden
       }
 
+      .cx-hero-media picture {
+        display: block;
+        width: 100%;
+        height: 100%
+      }
+
       .cx-hero-bg-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: -15% 95%;
+        object-position: 100% 60%;
         display: block
       }
 
@@ -5266,6 +5272,20 @@
         padding: 22px 40px;
         flex-wrap: wrap;
         text-align: left
+      }
+
+      /* Post-event line on its own row above the crest + patronage text */
+      .cx-patron-band-status {
+        flex-basis: 100%;
+        text-align: center;
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--navy);
+        line-height: 1.25;
+        margin: 0 0 6px
       }
 
       .cx-patron-band-crest {
@@ -5348,6 +5368,45 @@
         flex-wrap: wrap
       }
 
+      /* Post-event hero on desktop: no stats row any more, so the text block
+        is set larger to fill the hero (client mockup, 2026-10-12). */
+      @media (min-width: 901px) {
+        .cx-hero .cx-hero-grid {
+          max-width: 780px
+        }
+
+        .cx-hero .cx-hero-kicker {
+          font-size: 0.85rem;
+          margin-bottom: 18px
+        }
+
+        .cx-hero .cx-hero-title {
+          font-size: 3.3rem;
+          margin-bottom: 22px
+        }
+
+        .cx-hero .cx-hero-desc {
+          font-size: 1.22rem;
+          max-width: 600px;
+          margin-bottom: 28px
+        }
+
+        .cx-hero .cx-hero-next {
+          font-size: 1.95rem
+        }
+      }
+
+      /* Post-event hero: "Stay tuned for CONNEXUS 2027" line under the description */
+      .cx-hero-next {
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1.3;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin: 0
+      }
+
       /* === Hero entrance choreography === */
       @keyframes cx-hero-fade {
         from {
@@ -5412,7 +5471,8 @@
         animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 0.86s forwards
       }
 
-      .cx-hero-buttons {
+      .cx-hero-buttons,
+      .cx-hero-next {
         opacity: 0;
         animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 1.0s forwards
       }
@@ -5423,7 +5483,8 @@
         .cx-hero-kicker,
         .cx-hero-title span,
         .cx-hero-desc,
-        .cx-hero-buttons {
+        .cx-hero-buttons,
+        .cx-hero-next {
           opacity: 1 !important;
           transform: none;
           animation: none !important
@@ -5757,10 +5818,10 @@
       <!-- SECTION 1: Hero -->
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
-          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="../images/hero-poster-new.jpg?v=20260731"
-            data-poster-mobile="../images/hero-poster-mobile.jpg?v=20260731"
-            data-src-desktop="../videos/hero-bg-new-clean.mp4?v=20260821"
-            data-src-mobile="../videos/hero-bg-mobile-clean.mp4?v=20260821"></video>
+          <picture>
+            <source media="(max-width: 900px)" srcset="../images/hero-2026-thanks-mobile.jpg?v=20261012">
+            <img class="cx-hero-bg-img" src="../images/hero-2026-thanks.jpg?v=20261012" alt="" fetchpriority="high">
+          </picture>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
         <div class="cx-hero-bg-overlay"></div>
@@ -5769,112 +5830,22 @@
           <div class="cx-hero-inner cx-hero-top-inner">
             <div class="cx-hero-grid">
               <div class="cx-hero-left">
-                <p class="cx-hero-kicker" data-bg="Хора. Идеи. Изкуствен интелект."
-                  data-en="People. Ideas. Artificial Intelligence.">People. Ideas. Artificial Intelligence.</p>
-                <h1 class="cx-hero-name" data-bg="CONNEXUS 2026 – Черноморски технологичен форум"
-                  data-en="CONNEXUS 2026 – Black Sea Technology Forum">CONNEXUS 2026 – Black Sea Technology Forum</h1>
-                <h2 class="cx-hero-title">
-                  <span data-bg="Свързваме" data-en="Connecting">Connecting</span>
-                  <span data-bg="хората," data-en="people,">people,</span>
-                  <span class="cx-hero-title-accent" data-bg="ускоряваме" data-en="accelerating">accelerating</span>
-                  <span class="cx-hero-title-accent" data-bg="бъдещето." data-en="the future.">the future.</span>
-                </h2>
+                <p class="cx-hero-kicker" data-bg="CONNEXUS &middot; Черноморски технологичен форум" data-en="CONNEXUS &middot; Black Sea Technology Forum">CONNEXUS &middot; Black Sea Technology Forum</p>
+                <h1 class="cx-hero-title">
+                  <span data-bg="Благодарим ви," data-en="Thank you for">Thank you for</span>
+                  <span data-bg="че бяхте част от" data-en="being part of">being part of</span>
+                  <span class="cx-hero-title-accent" data-bg="CONNEXUS 2026!" data-en="CONNEXUS 2026!">CONNEXUS 2026!</span>
+                </h1>
                 <p class="cx-hero-desc"
-                  data-bg="Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и света."
-                  data-en="Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.">Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.</p>
-                <div class="cx-hero-buttons">
-                  <a href="#program" class="btn btn-outline cx-hero-btn">
-                    <span data-bg="Виж програмата" data-en="See program">See program</span> <span
-                      aria-hidden="true">&darr;</span></a>
-                </div>
+                  data-bg="Три дни на идеи, технологии и срещи във Варна. Изданието за 2026 приключи, а връзките и разговорите продължават." data-en="Three days of ideas, technology and connections in Varna. The 2026 edition is over, but the connections and conversations continue.">Three days of ideas, technology and connections in Varna. The 2026 edition is over, but the connections and conversations continue.</p>
+                <p class="cx-hero-next" data-bg="Очаквайте CONNEXUS 2027." data-en="Stay tuned for CONNEXUS 2027.">Stay tuned for CONNEXUS 2027.</p>
               </div>
 
-            </div>
-
-            <div class="cx-hero-badge-row">
-              <span class="cx-hero-badge-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span data-bg="5-7 ОКТОМВРИ 2026" data-en="5-7 OCTOBER 2026">5-7 OCTOBER 2026</span>
-              </span>
-              <span class="cx-hero-badge-divider"></span>
-              <span class="cx-hero-badge-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" />
-                  <circle cx="12" cy="9.5" r="2.5" />
-                </svg>
-                <span data-bg="Хотел Черно море, Варна" data-en="Hotel Cherno More, Varna">Hotel Cherno More, Varna</span>
-              </span>
             </div>
           </div>
         </div>
 
         <div class="cx-hero-inner cx-hero-stats-wrap">
-          <div class="cx-hero-stats">
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <circle cx="9" cy="7" r="4" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="500" data-suffix="+">500+</span></div>
-                <div class="cx-stat-label" data-bg="УЧАСТНИЦИ" data-en="ATTENDEES">ATTENDEES</div>
-                <div class="cx-stat-desc" data-bg="Лидери. Иноватори. Визионери."
-                  data-en="Leaders. Innovators. Visionaries.">Leaders. Innovators. Visionaries.</div>
-              </div>
-            </div>
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-                <path
-                  d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-                <path d="m21 3 1 11h-2" />
-                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-                <path d="M3 4h8" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="79800" data-group="1">79 800</span></div>
-                <div class="cx-stat-label" data-bg="РЪКОСТИСКАНИЯ" data-en="HANDSHAKES">HANDSHAKES</div>
-                <div class="cx-stat-desc" data-bg="Реални връзки. Реални възможности."
-                  data-en="Real connections. Real opportunities.">Real connections. Real opportunities.</div>
-              </div>
-            </div>
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.6">
-                <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" />
-                <path d="M19 11a7 7 0 0 1-14 0" />
-                <line x1="12" y1="18" x2="12" y2="22" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="60" data-suffix="+">60+</span></div>
-                <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">SPEAKERS</div>
-                <div class="cx-stat-desc" data-bg="Световни експерти, три зали."
-                  data-en="World experts, three halls.">World experts, three halls.</div>
-              </div>
-            </div>
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.6">
-                <path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8-6.2-3.7-6.2 3.7 1.6-6.8-5.2-4.6 6.9-.6z" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="3">3</span> <span data-bg="дни"
-                    data-en="days">days</span></div>
-                <div class="cx-stat-label" data-bg="ВДЪХНОВЕНИЕ" data-en="INSPIRATION">INSPIRATION</div>
-                <div class="cx-stat-desc" data-bg="Идеи. Стратегии. Технологии." data-en="Ideas. Strategies. Technology.">Ideas. Strategies. Technology.</div>
-              </div>
-            </div>
-          </div>
-
           <a href="#program" class="cx-hero-scroll">
             <span data-bg="БЪДЕЩЕТО ЗАПОЧВА ТУК" data-en="THE FUTURE STARTS HERE">THE FUTURE STARTS HERE</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5888,6 +5859,7 @@
       <!-- Patronage band: appears right below the hero, on white -->
       <section class="cx-patron-band">
         <div class="cx-hero-inner cx-patron-band-inner">
+          <p class="cx-patron-band-status" data-bg="CONNEXUS 2026 ПРИКЛЮЧИ" data-en="CONNEXUS 2026 HAS CONCLUDED">CONNEXUS 2026 HAS CONCLUDED</p>
           <img src="../images/gerp-image.png?v=20260731" alt="State emblem of the Republic of Bulgaria"
             class="cx-patron-band-crest" width="487" height="410">
           <div class="cx-patron-band-text">
@@ -7960,6 +7932,7 @@
           var media = document.querySelector('[data-hero-media]');
           var video = media && media.querySelector('.cx-hero-bg-img');
           if (!video) return;
+          var isVideo = video.tagName === 'VIDEO';
 
           var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           // 900px, matching the @media(max-width:900px) block that caps the
@@ -8004,14 +7977,14 @@
             }
           }
 
-          applySourceForMode(isMobile);
+          if (isVideo) applySourceForMode(isMobile);
 
           // Off-screen pause, on-screen resume: the video has no `loop`, so once
           // it plays through it holds its final frame. Re-entering the viewport
           // just resumes from wherever it paused (or stays held on the last
           // frame if it already finished) — never resets to frame 0, so
           // scrolling back up never looks like a restarted reveal.
-          if ('IntersectionObserver' in window) {
+          if (isVideo && 'IntersectionObserver' in window) {
             var vis = new IntersectionObserver(function (entries) {
               entries.forEach(function (en) {
                 if (!video.src) return;
@@ -8070,7 +8043,7 @@
           // stuck (wrong crop, wrong file) until the page is manually reloaded.
           mobileMq.addEventListener('change', function (e) {
             isMobile = e.matches;
-            applySourceForMode(isMobile);
+            if (isVideo) applySourceForMode(isMobile);
             if (isMobile) {
               // Hand the band back to CSS's own `transform:none` mobile rule —
               // an inline style from a prior desktop parallax frame would
