@@ -9,7 +9,8 @@
     speakers: { isHome: false, activeNavKey: 'speakers' },
     speaker: { isHome: false, activeNavKey: 'speakers' },
     sponsors: { isHome: false, activeNavKey: 'sponsors' },
-    workshops: { isHome: false, activeNavKey: 'workshops' }
+    workshops: { isHome: false, activeNavKey: 'workshops' },
+    gallery: { isHome: false, activeNavKey: 'gallery' }
   };
 
   var PAGE_FILE = {
@@ -17,7 +18,8 @@
     speakers: 'speakers.html',
     speaker: 'speaker.html',
     sponsors: 'sponsors.html',
-    workshops: 'workshops.html'
+    workshops: 'workshops.html',
+    gallery: 'gallery.html'
   };
 
   function cfgFor(pageKey) {
@@ -83,6 +85,7 @@
       { key: 'workshops', href: 'workshops.html', bg: 'Обучения', en: 'Workshops' },
       { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
       { key: 'sponsors', href: 'sponsors.html', bg: 'Изложители', en: 'Exhibitors' },
+      { key: 'gallery', href: 'gallery.html', bg: 'Галерия', en: 'Gallery' },
       { key: 'contact', href: href(cfg, '#contact'), bg: 'Контакти', en: 'Contact' }
     ];
     return links.map(function (l) {
@@ -91,7 +94,7 @@
     }).join('');
   }
 
-  // Five links plus the language toggle need about
+  // Six links plus the language toggle need about
   // 1000px in one row; each page's own CSS only collapses the nav at 768px.
   // Between the two, tighten the spacing and, below 1000px, move the links
   // into the existing hamburger menu instead of letting the row run off-screen.
@@ -177,6 +180,7 @@
       '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
       '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">' + pick('Място', 'Venue', lang) + '</a>' +
       '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
+      '<a href="gallery.html" data-bg="Галерия" data-en="Gallery">' + pick('Галерия', 'Gallery', lang) + '</a>' +
       '<a href="' + href(cfg, '#contact') + '" data-bg="Контакти" data-en="Contact">' + pick('Контакти', 'Contact', lang) + '</a>' +
       '</div>' +
       '<div class="footer-col">' +
