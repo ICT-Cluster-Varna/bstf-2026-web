@@ -1,0 +1,2 @@
+<!-- ===== guard: refuse formType=register (original text) | source: send-email.asp | removed 2026-10-12 ===== -->
+var subject = "", htmlBody = "", textBody = "", replyTo = "";

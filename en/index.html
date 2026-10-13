@@ -114,35 +114,6 @@
       "organizer": {
         "@id": "https://www.blackseatech.org/#organization"
       },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Standard (Full Event)",
-          "price": "199",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "url": "https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance",
-          "category": "primary"
-        },
-        {
-          "@type": "Offer",
-          "name": "VIP",
-          "price": "399",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "url": "https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance",
-          "category": "primary"
-        },
-        {
-          "@type": "Offer",
-          "name": "ULTRA VIP",
-          "price": "749",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "url": "https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance",
-          "category": "primary"
-        }
-      ],
       "about": [
         {
           "@type": "Thing",
@@ -4563,7 +4534,7 @@
         }
 
         .hero .cx-hero-title {
-          font-size: 2.1rem !important
+          font-size: min(2.1rem, 7.4vw) !important
         }
 
         .cx-hero-grid,
@@ -5214,11 +5185,17 @@
         -webkit-backface-visibility: hidden
       }
 
+      .cx-hero-media picture {
+        display: block;
+        width: 100%;
+        height: 100%
+      }
+
       .cx-hero-bg-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: -15% 95%;
+        object-position: 100% 60%;
         display: block
       }
 
@@ -5295,6 +5272,20 @@
         padding: 22px 40px;
         flex-wrap: wrap;
         text-align: left
+      }
+
+      /* Post-event line on its own row above the crest + patronage text */
+      .cx-patron-band-status {
+        flex-basis: 100%;
+        text-align: center;
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--navy);
+        line-height: 1.25;
+        margin: 0 0 6px
       }
 
       .cx-patron-band-crest {
@@ -5377,6 +5368,45 @@
         flex-wrap: wrap
       }
 
+      /* Post-event hero on desktop: no stats row any more, so the text block
+        is set larger to fill the hero (client mockup, 2026-10-12). */
+      @media (min-width: 901px) {
+        .cx-hero .cx-hero-grid {
+          max-width: 780px
+        }
+
+        .cx-hero .cx-hero-kicker {
+          font-size: 0.85rem;
+          margin-bottom: 18px
+        }
+
+        .cx-hero .cx-hero-title {
+          font-size: 3.3rem;
+          margin-bottom: 22px
+        }
+
+        .cx-hero .cx-hero-desc {
+          font-size: 1.22rem;
+          max-width: 600px;
+          margin-bottom: 28px
+        }
+
+        .cx-hero .cx-hero-next {
+          font-size: 1.95rem
+        }
+      }
+
+      /* Post-event hero: "Stay tuned for CONNEXUS 2027" line under the description */
+      .cx-hero-next {
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1.3;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin: 0
+      }
+
       /* === Hero entrance choreography === */
       @keyframes cx-hero-fade {
         from {
@@ -5441,7 +5471,8 @@
         animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 0.86s forwards
       }
 
-      .cx-hero-buttons {
+      .cx-hero-buttons,
+      .cx-hero-next {
         opacity: 0;
         animation: cx-hero-rise 0.85s cubic-bezier(.16, .8, .3, 1) 1.0s forwards
       }
@@ -5452,7 +5483,8 @@
         .cx-hero-kicker,
         .cx-hero-title span,
         .cx-hero-desc,
-        .cx-hero-buttons {
+        .cx-hero-buttons,
+        .cx-hero-next {
           opacity: 1 !important;
           transform: none;
           animation: none !important
@@ -5778,7 +5810,7 @@
 
     <!-- Navigation -->
     <div id="site-nav-root"></div>
-    <script src="../shared/site-chrome.js?v=20260924"></script>
+    <script src="../shared/site-chrome.js?v=20261012-2"></script>
     <script src="../shared/logo-wall.js?v=20260930-3" defer></script>
     <script>SiteChrome.renderNav('home', 'en');</script>
 
@@ -5786,10 +5818,10 @@
       <!-- SECTION 1: Hero -->
       <section class="hero cx-hero" style="height:100vh;height:100dvh">
         <div class="cx-hero-media" data-hero-media>
-          <video class="cx-hero-bg-img" muted playsinline preload="none" poster="../images/hero-poster-new.jpg?v=20260731"
-            data-poster-mobile="../images/hero-poster-mobile.jpg?v=20260731"
-            data-src-desktop="../videos/hero-bg-new-clean.mp4?v=20260821"
-            data-src-mobile="../videos/hero-bg-mobile-clean.mp4?v=20260821"></video>
+          <picture>
+            <source media="(max-width: 900px)" srcset="../images/hero-2026-thanks-mobile.jpg?v=20261012">
+            <img class="cx-hero-bg-img" src="../images/hero-2026-thanks.jpg?v=20261012" alt="" fetchpriority="high">
+          </picture>
           <div class="cx-hero-grade" aria-hidden="true"></div>
         </div>
         <div class="cx-hero-bg-overlay"></div>
@@ -5798,115 +5830,22 @@
           <div class="cx-hero-inner cx-hero-top-inner">
             <div class="cx-hero-grid">
               <div class="cx-hero-left">
-                <p class="cx-hero-kicker" data-bg="Хора. Идеи. Изкуствен интелект."
-                  data-en="People. Ideas. Artificial Intelligence.">People. Ideas. Artificial Intelligence.</p>
-                <h1 class="cx-hero-name" data-bg="CONNEXUS 2026 – Черноморски технологичен форум"
-                  data-en="CONNEXUS 2026 – Black Sea Technology Forum">CONNEXUS 2026 – Black Sea Technology Forum</h1>
-                <h2 class="cx-hero-title">
-                  <span data-bg="Свързваме" data-en="Connecting">Connecting</span>
-                  <span data-bg="хората," data-en="people,">people,</span>
-                  <span class="cx-hero-title-accent" data-bg="ускоряваме" data-en="accelerating">accelerating</span>
-                  <span class="cx-hero-title-accent" data-bg="бъдещето." data-en="the future.">the future.</span>
-                </h2>
+                <p class="cx-hero-kicker" data-bg="CONNEXUS &middot; Черноморски технологичен форум" data-en="CONNEXUS &middot; Black Sea Technology Forum">CONNEXUS &middot; Black Sea Technology Forum</p>
+                <h1 class="cx-hero-title">
+                  <span data-bg="Благодарим ви," data-en="Thank you for">Thank you for</span>
+                  <span data-bg="че бяхте част от" data-en="being part of">being part of</span>
+                  <span class="cx-hero-title-accent" data-bg="CONNEXUS 2026!" data-en="CONNEXUS 2026!">CONNEXUS 2026!</span>
+                </h1>
                 <p class="cx-hero-desc"
-                  data-bg="Connexus е мястото, където визионери, предприемачи и иноватори създават връзки, които променят бизнеса и света."
-                  data-en="Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.">Connexus is where visionaries, entrepreneurs and innovators build connections that change business and the world.</p>
-                <div class="cx-hero-buttons">
-                  <button class="btn btn-primary cx-hero-btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')">
-                    <span data-bg="Купи Билет" data-en="Buy Ticket">Buy Ticket</span> <span
-                      aria-hidden="true">&rarr;</span></button>
-                  <a href="#program" class="btn btn-outline cx-hero-btn">
-                    <span data-bg="Виж програмата" data-en="See program">See program</span> <span
-                      aria-hidden="true">&darr;</span></a>
-                </div>
+                  data-bg="Три дни на идеи, технологии и срещи във Варна. Изданието за 2026 приключи, а връзките и разговорите продължават." data-en="Three days of ideas, technology and connections in Varna. The 2026 edition is over, but the connections and conversations continue.">Three days of ideas, technology and connections in Varna. The 2026 edition is over, but the connections and conversations continue.</p>
+                <p class="cx-hero-next" data-bg="Очаквайте CONNEXUS 2027." data-en="Stay tuned for CONNEXUS 2027.">Stay tuned for CONNEXUS 2027.</p>
               </div>
 
-            </div>
-
-            <div class="cx-hero-badge-row">
-              <span class="cx-hero-badge-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <span data-bg="5-7 ОКТОМВРИ 2026" data-en="5-7 OCTOBER 2026">5-7 OCTOBER 2026</span>
-              </span>
-              <span class="cx-hero-badge-divider"></span>
-              <span class="cx-hero-badge-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" />
-                  <circle cx="12" cy="9.5" r="2.5" />
-                </svg>
-                <span data-bg="Хотел Черно море, Варна" data-en="Hotel Cherno More, Varna">Hotel Cherno More, Varna</span>
-              </span>
             </div>
           </div>
         </div>
 
         <div class="cx-hero-inner cx-hero-stats-wrap">
-          <div class="cx-hero-stats">
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <circle cx="9" cy="7" r="4" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="500" data-suffix="+">500+</span></div>
-                <div class="cx-stat-label" data-bg="УЧАСТНИЦИ" data-en="ATTENDEES">ATTENDEES</div>
-                <div class="cx-stat-desc" data-bg="Лидери. Иноватори. Визионери."
-                  data-en="Leaders. Innovators. Visionaries.">Leaders. Innovators. Visionaries.</div>
-              </div>
-            </div>
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-                <path
-                  d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-                <path d="m21 3 1 11h-2" />
-                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-                <path d="M3 4h8" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="79800" data-group="1">79 800</span></div>
-                <div class="cx-stat-label" data-bg="РЪКОСТИСКАНИЯ" data-en="HANDSHAKES">HANDSHAKES</div>
-                <div class="cx-stat-desc" data-bg="Реални връзки. Реални възможности."
-                  data-en="Real connections. Real opportunities.">Real connections. Real opportunities.</div>
-              </div>
-            </div>
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.6">
-                <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" />
-                <path d="M19 11a7 7 0 0 1-14 0" />
-                <line x1="12" y1="18" x2="12" y2="22" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="60" data-suffix="+">60+</span></div>
-                <div class="cx-stat-label" data-bg="ЛЕКТОРИ" data-en="SPEAKERS">SPEAKERS</div>
-                <div class="cx-stat-desc" data-bg="Световни експерти, три зали."
-                  data-en="World experts, three halls.">World experts, three halls.</div>
-              </div>
-            </div>
-            <div class="cx-stat">
-              <svg class="cx-stat-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.6">
-                <path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8-6.2-3.7-6.2 3.7 1.6-6.8-5.2-4.6 6.9-.6z" />
-              </svg>
-              <div class="cx-stat-text">
-                <div class="cx-stat-num"><span class="cx-count" data-count="3">3</span> <span data-bg="дни"
-                    data-en="days">days</span></div>
-                <div class="cx-stat-label" data-bg="ВДЪХНОВЕНИЕ" data-en="INSPIRATION">INSPIRATION</div>
-                <div class="cx-stat-desc" data-bg="Идеи. Стратегии. Технологии." data-en="Ideas. Strategies. Technology.">Ideas. Strategies. Technology.</div>
-              </div>
-            </div>
-          </div>
-
           <a href="#program" class="cx-hero-scroll">
             <span data-bg="БЪДЕЩЕТО ЗАПОЧВА ТУК" data-en="THE FUTURE STARTS HERE">THE FUTURE STARTS HERE</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5920,6 +5859,7 @@
       <!-- Patronage band: appears right below the hero, on white -->
       <section class="cx-patron-band">
         <div class="cx-hero-inner cx-patron-band-inner">
+          <p class="cx-patron-band-status" data-bg="CONNEXUS 2026 ПРИКЛЮЧИ" data-en="CONNEXUS 2026 HAS CONCLUDED">CONNEXUS 2026 HAS CONCLUDED</p>
           <img src="../images/gerp-image.png?v=20260731" alt="State emblem of the Republic of Bulgaria"
             class="cx-patron-band-crest" width="487" height="410">
           <div class="cx-patron-band-text">
@@ -5929,20 +5869,6 @@
         </div>
       </section>
 
-      <!-- CTA Banner -->
-      <section id="cta-banner" style="background:var(--light-gray);padding:32px 24px;text-align:center">
-        <div style="max-width:800px;margin:0 auto; flex-direction:column;display:flex; justify-content:center; align-items:center">
-          <button onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')" class="btn btn-primary"
-            style="padding:13px 30px;font-size:0.95rem;border-radius:8px;margin-bottom:28px;display:inline-block"
-            data-bg="ЗАПАЗИ МЯСТО" data-en="RESERVE A SPOT">RESERVE A SPOT</button>
-          <h2
-            style="font-family: 'Science Gothic', sans-serif;font-size:2.03rem;font-weight:600;color:var(--navy);margin-bottom:16px;text-wrap:balance"
-            data-bg="Там, където Изтокът среща Запада." data-en="Where the East Meets the West.">Where the East Meets the West.</h2>
-          <p class="home-cta-copy"
-            data-bg="3 дни, 11 тематични области, 30+ държави. Не пропускайте бъдещето на AI, морски технологии и умни градове."
-            data-en="3 days, 11 thematic areas, 30+ countries. Don't miss the future of AI, Marine Tech, and Smart Cities.">3 days, 11 thematic areas, 30+ countries. Don't miss the future of AI, Marine Tech, and Smart Cities.</p>
-        </div>
-      </section>
     </div><!-- end hero-cta-wrap -->
 
     <!-- SECTION 4: Halls -->
@@ -7230,8 +7156,7 @@
                       LABEL('Край: ', 'End: ', '19:45 ч.', '19:45'),
                       LABEL('Тръгване и връщане: ', 'Departure and return: ', 'хотел „Черно море“', 'Hotel Cherno More'),
                       LABEL('Език: ', 'Language: ', 'английски', 'English'),
-                      LABEL('Група: ', 'Group size: ', 'между 10 и 20 души', '10–20 people'),
-                      BUTTON('Запиши се', 'Sign Up', 'https://forms.gle/GjQaFEpUUH5cowZo6')
+                      LABEL('Група: ', 'Group size: ', 'между 10 и 20 души', '10–20 people')
                     ]
                   }]
                 }
@@ -7691,7 +7616,8 @@
       <div class="container">
         <h2 class="section-title text-center" data-bg="Билети" data-en="Tickets">Tickets</h2>
         <p class="section-subtitle text-center tickets-subtitle"
-          data-bg="Изберете пропуска, който отговаря на вашите цели." data-en="Choose the pass that fits your goals.">Choose the pass that fits your goals.</p>
+          data-bg="Събитието приключи. Продажбата на билети е затворена." data-en="The event has ended. Ticket sales are closed.">
+          The event has ended. Ticket sales are closed.</p>
         <div class="tickets-grid" style="grid-template-columns:repeat(3,1fr)">
           <!-- Standard (Full Event) -->
           <div class="ticket-card animate-on-scroll" data-ticket="standard" data-selected-label="Избран"
@@ -7707,9 +7633,8 @@
               <li data-bg="Достъп до изложбената зона" data-en="Access to the exhibition zone">Access to the exhibition zone</li>
               <li data-bg="Дигитални материали" data-en="Digital materials">Digital materials</li>
             </ul>
-            <div class="ticket-urgency"><span data-bg="Ограничена наличност" data-en="Limited availability">Limited availability</span></div>
-            <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
-              data-en="Buy Ticket">Buy Ticket</a>
+            <button type="button" class="btn btn-primary" disabled aria-disabled="true" style="width:100%;display:block;text-align:center;opacity:0.55;cursor:not-allowed;pointer-events:none"
+              data-bg="Събитието приключи" data-en="Event has ended">Event has ended</button>
           </div>
 
           <!-- VIP -->
@@ -7726,9 +7651,8 @@
               <li data-bg="Приоритетен достъп до VIP зона" data-en="Priority access to VIP zone">Priority access to VIP zone</li>
               <li data-bg="VIP обяд с лекторите" data-en="VIP lunch with the speakers">VIP lunch with the speakers</li>
             </ul>
-            <div class="ticket-urgency"><span data-bg="Ограничена наличност" data-en="Limited availability">Limited availability</span></div>
-            <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
-              data-en="Buy Ticket">Buy Ticket</a>
+            <button type="button" class="btn btn-primary" disabled aria-disabled="true" style="width:100%;display:block;text-align:center;opacity:0.55;cursor:not-allowed;pointer-events:none"
+              data-bg="Събитието приключи" data-en="Event has ended">Event has ended</button>
           </div>
 
           <!-- ULTRA VIP -->
@@ -7746,9 +7670,8 @@
               <li data-bg="VIP обяд с лектори" data-en="VIP lunch with speakers">VIP lunch with speakers</li>
               <li data-bg="Достъп до Networking Party" data-en="Access to Networking Party">Access to Networking Party</li>
             </ul>
-            <div class="ticket-urgency ticket-urgency--last"><span data-bg="Последни бройки" data-en="Last few left">Last few left</span></div>
-            <a class="btn btn-primary bstf-ticket-buy-link" style="width:100%;display:block;text-align:center" href="https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance" target="_blank" rel="noopener noreferrer" data-bg="Купи Билет"
-              data-en="Buy Ticket">Buy Ticket</a>
+            <button type="button" class="btn btn-primary" disabled aria-disabled="true" style="width:100%;display:block;text-align:center;opacity:0.55;cursor:not-allowed;pointer-events:none"
+              data-bg="Събитието приключи" data-en="Event has ended">Event has ended</button>
           </div>
         </div>
       </div>
@@ -7761,7 +7684,6 @@
         <h2 data-bg="Ще се видим във Варна." data-en="See you in Varna.">See you in Varna.</h2>
         <p data-bg="5-7 окт 2026 • CONNEXUS" data-en="5-7 Oct 2026 • CONNEXUS">5-7 Oct 2026 • CONNEXUS</p>
         <div class="prefooter-buttons">
-          <button class="btn btn-primary" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')" data-bg="Регистрирай се" data-en="Register now">Register now</button>
           <button class="btn btn-outline open-exhibitor-modal" data-modal-open="exhibitor"
             style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Стани изложител"
             data-en="Become an exhibitor">Become an exhibitor</button>
@@ -7773,75 +7695,6 @@
     <div id="site-footer-root"></div>
     <script>SiteChrome.renderFooter('home', 'en');</script>
 
-    <!-- Registration Modal -->
-    <div class="modal-overlay" id="register-modal">
-      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="register-modal-title" tabindex="-1">
-        <button class="modal-close" onclick="closeModal('register-modal')" aria-label="Close">&times;</button>
-        <form class="modal-form" id="register-form" onsubmit="submitRegister(); return false;">
-          <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА"
-            data-en="CONNEXUS 2026 &middot; 5-7 OCT &middot; VARNA">CONNEXUS 2026 &middot; 5-7 OCT &middot; VARNA</span>
-          <h2 id="register-modal-title" data-bg="Регистрация" data-en="Registration">Registration</h2>
-          <div class="form-group required">
-            <label data-bg="Име и фамилия" data-en="Full Name">Full Name</label>
-            <input type="text" id="reg-name" placeholder="John Doe" required aria-describedby="register-error">
-          </div>
-          <div class="form-group required">
-            <label data-bg="Имейл" data-en="Email">Email</label>
-            <input type="email" id="reg-email" placeholder="john@example.com" required aria-describedby="register-error">
-          </div>
-          <div class="form-group required">
-            <label data-bg="Телефон" data-en="Phone">Phone</label>
-            <input type="tel" id="reg-phone" placeholder="+359 ..." required inputmode="tel" aria-describedby="register-error">
-          </div>
-          <div class="form-group">
-            <label data-bg="Тип билет" data-en="Ticket Type">Ticket Type</label>
-            <select id="reg-ticket">
-              <option value="standard" data-bg="Standard (Full Event) - 199 EUR"
-                data-en="Standard (Full Event) - 199 EUR">Standard (Full Event) - 199 EUR</option>
-              <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
-              <option value="ultra-vip" data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label data-bg="Тип компания" data-en="Company Type">Company Type</label>
-            <select id="reg-company-type">
-              <option value="" data-bg="Изберете (незадължително)" data-en="Select (optional)">Select (optional)</option>
-              <option value="startup" data-bg="Стартъп (до 5 г.)" data-en="Startup (under 5 yrs)">Startup (under 5 yrs)</option>
-              <option value="tech-vendor" data-bg="Технологична компания / доставчик"
-                data-en="Technology company / vendor">Technology company / vendor</option>
-              <option value="tech-buyer" data-bg="Компания – краен потребител на технологии"
-                data-en="Technology buyer / end-user company">Technology buyer / end-user company</option>
-              <option value="public-sector" data-bg="Държавна или общинска администрация"
-                data-en="Public sector / government">Public sector / government</option>
-              <option value="university" data-bg="Университет / научна организация"
-                data-en="University / research institution">University / research institution</option>
-              <option value="ngo-cluster" data-bg="НПО / клъстер / браншова организация"
-                data-en="NGO / cluster / trade association">NGO / cluster / trade association</option>
-              <option value="investor" data-bg="Инвеститор / фонд / акселератор" data-en="Investor / VC / accelerator">Investor / VC / accelerator</option>
-              <option value="freelancer" data-bg="Свободна практика / консултант" data-en="Freelancer / consultant">Freelancer / consultant</option>
-              <option value="other" data-bg="Друго" data-en="Other">Other</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit" data-bg="Регистрирай се"
-            data-en="Register">Register</button>
-          <div class="form-error" id="register-error" role="alert" aria-live="assertive"
-            style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
-        </form>
-        <div class="modal-success" id="register-success">
-          <div class="success-icon">&#x2713;</div>
-          <h3 id="register-success-title" tabindex="-1" data-bg="Регистрацията е успешна!" data-en="Registration Successful!">Registration Successful!</h3>
-          <p data-bg="Ще се свържем с вас скоро." data-en="We will get in touch with you shortly.">We will get in touch with you shortly.</p>
-          <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6">
-            <span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Or reach us directly:</span><br>
-            <a href="mailto:bstf@ictclustervarna.com"
-              style="color:inherit;text-decoration:underline">bstf@ictclustervarna.com</a><br>
-            <a href="tel:+359876658296" style="color:inherit;text-decoration:underline">+359 876 658 296</a>
-          </p>
-          <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('register-modal')" data-bg="Затвори"
-            data-en="Close">Close</button>
-        </div>
-      </div>
-    </div>
     <!-- Exhibitor Modal -->
     <div class="modal-overlay" id="exhibitor-modal">
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="exhibitor-modal-title" tabindex="-1">
@@ -7985,12 +7838,6 @@
     <!-- Back to Top -->
     <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
 
-    <!-- Mobile Sticky CTA -->
-    <div id="bstf-mob-cta">
-      <button class="btn" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'});history.replaceState(null,null,location.pathname+location.search+'#tickets')"
-        style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
-        data-bg="Регистрирай се" data-en="Register now">Register now</button>
-    </div>
     <script>
       (function () {
         'use strict';
@@ -7998,139 +7845,6 @@
         var LANG = document.documentElement.lang === 'en' ? 'en' : 'bg';
         function pick(bg, en) { return LANG === 'en' ? en : bg; }
 
-        // === Partner Promo Codes ===
-        // Always records which partner referred a registration (via ?promo= URL param
-        // or the form field), even when no discount is shown to the visitor.
-        var bstfPromo = { list: [], urlCode: '' };
-
-        function bstfGetUrlPromo() {
-          try {
-            return new URLSearchParams(window.location.search).get('promo') || '';
-          } catch (e) { return ''; }
-        }
-
-        function bstfFindPromo(code) {
-          if (!code) return null;
-          // Case-insensitive: "ardes" or "Ardes" must still find ARDES.
-          var trimmed = code.trim().toUpperCase();
-          if (!trimmed) return null;
-          for (var i = 0; i < bstfPromo.list.length; i++) {
-            if ((bstfPromo.list[i].code || '').toUpperCase() === trimmed) return bstfPromo.list[i];
-          }
-          return null;
-        }
-
-        // Reusable, idempotent display function: always REPLACES the current
-        // discount display state rather than adding to it, so re-calling with
-        // a blank/invalid code resets the prices back to normal (no "stuck"
-        // discount left over from a previously-typed value).
-        function bstfEscapeHtml(str) {
-          return String(str).replace(/[&<>"']/g, function (c) {
-            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-          });
-        }
-
-        // === Ticket purchase links ===
-        // Urbo sells the tickets on a per-language page and has no coupon field at
-        // all: a discount there is a whole separate Urbo listing with the reduced
-        // prices baked in. So a promo code has to change the *link*, not just the
-        // price shown here — and only a code that carries its own `ticketUrl` in
-        // data/promo-codes.json gets one. Today that is ARDES alone (the −10%
-        // listing); every other code keeps the full-price page, because no other
-        // partner has a listing of their own on Urbo.
-        var BSTF_TICKET_URL = {
-          bg: 'https://urboapp.com/bg/e25066-connexus-black-sea-tech-forum-2026-varna/entrance',
-          en: 'https://urboapp.com/en/e25066-connexus-black-sea-tech-forum-2026-varna/entrance'
-        };
-
-        function bstfPickLangUrl(map, lang) {
-          if (!map) return '';
-          return (lang === 'en' ? (map.en || map.bg) : (map.bg || map.en)) || '';
-        }
-
-        // Pass the promo whose discount is currently *shown*; anything else
-        // (no code, unknown code, hidden discount, or a code without a listing of
-        // its own) falls back to the full-price page.
-        function bstfApplyTicketLinks(promo) {
-          var lang = currentLang === 'en' ? 'en' : 'bg';
-          var url = bstfPickLangUrl(promo && promo.ticketUrl, lang) || BSTF_TICKET_URL[lang];
-
-          document.querySelectorAll('.bstf-ticket-buy-link').forEach(function (link) {
-            link.href = url;
-          });
-        }
-
-        // The code in play right now: what the visitor typed in the form wins
-        // over the one the ?promo= URL brought them in with.
-        function bstfActiveCode() {
-          var input = document.getElementById('reg-promo');
-          var typed = input ? (input.value || '').trim() : '';
-          return typed || bstfPromo.urlCode;
-        }
-
-        function applyPromoDisplay(code) {
-          var promo = bstfFindPromo(code);
-          var showDiscount = !!(promo && promo.discountVisible);
-          var pct = showDiscount ? (Number(promo.discountPercent) || 0) : 0;
-          if (pct <= 0 || pct >= 100) showDiscount = false;
-          var company = (showDiscount && promo.company) ? bstfEscapeHtml(currentLang === 'en' ? (promo.companyEn || promo.company) : promo.company) : '';
-
-          document.querySelectorAll('.ticket-price[data-base-price]').forEach(function (priceEl) {
-            var base = Number(priceEl.getAttribute('data-base-price'));
-            var current = priceEl.querySelector('.ticket-price-current');
-            var existingNote = priceEl.querySelector('.ticket-discount-note');
-            if (existingNote) existingNote.parentNode.removeChild(existingNote);
-            var existingSource = priceEl.querySelector('.ticket-discount-source');
-            if (existingSource) existingSource.parentNode.removeChild(existingSource);
-            if (!base || !current) return;
-
-            if (showDiscount) {
-              var discounted = Math.round(base * (1 - pct / 100));
-              current.innerHTML = '<span class="ticket-price-old">&euro;' + base + '</span>&euro;' + discounted;
-
-              var note = document.createElement('span');
-              note.className = 'ticket-discount-note';
-              note.setAttribute('data-bg', 'Вашата отстъпка: ' + pct + '%');
-              note.setAttribute('data-en', 'Your discount: ' + pct + '%');
-              note.innerHTML = bstfFormMsg({ bg: 'Вашата отстъпка: ' + pct + '%', en: 'Your discount: ' + pct + '%' });
-              priceEl.appendChild(note);
-
-              if (company) {
-                var source = document.createElement('span');
-                source.className = 'ticket-discount-source';
-                source.innerHTML = bstfFormMsg({ bg: 'Осигурено от <strong>' + company + '</strong>', en: 'Provided by <strong>' + company + '</strong>' });
-                priceEl.appendChild(source);
-              }
-            } else {
-              current.innerHTML = '&euro;' + base;
-            }
-          });
-
-          bstfApplyTicketLinks(showDiscount ? promo : null);
-        }
-
-        function bstfInitPromo() {
-          bstfPromo.urlCode = bstfGetUrlPromo();
-          var promoInput = document.getElementById('reg-promo');
-          if (promoInput && bstfPromo.urlCode) promoInput.value = bstfPromo.urlCode;
-
-          if (promoInput) {
-            ['change', 'blur'].forEach(function (evt) {
-              promoInput.addEventListener(evt, function () { applyPromoDisplay(promoInput.value); });
-            });
-          }
-
-          fetch('../data/promo-codes.json').then(function (res) {
-            return res.ok ? res.json() : null;
-          }).then(function (data) {
-            if (!data || !Array.isArray(data.promoCodes)) return;
-            bstfPromo.list = data.promoCodes;
-            // Re-run against whatever the field currently holds (URL pre-fill or
-            // an edit the visitor already made while the JSON was loading).
-            applyPromoDisplay(bstfActiveCode());
-          }).catch(function () { /* no promo file / offline: silently no visual change */ });
-        }
-        bstfInitPromo();
 
         // === Language System ===
         let currentLang = 'en';
@@ -8162,10 +7876,6 @@
             opt.textContent = lang === 'bg' ? opt.getAttribute('data-bg') : opt.getAttribute('data-en');
           });
 
-          // Re-render the ticket prices/links for the new language: this also
-          // re-resolves the promo discount, so the "Provided by <partner>" note
-          // and the Urbo target both follow the language switch.
-          applyPromoDisplay(bstfActiveCode());
         }
 
         // === Lang toggle click ===
@@ -8222,6 +7932,7 @@
           var media = document.querySelector('[data-hero-media]');
           var video = media && media.querySelector('.cx-hero-bg-img');
           if (!video) return;
+          var isVideo = video.tagName === 'VIDEO';
 
           var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           // 900px, matching the @media(max-width:900px) block that caps the
@@ -8266,14 +7977,14 @@
             }
           }
 
-          applySourceForMode(isMobile);
+          if (isVideo) applySourceForMode(isMobile);
 
           // Off-screen pause, on-screen resume: the video has no `loop`, so once
           // it plays through it holds its final frame. Re-entering the viewport
           // just resumes from wherever it paused (or stays held on the last
           // frame if it already finished) — never resets to frame 0, so
           // scrolling back up never looks like a restarted reveal.
-          if ('IntersectionObserver' in window) {
+          if (isVideo && 'IntersectionObserver' in window) {
             var vis = new IntersectionObserver(function (entries) {
               entries.forEach(function (en) {
                 if (!video.src) return;
@@ -8332,7 +8043,7 @@
           // stuck (wrong crop, wrong file) until the page is manually reloaded.
           mobileMq.addEventListener('change', function (e) {
             isMobile = e.matches;
-            applySourceForMode(isMobile);
+            if (isVideo) applySourceForMode(isMobile);
             if (isMobile) {
               // Hand the band back to CSS's own `transform:none` mobile rule —
               // an inline style from a prior desktop parallax frame would
@@ -8369,28 +8080,6 @@
           }, 600);
         }
 
-        // === Ticket Card Selection ===
-        (function () {
-          var savedTicket = null;
-          try { savedTicket = localStorage.getItem('bstf-ticket'); } catch (e) {}
-          if (savedTicket) {
-            var savedCard = Array.prototype.filter.call(document.querySelectorAll('.ticket-card'), function (c) {
-              return c.dataset.ticket === savedTicket;
-            })[0];
-            if (savedCard) {
-              document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
-              savedCard.classList.add('active');
-            }
-          }
-          document.querySelectorAll('.ticket-card').forEach(function (card) {
-            card.addEventListener('click', function (e) {
-              if (e.target.closest('.btn')) return;
-              document.querySelectorAll('.ticket-card').forEach(function (c) { c.classList.remove('active'); });
-              card.classList.add('active');
-              try { localStorage.setItem('bstf-ticket', card.dataset.ticket); } catch (e) {}
-            });
-          });
-        })();
 
         // === Modals ===
         var bstfLastFocused = null;
@@ -8401,7 +8090,7 @@
           ).filter(function (el) { return el.offsetParent !== null; });
         }
 
-        function openModal(id, ticketType) {
+        function openModal(id) {
           var modal = document.getElementById(id);
           if (!modal) return;
           // Reset form/success state
@@ -8409,10 +8098,6 @@
           var success = modal.querySelector('.modal-success');
           if (form) { form.classList.remove('hidden'); form.style.display = ''; }
           if (success) { success.classList.remove('show'); success.style.display = 'none'; }
-          if (ticketType && id === 'register-modal') {
-            var sel = document.getElementById('reg-ticket');
-            if (sel) sel.value = ticketType;
-          }
           bstfLastFocused = document.activeElement;
           modal.classList.add('open');
           document.body.style.overflow = 'hidden';
@@ -8421,10 +8106,6 @@
         }
         window.openModal = openModal;
 
-        ['reg-name', 'reg-email', 'reg-phone'].forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) el.addEventListener('input', function () { bstfMarkInvalid(el, false); });
-        });
 
         function closeModal(id) {
           var modal = document.getElementById(id);
@@ -8593,70 +8274,6 @@
           });
         }
 
-        function submitRegister() {
-          var nameEl = document.getElementById('reg-name');
-          var emailEl = document.getElementById('reg-email');
-          var phoneEl = document.getElementById('reg-phone');
-          var name = (nameEl || {}).value || '';
-          var email = (emailEl || {}).value || '';
-          var phone = (phoneEl || {}).value || '';
-          var ticket = (document.getElementById('reg-ticket') || {}).value || '';
-          var companyType = (document.getElementById('reg-company-type') || {}).value || '';
-          var promoField = ((document.getElementById('reg-promo') || {}).value || '').trim();
-
-          [nameEl, emailEl, phoneEl].forEach(function (el) { bstfMarkInvalid(el, false); });
-
-          if (!name.trim() || !bstfIsRealName(name)) {
-            bstfMarkInvalid(nameEl, true);
-            bstfShowError('register-error', { bg: 'Моля, въведете истинско име (само букви).', en: 'Please enter your real name (letters only).' });
-            return;
-          }
-          if (!email.trim() || !bstfIsValidEmail(email)) {
-            bstfMarkInvalid(emailEl, true);
-            bstfShowError('register-error', { bg: 'Моля, въведете валиден имейл адрес.', en: 'Please enter a valid email address.' });
-            return;
-          }
-          var phoneDigits = phone.replace(/[\s\-()]/g, '');
-          // Format only - E.164 shape (+ then 1-9, never 0, per ITU E.164) or a
-          // national number with the domestic trunk "0" prefix. Doesn't (and can't,
-          // without a carrier lookup or SMS OTP) confirm the number is real/reachable -
-          // e.g. "+999999999999" is E.164-shaped but 999 isn't an assigned country code.
-          var phonePattern = /^(\+[1-9]\d{6,14}|0\d{6,11})$/;
-          var phoneCore = phoneDigits.replace(/^\+/, '');
-          var isAllSameDigit = /^(\d)\1+$/.test(phoneCore);
-          if (!phoneDigits.trim() || !phonePattern.test(phoneDigits) || isAllSameDigit) {
-            bstfMarkInvalid(phoneEl, true);
-            bstfShowError('register-error', { bg: 'Моля, въведете валиден телефонен номер (само цифри, 8-15 символа).', en: 'Please enter a valid phone number (digits only, 8-15 characters).' });
-            return;
-          }
-
-          var promoSource = 'none';
-          var finalPromoCode = '';
-          if (promoField) {
-            finalPromoCode = promoField;
-            promoSource = 'form';
-          } else if (bstfPromo.urlCode) {
-            finalPromoCode = bstfPromo.urlCode;
-            promoSource = 'url';
-          }
-          var matchedPromo = bstfFindPromo(finalPromoCode);
-          // Report the code as spelled in promo-codes.json, not as the visitor typed it.
-          if (matchedPromo) finalPromoCode = matchedPromo.code;
-          var promoCompany = matchedPromo ? matchedPromo.company : '';
-          // Whether this code gives the buyer a lower price (discountVisible)
-          // or the buyer pays full price and the partner earns a commission
-          // instead — the backend needs both to compute and label the amount.
-          var promoDiscountPercent = matchedPromo ? (Number(matchedPromo.discountPercent) || 0) : '';
-          var promoDiscountVisible = matchedPromo ? (matchedPromo.discountVisible ? 'true' : 'false') : '';
-
-          var btn = document.querySelector('#register-form .form-submit');
-          bstfSubmitForm({
-            formType: 'register', name: name, email: email, phone: phone, ticket: ticket, companyType: companyType,
-            promoCode: finalPromoCode, promoSource: promoSource, promoCompany: promoCompany,
-            promoDiscountPercent: promoDiscountPercent, promoDiscountVisible: promoDiscountVisible
-          }, btn, 'register-error', 'register-form', 'register-success');
-        }
-        window.submitRegister = submitRegister;
 
         function submitExhibitor() {
           var companyEl = document.getElementById('exh-company');
@@ -8740,13 +8357,6 @@
         });
 
         // === Open modal buttons ===
-        document.querySelectorAll('.open-register-modal, [data-modal-open="register"]').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            var card = btn.closest('.ticket-card');
-            var ticketType = card ? card.dataset.ticket : null;
-            openModal('register-modal', ticketType);
-          });
-        });
 
         document.querySelectorAll('.open-exhibitor-modal, [data-modal-open="exhibitor"]').forEach(function (btn) {
           btn.addEventListener('click', function () {
@@ -8760,17 +8370,6 @@
           });
         });
 
-        // Nav register button
-        var navRegBtn = document.getElementById('nav-cta-btn');
-        if (navRegBtn) {
-          navRegBtn.addEventListener('click', function () {
-            var t = document.getElementById('tickets');
-            if (t) {
-              t.scrollIntoView({ behavior: 'smooth' });
-              history.replaceState(null, null, location.pathname + location.search + '#tickets');
-            }
-          });
-        }
         // === Copy email fallback (mailto: fails silently with no mail client configured) ===
         document.querySelectorAll('.copy-email-btn').forEach(function (btn) {
           btn.addEventListener('click', function () {
@@ -8875,22 +8474,6 @@
           });
         }
 
-        // === Mobile Sticky CTA ===
-        // Mobile CTA - show after scrolling past hero
-        var mobCta = document.getElementById('bstf-mob-cta');
-        if (mobCta && window.innerWidth < 769) {
-          var hero = document.querySelector('.hero');
-          if (hero) {
-            var heroObs = new IntersectionObserver(function (entries) {
-              if (entries[0].isIntersecting) {
-                mobCta.classList.remove('visible');
-              } else {
-                mobCta.classList.add('visible');
-              }
-            }, { threshold: 0.1 });
-            heroObs.observe(hero);
-          }
-        }
 
         // === Scroll Animations (IntersectionObserver) ===
         var animObserver = new IntersectionObserver(function (entries) {

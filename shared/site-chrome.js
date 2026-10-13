@@ -79,7 +79,7 @@
 
   function navLinksHtml(cfg, lang) {
     var links = [
-      { key: 'program', href: href(cfg, '#program'), bg: 'Програма', en: 'Program' },
+      { key: 'program', href: href(cfg, '#program'), bg: 'Програма 2026', en: 'Program 2026' },
       { key: 'workshops', href: 'workshops.html', bg: 'Обучения', en: 'Workshops' },
       { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
       { key: 'sponsors', href: 'sponsors.html', bg: 'Изложители', en: 'Exhibitors' },
@@ -91,7 +91,7 @@
     }).join('');
   }
 
-  // Five links plus the language toggle and the ticket button need about
+  // Five links plus the language toggle need about
   // 1000px in one row; each page's own CSS only collapses the nav at 768px.
   // Between the two, tighten the spacing and, below 1000px, move the links
   // into the existing hamburger menu instead of letting the row run off-screen.
@@ -136,7 +136,6 @@
     lang = lang || 'bg';
     var cfg = cfgFor(pageKey);
     var links = navLinksHtml(cfg, lang);
-    var ctaText = pick('Купи Билет', 'Buy Ticket', lang);
     injectNavFitCss();
     root.outerHTML =
       '<nav class="main-nav">' +
@@ -145,7 +144,6 @@
       '<div class="nav-links">' + links + '</div>' +
       '<div class="nav-right">' +
       langToggleHtml(pageKey, lang, overridePath) +
-      '<button id="nav-cta-btn" class="btn btn-primary btn-sm nav-register-btn" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</button>' +
       '<button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>' +
       '</div>' +
       '</div>' +
@@ -153,7 +151,6 @@
       '<div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>' +
       '<div class="mobile-nav" id="mobile-nav">' +
       links +
-      '<a href="' + href(cfg, '#tickets') + '" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;display:block" data-bg="Купи Билет" data-en="Buy Ticket">' + ctaText + '</a>' +
       '</div>';
   }
 
@@ -179,7 +176,6 @@
       '<a href="workshops.html" data-bg="Обучения" data-en="Workshops">' + pick('Обучения', 'Workshops', lang) + '</a>' +
       '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
       '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">' + pick('Място', 'Venue', lang) + '</a>' +
-      '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">' + pick('Билети', 'Tickets', lang) + '</a>' +
       '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
       '<a href="' + href(cfg, '#contact') + '" data-bg="Контакти" data-en="Contact">' + pick('Контакти', 'Contact', lang) + '</a>' +
       '</div>' +

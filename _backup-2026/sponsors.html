@@ -1,0 +1,112 @@
+<!-- ===== #register-modal (2026 registration form) | source: sponsors.html | removed 2026-10-12 ===== -->
+<!-- Registration Modal -->
+<div class="modal-overlay" id="register-modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="register-modal-title" tabindex="-1">
+    <button class="modal-close" onclick="closeModal('register-modal')" aria-label="Close">&times;</button>
+    <form class="modal-form" id="register-form" onsubmit="submitRegister(); return false;">
+      <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА" data-en="CONNEXUS 2026 &middot; 5-7 OCT &middot; VARNA">CONNEXUS 2026 &middot; 5-7 ОКТ &middot; ВАРНА</span>
+      <h2 id="register-modal-title" data-bg="Регистрация" data-en="Registration">Регистрация</h2>
+      <p class="modal-desc" data-bg="Попълнете формата, за да резервирате вашето място на CONNEXUS 2026." data-en="Fill in the form to reserve your spot at CONNEXUS 2026.">Попълнете формата, за да резервирате вашето място на CONNEXUS 2026.</p>
+      <div class="form-group required"><label data-bg="Име и фамилия" data-en="Full Name">Име и фамилия</label><input type="text" id="reg-name" placeholder="John Doe" required aria-describedby="register-error"></div>
+      <div class="form-group required"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="reg-email" placeholder="john@example.com" required aria-describedby="register-error"></div>
+      <div class="form-group"><label data-bg="Телефон" data-en="Phone">Телефон</label><input type="tel" id="reg-phone" placeholder="+359 ..."></div>
+      <div class="form-group"><label data-bg="Тип билет" data-en="Ticket Type">Тип билет</label>
+        <select id="reg-ticket">
+          <option value="standard" data-bg="Standard (Full Event) - 199 EUR" data-en="Standard (Full Event) - 199 EUR">Standard (Full Event) - 199 EUR</option>
+          <option value="vip" data-bg="VIP - 399 EUR" data-en="VIP - 399 EUR">VIP - 399 EUR</option>
+          <option value="ultra-vip" data-bg="ULTRA VIP - 749 EUR" data-en="ULTRA VIP - 749 EUR">ULTRA VIP - 749 EUR</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit" data-bg="Регистрирай се" data-en="Register">Регистрирай се</button>
+      <div class="form-error" id="register-error" role="alert" aria-live="assertive" style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+    </form>
+    <div class="modal-success" id="register-success">
+      <div class="success-icon">&#x2713;</div>
+      <h3 id="register-success-title" tabindex="-1" data-bg="Регистрацията е успешна!" data-en="Registration Successful!">Регистрацията е успешна!</h3>
+      <p data-bg="Ще се свържем с вас скоро." data-en="We will get in touch with you shortly.">Ще се свържем с вас скоро.</p>
+      <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6"><span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Или се свържете директно:</span><br><a href="mailto:bstf@ictclustervarna.com" style="color:inherit;text-decoration:underline">bstf@ictclustervarna.com</a><br><a href="tel:+359876658296" style="color:inherit;text-decoration:underline">+359 876 658 296</a></p>
+      <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('register-modal')" data-bg="Затвори" data-en="Close">Затвори</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== #bstf-mob-cta (mobile sticky "Купи Билет") | source: sponsors.html | removed 2026-10-12 ===== -->
+<!-- Mobile Sticky CTA -->
+<div id="bstf-mob-cta">
+  <button class="btn" onclick="window.location.href='index.html#tickets'"
+    style="background:transparent;color:white;font-size:1rem;font-weight:600;letter-spacing:0.5px;border:none;cursor:pointer;padding:4px 0;width:100%;text-align:center"
+    data-bg="Купи Билет" data-en="Buy Ticket">Купи Билет</button>
+</div>
+
+<!-- ===== nav-cta-btn click handler (-> index.html#tickets) | source: sponsors.html | removed 2026-10-12 ===== -->
+  var navRegBtn = document.getElementById('nav-cta-btn');
+  if (navRegBtn) { navRegBtn.addEventListener('click', function() { window.location.href = 'index.html#tickets'; }); }
+
+<!-- ===== tier-status (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<div class="tier-status" data-bg="Изчерпан пакет" data-en="Sold Out">Изчерпан пакет</div>
+
+<!-- ===== tier-status (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<div class="tier-status" data-bg="Остава 1 място" data-en="1 spot left">Остава 1 място</div>
+
+<!-- ===== tier-status (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<div class="tier-status" data-bg="Остават 2 места" data-en="2 spots left">Остават 2 места</div>
+
+<!-- ===== tier-status (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<div class="tier-status" data-bg="Остават 2 места" data-en="2 spots left">Остават 2 места</div>
+
+<!-- ===== tier-status (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<div class="tier-status" data-bg="Остават 6 места" data-en="6 spots left">Остават 6 места</div>
+
+<!-- ===== package button (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<button type="button" onclick="openExhibitorModalForTier('institution')" class="btn btn-sm btn-tier" data-sold-out="true" aria-disabled="true" data-bg="Заявете" data-en="Inquire">Заявете</button>
+
+<!-- ===== package button (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<button type="button" onclick="openExhibitorModalForTier('stage')" class="btn btn-sm btn-tier" data-bg="Заявете" data-en="Inquire">Заявете</button>
+
+<!-- ===== package button (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<button type="button" onclick="openExhibitorModalForTier('gold')" class="btn btn-sm btn-tier" data-bg="Заявете" data-en="Inquire">Заявете</button>
+
+<!-- ===== package button (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<button type="button" onclick="openExhibitorModalForTier('silver')" class="btn btn-sm btn-tier" data-bg="Заявете" data-en="Inquire">Заявете</button>
+
+<!-- ===== package button (original) | source: sponsors.html | removed 2026-10-12 ===== -->
+<button type="button" onclick="openExhibitorModalForTier('expo')" class="btn btn-sm btn-tier" data-bg="Заявете" data-en="Inquire">Заявете</button>
+
+<!-- ===== #exhibitor-modal (Запитване за щанд form) | source: sponsors.html | removed 2026-10-12 ===== -->
+<!-- Exhibitor Modal (opened from 3D viewer stand reservation) -->
+<div class="modal-overlay" id="exhibitor-modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="exhibitor-modal-title" tabindex="-1">
+    <button class="modal-close" onclick="closeModal('exhibitor-modal')" aria-label="Close">&times;</button>
+    <form class="modal-form" id="exhibitor-form" onsubmit="submitExhibitor(); return false;">
+      <span class="modal-eyebrow" data-bg="CONNEXUS 2026 &middot; ИЗЛОЖЕНИЕ" data-en="CONNEXUS 2026 &middot; EXHIBITION">CONNEXUS 2026 &middot; ИЗЛОЖЕНИЕ</span>
+      <h2 id="exhibitor-modal-title" data-bg="Запитване за щанд" data-en="Booth Inquiry">Запитване за щанд</h2>
+      <p class="modal-desc" data-bg="Попълнете формата и ще се свържем с вас." data-en="Fill in the form and we will contact you.">Попълнете формата и ще се свържем с вас.</p>
+      <div class="form-group required"><label data-bg="Име на компанията" data-en="Company Name">Име на компанията</label><input type="text" id="exhibitor-company" required aria-describedby="exhibitor-error"></div>
+      <div class="form-group required"><label data-bg="Лице за контакт" data-en="Contact Person">Лице за контакт</label><input type="text" id="exhibitor-contact" required aria-describedby="exhibitor-error"></div>
+      <div class="form-group required"><label data-bg="Имейл" data-en="Email">Имейл</label><input type="email" id="exhibitor-email" required aria-describedby="exhibitor-error"></div>
+      <div class="form-group"><label data-bg="Интересуващ пакет" data-en="Package of Interest">Интересуващ пакет</label>
+        <select id="exhibitor-tier">
+          <option value="expo" data-bg="Expo - &euro;1,700" data-en="Expo - &euro;1,700">Expo - &euro;1,700</option>
+          <option value="silver" data-bg="Silver - &euro;7,500" data-en="Silver - &euro;7,500">Silver - &euro;7,500</option>
+          <option value="gold" data-bg="Gold - &euro;12,000" data-en="Gold - &euro;12,000">Gold - &euro;12,000</option>
+          <option value="stage" data-bg="Stage - &euro;18,000" data-en="Stage - &euro;18,000">Stage - &euro;18,000</option>
+          <option value="institution" data-bg="Institution - &euro;30,000" data-en="Institution - &euro;30,000">Institution - &euro;30,000</option>
+        </select>
+        <span class="form-hint" data-bg="Виж пълното сравнение на пакетите по-горе на тази страница." data-en="See the full package comparison above on this page.">Виж пълното сравнение на пакетите по-горе на тази страница.</span>
+      </div>
+      <div class="form-group"><label data-bg="Допълнителна информация" data-en="Additional Information">Допълнителна информация</label><textarea id="exhibitor-notes" rows="3"></textarea></div>
+      <button type="submit" class="btn btn-primary form-submit" data-bg="Изпрати запитване" data-en="Submit Inquiry">Изпрати запитване</button>
+      <div class="form-error" id="exhibitor-error" role="alert" aria-live="assertive" style="display:none;color:#c0392b;font-size:0.85rem;margin-top:10px;text-align:center;"></div>
+    </form>
+    <div class="modal-success" id="exhibitor-success">
+      <div class="success-icon">&#x2713;</div>
+      <h3 id="exhibitor-success-title" tabindex="-1" data-bg="Запитването е изпратено!" data-en="Inquiry Submitted!">Запитването е изпратено!</h3>
+      <p data-bg="Ще се свържем с вас в рамките на 2 работни дни." data-en="We will contact you within 2 business days.">Ще се свържем с вас в рамките на 2 работни дни.</p>
+      <p style="margin-top:10px;font-size:0.8rem;color:var(--text-light);line-height:1.6"><span data-bg="Или се свържете директно:" data-en="Or reach us directly:">Или се свържете директно:</span><br><a href="mailto:bstf@ictclustervarna.com" style="color:inherit;text-decoration:underline">bstf@ictclustervarna.com</a><br><a href="tel:+359876658296" style="color:inherit;text-decoration:underline">+359 876 658 296</a></p>
+      <button class="btn btn-outline" style="margin-top:20px" onclick="closeModal('exhibitor-modal')" data-bg="Затвори" data-en="Close">Затвори</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== pre-footer "Виж изложението" button | source: sponsors.html | removed 2026-10-12 (heading changed 2026 -> 2027) ===== -->
+<a href="sponsors.html#floor-plan" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white)" data-bg="Виж изложението" data-en="View exhibition">Виж изложението</a>

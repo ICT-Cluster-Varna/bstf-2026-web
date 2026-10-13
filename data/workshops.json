@@ -68,8 +68,7 @@
       ],
       "cover": {"type": "graphic", "graphic": "megaphone", "bg": "#193852"},
       "seats": {"total": null, "left": null},
-      "status": "open",
-      "registration": {"type": "link", "url": "https://forms.gle/ZRDBNzAbxEcVYyNo6"}
+      "status": "closed"
     },
     {
       "id": "linkedin-content-sprint",
@@ -103,8 +102,7 @@
       ],
       "cover": {"type": "graphic", "graphic": "content-calendar", "bg": "#1d4660"},
       "seats": {"total": null, "left": null},
-      "status": "open",
-      "registration": {"type": "link", "url": "https://forms.gle/7DNMsMkJWQLYgk486"}
+      "status": "closed"
     },
     {
       "id": "ai-fraud-deepfakes",
@@ -138,8 +136,7 @@
       ],
       "cover": {"type": "graphic", "graphic": "shield", "bg": "#15344a"},
       "seats": {"total": null, "left": null},
-      "status": "open",
-      "registration": {"type": "link", "url": "https://forms.gle/kEzXfWT489zmgC2n9"}
+      "status": "closed"
     },
     {
       "id": "modern-ai-business",
@@ -174,8 +171,7 @@
       ],
       "cover": {"type": "graphic", "graphic": "ai-network", "bg": "#173a56"},
       "seats": {"total": null, "left": null},
-      "status": "open",
-      "registration": {"type": "link", "url": "https://forms.gle/SBGzT4jsJxre9f9J8"}
+      "status": "closed"
     }
   ]
 }
