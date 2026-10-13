@@ -87,6 +87,10 @@ window.Gallery = (function () {
 
   // ---------- helpers ----------
   function img(id, w) { return 'https://lh3.googleusercontent.com/d/' + id + '=w' + w; }
+  // Google rate-limits Drive image requests by Referer (seen as HTTP 429 for
+  // every photo once one referring site has made many requests), so every
+  // photo request goes out without a Referer.
+  function driveImage() { var i = new Image(); i.referrerPolicy = 'no-referrer'; return i; }
   function dlUrl(id) { return 'https://drive.google.com/uc?export=download&id=' + id; }
   function el(tag, cls, html) {
     var e = document.createElement(tag);
@@ -200,7 +204,7 @@ window.Gallery = (function () {
     a.href = pageUrl(photoHash(p));
     a.setAttribute('aria-label', t.openPhoto + ' ' + photoName(p));
     var inner = el('div', 'cx-gal-tile-inner');
-    var im = new Image();
+    var im = driveImage();
     im.alt = '';
     im.loading = 'lazy';
     im.decoding = 'async';
@@ -392,6 +396,7 @@ window.Gallery = (function () {
       '<div class="cx-gal-lb-caption"></div>';
     document.body.appendChild(lb);
     lbImg = lb.querySelector('.cx-gal-lb-stage img');
+    lbImg.referrerPolicy = 'no-referrer';
     lbCaption = lb.querySelector('.cx-gal-lb-caption');
     lbCount = lb.querySelector('.cx-gal-lb-count');
     lbPrev = lb.querySelector('.cx-gal-lb-prev');
@@ -440,7 +445,7 @@ window.Gallery = (function () {
     var big = img(p.id, lbWidth());
     lbImg.src = img(p.id, 800);           // already cached from the grid: instant
     lbImg.alt = photoName(p);
-    var hi = new Image();
+    var hi = driveImage();
     hi.onload = function () { if (shown[lbIndex] === p) lbImg.src = big; };
     hi.src = big;
     lbCaption.textContent = photoName(p);
@@ -452,7 +457,7 @@ window.Gallery = (function () {
     syncLightboxFav();
     setHash(photoHash(p));
     [lbIndex - 1, lbIndex + 1].forEach(function (i) {
-      if (shown[i]) (new Image()).src = img(shown[i].id, lbWidth());
+      if (shown[i]) driveImage().src = img(shown[i].id, lbWidth());
     });
   }
 
@@ -526,6 +531,7 @@ window.Gallery = (function () {
     var hero = document.querySelector('.cx-gal-hero');
     if (hero) {
       var cover = hero.querySelector('.cx-gal-hero-img');
+      cover.referrerPolicy = 'no-referrer';
       cover.srcset = [1200, 1800, 2400, 3000].map(function (w) { return img(data.cover, w) + ' ' + w + 'w'; }).join(', ');
       cover.sizes = '100vw';
       cover.src = img(data.cover, 2400);
