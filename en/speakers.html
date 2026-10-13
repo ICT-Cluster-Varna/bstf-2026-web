@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png?v=20260818">
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png?v=20260818">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png?v=20260818">
-  <meta name="description" content="Practitioners, researchers and institutional leaders from the Black Sea region and beyond, across 10 tracks, 5-7 October at CONNEXUS in Varna. See who is speaking.">
+  <meta name="description" content="Practitioners, researchers and institutional leaders from the Black Sea region and beyond: 105 speakers and 12 parallel panels and workshops at CONNEXUS 2026, 5-7 October, Varna.">
   <link rel="canonical" href="https://www.blackseatech.org/en/speakers.html">
   <link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers.html">
   <link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers.html">
@@ -28,14 +28,14 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CONNEXUS 2026">
   <meta property="og:title" content="Speakers at CONNEXUS 2026 — Black Sea Technology Forum">
-  <meta property="og:description" content="Practitioners, researchers and institutional leaders from the Black Sea region and beyond, across 10 tracks, 5-7 October at CONNEXUS in Varna. See who is speaking.">
+  <meta property="og:description" content="Practitioners, researchers and institutional leaders from the Black Sea region and beyond: 105 speakers and 12 parallel panels and workshops at CONNEXUS 2026, 5-7 October, Varna.">
   <meta property="og:url" content="https://www.blackseatech.org/en/speakers.html">
   <meta property="og:image" content="https://www.blackseatech.org/images/og-cover.jpg?v=20260731">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Speakers at CONNEXUS 2026 — Black Sea Technology Forum">
-  <meta name="twitter:description" content="Practitioners, researchers and institutional leaders from the Black Sea region and beyond, across 10 tracks, 5-7 October at CONNEXUS in Varna. See who is speaking.">
+  <meta name="twitter:description" content="Practitioners, researchers and institutional leaders from the Black Sea region and beyond: 105 speakers and 12 parallel panels and workshops at CONNEXUS 2026, 5-7 October, Varna.">
   <meta name="twitter:image" content="https://www.blackseatech.org/images/og-cover.jpg?v=20260731">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1553,6 +1553,25 @@
       }
     }
 
+    /* Narrow phones: the three hero stats must stay on one row; the longest
+       label is "паралелни панела и уъркшопа" (BG). */
+    @media (max-width: 480px) {
+      .hero-stat {
+        padding: 0 10px
+      }
+
+      .hero-stat-lbl {
+        font-size: 0.62rem;
+        letter-spacing: 0.01em
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-stat {
+        padding: 0 5px
+      }
+    }
+
     @media(max-width:768px) {
       #nav-cta-btn {
         display: none !important
@@ -1591,7 +1610,7 @@
   "@type": "CollectionPage",
   "@id": "https://www.blackseatech.org/en/speakers.html#webpage",
   "name": "CONNEXUS 2026 Speakers",
-  "description": "Practitioners, researchers and institutional leaders from the Black Sea region and beyond, across 10 thematic tracks.",
+  "description": "Practitioners, researchers and institutional leaders from the Black Sea region and beyond: 105 speakers and 12 parallel panels and workshops.",
   "isPartOf": {
     "@id": "https://www.blackseatech.org/#website"
   },
@@ -2053,13 +2072,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           data-en="Practitioners, researchers and strategic leaders from the Black Sea region and beyond.">Practitioners, researchers and strategic leaders from the Black Sea region and beyond.</p>
         <div class="hero-stats-strip">
           <div class="hero-stat">
-            <span class="hero-stat-num" id="stat-speakers">60+</span>
+            <span class="hero-stat-num" id="stat-speakers">105</span>
             <span class="hero-stat-lbl" data-bg="потвърдени лектори" data-en="confirmed speakers">confirmed speakers</span>
           </div>
           <div class="hero-stat-sep"></div>
           <div class="hero-stat">
-            <span class="hero-stat-num" id="stat-tracks">5</span>
-            <span class="hero-stat-lbl" data-bg="тематични трака" data-en="thematic tracks">thematic tracks</span>
+            <span class="hero-stat-num" id="stat-tracks">12</span>
+            <span class="hero-stat-lbl" data-bg="паралелни панела и уъркшопа" data-en="parallel panels and workshops">parallel panels and workshops</span>
           </div>
           <div class="hero-stat-sep"></div>
           <div class="hero-stat">
@@ -2155,9 +2174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (container) container.innerHTML = tracks.map(renderTrackSection).join('');
 
           var statSpeakers = document.getElementById('stat-speakers');
-          var statTracks = document.getElementById('stat-tracks');
-          if (statSpeakers) statSpeakers.textContent = '60+';
-          if (statTracks) statTracks.textContent = tracks.length;
+          if (statSpeakers) statSpeakers.textContent = '105';
         })();
       </script>
       <div class="apply-cta-wrap">
