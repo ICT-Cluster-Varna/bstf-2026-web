@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=20260818">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=20260818">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=20260818">
-    <meta name="description" content="Черноморският технологичен форум CONNEXUS, 5-7 октомври 2026 във Варна. Изкуствен интелект, киберсигурност, морски технологии и умни градове в три зали. Вземи билет.">
+    <meta name="description" content="CONNEXUS 2026 – Черноморският технологичен форум, 5-7 октомври 2026 във Варна: 700+ участници, 105 лектори, близо 80 лекции, 12 паралелни панела и уъркшопа и 35 изложители.">
     <link rel="canonical" href="https://www.blackseatech.org/">
     <link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/">
     <link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/">
@@ -31,14 +31,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CONNEXUS 2026">
     <meta property="og:title" content="CONNEXUS 2026 — Черноморски технологичен форум, Варна">
-    <meta property="og:description" content="Черноморският технологичен форум CONNEXUS, 5-7 октомври 2026 във Варна. Изкуствен интелект, киберсигурност, морски технологии и умни градове в три зали. Вземи билет.">
+    <meta property="og:description" content="CONNEXUS 2026 – Черноморският технологичен форум, 5-7 октомври 2026 във Варна: 700+ участници, 105 лектори, близо 80 лекции, 12 паралелни панела и уъркшопа и 35 изложители.">
     <meta property="og:url" content="https://www.blackseatech.org/">
     <meta property="og:image" content="https://www.blackseatech.org/images/og-cover.jpg?v=20260731">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CONNEXUS 2026 — Черноморски технологичен форум, Варна">
-    <meta name="twitter:description" content="Черноморският технологичен форум CONNEXUS, 5-7 октомври 2026 във Варна. Изкуствен интелект, киберсигурност, морски технологии и умни градове в три зали. Вземи билет.">
+    <meta name="twitter:description" content="CONNEXUS 2026 – Черноморският технологичен форум, 5-7 октомври 2026 във Варна: 700+ участници, 105 лектори, близо 80 лекции, 12 паралелни панела и уъркшопа и 35 изложители.">
     <meta name="twitter:image" content="https://www.blackseatech.org/images/og-cover.jpg?v=20260731">
     <script type="application/ld+json">
     {
@@ -80,7 +80,7 @@
         "Black Sea Tech Forum",
         "BSTF 2026"
       ],
-      "description": "Тридневен международен технологичен форум във Варна с 11 тематични направления, включително изкуствен интелект, киберсигурност, морски технологии и умни градове.",
+      "description": "Тридневен международен технологичен форум във Варна с 11 тематични направления, включително изкуствен интелект, киберсигурност, морски технологии и умни градове: 700+ участници, 105 лектори, близо 80 лекции, 12 паралелни панела и уъркшопа и 35 изложители.",
       "url": "https://www.blackseatech.org/",
       "startDate": "2026-10-05T13:00:00+03:00",
       "endDate": "2026-10-07T17:00:00+03:00",
@@ -5305,6 +5305,80 @@
           text-align: center
         }
       }
+      /* Post-event results strip ("CONNEXUS 2026 в числа"), right below the
+         hero + patronage band. Numbers count up via the existing .cx-count JS. */
+      .cx-results {
+        background: var(--light-blue);
+        border-bottom: 1px solid rgba(11, 57, 84, 0.08)
+      }
+
+      .cx-results-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 36px 40px 40px;
+        text-align: center
+      }
+
+      .cx-results-title {
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--teal-contrast);
+        margin: 0 0 22px
+      }
+
+      .cx-results-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none
+      }
+
+      .cx-result {
+        flex: 1 1 170px;
+        max-width: 220px;
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 22px 16px;
+        box-shadow: 0 2px 10px rgba(11, 57, 84, 0.06)
+      }
+
+      .cx-result-num {
+        font-family: 'Science Gothic', sans-serif;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--navy);
+        font-variant-numeric: tabular-nums
+      }
+
+      .cx-result-label {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        line-height: 1.35;
+        margin-top: 8px
+      }
+
+      @media (max-width: 640px) {
+        .cx-results-inner {
+          padding: 28px 16px 32px
+        }
+
+        .cx-result {
+          flex: 0 1 calc(50% - 8px);
+          max-width: none;
+          padding: 18px 10px
+        }
+
+        .cx-result-num {
+          font-size: 1.9rem
+        }
+      }
 
       .cx-hero-grid {
         max-width: 640px
@@ -5869,6 +5943,36 @@
 
     </div><!-- end hero-cta-wrap -->
 
+    <!-- Post-event results: CONNEXUS 2026 in numbers (final published figures, 2026-10-13) -->
+    <section class="cx-results" aria-labelledby="cx-results-title">
+      <div class="cx-results-inner">
+        <h2 class="cx-results-title" id="cx-results-title" data-bg="CONNEXUS 2026 в числа"
+          data-en="CONNEXUS 2026 in numbers">CONNEXUS 2026 в числа</h2>
+        <ul class="cx-results-list">
+          <li class="cx-result">
+            <div class="cx-result-num"><span class="cx-count" data-count="700" data-suffix="+">700+</span></div>
+            <div class="cx-result-label" data-bg="участници" data-en="attendees">участници</div>
+          </li>
+          <li class="cx-result">
+            <div class="cx-result-num"><span class="cx-count" data-count="105">105</span></div>
+            <div class="cx-result-label" data-bg="лектори" data-en="speakers">лектори</div>
+          </li>
+          <li class="cx-result">
+            <div class="cx-result-num">~<span class="cx-count" data-count="80">80</span></div>
+            <div class="cx-result-label" data-bg="лекции" data-en="talks">лекции</div>
+          </li>
+          <li class="cx-result">
+            <div class="cx-result-num"><span class="cx-count" data-count="12">12</span></div>
+            <div class="cx-result-label" data-bg="паралелни панела и уъркшопа" data-en="parallel panels and workshops">паралелни панела и уъркшопа</div>
+          </li>
+          <li class="cx-result">
+            <div class="cx-result-num"><span class="cx-count" data-count="35">35</span></div>
+            <div class="cx-result-label" data-bg="изложители" data-en="exhibitors">изложители</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- SECTION 4: Halls -->
     <section class="halls-section">
       <div class="container">
@@ -5972,9 +6076,9 @@
     <!-- SECTION: Streams -->
     <section style="padding:72px 0;background:var(--light-gray)">
       <div class="container" style="text-align:center">
-        <h2 class="section-title text-center" data-bg="11 тематични области.<br class='mobile-collapse'> 3 дни. Максимална стойност."
+        <h2 class="section-title text-center" data-bg="11 тематични направления.<br class='mobile-collapse'> 3 дни. Максимална стойност."
           data-en="11 Streams.<br class='mobile-collapse'> 3 Days. Maximum Value.">11
-          тематични области.<br class="mobile-collapse"> 3 дни. Максимална стойност.</h2>
+          тематични направления.<br class="mobile-collapse"> 3 дни. Максимална стойност.</h2>
         <p class="section-subtitle text-center streams-subtitle"
           data-bg="Изберете тема и вижте съответните акценти от програмата."
           data-en="Click a theme to see related program highlights.">Изберете тема и вижте съответните акценти от
@@ -7456,15 +7560,15 @@
               сцена.</p>
             <div class="home-speakers-note">
               <p class="home-speakers-note-copy"
-                data-bg="60+ лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно море и извън него."
-                data-en="60+ speakers are already confirmed — practitioners, researchers and institutional leaders from the Black Sea region and beyond.">
-                60+ лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно
+                data-bg="105 лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно море и извън него."
+                data-en="105 speakers are already confirmed — practitioners, researchers and institutional leaders from the Black Sea region and beyond.">
+                105 лектори вече са потвърдени — практици, изследователи и институционални лидери от региона на Черно
                 море и извън него.</p>
               <div class="home-speakers-stats">
-                <div class="home-speakers-stat"><span class="home-speakers-stat-value">60+</span><span
+                <div class="home-speakers-stat"><span class="home-speakers-stat-value">105</span><span
                     class="home-speakers-stat-label" data-bg="лектори" data-en="speakers">лектори</span></div>
-                <div class="home-speakers-stat"><span class="home-speakers-stat-value">30+</span><span
-                    class="home-speakers-stat-label" data-bg="панела" data-en="panels">панела</span>
+                <div class="home-speakers-stat"><span class="home-speakers-stat-value">12</span><span
+                    class="home-speakers-stat-label" data-bg="паралелни панела и уъркшопа" data-en="parallel panels and workshops">паралелни панела и уъркшопа</span>
                 </div>
               </div>
             </div>
