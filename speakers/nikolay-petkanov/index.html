@@ -783,6 +783,44 @@
       margin-bottom: 0
     }
 
+    /* Speaker presentation (PDF on Drive), last block of the page */
+    .sp-deck {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 160, 204, 0.35);
+      border-radius: 12px;
+      background: var(--light-blue)
+    }
+
+    .sp-deck+.sp-deck {
+      margin-top: 12px
+    }
+
+    .sp-deck-title {
+      flex: 1 1 260px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--navy)
+    }
+
+    .sp-deck .btn {
+      flex: 0 0 auto
+    }
+
+    @media(max-width:560px) {
+      .sp-deck .btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center
+      }
+    }
+
     @media(max-width:860px) {
       .sp-card {
         grid-template-columns: 1fr;
@@ -1335,7 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sp-bg-circle sbc-1"></div>
     <div class="sp-bg-circle sbc-2"></div>
     <div class="container">
-      <div id="sp-root"><div class="sp-profile" data-track="ai"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/nikolay-petkanov.jpg?v=20260929" alt="Nikolay Petkanov" style="object-position:center top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span><h2 class="sp-name" data-bg="Николай Петканов" data-en="Nikolay Petkanov">Николай Петканов</h2><div class="sp-role" data-bg="Основател и изпълнителен директор @ MBRAND" data-en="Founder &amp; CEO @ MBRAND">Основател и изпълнителен директор @ MBRAND</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI" data-en="From attention to opportunity. How businesses earn trust and get chosen in the age of AI">От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Николай Петканов е основател и изпълнителен директор на MBRAND, предприемач, бизнес и маркетинг консултант, обучител и лектор. С близо 30 години опит той помага на компаниите да превръщат дигиталната стратегия, AI и продажбите в устойчив растеж." data-en="Nikolay Petkanov is the founder and CEO of MBRAND, an entrepreneur, business and marketing consultant, trainer and speaker. With nearly 30 years of experience, he helps companies turn digital strategy, AI and sales into sustainable growth.">Николай Петканов е основател и изпълнителен директор на MBRAND, предприемач, бизнес и маркетинг консултант, обучител и лектор. С близо 30 години опит той помага на компаниите да превръщат дигиталната стратегия, AI и продажбите в устойчив растеж.</p></div></div><div class="sp-section"><h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3><div class="sp-topic"><span class="sp-topic-label" data-bg="Описание на лекцията" data-en="Talk Description">Описание на лекцията</span><span data-bg="AI ще направи съдържанието, рекламите, анализите и кампаниите по-лесни. Но няма да направи автоматично никого предпочитан. Как тогава клиентите ще избират?" data-en="AI will make content, advertising, analytics and campaigns easier. But it will not automatically make anyone the preferred choice. So how will customers choose?">AI ще направи съдържанието, рекламите, анализите и кампаниите по-лесни. Но няма да направи автоматично никого предпочитан. Как тогава клиентите ще избират?</span></div><div class="sp-topic"><span class="sp-topic-label" data-bg="Основни изводи за аудиторията" data-en="Key Takeaways">Основни изводи за аудиторията</span><span data-bg="Участниците ще си отговорят: коя е тази една възможност, която искам да създам през следващите 90 дни, и какво трябва да знаят хората за мен, за да я изберат?" data-en="Participants will answer for themselves: what is the one opportunity I want to create over the next 90 days, and what do people need to know about me in order to choose it?">Участниците ще си отговорят: коя е тази една възможност, която искам да създам през следващите 90 дни, и какво трябва да знаят хората за мен, за да я изберат?</span></div></div></div></div></div>
+      <div id="sp-root"><div class="sp-profile" data-track="ai"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/nikolay-petkanov.jpg?v=20260929" alt="Nikolay Petkanov" style="object-position:center top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Изкуствен интелект" data-en="Artificial Intelligence">Изкуствен интелект</span><h2 class="sp-name" data-bg="Николай Петканов" data-en="Nikolay Petkanov">Николай Петканов</h2><div class="sp-role" data-bg="Основател и изпълнителен директор @ MBRAND" data-en="Founder &amp; CEO @ MBRAND">Основател и изпълнителен директор @ MBRAND</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI" data-en="From attention to opportunity. How businesses earn trust and get chosen in the age of AI">От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Николай Петканов е основател и изпълнителен директор на MBRAND, предприемач, бизнес и маркетинг консултант, обучител и лектор. С близо 30 години опит той помага на компаниите да превръщат дигиталната стратегия, AI и продажбите в устойчив растеж." data-en="Nikolay Petkanov is the founder and CEO of MBRAND, an entrepreneur, business and marketing consultant, trainer and speaker. With nearly 30 years of experience, he helps companies turn digital strategy, AI and sales into sustainable growth.">Николай Петканов е основател и изпълнителен директор на MBRAND, предприемач, бизнес и маркетинг консултант, обучител и лектор. С близо 30 години опит той помага на компаниите да превръщат дигиталната стратегия, AI и продажбите в устойчив растеж.</p></div></div><div class="sp-section"><h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3><div class="sp-topic"><span class="sp-topic-label" data-bg="Описание на лекцията" data-en="Talk Description">Описание на лекцията</span><span data-bg="AI ще направи съдържанието, рекламите, анализите и кампаниите по-лесни. Но няма да направи автоматично никого предпочитан. Как тогава клиентите ще избират?" data-en="AI will make content, advertising, analytics and campaigns easier. But it will not automatically make anyone the preferred choice. So how will customers choose?">AI ще направи съдържанието, рекламите, анализите и кампаниите по-лесни. Но няма да направи автоматично никого предпочитан. Как тогава клиентите ще избират?</span></div><div class="sp-topic"><span class="sp-topic-label" data-bg="Основни изводи за аудиторията" data-en="Key Takeaways">Основни изводи за аудиторията</span><span data-bg="Участниците ще си отговорят: коя е тази една възможност, която искам да създам през следващите 90 дни, и какво трябва да знаят хората за мен, за да я изберат?" data-en="Participants will answer for themselves: what is the one opportunity I want to create over the next 90 days, and what do people need to know about me in order to choose it?">Участниците ще си отговорят: коя е тази една възможност, която искам да създам през следващите 90 дни, и какво трябва да знаят хората за мен, за да я изберат?</span></div></div><div class="sp-section sp-deck-section"><h3 class="sp-section-title" data-bg="Презентация от CONNEXUS 2026" data-en="Presentation from CONNEXUS 2026">Презентация от CONNEXUS 2026</h3><div class="sp-deck"><div class="sp-deck-title" data-bg="Основен доклад: От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI" data-en="Keynote: From Attention to Opportunity. How Businesses Earn Trust and Get Chosen in the Age of AI">Основен доклад: От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI</div><a class="btn btn-primary sp-deck-link" href="/presentations/nikolay-petkanov.pdf" target="_blank" rel="noopener" data-bg="Виж презентацията (PDF)" data-en="View the presentation (PDF)">Виж презентацията (PDF)</a></div></div></div></div></div>
     </div>
   </section>
 

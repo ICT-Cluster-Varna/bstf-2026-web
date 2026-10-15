@@ -117,7 +117,9 @@ Every deployable file uses static `?v=YYYYMMDD` cache-busting query strings on s
 - `index.html`, `speakers.html`, `sponsors.html` — `shared/site-chrome.js?v=YYYYMMDD` (added 2026-08-05).
 - `gallery.html`, `en/gallery.html` — `shared/gallery.css`, `shared/gallery.js`, `data/gallery-data.js` (`?v=YYYYMMDD`, added 2026-10-13). They also load `shared/site-chrome.js?v=` like every other page. Bump in these 3 files, plus **re-run the speaker-page generator** (see "Per-Speaker Pages" above) whenever `shared/site-chrome.js` changes — the 52 generated files carry their own copy of this `<script src>` line and won't pick up a bump otherwise.
 
-If a same-day edit needs a second cache-bust, append a suffix instead of faking a date, e.g. `20260702-2`.
+**Stamp = the date of the change, and it must be new.** Several changes on one day: `20261015`, `20261015-1`, `20261015-2`, `20261015-3`. This covers ALL cached media and assets (`images/ videos/ shared/ data/ 3d-model/`), not only the files listed above, and is **enforced**: `.githooks/pre-commit` runs `scripts/cache-bust-check.js` and blocks the commit (one-time per clone: `git config core.hooksPath .githooks`). `node scripts/cache-bust-check.js --working --fix` re-stamps. Full rules: `.claude/skills/cache-bust/SKILL.md`.
+
+**Speaker presentations (`presentations/*.pdf`, linked from `data/presentations.js`) are the exception: no `?v=`.** A PDF is never edited in place; a corrected deck is a new file name (`dimitar-karlovski-v2.pdf`). `web.config` gives the folder the 31-day cache.
 
 Do NOT switch this to a dynamic `Date.now()`/`document.write()` scheme — that was tried and rejected: it disables browser caching entirely and `document.write` is a deprecated, parser-blocking pattern.
 
