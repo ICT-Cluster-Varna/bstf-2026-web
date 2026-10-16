@@ -1099,8 +1099,8 @@
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
       role: 'Deputy Manager, Technology & Digitalisation @ Istanbul Chamber of Industry',
-      topicBg: 'Морски AI и управлявано от данни корабоплаване',
-      topicEn: 'Maritime AI & Data-Driven Shipping',
+      topicBg: 'Морска аналитика: данните като основа за по-умни, по-зелени и по-устойчиви операции',
+      topicEn: 'Maritime Intelligence: Transforming Data into Smarter, Greener and More Resilient Operations',
       bioEn: [
         'Cemile Köseler Usta is Deputy Manager of the Technology and Digitalisation Dept. at the Istanbul Chamber of Industry and an Enterprise Europe Network (EEN) expert. A driving force behind industrial innovation and digital transformation, she empowers SMEs through strategic partnerships, technology adoption and EU-funded opportunities.'
       ],
