@@ -567,6 +567,29 @@
       ]
     },
     {
+      id: 'simeon-stoyanov', track: 'ai',
+      decks: ['simeon-keynote', 'simeon-ahead'],
+      img: '/images/speakers/simeon-stoyanov.jpg?v=20261016', alt: 'Simeon Stoyanov',
+      objectPosition: 'center top',
+      name: 'проф. Симеон Стоянов',
+      nameEn: 'Prof. Simeon Stoyanov',
+      role: 'Managing Director @ BRAIN++ AI Factory, Sofia Tech Park',
+      roleBg: 'Управляващ директор @ BRAIN++ AI Factory, София Тех Парк',
+      roleEn: 'Managing Director @ BRAIN++ AI Factory, Sofia Tech Park',
+      topicBg: 'Приложен изкуствен интелект: от възможност до оперативни резултати',
+      topicEn: 'Applied AI: From Opportunity to Operational Results',
+      bioBg: [
+        'Проф. Симеон Стоянов е бизнес лидер и професор, който превръща науката и технологиите в реални продукти и услуги. Има над 80 патента и над 130 научни публикации, а опитът му обхваща ръководни позиции в България, Сингапур, Нидерландия, Великобритания и САЩ. Управляващ директор е на AI фабриката BRAIN++ в София Тех Парк и директор „Бизнес развитие“ на Discoverer – националния суперкомпютър на България; и двата са част от мрежата на EuroHPC JU.'
+      ],
+      bioEn: [
+        'Prof. Simeon Stoyanov is a business executive and professor who turns science and technology into real-world products and services, with 80+ patents, 130+ scientific publications, and leadership roles across Bulgaria, Singapore, the Netherlands, the UK and the USA. He is Managing Director of the BRAIN++ AI Factory at Sofia Tech Park and Business Development Director of Discoverer, the Bulgarian national supercomputer, both part of the EuroHPC JU network.'
+      ],
+      sessionDescBg: 'Всеки prompt, агент и автоматизиран работен процес учи AI как работи един бизнес, а това знание тихо се премества от компаниите към доставчиците на AI. Въз основа на актуални случаи – от надпреварата за Навие–Стокс до експерти, на които се плаща да обучават модели с работните си процеси – проф. Стоянов показва, че реалният въпрос за суверенитета днес не е само чии са данните, а на кого принадлежи начинът ни на мислене. Той обяснява какво означава суверенен AI на практика: контрол върху данните, моделите, изчислителните ресурси, операциите и know-how. След това представя отговора на Европа – мрежата от AI фабрики на EuroHPC, и българската AI фабрика BRAIN++ като цялостна структура за подкрепа: общност, събития и обучения; AI услуги – от подготовка на данни до суверенен AI облак с модели с отворени тегла; малки, основни и големи проекти, включително инкубация за стартъпи и акселерация за малки и средни предприятия; всичко това върху изчислителни ресурси с гъвкави режими на достъп. Лекцията завършва с пет въпроса, които всяка компания трябва да си зададе, преди да внедри AI.',
+      sessionDescEn: 'Every prompt, agent and automated workflow teaches AI how a business works, and that know-how is quietly moving from companies to the providers of AI. Drawing on recent cases, from the Navier–Stokes race to experts paid to train models on their workflows, Prof. Simeon Stoyanov argues that the real sovereignty question today is not just data, but who owns our ways of thinking. He shows what sovereign AI means in practice: control over data, models, compute, operations and know-how. He then presents Europe\'s answer, the network of EuroHPC AI Factories, and the Bulgarian AI Factory BRAIN++ as a complete support structure: community, events and training; AI services from data preparation to a sovereign AI cloud with open-weight models; small, core and Big Projects, including incubation for startups and acceleration for SMEs; all built on AI compute resources with flexible access modes. The talk closes with five questions every company should ask before deploying AI.',
+      takeawaysBg: 'Всеки prompt, агент и работен процес учи AI как работи вашият бизнес, а днес това знание остава при доставчика, не при вас. Участниците ще получат проста петслойна рамка за суверенен AI, реални случаи като надпреварата за Навие–Стокс и ясен път към суверенен AI през AI фабриките на EuroHPC и BRAIN++. Ще си тръгнат с пет въпроса, които да зададат, преди да внедрят какъвто и да е AI. Вашият работен процес е новите данни за обучение. Решете кой да ги получи.',
+      takeawaysEn: 'Every prompt, agent and workflow teaches AI how your business works, and today that know-how stays with the provider, not with you. Participants will get a simple five-layer lens for sovereign AI, real cases like the Navier–Stokes race, and a clear path to sovereign AI through the EuroHPC AI Factories and BRAIN++. They leave with five questions to ask before deploying any AI. Your workflow is the new training data. Decide who gets it.'
+    },
+    {
       id: 'kalin-kostadinov', track: 'smart-city',
       decks: ['kostadinov'],
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
@@ -1076,8 +1099,8 @@
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
       role: 'Deputy Manager, Technology & Digitalisation @ Istanbul Chamber of Industry',
-      topicBg: 'Морски AI и управлявано от данни корабоплаване',
-      topicEn: 'Maritime AI & Data-Driven Shipping',
+      topicBg: 'Морска аналитика: данните като основа за по-умни, по-зелени и по-устойчиви операции',
+      topicEn: 'Maritime Intelligence: Transforming Data into Smarter, Greener and More Resilient Operations',
       bioEn: [
         'Cemile Köseler Usta is Deputy Manager of the Technology and Digitalisation Dept. at the Istanbul Chamber of Industry and an Enterprise Europe Network (EEN) expert. A driving force behind industrial innovation and digital transformation, she empowers SMEs through strategic partnerships, technology adoption and EU-funded opportunities.'
       ],
