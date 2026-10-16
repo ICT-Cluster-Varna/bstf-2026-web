@@ -783,6 +783,44 @@
       margin-bottom: 0
     }
 
+    /* Speaker presentation (PDF on Drive), last block of the page */
+    .sp-deck {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 160, 204, 0.35);
+      border-radius: 12px;
+      background: var(--light-blue)
+    }
+
+    .sp-deck+.sp-deck {
+      margin-top: 12px
+    }
+
+    .sp-deck-title {
+      flex: 1 1 260px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--navy)
+    }
+
+    .sp-deck .btn {
+      flex: 0 0 auto
+    }
+
+    @media(max-width:560px) {
+      .sp-deck .btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center
+      }
+    }
+
     @media(max-width:860px) {
       .sp-card {
         grid-template-columns: 1fr;
@@ -1335,7 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sp-bg-circle sbc-1"></div>
     <div class="sp-bg-circle sbc-2"></div>
     <div class="container">
-      <div id="sp-root"><div class="sp-profile" data-track="marine"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/svetlin-stoyanov.jpg?v=20260730" alt="Svetlin Stoyanov" style="object-position:40% top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Морски технологии" data-en="Marine Tech">Marine Tech</span><h2 class="sp-name" data-bg="Светлин Стоянов" data-en="Svetlin Stoyanov">Svetlin Stoyanov</h2><div class="sp-role" data-bg="Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS" data-en="Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS">Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Talk Topic</span><span data-bg="Корабостроенето на Черно море: иновации и предизвикателства" data-en="Black Sea shipbuilding: innovation &amp; challenges">Black Sea shipbuilding: innovation &amp; challenges</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">See program</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">All speakers</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">About the speaker</h3><div class="sp-bio"><p data-bg="Светлин Стоянов е изпълнителен директор на корабостроителница MTG Dolphin – Варна, България. Той е председател на Управителния комитет на Българската национална асоциация по корабостроене и кораборемонт (БУЛНАС), член на управителния съвет на Конфедерацията на работодателите и индустриалците в България (КРИБ) и член на управителния съвет на Българската камара на корабоплаването." data-en="Svetlin Stoyanov is Executive Director of MTG Dolphin Shipyard in Varna, Bulgaria. He is Chairman of the Managing Committee of the Bulgarian National Association of Shipbuilding and Ship Repair (BULNAS), a Member of the Board of the Confederation of Employers and Industrialists in Bulgaria (CEIB), and a Member of the Board of the Bulgarian Chamber of Shipping.">Svetlin Stoyanov is Executive Director of MTG Dolphin Shipyard in Varna, Bulgaria. He is Chairman of the Managing Committee of the Bulgarian National Association of Shipbuilding and Ship Repair (BULNAS), a Member of the Board of the Confederation of Employers and Industrialists in Bulgaria (CEIB), and a Member of the Board of the Bulgarian Chamber of Shipping.</p><p data-bg="Той е и член на Настоятелството на Военноморското училище, както и на техническите комитети на ABS за Черно море и на BV за Елада и Черно море. Г-н Стоянов е завършил Висшето военноморско училище – Варна и притежава магистърска степен от Военноморска академия – Варна." data-en="He also sits on the Supervisory Board of the Naval Academy and is a member of the ABS Black Sea Technical Committee and the BV Hellenic and Black Sea Technical Committee. Mr. Stoyanov graduated from the High Maritime School – Varna and holds an MSc from the Naval Academy, Varna.">He also sits on the Supervisory Board of the Naval Academy and is a member of the ABS Black Sea Technical Committee and the BV Hellenic and Black Sea Technical Committee. Mr. Stoyanov graduated from the High Maritime School – Varna and holds an MSc from the Naval Academy, Varna.</p></div></div></div></div></div>
+      <div id="sp-root"><div class="sp-profile" data-track="marine"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/svetlin-stoyanov.jpg?v=20260730" alt="Svetlin Stoyanov" style="object-position:40% top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Морски технологии" data-en="Marine Tech">Marine Tech</span><h2 class="sp-name" data-bg="Светлин Стоянов" data-en="Svetlin Stoyanov">Svetlin Stoyanov</h2><div class="sp-role" data-bg="Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS" data-en="Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS">Executive Director @ MTG Dolphin Shipyard | Chair @ BULNAS</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Talk Topic</span><span data-bg="Корабостроенето на Черно море: иновации и предизвикателства" data-en="Black Sea shipbuilding: innovation &amp; challenges">Black Sea shipbuilding: innovation &amp; challenges</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">See program</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">All speakers</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">About the speaker</h3><div class="sp-bio"><p data-bg="Светлин Стоянов е изпълнителен директор на корабостроителница MTG Dolphin – Варна, България. Той е председател на Управителния комитет на Българската национална асоциация по корабостроене и кораборемонт (БУЛНАС), член на управителния съвет на Конфедерацията на работодателите и индустриалците в България (КРИБ) и член на управителния съвет на Българската камара на корабоплаването." data-en="Svetlin Stoyanov is Executive Director of MTG Dolphin Shipyard in Varna, Bulgaria. He is Chairman of the Managing Committee of the Bulgarian National Association of Shipbuilding and Ship Repair (BULNAS), a Member of the Board of the Confederation of Employers and Industrialists in Bulgaria (CEIB), and a Member of the Board of the Bulgarian Chamber of Shipping.">Svetlin Stoyanov is Executive Director of MTG Dolphin Shipyard in Varna, Bulgaria. He is Chairman of the Managing Committee of the Bulgarian National Association of Shipbuilding and Ship Repair (BULNAS), a Member of the Board of the Confederation of Employers and Industrialists in Bulgaria (CEIB), and a Member of the Board of the Bulgarian Chamber of Shipping.</p><p data-bg="Той е и член на Настоятелството на Военноморското училище, както и на техническите комитети на ABS за Черно море и на BV за Елада и Черно море. Г-н Стоянов е завършил Висшето военноморско училище – Варна и притежава магистърска степен от Военноморска академия – Варна." data-en="He also sits on the Supervisory Board of the Naval Academy and is a member of the ABS Black Sea Technical Committee and the BV Hellenic and Black Sea Technical Committee. Mr. Stoyanov graduated from the High Maritime School – Varna and holds an MSc from the Naval Academy, Varna.">He also sits on the Supervisory Board of the Naval Academy and is a member of the ABS Black Sea Technical Committee and the BV Hellenic and Black Sea Technical Committee. Mr. Stoyanov graduated from the High Maritime School – Varna and holds an MSc from the Naval Academy, Varna.</p></div></div><div class="sp-section sp-deck-section"><h3 class="sp-section-title" data-bg="Презентация от CONNEXUS 2026" data-en="Presentation from CONNEXUS 2026">Presentation from CONNEXUS 2026</h3><div class="sp-deck"><div class="sp-deck-title" data-bg="AI в корабостроенето" data-en="AI in Shipbuilding">AI in Shipbuilding</div><a class="btn btn-primary sp-deck-link" href="/presentations/svetlin-stoyanov.pdf" target="_blank" rel="noopener" data-bg="Виж презентацията (PDF)" data-en="View the presentation (PDF)">View the presentation (PDF)</a></div></div></div></div></div>
     </div>
   </section>
 

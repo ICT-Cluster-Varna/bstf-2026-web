@@ -783,6 +783,44 @@
       margin-bottom: 0
     }
 
+    /* Speaker presentation (PDF on Drive), last block of the page */
+    .sp-deck {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 160, 204, 0.35);
+      border-radius: 12px;
+      background: var(--light-blue)
+    }
+
+    .sp-deck+.sp-deck {
+      margin-top: 12px
+    }
+
+    .sp-deck-title {
+      flex: 1 1 260px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--navy)
+    }
+
+    .sp-deck .btn {
+      flex: 0 0 auto
+    }
+
+    @media(max-width:560px) {
+      .sp-deck .btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center
+      }
+    }
+
     @media(max-width:860px) {
       .sp-card {
         grid-template-columns: 1fr;
@@ -1336,7 +1374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sp-bg-circle sbc-1"></div>
     <div class="sp-bg-circle sbc-2"></div>
     <div class="container">
-      <div id="sp-root"><div class="sp-profile" data-track="regional-innovation-policy"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/dochka-vasileva.jpg?v=20260929" alt="Dochka Vasileva" style="object-position:center top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policy">Регионални иновационни политики</span><h2 class="sp-name" data-bg="д-⁠р инж. Дочка Василева" data-en="Dr. Eng. Dochka Vasileva">д-⁠р инж. Дочка Василева</h2><div class="sp-role" data-bg="Ръководител отдел „Проектно планиране и институционално сътрудничество“ @ Фонд на фондовете" data-en="Head of Project Planning and Institutional Cooperation @ Fund of Funds">Ръководител отдел „Проектно планиране и институционално сътрудничество“ @ Фонд на фондовете</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="Финансиране, износ, нови пазари и рискови фондове" data-en="Financing, Exports, New Markets and Venture Funds">Финансиране, износ, нови пазари и рискови фондове</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Д-р инж. Дочка Василева е ръководител отдел „Проектно планиране и институционално сътрудничество“ във Фонда на фондовете от 8 години. Има професионален опит в европейските политики в Белгия, както и в управлението на проекти в Германия и Великобритания. Тя е лектор в Софийския университет, УАСГ и Института за публична администрация. Подпомага младежкото предприемачество и е организатор на националния конкурс „Най-добър младежки стартъп в България“." data-en="Dr. Eng. Dochka Vasileva has headed the Project Planning and Institutional Cooperation department at the Fund of Funds for 8 years. She has professional experience in European policy in Belgium, as well as in project management in Germany and the United Kingdom. She lectures at Sofia University, the University of Architecture, Civil Engineering and Geodesy (UACEG) and the Institute of Public Administration. She supports youth entrepreneurship and organises the national competition &quot;Best Youth Start-up in Bulgaria&quot;.">Д-р инж. Дочка Василева е ръководител отдел „Проектно планиране и институционално сътрудничество“ във Фонда на фондовете от 8 години. Има професионален опит в европейските политики в Белгия, както и в управлението на проекти в Германия и Великобритания. Тя е лектор в Софийския университет, УАСГ и Института за публична администрация. Подпомага младежкото предприемачество и е организатор на националния конкурс „Най-добър младежки стартъп в България“.</p></div></div><div class="sp-section"><h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3><div class="sp-topic"><span class="sp-topic-label" data-bg="Описание на лекцията" data-en="Talk Description">Описание на лекцията</span><span data-bg="Ще бъдат представени финансовите инструменти на Фонда на фондовете, насочени към стартъпи и компании с фокус върху иновации, дигитализация, стратегически технологии и технологичен трансфер." data-en="A presentation of the Fund of Funds&#39; financial instruments aimed at start-ups and companies focused on innovation, digitalisation, strategic technologies and technology transfer.">Ще бъдат представени финансовите инструменти на Фонда на фондовете, насочени към стартъпи и компании с фокус върху иновации, дигитализация, стратегически технологии и технологичен трансфер.</span></div><div class="sp-topic"><span class="sp-topic-label" data-bg="Основни изводи за аудиторията" data-en="Key Takeaways">Основни изводи за аудиторията</span><span data-bg="Участниците във форума ще се запознаят с възможностите за финансиране на иновативни технологии в България." data-en="Participants will learn about the opportunities for financing innovative technologies in Bulgaria.">Участниците във форума ще се запознаят с възможностите за финансиране на иновативни технологии в България.</span></div></div></div></div></div>
+      <div id="sp-root"><div class="sp-profile" data-track="regional-innovation-policy"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/dochka-vasileva.jpg?v=20260929" alt="Dochka Vasileva" style="object-position:center top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policy">Регионални иновационни политики</span><h2 class="sp-name" data-bg="д-⁠р инж. Дочка Василева" data-en="Dr. Eng. Dochka Vasileva">д-⁠р инж. Дочка Василева</h2><div class="sp-role" data-bg="Ръководител отдел „Проектно планиране и институционално сътрудничество“ @ Фонд на фондовете" data-en="Head of Project Planning and Institutional Cooperation @ Fund of Funds">Ръководител отдел „Проектно планиране и институционално сътрудничество“ @ Фонд на фондовете</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="Финансиране, износ, нови пазари и рискови фондове" data-en="Financing, Exports, New Markets and Venture Funds">Финансиране, износ, нови пазари и рискови фондове</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Д-р инж. Дочка Василева е ръководител отдел „Проектно планиране и институционално сътрудничество“ във Фонда на фондовете от 8 години. Има професионален опит в европейските политики в Белгия, както и в управлението на проекти в Германия и Великобритания. Тя е лектор в Софийския университет, УАСГ и Института за публична администрация. Подпомага младежкото предприемачество и е организатор на националния конкурс „Най-добър младежки стартъп в България“." data-en="Dr. Eng. Dochka Vasileva has headed the Project Planning and Institutional Cooperation department at the Fund of Funds for 8 years. She has professional experience in European policy in Belgium, as well as in project management in Germany and the United Kingdom. She lectures at Sofia University, the University of Architecture, Civil Engineering and Geodesy (UACEG) and the Institute of Public Administration. She supports youth entrepreneurship and organises the national competition &quot;Best Youth Start-up in Bulgaria&quot;.">Д-р инж. Дочка Василева е ръководител отдел „Проектно планиране и институционално сътрудничество“ във Фонда на фондовете от 8 години. Има професионален опит в европейските политики в Белгия, както и в управлението на проекти в Германия и Великобритания. Тя е лектор в Софийския университет, УАСГ и Института за публична администрация. Подпомага младежкото предприемачество и е организатор на националния конкурс „Най-добър младежки стартъп в България“.</p></div></div><div class="sp-section"><h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3><div class="sp-topic"><span class="sp-topic-label" data-bg="Описание на лекцията" data-en="Talk Description">Описание на лекцията</span><span data-bg="Ще бъдат представени финансовите инструменти на Фонда на фондовете, насочени към стартъпи и компании с фокус върху иновации, дигитализация, стратегически технологии и технологичен трансфер." data-en="A presentation of the Fund of Funds&#39; financial instruments aimed at start-ups and companies focused on innovation, digitalisation, strategic technologies and technology transfer.">Ще бъдат представени финансовите инструменти на Фонда на фондовете, насочени към стартъпи и компании с фокус върху иновации, дигитализация, стратегически технологии и технологичен трансфер.</span></div><div class="sp-topic"><span class="sp-topic-label" data-bg="Основни изводи за аудиторията" data-en="Key Takeaways">Основни изводи за аудиторията</span><span data-bg="Участниците във форума ще се запознаят с възможностите за финансиране на иновативни технологии в България." data-en="Participants will learn about the opportunities for financing innovative technologies in Bulgaria.">Участниците във форума ще се запознаят с възможностите за финансиране на иновативни технологии в България.</span></div></div><div class="sp-section sp-deck-section"><h3 class="sp-section-title" data-bg="Презентация от CONNEXUS 2026" data-en="Presentation from CONNEXUS 2026">Презентация от CONNEXUS 2026</h3><div class="sp-deck"><div class="sp-deck-title" data-bg="Фонд на фондовете" data-en="Fund of Funds">Фонд на фондовете</div><a class="btn btn-primary sp-deck-link" href="/presentations/dochka-vasileva.pdf" target="_blank" rel="noopener" data-bg="Виж презентацията (PDF)" data-en="View the presentation (PDF)">Виж презентацията (PDF)</a></div></div></div></div></div>
     </div>
   </section>
 

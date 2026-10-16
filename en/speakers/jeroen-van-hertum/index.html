@@ -783,6 +783,44 @@
       margin-bottom: 0
     }
 
+    /* Speaker presentation (PDF on Drive), last block of the page */
+    .sp-deck {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 160, 204, 0.35);
+      border-radius: 12px;
+      background: var(--light-blue)
+    }
+
+    .sp-deck+.sp-deck {
+      margin-top: 12px
+    }
+
+    .sp-deck-title {
+      flex: 1 1 260px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--navy)
+    }
+
+    .sp-deck .btn {
+      flex: 0 0 auto
+    }
+
+    @media(max-width:560px) {
+      .sp-deck .btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center
+      }
+    }
+
     @media(max-width:860px) {
       .sp-card {
         grid-template-columns: 1fr;
@@ -1335,7 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sp-bg-circle sbc-1"></div>
     <div class="sp-bg-circle sbc-2"></div>
     <div class="container">
-      <div id="sp-root"><div class="sp-profile" data-track="regional-innovation-policy"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/jeroen-van-hertum.jpg?v=20260916" alt="Jeroen van Hertum" style="object-position:center top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policy">Regional Innovation Policy</span><h2 class="sp-name" data-bg="Jeroen van Hertum" data-en="Jeroen van Hertum">Jeroen van Hertum</h2><div class="sp-role" data-bg="Board Member @ Dutch Bulgarian Chamber of Commerce" data-en="Board Member @ Dutch Bulgarian Chamber of Commerce">Board Member @ Dutch Bulgarian Chamber of Commerce</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Talk Topic</span><span data-bg="Публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект" data-en="Public-Private Cooperation for Cybersecurity and AI Security Innovation">Public-Private Cooperation for Cybersecurity and AI Security Innovation</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">See program</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">All speakers</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">About the speaker</h3><div class="sp-bio"><p data-bg="Jeroen van Hertum е член на борда на Нидерландско-българската търговска камара - мостът между нидерландската и българската бизнес общност, където работи по трансгранично технологично сътрудничество, ниършоринг и свързването на българския технологичен сектор със западноевропейските пазари. Той е и основател на Sourcelab - европейска технологична консултантска компания, която работи между София и Нидерландия." data-en="Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands.">Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands.</p><p data-bg="В продължение на над тридесет години изгражда съвременни цифрови продукти за стартъпи, финтех компании, банки и големи предприятия - от малки екипи, които разработват бързо, до регулирани институции, които носят реален риск. Нидерландец по произход и установен в България от 2010 г., той е фокусиран върху цифровото доверие и европейската цифрова идентичност: eIDAS, квалифицираните електронни подписи и създаващия се Европейски портфейл за цифрова идентичност. Тезата му е, че доверието се превръща в бизнес предимство, а не в разход за съответствие." data-en="Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.">Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.</p></div></div></div></div></div>
+      <div id="sp-root"><div class="sp-profile" data-track="regional-innovation-policy"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/jeroen-van-hertum.jpg?v=20260916" alt="Jeroen van Hertum" style="object-position:center top"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Регионални иновационни политики" data-en="Regional Innovation Policy">Regional Innovation Policy</span><h2 class="sp-name" data-bg="Jeroen van Hertum" data-en="Jeroen van Hertum">Jeroen van Hertum</h2><div class="sp-role" data-bg="Board Member @ Dutch Bulgarian Chamber of Commerce" data-en="Board Member @ Dutch Bulgarian Chamber of Commerce">Board Member @ Dutch Bulgarian Chamber of Commerce</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Talk Topic</span><span data-bg="Публично-частно сътрудничество за иновации в киберсигурността и сигурността на изкуствения интелект" data-en="Public-Private Cooperation for Cybersecurity and AI Security Innovation">Public-Private Cooperation for Cybersecurity and AI Security Innovation</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">See program</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">All speakers</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">About the speaker</h3><div class="sp-bio"><p data-bg="Jeroen van Hertum е член на борда на Нидерландско-българската търговска камара - мостът между нидерландската и българската бизнес общност, където работи по трансгранично технологично сътрудничество, ниършоринг и свързването на българския технологичен сектор със западноевропейските пазари. Той е и основател на Sourcelab - европейска технологична консултантска компания, която работи между София и Нидерландия." data-en="Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands.">Jeroen van Hertum serves on the board of the Dutch Bulgarian Chamber of Commerce, the bridge between the Dutch and Bulgarian business communities, where he works on cross-border technology cooperation, nearshoring and connecting Bulgarian tech to Western European markets. He is also the founder of Sourcelab, a European technology consultancy operating between Sofia and the Netherlands.</p><p data-bg="В продължение на над тридесет години изгражда съвременни цифрови продукти за стартъпи, финтех компании, банки и големи предприятия - от малки екипи, които разработват бързо, до регулирани институции, които носят реален риск. Нидерландец по произход и установен в България от 2010 г., той е фокусиран върху цифровото доверие и европейската цифрова идентичност: eIDAS, квалифицираните електронни подписи и създаващия се Европейски портфейл за цифрова идентичност. Тезата му е, че доверието се превръща в бизнес предимство, а не в разход за съответствие." data-en="Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.">Over thirty years he has built advanced digital products for startups, fintechs, banks and large enterprises, from small teams shipping fast to regulated institutions carrying real risk. Dutch by birth and based in Bulgaria since 2010, his focus is digital trust and European digital identity: eIDAS, qualified electronic signatures and the emerging EU Digital Identity Wallet. He argues that trust is becoming a business advantage rather than a compliance cost.</p></div></div><div class="sp-section sp-deck-section"><h3 class="sp-section-title" data-bg="Презентация от CONNEXUS 2026" data-en="Presentation from CONNEXUS 2026">Presentation from CONNEXUS 2026</h3><div class="sp-deck"><div class="sp-deck-title" data-bg="One door, many doors: How the chamber network helps Turkish companies grow in Bulgaria and beyond" data-en="One door, many doors: How the chamber network helps Turkish companies grow in Bulgaria and beyond">One door, many doors: How the chamber network helps Turkish companies grow in Bulgaria and beyond</div><a class="btn btn-primary sp-deck-link" href="/presentations/jeroen-van-hertum.pdf" target="_blank" rel="noopener" data-bg="Виж презентацията (PDF)" data-en="View the presentation (PDF)">View the presentation (PDF)</a></div></div></div></div></div>
     </div>
   </section>
 

@@ -126,6 +126,7 @@
     // ── AI ──
     {
       id: 'martin-kuvandzhiev', track: 'ai',
+      decks: ['kuvandzhiev'],
       img: '/images/speakers/martin-kuvandzhiev-2.png?v=20260730', alt: 'Martin Kuvandzhiev',
       objectPosition: 'center 8%',
       name: 'Мартин Куванджиев',
@@ -144,6 +145,7 @@
     },
     {
       id: 'dominik-petek', track: 'ai',
+      decks: ['petek'],
       img: '/images/speakers/dominik-petek.jpg?v=20260914', alt: 'Dominik Petek',
       objectPosition: '30% center',
       name: 'Dominik Petek',
@@ -165,6 +167,7 @@
     },
     {
       id: 'gilad-barash', track: 'ai',
+      decks: ['barash'],
       img: '/images/speakers/gilad-barash.jpg?v=20260915', alt: 'Gilad Barash',
       objectPosition: 'center top',
       name: 'Gilad Barash',
@@ -182,6 +185,7 @@
     },
     {
       id: 'arthur-kordon', track: 'ai',
+      decks: ['kordon-applied', 'kordon-workshop'],
       img: '/images/speakers/arthur-kordon.jpg?v=20260918', alt: 'Arthur Kordon',
       objectPosition: 'center top',
       name: 'Dr. Arthur Kordon',
@@ -207,6 +211,7 @@
     },
     {
       id: 'valentin-kisimov', track: 'ai',
+      decks: ['kisimov'],
       img: '/images/speakers/valentin-kisimov.jpg?v=20260916', alt: 'Valentin Kisimov',
       objectPosition: 'center top',
       name: 'проф. Валентин Кисимов',
@@ -229,6 +234,7 @@
     },
     {
       id: 'cvetan-rusimov', track: 'ai',
+      decks: ['rusimov'],
       img: '/images/speakers/cvetan-rusimov.jpg?v=20260916', alt: 'Cvetan Rusimov',
       objectPosition: 'center top',
       name: 'Цветан Русимов',
@@ -251,6 +257,7 @@
     },
     {
       id: 'nikolay-valev', track: 'ai',
+      decks: ['valev'],
       img: '/images/speakers/nikolay-valev-profile.jpg?v=20260929', alt: 'Nikolay Valev',
       objectPosition: '70% center',
       name: 'Николай Вълев',
@@ -273,6 +280,7 @@
     },
     {
       id: 'todor-madzharov', track: 'ai',
+      decks: ['madzharov'],
       img: '/images/speakers/todor-madzharov.jpg?v=20260929', alt: 'Todor Madzharov',
       objectPosition: 'center top',
       name: 'Тодор Маджаров',
@@ -295,6 +303,7 @@
     },
     {
       id: 'nikolay-petkanov', track: 'ai',
+      decks: ['petkanov'],
       img: '/images/speakers/nikolay-petkanov.jpg?v=20260929', alt: 'Nikolay Petkanov',
       objectPosition: 'center top',
       name: 'Николай Петканов',
@@ -317,6 +326,7 @@
     },
     {
       id: 'megan-brzoska', track: 'ai',
+      decks: ['brzoska'],
       img: '/images/speakers/megan-brzoska-profile.jpg?v=20260929', alt: 'Megan Brzoska',
       objectPosition: 'center top',
       name: 'Megan Brzoska',
@@ -360,6 +370,7 @@
     },
     {
       id: 'teodor-stavrov', track: 'ai',
+      decks: ['stavrov'],
       img: '/images/speakers/teodor-stavrov.jpg?v=20260929', alt: 'Teodor Stavrov',
       objectPosition: '45% center',
       name: 'Теодор Ставров',
@@ -384,6 +395,7 @@
     },
     {
       id: 'oleksandr-syvak', track: 'ai',
+      decks: ['syvak'],
       img: '/images/speakers/oleksandr-syvak.jpg?v=20260930', alt: 'Oleksandr Syvak',
       objectPosition: 'center top',
       name: 'Олександър Сивак',
@@ -404,6 +416,7 @@
     },
     {
       id: 'gerasim-slavov', track: 'ai',
+      decks: ['slavov'],
       img: '/images/speakers/gerasim-slavov.jpg?v=20260930', alt: 'Gerasim Slavov',
       objectPosition: 'center top',
       name: 'Герасим Й. Славов',
@@ -450,6 +463,7 @@
     },
     {
       id: 'ilia-jeliazkov', track: 'ai',
+      decks: ['zhelyazkov'],
       img: '/images/speakers/ilia-jeliazkov.jpg?v=20260930', alt: 'Ilia Jeliazkov',
       objectPosition: 'center top',
       name: 'Илия Желязков',
@@ -472,6 +486,7 @@
     },
     {
       id: 'zvezdelin-borisov', track: 'ai',
+      decks: ['borisov'],
       img: '/images/speakers/zvezdelin-borisov.jpg?v=20261001', alt: 'Zvezdelin Borisov',
       objectPosition: 'center top',
       name: 'Звезделин Борисов',
@@ -494,6 +509,7 @@
     },
     {
       id: 'alexander-goshev', track: 'ai',
+      decks: ['goshev'],
       img: '/images/speakers/alexander-goshev.jpg?v=20261003', alt: 'Alexander Goshev',
       objectPosition: 'center top',
       name: 'Александър Гошев',
@@ -552,6 +568,7 @@
     },
     {
       id: 'kalin-kostadinov', track: 'smart-city',
+      decks: ['kostadinov'],
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
       objectPosition: 'center top',
       name: 'Калин Костадинов',
@@ -574,6 +591,7 @@
     },
     {
       id: 'veselina-yankova', track: 'smart-city',
+      decks: ['yankova'],
       img: '/images/speakers/veselina-yankova.jpg?v=20260929', alt: 'Veselina Yankova',
       objectPosition: 'center top',
       name: 'д-р Веселина Янкова',
@@ -600,6 +618,7 @@
     },
     {
       id: 'teade-punter', track: 'automation',
+      decks: ['punter'],
       img: '/images/speakers/teade-punter.jpg?v=20260730', alt: 'Teade Punter',
       objectPosition: '65% 15%',
       name: 'Dr. Teade Punter',
@@ -621,6 +640,7 @@
     },
     {
       id: 'mitsuru-horinouchi', track: 'automation',
+      decks: ['horinouchi'],
       img: '/images/speakers/mitsuru-horinouchi.jpg?v=20261009', alt: 'Mitsuru Horinouchi',
       objectPosition: 'center top',
       name: 'Mitsuru Horinouchi',
@@ -640,6 +660,7 @@
     // ── Cybersecurity ──
     {
       id: 'alexander-minchev', track: 'cybersecurity',
+      decks: ['minchev-konev'],
       img: '/images/speakers/alexander-minchev.jpg?v=20260730', alt: 'Alexander Minchev',
       objectPosition: 'center 25%',
       name: 'Александър Минчев',
@@ -660,6 +681,7 @@
     },
     {
       id: 'hristian-daskalov', track: 'cybersecurity',
+      decks: ['daskalov-identity', 'daskalov-cybersec'],
       img: '/images/speakers/hristian-daskalov.jpg?v=20260730', alt: 'Hristian Daskalov',
       objectPosition: 'center 8%',
       name: 'д-р Христиан Даскалов',
@@ -684,6 +706,7 @@
     },
     {
       id: 'dragomir-vatkov', track: 'cybersecurity',
+      decks: ['vatkov'],
       img: '/images/speakers/dragomir-vatkov.jpg?v=20260730', alt: 'Dragomir Vatkov',
       objectPosition: 'center 35%',
       name: 'Драгомир Вътков',
@@ -706,6 +729,7 @@
     },
     {
       id: 'yasen-tanev', track: 'cybersecurity',
+      decks: ['tanev'],
       img: '/images/speakers/yasen-tanev.jpg?v=20260730', alt: 'Yasen Tanev',
       objectPosition: 'center top',
       name: 'Ясен Танев',
@@ -726,6 +750,7 @@
     },
     {
       id: 'ivaylo-konev', track: 'cybersecurity',
+      decks: ['minchev-konev'],
       img: '/images/speakers/ivaylo-konev.jpg?v=20260910', alt: 'Ivaylo Konev',
       objectPosition: 'center 15%',
       name: 'Ивайло Конев',
@@ -746,6 +771,7 @@
     },
     {
       id: 'yoana-koleva', track: 'cybersecurity',
+      decks: ['koleva'],
       img: '/images/speakers/yoana-koleva.jpg?v=20260916', alt: 'Yoana Koleva',
       objectPosition: 'center top',
       name: 'Йоана Колева',
@@ -768,6 +794,7 @@
     },
     {
       id: 'ilin-savov', track: 'cybersecurity',
+      decks: ['savov'],
       img: '/images/speakers/ilin-savov.jpg?v=20260916', alt: 'Ilin Savov',
       objectPosition: 'center top',
       name: 'Старши комисар проф. д-р Илин Савов, д.н.',
@@ -818,6 +845,7 @@
     // ── BioTech ──
     {
       id: 'kristina-eskenazi', track: 'biotech',
+      decks: ['eskenazi'],
       img: '/images/speakers/kristina-eskenazi.jpg?v=20260730', alt: 'Kristina Eskenazi',
       objectPosition: 'center top',
       name: 'Кристина Ешкенази',
@@ -838,6 +866,7 @@
     },
     {
       id: 'dimitar-karlovski', track: 'biotech',
+      decks: ['karlovski'],
       img: '/images/speakers/dimitar-karlovski.jpg?v=20260730', alt: 'Dimitar Karlovski',
       objectPosition: 'center 5%',
       name: 'Димитър Карловски',
@@ -878,6 +907,7 @@
     },
     {
       id: 'anton-tonchev', track: 'biotech',
+      decks: ['tonchev'],
       img: '/images/speakers/anton-tonchev.jpg?v=20260730', alt: 'Anton Tonchev',
       objectPosition: 'center 30%',
       name: 'проф. Антон Тончев',
@@ -896,6 +926,7 @@
     },
     {
       id: 'elitsa-encheva', track: 'biotech',
+      decks: ['encheva'],
       img: '/images/speakers/elitsa-encheva.jpg?v=20260730', alt: 'Elitsa Encheva',
       objectPosition: 'center 40%',
       name: 'проф. Елица Енчева',
@@ -944,6 +975,7 @@
     },
     {
       id: 'kristina-bliznakova', track: 'biotech',
+      decks: ['bliznakova'],
       img: '/images/speakers/kristina-bliznakova.jpg?v=20260730', alt: 'Kristina Bliznakova',
       objectPosition: 'center top',
       name: 'проф. Кристина Близнакова',
@@ -972,6 +1004,7 @@
     },
     {
       id: 'ruzha-pancheva', track: 'biotech',
+      decks: ['pancheva'],
       img: '/images/speakers/ruzha-pancheva.jpg?v=20260929', alt: 'Ruzha Pancheva',
       objectPosition: 'center top',
       name: 'проф. Ружа Панчева',
@@ -994,6 +1027,7 @@
     },
     {
       id: 'oskan-tasinov', track: 'biotech',
+      decks: ['tasinov'],
       img: '/images/speakers/oskan-tasinov.jpg?v=20260730', alt: 'Oskan Tasinov',
       objectPosition: 'center top',
       name: 'доц. Оскан Тасинов',
@@ -1018,6 +1052,7 @@
     // ── Marine ──
     {
       id: 'svetlin-stoyanov', track: 'marine',
+      decks: ['svetlin'],
       img: '/images/speakers/svetlin-stoyanov.jpg?v=20260730', alt: 'Svetlin Stoyanov',
       objectPosition: '40% top',
       name: 'Светлин Стоянов',
@@ -1036,6 +1071,7 @@
     },
     {
       id: 'cemile-usta', track: 'marine',
+      decks: ['cemile-maritime', 'cemile-ici'],
       img: '/images/speakers/cemile-usta.jpg?v=20260819b', alt: 'Cemile Köseler Usta',
       objectPosition: 'center 8%',
       name: 'Cemile Köseler Usta',
@@ -1051,6 +1087,7 @@
     },
     {
       id: 'ismail-bayezit', track: 'marine',
+      decks: ['bayezit'],
       img: '/images/speakers/ismail-bayezit.jpg?v=20260930', alt: 'Ismail Bayezit',
       objectPosition: 'center top',
       name: 'доц. Ismail Bayezit',
@@ -1073,6 +1110,7 @@
     },
     {
       id: 'borislav-teberov', track: 'marine',
+      decks: ['teberov'],
       img: '/images/speakers/borislav-teberov.jpg?v=20260930', alt: 'Borislav Teberov',
       objectPosition: 'center top',
       name: 'Борислав Теберов',
@@ -1095,6 +1133,7 @@
     },
     {
       id: 'grigor-kanchev', track: 'marine',
+      decks: ['kanchev'],
       img: '/images/speakers/grigor-kanchev.jpg?v=20261003', alt: 'Grigor Kanchev',
       objectPosition: 'center top',
       name: 'Григор Кънчев',
@@ -1119,6 +1158,7 @@
     // ── Tourism ──
     {
       id: 'elitza-stoilova', track: 'tourism',
+      decks: ['stoilova'],
       img: '/images/speakers/elitza-stoilova.jpg?v=20260730', alt: 'Elitza Stoilova',
       objectPosition: 'center 12%',
       name: 'Елица Стоилова',
@@ -1141,6 +1181,7 @@
     },
     {
       id: 'andrey-lilov', track: 'tourism',
+      decks: ['lilov'],
       img: '/images/speakers/andrey-lilov.jpg?v=20260730', alt: 'Andrey Lilov',
       objectPosition: 'center top',
       name: 'Андрей Лилов',
@@ -1235,6 +1276,7 @@
     },
     {
       id: 'paul-lambert', track: 'regional-innovation-policy',
+      decks: ['lambert'],
       img: '/images/speakers/paul-lambert.jpg?v=20260730', alt: 'Paul Lambert',
       objectPosition: 'center 12%',
       name: 'Paul Lambert',
@@ -1342,6 +1384,7 @@
     },
     {
       id: 'jeroen-van-hertum', track: 'regional-innovation-policy',
+      decks: ['hertum'],
       img: '/images/speakers/jeroen-van-hertum.jpg?v=20260916', alt: 'Jeroen van Hertum',
       objectPosition: 'center top',
       name: 'Jeroen van Hertum',
@@ -1359,6 +1402,7 @@
     },
     {
       id: 'martijn-leijten', track: 'regional-innovation-policy',
+      decks: ['leijten'],
       img: '/images/speakers/martijn-leijten.jpg?v=20260916', alt: 'Martijn Leijten',
       objectPosition: 'center top',
       name: 'Dr. Martijn Leijten',
@@ -1511,6 +1555,7 @@
     },
     {
       id: 'dochka-vasileva', track: 'regional-innovation-policy',
+      decks: ['vasileva'],
       img: '/images/speakers/dochka-vasileva.jpg?v=20260929', alt: 'Dochka Vasileva',
       objectPosition: 'center top',
       name: 'д-р инж. Дочка Василева',
@@ -1557,6 +1602,7 @@
     },
     {
       id: 'hristo-daskalov', track: 'regional-innovation-policy',
+      decks: ['hristo-daskalov'],
       img: '/images/speakers/hristo-daskalov.jpg?v=20261004', alt: 'Hristo Daskalov',
       objectPosition: 'center top',
       name: 'Христо Даскалов',
@@ -1603,6 +1649,7 @@
     // ── Future of Transport ──
     {
       id: 'hristo-hristov', track: 'transport',
+      decks: ['hristov'],
       img: '/images/speakers/hristo-hristov.jpg?v=20260827', alt: 'Hristo Hristov',
       objectPosition: 'center top',
       name: 'Христо Христов',

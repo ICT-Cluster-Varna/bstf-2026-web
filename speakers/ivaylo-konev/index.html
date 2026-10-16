@@ -783,6 +783,44 @@
       margin-bottom: 0
     }
 
+    /* Speaker presentation (PDF on Drive), last block of the page */
+    .sp-deck {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 160, 204, 0.35);
+      border-radius: 12px;
+      background: var(--light-blue)
+    }
+
+    .sp-deck+.sp-deck {
+      margin-top: 12px
+    }
+
+    .sp-deck-title {
+      flex: 1 1 260px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--navy)
+    }
+
+    .sp-deck .btn {
+      flex: 0 0 auto
+    }
+
+    @media(max-width:560px) {
+      .sp-deck .btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center
+      }
+    }
+
     @media(max-width:860px) {
       .sp-card {
         grid-template-columns: 1fr;
@@ -1335,7 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sp-bg-circle sbc-1"></div>
     <div class="sp-bg-circle sbc-2"></div>
     <div class="container">
-      <div id="sp-root"><div class="sp-profile" data-track="cybersecurity"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/ivaylo-konev.jpg?v=20260910" alt="Ivaylo Konev" style="object-position:center 15%"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span><h2 class="sp-name" data-bg="Ивайло Конев" data-en="Ivaylo Konev">Ивайло Конев</h2><div class="sp-role" data-bg="Pre-sales Engineer @ Neterra" data-en="Pre-sales Engineer @ Neterra">Pre-sales Engineer @ Neterra</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="Физическите аспекти на сигурността на данните (съвместна лекция с Александър Минчев)" data-en="The Physical Aspects of Data Security (joint talk with Alexander Minchev)">Физическите аспекти на сигурността на данните (съвместна лекция с Александър Минчев)</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Ивайло Конев е Pre-sales Engineer в Нетера с над 20 години опит в IT сектора. През последните години е фокусиран върху проектирането и изграждането на комплексни инфраструктурни решения, като работи активно с мрежови технологии и оборудване на Cisco, Meraki, Fortinet и Juniper, както и със сървърни и сторидж платформи на Dell, Lenovo, Supermicro и HPE." data-en="Ivaylo Konev is a Pre-sales Engineer at Neterra with more than 20 years of experience in the IT industry. In recent years, his work has focused on designing and delivering complex infrastructure solutions, with hands-on expertise in networking technologies and solutions from Cisco, Meraki, Fortinet, and Juniper, as well as server and storage platforms from Dell, Lenovo, Supermicro, and HPE.">Ивайло Конев е Pre-sales Engineer в Нетера с над 20 години опит в IT сектора. През последните години е фокусиран върху проектирането и изграждането на комплексни инфраструктурни решения, като работи активно с мрежови технологии и оборудване на Cisco, Meraki, Fortinet и Juniper, както и със сървърни и сторидж платформи на Dell, Lenovo, Supermicro и HPE.</p><p data-bg="Опитът му в системната интеграция му позволява да превръща бизнес и техническите изисквания на клиентите в надеждни, мащабируеми и практически приложими решения." data-en="His background in system integration enables him to translate business and technical requirements into reliable, scalable, and practical IT solutions.">Опитът му в системната интеграция му позволява да превръща бизнес и техническите изисквания на клиентите в надеждни, мащабируеми и практически приложими решения.</p><p data-bg="Ивайло е инженер по „Компютърни системи и технологии“ от Технически университет – София. През годините е покривал професионални сертификации като Cisco CCNA и Fortinet NSE 1 и NSE 3, както и редица специализирани обучения в областта на мрежовите и инфраструктурните технологии." data-en="Ivaylo holds an engineering degree in Computer Systems and Technologies from the Technical University of Sofia. Over the years, he has also earned professional certifications such as Cisco CCNA and Fortinet NSE 1 and NSE 3, along with various specialized trainings in networking and IT infrastructure technologies.">Ивайло е инженер по „Компютърни системи и технологии“ от Технически университет – София. През годините е покривал професионални сертификации като Cisco CCNA и Fortinet NSE 1 и NSE 3, както и редица специализирани обучения в областта на мрежовите и инфраструктурните технологии.</p></div></div></div></div></div>
+      <div id="sp-root"><div class="sp-profile" data-track="cybersecurity"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/ivaylo-konev.jpg?v=20260910" alt="Ivaylo Konev" style="object-position:center 15%"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Киберсигурност" data-en="Cybersecurity">Киберсигурност</span><h2 class="sp-name" data-bg="Ивайло Конев" data-en="Ivaylo Konev">Ивайло Конев</h2><div class="sp-role" data-bg="Pre-sales Engineer @ Neterra" data-en="Pre-sales Engineer @ Neterra">Pre-sales Engineer @ Neterra</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="Физическите аспекти на сигурността на данните (съвместна лекция с Александър Минчев)" data-en="The Physical Aspects of Data Security (joint talk with Alexander Minchev)">Физическите аспекти на сигурността на данните (съвместна лекция с Александър Минчев)</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Ивайло Конев е Pre-sales Engineer в Нетера с над 20 години опит в IT сектора. През последните години е фокусиран върху проектирането и изграждането на комплексни инфраструктурни решения, като работи активно с мрежови технологии и оборудване на Cisco, Meraki, Fortinet и Juniper, както и със сървърни и сторидж платформи на Dell, Lenovo, Supermicro и HPE." data-en="Ivaylo Konev is a Pre-sales Engineer at Neterra with more than 20 years of experience in the IT industry. In recent years, his work has focused on designing and delivering complex infrastructure solutions, with hands-on expertise in networking technologies and solutions from Cisco, Meraki, Fortinet, and Juniper, as well as server and storage platforms from Dell, Lenovo, Supermicro, and HPE.">Ивайло Конев е Pre-sales Engineer в Нетера с над 20 години опит в IT сектора. През последните години е фокусиран върху проектирането и изграждането на комплексни инфраструктурни решения, като работи активно с мрежови технологии и оборудване на Cisco, Meraki, Fortinet и Juniper, както и със сървърни и сторидж платформи на Dell, Lenovo, Supermicro и HPE.</p><p data-bg="Опитът му в системната интеграция му позволява да превръща бизнес и техническите изисквания на клиентите в надеждни, мащабируеми и практически приложими решения." data-en="His background in system integration enables him to translate business and technical requirements into reliable, scalable, and practical IT solutions.">Опитът му в системната интеграция му позволява да превръща бизнес и техническите изисквания на клиентите в надеждни, мащабируеми и практически приложими решения.</p><p data-bg="Ивайло е инженер по „Компютърни системи и технологии“ от Технически университет – София. През годините е покривал професионални сертификации като Cisco CCNA и Fortinet NSE 1 и NSE 3, както и редица специализирани обучения в областта на мрежовите и инфраструктурните технологии." data-en="Ivaylo holds an engineering degree in Computer Systems and Technologies from the Technical University of Sofia. Over the years, he has also earned professional certifications such as Cisco CCNA and Fortinet NSE 1 and NSE 3, along with various specialized trainings in networking and IT infrastructure technologies.">Ивайло е инженер по „Компютърни системи и технологии“ от Технически университет – София. През годините е покривал професионални сертификации като Cisco CCNA и Fortinet NSE 1 и NSE 3, както и редица специализирани обучения в областта на мрежовите и инфраструктурните технологии.</p></div></div><div class="sp-section sp-deck-section"><h3 class="sp-section-title" data-bg="Презентация от CONNEXUS 2026" data-en="Presentation from CONNEXUS 2026">Презентация от CONNEXUS 2026</h3><div class="sp-deck"><div class="sp-deck-title" data-bg="Физическите аспекти на сигурността на данните" data-en="The Physical Aspects of Data Security">Физическите аспекти на сигурността на данните</div><a class="btn btn-primary sp-deck-link" href="/presentations/alexander-minchev-ivaylo-konev.pdf" target="_blank" rel="noopener" data-bg="Виж презентацията (PDF)" data-en="View the presentation (PDF)">Виж презентацията (PDF)</a></div></div></div></div></div>
     </div>
   </section>
 

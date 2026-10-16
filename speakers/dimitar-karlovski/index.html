@@ -783,6 +783,44 @@
       margin-bottom: 0
     }
 
+    /* Speaker presentation (PDF on Drive), last block of the page */
+    .sp-deck {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 160, 204, 0.35);
+      border-radius: 12px;
+      background: var(--light-blue)
+    }
+
+    .sp-deck+.sp-deck {
+      margin-top: 12px
+    }
+
+    .sp-deck-title {
+      flex: 1 1 260px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--navy)
+    }
+
+    .sp-deck .btn {
+      flex: 0 0 auto
+    }
+
+    @media(max-width:560px) {
+      .sp-deck .btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center
+      }
+    }
+
     @media(max-width:860px) {
       .sp-card {
         grid-template-columns: 1fr;
@@ -1335,7 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sp-bg-circle sbc-1"></div>
     <div class="sp-bg-circle sbc-2"></div>
     <div class="container">
-      <div id="sp-root"><div class="sp-profile" data-track="biotech"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/dimitar-karlovski.jpg?v=20260730" alt="Dimitar Karlovski" style="object-position:center 5%"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Биотехнологии" data-en="BioTech">Биотехнологии</span><h2 class="sp-name" data-bg="Димитър Карловски" data-en="Dimitar Karlovski">Димитър Карловски</h2><div class="sp-role" data-bg="Founder @ Mitotopia" data-en="Founder @ Mitotopia">Founder @ Mitotopia</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="Митохондриите като Chi: May the Force be with you" data-en="Mitochondria as Chi: May the Force be with you">Митохондриите като Chi: May the Force be with you</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Mitotopia е стартъп, разработващ продукти и услуги за подобряване на митохондриалното здраве в областта на репродукцията, спорта и дълголетието, основан от Димитър Карловски." data-en="Mitotopia is a start-up developing products and services promoting mitochondrial health in reproduction, sports and longevity, founded by Dimitar Karlovski.">Mitotopia е стартъп, разработващ продукти и услуги за подобряване на митохондриалното здраве в областта на репродукцията, спорта и дълголетието, основан от Димитър Карловски.</p></div></div><div class="sp-section"><h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3><div class="sp-topic"><span class="sp-topic-label" data-bg="Описание на лекцията" data-en="Talk Description">Описание на лекцията</span><span data-bg="От китайската концепция за Чи до съвременните познания за енергията и метаболизма - митохондриите играят главна роля. Те са мощни, гъвкави и адаптивни. Такъв е и Mitotopia. Каква е историята?" data-en="From the Chinese concept of Chi to the contemporary knowledge of energy and metabolism, mitochondria play the lead role. They are powerful, flexible and adaptable. So is Mitotopia. What&#39;s the story?">От китайската концепция за Чи до съвременните познания за енергията и метаболизма - митохондриите играят главна роля. Те са мощни, гъвкави и адаптивни. Такъв е и Mitotopia. Каква е историята?</span></div><div class="sp-topic"><span class="sp-topic-label" data-bg="Основни изводи за аудиторията" data-en="Key Takeaways">Основни изводи за аудиторията</span><span data-bg="Митохондриите са много повече от „енергийните централи“ на клетката - те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми; при съчетаване с наука и изследвания идеите могат да се превърнат в перспективни решения, които впоследствие се прилагат обратно в практиката." data-en="Mitochondria are much more than the powerhouses of the cell - they are coordinators of cellular biochemistry. Clinical practice can generate ideas and address problems; when combined with science and research, ideas can be turned into prospective solutions, which can then be applied back into practice.">Митохондриите са много повече от „енергийните централи“ на клетката - те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми; при съчетаване с наука и изследвания идеите могат да се превърнат в перспективни решения, които впоследствие се прилагат обратно в практиката.</span></div></div></div></div></div>
+      <div id="sp-root"><div class="sp-profile" data-track="biotech"><div class="sp-card"><div class="sp-photo"><img loading="eager" decoding="async" width="400" height="533" src="/images/speakers/dimitar-karlovski.jpg?v=20260730" alt="Dimitar Karlovski" style="object-position:center 5%"></div><div class="sp-body"><span class="sp-track-pill" data-bg="Биотехнологии" data-en="BioTech">Биотехнологии</span><h2 class="sp-name" data-bg="Димитър Карловски" data-en="Dimitar Karlovski">Димитър Карловски</h2><div class="sp-role" data-bg="Founder @ Mitotopia" data-en="Founder @ Mitotopia">Founder @ Mitotopia</div><div class="sp-topic"><span class="sp-topic-label" data-bg="Тема на лекцията" data-en="Talk Topic">Тема на лекцията</span><span data-bg="Митохондриите като Chi: May the Force be with you" data-en="Mitochondria as Chi: May the Force be with you">Митохондриите като Chi: May the Force be with you</span></div><div class="sp-cta-row"><a href="index.html#program" class="btn btn-primary" data-bg="Виж програмата" data-en="See program">Виж програмата</a><a href="speakers.html" class="btn btn-outline" data-bg="Всички лектори" data-en="All speakers">Всички лектори</a></div></div></div><div class="sp-details"><div class="sp-section"><h3 class="sp-section-title" data-bg="За лектора" data-en="About the speaker">За лектора</h3><div class="sp-bio"><p data-bg="Mitotopia е стартъп, разработващ продукти и услуги за подобряване на митохондриалното здраве в областта на репродукцията, спорта и дълголетието, основан от Димитър Карловски." data-en="Mitotopia is a start-up developing products and services promoting mitochondrial health in reproduction, sports and longevity, founded by Dimitar Karlovski.">Mitotopia е стартъп, разработващ продукти и услуги за подобряване на митохондриалното здраве в областта на репродукцията, спорта и дълголетието, основан от Димитър Карловски.</p></div></div><div class="sp-section"><h3 class="sp-section-title" data-bg="За лекцията" data-en="About the talk">За лекцията</h3><div class="sp-topic"><span class="sp-topic-label" data-bg="Описание на лекцията" data-en="Talk Description">Описание на лекцията</span><span data-bg="От китайската концепция за Чи до съвременните познания за енергията и метаболизма - митохондриите играят главна роля. Те са мощни, гъвкави и адаптивни. Такъв е и Mitotopia. Каква е историята?" data-en="From the Chinese concept of Chi to the contemporary knowledge of energy and metabolism, mitochondria play the lead role. They are powerful, flexible and adaptable. So is Mitotopia. What&#39;s the story?">От китайската концепция за Чи до съвременните познания за енергията и метаболизма - митохондриите играят главна роля. Те са мощни, гъвкави и адаптивни. Такъв е и Mitotopia. Каква е историята?</span></div><div class="sp-topic"><span class="sp-topic-label" data-bg="Основни изводи за аудиторията" data-en="Key Takeaways">Основни изводи за аудиторията</span><span data-bg="Митохондриите са много повече от „енергийните централи“ на клетката - те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми; при съчетаване с наука и изследвания идеите могат да се превърнат в перспективни решения, които впоследствие се прилагат обратно в практиката." data-en="Mitochondria are much more than the powerhouses of the cell - they are coordinators of cellular biochemistry. Clinical practice can generate ideas and address problems; when combined with science and research, ideas can be turned into prospective solutions, which can then be applied back into practice.">Митохондриите са много повече от „енергийните централи“ на клетката - те са координатори на клетъчната биохимия. Клиничната практика може да генерира идеи и да адресира проблеми; при съчетаване с наука и изследвания идеите могат да се превърнат в перспективни решения, които впоследствие се прилагат обратно в практиката.</span></div></div><div class="sp-section sp-deck-section"><h3 class="sp-section-title" data-bg="Презентация от CONNEXUS 2026" data-en="Presentation from CONNEXUS 2026">Презентация от CONNEXUS 2026</h3><div class="sp-deck"><div class="sp-deck-title" data-bg="Практически пример – митохондриите като Ци: да пребъде Силата с теб" data-en="Practical Use Case: Mitochondria as Chi: May the Force Be with You">Практически пример – митохондриите като Ци: да пребъде Силата с теб</div><a class="btn btn-primary sp-deck-link" href="/presentations/dimitar-karlovski.pdf" target="_blank" rel="noopener" data-bg="Виж презентацията (PDF)" data-en="View the presentation (PDF)">Виж презентацията (PDF)</a></div></div></div></div></div>
     </div>
   </section>
 
