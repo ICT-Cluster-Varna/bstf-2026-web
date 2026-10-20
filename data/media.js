@@ -16,6 +16,9 @@
 window.CONNEXUS_MEDIA = {
   2026: {
     featured: {
+      // heading above the video (organizers' wording, 2026-10-20)
+      heading: 'Светослав Стаменов за CONNEXUS пред Bloomberg TV Bulgaria',
+      headingEn: 'Svetoslav Stamenov on CONNEXUS for Bloomberg TV Bulgaria',
       media: 'Bloomberg TV Bulgaria',
       site: 'https://www.bloombergtv.bg/',
       title: 'Технологичното бъдеще на Варна: Между синята икономика и иновациите',

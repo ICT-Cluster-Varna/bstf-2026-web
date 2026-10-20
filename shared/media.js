@@ -4,9 +4,9 @@
    Media.init({ lang: 'bg' | 'en', year: 2026 })
 
    Renders: key numbers in the cover ([data-media-stats]), the featured
-   video, then one white board: tabs (one panel at a time) and per section a
-   table-like list grouped by month, newest first:
-   outlet | title | date | external icon.
+   video under its own heading, then "CONNEXUS в медиите" and one white
+   board: tabs (one panel at a time) and per section a table-like list,
+   newest first: outlet | title | date | external icon.
 
    Adding a later edition = a new year key in data/media.js plus a copy of the
    two host pages under media/{year}/; the year switch in the cover appears by
@@ -24,8 +24,7 @@
       after: 'Отразяване на форума',
       before: 'Преди форума',
       sections: 'Раздели',
-      listKicker: 'Всички публикации',
-      listTitle: 'Какво писаха медиите',
+      listTitle: 'CONNEXUS в медиите',
       cols: ['Медия', 'Заглавие', 'Дата'],
       read: 'Прочети',
       watch: 'Гледай',
@@ -46,8 +45,7 @@
       after: 'Forum coverage',
       before: 'Before the forum',
       sections: 'Sections',
-      listKicker: 'All coverage',
-      listTitle: 'What the media wrote',
+      listTitle: 'CONNEXUS in the media',
       cols: ['Outlet', 'Title', 'Date'],
       read: 'Read',
       watch: 'Watch',
@@ -104,18 +102,6 @@
     return (p.d < 10 ? '0' : '') + p.d + '.' + (p.m < 10 ? '0' : '') + p.m + '.' + p.y;
   }
 
-  // Sorted items -> [{ key: 'YYYY-MM', items: [...] }], order kept.
-  function byMonth(items) {
-    var out = [];
-    items.forEach(function (it) {
-      var key = (it.date || '').slice(0, 7);
-      var last = out[out.length - 1];
-      if (last && last.key === key) last.items.push(it);
-      else out.push({ key: key, items: [it] });
-    });
-    return out;
-  }
-
   // Outlet logo (data/media.js -> CONNEXUS_MEDIA_LOGOS) or, without one, the
   // first letter. A logo that fails to load falls back to the letter too
   // (see wireLogos).
@@ -136,13 +122,6 @@
         box.textContent = box.getAttribute('data-letter');
       });
     });
-  }
-
-  function monthLabel(key, t) {
-    var p = parts(key + '-01');
-    if (!p) return '';
-    var m = t.months[p.m - 1];
-    return m.charAt(0).toUpperCase() + m.slice(1) + ' ' + p.y;
   }
 
   // One table-like row per item: outlet | title | date | external icon.
@@ -190,12 +169,7 @@
       '<h3 class="cx-media-sr">' + s.title + '</h3>' +
       (items.length
         ? '<div class="cx-media-cols" aria-hidden="true"><span>' + t.cols[0] + '</span><span>' + t.cols[1] + '</span><span>' + t.cols[2] + '</span></div>' +
-          byMonth(items).map(function (g) {
-            return '<div class="cx-media-group">' +
-              '<h4 class="cx-media-month">' + monthLabel(g.key, t) + '<span>' + g.items.length + '</span></h4>' +
-              '<ul class="cx-media-list">' + g.items.map(function (it) { return itemHtml(it, t, lang); }).join('') + '</ul>' +
-            '</div>';
-          }).join('')
+          '<ul class="cx-media-list">' + items.map(function (it) { return itemHtml(it, t, lang); }).join('') + '</ul>'
         : '<p class="cx-media-empty">' + t.empty + '</p>') +
     '</section>';
   }
@@ -282,9 +256,13 @@
     ];
     var hash = window.location.hash.slice(1);
     var activeId = sections.some(function (s) { return s.id === hash; }) ? hash : sections[0].id;
-    root.innerHTML = (data.featured ? featuredHtml(data.featured, t) : '') +
-      '<div class="cx-media-list-head"><p class="cx-media-kicker">' + t.listKicker + '</p>' +
-        '<h2 class="cx-media-list-title">' + t.listTitle + '</h2></div>' +
+    var f = data.featured;
+    var fHead = f && ((lang === 'en' && f.headingEn) || f.heading);
+    root.innerHTML = (f
+        ? (fHead ? '<div class="cx-media-featured-head"><h2 class="cx-media-heading">' + esc(fHead) + '</h2></div>' : '') +
+          featuredHtml(f, t)
+        : '') +
+      '<div class="cx-media-list-head"><h2 class="cx-media-heading">' + t.listTitle + '</h2></div>' +
       '<div class="cx-media-board">' +
         tabsHtml(sections, t, activeId) +
         sections.map(function (s) { return panelHtml(s, t, lang, s.id === activeId); }).join('') +
