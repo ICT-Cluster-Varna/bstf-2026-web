@@ -13,7 +13,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Not linked from the menu yet and kept out of sitemap.xml until the organizers approve it. -->
-  <meta name="robots" content="noindex, follow">
   <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -707,12 +706,10 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Navigation. 'gallery' only borrows a non-home nav layout: the page has no
-       menu entry of its own yet, so the active mark is removed right after. -->
+  <!-- Navigation -->
   <div id="site-nav-root"></div>
-  <script src="../shared/site-chrome.js?v=20261013"></script>
-  <script>SiteChrome.renderNav('gallery', 'en', 'media/2026/');
-    document.querySelectorAll('.main-nav a.active, .mobile-nav a.active').forEach(function (a) { if (!a.closest('.lang-toggle')) a.classList.remove('active'); });</script>
+  <script src="../shared/site-chrome.js?v=20261020"></script>
+  <script>SiteChrome.renderNav('media', 'en', 'media/2026/');</script>
 
   <main>
     <section class="cx-media-hero" aria-labelledby="cx-media-h1">
@@ -730,7 +727,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Footer -->
   <div id="site-footer-root"></div>
-  <script>SiteChrome.renderFooter('gallery', 'en');</script>
+  <script>SiteChrome.renderFooter('media', 'en');</script>
 
   <!-- Back to Top -->
   <button id="bstf-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
@@ -827,7 +824,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener('pageshow', function (e) { if (e.persisted) window.location.reload(); });
   </script>
   <script src="../data/media.js?v=20261020"></script>
-  <script src="../shared/media.js?v=20261020"></script>
+  <script src="../shared/media.js?v=20261020-1"></script>
   <script>Media.init({ lang: 'en', year: 2026 });</script>
 </body>
 
