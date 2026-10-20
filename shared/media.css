@@ -5,11 +5,12 @@
    Same font rule as the Program section (client feedback 2026-09-03): the
    display font stays on real headings only, list text uses a plain one.
 
-   Layout: cover with key numbers -> featured video -> heading -> one white
-   board holding the tabs (one section at a time) and a table-like list
-   grouped by month: outlet | title | date | external icon. Rows are not
-   cards: hairlines between them, a teal bar + tint on hover. On phones each
-   row stacks: outlet + date on top, title below. */
+   Layout: cover with key numbers -> heading + featured video -> heading ->
+   one white board holding the tabs (one section at a time) and a table-like
+   list: outlet | title | date | external icon. Rows are not cards: hairlines
+   between them, a teal bar + tint on hover. Outlet names are muted, not bold
+   (client 2026-10-20: the media are not the focus here). On phones each row
+   stacks: outlet + date on top, title below. */
 .cx-media-page {
   --m-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --m-line: rgba(11, 57, 84, 0.1);
@@ -311,36 +312,23 @@
   flex: none
 }
 
-/* ---- List heading ---- */
+/* ---- Headings (above the video, above the list) ---- */
+.cx-media-featured-head {
+  margin: 16px 0 36px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--navy)
+}
+
 .cx-media-list-head {
   margin-top: 80px
 }
 
-.cx-media-kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--teal-contrast);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase
-}
-
-.cx-media-kicker::before {
-  content: '';
-  width: 28px;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--teal-deep), var(--teal))
-}
-
-.cx-media-list-title {
-  margin-top: 10px;
+.cx-media-heading {
   color: var(--navy);
   font-family: 'Science Gothic', sans-serif;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  line-height: 1.15
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  text-wrap: balance
 }
 
 /* ---- Board: one white surface for tabs + list ---- */
@@ -467,41 +455,6 @@
   text-align: right
 }
 
-/* ---- Month groups ---- */
-.cx-media-month {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 26px var(--m-pad) 8px;
-  color: var(--navy);
-  font-family: 'Science Gothic', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.03em
-}
-
-.cx-media-month span {
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: var(--light-blue);
-  color: var(--teal-contrast);
-  font-family: var(--m-font);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0
-}
-
-.cx-media-month::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(0, 160, 204, 0.35), transparent)
-}
-
-.cx-media-group:last-child {
-  padding-bottom: 10px
-}
-
 /* ---- Rows ---- */
 .cx-media-list {
   list-style: none
@@ -572,9 +525,9 @@
 
 .cx-media-outlet-name {
   min-width: 0;
-  color: var(--navy);
-  font-size: 0.95rem;
-  font-weight: 700;
+  color: var(--text-light);
+  font-size: 0.93rem;
+  font-weight: 400;
   line-height: 1.3;
   overflow-wrap: anywhere
 }
@@ -734,10 +687,6 @@
 
   .cx-media-cols {
     display: none
-  }
-
-  .cx-media-month {
-    padding-top: 20px
   }
 
   /* row stacks: outlet + date on top, title + icon below */
