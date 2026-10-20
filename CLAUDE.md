@@ -99,14 +99,15 @@ Added 2026-10-13: a 1:1 recreation of the photographer's gallery (Vision Impress
 
 ## Media Coverage (`media/{year}/`, `en/media/{year}/`)
 
-Added 2026-10-19 at the organizers' request ("Медиите за CONNEXUS 2026"), modelled on edfor.varna.bg/medias/2026. **Hidden for now:** no menu link, `noindex`, not in `sitemap.xml` — when the organizers approve it, add a nav link in `shared/site-chrome.js` (own pageKey), drop the `noindex`, add both URLs to the sitemap.
+Added 2026-10-19 at the organizers' request ("Медиите за CONNEXUS 2026"), modelled on edfor.varna.bg/medias/2026. **Public since 2026-10-20:** "Медии" / "Media" in the nav and footer (`shared/site-chrome.js`, pageKey `media`, links straight to `media/2026/` — not the `/media/` redirect), indexable, both URLs in `sitemap.xml`. The `/media/` redirect pages stay `noindex`.
 
 - `data/media.js` is the single source: one key per edition (`2026: { featured, after, before }`). `shared/media.js` renders it and sorts newest first by `date`, so new items can be appended anywhere. `type: 'video'` → "Гледай", otherwise "Прочети". Titles stay in the original language on the EN page too.
 - Organizers' rules: article + the Facebook post sharing it → article only; a stand-alone Facebook interview/video/report → its own item; sheet rows marked "чакаме" stay out until they have a live link; every link is opened and checked before it goes in.
 - Outlet logos: `images/media/logos/{outlet-with-dashes}.png` (96×96, the outlet's own site icon, self-hosted — never hotlink a favicon service: it sends every visitor to a third party), listed in `window.CONNEXUS_MEDIA_LOGOS` at the end of `data/media.js` with their own `?v=`. An outlet without an entry (or whose image fails) shows its first letter. New outlet → add the PNG + a line there.
 - The Bloomberg TV Bulgaria interview is self-hosted (`videos/media-2026-bloombergtv-stamenov.mp4`, re-encoded to ~52 MB — keep files under GitHub's 50 MiB warning), because bloombergtv.bg offers no embed code.
 - Next edition: add `2027: {...}` to `data/media.js`, copy both host pages to `media/2027/` + `en/media/2027/` (change the year in `Media.init`, `<title>`, canonical/hreflang), and point `media/index.html` + `en/media/index.html` (redirects to the latest year) at the new year. The year switch in the cover appears by itself once there are two years.
-- The pages borrow the `gallery` pageKey for the nav layout and strip its active mark inline — an unknown pageKey would fall back to the home-page nav variant.
+- SEO: `shared/media.js` adds the JSON-LD at render time from `data/media.js` (an `ItemList` of every item + a `VideoObject` for the featured video), so structured data and the visible list come from one source — never hand-write either into the host pages.
+- Next edition: also move the nav/footer link and `PAGE_FILE.media` in `shared/site-chrome.js` to the new year, and add the new URLs to the sitemap.
 
 ## Parked Pages — Do Not Touch or Analyze
 

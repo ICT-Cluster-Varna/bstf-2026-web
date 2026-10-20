@@ -10,7 +10,8 @@
     speaker: { isHome: false, activeNavKey: 'speakers' },
     sponsors: { isHome: false, activeNavKey: 'sponsors' },
     workshops: { isHome: false, activeNavKey: 'workshops' },
-    gallery: { isHome: false, activeNavKey: 'gallery' }
+    gallery: { isHome: false, activeNavKey: 'gallery' },
+    media: { isHome: false, activeNavKey: 'media' }
   };
 
   var PAGE_FILE = {
@@ -19,7 +20,8 @@
     speaker: 'speaker.html',
     sponsors: 'sponsors.html',
     workshops: 'workshops.html',
-    gallery: 'gallery.html'
+    gallery: 'gallery.html',
+    media: 'media/2026/'
   };
 
   function cfgFor(pageKey) {
@@ -86,6 +88,7 @@
       { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
       { key: 'sponsors', href: 'sponsors.html', bg: 'Изложители', en: 'Exhibitors' },
       { key: 'gallery', href: 'gallery.html', bg: 'Галерия', en: 'Gallery' },
+      { key: 'media', href: 'media/2026/', bg: 'Медии', en: 'Media' },
       { key: 'contact', href: href(cfg, '#contact'), bg: 'Контакти', en: 'Contact' }
     ];
     return links.map(function (l) {
@@ -94,19 +97,20 @@
     }).join('');
   }
 
-  // Six links plus the language toggle need about
-  // 1000px in one row; each page's own CSS only collapses the nav at 768px.
-  // Between the two, tighten the spacing and, below 1000px, move the links
-  // into the existing hamburger menu instead of letting the row run off-screen.
-  // Kept here because it depends on how many links this file renders.
+  // Seven links plus the language toggle need about
+  // 1065px in one row; each page's own CSS only collapses the nav at 768px.
+  // Between the two, tighten the spacing and, below 1065px, move the links
+  // into the existing hamburger menu instead of letting the row wrap.
+  // Kept here because it depends on how many links this file renders —
+  // re-measure both breakpoints (BG is the wider language) when adding one.
   var NAV_FIT_CSS =
-    '@media (min-width:769px) and (max-width:1120px){' +
+    '@media (min-width:769px) and (max-width:1199px){' +
     'nav.main-nav .nav-inner{padding:0 20px}' +
     'nav.main-nav .nav-links{gap:20px}' +
     'nav.main-nav .nav-right{margin-left:20px;gap:10px}' +
     'nav.main-nav .nav-register-btn{white-space:nowrap}' +
     '}' +
-    '@media (min-width:769px) and (max-width:1000px){' +
+    '@media (min-width:769px) and (max-width:1064px){' +
     'nav.main-nav .nav-links{display:none}' +
     'nav.main-nav .mobile-menu-btn{display:flex}' +
     '}';
@@ -181,6 +185,7 @@
       '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">' + pick('Място', 'Venue', lang) + '</a>' +
       '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
       '<a href="gallery.html" data-bg="Галерия" data-en="Gallery">' + pick('Галерия', 'Gallery', lang) + '</a>' +
+      '<a href="media/2026/" data-bg="Медии" data-en="Media">' + pick('Медии', 'Media', lang) + '</a>' +
       '<a href="' + href(cfg, '#contact') + '" data-bg="Контакти" data-en="Contact">' + pick('Контакти', 'Contact', lang) + '</a>' +
       '</div>' +
       '<div class="footer-col">' +

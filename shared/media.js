@@ -239,6 +239,48 @@
     });
   }
 
+  // Structured data for search engines, built from the same data/media.js
+  // that draws the list, so the two can never disagree: an ItemList of every
+  // listed item and a VideoObject for the self-hosted featured interview.
+  function structuredData(data, t, fHead) {
+    var canon = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href.split('#')[0];
+    var origin = canon.replace(/^(https?:\/\/[^\/]+).*$/, '$1');
+    var items = sortItems(data.after || []).concat(sortItems(data.before || []));
+    var nodes = [];
+    if (items.length) {
+      nodes.push({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        '@id': canon + '#coverage-list',
+        name: t.listTitle,
+        numberOfItems: items.length,
+        itemListElement: items.map(function (it, i) {
+          return { '@type': 'ListItem', position: i + 1, url: it.url, name: it.title };
+        })
+      });
+    }
+    var f = data.featured;
+    if (f && f.video) {
+      nodes.push({
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: fHead || f.title,
+        description: f.title + ' (' + f.media + ')',
+        thumbnailUrl: origin + asset(f.poster),
+        contentUrl: origin + asset(f.video),
+        uploadDate: String(f.date || '').slice(0, 10),
+        inLanguage: 'bg',
+        isPartOf: { '@id': canon + '#webpage' }
+      });
+    }
+    nodes.forEach(function (n) {
+      var s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.textContent = JSON.stringify(n).replace(/</g, '\\u003c');
+      document.head.appendChild(s);
+    });
+  }
+
   function init(opts) {
     var lang = opts.lang === 'en' ? 'en' : 'bg';
     var t = T[lang];
@@ -269,6 +311,7 @@
       '</div>';
     wireTabs(root);
     wireLogos(root);
+    structuredData(data, t, fHead);
   }
 
   window.Media = { init: init };
