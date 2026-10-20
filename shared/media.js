@@ -3,9 +3,11 @@
 
    Media.init({ lang: 'bg' | 'en', year: 2026 })
 
-   Renders: key numbers in the cover ([data-media-stats]), the featured
-   video under its own heading, then "CONNEXUS в медиите" and one white
-   board: tabs (one panel at a time) and per section a table-like list,
+   The cover has no key numbers on purpose: the organizers did not want
+   item/outlet counts shown as an achievement (2026-10-20).
+
+   Renders the featured video under its own heading, then "CONNEXUS в
+   медиите" and one white board: tabs (one panel at a time) and per section a table-like list,
    newest first: outlet | title | date | external icon.
 
    Adding a later edition = a new year key in data/media.js plus a copy of the
@@ -16,11 +18,6 @@
 
   var T = {
     bg: {
-      stats: {
-        items: function (n) { return n === 1 ? 'медиен материал' : 'медийни материала'; },
-        outlets: function (n) { return n === 1 ? 'медия' : 'медии'; },
-        videos: function (n) { return n === 1 ? 'видеоинтервю' : 'видеа'; }
-      },
       after: 'Отразяване на форума',
       before: 'Преди форума',
       sections: 'Раздели',
@@ -37,11 +34,6 @@
       newTab: 'отваря се в нов прозорец'
     },
     en: {
-      stats: {
-        items: function (n) { return n === 1 ? 'media item' : 'media items'; },
-        outlets: function (n) { return n === 1 ? 'outlet' : 'outlets'; },
-        videos: function (n) { return n === 1 ? 'video interview' : 'videos'; }
-      },
       after: 'Forum coverage',
       before: 'Before the forum',
       sections: 'Sections',
@@ -186,18 +178,6 @@
     }).join('') + '</div>';
   }
 
-  function statsHtml(data, t) {
-    var all = (data.after || []).concat(data.before || []);
-    if (!all.length) return '';
-    var outlets = {}, videos = 0;
-    all.forEach(function (it) { outlets[outletKey(it.media)] = 1; if (it.type === 'video') videos++; });
-    var n = Object.keys(outlets).length;
-    var rows = [[all.length, t.stats.items(all.length)], [n, t.stats.outlets(n)]];
-    if (videos) rows.push([videos, t.stats.videos(videos)]);
-    return rows.map(function (r) {
-      return '<div class="cx-media-stat"><dt>' + r[1] + '</dt><dd>' + r[0] + '</dd></div>';
-    }).join('');
-  }
 
   function yearsHtml(all, year, lang) {
     var years = Object.keys(all).sort().reverse();
@@ -287,9 +267,7 @@
     var all = window.CONNEXUS_MEDIA || {};
     var data = all[opts.year] || {};
     var root = document.getElementById('cx-media-root');
-    var stats = document.querySelector('[data-media-stats]');
     var years = document.querySelector('[data-media-years]');
-    if (stats) stats.innerHTML = statsHtml(data, t);
     if (years) years.outerHTML = yearsHtml(all, opts.year, lang);
     if (!root) return;
     var sections = [
