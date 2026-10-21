@@ -582,6 +582,14 @@
   color: var(--text-light)
 }
 
+/* one line under the board, same type as the outlet names */
+.cx-media-note {
+  margin-top: 18px;
+  color: var(--text-light);
+  font-size: 0.93rem;
+  line-height: 1.5
+}
+
 @media (max-width: 900px) {
   .cx-media-featured {
     grid-template-columns: 1fr
