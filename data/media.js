@@ -27,6 +27,9 @@ window.CONNEXUS_MEDIA = {
       video: 'videos/media-2026-bloombergtv-stamenov.mp4?v=20261019',
       poster: 'images/media/2026-bloombergtv-stamenov.jpg?v=20261019'
     },
+    // one line under the list (organizers, 2026-10-21)
+    note: 'Разпространението на материалите се координира от PrMarket.',
+    noteEn: 'Media distribution is coordinated by PrMarket.',
     after: [
       { media: 'bloombergtv.bg', type: 'video', date: '2026-10-15T10:15', title: 'Технологичното бъдеще на Варна: Между синята икономика и иновациите', url: 'https://www.bloombergtv.bg/a/16-biznes-start/165487-tehnologichnoto-badeshte-na-varna-mezhdu-sinyata-ikonomika-i-inovatsiite' },
       { media: 'manager.bg', type: 'article', date: '2026-10-14T17:25', title: 'CONNEXUS 2026 във Варна събра бизнеса, науката и институциите около изкуствения интелект и технологиите', url: 'https://manager.bg/%D0%BF%D1%80-%D0%B8-%D1%81%D1%8A%D0%B1%D0%B8%D1%82%D0%B8%D1%8F/connexus-2026-vav-varna-sabra-biznesa-naukata-i-instituciite-okolo-izkustvenia-intelekt-i-tehnologiite' },

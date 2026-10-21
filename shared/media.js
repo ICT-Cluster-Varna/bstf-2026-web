@@ -278,6 +278,7 @@
     var activeId = sections.some(function (s) { return s.id === hash; }) ? hash : sections[0].id;
     var f = data.featured;
     var fHead = f && ((lang === 'en' && f.headingEn) || f.heading);
+    var note = (lang === 'en' && data.noteEn) || data.note;
     root.innerHTML = (f
         ? (fHead ? '<div class="cx-media-featured-head"><h2 class="cx-media-heading">' + esc(fHead) + '</h2></div>' : '') +
           featuredHtml(f, t)
@@ -286,7 +287,8 @@
       '<div class="cx-media-board">' +
         tabsHtml(sections, t, activeId) +
         sections.map(function (s) { return panelHtml(s, t, lang, s.id === activeId); }).join('') +
-      '</div>';
+      '</div>' +
+      (note ? '<p class="cx-media-note">' + esc(note) + '</p>' : '');
     wireTabs(root);
     wireLogos(root);
     structuredData(data, t, fHead);
