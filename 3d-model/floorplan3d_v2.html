@@ -923,7 +923,7 @@
   <!-- End Google Tag Manager (noscript) -->
   <div id="loadOverlay">
     <div class="lo-logo">CONNEXUS <span id="lo-year">2026</span></div>
-    <script>if (/[?&]edition=2027\b/.test(location.search)) document.getElementById('lo-year').textContent = '2027';</script>
+    <script>if (/[?&#]edition=2027\b/.test(location.search + location.hash)) document.getElementById('lo-year').textContent = '2027';</script>
     <div class="lo-spin"></div>
     <div class="lo-sub">Зареждане на 3D изложението…</div>
     <div class="lo-err" id="loErr">Проблем при зареждането. Проверете интернет връзката и презаредете страницата.</div>
@@ -955,9 +955,10 @@
     // ?edition=2027 (sponsors.html since 2026-10-22): the next edition has no
     // exhibitors yet, so every stand is shown free, without logos, and can be
     // reserved. Without it (sponsors-2026.html) the 2026 hall stays as it was.
-    window.CX_EMPTY_HALL = (function () {
-      try { return new URLSearchParams(location.search).get('edition') === '2027'; } catch (e) { return false; }
-    })();
+    // The parent also sends it as #edition=2027: servers with clean URLs
+    // (npx serve) redirect floorplan3d_v2.html?... to /floorplan3d_v2 and drop
+    // the query, but the browser keeps the fragment across that redirect.
+    window.CX_EMPTY_HALL = /[?&#]edition=2027\b/.test(location.search + location.hash);
     (function () {
       var en = window.LANG === 'en';
       var sub = document.querySelector('#loadOverlay .lo-sub');
