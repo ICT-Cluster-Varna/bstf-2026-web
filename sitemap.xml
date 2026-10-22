@@ -99,6 +99,56 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/media/2026/"/>
   </url>
 
+  <!-- Архив 2026 (2026-10-22): hub + the archived 2026 homepage, speakers and exhibitors -->
+  <url>
+    <loc>https://www.blackseatech.org/archive/2026/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/archive/2026/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/archive/2026/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/archive/2026/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/archive/2026/</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/archive/2026/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/archive/2026/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/archive/2026/"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/program-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/program-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/program-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/program-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/program-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/program-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/program-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/program-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/speakers-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/speakers-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/speakers-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/speakers-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/sponsors-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/sponsors-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/sponsors-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/sponsors-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.blackseatech.org/en/sponsors-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/sponsors-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/sponsors-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackseatech.org/en/sponsors-2026.html"/>
+  </url>
+
   <url>
     <loc>https://www.blackseatech.org/speakers.html</loc>
     <xhtml:link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/speakers.html"/>

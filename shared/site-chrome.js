@@ -7,11 +7,18 @@
   var PAGES = {
     home: { isHome: true, activeNavKey: null },
     speakers: { isHome: false, activeNavKey: 'speakers' },
-    speaker: { isHome: false, activeNavKey: 'speakers' },
     sponsors: { isHome: false, activeNavKey: 'sponsors' },
-    workshops: { isHome: false, activeNavKey: 'workshops' },
-    gallery: { isHome: false, activeNavKey: 'gallery' },
-    media: { isHome: false, activeNavKey: 'media' }
+    // Everything from the 2026 edition lives under "Архив 2026" (2026-10-22):
+    // the archive hub, the archived homepage (program), speakers, exhibitors,
+    // per-speaker profiles, workshops, gallery and media.
+    archive: { isHome: false, activeNavKey: 'archive' },
+    program2026: { isHome: false, heroLogo: true, activeNavKey: 'archive' },
+    speakers2026: { isHome: false, activeNavKey: 'archive' },
+    sponsors2026: { isHome: false, activeNavKey: 'archive' },
+    speaker: { isHome: false, activeNavKey: 'archive' },
+    workshops: { isHome: false, activeNavKey: 'archive' },
+    gallery: { isHome: false, activeNavKey: 'archive' },
+    media: { isHome: false, activeNavKey: 'archive' }
   };
 
   var PAGE_FILE = {
@@ -19,6 +26,10 @@
     speakers: 'speakers.html',
     speaker: 'speaker.html',
     sponsors: 'sponsors.html',
+    archive: 'archive/2026/',
+    program2026: 'program-2026.html',
+    speakers2026: 'speakers-2026.html',
+    sponsors2026: 'sponsors-2026.html',
     workshops: 'workshops.html',
     gallery: 'gallery.html',
     media: 'media/2026/'
@@ -83,13 +94,9 @@
 
   function navLinksHtml(cfg, lang) {
     var links = [
-      { key: 'program', href: href(cfg, '#program'), bg: 'Програма 2026', en: 'Program 2026' },
-      { key: 'workshops', href: 'workshops.html', bg: 'Обучения', en: 'Workshops' },
-      { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
       { key: 'sponsors', href: 'sponsors.html', bg: 'Изложители', en: 'Exhibitors' },
-      { key: 'gallery', href: 'gallery.html', bg: 'Галерия', en: 'Gallery' },
-      { key: 'media', href: 'media/2026/', bg: 'Медии', en: 'Media' },
-      { key: 'contact', href: href(cfg, '#contact'), bg: 'Контакти', en: 'Contact' }
+      { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
+      { key: 'archive', href: 'archive/2026/', bg: 'Архив 2026', en: 'Archive 2026' }
     ];
     return links.map(function (l) {
       var cls = l.key === cfg.activeNavKey ? ' class="active"' : '';
@@ -97,22 +104,17 @@
     }).join('');
   }
 
-  // Seven links plus the language toggle need about
-  // 1065px in one row; each page's own CSS only collapses the nav at 768px.
-  // Between the two, tighten the spacing and, below 1065px, move the links
-  // into the existing hamburger menu instead of letting the row wrap.
-  // Kept here because it depends on how many links this file renders —
-  // re-measure both breakpoints (BG is the wider language) when adding one.
+  // Three links plus the language toggle fit in one row down to the 768px
+  // point where each page's own CSS collapses the nav; between 769px and
+  // 1199px only tighten the spacing. Kept here because it depends on how
+  // many links this file renders — re-measure (BG is the wider language)
+  // when adding links; seven needed a hamburger below 1065px.
   var NAV_FIT_CSS =
     '@media (min-width:769px) and (max-width:1199px){' +
     'nav.main-nav .nav-inner{padding:0 20px}' +
     'nav.main-nav .nav-links{gap:20px}' +
     'nav.main-nav .nav-right{margin-left:20px;gap:10px}' +
     'nav.main-nav .nav-register-btn{white-space:nowrap}' +
-    '}' +
-    '@media (min-width:769px) and (max-width:1064px){' +
-    'nav.main-nav .nav-links{display:none}' +
-    'nav.main-nav .mobile-menu-btn{display:flex}' +
     '}';
 
   function injectNavFitCss() {
@@ -124,8 +126,8 @@
   }
 
   function logoHtml(cfg) {
-    if (cfg.isHome) {
-      return '<a href="#" class="logo cx-nav-logo">' +
+    if (cfg.isHome || cfg.heroLogo) {
+      return '<a href="' + (cfg.isHome ? '#' : 'index.html') + '" class="logo cx-nav-logo">' +
         '<img src="/images/Connexus - WHITE.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--white">' +
         '<img src="/images/Connexus - BLACK.svg?v=20260731" alt="Connexus" class="cx-nav-logo-img cx-nav-logo-img--black">' +
         '<span class="cx-nav-tagline">black sea tech forum</span>' +
@@ -179,14 +181,10 @@
       '</div>' +
       '<div class="footer-col">' +
       '<h4 data-bg="Събитие" data-en="Event">' + pick('Събитие', 'Event', lang) + '</h4>' +
-      '<a href="' + href(cfg, '#program') + '" data-bg="Програма" data-en="Program">' + pick('Програма', 'Program', lang) + '</a>' +
-      '<a href="workshops.html" data-bg="Обучения" data-en="Workshops">' + pick('Обучения', 'Workshops', lang) + '</a>' +
-      '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
-      '<a href="' + href(cfg, '#venue') + '" data-bg="Място" data-en="Venue">' + pick('Място', 'Venue', lang) + '</a>' +
+      '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">' + pick('Билети', 'Tickets', lang) + '</a>' +
       '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
-      '<a href="gallery.html" data-bg="Галерия" data-en="Gallery">' + pick('Галерия', 'Gallery', lang) + '</a>' +
-      '<a href="media/2026/" data-bg="Медии" data-en="Media">' + pick('Медии', 'Media', lang) + '</a>' +
-      '<a href="' + href(cfg, '#contact') + '" data-bg="Контакти" data-en="Contact">' + pick('Контакти', 'Contact', lang) + '</a>' +
+      '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
+      '<a href="archive/2026/" data-bg="Архив 2026" data-en="Archive 2026">' + pick('Архив 2026', 'Archive 2026', lang) + '</a>' +
       '</div>' +
       '<div class="footer-col">' +
       '<h4 data-bg="Правни" data-en="Legal">' + pick('Правни', 'Legal', lang) + '</h4>' +

@@ -109,6 +109,16 @@ Added 2026-10-19 at the organizers' request ("Медиите за CONNEXUS 2026"
 - SEO: `shared/media.js` adds the JSON-LD at render time from `data/media.js` (an `ItemList` of every item + a `VideoObject` for the featured video), so structured data and the visible list come from one source — never hand-write either into the host pages.
 - Next edition: also move the nav/footer link and `PAGE_FILE.media` in `shared/site-chrome.js` to the new year, and add the new URLs to the sitemap.
 
+## CONNEXUS 2027 site + Архив 2026 (2026-10-22)
+
+The live pages are now the 2027 edition; everything from 2026 is under "Архив 2026".
+
+- Nav (`shared/site-chrome.js`): Изложители · Лектори · Архив 2026. pageKeys `archive`, `program2026`, `speakers2026`, `sponsors2026`; `speaker`, `workshops`, `gallery`, `media` mark "Архив 2026" active. Legal pages and `404.html` carry their own copy of the nav/footer links.
+- `index.html` = 2027 hero (dates 29.09 – 1.10.2027 + CONNEXUS 2026 numbers) and `#tickets` only. Standard = Early Bird €60 (struck €199), VIP/Ultra VIP visible but disabled. **The buy button's href (`bstf-ticket-buy-link`) is still `#tickets` until the organizers send the 2027 Urbo link.** A head script sends any other hash (old shared `/#program`, `#venue`…) to `program-2026.html` with the same hash.
+- `program-2026.html` = the 2026 homepage as it was (program, halls, partners, side events, expo, venue) minus the tickets/pre-footer. `speakers-2026.html`, `sponsors-2026.html` = the 2026 lists. `archive/2026/` (`<base href>`) = the hub with 6 photo cards (`images/archive-2026/`).
+- `speakers.html` = "to be announced" + interest form (name, company, email, topic, description → `send-email.asp` formType `speaker`). `sponsors.html` = packages open again, booth inquiry modal back, no 2026 logo table; its 3D iframe passes `&edition=2027`, which makes `floorplan3d_v2.html` drop every exhibitor and sign-panel logo (all stands free, "Резервирай щанд" → parent modal). Without the parameter the model is the 2026 hall.
+- Speaker profiles (`speakers/{slug}/`) are archive pages: back links → `speakers-2026.html`, program links → `program-2026.html#program`.
+
 ## Parked Pages — Do Not Touch or Analyze
 
 `participants.html` and `expo.html` are **parked/unused** — they are not live/usable pages on the current site. Do NOT edit, "fix," rebrand, or otherwise touch them, and do NOT include them in audits, reviews, or analysis passes (grep sweeps, consistency checks, etc.), even if a finding would technically apply to them. Skip them entirely unless the user explicitly names one of these two files and asks for work on it.

@@ -197,14 +197,11 @@
 <body>
   <nav class="nf-nav">
     <div class="container nf-nav-inner">
-      <a href="/" aria-label="CONNEXUS 2026"><img src="/images/Connexus - WHITE.svg?v=20260731" alt="CONNEXUS 2026"></a>
+      <a href="/" aria-label="CONNEXUS"><img src="/images/Connexus - WHITE.svg?v=20260731" alt="CONNEXUS"></a>
       <div class="nf-links">
-        <a href="/#program" data-bg="Програма 2026" data-en="Program 2026">Програма 2026</a>
-        <a href="/workshops.html" data-bg="Обучения" data-en="Workshops">Обучения</a>
-        <a href="/speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
-        <a href="/#venue" data-bg="Място" data-en="Venue">Място</a>
         <a href="/sponsors.html" data-bg="Изложители" data-en="Exhibitors">Изложители</a>
-        <a href="/#contact" data-bg="Контакти" data-en="Contact">Контакти</a>
+        <a href="/speakers.html" data-bg="Лектори" data-en="Speakers">Лектори</a>
+        <a href="/archive/2026/" data-bg="Архив 2026" data-en="Archive 2026">Архив 2026</a>
       </div>
     </div>
   </nav>
@@ -247,16 +244,13 @@
     (function () {
       if (!/^\/en(\/|$)/i.test(location.pathname)) return;
       document.documentElement.lang = 'en';
-      document.title = 'Page not found (404) | CONNEXUS 2026';
+      document.title = 'Page not found (404) | CONNEXUS';
       var nodes = document.querySelectorAll('[data-en]');
       for (var i = 0; i < nodes.length; i++) nodes[i].innerHTML = nodes[i].getAttribute('data-en');
       // Keep an English visitor inside the English tree.
       var map = {
         '/': '/en/',
-        '/#program': '/en/#program',
-        '/#venue': '/en/#venue',
-        '/#contact': '/en/#contact',
-        '/workshops.html': '/en/workshops.html',
+        '/archive/2026/': '/en/archive/2026/',
         '/speakers.html': '/en/speakers.html',
         '/sponsors.html': '/en/sponsors.html'
       };
