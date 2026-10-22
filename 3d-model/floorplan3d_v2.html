@@ -2923,7 +2923,8 @@
     // -- Stand 13 – ElectroHold logo on facade ------------------
     (() => {
       const m13 = standMeshes.find(m => m.userData.n === 13);
-      if (!m13) return;
+      // The white body is ElectroHold's 2026 look; the empty 2027 hall keeps the free-stand colour.
+      if (!m13 || window.CX_EMPTY_HALL) return;
       m13.material = new THREE.MeshLambertMaterial({ color: 0xffffff, roughness: 0.4, emissive: 0x444444, emissiveIntensity: 1.0 });
       const img = new Image();
       img.onload = () => {
