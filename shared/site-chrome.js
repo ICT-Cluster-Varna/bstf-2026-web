@@ -181,7 +181,6 @@
       '</div>' +
       '<div class="footer-col">' +
       '<h4 data-bg="Събитие" data-en="Event">' + pick('Събитие', 'Event', lang) + '</h4>' +
-      '<a href="' + href(cfg, '#tickets') + '" data-bg="Билети" data-en="Tickets">' + pick('Билети', 'Tickets', lang) + '</a>' +
       '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
       '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
       '<a href="archive/2026/" data-bg="Архив 2026" data-en="Archive 2026">' + pick('Архив 2026', 'Archive 2026', lang) + '</a>' +
