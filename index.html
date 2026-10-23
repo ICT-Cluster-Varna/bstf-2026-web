@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=20260818">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=20260818">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=20260818">
-    <meta name="description" content="CONNEXUS 2027 – Черноморският технологичен форум се завръща във Варна на 29 септември – 1 октомври 2027 г. Early Bird билети с отстъпка −70%: €60 вместо €199.">
+    <meta name="description" content="CONNEXUS 2027 – Черноморският технологичен форум се завръща във Варна на 29 септември – 1 октомври 2027 г.">
     <link rel="canonical" href="https://www.blackseatech.org/">
     <link rel="alternate" hreflang="bg" href="https://www.blackseatech.org/">
     <link rel="alternate" hreflang="en" href="https://www.blackseatech.org/en/">
@@ -31,14 +31,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CONNEXUS">
     <meta property="og:title" content="CONNEXUS 2027 — Черноморски технологичен форум, Варна, 29.09 – 1.10.2027">
-    <meta property="og:description" content="CONNEXUS 2027 – Черноморският технологичен форум се завръща във Варна на 29 септември – 1 октомври 2027 г. Early Bird билети с отстъпка −70%: €60 вместо €199.">
+    <meta property="og:description" content="CONNEXUS 2027 – Черноморският технологичен форум се завръща във Варна на 29 септември – 1 октомври 2027 г.">
     <meta property="og:url" content="https://www.blackseatech.org/">
     <meta property="og:image" content="https://www.blackseatech.org/images/og-cover.jpg?v=20261014">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CONNEXUS 2027 — Черноморски технологичен форум, Варна, 29.09 – 1.10.2027">
-    <meta name="twitter:description" content="CONNEXUS 2027 – Черноморският технологичен форум се завръща във Варна на 29 септември – 1 октомври 2027 г. Early Bird билети с отстъпка −70%: €60 вместо €199.">
+    <meta name="twitter:description" content="CONNEXUS 2027 – Черноморският технологичен форум се завръща във Варна на 29 септември – 1 октомври 2027 г.">
     <meta name="twitter:image" content="https://www.blackseatech.org/images/og-cover.jpg?v=20261014">
     <script type="application/ld+json">
     {
@@ -104,17 +104,7 @@
       },
       "organizer": {
         "@id": "https://www.blackseatech.org/#organization"
-      },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Standard (Full Event) — Early Bird",
-          "price": "60",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-10-22"
-        }
-      ]
+      }
     }
     </script>
     <script type="application/ld+json">
@@ -5344,7 +5334,7 @@
 
     <!-- Navigation -->
     <div id="site-nav-root"></div>
-    <script src="shared/site-chrome.js?v=20261022"></script>
+    <script src="shared/site-chrome.js?v=20261023"></script>
     <script src="shared/logo-wall.js?v=20260930-3" defer></script>
     <script>SiteChrome.renderNav('home');</script>
 
@@ -5355,9 +5345,8 @@
         <p class="cx27-kicker" data-bg="Следващо издание" data-en="Next edition">Следващо издание</p>
         <h1 class="cx27-title" id="cx27-title">CONNEXUS <span>2027</span></h1>
         <p class="cx27-date" data-bg="29.09 – 1.10.2027 г. · Варна" data-en="29 Sep – 1 Oct 2027 · Varna">29.09 – 1.10.2027 г. · Варна</p>
-        <p class="cx27-lead" data-bg="Черноморският технологичен форум се завръща. Early Bird билетите вече са в продажба." data-en="The Black Sea Technology Forum is back. Early Bird tickets are now on sale.">Черноморският технологичен форум се завръща. Early Bird билетите вече са в продажба.</p>
+        <p class="cx27-lead" data-bg="Черноморският технологичен форум се завръща." data-en="The Black Sea Technology Forum is back.">Черноморският технологичен форум се завръща.</p>
         <div class="cx27-actions">
-          <a href="#tickets" class="btn btn-primary" data-bg="Купи билет" data-en="Buy ticket">Купи билет</a>
           <a href="archive/2026/" class="btn btn-outline" data-bg="Архив 2026" data-en="Archive 2026">Архив 2026</a>
         </div>
         <div class="cx27-stats-wrap">
@@ -5374,7 +5363,9 @@
     </section>
 
     <!-- SECTION 10: Tickets -->
-    <section class="tickets-section" id="tickets">
+    <!-- Hidden 2026-10-23 until the 2027 ticket sale opens;
+         remove the hidden attribute (and restore the hero button / footer links) to bring it back. -->
+    <section class="tickets-section" id="tickets" hidden>
       <div class="container">
         <h2 class="section-title text-center" data-bg="Билети за CONNEXUS 2027" data-en="CONNEXUS 2027 Tickets">Билети за CONNEXUS 2027</h2>
         <p class="section-subtitle text-center tickets-subtitle"
