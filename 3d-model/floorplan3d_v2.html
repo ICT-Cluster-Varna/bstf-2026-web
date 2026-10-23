@@ -922,7 +922,8 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div id="loadOverlay">
-    <div class="lo-logo">CONNEXUS <span>2026</span></div>
+    <div class="lo-logo">CONNEXUS <span id="lo-year">2026</span></div>
+    <script>if (/[?&#]edition=2027\b/.test(location.search + location.hash)) document.getElementById('lo-year').textContent = '2027';</script>
     <div class="lo-spin"></div>
     <div class="lo-sub">Зареждане на 3D изложението…</div>
     <div class="lo-err" id="loErr">Проблем при зареждането. Проверете интернет връзката и презаредете страницата.</div>
@@ -951,6 +952,13 @@
       } catch (e) {}
       return 'bg';
     })();
+    // ?edition=2027 (sponsors.html since 2026-10-22): the next edition has no
+    // exhibitors yet, so every stand is shown free, without logos, and can be
+    // reserved. Without it (sponsors-2026.html) the 2026 hall stays as it was.
+    // The parent also sends it as #edition=2027: servers with clean URLs
+    // (npx serve) redirect floorplan3d_v2.html?... to /floorplan3d_v2 and drop
+    // the query, but the browser keeps the fragment across that redirect.
+    window.CX_EMPTY_HALL = /[?&#]edition=2027\b/.test(location.search + location.hash);
     (function () {
       var en = window.LANG === 'en';
       var sub = document.querySelector('#loadOverlay .lo-sub');
@@ -1212,6 +1220,14 @@
   <script src="robotoplus_logo.js?v=20260916"></script>
   <script src="brainpp_logo.js?v=20260916"></script>
   <script src="urbo_logo.js?v=20260916"></script>
+  <script>
+    // Empty hall: drop every 2026 exhibitor and every hardcoded sign-panel logo
+    // (each panel loader skips or never loads an empty src).
+    if (window.CX_EMPTY_HALL) {
+      window.STANDS_DATA.exhibitors = {};
+      Object.keys(window).forEach(function (k) { if (/_LOGO_SRC$/.test(k)) window[k] = ''; });
+    }
+  </script>
   <script>
     // Polyfill ctx.roundRect for iOS < 15.4 and older Safari
     if (!CanvasRenderingContext2D.prototype.roundRect) {
@@ -2907,7 +2923,8 @@
     // -- Stand 13 – ElectroHold logo on facade ------------------
     (() => {
       const m13 = standMeshes.find(m => m.userData.n === 13);
-      if (!m13) return;
+      // The white body is ElectroHold's 2026 look; the empty 2027 hall keeps the free-stand colour.
+      if (!m13 || window.CX_EMPTY_HALL) return;
       m13.material = new THREE.MeshLambertMaterial({ color: 0xffffff, roughness: 0.4, emissive: 0x444444, emissiveIntensity: 1.0 });
       const img = new Image();
       img.onload = () => {
@@ -3315,6 +3332,18 @@
           cta.textContent = 'Посети сайта';
           cta.href = u.website;
           cta.onclick = null;
+        } else if (window.CX_EMPTY_HALL) {
+          // 2027 hall: a free stand opens the booth inquiry form on the parent page.
+          cta.textContent = window.LANG === 'en' ? 'Reserve this booth' : 'Резервирай щанд';
+          const subject = tierName + ' - Щанд ' + u.n + ' (€' + info.price.toLocaleString('de-DE') + ')';
+          const body = 'Щанд №: ' + u.n + '\nПакет: ' + tierName + '\nЦена: €' + info.price.toLocaleString('de-DE');
+          cta.href = `mailto:bstf@ictclustervarna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          cta.onclick = function (ev) {
+            if (window.parent && window.parent !== window) {
+              ev.preventDefault();
+              window.parent.postMessage({ type: 'bstf3d', action: 'reserveStand', stand: u.n, tier: tierName, price: info.price }, window.location.origin);
+            }
+          };
         } else {
           // CONNEXUS 2026 is over (2026-10-12): stands can no longer be reserved,
           // so a stand without a website of its own is shown as sold out.
