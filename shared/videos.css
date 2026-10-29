@@ -1,0 +1,673 @@
+/* Conference recordings page (video/{year}/), rendered by shared/videos.js.
+   Dark navy, one screen (user 2026-10-28: dark background, "avoid long
+   scrolling"): title + day/hall switches on one line, then the player
+   with the hall's sessions beside it; the open session lists its videos.
+   Only that list scrolls. At 1440×900 everything sits above the fold.
+   Body text in a plain font, Science Gothic on the title only
+   (Program-section rule, 2026-09-03). */
+.cx-videos-page {
+  --v-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --v-bg: #071f2e;
+  --v-line: rgba(255, 255, 255, 0.1);
+  --v-text: rgba(255, 255, 255, 0.86);
+  --v-muted: rgba(255, 255, 255, 0.5);
+  --v-ink: #04202d;
+  background: var(--v-bg);
+  color: var(--v-text)
+}
+
+.cx-videos-page ::selection {
+  background: var(--teal);
+  color: var(--v-bg)
+}
+
+.cx-vid-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 24px 72px;
+  font-family: var(--v-font)
+}
+
+/* ---- Top line: title + switches ---- */
+.cx-vid-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px
+}
+
+.cx-vid-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-weight: 400
+}
+
+.cx-vid-title strong {
+  color: var(--white);
+  font-family: 'Science Gothic', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700
+}
+
+.cx-vid-eyebrow {
+  color: var(--teal);
+  font-family: var(--v-font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase
+}
+
+.cx-vid-dates {
+  color: var(--v-muted);
+  font-family: var(--v-font);
+  font-size: 0.9rem
+}
+
+.cx-vid-switches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px
+}
+
+.cx-vid-seg {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06)
+}
+
+.cx-vid-seg button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--v-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease
+}
+
+.cx-vid-seg button:hover {
+  color: var(--white)
+}
+
+.cx-vid-seg button.is-on {
+  background: var(--white);
+  color: var(--v-bg)
+}
+
+.cx-vid-seg i {
+  min-width: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: var(--v-ink);
+  font-size: 0.7rem;
+  font-style: normal;
+  line-height: 18px;
+  text-align: center
+}
+
+/* ---- Small labels ---- */
+.cx-vid-time {
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums
+}
+
+.cx-vid-soon {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase
+}
+
+/* ---- Stage: player + list ---- */
+.cx-vid-stage {
+  display: flex;
+  gap: 24px;
+  margin-top: 18px
+}
+
+.cx-vid-left {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: calc((100vh - 270px) * 16 / 9)
+}
+
+.cx-vid-player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000
+}
+
+.cx-vid-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0
+}
+
+.cx-vid-thumb {
+  position: relative;
+  display: block;
+  flex: none;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0b2c40
+}
+
+.cx-vid-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.cx-vid-dur {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums
+}
+
+.cx-vid-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%
+}
+
+.cx-vid-poster .cx-vid-thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 0
+}
+
+.cx-vid-poster .cx-vid-thumb img {
+  filter: brightness(0.7);
+  transition: filter 0.3s ease
+}
+
+.cx-vid-poster .cx-vid-dur {
+  display: none
+}
+
+.cx-vid-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  padding-left: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--v-bg);
+  transition: transform 0.3s var(--ease-premium)
+}
+
+.cx-vid-poster:hover .cx-vid-play {
+  transform: scale(1.08)
+}
+
+.cx-vid-poster:hover .cx-vid-thumb img {
+  filter: brightness(0.8)
+}
+
+.cx-vid-poster:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: -3px
+}
+
+.cx-vid-pending {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--v-muted);
+  text-align: center
+}
+
+.cx-vid-pending strong {
+  max-width: 520px;
+  color: var(--white);
+  font-weight: 600
+}
+
+.cx-vid-info {
+  margin-top: 14px
+}
+
+.cx-vid-info-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px
+}
+
+/* under the player: speakers, their slides, what comes next */
+.cx-vid-extra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px
+}
+
+.cx-vid-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 280px;
+  padding: 6px 14px 6px 6px;
+  border: 1px solid var(--v-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease
+}
+
+a.cx-vid-person:hover {
+  border-color: var(--teal);
+  background: rgba(0, 205, 255, 0.08)
+}
+
+.cx-vid-person img,
+.cx-vid-person-initial {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #0b2c40
+}
+
+.cx-vid-person-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--v-muted);
+  font-size: 0.9rem;
+  font-weight: 700
+}
+
+.cx-vid-person-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0
+}
+
+.cx-vid-person-name {
+  color: var(--white);
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.cx-vid-person-role {
+  color: var(--v-muted);
+  font-size: 0.74rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.cx-vid-deck {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: var(--v-ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: background 0.2s ease
+}
+
+.cx-vid-deck:hover {
+  background: #5fe0ff
+}
+
+.cx-vid-next {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  max-width: 330px;
+  margin-left: auto;
+  padding: 6px 12px 6px 6px;
+  border: 1px solid var(--v-line);
+  border-radius: 12px;
+  text-align: left;
+  transition: border-color 0.2s ease
+}
+
+.cx-vid-next:hover {
+  border-color: var(--teal)
+}
+
+.cx-vid-next .cx-vid-dur {
+  display: none
+}
+
+.cx-vid-next-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0
+}
+
+.cx-vid-next-label {
+  color: var(--teal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase
+}
+
+.cx-vid-next-title {
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.cx-vid-title-now {
+  color: var(--white);
+  font-family: var(--v-font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4
+}
+
+.cx-vid-speakers {
+  margin-top: 4px;
+  color: var(--v-muted);
+  font-size: 0.86rem;
+  line-height: 1.5
+}
+
+.cx-vid-speakers a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 3px
+}
+
+.cx-vid-speakers a:hover {
+  color: var(--teal);
+  text-decoration-color: var(--teal)
+}
+
+.cx-vid-nav {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 10px;
+  color: var(--v-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums
+}
+
+.cx-vid-nav button {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, color 0.2s ease
+}
+
+.cx-vid-nav button:hover:not(:disabled) {
+  border-color: var(--teal);
+  color: var(--teal)
+}
+
+.cx-vid-nav button:disabled {
+  opacity: 0.3;
+  cursor: default
+}
+
+/* the list takes the player's height and scrolls inside */
+.cx-vid-side {
+  position: relative;
+  flex: 0 0 360px;
+  contain: size;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid var(--v-line);
+  border-radius: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent
+}
+
+/* session rows (program order); the open one lists its videos below */
+.cx-vid-sess {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: baseline;
+  width: 100%;
+  padding: 11px 10px;
+  border-radius: 8px;
+  color: var(--v-text);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  text-align: left;
+  transition: background 0.2s ease
+}
+
+.cx-vid-sess + .cx-vid-sess,
+.cx-vid-sess-videos + .cx-vid-sess {
+  margin-top: 2px
+}
+
+button.cx-vid-sess:hover {
+  background: rgba(255, 255, 255, 0.05)
+}
+
+.cx-vid-sess.is-on {
+  color: var(--white);
+  font-weight: 600
+}
+
+.cx-vid-sess-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.cx-vid-sess.is-on .cx-vid-sess-title {
+  display: block
+}
+
+.cx-vid-sess-count {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--v-text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center
+}
+
+.cx-vid-sess.is-on .cx-vid-sess-count {
+  background: var(--teal);
+  color: var(--v-ink)
+}
+
+.cx-vid-sess.is-soon,
+.cx-vid-sess.is-soon .cx-vid-time {
+  color: var(--v-muted)
+}
+
+.cx-vid-sess-videos {
+  margin: 2px 0 10px;
+  padding-left: 8px;
+  border-left: 2px solid rgba(0, 205, 255, 0.35);
+  margin-left: 10px
+}
+
+.cx-vid-item {
+  display: grid;
+  grid-template-columns: 16px 120px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: left;
+  transition: background 0.2s ease
+}
+
+.cx-vid-item:hover {
+  background: rgba(255, 255, 255, 0.05)
+}
+
+.cx-vid-item.is-on {
+  background: rgba(0, 205, 255, 0.1)
+}
+
+.cx-vid-n {
+  align-self: center;
+  color: var(--v-muted);
+  font-size: 0.75rem
+}
+
+.cx-vid-item.is-on .cx-vid-n {
+  color: var(--teal)
+}
+
+.cx-vid-item-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0
+}
+
+.cx-vid-item-title {
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.cx-vid-item .cx-vid-speakers {
+  margin-top: 2px;
+  font-size: 0.76rem;
+  line-height: 1.4
+}
+
+.cx-videos-page button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px
+}
+
+.cx-vid-empty {
+  padding: 40px 0;
+  color: var(--v-muted);
+  text-align: center
+}
+
+@media (max-width: 900px) {
+  .cx-vid-main {
+    padding: 88px 20px 64px
+  }
+
+  .cx-vid-stage {
+    flex-direction: column
+  }
+
+  .cx-vid-left {
+    max-width: none
+  }
+
+  .cx-vid-side {
+    flex: none;
+    contain: none;
+    max-height: 420px
+  }
+
+  .cx-vid-info-top {
+    flex-direction: column;
+    gap: 10px
+  }
+
+  .cx-vid-next {
+    margin-left: 0
+  }
+}
+
+/* announced, not uploaded yet */
+.cx-vid-item.is-soon {
+  cursor: default
+}
+
+.cx-vid-item.is-soon .cx-vid-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: transparent
+}
+
+.cx-vid-item.is-soon .cx-vid-item-title {
+  color: var(--v-muted);
+  font-weight: 400
+}
+
+/* videos inside the open session: compact, so the next sessions stay in view */
+.cx-vid-sess-videos .cx-vid-item {
+  grid-template-columns: 14px 96px minmax(0, 1fr);
+  gap: 8px;
+  padding: 6px
+}
+
+.cx-vid-sess-videos .cx-vid-item-title {
+  font-size: 0.8rem
+}
+
+.cx-vid-sess-videos .cx-vid-speakers {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
