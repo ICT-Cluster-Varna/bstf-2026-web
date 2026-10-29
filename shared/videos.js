@@ -151,7 +151,12 @@
       });
     }
 
-    function setHash(h) { history.replaceState(null, '', location.pathname + '#' + h); }
+    // keeps the history entry's state (the Back/Forward guard below lives in it)
+    var curHash = '';
+    function setHash(h) {
+      curHash = '#' + h;
+      history.replaceState(history.state, '', location.pathname + curHash);
+    }
 
     function iframe(v) {
       var f = document.createElement('iframe');
@@ -345,7 +350,69 @@
       pickDefaults(false);
       draw(false);
     }
-    window.addEventListener('hashchange', route);
+    // Previous / next video across the hall: within the open session, then
+    // into the neighbouring session that has videos. false = nothing there.
+    function move(dir) {
+      var h = hallOf(), s = h.sessions[st.s];
+      if (!s || !s.videos) return false;
+      var playable = ready(s.videos), pos = playable.indexOf(s.videos[st.i]);
+      if (playable[pos + dir]) { st.i = s.videos.indexOf(playable[pos + dir]); draw(true); return true; }
+      for (var k = st.s + dir; k >= 0 && k < h.sessions.length; k += dir) {
+        var r = ready(h.sessions[k].videos);
+        if (r.length) {
+          st.s = k;
+          st.i = h.sessions[k].videos.indexOf(dir > 0 ? r[0] : r[r.length - 1]);
+          draw(true);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Browser / mouse Back = previous video, Forward = next video (user
+    // 2026-10-29). The page keeps three history entries — [back guard,
+    // current, forward guard]; landing on a guard steps the video and
+    // returns to the middle. With no previous video, Back leaves the page.
+    // Armed on the first click/key: Chrome skips history entries a page adds
+    // before the visitor has interacted with it.
+    var GUARD = 'cxVideoGuard', settling = 0, armed = false;
+    function armHistory() {
+      armed = true;
+      var url = location.pathname + location.hash;
+      history.replaceState(guardState(-1), '', url);
+      history.pushState(guardState(0), '', url);
+      history.pushState(guardState(1), '', url);
+      settling++;
+      history.back();
+    }
+    function guardState(n) { var o = {}; o[GUARD] = n; return o; }
+
+    window.addEventListener('popstate', function (e) {
+      var g = e.state && e.state[GUARD];
+      if (g === undefined || g === null) { route(); if (armed) armHistory(); return; }   // a hash typed or followed by hand
+      if (g === 0) {
+        if (settling) settling--;
+        if (curHash) history.replaceState(e.state, '', location.pathname + curHash);
+        return;
+      }
+      if (settling) return;
+      if (g === -1) {
+        if (move(-1)) { settling++; history.forward(); } else history.back();
+      } else {
+        move(1);
+        settling++;
+        history.back();
+      }
+    });
+
+    function armOnce() {
+      document.removeEventListener('pointerdown', armOnce, true);
+      document.removeEventListener('keydown', armOnce, true);
+      if (!armed) armHistory();
+    }
+    document.addEventListener('pointerdown', armOnce, true);
+    document.addEventListener('keydown', armOnce, true);
+
     route();
   }
 
