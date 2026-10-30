@@ -1,31 +1,74 @@
 /* Conference recordings page (video/{year}/), data in data/videos.js.
-   One screen, no long scroll (user 2026-10-28): title + day and hall
-   switches on one line, then the player with the hall's sessions beside
-   it — the open session lists its videos, only that list scrolls (the
-   row of session chips was dropped 2026-10-29: its sideways scroll
-   annoyed the user).
+   Two views (user 2026-10-29):
+   - Browse: filters „Всички / Ден 1-3“ and „Всички / зала“ plus a search
+     box; the matching videos in a YouTube-like grid (the page scrolls).
+     Opens with Всички + Всички, i.e. every video.
+   - Watch (a video is open): the player, under it the speakers, slides,
+     subtitles and „Следва“; beside it the same filtered list as a queue,
+     each row saying which day and hall it is from — only that list scrolls.
    The player shows a self-hosted thumbnail until play is pressed, so
    YouTube (youtube-nocookie) is contacted only then.
-   Links: #den-N opens a day, #v-<id> opens one video (day, hall and
-   session follow). Host pages set <base href>, so links use
-   location.pathname. */
+   Links: #den-N filters a day, #v-<id> opens one video. Host pages set
+   <base href>, so links use location.pathname. */
 (function () {
   'use strict';
 
   var TXT = {
     bg: {
-      soon: 'скоро',       pending: 'Записът на тази сесия предстои.',       prev: 'Предишно', next: 'Следващо', play: 'Пусни',
-      upNext: 'Следва', nextSession: 'Следваща сесия', slides: 'Презентация (PDF)', profile: 'Профил на лектора',
+      all: 'Всички', search: 'Търси по име, тема…', back: 'Всички видеа', none: 'Няма намерени видеа.',
+      count: function (n) { return n + (n === 1 ? ' видео' : ' видеа'); },
+      prev: 'Предишно', next: 'Следващо', play: 'Пусни',
+      subs: 'Субтитри', subsOff: 'Без субтитри', subsOrig: 'Оригинален език', subsTo: 'Превод на',
+      subsNote: 'Автоматични субтитри и превод от YouTube',
+      upNext: 'Следва', slides: 'Презентация (PDF)', profile: 'Профил на лектора',
       days: 'Дни на форума', halls: 'Зали', empty: 'Няма записи за тази година.'
     },
     en: {
-      soon: 'soon',       pending: 'This session’s recording is coming soon.',       prev: 'Previous', next: 'Next', play: 'Play',
-      upNext: 'Up next', nextSession: 'Next session', slides: 'Slides (PDF)', profile: 'Speaker profile',
+      all: 'All', search: 'Search by name, topic…', back: 'All videos', none: 'No videos found.',
+      count: function (n) { return n + (n === 1 ? ' video' : ' videos'); },
+      prev: 'Previous', next: 'Next', play: 'Play',
+      subs: 'Subtitles', subsOff: 'No subtitles', subsOrig: 'Original language', subsTo: 'Translate to',
+      subsNote: 'Automatic captions and translation by YouTube',
+      upNext: 'Up next', slides: 'Slides (PDF)', profile: 'Speaker profile',
       days: 'Forum days', halls: 'Halls', empty: 'No recordings for this year.'
     }
   };
 
+  // Subtitles (user 2026-10-29): YouTube's auto-captions of the talk, machine-
+  // translated by YouTube into the chosen language. 'orig' = the talk's own
+  // language. The choice is remembered for every next video.
+  var SUB_LANGS = [
+    ['bg', 'Български'], ['en', 'English'], ['de', 'Deutsch'], ['it', 'Italiano'], ['fr', 'Français'],
+    ['es', 'Español'], ['tr', 'Türkçe'], ['ru', 'Русский'], ['uk', 'Українська'], ['el', 'Ελληνικά'],
+    ['ro', 'Română'], ['nl', 'Nederlands'], ['pl', 'Polski'], ['pt', 'Português'], ['ar', 'العربية'],
+    ['zh-Hans', '中文'], ['ja', '日本語']
+  ];
+  var SUB_KEY = 'cx-video-subtitles';
+  function subPref() { try { return localStorage.getItem(SUB_KEY) || 'off'; } catch (e) { return 'off'; } }
+  function setSubPref(v) { try { localStorage.setItem(SUB_KEY, v); } catch (e) {} }
+
+  // The YouTube IFrame API (needed to switch subtitles) is loaded on the first
+  // play only, so nothing is fetched from YouTube before someone presses play.
+  var apiWaiting = null;
+  function withApi(cb) {
+    if (window.YT && window.YT.Player) { cb(); return; }
+    if (!apiWaiting) {
+      apiWaiting = [];
+      var before = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () {
+        if (before) before();
+        var q = apiWaiting; apiWaiting = [];
+        q.forEach(function (f) { f(); });
+      };
+      var s = document.createElement('script');
+      s.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(s);
+    }
+    apiWaiting.push(cb);
+  }
+
   var PLAY = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
+  var LOUPE = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -41,7 +84,7 @@
   }
 
   function speakersLine(list, lang, links) {
-    var p = el('p', 'cx-vid-speakers');
+    var p = el('span', 'cx-vid-speakers');
     (list || []).forEach(function (s, i) {
       if (i) p.appendChild(document.createTextNode(', '));
       if (links && s.slug) {
@@ -62,10 +105,16 @@
     var i = el('img');
     i.src = 'images/video/' + year + '/' + v.id + '.jpg' + thumbV;
     i.alt = '';
+    i.loading = 'lazy';
     i.decoding = 'async';
     b.appendChild(i);
     if (v.dur) b.appendChild(el('span', 'cx-vid-dur', v.dur));
     return b;
+  }
+
+  // case- and accent-insensitive text for the search
+  function fold(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   }
 
   function init(opts) {
@@ -78,39 +127,83 @@
     var days = edition.days;
     thumbV = edition.thumbs ? '?v=' + edition.thumbs : '';
 
-    // where every video sits, for #v-<id> links
-    var where = {};
+    // Every uploaded video in program order (day -> hall -> session -> playlist
+    // order). An entry without id is announced, not uploaded: not listed.
+    var ALL = [], byId = {};
     days.forEach(function (d, di) {
       d.halls.forEach(function (h) {
-        h.sessions.forEach(function (s, si) {
-          (s.videos || []).forEach(function (v, vi) { if (v.id) where[v.id] = { d: di, h: h.hall, s: si, i: vi }; });
+        h.sessions.forEach(function (s) {
+          (s.videos || []).forEach(function (v) {
+            if (!v.id) return;
+            var info = halls[h.hall] || {};
+            var x = {
+              v: v, d: d, di: di, h: h.hall, s: s,
+              hallName: info[lang] || h.hall,
+              hallShort: (lang === 'bg' ? info.shortBg : info.shortEn) || info[lang] || h.hall
+            };
+            x.text = fold([v.bg, v.en, s.bg, s.en, d.title.bg, d.title.en, info.bg, info.en]
+              .concat((v.speakers || []).map(function (p) { return p.bg + ' ' + p.en; })).join(' '));
+            ALL.push(x);
+            byId[v.id] = x;
+          });
         });
       });
     });
-    // videos already on YouTube (an entry without id is announced, not uploaded)
-    function ready(list) { return (list || []).filter(function (v) { return v.id; }); }
-    function dayCount(d) {
-      var n = 0;
-      d.halls.forEach(function (h) { h.sessions.forEach(function (s) { n += ready(s.videos).length; }); });
-      return n;
-    }
+    function meta(x) { return x.d.title[lang] + ' · ' + x.hallShort + ' · ' + x.s.time; }
 
-    // ---- skeleton ----
+    // ---- state: filters, search, open video ----
+    var st = { day: 'all', hall: 'all', q: '', cur: null };
+    function matches(x, ignoreDay) {
+      if (!ignoreDay && st.day !== 'all' && x.di !== st.day) return false;
+      if (st.hall !== 'all' && x.h !== st.hall) return false;
+      if (st.q) {
+        var words = fold(st.q).split(/\s+/).filter(Boolean);
+        for (var i = 0; i < words.length; i++) if (x.text.indexOf(words[i]) < 0) return false;
+      }
+      return true;
+    }
+    function list() { return ALL.filter(function (x) { return matches(x); }); }
+
+    // ---- skeleton (built once) ----
     var top = el('div', 'cx-vid-top');
     var title = root.querySelector('.cx-vid-title');
     if (title) top.appendChild(title);
-    var ctr = el('div', 'cx-vid-switches');
+    // back to the grid, shown while a video is open (kept on the title line
+    // so the watch view still fits one screen)
+    var back = button('cx-vid-back', '← ' + t.back);
+    back.hidden = true;
+    top.appendChild(back);
+    root.insertBefore(top, root.firstChild);
+
+    var bar = el('div', 'cx-vid-filters');
     var dayBox = el('div', 'cx-vid-seg');
     dayBox.setAttribute('role', 'group');
     dayBox.setAttribute('aria-label', t.days);
     var hallBox = el('div', 'cx-vid-seg');
     hallBox.setAttribute('role', 'group');
     hallBox.setAttribute('aria-label', t.halls);
-    ctr.appendChild(dayBox);
-    ctr.appendChild(hallBox);
-    top.appendChild(ctr);
-    root.insertBefore(top, root.firstChild);
+    var searchBox = el('label', 'cx-vid-search');
+    var loupe = el('span', 'cx-vid-search-icon');
+    loupe.innerHTML = LOUPE;
+    searchBox.appendChild(loupe);
+    var search = el('input');
+    search.type = 'search';
+    search.placeholder = t.search;
+    search.setAttribute('aria-label', t.search);
+    searchBox.appendChild(search);
+    bar.appendChild(dayBox);
+    bar.appendChild(hallBox);
+    bar.appendChild(searchBox);
+    root.appendChild(bar);
 
+    var browse = el('section', 'cx-vid-browse');
+    var count = el('p', 'cx-vid-count');
+    var grid = el('div', 'cx-vid-grid');
+    browse.appendChild(count);
+    browse.appendChild(grid);
+    root.appendChild(browse);
+
+    var watch = el('section', 'cx-vid-watch');
     var stage = el('div', 'cx-vid-stage');
     var left = el('div', 'cx-vid-left');
     var player = el('div', 'cx-vid-player');
@@ -120,25 +213,8 @@
     var side = el('div', 'cx-vid-side');
     stage.appendChild(left);
     stage.appendChild(side);
-    root.appendChild(stage);
-
-    // ---- state ----
-    var st = { d: 0, h: null, s: null, i: 0 };
-    function hallOf() {
-      return days[st.d].halls.filter(function (h) { return h.hall === st.h; })[0] || days[st.d].halls[0];
-    }
-    // first hall of the day with videos, then its first session with videos
-    function pickDefaults(keepHall) {
-      var d = days[st.d];
-      if (!keepHall || !d.halls.some(function (h) { return h.hall === st.h; })) {
-        var withVideos = d.halls.filter(function (h) { return h.sessions.some(function (s) { return s.videos; }); })[0];
-        st.h = (withVideos || d.halls[0]).hall;
-      }
-      var h = hallOf();
-      var k = h.sessions.findIndex(function (s) { return s.videos; });
-      st.s = k < 0 ? 0 : k;
-      st.i = 0;
-    }
+    watch.appendChild(stage);
+    root.appendChild(watch);
 
     function seg(box, items, cur, pick) {
       box.innerHTML = '';
@@ -151,124 +227,269 @@
       });
     }
 
-    function setHash(h) { history.replaceState(null, '', location.pathname + '#' + h); }
-
-    function iframe(v) {
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + v.id + '?autoplay=1&rel=0&modestbranding=1';
-      f.title = v[lang];
-      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      f.allowFullscreen = true;
-      f.referrerPolicy = 'strict-origin-when-cross-origin';
-      return f;
+    // keeps the history entry's state (the Back/Forward guard below lives in it)
+    var curHash = '';
+    function setHash(h) {
+      curHash = h ? '#' + h : '';
+      history.replaceState(history.state, '', location.pathname + curHash);
     }
+    function filterHash() { return st.day === 'all' ? '' : days[st.day].key; }
 
-    function draw(play) {
-      var d = days[st.d];
-      seg(dayBox, days.map(function (x, i) {
-        var n = dayCount(x);
-        return [i, x.title[lang], n ? String(n) : ''];
-      }), st.d, function (i) { st.d = i; pickDefaults(true); setHash(days[i].key); draw(false); });
-      seg(hallBox, d.halls.map(function (h) { return [h.hall, (halls[h.hall] || {})[lang] || h.hall]; }), st.h,
-        function (k) { st.h = k; pickDefaults(true); draw(false); });
-
-      var h = hallOf();
-      var s = h.sessions[st.s];
-      side.innerHTML = '';
-      player.innerHTML = '';
-      info.innerHTML = '';
-
-      // the hall's sessions in program order; the open one shows its videos
-      function item(x, i) {
-        if (!x.id) {
-          var row = el('div', 'cx-vid-item is-soon');
-          row.appendChild(el('span', 'cx-vid-n', String(i + 1)));
-          var ph = el('span', 'cx-vid-thumb');
-          ph.appendChild(el('span', 'cx-vid-soon', t.soon));
-          row.appendChild(ph);
-          var ptx = el('span', 'cx-vid-item-text');
-          ptx.appendChild(el('span', 'cx-vid-item-title', x[lang]));
-          if (x.speakers && x.speakers.length) ptx.appendChild(speakersLine(x.speakers, lang, false));
-          row.appendChild(ptx);
-          return row;
-        }
-        var b = button('cx-vid-item' + (i === st.i ? ' is-on' : ''));
-        if (i === st.i) b.setAttribute('aria-current', 'true');
-        b.appendChild(el('span', 'cx-vid-n', String(i + 1)));
-        b.appendChild(thumb(x, year));
-        var tx = el('span', 'cx-vid-item-text');
-        tx.appendChild(el('span', 'cx-vid-item-title', x[lang]));
-        if (x.speakers && x.speakers.length) tx.appendChild(speakersLine(x.speakers, lang, false));
-        b.appendChild(tx);
-        b.addEventListener('click', function () { st.i = i; draw(true); });
-        return b;
-      }
-      if (s && s.videos && (!s.videos[st.i] || !s.videos[st.i].id)) st.i = s.videos.indexOf(ready(s.videos)[0]);
-      h.sessions.forEach(function (x, k) {
-        var open = k === st.s && x.videos;
-        var head = x.videos ? button('cx-vid-sess' + (open ? ' is-on' : '')) : el('div', 'cx-vid-sess is-soon');
-        if (x.videos) {
-          head.setAttribute('aria-expanded', open ? 'true' : 'false');
-          head.addEventListener('click', function () { st.s = k; st.i = 0; draw(false); });
-        }
-        head.appendChild(el('span', 'cx-vid-time', x.time));
-        head.appendChild(el('span', 'cx-vid-sess-title', x[lang]));
-        head.appendChild(x.videos ? el('span', 'cx-vid-sess-count', String(ready(x.videos).length)) : el('span', 'cx-vid-soon', t.soon));
-        side.appendChild(head);
-        if (open) {
-          var group = el('div', 'cx-vid-sess-videos');
-          x.videos.forEach(function (v2, i) { group.appendChild(item(v2, i)); });
-          side.appendChild(group);
-        }
-      });
-
-      if (!s || !s.videos) {
-        var empty = el('div', 'cx-vid-pending');
-        if (s) empty.appendChild(el('strong', null, s[lang]));
-        empty.appendChild(el('span', null, t.pending));
-        player.appendChild(empty);
+    // ---- YouTube player ----
+    // the YT.Player on screen (null until ready); ytInst = the one being built,
+    // destroyed properly when the player is removed
+    var yt = null, ytInst = null;
+    function dropPlayer() {
+      if (ytInst) { try { ytInst.destroy(); } catch (e) {} }
+      ytInst = yt = null;
+    }
+    // Show the remembered subtitle choice. The base track is the talk's own
+    // auto-captions; any other language is YouTube's translation of it.
+    function applySubs() {
+      var cur = yt;
+      if (!cur || !cur.setOption) return;
+      var want = subPref();
+      if (want === 'off') { try { cur.unloadModule('captions'); } catch (e) {} cur.cxDone = true; return; }
+      try { cur.loadModule('captions'); } catch (e) {}
+      var tries = 0;
+      (function wait() {
+        if (cur !== yt) return;
+        var tr = {};
+        try { tr = cur.getOption('captions', 'track') || {}; } catch (e) {}
+        if (!tr.languageCode) { if (++tries < 24) setTimeout(wait, 250); return; }
+        var track = { languageCode: tr.languageCode };
+        if (want !== 'orig' && want !== tr.languageCode) track.translationLanguage = { languageCode: want };
+        cur.setOption('captions', 'track', track);
+        cur.cxDone = true;
+      })();
+    }
+    function startPlayer(v) {
+      // Another video reuses the player already on screen (loadVideoById):
+      // a second player built on the same page never got its captions back.
+      if (yt && yt.getIframe && player.contains(yt.getIframe())) {
+        yt.cxDone = false;
+        yt.loadVideoById(v.id);
+        try { yt.getIframe().title = v[lang]; } catch (e) {}
         return;
       }
+      dropPlayer();
+      player.innerHTML = '';
+      // the API builds the iframe itself (attaching it to a hand-made iframe
+      // left the captions module unreachable)
+      var holder = el('div');
+      player.appendChild(holder);
+      withApi(function () {
+        if (!holder.isConnected) return;
+        var inst = ytInst = new window.YT.Player(holder, {
+          host: 'https://www.youtube-nocookie.com',
+          videoId: v.id,
+          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, hl: lang, cc_load_policy: subPref() === 'off' ? 0 : 1 },
+          events: {
+            onReady: function () {
+              yt = inst;
+              try { inst.getIframe().title = v[lang]; } catch (e) {}
+              applySubs();
+            },
+            onApiChange: function () { if (yt === inst && !inst.cxDone) applySubs(); },
+            onStateChange: function (e) { if (e.data === 1 && yt === inst && !inst.cxDone) applySubs(); }
+          }
+        });
+      });
+    }
+    function showPoster(v) {
+      dropPlayer();
+      player.innerHTML = '';
+      var poster = button('cx-vid-poster');
+      poster.setAttribute('aria-label', t.play + ': ' + v[lang]);
+      poster.appendChild(thumb(v, year));
+      var ring = el('span', 'cx-vid-play');
+      ring.innerHTML = PLAY;
+      poster.appendChild(ring);
+      poster.addEventListener('click', function () { draw(true); });
+      player.appendChild(poster);
+    }
 
-      var list = s.videos;
-      var v = list[st.i];
-      var playable = ready(list);
-      var cur = side.querySelector('.cx-vid-item.is-on');
-      var sh = side.querySelector('.cx-vid-sess.is-on');
-      if (cur && sh) side.scrollTop = Math.max(0, Math.min(sh.offsetTop - 6, cur.offsetTop - side.clientHeight / 2 + cur.clientHeight / 2));
+    // ---- rendering ----
+    function drawFilters() {
+      var dayItems = [['all', t.all, String(ALL.filter(function (x) { return matches(x, true); }).length)]];
+      days.forEach(function (d, i) {
+        var n = ALL.filter(function (x) { return x.di === i && matches(x, true); }).length;
+        dayItems.push([i, d.title[lang], n ? String(n) : '']);
+      });
+      seg(dayBox, dayItems, st.day, function (k) {
+        st.day = k; st.cur = null; draw(false); setHash(filterHash());
+      });
+      var hallItems = [['all', t.all]];
+      Object.keys(halls).forEach(function (k) { hallItems.push([k, halls[k][lang]]); });
+      seg(hallBox, hallItems, st.hall, function (k) {
+        st.hall = k; st.cur = null; draw(false); setHash(filterHash());
+      });
+    }
 
-      if (play) {
-        player.appendChild(iframe(v));
-        setHash('v-' + v.id);
-      } else {
-        var poster = button('cx-vid-poster');
-        poster.setAttribute('aria-label', t.play + ': ' + v[lang]);
-        poster.appendChild(thumb(v, year));
-        var ring = el('span', 'cx-vid-play');
+    function drawGrid() {
+      var items = list();
+      count.textContent = t.count(items.length);
+      grid.innerHTML = '';
+      if (!items.length) { grid.appendChild(el('p', 'cx-vid-empty', t.none)); return; }
+      items.forEach(function (x) {
+        var card = button('cx-vid-card');
+        card.appendChild(thumb(x.v, year));
+        var ring = el('span', 'cx-vid-card-play');
         ring.innerHTML = PLAY;
-        poster.appendChild(ring);
-        poster.addEventListener('click', function () { draw(true); });
-        player.appendChild(poster);
+        card.firstChild.appendChild(ring);
+        card.appendChild(el('span', 'cx-vid-card-title', x.v[lang]));
+        if (x.v.speakers && x.v.speakers.length) card.appendChild(speakersLine(x.v.speakers, lang, false));
+        card.appendChild(el('span', 'cx-vid-meta', meta(x)));
+        card.addEventListener('click', function () { open(x.v.id, true); });
+        grid.appendChild(card);
+      });
+    }
+
+    // ---- subtitle menu (styled popover instead of the native <select>) ----
+    var CHECK = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var CARET = '<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+    function subLabel(val) {
+      if (val === 'off') return t.subsOff;
+      if (val === 'orig') return t.subsOrig;
+      var hit = SUB_LANGS.filter(function (l) { return l[0] === val; })[0];
+      return hit ? hit[1] : t.subsOff;
+    }
+    function closeMenus() {
+      root.querySelectorAll('.cx-vid-subs.is-open').forEach(function (m) {
+        m.classList.remove('is-open');
+        m.querySelector('.cx-vid-subs-btn').setAttribute('aria-expanded', 'false');
+      });
+    }
+    function subsMenu() {
+      var wrap = el('div', 'cx-vid-subs' + (subPref() === 'off' ? '' : ' is-on'));
+      var trig = button('cx-vid-subs-btn');
+      trig.setAttribute('aria-haspopup', 'menu');
+      trig.setAttribute('aria-expanded', 'false');
+      trig.title = t.subs;
+      trig.appendChild(el('span', 'cx-vid-subs-cc', 'CC'));
+      var lbl = el('span', 'cx-vid-subs-label', subLabel(subPref()));
+      trig.appendChild(lbl);
+      var caret = el('span', 'cx-vid-subs-caret');
+      caret.innerHTML = CARET;
+      trig.appendChild(caret);
+      wrap.appendChild(trig);
+
+      var menu = el('div', 'cx-vid-subs-menu');
+      menu.setAttribute('role', 'menu');
+      menu.setAttribute('aria-label', t.subs);
+      function option(val, text, code) {
+        var on = subPref() === val;
+        var o = button('cx-vid-subs-opt' + (on ? ' is-on' : ''));
+        o.setAttribute('role', 'menuitemradio');
+        o.setAttribute('aria-checked', on ? 'true' : 'false');
+        if (code) o.appendChild(el('span', 'cx-vid-subs-code', code));
+        o.appendChild(el('span', 'cx-vid-subs-name', text));
+        var ck = el('span', 'cx-vid-subs-check');
+        ck.innerHTML = CHECK;
+        o.appendChild(ck);
+        o.addEventListener('click', function () {
+          setSubPref(val);
+          closeMenus();
+          lbl.textContent = subLabel(val);
+          wrap.classList.toggle('is-on', val !== 'off');
+          menu.querySelectorAll('.cx-vid-subs-opt').forEach(function (b) {
+            b.classList.toggle('is-on', b === o);
+            b.setAttribute('aria-checked', b === o ? 'true' : 'false');
+          });
+          trig.focus({ preventScroll: true });
+          if (yt) { yt.cxDone = false; applySubs(); }
+        });
+        return o;
       }
+      var main = el('div', 'cx-vid-subs-main');
+      main.appendChild(option('off', t.subsOff));
+      main.appendChild(option('orig', t.subsOrig));
+      menu.appendChild(main);
+      menu.appendChild(el('p', 'cx-vid-subs-head', t.subsTo));
+      var langs = el('div', 'cx-vid-subs-langs');
+      SUB_LANGS.forEach(function (l) { langs.appendChild(option(l[0], l[1], l[0].split('-')[0].toUpperCase())); });
+      menu.appendChild(langs);
+      menu.appendChild(el('p', 'cx-vid-subs-note', t.subsNote));
+      wrap.appendChild(menu);
 
+      trig.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = !wrap.classList.contains('is-open');
+        closeMenus();
+        if (open) {
+          wrap.classList.add('is-open');
+          trig.setAttribute('aria-expanded', 'true');
+          var cur = menu.querySelector('.cx-vid-subs-opt.is-on') || menu.querySelector('.cx-vid-subs-opt');
+          cur.focus({ preventScroll: true });
+        }
+      });
+      // arrow keys move between the options
+      menu.addEventListener('keydown', function (e) {
+        var opts = [].slice.call(menu.querySelectorAll('.cx-vid-subs-opt'));
+        var i = opts.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); opts[Math.min(opts.length - 1, i + 1)].focus(); }
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); opts[Math.max(0, i - 1)].focus(); }
+      });
+      return wrap;
+    }
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest || !e.target.closest('.cx-vid-subs-menu')) closeMenus();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var open = root.querySelector('.cx-vid-subs.is-open .cx-vid-subs-btn');
+      closeMenus();
+      if (open) open.focus({ preventScroll: true });
+    });
+
+    function drawWatch(play) {
+      var x = byId[st.cur];
+      var v = x.v;
+      var items = list();
+      if (items.indexOf(x) < 0) { st.day = 'all'; st.hall = 'all'; st.q = ''; search.value = ''; items = list(); drawFilters(); }
+      var pos = items.indexOf(x);
+
+      // queue = the filtered list, the open video highlighted
+      side.innerHTML = '';
+      side.appendChild(el('p', 'cx-vid-side-head', t.count(items.length)));
+      items.forEach(function (y, i) {
+        var b = button('cx-vid-item' + (y === x ? ' is-on' : ''));
+        if (y === x) b.setAttribute('aria-current', 'true');
+        b.appendChild(el('span', 'cx-vid-n', String(i + 1)));
+        b.appendChild(thumb(y.v, year));
+        var tx = el('span', 'cx-vid-item-text');
+        tx.appendChild(el('span', 'cx-vid-item-title', y.v[lang]));
+        if (y.v.speakers && y.v.speakers.length) tx.appendChild(speakersLine(y.v.speakers, lang, false));
+        tx.appendChild(el('span', 'cx-vid-meta', y.d.title[lang] + ' · ' + y.hallShort));
+        b.appendChild(tx);
+        b.addEventListener('click', function () { open(y.v.id, true); });
+        side.appendChild(b);
+      });
+      var on = side.querySelector('.cx-vid-item.is-on');
+      if (on) side.scrollTop = Math.max(0, on.offsetTop - side.clientHeight / 2 + on.clientHeight / 2);
+
+      if (play) { startPlayer(v); setHash('v-' + v.id); } else showPoster(v);
+
+      info.innerHTML = '';
       var topRow = el('div', 'cx-vid-info-top');
-      topRow.appendChild(el('h2', 'cx-vid-title-now', v[lang]));
-      info.appendChild(topRow);
-
+      var head = el('div', 'cx-vid-now');
+      head.appendChild(el('h2', 'cx-vid-title-now', v[lang]));
+      head.appendChild(el('span', 'cx-vid-meta', meta(x) + ' · ' + x.s[lang]));
+      topRow.appendChild(head);
       var nav = el('div', 'cx-vid-nav');
+      nav.appendChild(subsMenu());
       var p = button('cx-vid-step', '←'), n = button('cx-vid-step', '→');
       p.setAttribute('aria-label', t.prev);
       n.setAttribute('aria-label', t.next);
-      // prev/next skip announced-but-missing videos
-      var pos = playable.indexOf(v);
       p.disabled = pos === 0;
-      n.disabled = pos === playable.length - 1;
-      p.addEventListener('click', function () { st.i = list.indexOf(playable[pos - 1]); draw(true); });
-      n.addEventListener('click', function () { st.i = list.indexOf(playable[pos + 1]); draw(true); });
+      n.disabled = pos === items.length - 1;
+      p.addEventListener('click', function () { open(items[pos - 1].v.id, true); });
+      n.addEventListener('click', function () { open(items[pos + 1].v.id, true); });
       nav.appendChild(p);
-      nav.appendChild(el('span', 'cx-vid-count', (pos + 1) + ' / ' + playable.length));
+      nav.appendChild(el('span', 'cx-vid-pos', (pos + 1) + ' / ' + items.length));
       nav.appendChild(n);
       topRow.appendChild(nav);
+      info.appendChild(topRow);
 
       // what is useful while watching: who speaks, their slides, what comes next
       var extra = el('div', 'cx-vid-extra');
@@ -306,46 +527,117 @@
         deck.appendChild(document.createTextNode(t.slides));
         extra.appendChild(deck);
       }
-
-      // up next: the next video, or the first one of the hall's next session
-      var nextV = playable[pos + 1], nextS = null;
-      if (!nextV) {
-        for (var k = st.s + 1; k < h.sessions.length; k++) {
-          if (ready(h.sessions[k].videos).length) { nextS = k; nextV = ready(h.sessions[k].videos)[0]; break; }
-        }
-      }
-      if (nextV) {
+      var nextX = items[pos + 1];
+      if (nextX) {
         var nx = button('cx-vid-next');
-        var thumbBox = thumb(nextV, year);
-        nx.appendChild(thumbBox);
+        nx.appendChild(thumb(nextX.v, year));
         var nt = el('span', 'cx-vid-next-text');
-        nt.appendChild(el('span', 'cx-vid-next-label', nextS === null ? t.upNext : t.nextSession));
-        nt.appendChild(el('span', 'cx-vid-next-title', nextV[lang]));
+        nt.appendChild(el('span', 'cx-vid-next-label', t.upNext));
+        nt.appendChild(el('span', 'cx-vid-next-title', nextX.v[lang]));
         nx.appendChild(nt);
-        nx.addEventListener('click', function () {
-          if (nextS !== null) { st.s = nextS; st.i = h.sessions[nextS].videos.indexOf(nextV); }
-          else st.i = list.indexOf(nextV);
-          draw(true);
-        });
+        nx.addEventListener('click', function () { open(nextX.v.id, true); });
         extra.appendChild(nx);
       }
       info.appendChild(extra);
     }
 
-    function route() {
-      var h = location.hash.slice(1);
-      if (h.indexOf('v-') === 0 && where[h.slice(2)]) {
-        var w = where[h.slice(2)];
-        st.d = w.d; st.h = w.h; st.s = w.s; st.i = w.i;
+    function draw(play) {
+      drawFilters();
+      var watching = !!(st.cur && byId[st.cur]);
+      browse.hidden = watching;
+      watch.hidden = !watching;
+      back.hidden = !watching;
+      if (watching) drawWatch(play);
+      else { dropPlayer(); player.innerHTML = ''; drawGrid(); }
+    }
+
+    function open(id, play) {
+      if (!byId[id]) return;
+      st.cur = id;
+      draw(play);
+      if (!play) setHash('v-' + id);
+      window.scrollTo(0, 0);
+    }
+    function close() {
+      st.cur = null;
+      draw(false);
+      setHash(filterHash());
+    }
+
+    back.addEventListener('click', close);
+
+    var typing = null;
+    search.addEventListener('input', function () {
+      st.q = search.value.trim();
+      clearTimeout(typing);
+      typing = setTimeout(function () {
+        if (st.cur) { st.cur = null; setHash(filterHash()); }
         draw(false);
-        return;
-      }
+      }, 120);
+    });
+
+    // Previous / next video in the current list. Before the first one, Back
+    // returns to the grid. false = nothing there.
+    function move(dir) {
+      if (!st.cur) return false;
+      var items = list(), pos = items.indexOf(byId[st.cur]);
+      if (items[pos + dir]) { open(items[pos + dir].v.id, true); return true; }
+      if (dir < 0) { close(); return true; }
+      return false;
+    }
+
+    function route() {
+      curHash = location.hash;
+      var h = location.hash.slice(1);
+      if (h.indexOf('v-') === 0 && byId[h.slice(2)]) { open(h.slice(2), false); return; }
       var di = days.map(function (d) { return d.key; }).indexOf(h);
-      st.d = di < 0 ? 0 : di;
-      pickDefaults(false);
+      st.day = di < 0 ? 'all' : di;
+      st.cur = null;
       draw(false);
     }
-    window.addEventListener('hashchange', route);
+
+    // Browser / mouse Back = previous video, Forward = next video (user
+    // 2026-10-29). The page keeps three history entries — [back guard,
+    // current, forward guard]; landing on a guard steps the video and
+    // returns to the middle. From the grid, Back leaves the page.
+    // Armed on the first click/key: Chrome skips history entries a page adds
+    // before the visitor has interacted with it.
+    var GUARD = 'cxVideoGuard', settling = 0, armed = false;
+    function guardState(n) { var o = {}; o[GUARD] = n; return o; }
+    function armHistory() {
+      armed = true;
+      var url = location.pathname + location.hash;
+      history.replaceState(guardState(-1), '', url);
+      history.pushState(guardState(0), '', url);
+      history.pushState(guardState(1), '', url);
+      settling++;
+      history.back();
+    }
+    window.addEventListener('popstate', function (e) {
+      var g = e.state && e.state[GUARD];
+      if (g === undefined || g === null) { route(); if (armed) armHistory(); return; }   // a hash typed or followed by hand
+      if (g === 0) {
+        if (settling) settling--;
+        history.replaceState(e.state, '', location.pathname + curHash);
+        return;
+      }
+      if (settling) return;
+      if (g === -1) {
+        if (move(-1)) { settling++; history.forward(); } else history.back();
+      } else {
+        move(1);
+        settling++;
+        history.back();
+      }
+    });
+    function armOnce() {
+      document.removeEventListener('pointerdown', armOnce, true);
+      document.removeEventListener('keydown', armOnce, true);
+      if (!armed) armHistory();
+    }
+    document.addEventListener('pointerdown', armOnce, true);
+    document.addEventListener('keydown', armOnce, true);
+
     route();
   }
 

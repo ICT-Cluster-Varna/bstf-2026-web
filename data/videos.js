@@ -232,7 +232,7 @@
   });
 
   window.CONNEXUS_VIDEO_HALLS = {
-    bulgaria: { bg: 'Зала „България“', en: 'Hall Bulgaria', trackBg: 'Бизнес направление', trackEn: 'Business Track' },
-    varna: { bg: 'Зала „Варна“', en: 'Hall Varna', trackBg: 'Международен бизнес обмен', trackEn: 'International Business Exchange' }
+    bulgaria: { bg: 'Зала „България“', en: 'Hall Bulgaria', shortBg: 'България', shortEn: 'Bulgaria', trackBg: 'Бизнес направление', trackEn: 'Business Track' },
+    varna: { bg: 'Зала „Варна“', en: 'Hall Varna', shortBg: 'Варна', shortEn: 'Varna', trackBg: 'Международен бизнес обмен', trackEn: 'International Business Exchange' }
   };
 })();

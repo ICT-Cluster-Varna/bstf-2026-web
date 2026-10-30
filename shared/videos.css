@@ -1,8 +1,9 @@
 /* Conference recordings page (video/{year}/), rendered by shared/videos.js.
-   Dark navy, one screen (user 2026-10-28: dark background, "avoid long
-   scrolling"): title + day/hall switches on one line, then the player
-   with the hall's sessions beside it; the open session lists its videos.
-   Only that list scrolls. At 1440×900 everything sits above the fold.
+   Dark navy (user 2026-10-28). Two views (user 2026-10-29):
+   - browse: filters (Всички / days, Всички / halls) + search, then every
+     matching video in a YouTube-like grid, 4–6 per row; the page scrolls;
+   - watch: the player with the filtered list beside it as a queue (only
+     that list scrolls), speakers / slides / subtitles / „Следва“ under it.
    Body text in a plain font, Science Gothic on the title only
    (Program-section rule, 2026-09-03). */
 .cx-videos-page {
@@ -22,19 +23,23 @@
 }
 
 .cx-vid-main {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 96px 24px 72px;
   font-family: var(--v-font)
 }
 
-/* ---- Top line: title + switches ---- */
+.cx-videos-page button:focus-visible,
+.cx-videos-page a:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px
+}
+
+/* ---- Title ---- */
 .cx-vid-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px 24px
+  gap: 16px
 }
 
 .cx-vid-title {
@@ -67,14 +72,18 @@
   font-size: 0.9rem
 }
 
-.cx-vid-switches {
+/* ---- Filters + search ---- */
+.cx-vid-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px
 }
 
 .cx-vid-seg {
   display: inline-flex;
+  flex-wrap: wrap;
   padding: 4px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06)
@@ -114,33 +123,182 @@
   text-align: center
 }
 
-/* ---- Small labels ---- */
-.cx-vid-time {
+.cx-vid-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 320px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--v-muted);
+  transition: border-color 0.2s ease
+}
+
+.cx-vid-search:focus-within {
+  border-color: var(--teal)
+}
+
+.cx-vid-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--white);
+  font: 0.92rem var(--v-font)
+}
+
+.cx-vid-search input::placeholder {
+  color: var(--v-muted)
+}
+
+.cx-vid-search-icon {
+  display: flex
+}
+
+/* ---- Browse: grid ---- */
+.cx-vid-count {
+  margin-top: 22px;
+  color: var(--v-muted);
+  font-size: 0.85rem
+}
+
+.cx-vid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 28px 18px;
+  margin-top: 14px
+}
+
+.cx-vid-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  text-align: left
+}
+
+.cx-vid-card .cx-vid-thumb {
+  border-radius: 10px
+}
+
+.cx-vid-card .cx-vid-thumb img {
+  transition: transform 0.5s var(--ease-premium), filter 0.3s ease
+}
+
+.cx-vid-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  padding-left: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--v-bg);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.25s ease, transform 0.35s var(--ease-premium)
+}
+
+.cx-vid-card:hover .cx-vid-thumb img,
+.cx-vid-card:focus-visible .cx-vid-thumb img {
+  transform: scale(1.04);
+  filter: brightness(0.75)
+}
+
+.cx-vid-card:hover .cx-vid-card-play,
+.cx-vid-card:focus-visible .cx-vid-card-play {
+  opacity: 1;
+  transform: scale(1)
+}
+
+.cx-vid-card-title {
+  margin-top: 10px;
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+.cx-vid-card:hover .cx-vid-card-title {
+  color: var(--teal)
+}
+
+.cx-vid-card .cx-vid-speakers {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden
+}
+
+/* „Ден 2 · Варна · 09:10“ on cards and in the queue */
+.cx-vid-meta {
+  display: block;
+  margin-top: 3px;
   color: var(--teal);
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  font-variant-numeric: tabular-nums
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
-.cx-vid-soon {
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase
+.cx-vid-empty {
+  grid-column: 1 / -1;
+  padding: 40px 0;
+  color: var(--v-muted);
+  text-align: center
 }
 
-/* ---- Stage: player + list ---- */
+/* ---- Watch ---- */
+.cx-vid-back {
+  flex: none;
+  height: 34px;
+  margin-left: auto;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.2s ease, color 0.2s ease
+}
+
+.cx-vid-back[hidden] {
+  display: none
+}
+
+.cx-vid-back:hover {
+  border-color: var(--teal);
+  color: var(--teal)
+}
+
+.cx-vid-now {
+  min-width: 0
+}
+
 .cx-vid-stage {
   display: flex;
   gap: 24px;
-  margin-top: 18px
+  margin-top: 14px
 }
 
 .cx-vid-left {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: calc((100vh - 270px) * 16 / 9)
+  max-width: calc((100vh - 440px) * 16 / 9)
 }
 
 .cx-vid-player {
@@ -234,31 +392,6 @@
   filter: brightness(0.8)
 }
 
-.cx-vid-poster:focus-visible {
-  outline: 3px solid var(--teal);
-  outline-offset: -3px
-}
-
-.cx-vid-pending {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--v-muted);
-  text-align: center
-}
-
-.cx-vid-pending strong {
-  max-width: 520px;
-  color: var(--white);
-  font-weight: 600
-}
-
 .cx-vid-info {
   margin-top: 14px
 }
@@ -268,6 +401,226 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px
+}
+
+.cx-vid-title-now {
+  color: var(--white);
+  font-family: var(--v-font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4
+}
+
+.cx-vid-speakers {
+  display: block;
+  margin-top: 2px;
+  color: var(--v-muted);
+  font-size: 0.8rem;
+  line-height: 1.4
+}
+
+.cx-vid-nav {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 10px;
+  color: var(--v-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums
+}
+
+.cx-vid-nav > button {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, color 0.2s ease
+}
+
+.cx-vid-nav > button:hover:not(:disabled) {
+  border-color: var(--teal);
+  color: var(--teal)
+}
+
+.cx-vid-nav > button:disabled {
+  opacity: 0.3;
+  cursor: default
+}
+
+/* subtitle menu: a pill button that opens a popover above it */
+.cx-vid-subs {
+  position: relative;
+  margin-right: 6px
+}
+
+.cx-vid-subs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--white);
+  font: 600 0.85rem var(--v-font);
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background 0.2s ease
+}
+
+.cx-vid-subs-btn:hover,
+.cx-vid-subs.is-open .cx-vid-subs-btn {
+  border-color: var(--teal)
+}
+
+.cx-vid-subs.is-on .cx-vid-subs-btn {
+  background: rgba(0, 205, 255, 0.1)
+}
+
+.cx-vid-subs-cc {
+  padding: 0 3px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  color: var(--v-muted);
+  font-size: 0.6rem;
+  font-weight: 800;
+  line-height: 1.3
+}
+
+.cx-vid-subs.is-on .cx-vid-subs-cc {
+  color: var(--teal)
+}
+
+.cx-vid-subs-caret {
+  display: flex;
+  color: var(--v-muted);
+  transition: transform 0.2s ease
+}
+
+.cx-vid-subs.is-open .cx-vid-subs-caret {
+  transform: rotate(180deg)
+}
+
+.cx-vid-subs-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  z-index: 50;
+  width: 340px;
+  max-height: min(520px, calc(100vh - 160px));
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: #0b2c40;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent
+}
+
+.cx-vid-subs.is-open .cx-vid-subs-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.18s ease, transform 0.18s ease
+}
+
+.cx-vid-subs-main {
+  display: grid;
+  gap: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--v-line)
+}
+
+.cx-vid-subs-head {
+  padding: 10px 10px 6px;
+  color: var(--v-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase
+}
+
+.cx-vid-subs-langs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px
+}
+
+.cx-vid-subs-opt {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--v-text);
+  font: 0.86rem var(--v-font);
+  text-align: left;
+  transition: background 0.15s ease, color 0.15s ease
+}
+
+.cx-vid-subs-opt:hover,
+.cx-vid-subs-opt:focus-visible {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--white);
+  outline: none
+}
+
+.cx-vid-subs-opt.is-on {
+  background: rgba(0, 205, 255, 0.14);
+  color: var(--white);
+  font-weight: 600
+}
+
+.cx-vid-subs-code {
+  flex: none;
+  min-width: 26px;
+  padding: 1px 0;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--v-muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center
+}
+
+.cx-vid-subs-opt.is-on .cx-vid-subs-code {
+  background: var(--teal);
+  color: var(--v-ink)
+}
+
+.cx-vid-subs-name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.cx-vid-subs-check {
+  display: flex;
+  color: var(--teal);
+  visibility: hidden
+}
+
+.cx-vid-subs-opt.is-on .cx-vid-subs-check {
+  visibility: visible
+}
+
+.cx-vid-subs-note {
+  margin-top: 6px;
+  padding: 8px 10px 4px;
+  border-top: 1px solid var(--v-line);
+  color: var(--v-muted);
+  font-size: 0.72rem
 }
 
 /* under the player: speakers, their slides, what comes next */
@@ -403,67 +756,11 @@ a.cx-vid-person:hover {
   overflow: hidden
 }
 
-.cx-vid-title-now {
-  color: var(--white);
-  font-family: var(--v-font);
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.4
-}
-
-.cx-vid-speakers {
-  margin-top: 4px;
-  color: var(--v-muted);
-  font-size: 0.86rem;
-  line-height: 1.5
-}
-
-.cx-vid-speakers a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.25);
-  text-underline-offset: 3px
-}
-
-.cx-vid-speakers a:hover {
-  color: var(--teal);
-  text-decoration-color: var(--teal)
-}
-
-.cx-vid-nav {
-  display: flex;
-  flex: none;
-  align-items: center;
-  gap: 10px;
-  color: var(--v-muted);
-  font-size: 0.85rem;
-  font-variant-numeric: tabular-nums
-}
-
-.cx-vid-nav button {
-  height: 36px;
-  padding: 0 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  color: var(--white);
-  font-size: 0.85rem;
-  transition: border-color 0.2s ease, color 0.2s ease
-}
-
-.cx-vid-nav button:hover:not(:disabled) {
-  border-color: var(--teal);
-  color: var(--teal)
-}
-
-.cx-vid-nav button:disabled {
-  opacity: 0.3;
-  cursor: default
-}
-
-/* the list takes the player's height and scrolls inside */
+/* the queue: takes the player's height and scrolls inside */
 .cx-vid-side {
   position: relative;
-  flex: 0 0 360px;
+  flex: 1 1 380px;
+  max-width: 520px;
   contain: size;
   overflow-y: auto;
   padding: 6px;
@@ -473,83 +770,19 @@ a.cx-vid-person:hover {
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent
 }
 
-/* session rows (program order); the open one lists its videos below */
-.cx-vid-sess {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: baseline;
-  width: 100%;
-  padding: 11px 10px;
-  border-radius: 8px;
-  color: var(--v-text);
-  font-size: 0.86rem;
-  line-height: 1.4;
-  text-align: left;
-  transition: background 0.2s ease
-}
-
-.cx-vid-sess + .cx-vid-sess,
-.cx-vid-sess-videos + .cx-vid-sess {
-  margin-top: 2px
-}
-
-button.cx-vid-sess:hover {
-  background: rgba(255, 255, 255, 0.05)
-}
-
-.cx-vid-sess.is-on {
-  color: var(--white);
-  font-weight: 600
-}
-
-.cx-vid-sess-title {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden
-}
-
-.cx-vid-sess.is-on .cx-vid-sess-title {
-  display: block
-}
-
-.cx-vid-sess-count {
-  min-width: 22px;
-  padding: 0 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--v-text);
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 20px;
-  text-align: center
-}
-
-.cx-vid-sess.is-on .cx-vid-sess-count {
-  background: var(--teal);
-  color: var(--v-ink)
-}
-
-.cx-vid-sess.is-soon,
-.cx-vid-sess.is-soon .cx-vid-time {
-  color: var(--v-muted)
-}
-
-.cx-vid-sess-videos {
-  margin: 2px 0 10px;
-  padding-left: 8px;
-  border-left: 2px solid rgba(0, 205, 255, 0.35);
-  margin-left: 10px
+.cx-vid-side-head {
+  padding: 8px 10px 6px;
+  color: var(--v-muted);
+  font-size: 0.82rem
 }
 
 .cx-vid-item {
   display: grid;
-  grid-template-columns: 16px 120px minmax(0, 1fr);
+  grid-template-columns: 18px 112px minmax(0, 1fr);
   gap: 10px;
-  align-items: start;
+  align-items: center;
   width: 100%;
-  padding: 8px;
+  padding: 7px 8px;
   border-radius: 8px;
   text-align: left;
   transition: background 0.2s ease
@@ -564,9 +797,9 @@ button.cx-vid-sess:hover {
 }
 
 .cx-vid-n {
-  align-self: center;
   color: var(--v-muted);
-  font-size: 0.75rem
+  font-size: 0.72rem;
+  text-align: center
 }
 
 .cx-vid-item.is-on .cx-vid-n {
@@ -581,7 +814,7 @@ button.cx-vid-sess:hover {
 
 .cx-vid-item-title {
   color: var(--white);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.35;
   display: -webkit-box;
@@ -591,25 +824,25 @@ button.cx-vid-sess:hover {
 }
 
 .cx-vid-item .cx-vid-speakers {
-  margin-top: 2px;
-  font-size: 0.76rem;
-  line-height: 1.4
+  font-size: 0.74rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
-.cx-videos-page button:focus-visible {
-  outline: 2px solid var(--teal);
-  outline-offset: 2px
-}
-
-.cx-vid-empty {
-  padding: 40px 0;
-  color: var(--v-muted);
-  text-align: center
+.cx-vid-item .cx-vid-meta {
+  margin-top: 1px;
+  font-size: 0.7rem
 }
 
 @media (max-width: 900px) {
   .cx-vid-main {
     padding: 88px 20px 64px
+  }
+
+  .cx-vid-search {
+    flex: 1 1 100%;
+    margin-left: 0
   }
 
   .cx-vid-stage {
@@ -634,40 +867,21 @@ button.cx-vid-sess:hover {
   .cx-vid-next {
     margin-left: 0
   }
+
+  .cx-vid-subs-menu {
+    right: auto;
+    left: 0;
+    width: min(340px, calc(100vw - 40px))
+  }
 }
 
-/* announced, not uploaded yet */
-.cx-vid-item.is-soon {
-  cursor: default
-}
+@media (max-width: 560px) {
+  .cx-vid-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px 12px
+  }
 
-.cx-vid-item.is-soon .cx-vid-thumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  background: transparent
-}
-
-.cx-vid-item.is-soon .cx-vid-item-title {
-  color: var(--v-muted);
-  font-weight: 400
-}
-
-/* videos inside the open session: compact, so the next sessions stay in view */
-.cx-vid-sess-videos .cx-vid-item {
-  grid-template-columns: 14px 96px minmax(0, 1fr);
-  gap: 8px;
-  padding: 6px
-}
-
-.cx-vid-sess-videos .cx-vid-item-title {
-  font-size: 0.8rem
-}
-
-.cx-vid-sess-videos .cx-vid-speakers {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden
+  .cx-vid-seg button {
+    padding: 7px 12px
+  }
 }
