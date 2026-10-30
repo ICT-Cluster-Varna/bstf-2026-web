@@ -21,10 +21,10 @@
   var BARASH = P('Gilad Barash', 'Gilad Barash', 'gilad-barash');
   var VEENSTRA = P('Albert Veenstra', 'Albert Veenstra');
   var LEIJTEN = P('д-р Martijn Leijten', 'Dr. Martijn Leijten', 'martijn-leijten');
-  var OZBEK = P('Kerem Ozbek', 'Kerem Ozbek');
+  var OZBEK = P('Kerem Ozbek', 'Kerem Ozbek', 'kerem-ozbek');
   var S_IVANOV = P('проф. Станислав Иванов', 'Prof. Stanislav Ivanov', 'stanislav-ivanov');
   var H_DASKALOV = P('Християн Даскалов', 'Hristiyan Daskalov', 'hristian-daskalov');
-  var AYRAKOVA = P('Розалина Айракова', 'Rozalina Ayrakova');
+  var AYRAKOVA = P('Розалина Айракова', 'Rozalina Ayrakova', 'rozalina-ayrakova');
 
   window.CONNEXUS_VIDEOS = {
     2026: {
@@ -146,7 +146,7 @@
                   time: '15:00', bg: 'Бизнес обмен между България и Турция: трансфер на технологии, иновационни екосистеми и достъп до нови пазари', en: 'Business Exchange Between Bulgaria and Türkiye: Technology Transfer, Innovation Ecosystems and Access to New Markets',
                   playlist: 'PLKgsrqVdLFSw',
                   videos: [
-                    V('kiw7RMuv6Nk', '10:39', 'Трансфер на технологии от Технопарк Измир', 'Technology Transfer from Teknopark İzmir', [P('Miray Şanlı', 'Miray Şanlı')]),
+                    V('kiw7RMuv6Nk', '10:39', 'Трансфер на технологии от Технопарк Измир', 'Technology Transfer from Teknopark İzmir', [P('Miray Şanlı', 'Miray Şanlı', 'miray-sanli')]),
                     V('IQPodPQPCig', '7:51', 'Една врата, много врати: как мрежата от камари помага на турски компании да растат в България и отвъд', 'One Door, Many Doors: How the Chamber Network Helps Turkish Companies Grow in Bulgaria and Beyond', [VAN_HERTUM]),
                     V('yJvEYUfRTuE', '9:10', 'Дигиталният хъб като портал към AI фабрики', 'The Digital Hub as a Gateway to AI Factories', [P('Герасим Славов', 'Gerasim Slavov', 'gerasim-slavov')]),
                     V('rWA-6Mm3qPk', '10:19', 'ЕС – проектно финансиране', 'EU Project Financing', [STEFANOV]),
