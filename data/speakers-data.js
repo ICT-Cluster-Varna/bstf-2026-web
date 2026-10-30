@@ -590,6 +590,79 @@
       takeawaysEn: 'Every prompt, agent and workflow teaches AI how your business works, and today that know-how stays with the provider, not with you. Participants will get a simple five-layer lens for sovereign AI, real cases like the Navier–Stokes race, and a clear path to sovereign AI through the EuroHPC AI Factories and BRAIN++. They leave with five questions to ask before deploying any AI. Your workflow is the new training data. Decide who gets it.'
     },
     {
+      id: 'borislav-lazarov', track: 'ai',
+      decks: ['lazarov'],
+      img: '/images/speakers/borislav-lazarov.jpg?v=20261030', alt: 'Borislav Lazarov',
+      objectPosition: 'center top',
+      name: 'Борислав Лазаров',
+      nameEn: 'Borislav Lazarov',
+      role: 'Director Process Optimisation & Digitalisation @ EnergoPro',
+      roleBg: 'Директор „Оптимизация на процесите и дигитализация“ @ ЕнергоПро',
+      roleEn: 'Director Process Optimisation & Digitalisation @ EnergoPro',
+      topicBg: 'Интелигентно управление в енергията: от данните към решенията',
+      topicEn: 'Intelligent Energy Management - From Data to Decisions',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'petar-topalov', track: 'ai',
+      decks: ['topalov'],
+      img: '/images/speakers/petar-topalov.jpg?v=20261030', alt: 'Petar Topalov',
+      objectPosition: 'center top',
+      name: 'Петър Топалов',
+      nameEn: 'Petar Topalov',
+      role: 'CEO of a Bulgarian product company with over 100 employees',
+      roleBg: 'CEO на българска продуктова компания с над 100 служители',
+      roleEn: 'CEO of a Bulgarian product company with over 100 employees',
+      topicBg: 'AI трансформация на практика: какво научих след 10 месеца',
+      topicEn: 'AI Transformation in Practice: What I Learned After 10 Months',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'stanislav-fotev', track: 'ai',
+      decks: ['fotev'],
+      img: '/images/speakers/stanislav-fotev.jpg?v=20261030', alt: 'Stanislav Fotev',
+      objectPosition: 'center top',
+      name: 'Станислав Фотев',
+      nameEn: 'Stanislav Fotev',
+      role: '"Heidelberg Materials Devnya" AD',
+      roleBg: '„Хайделберг Матириълс Девня“ АД',
+      roleEn: '"Heidelberg Materials Devnya" AD',
+      topicBg: 'Вътрешно предприемачество',
+      topicEn: 'Intrapreneurship',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'mariyana-todorova', track: 'ai',
+      decks: ['todorova'],
+      img: '/images/speakers/mariyana-todorova.jpg?v=20261030', alt: 'Mariyana Todorova',
+      objectPosition: 'center top',
+      name: 'доц. д-р Марияна Тодорова',
+      nameEn: 'Assoc. Prof. Dr. Mariyana Todorova',
+      role: 'Futurist @ Bulgarian Academy of Sciences',
+      roleBg: 'Футуролог @ БАН',
+      roleEn: 'Futurist @ Bulgarian Academy of Sciences',
+      topicBg: 'Какво предстои?!',
+      topicEn: 'What’s Coming?!',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'radoy-pavlov', track: 'ai',
+      decks: ['pavlov'],
+      img: '/images/speakers/radoy-pavlov.jpg?v=20261030', alt: 'Radoy Pavlov',
+      objectPosition: 'center top',
+      name: 'Радой Павлов',
+      nameEn: 'Radoy Pavlov',
+      role: '',
+      topicBg: 'Опитът на Швейцария в дигитализацията',
+      topicEn: 'Switzerland’s Experience in Digitalization',
+      bioBg: [],
+      bioEn: []
+    },
+    {
       id: 'kalin-kostadinov', track: 'smart-city',
       decks: ['kostadinov'],
       img: '/images/speakers/kalin-kostadinov.jpg?v=20260916', alt: 'Kalin Kostadinov',
@@ -678,6 +751,36 @@
       bioEn: [
         'Mitsuru Horinouchi is First Secretary and Head of the Economic Department at the Embassy of Japan in Bulgaria. At CONNEXUS 2026 he presents Japan\'s approach based on the Society 5.0 concept.'
       ]
+    },
+    {
+      id: 'georgi-nikolov', track: 'automation',
+      decks: ['nikolov'],
+      img: '/images/speakers/georgi-nikolov.jpg?v=20261030', alt: 'Georgi Nikolov',
+      objectPosition: 'center top',
+      name: 'д-р Георги Николов',
+      nameEn: 'Dr. Georgi Nikolov',
+      role: 'Manager Product Application Engineering @ Renesas',
+      roleBg: 'Мениджър „Инженеринг на продуктови приложения“ @ Renesas',
+      roleEn: 'Manager Product Application Engineering @ Renesas',
+      topicBg: 'Примерът на Renesas',
+      topicEn: 'The Renesas Example',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'konstantin-dinev', track: 'automation',
+      decks: ['dinev'],
+      img: '/images/speakers/konstantin-dinev.jpg?v=20261030', alt: 'Konstantin Dinev',
+      objectPosition: 'center top',
+      name: 'Константин Динев',
+      nameEn: 'Konstantin Dinev',
+      role: 'Chief Technology Officer (CTO) @ Robotoplus',
+      roleBg: 'Технически директор (CTO) @ Robotoplus',
+      roleEn: 'Chief Technology Officer (CTO) @ Robotoplus',
+      topicBg: 'Примерът на Robotoplus',
+      topicEn: 'The Robotoplus Example',
+      bioBg: [],
+      bioEn: []
     },
 
     // ── Cybersecurity ──
@@ -1071,6 +1174,21 @@
       sessionDescBg: 'Природни продукти като червено вино, мед и екстракти от плодове на бъз са признати за богат източник на биоактивни съединения с антиоксидантни, имуномодулиращи и антивирусни свойства. Въз основа на тези характеристики е разработена нова биоактивна натурална комбинация в рамките на скорошна патентна заявка. Концепцията интегрира допълващи се фитохимични профили в единна формулация с повишен функционален потенциал. Експерименталната оценка показва висока in vitro антиоксидантна активност и повишено полифенолно съдържание, както и значителен антивирусен ефект срещу вирус на грип тип А, включващ както инхибиране на вирусната репликация, така и директна вирусоцидна активност. Освен това формулацията показва благоприятен профил на безопасност и стимулира жизнеспособността на имунните клетки, което подсказва имуномодулиращ потенциал. Резултатите показват синергични взаимодействия между компонентите и подчертават потенциала на тази натурална комбинация като мултифункционален подход за превенция и подпомагащо управление на състояния, свързани с оксидативен стрес и вирусни инфекции.',
       sessionDescEn: 'Natural products such as red wine, honey and dwarf elder fruits-derived extracts are recognized as rich sources of bioactive compounds with antioxidant, immunomodulatory and antiviral properties. Based on these characteristics, a novel bioactive natural combination was developed within the framework of a recent patent application. The concept integrates complementary phytochemical profiles into a single formulation with enhanced functional potential. Experimental evaluation demonstrates high in vitro antioxidant activity and elevated polyphenolic content, alongside significant antiviral effects against influenza A virus, including both inhibition of viral replication and direct virucidal activity. Additionally, the formulation exhibits a favorable safety profile and stimulates immune cell viability, suggesting immunomodulatory potential. The results indicate synergistic interactions between the components and highlight the potential of this natural combination as a multifunctional approach for prevention and supportive management of conditions associated with oxidative stress and viral infections.'
     },
+    {
+      id: 'petyo-boshnakov', track: 'biotech',
+      decks: ['boshnakov'],
+      img: '/images/speakers/petyo-boshnakov.jpg?v=20261030', alt: 'Petyo Boshnakov',
+      objectPosition: 'center top',
+      name: 'д-р Петьо Бошнаков',
+      nameEn: 'Dr. Petyo Boshnakov',
+      role: 'Chair @ Black Sea Vine and Wine Chamber',
+      roleBg: 'Председател @ Черноморска лозаро-винарска камара',
+      roleEn: 'Chair @ Black Sea Vine and Wine Chamber',
+      topicBg: 'Иновационни технологии във винопроизводството',
+      topicEn: 'Innovative Technologies in Winemaking',
+      bioBg: [],
+      bioEn: []
+    },
 
     // ── Marine ──
     {
@@ -1176,6 +1294,21 @@
       sessionDescEn: 'How modern technology and AI can make our ships safer, more efficient and our crewmembers happier.',
       takeawaysBg: 'Внедряването на нови технологии е ключът към това да изпреварим бързо променящите се предизвикателства.',
       takeawaysEn: 'Adopting new technology is key to staying ahead of the rapid challenges.'
+    },
+    {
+      id: 'boyan-mednikarov', track: 'marine',
+      decks: ['mednikarov'],
+      img: '/images/speakers/boyan-mednikarov.jpg?v=20261030', alt: 'Boyan Mednikarov',
+      objectPosition: 'center top',
+      name: 'проф. двн Боян Медникаров',
+      nameEn: 'Prof. Boyan Mednikarov, DSc',
+      role: 'Assistant Rector for Strategic Affairs @ "Nikola Vaptsarov" Naval Academy',
+      roleBg: 'Помощник-ректор по стратегическите въпроси @ ВВМУ „Никола Йонков Вапцаров“',
+      roleEn: 'Assistant Rector for Strategic Affairs @ "Nikola Vaptsarov" Naval Academy',
+      topicBg: 'Иновативното образование като основа за развитие на морските технологии',
+      topicEn: 'Innovative Education as a Foundation for the Development of Maritime Technologies',
+      bioBg: [],
+      bioEn: []
     },
 
     // ── Tourism ──
@@ -1645,6 +1778,49 @@
       sessionDescEn: 'The experience of a Bulgarian technology company investing in Türkiye.',
       takeawaysBg: 'Рядък пример за българска компания, която придобива по-голям играч в Турция.',
       takeawaysEn: 'A rare case of a Bulgarian company acquiring a bigger player in Türkiye.'
+    },
+    {
+      id: 'kerem-ozbek', track: 'regional-innovation-policy',
+      decks: ['bultisad', 'ozbek-cambro'],
+      img: '/images/speakers/kerem-ozbek.jpg?v=20261030', alt: 'Kerem Ozbek',
+      objectPosition: 'center top',
+      name: 'Kerem Ozbek',
+      role: 'Board Member @ BULTİŞAD | "Kambro BG" EOOD',
+      roleBg: 'Член на УС @ BULTİŞAD | „Камбро БГ“ ЕООД',
+      roleEn: 'Board Member @ BULTİŞAD | "Kambro BG" EOOD',
+      topicBg: 'Международна инвестиция в България – пример',
+      topicEn: 'International Investment in Bulgaria – An Example',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'miray-sanli', track: 'regional-innovation-policy',
+      decks: ['sanli'],
+      img: '/images/speakers/miray-sanli.jpg?v=20261030', alt: 'Miray Şanlı',
+      objectPosition: 'center top',
+      name: 'Miray Şanlı',
+      role: 'Director of Entrepreneurship, Innovation & Internationalisation @ Teknopark İzmir',
+      roleBg: 'Директор „Предприемачество, иновации и интернационализация“ @ Технопарк Измир',
+      roleEn: 'Director of Entrepreneurship, Innovation & Internationalisation @ Teknopark İzmir',
+      topicBg: 'Трансфер на технологии от Технопарк Измир',
+      topicEn: 'Technology Transfer from Teknopark İzmir',
+      bioBg: [],
+      bioEn: []
+    },
+    {
+      id: 'rozalina-ayrakova', track: 'regional-innovation-policy',
+      decks: ['ayrakova'],
+      img: '/images/speakers/rozalina-ayrakova.jpg?v=20261030', alt: 'Rozalina Ayrakova',
+      objectPosition: 'center top',
+      name: 'Розалина Айракова',
+      nameEn: 'Rozalina Ayrakova',
+      role: 'Deputy Country Director for Trade @ British Embassy Sofia',
+      roleBg: 'Заместник-директор по търговията за България @ Британско посолство – София',
+      roleEn: 'Deputy Country Director for Trade @ British Embassy Sofia',
+      topicBg: 'Тенденции и възможности за двустранната търговия между Обединеното кралство и България',
+      topicEn: 'Trends and Opportunities for Bilateral Trade Between the UK and Bulgaria',
+      bioBg: [],
+      bioEn: []
     },
 
     // ── AgriTech ──
