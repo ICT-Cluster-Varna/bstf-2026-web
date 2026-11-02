@@ -449,6 +449,116 @@
   cursor: default
 }
 
+/* our own subtitles over the picture, and the frame that goes full screen */
+.cx-vid-frame {
+  position: relative;
+  border-radius: 10px;
+  background: #000
+}
+
+.cx-vid-player {
+  container-type: inline-size
+}
+
+.cx-vid-screen {
+  position: absolute;
+  inset: 0
+}
+
+.cx-vid-sub {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(40px, 12%, 110px);
+  z-index: 4;
+  width: max-content;
+  max-width: 92%;
+  transform: translateX(-50%);
+  color: #fff;
+  font: 600 clamp(13px, 2.5cqw, 40px) / 1.4 var(--v-font);
+  text-align: center;
+  text-wrap: balance;
+  pointer-events: none
+}
+
+.cx-vid-sub[hidden] {
+  display: none
+}
+
+.cx-vid-sub span {
+  padding: 0.08em 0.5em;
+  border-radius: 0.3em;
+  background: rgba(0, 0, 0, 0.74);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  white-space: pre-line
+}
+
+.cx-vid-fs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600
+}
+
+.cx-vid-fs span,
+.cx-vid-pos {
+  white-space: nowrap
+}
+
+/* over the picture, full screen only: the language menu and the way out */
+.cx-vid-ov {
+  position: absolute;
+  right: 14px;
+  bottom: 12%;
+  z-index: 6;
+  display: none;
+  align-items: center;
+  gap: 8px
+}
+
+.cx-vid-frame.is-fs .cx-vid-ov {
+  display: flex
+}
+
+.cx-vid-ov .cx-vid-fs {
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(8, 12, 18, 0.72);
+  color: var(--white)
+}
+
+.cx-vid-ov .cx-vid-fs:hover {
+  border-color: var(--teal)
+}
+
+.cx-vid-ov .cx-vid-subs {
+  margin-right: 0
+}
+
+.cx-vid-ov .cx-vid-subs-btn {
+  height: 40px;
+  background: rgba(8, 12, 18, 0.72)
+}
+
+.cx-vid-frame:fullscreen,
+.cx-vid-frame:-webkit-full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 0
+}
+
+.cx-vid-frame.is-fs .cx-vid-player {
+  width: min(100vw, calc(100vh * 16 / 9));
+  border-radius: 0
+}
+
 /* subtitle menu: a pill button that opens a popover above it */
 .cx-vid-subs {
   position: relative;
@@ -876,6 +986,14 @@ a.cx-vid-person:hover {
 }
 
 @media (max-width: 560px) {
+  .cx-vid-nav > .cx-vid-fs {
+    padding: 0 11px
+  }
+
+  .cx-vid-nav > .cx-vid-fs span {
+    display: none
+  }
+
   .cx-vid-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px 12px

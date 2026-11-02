@@ -19,7 +19,9 @@
       count: function (n) { return n + (n === 1 ? ' видео' : ' видеа'); },
       prev: 'Предишно', next: 'Следващо', play: 'Пусни',
       subs: 'Субтитри', subsOff: 'Без субтитри', subsOrig: 'Оригинален език', subsTo: 'Превод на',
-      subsNote: 'Автоматични субтитри и превод от YouTube',
+      subsNote: 'Текстът е разпознат автоматично и редактиран; преводите са машинни.',
+      subsLoading: 'Зарежда се превод…', subsMore: 'Други езици (превод от YouTube)', subsNoteYt: 'Автоматични субтитри и превод от YouTube',
+      fs: 'Цял екран', fsExit: 'Изход от цял екран',
       upNext: 'Следва', slides: 'Презентация (PDF)', profile: 'Профил на лектора',
       days: 'Дни на форума', halls: 'Зали', empty: 'Няма записи за тази година.'
     },
@@ -28,24 +30,57 @@
       count: function (n) { return n + (n === 1 ? ' video' : ' videos'); },
       prev: 'Previous', next: 'Next', play: 'Play',
       subs: 'Subtitles', subsOff: 'No subtitles', subsOrig: 'Original language', subsTo: 'Translate to',
-      subsNote: 'Automatic captions and translation by YouTube',
+      subsNote: 'Speech recognised automatically and edited; translations are machine-made.',
+      subsLoading: 'Loading translation…', subsMore: 'More languages (translated by YouTube)', subsNoteYt: 'Automatic captions and translation by YouTube',
+      fs: 'Full screen', fsExit: 'Exit full screen',
       upNext: 'Up next', slides: 'Slides (PDF)', profile: 'Speaker profile',
       days: 'Forum days', halls: 'Halls', empty: 'No recordings for this year.'
     }
   };
 
-  // Subtitles (user 2026-10-29): YouTube's auto-captions of the talk, machine-
-  // translated by YouTube into the chosen language. 'orig' = the talk's own
-  // language. The choice is remembered for every next video.
-  var SUB_LANGS = [
+  // Subtitles (user 2026-10-29; own files 2026-10-30; hybrid 2026-11-02).
+  // 1) Our own files (subtitles/{year}/{id}/*.vtt, drawn over the player): the
+  //    talk's own text + bg en de it tr. Nothing is asked from YouTube. Used
+  //    wherever a file exists.
+  // 2) Everything else - a video without files yet (a new upload works at once)
+  //    or a language we have no file for - is YouTube's own auto-caption,
+  //    machine-translated by YouTube (the old behaviour). That breaks with an
+  //    HTTP 429 on a network YouTube takes for automated, so it is asked for ONCE
+  //    per choice (two sets 2.5 s apart: YouTube re-applies the language it
+  //    remembers), never in a loop.
+  // 'orig' = the talk's own language; the choice is remembered for every next video.
+  var SUB_LANGS = [['bg', 'Български'], ['en', 'English'], ['de', 'Deutsch'], ['it', 'Italiano'], ['tr', 'Türkçe']];
+  var YT_LANGS = [
     ['bg', 'Български'], ['en', 'English'], ['de', 'Deutsch'], ['it', 'Italiano'], ['fr', 'Français'],
     ['es', 'Español'], ['tr', 'Türkçe'], ['ru', 'Русский'], ['uk', 'Українська'], ['el', 'Ελληνικά'],
     ['ro', 'Română'], ['nl', 'Nederlands'], ['pl', 'Polski'], ['pt', 'Português'], ['ar', 'العربية'],
     ['zh-Hans', '中文'], ['ja', '日本語']
   ];
   var SUB_KEY = 'cx-video-subtitles';
-  function subPref() { try { return localStorage.getItem(SUB_KEY) || 'off'; } catch (e) { return 'off'; } }
+  function subPref() {
+    var v = 'off';
+    try { v = localStorage.getItem(SUB_KEY) || 'off'; } catch (e) {}
+    return v === 'orig' || YT_LANGS.some(function (l) { return l[0] === v; }) ? v : 'off';
+  }
   function setSubPref(v) { try { localStorage.setItem(SUB_KEY, v); } catch (e) {} }
+
+  // WebVTT -> [{s, e, t}] (seconds; text with \n between lines)
+  function vttTime(x) {
+    var p = x.trim().split(':'), sec = parseFloat(p.pop().replace(',', '.'));
+    return (p.length > 1 ? +p[p.length - 2] * 3600 : 0) + (p.length ? +p[p.length - 1] * 60 : 0) + sec;
+  }
+  function parseVtt(txt) {
+    var out = [];
+    txt.replace(/\r/g, '').split(/\n\n+/).forEach(function (blk) {
+      var lines = blk.split('\n'), i = 0;
+      while (i < lines.length && lines[i].indexOf('-->') < 0) i++;
+      if (i >= lines.length) return;
+      var m = lines[i].split('-->');
+      var text = lines.slice(i + 1).join('\n').replace(/<[^>]+>/g, '').trim();
+      if (text) out.push({ s: vttTime(m[0]), e: vttTime(m[1].trim().split(/\s+/)[0]), t: text });
+    });
+    return out.sort(function (x, y) { return x.s - y.s; });
+  }
 
   // The YouTube IFrame API (needed to switch subtitles) is loaded on the first
   // play only, so nothing is fetched from YouTube before someone presses play.
@@ -126,6 +161,7 @@
     if (!edition) { root.appendChild(el('p', 'cx-vid-empty', t.empty)); return; }
     var days = edition.days;
     thumbV = edition.thumbs ? '?v=' + edition.thumbs : '';
+    var subV = edition.subs ? '?v=' + edition.subs : '';
 
     // Every uploaded video in program order (day -> hall -> session -> playlist
     // order). An entry without id is announced, not uploaded: not listed.
@@ -206,9 +242,22 @@
     var watch = el('section', 'cx-vid-watch');
     var stage = el('div', 'cx-vid-stage');
     var left = el('div', 'cx-vid-left');
-    var player = el('div', 'cx-vid-player');
+    // frame = what goes full screen (picture + our subtitles); box = the 16:9 picture;
+    // player = what the page fills with the poster / the YouTube iframe
+    var frame = el('div', 'cx-vid-frame');
+    var box = el('div', 'cx-vid-player');
+    var player = el('div', 'cx-vid-screen');
+    var subBox = el('div', 'cx-vid-sub');
+    subBox.hidden = true;
+    var ov = el('div', 'cx-vid-ov');
+    var ovSubs = el('div', 'cx-vid-ov-subs');
+    ov.appendChild(ovSubs);
+    box.appendChild(player);
+    box.appendChild(subBox);
+    box.appendChild(ov);
+    frame.appendChild(box);
     var info = el('div', 'cx-vid-info');
-    left.appendChild(player);
+    left.appendChild(frame);
     left.appendChild(info);
     var side = el('div', 'cx-vid-side');
     stage.appendChild(left);
@@ -236,33 +285,184 @@
     function filterHash() { return st.day === 'all' ? '' : days[st.day].key; }
 
     // ---- YouTube player ----
-    // the YT.Player on screen (null until ready); ytInst = the one being built,
-    // destroyed properly when the player is removed
-    var yt = null, ytInst = null;
+    // YouTube is only the picture and the sound: its own captions are switched
+    // off and our subtitles are drawn over it, driven by the player's clock.
+    // yt = the YT.Player on screen (null until ready); ytInst = the one being
+    // built, destroyed properly when the player is removed.
+    var yt = null, ytInst = null, curV = null;
     function dropPlayer() {
+      stopClock();
       if (ytInst) { try { ytInst.destroy(); } catch (e) {} }
       ytInst = yt = null;
+      showCue(null);
     }
-    // Show the remembered subtitle choice. The base track is the talk's own
-    // auto-captions; any other language is YouTube's translation of it.
-    function applySubs() {
-      var cur = yt;
-      if (!cur || !cur.setOption) return;
-      var want = subPref();
-      if (want === 'off') { try { cur.unloadModule('captions'); } catch (e) {} cur.cxDone = true; return; }
+    function noYtCaptions(p) {
+      ['captions', 'cc'].forEach(function (m) { try { p.unloadModule(m); } catch (e) {} });
+    }
+    // YouTube's own captions / translation: only for a choice we have no file for
+    function ytWant() {
+      var p = effPref(curV);
+      return p === 'off' || oursFile(curV, p) ? 'off' : p;
+    }
+    // One choice = ONE request to YouTube (measured 2026-11-02: every setOption of the
+    // captions module is exactly one timedtext request, nothing else sends any; the same
+    // choice twice is two requests, going back to a language is a new request again).
+    // So: the same choice is never sent twice, a run of quick clicks sends only the last
+    // one, and nothing is ever retried or sent in a loop.
+    function applyYt() {
+      var cur = yt, v = curV, want = ytWant();
+      if (!cur || !cur.setOption || !v) return;
+      cur.cxDone = true;
+      clearTimeout(cur.cxT);
+      if (want === 'off') {
+        // a loaded module is switched off with an empty track (no request); unloading it would make
+        // YouTube re-apply the last language on the next load = one more request
+        if (cur.cxMod) { try { cur.setOption('captions', 'track', {}); } catch (e) {} } else noYtCaptions(cur);
+        cur.cxKey = ''; cur.cxGo = null;
+        return;
+      }
+      var key = v.id + '|' + want;
+      if (cur.cxKey === key) return;
+      // A checked video: its talk's language is known, ONE track is asked for. A new video (language not
+      // checked yet, v.track empty) gets every language asked for: a track that does not exist is ignored
+      // for free (measured: 0 requests), only the real one is fetched - so a new upload in any language
+      // works without anyone listing its language (measured: 1 translation request + 2 plain ones).
+      var codes = v.track ? [v.track] : YT_LANGS.map(function (l) { return l[0]; });
+      var tracks = codes.map(function (c) {
+        var one = { languageCode: c };
+        if (want !== 'orig' && want !== c) one.translationLanguage = { languageCode: want, languageName: langName(want) };
+        return one;
+      });
+      // YouTube needs 1-2 s to translate: say so instead of showing nothing
+      showCue(t.subsLoading);
+      setTimeout(function () { if (!cues && subBox.textContent === t.subsLoading) showCue(null); }, 3500);
+      function set() {
+        if (cur !== yt || curV !== v) return;
+        cur.cxKey = key;
+        cur.cxLast = Date.now();
+        tracks.forEach(function (one) { try { cur.setOption('captions', 'track', one); } catch (e) {} });
+      }
+      // at most one request per 1.2 s: the first click goes at once, a quick run keeps the last
+      function send() { cur.cxT = setTimeout(set, Math.max(0, (cur.cxLast || 0) + 1200 - Date.now())); }
+      if (cur.cxMod) { send(); return; }       // module already loaded: no waiting
+      cur.cxMod = true;
       try { cur.loadModule('captions'); } catch (e) {}
-      var tries = 0;
-      (function wait() {
-        if (cur !== yt) return;
-        var tr = {};
-        try { tr = cur.getOption('captions', 'track') || {}; } catch (e) {}
-        if (!tr.languageCode) { if (++tries < 24) setTimeout(wait, 250); return; }
-        var track = { languageCode: tr.languageCode };
-        if (want !== 'orig' && want !== tr.languageCode) track.translationLanguage = { languageCode: want };
-        cur.setOption('captions', 'track', track);
-        cur.cxDone = true;
-      })();
+      // go as soon as the module reports in (onApiChange, ~25 ms), at the latest after 900 ms
+      cur.cxGo = function () { cur.cxGo = null; send(); };
+      setTimeout(function () { if (cur.cxGo) cur.cxGo(); }, 900);
     }
+    // a new choice: ours is drawn by us, YouTube's is asked for once
+    function applySubs() {
+      loadCues();
+      if (yt) { yt.cxDone = false; applyYt(); }
+    }
+
+    // ---- our subtitles ----
+    var cues = null, cueGen = 0, shown = -1, raf = 0, rdT = 0, rdAt = 0, vttCache = {};
+    function effPref(v) { return v ? subPref() : 'off'; }
+    // the file of our own subtitles for this choice, or null (then YouTube's own is used)
+    function oursFile(v, p) {
+      if (!v || !v.subs || p === 'off') return null;
+      if (p === 'orig' || p === v.cc) return 'orig';
+      return v.subs.indexOf(p) > -1 ? p : null;
+    }
+    function showCue(text) {
+      subBox.textContent = '';
+      subBox.hidden = !text;
+      if (text) subBox.appendChild(el('span', null, text));
+    }
+    function cuesOf(v, file) {
+      var url = 'subtitles/' + year + '/' + v.id + '/' + file + '.vtt' + subV;
+      return vttCache[url] || (vttCache[url] = fetch(url).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.text();
+      }).then(parseVtt).catch(function (e) { delete vttCache[url]; throw e; }));
+    }
+    // all of a video's files, in the background once its player runs (a few KB each)
+    function prefetchCues() {
+      var v = curV;
+      if (v && v.subs) ['orig'].concat(v.subs).forEach(function (f) { cuesOf(v, f).catch(function () {}); });
+    }
+    function loadCues() {
+      var v = curV, p = effPref(v), gen = ++cueGen;
+      cues = null; shown = -1; showCue(null);
+      var file = oursFile(v, p);
+      if (!file) return;
+      var got = cuesOf(v, file);
+      got.then(function (c) {
+        if (gen !== cueGen) return;
+        subBox.lang = file === 'orig' ? v.cc : file;
+        cues = c;
+      }).catch(function () {});
+    }
+    // The player's clock: getCurrentTime() is delivered in steps, so between two
+    // readings it is carried forward on our own clock (while playing) and
+    // re-synced at every new reading; a seek is picked up at once.
+    function clock() {
+      var p = yt;
+      if (!p || !p.getCurrentTime) return -1;
+      var t = p.getCurrentTime(), now = performance.now(), st = -2, rate = 1;
+      try { st = p.getPlayerState(); rate = p.getPlaybackRate() || 1; } catch (e) {}
+      if (t !== rdT) { rdT = t; rdAt = now; }
+      return st === 1 ? t + Math.min(now - rdAt, 350) / 1000 * rate : t;
+    }
+    function cueAt(t) {   // last cue starting at or before t
+      var lo = 0, hi = cues.length - 1, r = -1;
+      while (lo <= hi) {
+        var m = (lo + hi) >> 1;
+        if (cues[m].s <= t) { r = m; lo = m + 1; } else hi = m - 1;
+      }
+      return r;
+    }
+    function tick() {
+      raf = requestAnimationFrame(tick);
+      if (!cues || !cues.length) return;
+      var t = clock(), i = t < 0 ? -1 : cueAt(t);
+      if (i >= 0 && t >= cues[i].e) i = -1;
+      if (i !== shown) { shown = i; showCue(i < 0 ? null : cues[i].t); }
+    }
+    function startClock() { if (!raf) raf = requestAnimationFrame(tick); }
+    function stopClock() { if (raf) cancelAnimationFrame(raf); raf = 0; shown = -1; }
+
+    // ---- full screen: our frame (picture + subtitles), not YouTube's button ----
+    var fsOn = frame.requestFullscreen || frame.webkitRequestFullscreen;
+    function inFs() { return (document.fullscreenElement || document.webkitFullscreenElement) === frame; }
+    function toggleFs() {
+      if (inFs()) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+      var r = fsOn.call(frame);
+      // phones: landscape while full screen (best effort)
+      if (r && r.then) r.then(function () {
+        try { screen.orientation.lock('landscape').catch(function () {}); } catch (e) {}
+      }, function () {});
+    }
+    function onFsChange() {
+      var on = inFs();
+      frame.classList.toggle('is-fs', on);
+      closeMenus();
+      root.querySelectorAll('.cx-vid-fs').forEach(function (b) {
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        b.title = on ? t.fsExit : t.fs;
+        var lb = b.querySelector('span');
+        if (lb) lb.textContent = on ? t.fsExit : t.fs;
+      });
+      if (!on) { try { screen.orientation.unlock(); } catch (e) {} }
+    }
+    document.addEventListener('fullscreenchange', onFsChange);
+    document.addEventListener('webkitfullscreenchange', onFsChange);
+    var FS_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    function fsButton(withLabel) {
+      var b = button('cx-vid-fs');
+      b.title = inFs() ? t.fsExit : t.fs;
+      b.setAttribute('aria-label', t.fs);
+      b.setAttribute('aria-pressed', inFs() ? 'true' : 'false');
+      b.innerHTML = FS_ICON;
+      if (withLabel) b.appendChild(el('span', null, inFs() ? t.fsExit : t.fs));
+      b.addEventListener('click', toggleFs);
+      return b;
+    }
+
+    if (fsOn) ov.appendChild(fsButton(false));
+
     function startPlayer(v) {
       // Another video reuses the player already on screen (loadVideoById):
       // a second player built on the same page never got its captions back.
@@ -274,8 +474,7 @@
       }
       dropPlayer();
       player.innerHTML = '';
-      // the API builds the iframe itself (attaching it to a hand-made iframe
-      // left the captions module unreachable)
+      // the API builds the iframe itself
       var holder = el('div');
       player.appendChild(holder);
       withApi(function () {
@@ -283,15 +482,22 @@
         var inst = ytInst = new window.YT.Player(holder, {
           host: 'https://www.youtube-nocookie.com',
           videoId: v.id,
-          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, hl: lang, cc_load_policy: subPref() === 'off' ? 0 : 1 },
+          // fs 0: no YouTube full-screen button (ours takes the frame, with our subtitles,
+          // full screen); YouTube's captions only where we have no file for the choice
+          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, hl: lang, cc_load_policy: ytWant() === 'off' ? 0 : 1, fs: 0, iv_load_policy: 3 },
           events: {
             onReady: function () {
               yt = inst;
               try { inst.getIframe().title = v[lang]; } catch (e) {}
-              applySubs();
+              startClock();
+              applyYt();
+              prefetchCues();
             },
-            onApiChange: function () { if (yt === inst && !inst.cxDone) applySubs(); },
-            onStateChange: function (e) { if (e.data === 1 && yt === inst && !inst.cxDone) applySubs(); }
+            onApiChange: function () { if (yt === inst && inst.cxGo) inst.cxGo(); },
+            onStateChange: function (e) {
+              // once per video: our choice (or YouTube's own "always show captions") is put right on play
+              if (e.data === 1 && yt === inst && !inst.cxDone) applyYt();
+            }
           }
         });
       });
@@ -348,11 +554,19 @@
     // ---- subtitle menu (styled popover instead of the native <select>) ----
     var CHECK = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     var CARET = '<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+    // what the menu shows as chosen for this video (the talk's own language counts as 'orig')
+    function menuVal(v) {
+      var p = effPref(v);
+      return p === v.cc ? 'orig' : p;
+    }
     function subLabel(val) {
       if (val === 'off') return t.subsOff;
       if (val === 'orig') return t.subsOrig;
-      var hit = SUB_LANGS.filter(function (l) { return l[0] === val; })[0];
-      return hit ? hit[1] : t.subsOff;
+      return langName(val) || t.subsOff;
+    }
+    function langName(code) {
+      var hit = YT_LANGS.filter(function (l) { return l[0] === code; })[0];
+      return hit ? hit[1] : '';
     }
     function closeMenus() {
       root.querySelectorAll('.cx-vid-subs.is-open').forEach(function (m) {
@@ -360,15 +574,24 @@
         m.querySelector('.cx-vid-subs-btn').setAttribute('aria-expanded', 'false');
       });
     }
-    function subsMenu() {
-      var wrap = el('div', 'cx-vid-subs' + (subPref() === 'off' ? '' : ' is-on'));
+    // two copies of the menu: under the player, and over it in full screen
+    var navSubs = null;
+    function renderMenus() {
+      [navSubs, ovSubs].forEach(function (h) {
+        if (!h) return;
+        h.innerHTML = '';
+        if (curV) h.appendChild(subsMenu(h));
+      });
+    }
+    function subsMenu(host) {
+      var v = curV, cur = menuVal(v);
+      var wrap = el('div', 'cx-vid-subs' + (cur === 'off' ? '' : ' is-on'));
       var trig = button('cx-vid-subs-btn');
       trig.setAttribute('aria-haspopup', 'menu');
       trig.setAttribute('aria-expanded', 'false');
       trig.title = t.subs;
       trig.appendChild(el('span', 'cx-vid-subs-cc', 'CC'));
-      var lbl = el('span', 'cx-vid-subs-label', subLabel(subPref()));
-      trig.appendChild(lbl);
+      trig.appendChild(el('span', 'cx-vid-subs-label', subLabel(cur)));
       var caret = el('span', 'cx-vid-subs-caret');
       caret.innerHTML = CARET;
       trig.appendChild(caret);
@@ -378,7 +601,7 @@
       menu.setAttribute('role', 'menu');
       menu.setAttribute('aria-label', t.subs);
       function option(val, text, code) {
-        var on = subPref() === val;
+        var on = cur === val;
         var o = button('cx-vid-subs-opt' + (on ? ' is-on' : ''));
         o.setAttribute('role', 'menuitemradio');
         o.setAttribute('aria-checked', on ? 'true' : 'false');
@@ -390,26 +613,30 @@
         o.addEventListener('click', function () {
           setSubPref(val);
           closeMenus();
-          lbl.textContent = subLabel(val);
-          wrap.classList.toggle('is-on', val !== 'off');
-          menu.querySelectorAll('.cx-vid-subs-opt').forEach(function (b) {
-            b.classList.toggle('is-on', b === o);
-            b.setAttribute('aria-checked', b === o ? 'true' : 'false');
-          });
-          trig.focus({ preventScroll: true });
-          if (yt) { yt.cxDone = false; applySubs(); }
+          renderMenus();
+          var b = host.querySelector('.cx-vid-subs-btn');
+          if (b) b.focus({ preventScroll: true });
+          applySubs();
         });
         return o;
       }
       var main = el('div', 'cx-vid-subs-main');
       main.appendChild(option('off', t.subsOff));
-      main.appendChild(option('orig', t.subsOrig));
+      main.appendChild(option('orig', t.subsOrig, v.cc ? v.cc.toUpperCase() : ''));
       menu.appendChild(main);
-      menu.appendChild(el('p', 'cx-vid-subs-head', t.subsTo));
-      var langs = el('div', 'cx-vid-subs-langs');
-      SUB_LANGS.forEach(function (l) { langs.appendChild(option(l[0], l[1], l[0].split('-')[0].toUpperCase())); });
-      menu.appendChild(langs);
-      menu.appendChild(el('p', 'cx-vid-subs-note', t.subsNote));
+      function group(head, items) {
+        if (!items.length) return;
+        menu.appendChild(el('p', 'cx-vid-subs-head', head));
+        var g = el('div', 'cx-vid-subs-langs');
+        items.forEach(function (l) { g.appendChild(option(l[0], l[1], l[0].split('-')[0].toUpperCase())); });
+        menu.appendChild(g);
+      }
+      // our files first; every other language is YouTube's translation
+      var own = SUB_LANGS.filter(function (l) { return l[0] !== v.cc && v.subs && v.subs.indexOf(l[0]) > -1; });
+      var more = YT_LANGS.filter(function (l) { return l[0] !== v.cc && !own.some(function (o) { return o[0] === l[0]; }); });
+      group(t.subsTo, own);
+      group(own.length ? t.subsMore : t.subsTo, more);
+      menu.appendChild(el('p', 'cx-vid-subs-note', v.subs ? t.subsNote : t.subsNoteYt));
       wrap.appendChild(menu);
 
       trig.addEventListener('click', function (e) {
@@ -419,8 +646,8 @@
         if (open) {
           wrap.classList.add('is-open');
           trig.setAttribute('aria-expanded', 'true');
-          var cur = menu.querySelector('.cx-vid-subs-opt.is-on') || menu.querySelector('.cx-vid-subs-opt');
-          cur.focus({ preventScroll: true });
+          var c = menu.querySelector('.cx-vid-subs-opt.is-on') || menu.querySelector('.cx-vid-subs-opt');
+          c.focus({ preventScroll: true });
         }
       });
       // arrow keys move between the options
@@ -445,6 +672,7 @@
     function drawWatch(play) {
       var x = byId[st.cur];
       var v = x.v;
+      curV = v;
       var items = list();
       if (items.indexOf(x) < 0) { st.day = 'all'; st.hall = 'all'; st.q = ''; search.value = ''; items = list(); drawFilters(); }
       var pos = items.indexOf(x);
@@ -469,6 +697,7 @@
       if (on) side.scrollTop = Math.max(0, on.offsetTop - side.clientHeight / 2 + on.clientHeight / 2);
 
       if (play) { startPlayer(v); setHash('v-' + v.id); } else showPoster(v);
+      loadCues();
 
       info.innerHTML = '';
       var topRow = el('div', 'cx-vid-info-top');
@@ -477,7 +706,9 @@
       head.appendChild(el('span', 'cx-vid-meta', meta(x) + ' · ' + x.s[lang]));
       topRow.appendChild(head);
       var nav = el('div', 'cx-vid-nav');
-      nav.appendChild(subsMenu());
+      navSubs = el('div', 'cx-vid-subs-host');
+      nav.appendChild(navSubs);
+      if (fsOn) nav.appendChild(fsButton(true));
       var p = button('cx-vid-step', '←'), n = button('cx-vid-step', '→');
       p.setAttribute('aria-label', t.prev);
       n.setAttribute('aria-label', t.next);
@@ -490,6 +721,7 @@
       nav.appendChild(n);
       topRow.appendChild(nav);
       info.appendChild(topRow);
+      renderMenus();
 
       // what is useful while watching: who speaks, their slides, what comes next
       var extra = el('div', 'cx-vid-extra');

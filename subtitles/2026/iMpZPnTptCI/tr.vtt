@@ -1,0 +1,477 @@
+WEBVTT
+
+1
+00:00:01.360 --> 00:00:04.880
+Tamam. Pekâlâ. Birkaç soru alacağız.
+
+2
+00:00:04.880 --> 00:00:07.909
+Soruları gönderdiğiniz için teşekkürler.
+
+3
+00:00:08.400 --> 00:00:12.069
+İlk sorum Martin'e olacak.
+
+4
+00:00:12.559 --> 00:00:16.149
+Birkaç inovasyon dalgasının içinde yer aldınız.
+
+5
+00:00:16.800 --> 00:00:19.669
+Bu döngülerde gördüğünüz kalıplara baktığınızda,
+
+6
+00:00:20.080 --> 00:00:24.080
+önümüzdeki 5 yılda neyi olduğundan fazla değerlendirdiğimizi
+
+7
+00:00:24.080 --> 00:00:29.760
+ya da göz ardı ettiğimizi düşünüyorsunuz? Bence özellikle yapay zekâda –
+
+8
+00:00:29.760 --> 00:00:33.760
+insanların işini almaya gerçekten başlayabilen ilk teknoloji –
+
+9
+00:00:33.760 --> 00:00:38.399
+önce tamamen göz ardı edildi ve hafife alındı, şimdi ise
+
+10
+00:00:38.399 --> 00:00:42.320
+görüyorum ki
+
+11
+00:00:42.320 --> 00:00:46.000
+onu abartanlar bile var. Çünkü harika bir
+
+12
+00:00:46.000 --> 00:00:50.960
+teknoloji, insanların bilgisayarda yaptığı işin yaklaşık yüzde 95'ini
+
+13
+00:00:50.960 --> 00:00:56.079
+yapabiliyor, ama son yüzde 5, insanların
+
+14
+00:00:56.079 --> 00:01:01.359
+ihtiyaç duyduğu şey. Şu an onu abarttıklarını düşünüyorum.
+
+15
+00:01:01.359 --> 00:01:04.720
+Yapılan bazı görevlerde ona fazla güveniyorlar
+
+16
+00:01:04.720 --> 00:01:09.119
+ve önümüzdeki 5 yılda bunun
+
+17
+00:01:09.119 --> 00:01:12.240
+robotlarda da yaşanacağını düşünüyorum. Şöyle diyenler çıkacak:
+
+18
+00:01:12.240 --> 00:01:16.000
+robotlar işinizi tamamen alacak, imalatta
+
+19
+00:01:16.000 --> 00:01:20.080
+çalışmaya başlayacak. Zor bir gecenin ardından Varna'da
+
+20
+00:01:20.080 --> 00:01:25.840
+bir stajyer tutsanız bile ve bir robot varsa,
+
+21
+00:01:25.840 --> 00:01:29.360
+insanlar onun işi sizin yerinize
+
+22
+00:01:29.360 --> 00:01:32.640
+yapmakta daha iyi olacağını söyler, ama belki öyle olmaz. Göreceğiz.
+
+23
+00:01:32.640 --> 00:01:35.759
+Bence abartılacak bir sonraki şey
+
+24
+00:01:35.759 --> 00:01:38.470
+bu olacak.
+
+25
+00:01:39.600 --> 00:01:44.000
+Göz ardı edilmemesi gereken şey ise bilgi
+
+26
+00:01:44.000 --> 00:01:47.200
+gizliliği, çünkü insanlar şu an onu tamamen görmezden geliyor.
+
+27
+00:01:47.200 --> 00:01:52.399
+Yaklaşık iki hafta önce devasa bir veri seti aldık,
+
+28
+00:01:52.399 --> 00:01:56.799
+insanların kredi skoru için model eğitimi amacıyla
+
+29
+00:01:56.799 --> 00:02:01.040
+test ediliyordu ve sohbet uygulamalarından bile
+
+30
+00:02:01.040 --> 00:02:03.280
+alınmış bilgiler gördük, çılgıncaydı.
+
+31
+00:02:03.280 --> 00:02:06.560
+Müşteriye bunun üzerinde çalışmayacağımızı söyledim, ama
+
+32
+00:02:06.560 --> 00:02:11.920
+evet, verilerinizi gizli tutun. Verilerinize erişim verirken
+
+33
+00:02:11.920 --> 00:02:14.630
+her zaman iki kez düşünün.
+
+34
+00:02:15.680 --> 00:02:18.480
+Evet, kişisel verilerimiz gerçekten
+
+35
+00:02:18.480 --> 00:02:20.869
+en önemli meta haline geliyor
+
+36
+00:02:21.280 --> 00:02:25.590
+iş dünyasında. Sıradaki soru Todor'a.
+
+37
+00:02:26.239 --> 00:02:31.040
+Platformu bu kadar hızlı kurarken
+
+38
+00:02:31.040 --> 00:02:34.959
+hızlı hareket etme baskısını, yönetişim ve veri kalitesi izleme gibi
+
+39
+00:02:34.959 --> 00:02:37.830
+güvenlik önlemleri ihtiyacıyla nasıl dengeliyorsunuz?
+
+40
+00:02:38.800 --> 00:02:41.350
+Güvenliği de nasıl ele alıyorsunuz?
+
+41
+00:02:42.959 --> 00:02:44.230
+Benim için kolay olan soru bu.
+
+42
+00:02:45.200 --> 00:02:51.280
+Bakın, nispeten küçük bir ekibiz, yaklaşık 60
+
+43
+00:02:51.280 --> 00:02:55.040
+kişiyiz, şimdi belki 70, yarısı fabrikada,
+
+44
+00:02:55.040 --> 00:02:57.590
+diğer yarısı iş tarafında.
+
+45
+00:02:59.040 --> 00:03:03.680
+Çoğu çalışanımız verilerimizin çoğuna erişebiliyor, çünkü
+
+46
+00:03:03.680 --> 00:03:07.590
+müşterilerle ve siparişlerle her gün çalışıyorlar.
+
+47
+00:03:08.319 --> 00:03:12.069
+Platformu kurarken de,
+
+48
+00:03:13.599 --> 00:03:18.879
+açıkçası bir şey planlarken doğrudan yapay zekâ ajanıyla konuşuyorum,
+
+49
+00:03:18.879 --> 00:03:22.480
+altyapının nasıl olması gerektiğini ve nelerin
+
+50
+00:03:22.480 --> 00:03:26.159
+korunması gerektiğini önersin diye. Birkaç temel kural var, örneğin:
+
+51
+00:03:26.159 --> 00:03:29.990
+veri tabanınızı AB'de kurun, bizimki Frankfurt'ta,
+
+52
+00:03:30.560 --> 00:03:34.159
+ve hassas verilere yalnızca birkaç kişinin
+
+53
+00:03:34.159 --> 00:03:36.879
+erişebildiğinden emin olun; iki faktörlü kimlik doğrulama ve tüm
+
+54
+00:03:36.879 --> 00:03:38.959
+güvenlik protokolleri devrede olsun.
+
+55
+00:03:38.959 --> 00:03:44.230
+Verinin gerçek doğruluğuna gelince,
+
+56
+00:03:44.720 --> 00:03:48.720
+aslında bunun için çok endişelenmiyorum,
+
+57
+00:03:48.720 --> 00:03:55.360
+çünkü veri odaklı bir şirket değiliz. Bizde
+
+58
+00:03:55.360 --> 00:03:59.680
+milyonlarca, milyonlarca veri birimi yok;
+
+59
+00:03:59.680 --> 00:04:02.239
+modeller kurup verilerimizle eğitmek için.
+
+60
+00:04:02.239 --> 00:04:05.439
+Bizim için önemli olan doğru müşterilerin
+
+61
+00:04:05.439 --> 00:04:08.799
+doğru botları alması ve geliri doğru kaydetmemiz;
+
+62
+00:04:08.799 --> 00:04:12.720
+bunlar çok çabuk belli oluyor.
+
+63
+00:04:12.720 --> 00:04:18.959
+Ama bununla birlikte, yeni uygulamalar geliştirirken
+
+64
+00:04:18.959 --> 00:04:21.759
+genellikle veri tabanımızın sınırlarına çarpıyoruz.
+
+65
+00:04:21.759 --> 00:04:25.440
+Bir örnek vereyim. Başlangıçta
+
+66
+00:04:25.440 --> 00:04:30.080
+satış aracını kurarken yapay zekâdan kohort analizi
+
+67
+00:04:30.080 --> 00:04:33.520
+yapabilmeyi açıkça istememiştim, sonra bu raporu
+
+68
+00:04:33.520 --> 00:04:36.560
+oluşturmak istediğimde bana "bu arada, bunu yapamayız,
+
+69
+00:04:36.560 --> 00:04:39.440
+çünkü verileri doğru şekilde kaydetmediniz" diyor. O zaman bu bir
+
+70
+00:04:39.440 --> 00:04:42.960
+süreç: şimdi ne yapabiliriz ki, mümkünse
+
+71
+00:04:42.960 --> 00:04:47.120
+veri boşluklarını geriye dönük dolduralım, olmuyorsa bundan
+
+72
+00:04:47.120 --> 00:04:51.040
+sonrası için doğru verileri, zaman damgalarını
+
+73
+00:04:51.040 --> 00:04:53.040
+ve kohort analizi için gereken her şeyi kaydetmeye başlayalım.
+
+74
+00:04:53.040 --> 00:04:54.479
+Yani bu bir süreç.
+
+75
+00:04:54.479 --> 00:04:57.759
+Temelleri doğru kurun: veri erişimi ve
+
+76
+00:04:57.759 --> 00:04:59.430
+veri tabanının konumu.
+
+77
+00:04:59.840 --> 00:05:04.720
+Bu verilere erişimi olan kişilerin
+
+78
+00:05:04.720 --> 00:05:10.240
+cihazlarını 2FA ile koruduğundan emin olun. Süreç içinde
+
+79
+00:05:10.240 --> 00:05:12.390
+eksik bir şey fark ederseniz, onun üzerine inşa edin.
+
+80
+00:05:13.520 --> 00:05:16.639
+Tamam. Görünüşe göre soru süremiz doldu.
+
+81
+00:05:16.639 --> 00:05:18.240
+Panelistlere teşekkürler.
+
+82
+00:05:18.240 --> 00:05:21.440
+Sorularınıza sıra gelmediyse, panelistleri dışarıda
+
+83
+00:05:21.440 --> 00:05:23.840
+yakalayıp sormaktan çekinmeyin.
+
+84
+00:05:23.840 --> 00:05:27.029
+Şimdi de
+
+85
+00:05:28.240 --> 00:05:34.630
+bu oturumu özetleyeceğiz. Konuştuğumuz her şeyin ardından
+
+86
+00:05:35.759 --> 00:05:39.759
+tavsiye şu: Bir şey kurmadan önce şu
+
+87
+00:05:39.759 --> 00:05:43.520
+10 soruyu yanıtlamaya çalışın. Yanıtlayamıyorsanız ve
+
+88
+00:05:43.520 --> 00:05:47.120
+yapay zekâyı gerçekten uygulamak istiyorsanız, başlayacağınız yer burası.
+
+89
+00:05:47.120 --> 00:05:51.520
+Bir: Bu sorunu çözmeye değer mi ve
+
+90
+00:05:51.520 --> 00:05:54.800
+yönetim bunu umursuyor mu? Yönetimin desteğini almak için
+
+91
+00:05:54.800 --> 00:05:58.880
+çok önemli. Sonuç ölçülebilir mi ve başarıyı
+
+92
+00:05:58.880 --> 00:06:02.160
+tek cümleyle tanımlayabilir miyim? Veriye erişilebilir mi?
+
+93
+00:06:02.160 --> 00:06:06.000
+Güvenilir mi? Sorunu çözmek için kullanabileceğiniz
+
+94
+00:06:06.000 --> 00:06:10.319
+veriye sahip misiniz? Yapay zekâ doğru araç mı, yoksa bir
+
+95
+00:06:10.319 --> 00:06:12.550
+kural ya da gösterge paneli işi görür mü?
+
+96
+00:06:12.960 --> 00:06:15.990
+İşleri karmaşıklaştırmayın, en basit çözüme gidin.
+
+97
+00:06:16.880 --> 00:06:19.670
+Bunu savunacak, adı belli bir sponsorum var mı?
+
+98
+00:06:20.080 --> 00:06:23.360
+Her zaman başvurabileceğiniz, bunu kurumda
+
+99
+00:06:23.360 --> 00:06:25.510
+duyuracak ve benimsenmesine yardım edecek biri.
+
+100
+00:06:26.080 --> 00:06:30.880
+Çıktı, kullanıcıların gerçekten çalıştığı yere gömülü mü? Yanında yıldız var,
+
+101
+00:06:30.880 --> 00:06:33.600
+çünkü belki iş akışının değişmesi gerekiyor.
+
+102
+00:06:33.600 --> 00:06:36.240
+Belki bugünkü çalışma biçimleri en iyisi değildir.
+
+103
+00:06:36.240 --> 00:06:40.070
+Bu, kurumda bir adım geri çekilip
+
+104
+00:06:40.479 --> 00:06:44.790
+yapay zekâyı içine katacak daha iyi bir iş akışı bulma fırsatı.
+
+105
+00:06:45.360 --> 00:06:48.800
+Başlangıç referansım nedir ve iyileşmeyi nasıl
+
+106
+00:06:48.800 --> 00:06:51.670
+ölçeceğim, diye sormak önemli. Etki yaratacağını nereden bileceğim?
+
+107
+00:06:52.400 --> 00:06:57.029
+Canlıya geçişten sonra bu değeri takip etmekten kim sorumlu olacak?
+
+108
+00:06:58.560 --> 00:07:02.720
+Şunu sorun: Sonucu teknik olmayan bir yöneticiye
+
+109
+00:07:02.720 --> 00:07:06.880
+üç cümleyle anlatabilir miyim? Hazır bir asansör konuşması severim; böylece
+
+110
+00:07:06.880 --> 00:07:10.630
+özellikle yönetimden birine anlatmak için
+
+111
+00:07:11.039 --> 00:07:14.479
+bir dakikam varsa projenin amacının ve etkisinin
+
+112
+00:07:14.479 --> 00:07:18.319
+ne olduğunu anlatabilirim. Peki demodan sonra bunu doğru
+
+113
+00:07:18.319 --> 00:07:20.319
+paydaşlarla paylaştım mı?
+
+114
+00:07:20.319 --> 00:07:23.759
+Değişim yönetimi, dediğimiz gibi, bunun çok önemli bir
+
+115
+00:07:23.759 --> 00:07:27.680
+parçası. İnsanlar bunu nasıl öğrenecek, kullanmaya nasıl ikna olacak
+
+116
+00:07:27.680 --> 00:07:31.919
+ve herkesin kullandığı, kurumda köklü bir değişim
+
+117
+00:07:31.919 --> 00:07:34.880
+nasıl yaratılacak? İşte dersler bunlar.
+
+118
+00:07:34.880 --> 00:07:36.400
+Panelistlere teşekkürler.
+
+119
+00:07:36.400 --> 00:07:38.869
+Herkese teşekkürler, şimdi geçiyoruz

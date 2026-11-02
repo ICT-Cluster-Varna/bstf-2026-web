@@ -1,0 +1,1221 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.950
+I'm Todor, co-founder at Meavo office phone booths.
+
+2
+00:00:05.320 --> 00:00:09.080
+First of all, I also want to extend my not congratulations,
+
+3
+00:00:09.080 --> 00:00:12.960
+but thank you to the organizers for having the stubbornness,
+
+4
+00:00:12.960 --> 00:00:17.320
+I guess, to believe that they can organize such an amazing event at
+
+5
+00:00:17.320 --> 00:00:20.520
+this scale in Varna. So, really well done, and hopefully it's the
+
+6
+00:00:20.520 --> 00:00:22.430
+first one for years to come in the future.
+
+7
+00:00:23.480 --> 00:00:29.880
+Now, very quickly, who we are.
+
+8
+00:00:29.880 --> 00:00:34.920
+Meavo, we manufacture office phone booths like these on the screen
+
+9
+00:00:34.920 --> 00:00:40.320
+and meeting pods. We make them in factories here across Bulgaria.
+
+10
+00:00:40.320 --> 00:00:43.640
+Our biggest one, our own facility, is in Aksakovo,
+
+11
+00:00:43.640 --> 00:00:48.360
+just next to Varna. And we sell and distribute them across all of
+
+12
+00:00:48.360 --> 00:00:51.880
+Europe and the US, and you can see them at companies like Google,
+
+13
+00:00:51.880 --> 00:00:54.960
+Amazon, Adidas, and these mentioned on the slide,
+
+14
+00:00:54.960 --> 00:00:56.310
+and thousands more companies.
+
+15
+00:00:58.920 --> 00:01:01.270
+So, I'm going to talk about how
+
+16
+00:01:02.480 --> 00:01:05.640
+a small team, basically I and a colleague of mine,
+
+17
+00:01:05.640 --> 00:01:11.880
+used AI tools to completely revamp and restructure the processes at
+
+18
+00:01:11.880 --> 00:01:17.200
+Meavo over the course of a few months, and built a platform of apps,
+
+19
+00:01:17.200 --> 00:01:20.920
+like an enterprise platform, that the whole team uses today to run
+
+20
+00:01:20.920 --> 00:01:26.040
+everything Meavo. Before I start, can I ask by show of hands how
+
+21
+00:01:26.040 --> 00:01:28.840
+many people in the audience are web, like, not web,
+
+22
+00:01:28.840 --> 00:01:30.630
+but like developers, coders?
+
+23
+00:01:32.120 --> 00:01:37.200
+Okay. So, this will probably get embarrassing for me,
+
+24
+00:01:37.200 --> 00:01:39.590
+and you will probably think that I am an idiot,
+
+25
+00:01:40.080 --> 00:01:43.880
+and I'm not following, you know, all the advice that
+
+26
+00:01:43.880 --> 00:01:46.280
+some of the people on stage are giving today.
+
+27
+00:01:46.280 --> 00:01:50.480
+We at our company, we don't have like an AI specialist,
+
+28
+00:01:50.480 --> 00:01:52.350
+we don't have engineers, we don't have developers.
+
+29
+00:01:52.760 --> 00:01:54.320
+I don't come from a technical background.
+
+30
+00:01:54.320 --> 00:01:57.240
+My background before Meavo was in digital marketing.
+
+31
+00:01:57.240 --> 00:02:01.640
+I spent 15 years in, you know, London and other West European
+
+32
+00:02:01.640 --> 00:02:04.760
+countries, to run marketing and to optimize for revenue.
+
+33
+00:02:04.760 --> 00:02:06.560
+So, I'm not a technical person.
+
+34
+00:02:06.560 --> 00:02:10.280
+And 1 year ago, I wasn't using AI.
+
+35
+00:02:10.280 --> 00:02:13.760
+We actually set up a workshop for our team in Valencia.
+
+36
+00:02:13.760 --> 00:02:17.680
+We invited like an AI specialist to come and teach us,
+
+37
+00:02:17.680 --> 00:02:19.280
+show us, "Hey, what is this AI thing?
+
+38
+00:02:19.280 --> 00:02:21.550
+How to use AI? This is how you use AI in the company."
+
+39
+00:02:22.200 --> 00:02:24.360
+Well, guess what? It didn't really work.
+
+40
+00:02:24.360 --> 00:02:27.840
+Months later, we were still using AI to make my emails a little bit
+
+41
+00:02:27.840 --> 00:02:29.790
+better, as if I'm a native English speaker.
+
+42
+00:02:30.200 --> 00:02:32.760
+And, you know, pointless things like this.
+
+43
+00:02:32.760 --> 00:02:35.390
+But, over the past 6 months, this has changed.
+
+44
+00:02:36.320 --> 00:02:39.430
+And I believe that
+
+45
+00:02:42.040 --> 00:02:45.640
+the frontier models that we have today, you know,
+
+46
+00:02:45.640 --> 00:02:48.800
+the Anthropic models like Fable and Astra by GPT,
+
+47
+00:02:48.800 --> 00:02:50.720
+I have been using them for a few months now.
+
+48
+00:02:50.720 --> 00:02:55.000
+I believe that these models are smarter than me and probably smarter
+
+49
+00:02:55.000 --> 00:02:59.640
+than 99.9% of people. And if you are not using them day-to-day in your
+
+50
+00:02:59.640 --> 00:03:02.000
+businesses, you're probably missing out, because your
+
+51
+00:03:02.000 --> 00:03:03.800
+competition will use them.
+
+52
+00:03:03.800 --> 00:03:07.680
+But, that's, I think, enough pre-talk.
+
+53
+00:03:07.680 --> 00:03:08.760
+Let's get into what we did.
+
+54
+00:03:08.760 --> 00:03:15.080
+So, at Meavo, every booth goes on a journey. We do the whole
+
+55
+00:03:15.080 --> 00:03:18.800
+thing. We do the supply chain, material sourcing,
+
+56
+00:03:18.800 --> 00:03:21.800
+we source materials from, you know, Asia and Europe.
+
+57
+00:03:21.800 --> 00:03:25.080
+We source everything to Europe, to Bulgaria.
+
+58
+00:03:25.080 --> 00:03:27.080
+We build the booths here from scratch.
+
+59
+00:03:27.080 --> 00:03:29.480
+Then, we ship them internationally in containers,
+
+60
+00:03:29.480 --> 00:03:30.840
+on large freight trucks.
+
+61
+00:03:30.840 --> 00:03:33.640
+We do the last-mile deliveries in cities like London and New York.
+
+62
+00:03:33.640 --> 00:03:35.840
+We have assembly teams, hundreds of assembly teams,
+
+63
+00:03:35.840 --> 00:03:37.840
+you know, across Europe that help us.
+
+64
+00:03:37.840 --> 00:03:39.959
+We have a customer support team, a sales team,
+
+65
+00:03:39.959 --> 00:03:41.680
+a marketing team, the whole thing.
+
+66
+00:03:41.680 --> 00:03:45.270
+And up until literally a few months ago,
+
+67
+00:03:46.959 --> 00:03:50.959
+every single one of these processes or teams was using a separate tool.
+
+68
+00:03:50.959 --> 00:03:53.750
+We had several large Google spreadsheets.
+
+69
+00:03:54.880 --> 00:03:57.960
+What we thought at the time were, you know, smartly set up spreadsheets.
+
+70
+00:03:57.960 --> 00:03:59.880
+They were connected. We used formulas, you know,
+
+71
+00:03:59.880 --> 00:04:01.800
+they were feeding data into each other.
+
+72
+00:04:01.800 --> 00:04:04.590
+Everything that could be automated was automated.
+
+73
+00:04:05.160 --> 00:04:06.400
+But it's still a spreadsheet.
+
+74
+00:04:06.400 --> 00:04:09.520
+And when you get to, you know, thousands of orders and dozens of
+
+75
+00:04:09.520 --> 00:04:12.400
+people working in these spreadsheets and having to still copy data
+
+76
+00:04:12.400 --> 00:04:17.359
+here and there and do manual tasks, you make mistakes and it gets
+
+77
+00:04:17.359 --> 00:04:22.120
+annoying. Including also using external tools for invoicing,
+
+78
+00:04:22.120 --> 00:04:23.440
+for sales, for all these things.
+
+79
+00:04:23.440 --> 00:04:26.800
+You have this whole ecosystem of tools that didn't really talk to
+
+80
+00:04:26.800 --> 00:04:33.280
+each other. No. We didn't do that, actually.
+
+81
+00:04:33.280 --> 00:04:37.880
+There was no moment in time where I sat down and I thought,
+
+82
+00:04:37.880 --> 00:04:40.910
+"Hey, what if we build this whole thing with AI?"
+
+83
+00:04:41.360 --> 00:04:46.320
+No, I didn't know. I was ignorant and I didn't know that it was
+
+84
+00:04:46.320 --> 00:04:49.350
+possible. And frankly, probably 6 months ago,
+
+85
+00:04:49.840 --> 00:04:52.040
+it would not have been possible to do that.
+
+86
+00:04:52.040 --> 00:04:53.360
+We started small, though.
+
+87
+00:04:53.360 --> 00:04:55.560
+We started tackling individual issues.
+
+88
+00:04:55.560 --> 00:04:59.200
+You know, the first thing we did was, back in May,
+
+89
+00:04:59.200 --> 00:05:02.919
+we created a simple kind of invoice scanner.
+
+90
+00:05:02.919 --> 00:05:06.030
+You know, we still had paper invoices in Bulgaria,
+
+91
+00:05:06.440 --> 00:05:13.000
+and when our warehouse people were importing orders
+
+92
+00:05:13.000 --> 00:05:15.360
+and materials they received into our accounting system,
+
+93
+00:05:15.360 --> 00:05:16.390
+they were making mistakes.
+
+94
+00:05:17.040 --> 00:05:19.240
+So, we thought, "Hey, let's make, with AI,
+
+95
+00:05:19.240 --> 00:05:22.480
+an invoice scanner." This quickly turned into a whole material
+
+96
+00:05:22.480 --> 00:05:24.000
+resource planning system.
+
+97
+00:05:24.000 --> 00:05:28.600
+You know, I sat down with a colleague of mine, and we just started
+
+98
+00:05:28.600 --> 00:05:32.320
+asking the AI agent, "Hey, can you build me a tool to manage my
+
+99
+00:05:32.320 --> 00:05:35.550
+inventory?" And funny enough, it did.
+
+100
+00:05:36.040 --> 00:05:40.880
+And it built it in a much better way than I could ever imagine or
+
+101
+00:05:40.880 --> 00:05:43.950
+that I could ever even begin to understand myself.
+
+102
+00:05:44.480 --> 00:05:45.800
+And then the rest is history.
+
+103
+00:05:45.800 --> 00:05:48.790
+We just started coding. I just started spending hours every day,
+
+104
+00:05:49.200 --> 00:05:52.320
+hours every evening. It is a little bit... what's the word?
+
+105
+00:05:52.320 --> 00:05:55.680
+Addicting. You know, for the first time in years, I was not bored
+
+106
+00:05:55.680 --> 00:05:59.800
+with work, but I was excited to sit down and actually build with my
+
+107
+00:05:59.800 --> 00:06:04.560
+own hands. And the beauty of it is that we have tried
+
+108
+00:06:04.560 --> 00:06:06.670
+over the years to work with, you know, consultants
+
+109
+00:06:07.640 --> 00:06:11.960
+and software companies, for them to build us tools.
+
+110
+00:06:11.960 --> 00:06:15.360
+It never works because they don't really understand our process, or
+
+111
+00:06:15.360 --> 00:06:18.440
+maybe we did a bad job of explaining the processes to them.
+
+112
+00:06:18.440 --> 00:06:21.680
+And for the first time, I could build exactly what I wanted.
+
+113
+00:06:21.680 --> 00:06:24.040
+I didn't have to explain it to anybody else.
+
+114
+00:06:24.040 --> 00:06:27.320
+It was my tool. It was my process, and I was building it for the
+
+115
+00:06:27.320 --> 00:06:28.910
+company the best that I could.
+
+116
+00:06:30.360 --> 00:06:35.640
+Today we have over 15 apps that work in an ecosystem, and we manage
+
+117
+00:06:35.640 --> 00:06:38.800
+everything, again, from supply chain through manufacturing through
+
+118
+00:06:38.800 --> 00:06:41.320
+sales through logistics to assembly.
+
+119
+00:06:41.320 --> 00:06:43.760
+We have external portals for our partners.
+
+120
+00:06:43.760 --> 00:06:48.880
+Everything built with just two people who have no code experience or
+
+121
+00:06:48.880 --> 00:06:52.400
+knowledge. We haven't read a single line of source code
+
+122
+00:06:52.400 --> 00:06:55.680
+in the whole thing, and the whole company uses it today.
+
+123
+00:06:55.680 --> 00:06:59.350
+There are a few important milestones in this process.
+
+124
+00:07:00.320 --> 00:07:03.640
+One is in July, when we realized that these tools that we were
+
+125
+00:07:03.640 --> 00:07:07.360
+building were kind of segregated, so we needed to put them on a kind
+
+126
+00:07:07.360 --> 00:07:10.430
+of central database so they can share everything.
+
+127
+00:07:11.360 --> 00:07:15.919
+I was a little bit scared, but the AI wasn't, and it just did it.
+
+128
+00:07:15.919 --> 00:07:17.600
+I don't know how. It just did it.
+
+129
+00:07:17.600 --> 00:07:20.440
+And then in August, we realized, "Hey,
+
+130
+00:07:20.440 --> 00:07:23.120
+now 60 people are using these tools."
+
+131
+00:07:23.120 --> 00:07:26.400
+And stupidly, we keep releasing everything to main,
+
+132
+00:07:26.400 --> 00:07:27.400
+everything that we're building.
+
+133
+00:07:27.400 --> 00:07:30.760
+The agents push to, you know, the live websites, and they
+
+134
+00:07:30.760 --> 00:07:34.360
+occasionally break. So, I had to learn how to do staging
+
+135
+00:07:34.360 --> 00:07:37.000
+environments, how to do pull requests, and all this kind of developer
+
+136
+00:07:37.000 --> 00:07:41.640
+stuff that I didn't learn, but the AIs kind of did for us.
+
+137
+00:07:41.640 --> 00:07:43.550
+So today we have a proper setup.
+
+138
+00:07:44.200 --> 00:07:47.920
+And then came September, last month, when we actually started
+
+139
+00:07:47.920 --> 00:07:51.920
+implementing AI in the tools, because all our data and everything was
+
+140
+00:07:51.920 --> 00:07:55.080
+very nicely structured. It was native in the apps,
+
+141
+00:07:55.080 --> 00:07:59.320
+and we started implementing the AI models into our
+
+142
+00:07:59.320 --> 00:08:00.800
+workflow. What does this mean?
+
+143
+00:08:00.800 --> 00:08:04.560
+Every morning, when our salespeople wake up,
+
+144
+00:08:04.560 --> 00:08:08.760
+they open their screen, there are AI recommendations, which,
+
+145
+00:08:08.760 --> 00:08:10.960
+you know, scrape all the emails, everything that we do at the
+
+146
+00:08:10.960 --> 00:08:14.760
+company, and they give them recommendations on which deals
+
+147
+00:08:14.760 --> 00:08:17.750
+to act on, which deals are likely to convert,
+
+148
+00:08:18.200 --> 00:08:19.430
+have they missed something?
+
+149
+00:08:20.040 --> 00:08:23.800
+They give recommendations to us as a manufacturing team to know,
+
+150
+00:08:23.800 --> 00:08:26.720
+"Hey, in the pipeline we have this many quotes for these models of
+
+151
+00:08:26.720 --> 00:08:29.280
+booths, so in the factory you need to change the schedule,
+
+152
+00:08:29.280 --> 00:08:32.919
+move this batch here and that batch there, so that in the likelihood
+
+153
+00:08:32.919 --> 00:08:36.919
+of these deals converting, you can meet the expected and promised
+
+154
+00:08:36.919 --> 00:08:40.029
+ETAs." And this is now all in the app.
+
+155
+00:08:43.320 --> 00:08:46.389
+I have already talked to you about the one database.
+
+156
+00:08:47.160 --> 00:08:50.560
+Apparently, we have 191 tables in the database today,
+
+157
+00:08:50.560 --> 00:08:54.630
+and all these apps are connected to this one database.
+
+158
+00:08:55.120 --> 00:08:56.600
+We have apps for everything.
+
+159
+00:08:56.600 --> 00:08:57.790
+We have apps for
+
+160
+00:08:59.160 --> 00:09:01.510
+you know, from simple things like holiday trackers,
+
+161
+00:09:02.240 --> 00:09:05.550
+then for sales, for stock inventory, for resource planning,
+
+162
+00:09:06.120 --> 00:09:09.600
+for the factory, like the whole factory floor is managed by one
+
+163
+00:09:09.600 --> 00:09:13.240
+AI tool. And in the old days, we had a person who was,
+
+164
+00:09:13.240 --> 00:09:16.160
+you know, every day creating the schedule for,
+
+165
+00:09:16.160 --> 00:09:18.990
+you know, the 35 or 40 people in our factory.
+
+166
+00:09:19.520 --> 00:09:21.200
+You're going to build, you know, shelves today,
+
+167
+00:09:21.200 --> 00:09:23.520
+and you're going to do side panels, and you're going to do doors,
+
+168
+00:09:23.520 --> 00:09:24.880
+and oh, we forgot to do this.
+
+169
+00:09:24.880 --> 00:09:27.760
+And then when someone finishes with their job,
+
+170
+00:09:27.760 --> 00:09:30.160
+they have to go and ask someone what to do.
+
+171
+00:09:30.160 --> 00:09:34.950
+Today, we're already using and expanding a fully AI-managed
+
+172
+00:09:35.680 --> 00:09:38.070
+prioritization software.
+
+173
+00:09:38.920 --> 00:09:41.640
+Right now, we are installing, you know, touchscreen sensory
+
+174
+00:09:41.640 --> 00:09:45.760
+screens in every workspace in the factory, and then the AI
+
+175
+00:09:45.760 --> 00:09:47.960
+prioritizes the work for every single person.
+
+176
+00:09:47.960 --> 00:09:51.680
+So they never run out of the queue that they have
+
+177
+00:09:51.680 --> 00:09:56.640
+to tackle. It is a lot more efficient and a lot less prone to
+
+178
+00:09:56.640 --> 00:10:02.640
+errors. I'm conscious of time, so I'm going to skip through some
+
+179
+00:10:02.640 --> 00:10:05.750
+slides in the interest of getting this done quickly.
+
+180
+00:10:06.640 --> 00:10:10.310
+These are some of the tools we have.
+
+181
+00:10:12.560 --> 00:10:16.960
+One thing which also right now we do, and again I didn't believe it
+
+182
+00:10:16.960 --> 00:10:23.680
+was possible, but it became very easy for us, is our sales
+
+183
+00:10:23.680 --> 00:10:27.760
+app in this case talks to a lot of external tools as well.
+
+184
+00:10:27.760 --> 00:10:30.920
+It connects via APIs to external tools.
+
+185
+00:10:30.920 --> 00:10:37.560
+So right now we're probably spending about 50 to 60% less time on
+
+186
+00:10:37.560 --> 00:10:40.960
+checking payments, syncing payments, writing invoices,
+
+187
+00:10:40.960 --> 00:10:45.240
+chasing payments, checking how much collections are
+
+188
+00:10:45.240 --> 00:10:47.200
+overdue and things like that.
+
+189
+00:10:47.200 --> 00:10:51.960
+The moment we create a quote or an invoice in our sales app, it
+
+190
+00:10:51.960 --> 00:10:55.920
+immediately syncs with our UK accounting software,
+
+191
+00:10:55.920 --> 00:11:00.190
+with our HubSpot, with our US accounting software,
+
+192
+00:11:01.040 --> 00:11:05.040
+with our old spreadsheets, and this is really key.
+
+193
+00:11:05.040 --> 00:11:09.040
+Like, the migration wasn't scary for us, because as I was building
+
+194
+00:11:09.040 --> 00:11:13.839
+these tools with my colleague, we made sure that the tools also work
+
+195
+00:11:13.839 --> 00:11:15.360
+with our legacy systems.
+
+196
+00:11:15.360 --> 00:11:19.720
+Not only is everything native in the apps, but they also fill in
+
+197
+00:11:19.720 --> 00:11:22.960
+exactly the same details in our old spreadsheets that we have been
+
+198
+00:11:22.960 --> 00:11:27.080
+using for years. So there's no fear of what if it breaks,
+
+199
+00:11:27.080 --> 00:11:28.600
+we don't know what is going on.
+
+200
+00:11:28.600 --> 00:11:32.590
+Everything retrospectively fills with our old systems as well.
+
+201
+00:11:33.600 --> 00:11:37.080
+And then as I said, you know, it also syncs with our factory apps to
+
+202
+00:11:37.080 --> 00:11:38.910
+make sure that our planning is on point.
+
+203
+00:11:43.120 --> 00:11:47.560
+Cool. Let's just repeat the same thing, that now that we have
+
+204
+00:11:47.560 --> 00:11:52.680
+the data end-to-end, we can afford to do things like if during
+
+205
+00:11:52.680 --> 00:11:57.200
+assembly, the team in London or New York, for example,
+
+206
+00:11:57.200 --> 00:12:00.510
+they make a mistake and the glass breaks during the assembly,
+
+207
+00:12:00.960 --> 00:12:04.480
+in the old world, they have to text us on WhatsApp and say,
+
+208
+00:12:04.480 --> 00:12:07.280
+"Hey guys, we broke the door for this client."
+
+209
+00:12:07.280 --> 00:12:09.920
+And the team starts looking in our spreadsheets,
+
+210
+00:12:09.920 --> 00:12:12.320
+"Okay, this client, what booths do they have?
+
+211
+00:12:12.320 --> 00:12:14.440
+Which batch? When was it manufactured?"
+
+212
+00:12:14.440 --> 00:12:16.240
+And then have to talk to other people in the factory,
+
+213
+00:12:16.240 --> 00:12:18.200
+"Hey, this batch, what are the specs?
+
+214
+00:12:18.200 --> 00:12:20.800
+Let's make the door so we can send the replacement door."
+
+215
+00:12:20.800 --> 00:12:24.600
+Today, during the assembly, they can just press a button in their
+
+216
+00:12:24.600 --> 00:12:27.640
+portal, which is unique to every installation partner,
+
+217
+00:12:27.640 --> 00:12:30.240
+and they say, "Hey, we broke this glass."
+
+218
+00:12:30.240 --> 00:12:32.160
+The whole system knows exactly which model it is,
+
+219
+00:12:32.160 --> 00:12:34.600
+when it was manufactured, it goes back to the factory,
+
+220
+00:12:34.600 --> 00:12:38.839
+and it is already kind of planned to be built without having the
+
+221
+00:12:38.839 --> 00:12:40.630
+need to speak to any person.
+
+222
+00:12:43.680 --> 00:12:46.510
+This is the factory live floor board.
+
+223
+00:12:46.960 --> 00:12:49.600
+At the same time, today we also have something that we never had
+
+224
+00:12:49.600 --> 00:12:53.310
+before, because the factory is digitized and automated,
+
+225
+00:12:53.880 --> 00:12:58.320
+our whole team and select premium partners that we work with, like
+
+226
+00:12:58.320 --> 00:13:03.040
+resellers, have a real-time view of what goes on in the
+
+227
+00:13:03.040 --> 00:13:06.680
+factory. Before, they had to ask us, "Hey, when are our booths
+
+228
+00:13:06.680 --> 00:13:09.230
+ready? You promised they'd be ready in September.
+
+229
+00:13:09.680 --> 00:13:11.350
+Are you still on schedule?"
+
+230
+00:13:11.800 --> 00:13:14.800
+And the salesperson has to ask someone in the factory,
+
+231
+00:13:14.800 --> 00:13:16.839
+they have to go and speak to someone in the factory.
+
+232
+00:13:16.839 --> 00:13:19.760
+Today, the real-time view gives you all the answers immediately.
+
+233
+00:13:19.760 --> 00:13:22.400
+You can go into the platform and see where in the queue the booths
+
+234
+00:13:22.400 --> 00:13:24.070
+are, or whether they are still on schedule.
+
+235
+00:13:26.839 --> 00:13:28.670
+This is the partner portal I talked about.
+
+236
+00:13:29.320 --> 00:13:35.400
+We have one gateway, as we call it, where all the apps are,
+
+237
+00:13:35.400 --> 00:13:40.120
+where we have user management, where we have our HR
+
+238
+00:13:40.120 --> 00:13:43.200
+systems, where we give access to the apps.
+
+239
+00:13:43.200 --> 00:13:45.950
+It's all with a single Google sign-on.
+
+240
+00:13:46.400 --> 00:13:49.190
+All apps have two-factor authentication.
+
+241
+00:13:49.800 --> 00:13:52.760
+They're secure, they're stable, and they're managed from one single
+
+242
+00:13:52.760 --> 00:13:56.000
+place, and it's very easy to use for every single person in the
+
+243
+00:13:56.000 --> 00:13:59.550
+company. What the people before me spoke about, adoption
+
+244
+00:14:00.160 --> 00:14:03.600
+and communication, happens very easily and very quickly for
+
+245
+00:14:03.600 --> 00:14:05.800
+us. The whole team uses the apps, they love them,
+
+246
+00:14:05.800 --> 00:14:07.030
+and they're very, very happy.
+
+247
+00:14:11.320 --> 00:14:15.800
+In less than 6 months, actually, we have 12 apps in use.
+
+248
+00:14:15.800 --> 00:14:18.070
+We have three more that we're working on right now.
+
+249
+00:14:18.640 --> 00:14:21.950
+We have done over 600 releases, and
+
+250
+00:14:23.480 --> 00:14:27.920
+obviously, 240k lines of code, if the presentation
+
+251
+00:14:27.920 --> 00:14:31.640
+says so. What we gained: team efficiency,
+
+252
+00:14:31.640 --> 00:14:35.360
+we're quicker, we're able to do more work with fewer
+
+253
+00:14:35.360 --> 00:14:37.480
+people. The team is actually happy.
+
+254
+00:14:37.480 --> 00:14:40.640
+They don't spend 40% of their time manually entering data across
+
+255
+00:14:40.640 --> 00:14:42.910
+different platforms. They make fewer mistakes.
+
+256
+00:14:43.520 --> 00:14:47.040
+As I said before, we have democratized information not only to our
+
+257
+00:14:47.040 --> 00:14:49.190
+team, but to external partners as well.
+
+258
+00:14:49.600 --> 00:14:54.000
+And we're now able to look forward to our expansion and growth in
+
+259
+00:14:54.000 --> 00:14:56.960
+the US. If this year or next year we make
+
+260
+00:14:56.960 --> 00:15:00.240
+twice as many booths, we actually don't have to hire twice
+
+261
+00:15:00.240 --> 00:15:03.960
+as many people. We can probably hire 10% more people and still
+
+262
+00:15:03.960 --> 00:15:06.670
+manage to fulfill these orders and sell the booths.
+
+263
+00:15:10.720 --> 00:15:12.720
+You know this better than I do, Alex.
+
+264
+00:15:12.720 --> 00:15:13.960
+This is just a little bit of a process.
+
+265
+00:15:13.960 --> 00:15:17.360
+So, one thing that is important is that while we let AI write
+
+266
+00:15:17.360 --> 00:15:21.280
+everything for us, humans review it before we release
+
+267
+00:15:21.280 --> 00:15:23.590
+it to make sure that it works and it's all good.
+
+268
+00:15:24.120 --> 00:15:28.920
+I think one thing that I learned, and this is the last slide I
+
+269
+00:15:28.920 --> 00:15:33.230
+think. If at the beginning,
+
+270
+00:15:34.360 --> 00:15:36.910
+if I sat down a few months ago
+
+271
+00:15:37.880 --> 00:15:41.280
+and thought, "Hey, I want to use AI to build this one platform for the
+
+272
+00:15:41.280 --> 00:15:44.640
+whole company, from supply chain to
+
+273
+00:15:44.640 --> 00:15:46.750
+installation and after-sales service."
+
+274
+00:15:47.320 --> 00:15:51.600
+And if I had tried to scope this in a document and to tell the AI,
+
+275
+00:15:51.600 --> 00:15:52.910
+"Hey, write me everything,"
+
+276
+00:15:54.560 --> 00:15:56.760
+probably it would not have worked.
+
+277
+00:15:56.760 --> 00:15:59.320
+Maybe it would now, I don't know, because they're so smart now.
+
+278
+00:15:59.320 --> 00:16:04.840
+But what we did was tackle one task at a time, step by step,
+
+279
+00:16:04.840 --> 00:16:06.950
+and then it worked amazingly.
+
+280
+00:16:07.440 --> 00:16:10.160
+So if I had to start something from scratch again,
+
+281
+00:16:10.160 --> 00:16:12.240
+I would do it this way. I would just start with small problems to
+
+282
+00:16:12.240 --> 00:16:14.280
+tackle and then go from there.
+
+283
+00:16:14.280 --> 00:16:16.470
+Unify your data and then have humans
+
+284
+00:16:17.640 --> 00:16:22.190
+review. My recommendation to you is
+
+285
+00:16:23.480 --> 00:16:26.240
+go and play, if you haven't, with agents.
+
+286
+00:16:26.240 --> 00:16:31.720
+I am today using AI for absolutely freaking everything.
+
+287
+00:16:31.720 --> 00:16:32.620
+This whole presentation.
+
+288
+00:16:34.360 --> 00:16:36.510
+Do you know how much time it took me to create this presentation?
+
+289
+00:16:37.600 --> 00:16:42.320
+10 seconds. This was a one-shot presentation, one prompt.
+
+290
+00:16:42.320 --> 00:16:45.760
+I went to Claude. Claude has access to our repo with all the apps
+
+291
+00:16:45.760 --> 00:16:48.640
+that we developed, and I told Claude, "Hey Claude,
+
+292
+00:16:48.640 --> 00:16:50.350
+I'm speaking at the CONNEXUS conference.
+
+293
+00:16:51.800 --> 00:16:54.280
+Amal sent me that template with the branding.
+
+294
+00:16:54.280 --> 00:16:55.750
+Here's a template for the branding.
+
+295
+00:16:57.000 --> 00:17:00.080
+Create for me a presentation about our apps."
+
+296
+00:17:00.080 --> 00:17:01.320
+I did not change anything.
+
+297
+00:17:01.320 --> 00:17:04.079
+I probably changed two words last night in this presentation.
+
+298
+00:17:04.079 --> 00:17:06.110
+10 seconds for this presentation.
+
+299
+00:17:06.520 --> 00:17:11.160
+And I am using AI for things at home, to teach my child things,
+
+300
+00:17:11.160 --> 00:17:12.319
+to show them how it works.
+
+301
+00:17:12.319 --> 00:17:14.600
+It is incredibly smart, so if you're not using it yet,
+
+302
+00:17:14.600 --> 00:17:16.839
+go and give it a go. It will change your life.
+
+303
+00:17:16.839 --> 00:17:20.360
+Thank you so much. If you have any questions or want to see our actual
+
+304
+00:17:20.360 --> 00:17:22.560
+apps, I'm happy to show them to everybody.
+
+305
+00:17:22.560 --> 00:17:26.470
+If you don't believe how well they work, reach out to me and

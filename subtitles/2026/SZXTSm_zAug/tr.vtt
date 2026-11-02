@@ -1,0 +1,409 @@
+WEBVTT
+
+1
+00:00:51.120 --> 00:00:56.360
+Herkese merhaba. Bugün yöneticim adına konuşacağım,
+
+2
+00:00:56.360 --> 00:00:59.560
+çünkü o İngilizcede pek güçlü değil.
+
+3
+00:00:59.560 --> 00:01:04.400
+Bu yüzden onun fikirlerini koruyarak her şeyi size sunmaya çalışacağım.
+
+4
+00:01:04.400 --> 00:01:08.150
+Umarım sakıncası yoktur.
+
+5
+00:01:10.120 --> 00:01:13.350
+Şu durumu bir hayal edin.
+
+6
+00:01:13.880 --> 00:01:18.160
+Özelliklerinden memnun olduğunuz bir ürün geliştirdiniz,
+
+7
+00:01:18.160 --> 00:01:21.680
+üretimi kurdunuz ve onu
+
+8
+00:01:21.680 --> 00:01:26.920
+piyasaya sürdünüz. Sonra bir süre geçtikten sonra ambalaj
+
+9
+00:01:26.920 --> 00:01:33.160
+şişmeye başlıyor. Formülü kontrol ediyorsunuz, oranları değiştiriyorsunuz, tüm
+
+10
+00:01:33.160 --> 00:01:36.030
+testleri yapıyorsunuz ama yine de olmuyor.
+
+11
+00:01:36.960 --> 00:01:40.790
+Ve sonra yapay zekâya başvurmaya karar veriyorsunuz.
+
+12
+00:01:41.760 --> 00:01:45.470
+Yapay zekâ size iyi bir açıklama ve somut öneriler sunuyor.
+
+13
+00:01:46.400 --> 00:01:49.550
+Ve bu önemli bir soruyu gündeme getiriyor:
+
+14
+00:01:50.440 --> 00:01:55.520
+Yapay zekânın bize verdiği önerileri gerçekten ne kadar hızlı
+
+15
+00:01:55.520 --> 00:02:02.212
+uygulayabiliriz? Bu soru şirketimizde,
+
+16
+00:02:02.212 --> 00:02:06.042
+havada kuruyan modelleme kili üzerinde çalışırken ortaya çıktı.
+
+17
+00:02:07.812 --> 00:02:14.452
+Bu, bir çözüm arayışıydı;
+
+18
+00:02:14.452 --> 00:02:16.482
+18 ay sürdü.
+
+19
+00:02:17.052 --> 00:02:21.572
+12 ay boyunca ChatGPT ve Gemini'nin bize sunduğu
+
+20
+00:02:21.572 --> 00:02:23.402
+önerileri test ettik.
+
+21
+00:02:23.892 --> 00:02:29.172
+Ve ancak 12 ay çalıştıktan sonra bir kimyager getirdik,
+
+22
+00:02:29.172 --> 00:02:31.602
+gerçek çalışmayı ve testleri başlatmak için.
+
+23
+00:02:33.292 --> 00:02:36.122
+Bugün kilin kendisinden değil,
+
+24
+00:02:36.692 --> 00:02:41.162
+işimize kazandırdığı deneyimden bahsetmek istiyoruz.
+
+25
+00:02:43.732 --> 00:02:48.602
+Şirketimiz yaratıcı setlere,
+
+26
+00:02:49.212 --> 00:02:51.722
+kutu oyunlarına ve eğitici oyunlara odaklanıyor.
+
+27
+00:02:52.132 --> 00:02:58.532
+Ve formülasyonun başlangıcından başlayarak
+
+28
+00:02:58.532 --> 00:03:02.842
+üretime ve kalite kontrolüne kadar tüm süreci sunuyoruz.
+
+29
+00:03:11.412 --> 00:03:14.482
+Gelelim asıl soruna.
+
+30
+00:03:16.252 --> 00:03:18.082
+Başta her şey yolundaydı.
+
+31
+00:03:18.852 --> 00:03:23.092
+Kilin kıvamı doğruydu, rengini koruyordu,
+
+32
+00:03:23.092 --> 00:03:25.492
+şekil vermesi kolaydı.
+
+33
+00:03:25.492 --> 00:03:30.692
+Ama depolama sırasında bir sorun fark ettik:
+
+34
+00:03:30.692 --> 00:03:32.682
+ambalajın hacmi yavaş yavaş artıyordu.
+
+35
+00:03:33.892 --> 00:03:38.122
+Bu, dışarıdan hiçbir şişirme olmadan oluyordu.
+
+36
+00:03:38.892 --> 00:03:43.572
+Bizim için ciddi bir sorundu, çünkü müşteri sadece
+
+37
+00:03:43.572 --> 00:03:48.652
+ambalajı görüyor. Ambalaj hasarlıysa ya da iyi
+
+38
+00:03:48.652 --> 00:03:54.692
+görünmüyorsa, insanın ürün kalitesini sorgulaması
+
+39
+00:03:54.692 --> 00:03:58.372
+doğaldır. Bu yüzden nedenini aramaya başladık.
+
+40
+00:03:58.372 --> 00:04:01.442
+Oranları değiştirdik, yeni formülasyonlar denedik,
+
+41
+00:04:01.934 --> 00:04:05.004
+bileşenleri değiştirmeye karar verdik
+
+42
+00:04:06.254 --> 00:04:09.844
+ve farklı teknolojik süreçleri değiştirdik,
+
+43
+00:04:10.454 --> 00:04:12.964
+ama şişme devam etti.
+
+44
+00:04:18.014 --> 00:04:21.764
+İşte o zaman araştırmamızda yapay zekâyı kullanmaya karar verdik.
+
+45
+00:04:22.574 --> 00:04:27.934
+Sorunu yapay zekâya sunduk ve farklı
+
+46
+00:04:27.934 --> 00:04:33.214
+olasılıkları keşfetmeye başladık. Yapay zekâ çeşitli katkılar önerdi,
+
+47
+00:04:33.214 --> 00:04:34.164
+oldukça ikna ediciydiler,
+
+48
+00:04:35.294 --> 00:04:39.524
+ve değişiklik önerileri
+
+49
+00:04:41.974 --> 00:04:44.004
+inanabileceğiniz türdendi.
+
+50
+00:04:44.574 --> 00:04:50.724
+Ve tüm bunlarda asıl dersimizi işte orada aldık,
+
+51
+00:04:51.694 --> 00:04:53.484
+yani şunu:
+
+52
+00:05:01.214 --> 00:05:04.734
+Yapay zekâ size birkaç saniyede cevap verebilir,
+
+53
+00:05:04.734 --> 00:05:10.534
+ama test etmek için bir numune üretmeniz gerekir ve bu uzun bir
+
+54
+00:05:10.534 --> 00:05:15.254
+üretim hattı gerektirir. Yeni hammaddeler gerekir,
+
+55
+00:05:15.254 --> 00:05:21.774
+yeni kararlar gerekir ve hatta ekip için zaman
+
+56
+00:05:21.774 --> 00:05:28.454
+gerekir. Tüm bu deneyleri yapmak ve
+
+57
+00:05:28.454 --> 00:05:31.644
+gerçekten işe yaradığına dair kanıt almak için incelemek zorundaydık.
+
+58
+00:05:40.774 --> 00:05:46.254
+Nişasta, talk, mikrokalsit ve diğer maddeleri test ettik ve
+
+59
+00:05:46.254 --> 00:05:52.454
+kilin farklı sıcaklık koşullarında nasıl davrandığına baktık ve
+
+60
+00:05:52.454 --> 00:05:58.534
+her koşulu kontrol etmek için bir inkübatör kullandık ve
+
+61
+00:05:58.534 --> 00:06:01.524
+sorunun tam olarak ne zaman ortaya çıktığını anladık.
+
+62
+00:06:02.454 --> 00:06:08.765
+Böylece hipotezleri adım adım eledik
+
+63
+00:06:09.695 --> 00:06:16.055
+ve buna dair ikna edici bir açıklamamız olduğunda,
+
+64
+00:06:16.055 --> 00:06:20.495
+bunun kanıtla aynı şey olmadığını anladık, çünkü yapay
+
+65
+00:06:20.495 --> 00:06:24.095
+zekâ bize çok mantıklı bir cevap verebilir,
+
+66
+00:06:24.095 --> 00:06:28.455
+ama işe yarayıp yaramadığını ancak gerçek üretimde
+
+67
+00:06:28.455 --> 00:06:29.355
+görebilirsiniz.
+
+68
+00:06:38.695 --> 00:06:43.525
+Asıl fikir şu: Karar her zaman insanlarda kalır
+
+69
+00:06:44.175 --> 00:06:49.975
+ve sonucu kabul edebilir ya da reddedebilir, rapor hazırlayabiliriz,
+
+70
+00:06:49.975 --> 00:06:54.415
+sonra da yalnızca yönetim ekibi hangi yönlerin
+
+71
+00:06:54.415 --> 00:06:55.315
+test etmeye değer olduğuna karar verir.
+
+72
+00:07:05.295 --> 00:07:08.935
+Yapay zekâdan söz etmek gerçekten kolay, çok daha zor olan ise
+
+73
+00:07:08.935 --> 00:07:12.495
+bir buçuk yılını
+
+74
+00:07:12.495 --> 00:07:17.045
+aynı numuneyi açıp çalışmadığını görerek geçiren insanlardan söz etmek.
+
+75
+00:07:17.495 --> 00:07:22.855
+10 başarısız denemeden sonra
+
+76
+00:07:22.855 --> 00:07:28.125
+motivasyonu kaybetmek kolaydı ve bize yalnızca çalışanlarımızın emeği
+
+77
+00:07:28.975 --> 00:07:33.285
+yardımcı oldu: test ettiler, analiz ettiler,
+
+78
+00:07:33.695 --> 00:07:38.575
+ve bu sistematik çalışma bizi yavaş yavaş umut verici bir
+
+79
+00:07:38.575 --> 00:07:43.175
+hipoteze götürdü. Formülde bir bileşenin eksik olduğunu varsaydık;
+
+80
+00:07:43.175 --> 00:07:46.975
+ürünün ambalajlandıktan sonra
+
+81
+00:07:46.975 --> 00:07:48.765
+stabilitesini korumak için gereken bir bileşen.
+
+82
+00:07:49.575 --> 00:07:53.615
+Bu, araştırmamızın yönünü değiştirdi ve tam bu noktada
+
+83
+00:07:53.615 --> 00:07:56.165
+bir kimyager getirdik.
+
+84
+00:08:06.615 --> 00:08:10.777
+Orijinal formülü temel olarak koruduk ve gerekli
+
+85
+00:08:10.777 --> 00:08:14.337
+bileşeni ekleyip hazırlama sürecini ayarladık.
+
+86
+00:08:14.337 --> 00:08:19.017
+Özellikle boraksın
+
+87
+00:08:19.017 --> 00:08:23.817
+hazırlanışını gözden geçirdik. Tek başına gliserin işe yaramadı ve
+
+88
+00:08:23.817 --> 00:08:25.287
+yeterli çözünme sağlamadı.
+
+89
+00:08:25.977 --> 00:08:30.767
+Bu yüzden formülü ayarlamak için başka bir kimyasal bileşik ekledik.
+
+90
+00:08:39.497 --> 00:08:41.447
+Sonuç olarak
+
+91
+00:08:42.417 --> 00:08:45.847
+ambalaj stabil hale geldi ve kil özgün özelliklerini korudu.
+
+92
+00:08:46.457 --> 00:08:52.257
+Ve yapay zekânın gerçek bir iş
+
+93
+00:08:52.257 --> 00:08:53.157
+durumunda aslında nasıl çalıştığını öğrendik.
+
+94
+00:08:59.617 --> 00:09:04.497
+İşimizde yapay zekânın kesinlikle karar verici
+
+95
+00:09:04.497 --> 00:09:06.937
+olmadığını anladık.
+
+96
+00:09:06.937 --> 00:09:13.807
+Bize keşfedeceğimiz hipotezler sunan taraftır
+
+97
+00:09:14.937 --> 00:09:19.217
+ve böylece daha fazla olasılık görüp daha iyi sorular soruyoruz,
+
+98
+00:09:19.217 --> 00:09:22.207
+yeni, umut verici bir
+
+99
+00:09:23.577 --> 00:09:30.137
+hipoteze ulaşmak için. Yapay zekâ bize saniyeler içinde cevap verebilir,
+
+100
+00:09:30.137 --> 00:09:34.297
+ama kararları yalnızca insanlar verir ve yalnızca
+
+101
+00:09:34.297 --> 00:09:40.417
+onların deneyimi, fikirleri ve kararları bilgiyi
+
+102
+00:09:40.417 --> 00:09:42.127
+doğrulayabilir. Teşekkürler.

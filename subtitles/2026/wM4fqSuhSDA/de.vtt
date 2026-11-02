@@ -1,0 +1,697 @@
+WEBVTT
+
+1
+00:00:01.720 --> 00:00:05.760
+Vielen Dank für die Einladung und die Gelegenheit, zu diesem
+
+2
+00:00:05.760 --> 00:00:07.470
+wunderbaren Thema unserer Sicherheit zu sprechen.
+
+3
+00:00:08.560 --> 00:00:12.230
+Lassen Sie mich mit etwas Persönlichem beginnen.
+
+4
+00:00:13.120 --> 00:00:15.110
+Heute Morgen war ich ein wenig enttäuscht.
+
+5
+00:00:16.760 --> 00:00:22.600
+Ich bin früh aufgewacht. Ich sah das Wetter draußen, und die Sonne
+
+6
+00:00:22.600 --> 00:00:29.680
+schien, das Wetter in der Bucht war kristallklar
+
+7
+00:00:29.680 --> 00:00:35.480
+und ruhig, und ich war enttäuscht, nicht weil ich das deutsche
+
+8
+00:00:35.480 --> 00:00:41.120
+Wetter vermisst habe, an das ich mich in 23 Jahren dort gewöhnt habe,
+
+9
+00:00:41.120 --> 00:00:47.560
+sondern weil das schöne Wetter draußen meine Keynote
+
+10
+00:00:47.560 --> 00:00:54.030
+nicht gerade unterstützt. Deshalb möchte ich Sie bitten,
+
+11
+00:00:54.960 --> 00:00:58.120
+Ihre Fantasie zu bemühen, kurz die Augen zu schließen
+
+12
+00:00:58.120 --> 00:01:04.080
+und sich vorzustellen, Sie sind Kapitän eines Schiffs und überqueren
+
+13
+00:01:04.080 --> 00:01:06.430
+das Schwarze Meer. Und
+
+14
+00:01:07.400 --> 00:01:09.110
+es ist keine angenehme Reise.
+
+15
+00:01:09.960 --> 00:01:15.120
+Sie sind verantwortlich für die Crew, für das
+
+16
+00:01:15.120 --> 00:01:18.350
+Schiff, für die Mission.
+
+17
+00:01:19.080 --> 00:01:21.950
+Und öffnen Sie gern wieder die Augen, natürlich,
+
+18
+00:01:22.960 --> 00:01:25.190
+um keine der wunderbaren Folien zu verpassen.
+
+19
+00:01:25.680 --> 00:01:31.590
+Und plötzlich ändert sich das Wetter,
+
+20
+00:01:32.200 --> 00:01:35.560
+nicht wie vorhergesagt, nicht wie gestern.
+
+21
+00:01:35.560 --> 00:01:39.200
+Ich habe die Wettervorhersage für Varna angesehen.
+
+22
+00:01:39.200 --> 00:01:44.480
+Sie sagte bewölkt. Und ja, heute Morgen sah ich ein paar Wolken am
+
+23
+00:01:44.480 --> 00:01:50.320
+Himmel, aber nicht genug, um diese Aussage zu stützen,
+
+24
+00:01:50.320 --> 00:01:56.470
+oder? Also, das Wetter ändert sich, das GPS
+
+25
+00:01:57.840 --> 00:01:58.910
+wird unzuverlässig,
+
+26
+00:01:59.880 --> 00:02:05.150
+und am Horizont tauchen unidentifizierte Schiffe auf.
+
+27
+00:02:07.160 --> 00:02:11.320
+Während der Fahrt erhalten Sie neue Vorschriften, die Sie
+
+28
+00:02:11.320 --> 00:02:15.120
+einhalten müssen. Sie brauchen Sicherheitsausrüstung an Bord, die Sie
+
+29
+00:02:15.120 --> 00:02:19.030
+nicht dabeihaben. Und obendrein
+
+30
+00:02:20.040 --> 00:02:25.400
+hat die Hälfte Ihrer Crew begonnen, KI-Navigationstools zu nutzen,
+
+31
+00:02:25.400 --> 00:02:27.800
+die Sie nicht genehmigt haben, die Sie nicht kontrollieren,
+
+32
+00:02:27.800 --> 00:02:31.190
+die Sie überhaupt nicht steuern.
+
+33
+00:02:31.680 --> 00:02:35.800
+Meine Damen und Herren, was wäre in so einem Moment Ihr
+
+34
+00:02:35.800 --> 00:02:38.950
+Ansatz? Kaufen Sie ein neues Radarsystem?
+
+35
+00:02:40.680 --> 00:02:45.640
+Natürlich nicht. Sie werden vielmehr beginnen,
+
+36
+00:02:45.640 --> 00:02:48.350
+das Boot und die Abläufe an Bord neu zu gestalten.
+
+37
+00:02:49.000 --> 00:02:53.920
+Und im Grunde, meine Damen und Herren, ist das die Situation, in der
+
+38
+00:02:53.920 --> 00:02:57.190
+sich jede Organisation in diesem Raum, öffentlich oder privat,
+
+39
+00:02:57.880 --> 00:02:59.710
+derzeit befindet.
+
+40
+00:03:01.000 --> 00:03:07.590
+Willkommen
+
+41
+00:03:08.480 --> 00:03:11.230
+im permanenten Sturm und im perfekten Sturm.
+
+42
+00:03:12.040 --> 00:03:17.720
+Die Metapher ist nicht nur dekorativ, denn viele der
+
+43
+00:03:17.720 --> 00:03:21.270
+Parallelen gelten auch für den organisatorischen Kontext.
+
+44
+00:03:22.000 --> 00:03:26.840
+Letztlich überlebt nicht das bestausgerüstete Schiff
+
+45
+00:03:26.840 --> 00:03:32.840
+den Sturm, sondern dasjenige, das
+
+46
+00:03:32.840 --> 00:03:37.200
+widerstandsfähig gebaut ist und bereit, die Last zu verteilen,
+
+47
+00:03:37.200 --> 00:03:44.080
+Ausfälle einzudämmen und im Grunde weiterzusegeln,
+
+48
+00:03:44.080 --> 00:03:48.150
+auch unter Druck. Also,
+
+49
+00:03:49.800 --> 00:03:51.350
+warum haben wir den perfekten Sturm?
+
+50
+00:03:52.480 --> 00:03:57.320
+Fünf Kräfte treffen gleichzeitig zusammen, ohne
+
+51
+00:03:57.320 --> 00:04:03.150
+aufeinander zu warten. Einerseits haben wir die
+
+52
+00:04:04.760 --> 00:04:09.440
+geopolitische Lage, die verändert, wie wir
+
+53
+00:04:09.440 --> 00:04:12.190
+Business-Continuity- und Kapazitätsplanung betreiben.
+
+54
+00:04:12.920 --> 00:04:16.640
+Wir haben staatliche Akteure, die kritische
+
+55
+00:04:16.640 --> 00:04:19.349
+Infrastruktur angreifen, wie die Energieinfrastruktur,
+
+56
+00:04:20.400 --> 00:04:24.230
+die Logistik und das Gesundheitswesen.
+
+57
+00:04:24.880 --> 00:04:30.469
+Das Wetter wartet also nicht, bis wir uns vorbereitet haben.
+
+58
+00:04:32.040 --> 00:04:36.040
+Es trifft uns einfach, oder? Andererseits haben wir die künstliche
+
+59
+00:04:36.040 --> 00:04:37.320
+Intelligenz als Thema.
+
+60
+00:04:37.320 --> 00:04:41.990
+Sie ist einer der bedeutendsten Kraftmultiplikatoren,
+
+61
+00:04:43.000 --> 00:04:44.190
+die aktiv
+
+62
+00:04:45.280 --> 00:04:49.870
+sowohl die Angreifer- als auch die Verteidigerseite beeinflussen.
+
+63
+00:04:53.000 --> 00:04:54.919
+Das Schlechte ist, dass das nicht ausgewogen geschieht.
+
+64
+00:04:54.919 --> 00:04:59.400
+Die Angreifer setzen KI viel schneller ein, einfach weil
+
+65
+00:04:59.400 --> 00:05:03.040
+sie keine Unternehmensprozesse haben, keinen
+
+66
+00:05:03.040 --> 00:05:08.160
+Beschaffungsprozess, kein Change Advisory Board
+
+67
+00:05:08.160 --> 00:05:13.240
+und so weiter. Wir haben hier also keinen gleichen Start mit
+
+68
+00:05:13.240 --> 00:05:17.080
+ihnen. Andererseits lautet die Frage nicht mehr, ob die
+
+69
+00:05:17.080 --> 00:05:22.030
+Organisation, für die wir verantwortlich sind, KI nutzt.
+
+70
+00:05:22.720 --> 00:05:27.040
+Die Frage ist, wo wir sie einsetzen und ob wir eine angemessene
+
+71
+00:05:27.040 --> 00:05:28.710
+Governance darüber haben.
+
+72
+00:05:29.760 --> 00:05:35.919
+Regulierungen wie NIS 2, DORA, der Cyber Resilience Act
+
+73
+00:05:35.919 --> 00:05:39.760
+und so weiter sind keine technischen Rahmenwerke mehr.
+
+74
+00:05:39.760 --> 00:05:43.430
+Sie schaffen die Notwendigkeit von Governance und sie legen
+
+75
+00:05:44.200 --> 00:05:49.080
+Haftungsfolgen, persönliche Haftung, auf das Top-
+
+76
+00:05:49.080 --> 00:05:54.680
+Management. Gleichzeitig sind klassische Bedrohungen wie Malware,
+
+77
+00:05:54.680 --> 00:05:57.310
+Ransomware nicht verschwunden.
+
+78
+00:05:58.120 --> 00:05:59.040
+Sie sind also immer noch da.
+
+79
+00:05:59.040 --> 00:06:03.040
+Sie sind professioneller geworden, und mit dem Einsatz von KI
+
+80
+00:06:03.040 --> 00:06:07.920
+sind Wirkung und Angriffsgeschwindigkeit natürlich viel, viel
+
+81
+00:06:07.920 --> 00:06:12.430
+höher. Und nicht zuletzt: Ihre Crew.
+
+82
+00:06:13.680 --> 00:06:17.430
+Sie nutzen KI-Technologien, die keinen Prozessen folgen.
+
+83
+00:06:18.800 --> 00:06:21.350
+Sie sind darin nicht gut geschult.
+
+84
+00:06:21.919 --> 00:06:28.390
+Und Sie haben im Grunde eine viel größere Schatten-IT zu bewältigen.
+
+85
+00:06:31.040 --> 00:06:35.280
+Der erste Instinkt in so einer Situation ist: Wenn man ein
+
+86
+00:06:35.280 --> 00:06:38.280
+Problem hat, sucht man eine Lösung, oder?
+
+87
+00:06:38.280 --> 00:06:42.320
+Bei einem neuen Ransomware-Angriff suchen wir also bessere
+
+88
+00:06:42.320 --> 00:06:46.120
+Endpoint Detection. Oder bei einer neuen Regulierung
+
+89
+00:06:46.120 --> 00:06:47.960
+suchen wir ein Compliance-Tool.
+
+90
+00:06:47.960 --> 00:06:53.400
+Oder wenn wir mit KI-Bedrohungen zu tun haben, suchen wir
+
+91
+00:06:53.400 --> 00:06:56.670
+ein KI-Sicherheitsprodukt. Das ist verständlich,
+
+92
+00:06:57.520 --> 00:07:01.430
+aber zugleich wissen wir alle, dass es nicht ausreicht.
+
+93
+00:07:02.000 --> 00:07:07.520
+Es ist, als würde man die Komponenten eines Systems optimieren, ohne
+
+94
+00:07:07.520 --> 00:07:09.790
+zu erkennen, dass das System fragil ist.
+
+95
+00:07:16.200 --> 00:07:19.350
+Es ist also wichtig zu verstehen, dass
+
+96
+00:07:21.240 --> 00:07:25.480
+das Schiff, das überlebt, nicht dasjenige ist,
+
+97
+00:07:25.480 --> 00:07:29.590
+das am besten ausgerüstet ist, sondern
+
+98
+00:07:30.919 --> 00:07:33.710
+dasjenige mit einer angemessenen Architektur.
+
+99
+00:07:34.280 --> 00:07:37.720
+Wenn Sie sich die Sicherheitsvorfälle der letzten Jahre ansehen:
+
+100
+00:07:37.720 --> 00:07:42.480
+All diese großen Organisationen mit großen IT- und Cybersicherheitsbudgets
+
+101
+00:07:42.480 --> 00:07:47.030
+hatten jede Menge Sicherheitstools im Einsatz.
+
+102
+00:07:47.920 --> 00:07:52.560
+Was sie nicht hatten, ist wohl eine angemessene
+
+103
+00:07:52.560 --> 00:07:56.150
+Strategie für die Cybersicherheitsarchitektur.
+
+104
+00:07:59.680 --> 00:08:03.590
+Was bedeutet also letztlich eine geschäftsorientierte
+
+105
+00:08:04.000 --> 00:08:05.950
+Cybersicherheitsarchitektur?
+
+106
+00:08:07.880 --> 00:08:10.240
+Denn das ist die vorgeschlagene Lösung, oder?
+
+107
+00:08:10.240 --> 00:08:14.120
+Nun, es ist eine Kombination aus sieben Prinzipien,
+
+108
+00:08:14.120 --> 00:08:16.830
+oder sie lässt sich als Kombination aus sieben Prinzipien definieren.
+
+109
+00:08:17.280 --> 00:08:22.120
+Einige der wichtigsten sind: Das Geschäft an erste Stelle setzen.
+
+110
+00:08:22.120 --> 00:08:26.030
+Wenn wir eine Strategie aufbauen, wenn wir eine Strategie definieren,
+
+111
+00:08:26.680 --> 00:08:30.840
+ist wichtig zu verstehen, was der Kern unseres
+
+112
+00:08:30.840 --> 00:08:36.000
+Geschäfts ist. Welche entscheidenden Prozesse haben wir, die wir
+
+113
+00:08:36.000 --> 00:08:40.000
+schützen müssen, die Assets, Prozesse, die zugehörigen Systeme,
+
+114
+00:08:40.000 --> 00:08:44.160
+die Rollen in der Organisation, ohne die
+
+115
+00:08:44.160 --> 00:08:45.830
+unser Geschäft nicht funktionieren wird.
+
+116
+00:08:46.480 --> 00:08:49.950
+Und wir müssen unsere Strategie an diesen Bedürfnissen ausrichten.
+
+117
+00:08:50.480 --> 00:08:51.990
+Das Zweite: Governance.
+
+118
+00:08:52.720 --> 00:08:56.350
+Wir müssen klar definieren, wer das Risiko trägt,
+
+119
+00:08:56.960 --> 00:09:01.920
+wer Entscheidungen genehmigen kann, wer dafür zuständig ist,
+
+120
+00:09:01.920 --> 00:09:03.880
+in bestimmten Situationen zu reagieren.
+
+121
+00:09:03.880 --> 00:09:08.360
+Deshalb stellen Regulierungen wie NIS 2 und DORA
+
+122
+00:09:08.360 --> 00:09:12.640
+keine Anforderungen an neue Sicherheitstools.
+
+123
+00:09:12.640 --> 00:09:16.270
+Sie definieren die Notwendigkeit besserer Governance.
+
+124
+00:09:17.640 --> 00:09:23.800
+Identität. Sie ist der neue Perimeter.
+
+125
+00:09:23.800 --> 00:09:26.310
+Sie haben dieses Schlagwort gehört, oder?
+
+126
+00:09:26.880 --> 00:09:30.640
+Aber stellen Sie sich vor, jemand ist an Bord des Schiffs,
+
+127
+00:09:30.640 --> 00:09:32.790
+wir können ihm nicht automatisch vertrauen,
+
+128
+00:09:34.720 --> 00:09:37.990
+denn wir wissen nicht, welche Motive er hat.
+
+129
+00:09:38.760 --> 00:09:42.600
+Wir wissen nicht, was die Menschen absichtlich oder unabsichtlich
+
+130
+00:09:42.600 --> 00:09:49.480
+vorhaben. Identität ist also ein sehr wichtiges
+
+131
+00:09:49.480 --> 00:09:54.720
+Prinzip, das wir abdecken müssen, und zwar,
+
+132
+00:09:54.720 --> 00:10:00.240
+indem wir die Identität kontinuierlich prüfen, nicht nur beim Login,
+
+133
+00:10:00.240 --> 00:10:03.430
+sondern während der gesamten Nutzungsdauer.
+
+134
+00:10:05.280 --> 00:10:10.360
+Eines der wichtigsten Prinzipien aus meiner Sicht ist
+
+135
+00:10:10.360 --> 00:10:11.470
+die kontinuierliche Anpassung.
+
+136
+00:10:13.520 --> 00:10:15.910
+Eine Architektur ist nichts Statisches.
+
+137
+00:10:16.640 --> 00:10:19.320
+Architektur lebt. Sie muss angepasst werden.
+
+138
+00:10:19.320 --> 00:10:20.510
+Sie muss neu bewertet werden.
+
+139
+00:10:21.080 --> 00:10:24.830
+Man muss beobachten, wie sich die Bedrohungslage verändert,
+
+140
+00:10:25.360 --> 00:10:27.360
+wie sich der Geschäftskontext verändert,
+
+141
+00:10:27.360 --> 00:10:30.440
+wie sich die Geschäftsanforderungen insgesamt verändern.
+
+142
+00:10:30.440 --> 00:10:34.360
+Gibt es technologische Änderungen, die unsere Sicherheits-
+
+143
+00:10:34.360 --> 00:10:39.160
+strategien beeinflussen? Architektur muss also angepasst und
+
+144
+00:10:39.160 --> 00:10:44.680
+oft überprüft werden. Und das letzte Prinzip ist
+
+145
+00:10:44.680 --> 00:10:49.190
+das risikogetriebene Design. Das ist mein Favorit.
+
+146
+00:10:50.160 --> 00:10:54.400
+Wenn man einen Sicherheitsexperten fragt, was das Ziel von
+
+147
+00:10:54.400 --> 00:10:57.000
+Cybersicherheit ist, sagen viele: „Nun,
+
+148
+00:10:57.000 --> 00:11:00.550
+die bestmöglichen Sicherheitskontrollen in unserer Organisation.“
+
+149
+00:11:01.960 --> 00:11:04.150
+Und ehrlich gesagt halte ich das für einen Fehler.
+
+150
+00:11:05.200 --> 00:11:10.720
+Denn keine Organisation auf dieser Welt will nur um der
+
+151
+00:11:10.720 --> 00:11:12.480
+Sicherheit willen sicher sein.
+
+152
+00:11:12.480 --> 00:11:16.960
+Sie sind da, um Geschäfte zu machen und
+
+153
+00:11:16.960 --> 00:11:22.680
+widerstandsfähig zu arbeiten. Es geht also immer um die Abwägung zwischen den
+
+154
+00:11:22.680 --> 00:11:25.480
+Geschäftsanforderungen, den geschäftsrelevanten Bedrohungen,
+
+155
+00:11:25.480 --> 00:11:28.600
+dem damit verbundenen Risiko und den Kosten der Kontrollen, die
+
+156
+00:11:28.600 --> 00:11:35.120
+Sie anwenden, um ein optimales Verhältnis von Risikoreduktion
+
+157
+00:11:35.120 --> 00:11:36.390
+und Investition zu erreichen,
+
+158
+00:11:37.440 --> 00:11:41.270
+entsprechend Ihrer eigenen Risikobereitschaft.
+
+159
+00:11:45.360 --> 00:11:48.230
+Zum Abschluss meiner Keynote:
+
+160
+00:11:49.800 --> 00:11:54.750
+Meine Damen und Herren, wir können das Meer nicht beruhigen
+
+161
+00:11:55.840 --> 00:12:02.720
+und den Sturm offensichtlich nicht aufhalten, und natürlich
+
+162
+00:12:02.720 --> 00:12:07.680
+wird keine Regulierung einen geopolitischen Konflikt stoppen, und kein
+
+163
+00:12:07.680 --> 00:12:10.230
+Tool und keine KI wird die Unsicherheit beenden,
+
+164
+00:12:11.360 --> 00:12:16.800
+die entsteht, und Tools werden auch keine menschlichen Fehler beheben, aber
+
+165
+00:12:16.800 --> 00:12:21.870
+die Frage ist, was für ein Schiff wir bauen.
+
+166
+00:12:22.720 --> 00:12:28.040
+Und wenn ich Ihnen heute drei Empfehlungen mitgeben soll, die
+
+167
+00:12:28.040 --> 00:12:30.470
+Ihnen nach diesem Gespräch bleiben:
+
+168
+00:12:31.560 --> 00:12:38.240
+Hören Sie auf, sich zu fragen, ob Sie die richtigen Tools haben, fragen Sie
+
+169
+00:12:38.240 --> 00:12:39.630
+sich, ob Sie die richtige Architektur haben.
+
+170
+00:12:40.920 --> 00:12:45.200
+Hören Sie auf zu fragen, ob Ihre IT-Abteilung diese oder jene Lücke schließt,
+
+171
+00:12:45.200 --> 00:12:48.839
+sondern fragen Sie sich, ob Ihre Führung die richtigen
+
+172
+00:12:48.839 --> 00:12:53.839
+Entscheidungen trifft. Und nicht zuletzt: Fokus nicht auf Compliance, sondern auf
+
+173
+00:12:53.839 --> 00:12:57.990
+Resilienz, denn Compliance kommt am Ende ganz von selbst.
+
+174
+00:12:59.000 --> 00:13:00.710
+Vielen Dank für Ihre Aufmerksamkeit.

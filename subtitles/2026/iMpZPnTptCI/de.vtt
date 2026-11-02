@@ -1,0 +1,477 @@
+WEBVTT
+
+1
+00:00:01.360 --> 00:00:04.880
+Gut. Okay. Wir nehmen noch ein paar Fragen.
+
+2
+00:00:04.880 --> 00:00:07.909
+Danke, dass Sie die Fragen eingereicht haben.
+
+3
+00:00:08.400 --> 00:00:12.069
+Meine erste Frage geht an Martin.
+
+4
+00:00:12.559 --> 00:00:16.149
+Sie haben mehrere Innovationswellen miterlebt.
+
+5
+00:00:16.800 --> 00:00:19.669
+Wenn Sie auf die Muster in diesen Zyklen blicken:
+
+6
+00:00:20.080 --> 00:00:24.080
+Was überschätzen oder ignorieren wir Ihrer Meinung nach in den nächsten 5
+
+7
+00:00:24.080 --> 00:00:29.760
+Jahren? Ich denke, gerade bei KI – der ersten Technologie,
+
+8
+00:00:29.760 --> 00:00:33.760
+die tatsächlich anfangen kann, Menschen Arbeitsplätze wegzunehmen –
+
+9
+00:00:33.760 --> 00:00:38.399
+wurde sie zuerst völlig ignoriert und unterschätzt, und jetzt
+
+10
+00:00:38.399 --> 00:00:42.320
+sehe und spüre ich, dass es sogar Leute gibt, die
+
+11
+00:00:42.320 --> 00:00:46.000
+sie überschätzen. Denn es ist eine erstaunliche
+
+12
+00:00:46.000 --> 00:00:50.960
+Technologie und sie kann etwa 95 % der Arbeit erledigen, die Menschen
+
+13
+00:00:50.960 --> 00:00:56.079
+am Computer machen, aber die letzten 5 % sind das, was
+
+14
+00:00:56.079 --> 00:01:01.359
+Menschen brauchen. Und ich glaube, dass sie sie jetzt überschätzen.
+
+15
+00:01:01.359 --> 00:01:04.720
+Sie vertrauen ihr bei einigen Aufgaben zu sehr,
+
+16
+00:01:04.720 --> 00:01:09.119
+die damit erledigt werden, und in den nächsten 5 Jahren wird das
+
+17
+00:01:09.119 --> 00:01:12.240
+meiner Meinung nach auch bei Robotern passieren. Es wird Leute geben, die
+
+18
+00:01:12.240 --> 00:01:16.000
+sagen: Roboter nehmen Ihnen komplett die Arbeit weg, sie werden
+
+19
+00:01:16.000 --> 00:01:20.080
+in der Fertigung arbeiten. Selbst wenn Sie einen
+
+20
+00:01:20.080 --> 00:01:25.840
+Junior nach einer harten Nacht in Varna einstellen und es einen
+
+21
+00:01:25.840 --> 00:01:29.360
+Roboter gibt, sagen die Leute, der sei besser darin,
+
+22
+00:01:29.360 --> 00:01:32.640
+Ihnen die Arbeit einfach abzunehmen, aber vielleicht stimmt das nicht.
+
+23
+00:01:32.640 --> 00:01:35.759
+Wir werden sehen. Und ich denke, das wird das Nächste sein,
+
+24
+00:01:35.759 --> 00:01:38.470
+was überschätzt wird.
+
+25
+00:01:39.600 --> 00:01:44.000
+Und was man nicht ignorieren sollte, ist der Schutz der
+
+26
+00:01:44.000 --> 00:01:47.200
+Privatsphäre, denn das ignorieren die Leute derzeit völlig.
+
+27
+00:01:47.200 --> 00:01:52.399
+Vor etwa zwei Wochen haben wir einen riesigen Datensatz erhalten,
+
+28
+00:01:52.399 --> 00:01:56.799
+der für das Training eines Kreditscorings von
+
+29
+00:01:56.799 --> 00:02:01.040
+Personen getestet wurde, und wir sahen Informationen, die sogar aus Chat-
+
+30
+00:02:01.040 --> 00:02:03.280
+Anwendungen stammten, was verrückt war.
+
+31
+00:02:03.280 --> 00:02:06.560
+Ich habe dem Kunden gesagt, dass wir daran nicht arbeiten werden, aber
+
+32
+00:02:06.560 --> 00:02:11.920
+ja – halten Sie Ihre Daten privat. Überlegen Sie immer zweimal, bevor Sie
+
+33
+00:02:11.920 --> 00:02:14.630
+Zugriff auf Ihre Daten gewähren.
+
+34
+00:02:15.680 --> 00:02:18.480
+Ja, es stimmt: Unsere persönlichen Daten werden wirklich
+
+35
+00:02:18.480 --> 00:02:20.869
+zum wichtigsten Gut
+
+36
+00:02:21.280 --> 00:02:25.590
+im Geschäft. Die nächste Frage geht an Todor.
+
+37
+00:02:26.239 --> 00:02:31.040
+Wenn Sie die Plattform so schnell aufbauen,
+
+38
+00:02:31.040 --> 00:02:34.959
+wie bringen Sie den Zeitdruck mit der Notwendigkeit von Leitplanken
+
+39
+00:02:34.959 --> 00:02:37.830
+wie Governance und Überwachung der Datenqualität in Einklang?
+
+40
+00:02:38.800 --> 00:02:41.350
+Und wie gehen Sie mit der Sicherheit um?
+
+41
+00:02:42.959 --> 00:02:44.230
+Die einfache Frage für mich.
+
+42
+00:02:45.200 --> 00:02:51.280
+Also, schauen Sie, wir sind ein relativ kleines Team, wir haben etwa 60
+
+43
+00:02:51.280 --> 00:02:55.040
+Leute, jetzt wohl etwa 70, die Hälfte in der Fabrik,
+
+44
+00:02:55.040 --> 00:02:57.590
+die andere Hälfte sind Businessleute.
+
+45
+00:02:59.040 --> 00:03:03.680
+Die meisten unserer Leute haben Zugriff auf die meisten Daten, weil sie
+
+46
+00:03:03.680 --> 00:03:07.590
+täglich mit den Kunden und den Bestellungen arbeiten.
+
+47
+00:03:08.319 --> 00:03:12.069
+Und wenn wir die Plattform aufbauen,
+
+48
+00:03:13.599 --> 00:03:18.879
+ehrlich gesagt, wenn wir etwas planen, bespreche ich es einfach mit dem KI-Agenten,
+
+49
+00:03:18.879 --> 00:03:22.480
+damit er mir direkt empfiehlt, wie die Infrastruktur aussehen und
+
+50
+00:03:22.480 --> 00:03:26.159
+was geschützt sein sollte. Es gibt ein paar Grundlagen, etwa:
+
+51
+00:03:26.159 --> 00:03:29.990
+Die Datenbank in der EU aufsetzen – unsere steht in Frankfurt –
+
+52
+00:03:30.560 --> 00:03:34.159
+und dafür sorgen, dass nur wenige Personen Zugriff auf
+
+53
+00:03:34.159 --> 00:03:36.879
+die sensiblen Daten haben, mit Zwei-Faktor-Authentifizierung und allen
+
+54
+00:03:36.879 --> 00:03:38.959
+Sicherheitsprotokollen.
+
+55
+00:03:38.959 --> 00:03:44.230
+Was die Korrektheit der Daten selbst betrifft,
+
+56
+00:03:44.720 --> 00:03:48.720
+mache ich mir eigentlich nicht viele Sorgen,
+
+57
+00:03:48.720 --> 00:03:55.360
+denn wir sind kein datengetriebenes Unternehmen. Bei uns gibt es
+
+58
+00:03:55.360 --> 00:03:59.680
+nicht Millionen und Abermillionen Dateneinheiten,
+
+59
+00:03:59.680 --> 00:04:02.239
+um Modelle zu bauen oder mit unseren Daten zu trainieren.
+
+60
+00:04:02.239 --> 00:04:05.439
+Für uns ist wichtig, dass die richtigen Kunden
+
+61
+00:04:05.439 --> 00:04:08.799
+die richtigen Stiefel bekommen und wir den Umsatz korrekt verbuchen, und
+
+62
+00:04:08.799 --> 00:04:12.720
+solche Dinge fallen sehr schnell auf.
+
+63
+00:04:12.720 --> 00:04:18.959
+Aber trotzdem stoßen wir bei der Entwicklung neuer Apps
+
+64
+00:04:18.959 --> 00:04:21.759
+meist auf Grenzen unserer Datenbank.
+
+65
+00:04:21.759 --> 00:04:25.440
+Ein Beispiel: Als wir anfangs das
+
+66
+00:04:25.440 --> 00:04:30.080
+Vertriebstool gebaut haben, habe ich die KI nicht gebeten, Kohortenanalysen
+
+67
+00:04:30.080 --> 00:04:33.520
+zu ermöglichen, und später, als ich
+
+68
+00:04:33.520 --> 00:04:36.560
+diesen Bericht erstellen wollte, sagt sie mir: Übrigens, das geht nicht,
+
+69
+00:04:36.560 --> 00:04:39.440
+weil Sie die Daten nicht richtig erfasst haben. Dann ist es ein
+
+70
+00:04:39.440 --> 00:04:42.960
+Prozess: Was können wir jetzt tun, um entweder,
+
+71
+00:04:42.960 --> 00:04:47.120
+wenn möglich, die Datenlücken rückwirkend zu füllen oder, wenn nicht, ab
+
+72
+00:04:47.120 --> 00:04:51.040
+jetzt die richtigen Daten und Zeitstempel zu erfassen
+
+73
+00:04:51.040 --> 00:04:53.040
+und alles, was wir für Kohortenanalysen brauchten.
+
+74
+00:04:53.040 --> 00:04:54.479
+Es ist also ein gewisser Prozess.
+
+75
+00:04:54.479 --> 00:04:57.759
+Stellen Sie sicher, dass die Grundlagen stimmen: Datenzugriff und
+
+76
+00:04:57.759 --> 00:04:59.430
+Standort der Datenbank.
+
+77
+00:04:59.840 --> 00:05:04.720
+Stellen Sie sicher, dass die Personen mit Zugriff auf diese Daten ihre
+
+78
+00:05:04.720 --> 00:05:10.240
+Geräte per 2FA absichern. Und wenn Sie dabei
+
+79
+00:05:10.240 --> 00:05:12.390
+etwas Fehlendes entdecken, bauen Sie darauf auf.
+
+80
+00:05:13.520 --> 00:05:16.639
+Okay. Unsere Zeit für Fragen ist wohl um.
+
+81
+00:05:16.639 --> 00:05:18.240
+Vielen Dank an die Panelisten.
+
+82
+00:05:18.240 --> 00:05:21.440
+Wenn wir Ihre Fragen nicht mehr geschafft haben, überfallen Sie die
+
+83
+00:05:21.440 --> 00:05:23.840
+Panelisten gern draußen und fragen Sie sie.
+
+84
+00:05:23.840 --> 00:05:27.029
+Und jetzt fassen wir
+
+85
+00:05:28.240 --> 00:05:34.630
+diesen Track zusammen. Nach allem, worüber wir gesprochen haben,
+
+86
+00:05:35.759 --> 00:05:39.759
+lautet die Empfehlung: Versuchen Sie, bevor Sie etwas bauen, diese
+
+87
+00:05:39.759 --> 00:05:43.520
+10 Fragen zu beantworten. Wenn Sie sie nicht beantworten können, aber
+
+88
+00:05:43.520 --> 00:05:47.120
+KI wirklich einführen wollen, sollten Sie hier beginnen.
+
+89
+00:05:47.120 --> 00:05:51.520
+Erstens: Lohnt es sich, dieses Problem zu lösen, und
+
+90
+00:05:51.520 --> 00:05:54.800
+interessiert sich die Führung überhaupt dafür? Das ist wichtig für die Unterstützung
+
+91
+00:05:54.800 --> 00:05:58.880
+der Führung. Ist das Ergebnis messbar, und kann ich Erfolg
+
+92
+00:05:58.880 --> 00:06:02.160
+in einem Satz definieren? Sind die Daten zugänglich?
+
+93
+00:06:02.160 --> 00:06:06.000
+Sind sie vertrauenswürdig? Haben Sie Daten, mit denen Sie das
+
+94
+00:06:06.000 --> 00:06:10.319
+Problem lösen können? Ist KI überhaupt das richtige Werkzeug, oder
+
+95
+00:06:10.319 --> 00:06:12.550
+würde eine Regel oder ein Dashboard reichen?
+
+96
+00:06:12.960 --> 00:06:15.990
+Machen Sie es nicht zu kompliziert und wählen Sie die einfachste Lösung.
+
+97
+00:06:16.880 --> 00:06:19.670
+Habe ich einen benannten Sponsor, der das Vorhaben vorantreibt?
+
+98
+00:06:20.080 --> 00:06:23.360
+Jemanden, an den Sie sich immer wenden können, der es in der
+
+99
+00:06:23.360 --> 00:06:25.510
+Organisation bekannt macht und die Akzeptanz fördert.
+
+100
+00:06:26.080 --> 00:06:30.880
+Ist das Ergebnis dort eingebettet, wo Nutzer arbeiten? Das ist mit Stern markiert,
+
+101
+00:06:30.880 --> 00:06:33.600
+weil sich vielleicht der Arbeitsablauf ändern muss.
+
+102
+00:06:33.600 --> 00:06:36.240
+Vielleicht ist die heutige Arbeitsweise nicht die beste.
+
+103
+00:06:36.240 --> 00:06:40.070
+Das ist eine Gelegenheit, in der Organisation einen Schritt zurückzutreten
+
+104
+00:06:40.479 --> 00:06:44.790
+und einen besseren Arbeitsablauf zu finden, der KI integriert.
+
+105
+00:06:45.360 --> 00:06:48.800
+Wichtig ist die Frage, was meine Ausgangsbasis ist und wie ich
+
+106
+00:06:48.800 --> 00:06:51.670
+die Verbesserung messe. Woher weiß ich, dass es etwas bewirkt?
+
+107
+00:06:52.400 --> 00:06:57.029
+Wer ist nach dem Go-live für die Verfolgung dieses Werts zuständig?
+
+108
+00:06:58.560 --> 00:07:02.720
+Fragen Sie: Kann ich das Ergebnis in drei Sätzen einer nicht technischen
+
+109
+00:07:02.720 --> 00:07:06.880
+Führungskraft erklären? Ich habe immer gern einen Elevator Pitch parat, damit ich,
+
+110
+00:07:06.880 --> 00:07:10.630
+wenn ich eine Minute habe, jemandem, besonders in der Führung,
+
+111
+00:07:11.039 --> 00:07:14.479
+den Zweck des Projekts und die Wirkung zu erklären,
+
+112
+00:07:14.479 --> 00:07:18.319
+das kann. Und habe ich das nach der Demo mit den richtigen
+
+113
+00:07:18.319 --> 00:07:20.319
+Stakeholdern abgestimmt?
+
+114
+00:07:20.319 --> 00:07:23.759
+Das Change-Management ist, wie gesagt, ein sehr wichtiger Teil
+
+115
+00:07:23.759 --> 00:07:27.680
+davon. Wie erfahren die Leute davon und werden überzeugt, es
+
+116
+00:07:27.680 --> 00:07:31.919
+zu nutzen und einen echten Wandel in der Organisation zu schaffen, sodass alle
+
+117
+00:07:31.919 --> 00:07:34.880
+es nutzen? Das sind die Lehren.
+
+118
+00:07:34.880 --> 00:07:36.400
+Vielen Dank an die Panelisten.
+
+119
+00:07:36.400 --> 00:07:38.869
+Vielen Dank an alle, und wir gehen weiter zu

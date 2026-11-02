@@ -1,0 +1,965 @@
+WEBVTT
+
+1
+00:00:00.960 --> 00:00:05.070
+Dünün günün teması “neden” idiyse,
+
+2
+00:00:05.920 --> 00:00:07.350
+bugünün teması “nasıl”.
+
+3
+00:00:07.920 --> 00:00:11.310
+Önce nasıl yapılmayacağından başlayabileceğimizi düşündüm.
+
+4
+00:00:11.920 --> 00:00:17.040
+Aslında işletmeler yapay zekâ projelerini hayata geçirmeye çalıştığında
+
+5
+00:00:17.040 --> 00:00:19.630
+neden çoğu başarısız oluyor ve bu konuda ne yapabilirsiniz.
+
+6
+00:00:24.760 --> 00:00:25.910
+Bu faydalı olacak.
+
+7
+00:00:26.920 --> 00:00:33.830
+Önce istatistiklerden biraz bahsedelim.
+
+8
+00:00:34.320 --> 00:00:39.440
+Gartner’ın yapay zekâ projelerinin %85’inin
+
+9
+00:00:39.440 --> 00:00:42.830
+hiçbir iş değeri sağlayamadığını söylediğini biliyoruz.
+
+10
+00:00:44.680 --> 00:00:48.480
+Boston Consulting Group, başarısızlıkların %70’inin insanlardan ve
+
+11
+00:00:48.480 --> 00:00:50.030
+süreçlerden kaynaklandığını, teknolojiyle ilgisi olmadığını söyledi.
+
+12
+00:00:51.840 --> 00:00:55.790
+Dun & Bradstreet ise işletmelerin yalnızca yaklaşık %5’inin
+
+13
+00:00:56.280 --> 00:01:00.390
+verisinin yapay zekâyı geniş ölçekte yaymaya hazır olduğunu belirtti.
+
+14
+00:01:01.160 --> 00:01:04.470
+Yani bu başarısızlıkların hiçbiri teknolojiyle ilgili değil.
+
+15
+00:01:05.160 --> 00:01:07.440
+Hepsi insanlarla, süreçlerle,
+
+16
+00:01:07.440 --> 00:01:11.630
+işle ilgili. Ve bence beş
+
+17
+00:01:12.280 --> 00:01:14.760
+belirli ama giderilebilir hata yüzünden başarısız oluyorlar.
+
+18
+00:01:14.760 --> 00:01:17.960
+Bu beş hatayı önümüzdeki birkaç
+
+19
+00:01:17.960 --> 00:01:19.870
+dakika içinde ele alıp konuşacağız.
+
+20
+00:01:20.440 --> 00:01:24.110
+İlk sorun, yanlış sorunu çözüyor olmanız.
+
+21
+00:01:24.960 --> 00:01:27.470
+Bir şeyi çözüyorsunuz ama doğru şeyi değil.
+
+22
+00:01:28.120 --> 00:01:31.960
+Bir kuruma girip kullanım senaryosunun ne olduğunu,
+
+23
+00:01:31.960 --> 00:01:35.080
+yapay zekânın nerede kullanılacağını belirlerken
+
+24
+00:01:35.080 --> 00:01:36.590
+çoğu zaman
+
+25
+00:01:37.880 --> 00:01:42.440
+fikirler çıkabilir ama yanlış fikirlerdir ve aslında
+
+26
+00:01:42.440 --> 00:01:46.200
+değere yol açmazlar. Örneğin yapay zekâ çözümleri ve veri dönüşümü
+
+27
+00:01:46.200 --> 00:01:50.190
+yapan bir danışmanlık şirketi olan Matrix’te bir müşteriye gittik,
+
+28
+00:01:50.760 --> 00:01:55.920
+bir İK departmanıydı, ve onlarla hangi
+
+29
+00:01:55.920 --> 00:01:58.760
+yapay zekâ çözümlerini, zorluklarının neler olduğunu,
+
+30
+00:01:58.760 --> 00:02:01.932
+ihtiyaçlarının neler olduğunu tartıştık ve şunu dediler:
+
+31
+00:02:01.932 --> 00:02:03.162
+“Bize bir sohbet botu yapabilir misiniz?
+
+32
+00:02:03.932 --> 00:02:08.212
+Bir İK sohbet botu.” Uygulayıcının sözlüğündeki en önemli kelime
+
+33
+00:02:08.212 --> 00:02:10.242
+“neden” kelimesidir.
+
+34
+00:02:10.852 --> 00:02:13.172
+“Neden” sorusu. Çünkü gelip “Sohbet botu istiyoruz” dediklerinde
+
+35
+00:02:13.172 --> 00:02:15.932
+sorduk: “Peki, neden?
+
+36
+00:02:15.932 --> 00:02:19.282
+Sohbet botuyla hangi sorunu çözmeye çalışıyorsunuz?”
+
+37
+00:02:20.132 --> 00:02:22.852
+Şöyle dediler: “Çalışanlar tatiller, maaşlar vb. hakkında
+
+38
+00:02:22.852 --> 00:02:25.172
+bütün bu soruları soruyor.
+
+39
+00:02:25.172 --> 00:02:28.292
+Bunlar intranette olmalı ama kimse bulamıyor,
+
+40
+00:02:28.292 --> 00:02:31.922
+o yüzden çözmek için bir sohbet edebilmelerini istiyoruz.”
+
+41
+00:02:33.172 --> 00:02:37.012
+Buradaki sorunun bilgiye
+
+42
+00:02:37.012 --> 00:02:40.442
+erişilememesi olduğunu belirledik. İçeriğin bulunabilirliği sorunu vardı.
+
+43
+00:02:41.452 --> 00:02:44.812
+Bunu çözmek için illa sohbet botuna, yapay zekâya
+
+44
+00:02:44.812 --> 00:02:48.732
+kadar gitmek gerekmiyordu. Belki sadece intranetlerini,
+
+45
+00:02:48.732 --> 00:02:52.602
+yani iç web sitelerini düzeltip daha bulunabilir yapmak yeterliydi.
+
+46
+00:02:53.932 --> 00:02:58.132
+Değil mi? Yani sohbet botu burada illa en iyi
+
+47
+00:02:58.132 --> 00:03:01.772
+cevap değildi. Hatta onlarla oturup sahip oldukları farklı
+
+48
+00:03:01.772 --> 00:03:04.242
+kullanım senaryolarını ve zorluklarını konuştuğumuzda,
+
+49
+00:03:04.692 --> 00:03:10.212
+kuruma çok daha fazla değer katacak çok daha değerli
+
+50
+00:03:10.212 --> 00:03:12.612
+kullanım senaryoları olduğunu fark ettik.
+
+51
+00:03:12.612 --> 00:03:16.452
+Bu senaryoları belirlerken onları yapılandırılmış bir
+
+52
+00:03:16.452 --> 00:03:19.042
+değerlendirme süreciyle ele alırız.
+
+53
+00:03:20.212 --> 00:03:26.132
+Uygulanabilirliklerine, ne kadar kolay
+
+54
+00:03:26.132 --> 00:03:28.692
+uygulanabileceklerine bakarız. Ama iş değerlerine de.
+
+55
+00:03:28.692 --> 00:03:30.812
+İş için bir fark yaratacaklar mı?
+
+56
+00:03:30.812 --> 00:03:33.132
+İşte herhangi bir etki olacak mı?
+
+57
+00:03:33.132 --> 00:03:36.852
+Belirlediğimiz senaryolardan biri, İK
+
+58
+00:03:36.852 --> 00:03:41.082
+çalışanlarının her ay yüzlerce mektup hazırlamak zorunda olmasıydı.
+
+59
+00:03:41.492 --> 00:03:45.442
+Pozisyon değişikliği, statü değişikliği,
+
+60
+00:03:46.532 --> 00:03:52.372
+işten çıkarma, zam, daha fazla maaş, belki unvan
+
+61
+00:03:52.372 --> 00:03:54.692
+değişikliği. Hepsi elle yapılıyordu.
+
+62
+00:03:54.692 --> 00:03:57.212
+Bütün bu bilgileri farklı sistemlerden
+
+63
+00:03:57.212 --> 00:04:00.052
+çekip mektuba koymaları, mektubu yazmaları gerekiyordu.
+
+64
+00:04:00.052 --> 00:04:02.534
+Hepsi elle yapılıyordu. Onaya gitmesi,
+
+65
+00:04:02.534 --> 00:04:06.284
+geri dönmesi gerekiyordu. Anlaşılır şekilde çok insan hatası vardı.
+
+66
+00:04:06.814 --> 00:04:10.014
+Ve onlar için en iyi çözümün,
+
+67
+00:04:10.014 --> 00:04:13.414
+en mantıklı ve en çok değer katanın,
+
+68
+00:04:13.414 --> 00:04:17.294
+yapay zekâ tabanlı bir mektup hazırlama aracı yapmak olduğunu
+
+69
+00:04:17.294 --> 00:04:21.364
+fark ettik; araç ilk taslağı oluşturacaktı.
+
+70
+00:04:22.294 --> 00:04:25.054
+Günler yerine dakikalar sürecekti
+
+71
+00:04:25.054 --> 00:04:26.364
+ve onunla çalışabileceklerdi.
+
+72
+00:04:27.374 --> 00:04:30.254
+Bu yüzden öncelikle, yapay zekânın gerçekten değer katabileceği
+
+73
+00:04:30.254 --> 00:04:34.364
+doğru sorunu belirlemek çok önemli.
+
+74
+00:04:36.414 --> 00:04:38.654
+Diyelim ki doğru sorunu buldunuz.
+
+75
+00:04:38.654 --> 00:04:42.814
+İkinci sorun, projelerin başarısız olmasının ikinci nedeni,
+
+76
+00:04:42.814 --> 00:04:43.804
+yanlış çözüm sunmanızdır.
+
+77
+00:04:44.854 --> 00:04:47.164
+Belki yanlış araç ya da yanlış mimaridir.
+
+78
+00:04:52.334 --> 00:04:57.014
+Kurumların istedikleri çözümler için farklı gerekçeleri
+
+79
+00:04:57.014 --> 00:05:01.974
+var. 18 ay boyunca ERP sağlayıcısının yapay zekâ
+
+80
+00:05:01.974 --> 00:05:04.884
+yol haritasını bekleyen bir müşterimiz vardı. Yol haritasında bir özellik
+
+81
+00:05:06.374 --> 00:05:11.294
+vardı; kendi aracını geliştirmeye çalışmak yerine onu beklediler.
+
+82
+00:05:11.294 --> 00:05:16.574
+Yapay zekâ araçlarıyla 4 haftada, ihtiyaçlarının
+
+83
+00:05:16.574 --> 00:05:18.364
+%70’ini karşılayan bir çözüm geliştirdik.
+
+84
+00:05:18.894 --> 00:05:20.654
+Buradaki düşünce buydu.
+
+85
+00:05:20.654 --> 00:05:26.414
+Yani inovasyon, hani derler ya, mükemmel
+
+86
+00:05:26.414 --> 00:05:29.894
+iyinin düşmanıdır. %100’ü elde edemezsiniz
+
+87
+00:05:29.894 --> 00:05:32.894
+ama %70’i elde edip hemen başlayabiliyorsanız
+
+88
+00:05:32.894 --> 00:05:36.204
+bunu yapıp ilerlemenin riskine değer.
+
+89
+00:05:36.974 --> 00:05:41.974
+Ve kurumların bu yapay zekâ projelerinde
+
+90
+00:05:41.974 --> 00:05:45.454
+yaptığı bazı hatalar. Mükemmel satıcı aracını beklemek.
+
+91
+00:05:45.454 --> 00:05:49.974
+Değil mi? Yol haritası üçüncü çeyrek diyorsa ve sorununuz bugün varsa,
+
+92
+00:05:49.974 --> 00:05:53.204
+o aracı bugün geliştirmeye değebilir.
+
+93
+00:05:53.734 --> 00:05:55.404
+Bir de tersi sorun var:
+
+94
+00:05:56.654 --> 00:06:00.124
+Satın alabileceğiniz bir şeyi aceleyle geliştirmek.
+
+95
+00:06:00.934 --> 00:06:03.804
+Bir şey geliştiriyorsanız, farklılaşma için geliştirmek önemlidir.
+
+96
+00:06:04.334 --> 00:06:08.375
+Kurumunuzun ihtiyaç duyduğu belirli bir kullanım senaryosu,
+
+97
+00:06:08.375 --> 00:06:13.205
+belirli bir durumsa. Sıradan bir üründen, üçüncü taraflarca
+
+98
+00:06:14.135 --> 00:06:19.575
+hazır sunulan bir araçtan söz ediyorsak, satın almak, geliştirmek için
+
+99
+00:06:19.575 --> 00:06:22.365
+zaman ve para harcamaktan daha iyi olabilir.
+
+100
+00:06:24.255 --> 00:06:29.015
+Şirketlerin yaptığını gördüğümüz üçüncü şey, havalı
+
+101
+00:06:29.015 --> 00:06:33.615
+çözümlere koşmaları. Örneğin üretken yapay zekâ kullanmak,
+
+102
+00:06:33.615 --> 00:06:37.845
+oysa bir kural motoru ya da filtre kullanabilirsiniz.
+
+103
+00:06:39.175 --> 00:06:42.205
+Müşterilerimizden biri, bir inşaat şirketi, büyük bir inşaat
+
+104
+00:06:42.855 --> 00:06:44.285
+şirketi, Amerika Birleşik Devletleri’nde,
+
+105
+00:06:45.375 --> 00:06:49.615
+projelerde işi yapmaya gelen farklı satıcılara, taşeronlara
+
+106
+00:06:49.615 --> 00:06:51.775
+teklif talepleri gönderiyor.
+
+107
+00:06:51.775 --> 00:06:56.375
+Ve bu satıcıları geçmiş davranışlarına göre
+
+108
+00:06:56.375 --> 00:07:00.375
+puanlayabilmek istediler. Zamanında mıydılar?
+
+109
+00:07:00.375 --> 00:07:03.375
+Bütçeye uydular mı? Güvenlik sorunları oldu mu?
+
+110
+00:07:03.375 --> 00:07:05.565
+Kendileriyle ilişkili sigorta talepleri
+
+111
+00:07:07.015 --> 00:07:10.255
+oldu mu? Bütün bunları, satıcının ne kadar iyi
+
+112
+00:07:10.255 --> 00:07:15.415
+performans gösterdiğine dair bir fikir verecek bir puana
+
+113
+00:07:15.415 --> 00:07:19.935
+katmak istediler; yeni projeler için satıcı seçerken
+
+114
+00:07:19.935 --> 00:07:25.455
+kullanacaklardı. Satıcıları puanlayıp
+
+115
+00:07:25.455 --> 00:07:26.565
+öneriler sunacak bir yapay zekâ aracı istiyorlardı.
+
+116
+00:07:27.975 --> 00:07:31.055
+Onlarla oturup puana dahil etmek istedikleri farklı
+
+117
+00:07:31.055 --> 00:07:33.935
+veri parçalarını anlayınca
+
+118
+00:07:33.935 --> 00:07:36.135
+basit bir kural motorunun işe yarayacağını fark ettik.
+
+119
+00:07:36.135 --> 00:07:39.815
+Puanlama yöntemlerinde aşırı karmaşık bir şey yoktu;
+
+120
+00:07:39.815 --> 00:07:42.215
+bu da onlar için mantıklıydı.
+
+121
+00:07:42.215 --> 00:07:44.285
+Biz de daha basit bir çözüm
+
+122
+00:07:45.655 --> 00:07:49.975
+önerdik ve yapay zekâyı tahmin ve
+
+123
+00:07:49.975 --> 00:07:54.215
+öngörü için kullandık. Belirli bir satıcının yeni projede
+
+124
+00:07:54.215 --> 00:07:58.295
+tüm ayrıntıları göz önüne alındığında
+
+125
+00:07:58.295 --> 00:08:02.485
+ne kadar başarılı olabileceğini öngörebileceğimizi fark ettik.
+
+126
+00:08:03.535 --> 00:08:08.897
+Kurumların yaptığı son hata
+
+127
+00:08:08.897 --> 00:08:13.537
+veri gizliliğiyle ilgili. Claude, ChatGPT gibi herkese açık yapay zekâ
+
+128
+00:08:13.537 --> 00:08:17.567
+araçları ile kurumdaki gizli veriler bir araya geldiğinde
+
+129
+00:08:18.057 --> 00:08:19.767
+bu felaket tarifidir.
+
+130
+00:08:20.337 --> 00:08:23.777
+Bu, olmayı bekleyen bir hukuki sorundur.
+
+131
+00:08:23.777 --> 00:08:28.977
+Bu yüzden bu durumlarda veri ve yapay zekâ yönetişimi şart;
+
+132
+00:08:28.977 --> 00:08:32.897
+sınır koymak gerekir: hangi veriler, nasıl kullanılabilir,
+
+133
+00:08:32.897 --> 00:08:37.537
+hangi araçlarda, bu araçlar nerede,
+
+134
+00:08:37.537 --> 00:08:39.967
+kurum içinde ve korumalı ortamda mı.
+
+135
+00:08:43.217 --> 00:08:45.647
+Üçüncü sorun, başarısız uygulamadır.
+
+136
+00:08:46.297 --> 00:08:47.417
+Çözüm işe yaradı.
+
+137
+00:08:47.417 --> 00:08:49.577
+Doğru sorununuz var, doğru çözümünüz var.
+
+138
+00:08:49.577 --> 00:08:50.767
+Kimse kullanmıyor.
+
+139
+00:08:52.777 --> 00:08:57.007
+Değil mi? Modeliniz %94 doğru olabilir ama kimse benimsemedi.
+
+140
+00:08:57.737 --> 00:09:01.327
+Çünkü kimsenin açmadığı bir portalın bir köşesinde gömülüydü.
+
+141
+00:09:01.937 --> 00:09:05.407
+Yani teknik olarak çalışması hikâyenin sadece bir kısmı.
+
+142
+00:09:05.897 --> 00:09:08.247
+İnsanların onu kullandığından da emin olmalıyız.
+
+143
+00:09:09.057 --> 00:09:12.417
+Benimsenmenin önemli olan tek KPI olduğunu savunuyorum,
+
+144
+00:09:12.417 --> 00:09:15.647
+değil mi? Kimsenin kullanmadığı mükemmel model mükemmel bir başarısızlık.
+
+145
+00:09:16.337 --> 00:09:19.097
+İnsanların nerede olduğunu bilmesi, kullanması gerekir
+
+146
+00:09:19.097 --> 00:09:22.047
+ve onu insanların zaten yaptığı iş akışına
+
+147
+00:09:23.897 --> 00:09:25.537
+yerleştirmek önemlidir.
+
+148
+00:09:25.537 --> 00:09:29.777
+Çok fazla değişiklik yapmaları gerekiyorsa, özellikle de çözümü kullanmak için
+
+149
+00:09:29.777 --> 00:09:33.847
+daha fazla tıklamaları gerekiyorsa, kullanmazlar.
+
+150
+00:09:34.337 --> 00:09:38.817
+Değil mi? İş akışlarının bir parçası olarak mümkün olduğunca
+
+151
+00:09:38.817 --> 00:09:43.297
+sürtünmesiz olmalı. Sık karşılaştığımız sorunlardan biri,
+
+152
+00:09:43.297 --> 00:09:47.137
+iş süreçlerinin kendisinin bozuk olması.
+
+153
+00:09:47.137 --> 00:09:51.257
+Verimli değiller. Dolayısıyla o iş akışına yapay zekâ atmak
+
+154
+00:09:51.257 --> 00:09:54.247
+bozuk süreci sadece daha hızlı çalıştırır.
+
+155
+00:09:55.457 --> 00:09:57.657
+Ama çözüm iş akışını değiştirmek olabilir
+
+156
+00:09:57.657 --> 00:10:01.417
+ve yenilikçi olup etki yaratabileceğiniz yer burasıdır;
+
+157
+00:10:01.417 --> 00:10:05.177
+yalnızca gerekebilecek teknik çözüme değil,
+
+158
+00:10:05.177 --> 00:10:08.817
+sorunun bütününe, ekibe bakıp belki
+
+159
+00:10:08.817 --> 00:10:13.658
+tüm sürecin değiştirilebileceğini, süreci sürtünmesiz kılacak yapay zekâ
+
+160
+00:10:13.658 --> 00:10:14.568
+araçlarıyla yeniden tasarlanabileceğini görürsünüz.
+
+161
+00:10:16.258 --> 00:10:18.458
+Ve “Tamam, açtık” fikri
+
+162
+00:10:18.458 --> 00:10:21.138
+canlıya geçiş değildir. Değil mi?
+
+163
+00:10:21.138 --> 00:10:23.888
+Canlıya geçiş, insanların aracı kullanmaya başlamasıdır.
+
+164
+00:10:24.578 --> 00:10:27.898
+Kurumun değişmeye ve araçları gerçekten
+
+165
+00:10:27.898 --> 00:10:30.128
+kullanmaya başladığını gördüğünüzde.
+
+166
+00:10:31.978 --> 00:10:34.328
+Dördüncü sorun, değer ölçümünün olmaması.
+
+167
+00:10:35.138 --> 00:10:38.618
+İyi bir sorun buldunuz, çözdünüz, çalışıyor,
+
+168
+00:10:38.618 --> 00:10:40.858
+yayına aldınız. Kurumda fark yarattığını
+
+169
+00:10:40.858 --> 00:10:42.488
+düşünüyorsunuz ama hiçbir fikriniz yok.
+
+170
+00:10:43.298 --> 00:10:46.978
+Çünkü yönetimin size soracağı tek soru şu:
+
+171
+00:10:46.978 --> 00:10:49.658
+“Başlattığımızdan beri ne değişti?”
+
+172
+00:10:49.658 --> 00:10:53.538
+Değil mi? Canlıya geçişten 6 ay sonra başlangıç ölçümünüz yok,
+
+173
+00:10:53.538 --> 00:10:55.178
+bu soruyu yanıtlayamazsınız.
+
+174
+00:10:55.178 --> 00:10:58.578
+Bu yüzden bu yapay zekâ projelerini düşünürken
+
+175
+00:10:58.578 --> 00:11:02.408
+ürün yöneticileri gibi düşünmek önemli. Yani önce
+
+176
+00:11:03.178 --> 00:11:05.058
+bir başarı metriği tanımlamamız gerekiyor.
+
+177
+00:11:05.058 --> 00:11:07.168
+Bu yapay zekâ çözümünü hayata geçirdikten sonra
+
+178
+00:11:08.218 --> 00:11:09.528
+başarılı olduğunu nasıl anlarız?
+
+179
+00:11:09.938 --> 00:11:12.938
+Geliri artırdı mı? Maliyeti düşürdü mü?
+
+180
+00:11:12.938 --> 00:11:16.448
+Riski azalttı mı? Müşteri memnuniyetini artırdı mı?
+
+181
+00:11:17.218 --> 00:11:18.448
+Belki çalışan memnuniyetini?
+
+182
+00:11:19.458 --> 00:11:22.898
+Karar verebileceğiniz pek çok farklı metrik olabilir
+
+183
+00:11:22.898 --> 00:11:26.178
+ama bir metriğe karar verin, sonra başlangıç durumunu ölçün.
+
+184
+00:11:26.178 --> 00:11:28.088
+Yapay zekâdan önceki mevcut durum nedir?
+
+185
+00:11:28.778 --> 00:11:30.498
+Bir görev 45 dakika mı sürüyor?
+
+186
+00:11:30.498 --> 00:11:33.338
+Tıpkı bahsettiğim mektup hazırlama aracında olduğu gibi.
+
+187
+00:11:33.338 --> 00:11:35.538
+Bir mektup hazırlamaları günler sürüyordu.
+
+188
+00:11:35.538 --> 00:11:37.618
+Çok fazla insan hatası vardı.
+
+189
+00:11:37.618 --> 00:11:40.688
+Belki hata oranını düşürmek istersiniz.
+
+190
+00:11:41.418 --> 00:11:43.178
+Sonra bir eşik düşünün.
+
+191
+00:11:43.178 --> 00:11:45.818
+Çalışmak aslında ne demek?
+
+192
+00:11:45.818 --> 00:11:46.718
+Başarı nedir?
+
+193
+00:11:47.658 --> 00:11:52.258
+Bu İK mektuplarını hazırlama süresini
+
+194
+00:11:52.258 --> 00:11:57.458
+%80 azaltırsak, bu işe etki eden büyük bir azalmadır.
+
+195
+00:11:57.458 --> 00:12:02.258
+Çünkü bu İK temsilcilerinin artık zamanlarının %80’i
+
+196
+00:12:02.258 --> 00:12:04.448
+daha verimli başka işler için kalıyor.
+
+197
+00:12:06.338 --> 00:12:10.768
+Ve değinmek istediğim son sorun, başarısız iletişim.
+
+198
+00:12:11.818 --> 00:12:15.139
+Doğru sorunu seçtiniz, doğru çözümü yaptınız,
+
+199
+00:12:15.139 --> 00:12:19.419
+işe yaradı, uyguladınız, değeri ölçtünüz
+
+200
+00:12:19.419 --> 00:12:20.769
+ve değer gerçek.
+
+201
+00:12:22.139 --> 00:12:26.299
+Kimse duymadı. Kurumda kimse ne harika bir iş
+
+202
+00:12:26.299 --> 00:12:27.729
+çıkardığınızı bilmiyor.
+
+203
+00:12:28.779 --> 00:12:32.979
+Değil mi? Bu yüzden başarıyı nasıl
+
+204
+00:12:32.979 --> 00:12:37.259
+anlatacağınızı da anlamak çok önemli. Başkan yardımcısı tek cümle ister.
+
+205
+00:12:37.259 --> 00:12:40.819
+Gelir arttı mı? Yaptığımız hatalar,
+
+206
+00:12:40.819 --> 00:12:44.019
+iletişimimizde ters giden şeyler, örneğin
+
+207
+00:12:44.019 --> 00:12:48.419
+sonuçları değil doğruluğu sunmak, yaptığımız değişikliklerin
+
+208
+00:12:48.419 --> 00:12:50.089
+etkisini anlamamak gibi.
+
+209
+00:12:51.019 --> 00:12:55.099
+Ya da iş dünyası kitlesine teknik dille hitap ederiz.
+
+210
+00:12:55.099 --> 00:12:58.379
+Modelin ne kadar iyi çalıştığı, AUC,
+
+211
+00:12:58.379 --> 00:13:02.329
+kesinlik vb. umurlarında değildir.
+
+212
+00:13:03.699 --> 00:13:06.779
+Etkinin gerçekte ne yaptığını göstermek için
+
+213
+00:13:06.779 --> 00:13:09.529
+öncesi-sonrası karşılaştırması sunmayız.
+
+214
+00:13:10.179 --> 00:13:13.339
+Modelin işleri iyileştirdiği gerçeğinin ötesinde
+
+215
+00:13:13.339 --> 00:13:14.329
+hiçbir ayrıntı da vermeyiz.
+
+216
+00:13:15.979 --> 00:13:19.019
+Son olarak, hikâye anlatıp bir anlatı kurmak yerine
+
+217
+00:13:19.019 --> 00:13:21.859
+sadece birkaç rakam içeren bir rapor gönderebiliriz.
+
+218
+00:13:21.859 --> 00:13:27.499
+Bu yüzden yapay zekâ projeleri hakkında iletişim kurarken
+
+219
+00:13:27.499 --> 00:13:30.009
+benimsemeyi sevdiğimiz yaklaşım bir hikâyeye sahip olmak.
+
+220
+00:13:30.699 --> 00:13:33.059
+Ve önce sorunun ne olduğunu söylemek.
+
+221
+00:13:33.059 --> 00:13:35.899
+Sorun, analistimizin bu raporla haftada 3 saat
+
+222
+00:13:35.899 --> 00:13:39.819
+elle uğraşmasıydı. Sonra bir araç geliştirdik; bu araç
+
+223
+00:13:39.819 --> 00:13:44.329
+veri çıkarımını otomatikleştiriyor ve belgedeki anomalileri işaretliyor.
+
+224
+00:13:44.819 --> 00:13:49.099
+Sonuç olarak analist başına 2,5 saat tasarruf ettik
+
+225
+00:13:49.099 --> 00:13:51.489
+haftada ve hatalar %40 azaldı.
+
+226
+00:13:53.139 --> 00:13:55.219
+İşte bu yüzden operasyon müdürümüz Maria,
+
+227
+00:13:55.219 --> 00:13:58.899
+ona bir isim verin, kişiselleştirin, bunu her pazartesi saat
+
+228
+00:13:58.899 --> 00:14:04.059
+8.00'de kullanıyor. Sonraki adımımız, bunu gelecek çeyrekte iki
+
+229
+00:14:04.059 --> 00:14:07.819
+ekibe daha yaymak. Etrafında bir hikâye ve anlatı kurduğunuzda
+
+230
+00:14:07.819 --> 00:14:12.059
+insanların bu projelerin getirdiği değeri anlaması
+
+231
+00:14:12.059 --> 00:14:13.529
+daha kolay olur.
+
+232
+00:14:15.099 --> 00:14:18.251
+Başarılı olmak için önce doğru sorunu çözmemiz gerekiyor.
+
+233
+00:14:19.181 --> 00:14:22.341
+Sadece en parlak ya da en kolay aracı değil, doğru aracı
+
+234
+00:14:22.341 --> 00:14:25.701
+seçmelisiniz. Değişim yönetimi bir aşama değildir.
+
+235
+00:14:25.701 --> 00:14:26.611
+O ürünün kendisidir.
+
+236
+00:14:28.141 --> 00:14:32.091
+Değeri inşa etmeden önce tanımlayın, sonra da ölçün.
+
+237
+00:14:32.941 --> 00:14:36.701
+Sonuçlarınızı birinin anlatabileceği bir hikâyeye
+
+238
+00:14:36.701 --> 00:14:42.221
+dönüştürmek istersiniz. Şimdi panelistlerimize geçiyoruz ve
+
+239
+00:14:42.221 --> 00:14:44.621
+o hikâyeleri dinleyeceğiz. Biraz geçmişle başlayacağız;
+
+240
+00:14:44.621 --> 00:14:49.101
+nereden başladığımızı ve bugün nerede olduğumuzu anlayacağız,
+
+241
+00:14:49.101 --> 00:14:52.491
+ardından çeşitli başarı hikâyelerini dinleyeceğiz

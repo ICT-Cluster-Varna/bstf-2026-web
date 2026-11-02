@@ -1,0 +1,733 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.000
+veri koruması konusunda.
+
+2
+00:00:03.000 --> 00:00:06.880
+Teşekkürler. Herkese günaydın.
+
+3
+00:00:06.880 --> 00:00:09.550
+Bugün hepinizle burada olmaktan memnuniyet duyuyorum.
+
+4
+00:00:10.040 --> 00:00:15.080
+Adım Yoana Koleva, GATE Institute'un bir parçasıyım ve orada
+
+5
+00:00:15.080 --> 00:00:20.710
+veri ve yapay zeka yönetiminden ve bunların korunmasından sorumluyum.
+
+6
+00:00:21.920 --> 00:00:27.200
+Bugün size veri yönetişiminin ve veri yönetiminin, veri güvenliğinin ve
+
+7
+00:00:27.200 --> 00:00:33.630
+siber savunmanın temeli olduğunu anlatacağım.
+
+8
+00:00:35.120 --> 00:00:37.590
+Ama önce kim olduğumuz hakkında
+
+9
+00:00:39.400 --> 00:00:41.350
+birkaç sözle başlayalım.
+
+10
+00:00:41.760 --> 00:00:43.590
+GATE 2019'da,
+
+11
+00:00:44.920 --> 00:00:49.640
+Doğu Avrupa'nın büyük veri ve yapay zeka alanındaki ilk mükemmeliyet merkezi olarak
+
+12
+00:00:49.640 --> 00:00:54.520
+stratejik iş birliği içinde,
+
+13
+00:00:54.520 --> 00:00:58.150
+Sofya Üniversitesi ve İsveç'teki Chalmers University ile kuruldu.
+
+14
+00:01:00.200 --> 00:01:04.030
+Hükümet, sanayi ve girişimlerle birlikte
+
+15
+00:01:05.480 --> 00:01:12.000
+büyük veri ve yapay zeka araştırması, inovasyonu ve eğitimi üzerinde, üç
+
+16
+00:01:12.000 --> 00:01:16.800
+temel alanda çalışıyoruz: geleceğin şehirleri, dijital sağlık ve
+
+17
+00:01:16.800 --> 00:01:18.750
+bilgi ortamı analizi.
+
+18
+00:01:20.040 --> 00:01:24.240
+International Data Spaces Association'ın Bulgaristan merkeziyiz.
+
+19
+00:01:24.240 --> 00:01:29.760
+Bu dernek, kurumlar arasında güvenli ve güvenilir veri paylaşımı için çalışır.
+
+20
+00:01:29.760 --> 00:01:35.000
+Ayrıca NATO DIANA kapsamında akredite bir
+
+21
+00:01:35.000 --> 00:01:39.710
+test merkeziyiz; çift kullanımlı teknolojileri test edip doğruluyoruz,
+
+22
+00:01:40.760 --> 00:01:44.110
+yani hem sivil hem savunma ihtiyaçlarına hizmet edenleri.
+
+23
+00:01:44.920 --> 00:01:48.350
+Gördüğünüz gibi oldukça fazla
+
+24
+00:01:49.520 --> 00:01:55.800
+hassas veriyle çalışıyoruz: şehir sensörü verilerinden sağlık verilerine,
+
+25
+00:01:55.800 --> 00:01:57.870
+savunma uygulamalı teknolojilere kadar.
+
+26
+00:01:58.840 --> 00:02:05.332
+Öğrendiğimiz şey şu: bizim için en yararlı veri
+
+27
+00:02:05.332 --> 00:02:08.082
+genellikle aynı zamanda en hassas olandır.
+
+28
+00:02:08.572 --> 00:02:15.172
+Bu yüzden veri yönetişimini ve veri güvenliğini tek bir görev olarak ele alıyoruz.
+
+29
+00:02:15.172 --> 00:02:18.122
+Bunu nasıl yaptığımızı daha ayrıntılı göstereceğim,
+
+30
+00:02:18.652 --> 00:02:21.322
+ama önce birkaç rakama bakalım.
+
+31
+00:02:21.892 --> 00:02:27.612
+İhlallerin %53'ünde müşterilerin kişisel verileri
+
+32
+00:02:27.612 --> 00:02:32.652
+açığa çıktı. Kurumların en sık kaybettiği veri türü bu.
+
+33
+00:02:32.652 --> 00:02:38.412
+İkinci rakam, veriler farklı ortamlara dağıldığında,
+
+34
+00:02:38.412 --> 00:02:42.772
+örneğin şirket içinde,
+
+35
+00:02:42.772 --> 00:02:47.972
+bulutta, farklı sistemlerde, bir ihlalin ortalama yaklaşık
+
+36
+00:02:47.972 --> 00:02:50.042
+5 milyon dolara mal olduğunu gösteriyor. Üçüncü rakam, bir ihlali bulup
+
+37
+00:02:53.772 --> 00:02:59.482
+kontrol altına almanın yaklaşık 241 gün, yani 8 ay sürdüğünü söylüyor.
+
+38
+00:03:00.372 --> 00:03:05.492
+Ayrıca çalışanların yaklaşık %40'ı, işverenlerinin onaylamadığı yapay zeka
+
+39
+00:03:05.492 --> 00:03:11.202
+araçlarıyla şirketin hassas verilerini paylaştığını söylüyor.
+
+40
+00:03:11.692 --> 00:03:14.692
+Bunu insanlar bir ankette itiraf ediyor.
+
+41
+00:03:14.692 --> 00:03:17.402
+Gerçekte bu oran muhtemelen çok daha yüksek.
+
+42
+00:03:18.212 --> 00:03:22.212
+Yani bu rakamların hiçbiri teknolojinin
+
+43
+00:03:22.212 --> 00:03:27.332
+başarısızlığıyla ilgili değil. Hangi verilere sahip olduğumuzu,
+
+44
+00:03:27.332 --> 00:03:30.642
+kime ait olduğunu ve kimin erişimi olduğunu bilmemekle ilgili.
+
+45
+00:03:31.492 --> 00:03:36.482
+Çoğu şirkette veri, kimsenin yetişemeyeceği kadar hızlı büyüyor.
+
+46
+00:03:37.572 --> 00:03:42.122
+Hâlâ verileri eski sistemlerde saklıyoruz.
+
+47
+00:03:42.572 --> 00:03:46.722
+Sahip atamıyoruz ya da verileri hassas olarak sınıflandırmıyoruz.
+
+48
+00:03:47.612 --> 00:03:51.492
+Bu kalıplar tek başına günlük
+
+49
+00:03:51.492 --> 00:03:56.532
+aksaklıklar gibi görünür, ama bu kalıplar bir saldırganla buluşunca
+
+50
+00:03:56.532 --> 00:03:59.962
+neler olduğuna dair birkaç örnek göstereceğim.
+
+51
+00:04:00.532 --> 00:04:04.654
+Bu kalıplara dayanan ve olaylarla sonuçlanan
+
+52
+00:04:04.654 --> 00:04:08.244
+üç basit senaryoya bakacağız.
+
+53
+00:04:09.374 --> 00:04:12.004
+İlki bir çevrimiçi perakendeci.
+
+54
+00:04:12.734 --> 00:04:17.774
+Örnek olarak Ivan Petrov'u kullanacağım;
+
+55
+00:04:17.774 --> 00:04:19.884
+en iyi müşterilerinden biri.
+
+56
+00:04:20.454 --> 00:04:25.014
+Gördüğünüz gibi, verileri dört farklı
+
+57
+00:04:25.014 --> 00:04:28.844
+sistemde duruyor. Ve her sistemde farklı veriler var.
+
+58
+00:04:29.254 --> 00:04:33.204
+Örneğin pazarlama onu kişisel e-postasıyla tanıyor,
+
+59
+00:04:33.654 --> 00:04:38.204
+satış ekibi cep telefonu numarasıyla, ürün ekibi kullanıcı
+
+60
+00:04:39.414 --> 00:04:43.804
+kimlik bilgilerini biliyor, finans ise şirketinin adıyla tanıyor.
+
+61
+00:04:44.534 --> 00:04:47.964
+Bu sistemlerin hiçbiri birbirine bağlı değil.
+
+62
+00:04:48.614 --> 00:04:52.374
+Ayrıca verilerin tutarlı olmadığını görüyorsunuz
+
+63
+00:04:52.374 --> 00:04:54.084
+ve bu zorlu bir iş olacak.
+
+64
+00:04:54.974 --> 00:05:00.214
+Sonra bir saldırgan, pazarlama ekibindeki birine kimlik avı e-postası
+
+65
+00:05:00.214 --> 00:05:04.734
+gönderiyor ve Ivan'ın e-posta
+
+66
+00:05:04.734 --> 00:05:07.164
+adresini ele geçiriyor. Sonra ona bir e-posta gönderiyor.
+
+67
+00:05:07.894 --> 00:05:12.574
+O e-postada sahte bir giriş sayfası var ve Ivan orada
+
+68
+00:05:12.574 --> 00:05:17.134
+parolasını giriyor. Oradan ürün sistemine geçip
+
+69
+00:05:17.134 --> 00:05:21.854
+tüm faturalarını görebiliyorlar. Ardından
+
+70
+00:05:21.854 --> 00:05:27.604
+Ivan adına finans ekibine ulaşıp faturalarından birinin iadesini
+
+71
+00:05:28.654 --> 00:05:30.604
+yeni bir banka hesabına istiyorlar.
+
+72
+00:05:31.014 --> 00:05:35.294
+Veriler bu kadar
+
+73
+00:05:35.294 --> 00:05:40.044
+parçalı olduğu için finans ekibi bunu diğer sistemlerle
+
+74
+00:05:40.694 --> 00:05:42.684
+karşılaştırıp doğrulayamıyor.
+
+75
+00:05:43.254 --> 00:05:46.974
+Gördükleri şey: fatura numarası aynı,
+
+76
+00:05:46.974 --> 00:05:50.814
+isim eşleşiyor, tutar da doğru.
+
+77
+00:05:50.814 --> 00:05:55.534
+Yani iadeyi saldırgana göndermeleri
+
+78
+00:05:55.534 --> 00:05:58.814
+olası. Ayrıca ihlal gerçekleştiğinde
+
+79
+00:05:58.814 --> 00:06:02.124
+düzenleyici kurum kaç müşterinin etkilendiğini soracak.
+
+80
+00:06:02.694 --> 00:06:06.575
+Bunu bilmelerinin yolu yok, çünkü yalnızca Ivan için bile
+
+81
+00:06:06.575 --> 00:06:11.015
+sistemlerde dört farklı müşteri olarak kayıtlı olduğu görülüyor.
+
+82
+00:06:11.015 --> 00:06:15.245
+İkinci örnek bir belediye.
+
+83
+00:06:16.175 --> 00:06:20.375
+Bir proje var ve bir tedarikçiye vatandaş şikâyetleri veritabanına
+
+84
+00:06:20.375 --> 00:06:25.245
+paylaşılan bir hesapla geçici erişim verilmiş.
+
+85
+00:06:26.215 --> 00:06:30.135
+Bu veritabanında çok fazla kişisel veri var:
+
+86
+00:06:30.135 --> 00:06:35.135
+vatandaşların adları, adresleri, kimden şikâyetçi oldukları,
+
+87
+00:06:35.135 --> 00:06:37.805
+kimlik numaraları ve benzeri.
+
+88
+00:06:38.255 --> 00:06:39.525
+Proje bittikten sonra
+
+89
+00:06:41.215 --> 00:06:46.535
+kimse tedarikçinin hesaba erişimini kapatmadı.
+
+90
+00:06:46.535 --> 00:06:52.175
+Birkaç ay sonra tedarikçi
+
+91
+00:06:52.175 --> 00:06:57.175
+ihlale uğradı. Böylece saldırgan unutulmuş hesabı ele geçirdi
+
+92
+00:06:57.175 --> 00:06:59.965
+ve artık veritabanına erişimi var.
+
+93
+00:07:01.695 --> 00:07:07.015
+Gördüğünüz gibi, veritabanındaki kişisel veri
+
+94
+00:07:07.015 --> 00:07:10.855
+miktarıyla, ihlalin ve olabilecek dolandırıcılığın ölçeğini
+
+95
+00:07:10.855 --> 00:07:13.085
+ancak hayal edebilirsiniz.
+
+96
+00:07:13.615 --> 00:07:19.215
+Ayrıca şehir, hesap paylaşıldığı için
+
+97
+00:07:19.215 --> 00:07:21.485
+nelerin etkilendiğini anlayamıyor.
+
+98
+00:07:22.335 --> 00:07:25.725
+Üçüncü örnek yapay zekayla ilgili.
+
+99
+00:07:26.255 --> 00:07:29.605
+Bir şirket, tüm çalışanlarına bir yapay zeka asistanı
+
+100
+00:07:30.575 --> 00:07:34.135
+sunuyor; e-postalara,
+
+101
+00:07:34.135 --> 00:07:37.365
+paylaşılan sürücülere, şirketin tüm verilerine bağlı.
+
+102
+00:07:38.495 --> 00:07:41.575
+Bir çalışanın şu soruyu sorduğunu düşünün:
+
+103
+00:07:41.575 --> 00:07:44.655
+yönetim ekibinin maaşları nedir?
+
+104
+00:07:44.655 --> 00:07:46.815
+Asistan da yanıtlayacak.
+
+105
+00:07:46.815 --> 00:07:52.775
+Neden? Çünkü paylaşılan klasörlerden birinde, tüm şirketle
+
+106
+00:07:52.775 --> 00:07:56.695
+paylaşılan bir bordro dosyası duruyor,
+
+107
+00:07:56.695 --> 00:08:00.205
+ama kimse bu verileri gizli olarak sınıflandırmamış.
+
+108
+00:08:01.135 --> 00:08:08.257
+Şimdi çalıntı parolası olan ve o asistanı
+
+109
+00:08:08.257 --> 00:08:10.577
+ele geçirmeyi başaran bir saldırgan düşünün.
+
+110
+00:08:10.577 --> 00:08:15.217
+Bilgi bulmak eskiden günler sürerdi, şimdi şirket yapay zekayı devreye
+
+111
+00:08:15.217 --> 00:08:19.897
+aldıysa birkaç soruyla oluyor.
+
+112
+00:08:19.897 --> 00:08:23.897
+Yani üç farklı örnek, üç farklı saldırı türü var,
+
+113
+00:08:23.897 --> 00:08:27.407
+ama ortak tema veri yönetimi.
+
+114
+00:08:28.097 --> 00:08:32.737
+Verilerimizi nasıl yönettiğimiz, ne kadar zarar
+
+115
+00:08:32.737 --> 00:08:36.247
+göreceğimizi belirleyebilir. Çoğu kuruluş
+
+116
+00:08:37.337 --> 00:08:42.897
+güvenliği veri sürecinin sonunda uyguluyor;
+
+117
+00:08:42.897 --> 00:08:47.497
+izleme, uyarılar, güvenlik duvarları ekleyip bir şeyler
+
+118
+00:08:47.497 --> 00:08:52.417
+ters gidiyor mu diye bakıyor. O noktada risk zaten
+
+119
+00:08:52.417 --> 00:08:57.937
+oluşmuş oluyor. İşte bu yüzden veri yönetişimi her zaman ilk
+
+120
+00:08:57.937 --> 00:09:01.737
+adım olmalı. Peki veri yönetişimine nasıl başlarız?
+
+121
+00:09:01.737 --> 00:09:04.607
+İşte başlamak için birkaç basit adım.
+
+122
+00:09:05.057 --> 00:09:08.287
+Öncelikle veri envanteri.
+
+123
+00:09:08.817 --> 00:09:13.617
+Bu en gösterişli iş değil, ama temel çizginiz bu.
+
+124
+00:09:13.617 --> 00:09:14.687
+Bu temel.
+
+125
+00:09:15.737 --> 00:09:17.727
+İlk olarak, hangi verilere sahibiz?
+
+126
+00:09:18.137 --> 00:09:20.047
+Veriler nerede saklanıyor?
+
+127
+00:09:20.777 --> 00:09:25.767
+Erişimi olanın aksine, verileri gerçekte kim kullanıyor?
+
+128
+00:09:26.297 --> 00:09:28.647
+Bu soruların yanıtlarını aldıktan sonra
+
+129
+00:09:29.137 --> 00:09:34.697
+tüm veri kümelerini işletmeye ne kadar değer ve ne kadar
+
+130
+00:09:34.697 --> 00:09:37.207
+risk getirdiklerine göre değerlendirmeliyiz.
+
+131
+00:09:37.617 --> 00:09:39.287
+Ve bu veri kümelerinin
+
+132
+00:09:41.137 --> 00:09:46.697
+değerlendirme ölçeğinde nereye düştüğüne bağlı olarak,
+
+133
+00:09:46.697 --> 00:09:49.847
+bunları sağdaki matrise yerleştirebilirsiniz.
+
+134
+00:09:50.377 --> 00:09:57.177
+Örneğin sağ üst köşe, verinin
+
+135
+00:09:57.177 --> 00:09:58.937
+yüksek değerli, yüksek riskli olduğunu söyler.
+
+136
+00:09:58.937 --> 00:10:02.137
+Bu, işletmenin en kritik verisidir.
+
+137
+00:10:02.137 --> 00:10:06.337
+Bunlar müşteri işlemleri, ödeme verileri,
+
+138
+00:10:06.337 --> 00:10:10.498
+sözleşmeler. Güvenlik çabalarının çoğu buraya odaklanmalı.
+
+139
+00:10:10.498 --> 00:10:16.538
+Sonra sol üst çeyrek: yüksek değerli, düşük
+
+140
+00:10:16.538 --> 00:10:22.578
+riskli veriler. Bunlar ürün katalogları,
+
+141
+00:10:22.578 --> 00:10:24.888
+fiyatlar, iç raporlar.
+
+142
+00:10:25.498 --> 00:10:28.858
+Bunlar önemli bilgiler ama sır değil.
+
+143
+00:10:28.858 --> 00:10:33.138
+Yani buradaki risk verinin çalınması değil,
+
+144
+00:10:33.138 --> 00:10:35.328
+yanlış değiştirilmesi.
+
+145
+00:10:36.018 --> 00:10:41.698
+Bu yüzden burada odak, veri kalitesi kontrolleri ve
+
+146
+00:10:41.698 --> 00:10:44.768
+verileri kimin değiştirebileceği üzerindeki denetimler olmalı.
+
+147
+00:10:45.378 --> 00:10:48.738
+Sonra düşük riskli, düşük değerli veriler var.
+
+148
+00:10:48.738 --> 00:10:52.938
+Bunlar eski günlükler, unutulmuş CSV dosyaları ve dışa aktarımlar,
+
+149
+00:10:52.938 --> 00:10:59.528
+test verileri vb. Bu veri tek başına zararsız,
+
+150
+00:11:00.138 --> 00:11:04.538
+ama birikiyor ve şirketler her ay bu verilerin
+
+151
+00:11:04.538 --> 00:11:09.418
+saklanması için ödeme yapıyor. Bu verileri karıştırmaya başlarsak,
+
+152
+00:11:09.418 --> 00:11:12.768
+çoğu zaman sürprizler de çıkar.
+
+153
+00:11:13.818 --> 00:11:19.418
+Örneğin çoğu zaman test verilerinize bakarsanız,
+
+154
+00:11:19.418 --> 00:11:23.698
+orada gerçek müşteri verisi bulunma ihtimalinin
+
+155
+00:11:23.698 --> 00:11:28.138
+yüksek olduğunu görürsünüz. Burada öneri, saklama kuralları koymak
+
+156
+00:11:28.138 --> 00:11:31.058
+ve süre dolunca verileri silmek.
+
+157
+00:11:31.058 --> 00:11:35.738
+Son olarak, düşük değerli ama yüksek riskli veriler var.
+
+158
+00:11:35.738 --> 00:11:37.928
+Hatırlamanızı istediğim bu.
+
+159
+00:11:38.698 --> 00:11:45.338
+Bunlar eski İK kayıtlarınız, eski sistemlerde duran
+
+160
+00:11:45.338 --> 00:11:51.168
+müşteri verileri, çoktan biten projelerin dosyaları.
+
+161
+00:11:51.858 --> 00:11:55.648
+Bu veri işletmeye neredeyse hiçbir şey kazandırmıyor,
+
+162
+00:11:56.258 --> 00:12:00.698
+ama çoğu zaman zayıf korunan eski
+
+163
+00:12:00.698 --> 00:12:04.648
+sistemlerde duruyor. Bu, saldırganlar için en kolay hedef.
+
+164
+00:12:05.538 --> 00:12:10.698
+Veri sızarsa, beraberinde tüm cezalar,
+
+165
+00:12:10.698 --> 00:12:15.139
+bildirimler ile yasal ve itibar zararları da gelir.
+
+166
+00:12:15.139 --> 00:12:20.379
+Bu yüzden tavsiyem: yasal olarak mümkün olanı silin, tutmanız
+
+167
+00:12:20.379 --> 00:12:22.289
+gereken verileri ise şifreleyin.
+
+168
+00:12:23.179 --> 00:12:27.819
+Zamanın farkında olduğum için, bu sunumdan
+
+169
+00:12:27.819 --> 00:12:30.579
+hatırlanacak sadece üç şey varsa,
+
+170
+00:12:30.579 --> 00:12:35.619
+bunlar olsun. Önce, verilerinizi tanıyın, envanterini çıkarın.
+
+171
+00:12:35.619 --> 00:12:41.899
+Verilerin ne kadar değerli ve ne kadar riskli olduğunu
+
+172
+00:12:41.899 --> 00:12:45.139
+matrisle değerlendirin. Sonra insan unsuru.
+
+173
+00:12:45.139 --> 00:12:48.819
+Çalışanlarınız verilerle çalışıyor ve onları işliyor.
+
+174
+00:12:48.819 --> 00:12:53.099
+Bu yüzden onlara verileri nasıl kullanacaklarına ve hangi
+
+175
+00:12:53.099 --> 00:12:54.659
+araçları kullanabileceklerine dair net talimatlar verin.
+
+176
+00:12:54.659 --> 00:12:58.259
+Ayrıca örneğin hangi tür verileri
+
+177
+00:12:58.259 --> 00:13:03.859
+yapay zekaya girmemeleri gerektiğini. Son olarak, hazırlıklı olun, çünkü
+
+178
+00:13:03.859 --> 00:13:06.819
+büyük olasılıkla işler ters gidecek.
+
+179
+00:13:06.819 --> 00:13:10.859
+Ve o noktada veri yönetişiminiz sağlamsa,
+
+180
+00:13:10.859 --> 00:13:14.459
+kritik verileriniz düzgünce kilitliyse, karşınıza çıkan tüm soruları
+
+181
+00:13:14.459 --> 00:13:18.659
+yanıtlayıp uygun sonraki adımları
+
+182
+00:13:18.659 --> 00:13:21.459
+belirleyecek durumda olursunuz.
+
+183
+00:13:21.459 --> 00:13:22.489
+Çok teşekkür ederim.

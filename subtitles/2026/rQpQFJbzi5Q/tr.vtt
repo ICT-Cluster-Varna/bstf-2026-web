@@ -1,0 +1,1709 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.470
+Tamam. Duyabiliyor musunuz? Evet.
+
+2
+00:00:04.120 --> 00:00:08.840
+Bugün bizimle olduğunuz için teşekkür ederim; bence çok güncel
+
+3
+00:00:08.840 --> 00:00:15.520
+ve heyecan verici bir konuda; herkes, işte, yapay zekâdan,
+
+4
+00:00:15.520 --> 00:00:21.200
+dijital dönüşümden söz ediyor. Bu bir iş dünyası alışverişi ve burada
+
+5
+00:00:21.200 --> 00:00:27.400
+dijital dönüşüm konusundaki fikirlerinizi paylaşmanızı istiyoruz,
+
+6
+00:00:27.400 --> 00:00:32.840
+güvenli tedarik zincirleri hakkında. Ama aynı zamanda özel sektörden
+
+7
+00:00:32.840 --> 00:00:38.880
+içgörüler almak istiyoruz; fikirlerinizi ve bilginizi nasıl kullanabiliriz
+
+8
+00:00:38.880 --> 00:00:42.750
+ki bu alandaki politika yapımını gelecekte iyileştirebilelim.
+
+9
+00:00:43.720 --> 00:00:49.000
+Önce oturumu kısaca tanıtmak istiyorum.
+
+10
+00:00:49.000 --> 00:00:52.800
+Dijital ve yapay zekâ dönüşümünü çeşitli alanlarında ele alacağız;
+
+11
+00:00:52.800 --> 00:00:59.120
+tedarik zincirlerinin güvenliğinden başlayıp
+
+12
+00:00:59.120 --> 00:01:05.720
+yapay zekâyı geliştiren yeteneklere ve ilgi alanlarına, ayrıca
+
+13
+00:01:05.720 --> 00:01:08.150
+özel sektörde yapay zekânın benimsenmesine
+
+14
+00:01:09.120 --> 00:01:13.680
+ve şu anda gelişmiş yapay zekâ için sahip olduğumuz
+
+15
+00:01:13.680 --> 00:01:17.190
+bazı stratejik girişimlere geçeceğiz. Bu soru turuna
+
+16
+00:01:18.400 --> 00:01:21.670
+Stoyan ile başlamak istiyorum;
+
+17
+00:01:23.520 --> 00:01:28.710
+bize BRAIN++ fabrikası hakkında çok şey anlatabilecek olan; fabrika
+
+18
+00:01:29.920 --> 00:01:34.440
+şu anda ülkenin en önemli yapay zekâ projelerinden biri hâline geliyor.
+
+19
+00:01:34.440 --> 00:01:40.630
+Yapay zekâ, hesaplama gücü açısından,
+
+20
+00:01:41.040 --> 00:01:42.230
+ekonomik büyümeyi ve rekabet gücünü
+
+21
+00:01:43.640 --> 00:01:45.350
+belirleyen bir şey.
+
+22
+00:01:46.000 --> 00:01:50.480
+Ama aynı zamanda ciddi darboğazlara da tabi,
+
+23
+00:01:50.480 --> 00:01:52.310
+tedarik zinciri boyunca.
+
+24
+00:01:53.320 --> 00:01:58.230
+Fabrikanın mevcut çalışmasına ve ayrıca
+
+25
+00:01:59.640 --> 00:02:04.802
+Bulgaristan'ın bir ekonomi olarak konumuna bakarak, en yaygın
+
+26
+00:02:05.812 --> 00:02:09.562
+riskler tedarik zincirleri boyunca nelerdir ve
+
+27
+00:02:11.572 --> 00:02:14.642
+güvenlik sorunu tedarik zinciri boyunca nerede?
+
+28
+00:02:17.732 --> 00:02:19.452
+Bakalım, zor bir soru.
+
+29
+00:02:19.452 --> 00:02:23.322
+Cevap pek hoş değil.
+
+30
+00:02:25.972 --> 00:02:28.642
+Bağımlılıklar birçok seviyede.
+
+31
+00:02:29.852 --> 00:02:34.002
+Avrupa düzeyinde olanlar var, sonra esas olarak ulusal olanlar.
+
+32
+00:02:35.972 --> 00:02:40.482
+Avrupa düzeyinden başlarsam, yani,
+
+33
+00:02:42.452 --> 00:02:46.842
+tedarik zinciri boyunca başlayalım.
+
+34
+00:02:47.652 --> 00:02:50.772
+Donanımın tamamı ve onu çalıştıran yazılım da
+
+35
+00:02:50.772 --> 00:02:54.202
+GPU'lar, ağ
+
+36
+00:02:55.212 --> 00:02:57.562
+sistemleri, bellek vesaire.
+
+37
+00:02:58.612 --> 00:02:59.802
+Hepsi yurt dışından.
+
+38
+00:03:00.892 --> 00:03:03.962
+Evet, hemen hemen. ABD, Kore, Tayvan.
+
+39
+00:03:04.692 --> 00:03:09.132
+Üstelik tek seferlik de değil.
+
+40
+00:03:09.132 --> 00:03:10.562
+Daha çok bir abonelik gibi.
+
+41
+00:03:11.332 --> 00:03:15.322
+Şimdi alıyoruz, 5 yıl sonra yeniden almamız gerekiyor.
+
+42
+00:03:15.932 --> 00:03:18.122
+Yani zor bir iş.
+
+43
+00:03:20.212 --> 00:03:25.892
+Bu, şu anda hiçbir şey yapamadığımız ya da
+
+44
+00:03:25.892 --> 00:03:30.732
+çok az şey yapabildiğimiz bir bağımlılık. İkincisi, ulusal düzeyde, Bulgaristan,
+
+45
+00:03:30.732 --> 00:03:32.842
+özellikle Bulgaristan'dan söz ediyorum.
+
+46
+00:03:33.892 --> 00:03:38.892
+Ölçeğimiz yok. Bu yapay zekâ fabrikasını tek başımıza
+
+47
+00:03:38.892 --> 00:03:43.772
+elde etmek bile zor olurdu. Gerçi yakın zamanda, sanırım kısa bir süre,
+
+48
+00:03:43.772 --> 00:03:45.842
+çünkü çok yakın zamanda
+
+49
+00:03:47.692 --> 00:03:52.362
+Bulgaristan, ABD tarafından ikinci kademe önemde
+
+50
+00:03:53.572 --> 00:03:59.642
+sınıflandırıldı; yani donanım için sıraya girme
+
+51
+00:04:00.972 --> 00:04:04.254
+yeteneği açısından. Nvidia GPU'ları vb.
+
+52
+00:04:04.254 --> 00:04:10.804
+Bu neyse ki kaldırıldı, ama yine de aynı fikre işaret ediyor:
+
+53
+00:04:11.214 --> 00:04:14.964
+tek başımıza bunun
+
+54
+00:04:16.094 --> 00:04:18.654
+mümkün olması pek olası değildi, BRAIN++,
+
+55
+00:04:18.654 --> 00:04:23.324
+ama bir bütün olarak AB ile birlikte, evet, yapılabilir.
+
+56
+00:04:23.734 --> 00:04:26.094
+Biz de bunu böyle yapıyoruz.
+
+57
+00:04:26.094 --> 00:04:30.694
+Donanım, yani tüm altyapı
+
+58
+00:04:30.694 --> 00:04:31.844
+böyle edinilecek.
+
+59
+00:04:32.494 --> 00:04:34.924
+Sonra, işte,
+
+60
+00:04:35.894 --> 00:04:42.444
+bu donanımla ilgili, ama onu çalıştırmak, yani yetenek ve
+
+61
+00:04:42.974 --> 00:04:47.124
+metalden bir şey çıkarma talebi.
+
+62
+00:04:49.174 --> 00:04:50.494
+Bence bu mevcut.
+
+63
+00:04:50.494 --> 00:04:54.374
+Ama başka her yerde de var,
+
+64
+00:04:54.374 --> 00:04:58.134
+yani "Tamam, kimseye bağımlı değiliz.
+
+65
+00:04:58.134 --> 00:05:00.804
+Bunu biz sağlayabiliriz" diyemeyiz. Ama
+
+66
+00:05:01.854 --> 00:05:06.044
+evet, onları elde tutmamız lazım, çünkü gidebilirler.
+
+67
+00:05:07.174 --> 00:05:14.374
+Yani ana bağımlılıklar bunlar
+
+68
+00:05:14.374 --> 00:05:18.534
+ve riskler: evet, şu anda mümkün kılıyoruz,
+
+69
+00:05:18.534 --> 00:05:21.724
+ama 5 yıl sonra yenilememiz gerektiğinde ne olacak?
+
+70
+00:05:23.934 --> 00:05:30.644
+Tamam, yani siz birçok zorluğun bizim tarafımızdan
+
+71
+00:05:31.574 --> 00:05:33.494
+geldiğini söyleyerek başladıysanız.
+
+72
+00:05:33.494 --> 00:05:39.364
+Mhm. Ve Bulgaristan,
+
+73
+00:05:40.654 --> 00:05:44.654
+diyelim ki uluslararası ölçekte rekabetten çok uzak,
+
+74
+00:05:44.654 --> 00:05:48.324
+ama bu yarışta ilerliyoruz.
+
+75
+00:05:48.894 --> 00:05:54.454
+Bizim için, bence bir ekosistem olarak çok ilginç olan şey de
+
+76
+00:05:54.454 --> 00:06:01.094
+bu yapay zekâ yarışına
+
+77
+00:06:01.094 --> 00:06:07.695
+giren yetenekler ve
+
+78
+00:06:07.695 --> 00:06:12.445
+konuşma hep şöyle: Üniversitelerimiz var,
+
+79
+00:06:13.615 --> 00:06:16.535
+ama teknoloji transferi yoluyla anlamlı biçimde katılmıyorlar,
+
+80
+00:06:16.535 --> 00:06:21.565
+öncü teknolojiyi inşa etme sürecine.
+
+81
+00:06:21.975 --> 00:06:27.815
+Ve yeteneklerle çok çalışan Philip'e dönmek istiyorum,
+
+82
+00:06:27.815 --> 00:06:28.765
+mühendislerle de çalışan,
+
+83
+00:06:29.815 --> 00:06:35.365
+ve öncü ürünler geliştirmek için hangi becerilerin
+
+84
+00:06:36.615 --> 00:06:38.365
+gerektiğini bilen biri.
+
+85
+00:06:39.175 --> 00:06:42.135
+Yetenek yarışında neredeyiz?
+
+86
+00:06:42.135 --> 00:06:45.925
+Teşekkürler, Georgi. Öncelikle ben biraz daha uygulamacıyım.
+
+87
+00:06:46.375 --> 00:06:53.015
+Benim açımdan gördüğüm şey, sözleşmenin
+
+88
+00:06:53.015 --> 00:06:58.575
+değiştiği. Saat kulesinin icadından beri geçerli olan bu yüzyıllık sözleşme
+
+89
+00:06:58.575 --> 00:07:03.415
+şimdi tek bir mühendisin bir şirket için sahip olabileceği
+
+90
+00:07:03.415 --> 00:07:06.085
+değeri değiştiriyor.
+
+91
+00:07:06.815 --> 00:07:10.085
+Şu anda aradığımız şey, insanlara zamana veya
+
+92
+00:07:11.055 --> 00:07:17.575
+kod satırına göre ücret ve maaş vermek
+
+93
+00:07:17.575 --> 00:07:23.175
+değil; başka bir ölçü arıyoruz,
+
+94
+00:07:23.175 --> 00:07:25.735
+burada ulaşmaya çalıştığımız bir tür fedakârlık.
+
+95
+00:07:25.735 --> 00:07:31.695
+Yapay zekâ ajanlarıyla bugün bu ölçü, mühendisin
+
+96
+00:07:31.695 --> 00:07:35.845
+onaylama ve
+
+97
+00:07:36.815 --> 00:07:43.285
+nasıl desek, tüm bilgisini ve uzmanlığını ortaya koyma
+
+98
+00:07:43.855 --> 00:07:49.925
+ve yapay zekânın kendisi için verdiği bu kararın
+
+99
+00:07:50.415 --> 00:07:52.735
+arkasında durma yeteneği. Şu anda ajanları devreye alıyoruz.
+
+100
+00:07:52.735 --> 00:07:58.365
+Her şey değişti. Tek bir çalışanın işine
+
+101
+00:07:59.015 --> 00:08:00.965
+nasıl değer biçeriz? İmkânsız.
+
+102
+00:08:01.455 --> 00:08:05.655
+Artık eskiden günler, hatta haftalar süren her şey
+
+103
+00:08:05.655 --> 00:08:10.607
+dakikalar içinde yapılıyor. Bu yüzden gerçekten düşünmeliyiz,
+
+104
+00:08:11.777 --> 00:08:16.537
+birinin işini nasıl ölçeceğimizi; en büyük
+
+105
+00:08:16.537 --> 00:08:23.017
+soru bu. Bence bu yönetişimle ve daha iyi araçlarla geliyor,
+
+106
+00:08:23.017 --> 00:08:26.247
+bize sonuç odaklı
+
+107
+00:08:28.217 --> 00:08:33.297
+yaklaşımlar sunacak, bu mühendisin ne yaptığını gösterebilecek.
+
+108
+00:08:33.297 --> 00:08:39.247
+Yani özünde, bu yeni yapay zekâ ajanlarıyla bir şirketin
+
+109
+00:08:39.937 --> 00:08:44.417
+mühendisleri ve çalışanları çok daha azıyla çok daha fazlasını
+
+110
+00:08:44.417 --> 00:08:48.497
+başarabiliyor, öyle mi? Böylece uzun vadede ekonomik birimler olarak
+
+111
+00:08:48.497 --> 00:08:52.457
+daha rekabetçi oluyoruz. Evet, çok daha fazlasını başarabiliriz, ama
+
+112
+00:08:52.457 --> 00:08:57.727
+yapay zekâyla çok daha azını da. Maliyette çok daha fazlasını başarabiliriz,
+
+113
+00:08:58.737 --> 00:09:03.777
+ama aynı zamanda bu belirli görev için anlamlı biçimde yapılan
+
+114
+00:09:03.777 --> 00:09:05.927
+çok daha az iş de başarabiliriz.
+
+115
+00:09:06.497 --> 00:09:10.407
+Mesele kaç ajan devreye aldığımız değil.
+
+116
+00:09:11.097 --> 00:09:15.127
+Mesele, buradaki modelin organizasyonun kendisi olması.
+
+117
+00:09:15.697 --> 00:09:21.537
+Bir düşünün. Artık
+
+118
+00:09:21.537 --> 00:09:23.687
+hangi modelleri kullanıyorsunuz diye sormuyoruz.
+
+119
+00:09:24.297 --> 00:09:28.887
+Örneğin küçük LLM'lerle çok şey yapabilirsiniz,
+
+120
+00:09:29.617 --> 00:09:34.247
+ama bunları organizasyon genelinde anlamlı biçimde dağıtarak.
+
+121
+00:09:35.057 --> 00:09:40.737
+Yani bu iş akışını ve
+
+122
+00:09:40.737 --> 00:09:46.297
+bu döngüyü yaratmak, mühendislerin daha iyi kararlar almasına yardım edecek
+
+123
+00:09:46.297 --> 00:09:51.337
+sürüyü devreye almak ve bu yeni saat kulesini yönetmek organizasyona düşüyor,
+
+124
+00:09:51.337 --> 00:09:56.127
+bizim dediğimiz gibi, ki sisteme gerçekten katkıda bulunabilsinler.
+
+125
+00:09:56.817 --> 00:09:59.567
+Artık mesele kaç satır kod yazdığınız değil.
+
+126
+00:10:00.857 --> 00:10:05.217
+Teşekkürler. Mümkünse mikrofonu
+
+127
+00:10:05.217 --> 00:10:11.168
+Jeroen'e uzatın. Yani organizasyonel boyut, yapay zekâyı devreye almak ve
+
+128
+00:10:12.218 --> 00:10:17.458
+geliştirmek kadar çok önemli; böylece bunun yüzünden
+
+129
+00:10:17.458 --> 00:10:19.938
+verimsiz hâle gelmesinler.
+
+130
+00:10:19.938 --> 00:10:25.938
+Bu vesileyle tartışmayı yapay zekânın
+
+131
+00:10:25.938 --> 00:10:30.808
+benimsenmesine yöneltmek istiyorum. Eurostat'ın son verilerine göre
+
+132
+00:10:31.498 --> 00:10:36.808
+Hollanda'da işletmelerde yapay zekâ kullanımı yüzde 33.
+
+133
+00:10:37.898 --> 00:10:42.248
+Bulgaristan'da dokuz. Yani,
+
+134
+00:10:43.258 --> 00:10:48.778
+bu veriye, bu istatistiğe bakınca, deneyiminize göre,
+
+135
+00:10:48.778 --> 00:10:52.058
+Hollanda'dan ve Bulgaristan'dan birçok şirketle çalıştınız,
+
+136
+00:10:52.058 --> 00:10:57.328
+şirketlerin yapay zekâyı benimsemesini ne engelliyor?
+
+137
+00:10:57.858 --> 00:11:01.898
+Darboğazlar neler ve belki de artık geçerli olmayan
+
+138
+00:11:01.898 --> 00:11:04.488
+abartılmış nedenler hangileri?
+
+139
+00:11:06.938 --> 00:11:11.048
+Teşekkürler. En çok abartılan
+
+140
+00:11:12.018 --> 00:11:17.218
+düzenlemeler. AI Act'in yeni omnibus paketine bakarsanız,
+
+141
+00:11:17.218 --> 00:11:22.248
+yüksek riskli yasaklar ertelendi.
+
+142
+00:11:22.938 --> 00:11:28.338
+Yani ortalama bir şirket için sadece
+
+143
+00:11:28.338 --> 00:11:30.658
+yasaklara, neyin yasak olduğuna, şeffaflığa bakmak yeterli,
+
+144
+00:11:30.658 --> 00:11:34.658
+ve bu tüm şirketler için geçerli, bir modele ilişkin kurallar
+
+145
+00:11:34.658 --> 00:11:36.448
+da öyle. Yani
+
+146
+00:11:37.978 --> 00:11:41.698
+bence bu şirketler için bir engel değil.
+
+147
+00:11:41.698 --> 00:11:48.338
+Asıl rahatsız edici gerçek ise
+
+148
+00:11:48.338 --> 00:11:52.738
+veri. Pek çok CEO bana geliyor ve yapay zekâyı
+
+149
+00:11:52.738 --> 00:11:55.888
+bir tür sihir olarak gördüklerini düşünüyorlar.
+
+150
+00:11:56.538 --> 00:12:00.218
+Platformlarına yapay zekâyı entegre ederlerse
+
+151
+00:12:00.218 --> 00:12:01.888
+her şeyi sihirli biçimde bileceğini sanıyorlar.
+
+152
+00:12:02.458 --> 00:12:07.938
+Ama gerçek şu ki bu şirketlerin verilerinin çoğu
+
+153
+00:12:07.938 --> 00:12:10.608
+iyi durumda değil. Tahmin yapabilmek için
+
+154
+00:12:11.018 --> 00:12:13.779
+bu verileri iyileştirmeniz gerekiyor ve bu projeler
+
+155
+00:12:13.779 --> 00:12:16.889
+belki 2 yıl sürebilir. Kolay değil.
+
+156
+00:12:17.339 --> 00:12:20.299
+Ama kimse maliyeti üstlenmek istemiyor.
+
+157
+00:12:20.299 --> 00:12:23.139
+Ve operasyon ile finans arasındaki bu boşluk var,
+
+158
+00:12:23.139 --> 00:12:26.459
+CEO da şirkette her zaman bir kişi olduğunu düşünüyor;
+
+159
+00:12:26.459 --> 00:12:30.459
+Lovable ile süper havalı
+
+160
+00:12:30.459 --> 00:12:34.849
+şeyleri bir dakikada yapan. CEO'nun gördüğü de bu.
+
+161
+00:12:35.299 --> 00:12:39.619
+İşte zor kısım bu.
+
+162
+00:12:39.619 --> 00:12:46.139
+Yapay zekâ ya da
+
+163
+00:12:46.139 --> 00:12:47.039
+makine öğrenmesiyle tahmin yapmak için verileri gerçekten düzeltmek.
+
+164
+00:12:49.059 --> 00:12:55.579
+Ve belli ki Hollanda verileri düzeltme alanında
+
+165
+00:12:55.579 --> 00:13:01.259
+daha iyi. Doğru mu? Bulgar işletmelerine bu sorunu
+
+166
+00:13:01.259 --> 00:13:04.249
+çözmeleri için önerileriniz var mı?
+
+167
+00:13:04.819 --> 00:13:07.579
+Peki, bu veriyle çalışma kültürü mü?
+
+168
+00:13:07.579 --> 00:13:12.379
+Teknik yön mü, organizasyonel yön mü? Nasıl
+
+169
+00:13:12.379 --> 00:13:14.529
+Organizasyonel.
+
+170
+00:13:15.299 --> 00:13:19.939
+Bence Bulgaristan'da bilgi eksikliği kesinlikle yok.
+
+171
+00:13:19.939 --> 00:13:21.849
+Harika mühendisler var.
+
+172
+00:13:22.579 --> 00:13:27.729
+Sorun sadece farkındalık ve bütçe oluşturmak.
+
+173
+00:13:28.259 --> 00:13:30.899
+Ve gerçekten yapmak.
+
+174
+00:13:30.899 --> 00:13:32.249
+Yani çok fazla tereddüt var,
+
+175
+00:13:33.219 --> 00:13:38.179
+gerçekten harekete geçmek konusunda. Bence tıpkı Nike'ın dediği gibi,
+
+176
+00:13:38.179 --> 00:13:40.289
+Just do it. Ve bütçeyi koyun.
+
+177
+00:13:43.779 --> 00:13:50.179
+Stoyan, bunu duyunca, bu oturumdan önce konuştuğumuzda
+
+178
+00:13:50.179 --> 00:13:55.659
+yapay zekâ fabrikasının ekosistem için çok çalışma yaptığını
+
+179
+00:13:55.659 --> 00:14:00.129
+söylemiştiniz; bu, şirketlere organizasyonel olarak yardımcı olabilir.
+
+180
+00:14:01.259 --> 00:14:06.369
+Peki ne şekilde destek olabilirsiniz,
+
+181
+00:14:07.419 --> 00:14:10.499
+bu tedarik zincirinin parçası olmak isteyen ve yapay zekâ üzerine
+
+182
+00:14:10.499 --> 00:14:15.019
+çalışan şirketlere, hesaplama gücünün ötesinde?
+
+183
+00:14:15.019 --> 00:14:18.461
+Mevcut veya beklenen yaklaşımlar neler?
+
+184
+00:14:18.461 --> 00:14:22.501
+Kitabına uygun bir cevap var, bir de biraz
+
+185
+00:14:22.501 --> 00:14:28.701
+daha geniş olanı. Geniş olanla başlayayım, bu kısmen benim
+
+186
+00:14:28.701 --> 00:14:32.781
+BRAIN'deki rolüm, çünkü iş geliştirme direktörüyüm ya da
+
+187
+00:14:32.781 --> 00:14:36.291
+yapay zekâ ekosistemi mimarı, kulağa şık geliyor ama değil.
+
+188
+00:14:36.901 --> 00:14:42.291
+Aslında mümkün olan her şekilde yardım etmek istiyoruz.
+
+189
+00:14:42.781 --> 00:14:46.291
+Bu geniş olan cevap ve bilerek çok belirsiz,
+
+190
+00:14:46.901 --> 00:14:52.731
+çünkü benimseme ne kadar yaygınsa o kadar başarılıyız.
+
+191
+00:14:53.821 --> 00:14:59.941
+Proje tarafında, yani daha spesifik, kitabına uygun program
+
+192
+00:14:59.941 --> 00:15:03.611
+desteğimiz: herkes bir projeyle başvurabilir.
+
+193
+00:15:04.621 --> 00:15:09.571
+Tabii ki incelenirler, çünkü hesaplama gücü ve
+
+194
+00:15:10.861 --> 00:15:15.381
+kaynaklar genel olarak sınırlı, o yüzden sonucu
+
+195
+00:15:15.381 --> 00:15:20.861
+en üst düzeye çıkarmak istiyoruz. Ama şirketin iyi bir senaryosu varsa
+
+196
+00:15:20.861 --> 00:15:26.101
+ve başvurursa, ücretsiz kaynak alabilir,
+
+197
+00:15:26.101 --> 00:15:28.101
+ki bundan siz de söz ettiniz.
+
+198
+00:15:28.101 --> 00:15:31.341
+Ücretsiz kaynak, yani hesaplama gücü kastediyoruz.
+
+199
+00:15:31.341 --> 00:15:37.501
+Yani örneğin modellerini altyapımızda çalıştırabilirler.
+
+200
+00:15:37.501 --> 00:15:41.701
+Ya da bu model zaten çalışıyorsa,
+
+201
+00:15:41.701 --> 00:15:43.221
+kiracı olarak kullanabilirler.
+
+202
+00:15:43.221 --> 00:15:48.861
+Yani Docker. Bu en kolay kısım.
+
+203
+00:15:48.861 --> 00:15:54.341
+Bunun dışında, model belirlediğimiz standartlara
+
+204
+00:15:54.341 --> 00:15:57.701
+tam hazır değilse, ki onları tek başımıza belirlemiyoruz,
+
+205
+00:15:57.701 --> 00:16:00.451
+alanında uzmanlardan oluşan
+
+206
+00:16:01.421 --> 00:16:05.661
+bir tür jüri oluşturduk.
+
+207
+00:16:05.661 --> 00:16:11.021
+Yapay zekâ uzmanları, projenin içinde olduğu sektörün uzmanları,
+
+208
+00:16:11.021 --> 00:16:15.861
+sonra projenin sağlam olup olmadığını denetleyecek finans uzmanları,
+
+209
+00:16:15.861 --> 00:16:19.772
+uygulanabilir olup olmadığını vb.
+
+210
+00:16:20.222 --> 00:16:26.102
+Sonra tamamen şirket içi bir finans uzmanı; her şeyin
+
+211
+00:16:26.102 --> 00:16:29.692
+doğru takip edildiğinden emin olsun diye.
+
+212
+00:16:30.422 --> 00:16:34.782
+Bütün bunların amacı, bir şirket geldiğinde
+
+213
+00:16:34.782 --> 00:16:38.892
+önce projeyi hazırlamak, böylece başlamaya hazır olması.
+
+214
+00:16:39.462 --> 00:16:43.342
+Hazır olunca da kaynakları en iyi şekilde
+
+215
+00:16:43.342 --> 00:16:46.932
+kullanmak, mümkün olan en iyi sonuç için.
+
+216
+00:16:47.702 --> 00:16:52.902
+En iyi sonuç da uzun vadede sürdürülebilir hâle gelmesi.
+
+217
+00:16:52.902 --> 00:16:55.462
+Yani sağladığımız kapasiteyi,
+
+218
+00:16:55.462 --> 00:16:59.412
+kaynakları kullanıp sonra bitmesin,
+
+219
+00:17:00.502 --> 00:17:05.342
+ama sadece üzerine inşa edilsin,
+
+220
+00:17:05.342 --> 00:17:10.102
+mevcut işletmelerin ya da insanların sıfırdan tamamen yeni başlamasını sağlasın
+
+221
+00:17:10.102 --> 00:17:14.462
+sıfırdan işletmeler, bilirsiniz,
+
+222
+00:17:14.462 --> 00:17:19.452
+çekirdeğinde yapay zekâ olan. Nasıl yardım etmek istediğimiz bu.
+
+223
+00:17:20.582 --> 00:17:26.742
+Güzel. Sanırım tartışmada şu ana kadar biraz değindik:
+
+224
+00:17:26.742 --> 00:17:30.942
+ne yapıyoruz, şimdiye kadar neler başardık,
+
+225
+00:17:30.942 --> 00:17:32.132
+ve bazı zorluklar.
+
+226
+00:17:32.862 --> 00:17:36.062
+Tartışmanın ikinci bölümünün biraz daha
+
+227
+00:17:36.062 --> 00:17:41.902
+geleceğe dönük olmasını istiyorum: gelecekteki girişimler,
+
+228
+00:17:41.902 --> 00:17:47.502
+bu teknolojiyi ilerletmek ve hayata geçirmek için
+
+229
+00:17:47.502 --> 00:17:50.572
+gelecekteki yaklaşımlar. Ve
+
+230
+00:17:51.662 --> 00:17:55.492
+hepinizin gördüğü gibi
+
+231
+00:17:56.582 --> 00:18:00.262
+etkinliğin başında Devlet Bakanı, Bulgaristan'ın
+
+232
+00:18:00.262 --> 00:18:06.142
+tedarik zinciri güvenliği girişimi Pax Silica'ya hazır olduğunu
+
+233
+00:18:06.142 --> 00:18:12.222
+söyledi; AB ve
+
+234
+00:18:12.222 --> 00:18:14.412
+Hollanda dahil diğer Avrupa ülkeleri de
+
+235
+00:18:15.022 --> 00:18:19.982
+bu girişime katıldı. Önce Jeroen'e sormak istiyorum:
+
+236
+00:18:19.982 --> 00:18:25.333
+Hollanda'nın bakış açısından,
+
+237
+00:18:25.943 --> 00:18:28.733
+Pax Silica bu ülkeye ne getirir,
+
+238
+00:18:30.183 --> 00:18:33.053
+bu teknolojinin inşasında kilit bir oyuncu olarak?
+
+239
+00:18:33.623 --> 00:18:37.893
+Bulgaristan ileride katılırsa
+
+240
+00:18:39.103 --> 00:18:43.223
+bu ülkeye ne tür yatırımlar getirir ve
+
+241
+00:18:43.223 --> 00:18:44.253
+ne tür fırsatlar sunar?
+
+242
+00:18:46.583 --> 00:18:50.943
+Güzel bir konu tabii, çünkü Hollanda'da ASML var,
+
+243
+00:18:50.943 --> 00:18:53.733
+litografi makineleri üretiyor.
+
+244
+00:18:54.423 --> 00:18:58.373
+Pax Silica bir bildiri.
+
+245
+00:18:58.783 --> 00:19:00.903
+Yani yasal bir çerçeve değil.
+
+246
+00:19:00.903 --> 00:19:06.183
+Temelde ülkeler şuna bakmaya başlıyor,
+
+247
+00:19:06.183 --> 00:19:09.653
+diyelim ki ihracat programının nasıl yönetildiğine,
+
+248
+00:19:10.223 --> 00:19:14.743
+yatırımların nasıl taranacağına ve benzeri şeylere.
+
+249
+00:19:14.743 --> 00:19:18.373
+Benim Hollandalı cevabım şu:
+
+250
+00:19:19.503 --> 00:19:23.943
+Bence Bulgaristan için bu o kadar korkutucu değil,
+
+251
+00:19:23.943 --> 00:19:27.423
+çünkü Hollanda bu anlaşmayı imzaladığı sırada
+
+252
+00:19:27.423 --> 00:19:30.583
+hâlâ MATCH Act ile uğraşıyordu; bu yasa, litografi makinelerinin
+
+253
+00:19:30.583 --> 00:19:33.183
+örneğin Çin'e satışıyla ilgili.
+
+254
+00:19:33.183 --> 00:19:35.893
+Yani biz de korkmadık.
+
+255
+00:19:36.583 --> 00:19:39.693
+Bulgaristan'a bakarsanız
+
+256
+00:19:40.783 --> 00:19:44.173
+ve soruların o kısmına geçersek,
+
+257
+00:19:46.343 --> 00:19:48.823
+imzalarsanız paktın bir parçası olursunuz.
+
+258
+00:19:48.823 --> 00:19:51.703
+İmzalamazsanız bir tür müşteri olursunuz.
+
+259
+00:19:51.703 --> 00:19:55.383
+Avrupa Birliği imzalamış olsa da yarı içeridesiniz,
+
+260
+00:19:55.383 --> 00:19:58.173
+tam değil. Konu kritik mineraller.
+
+261
+00:19:58.663 --> 00:20:01.413
+Konu iş gücü. Çok yatırım var.
+
+262
+00:20:02.303 --> 00:20:06.493
+Belki de Bulgaristan'ın en iyi saklanan sırrı şu:
+
+263
+00:20:07.503 --> 00:20:13.143
+şu anda Bulgaristan'da 650 kişi aslında
+
+264
+00:20:13.143 --> 00:20:16.573
+ASML için litografi makineleri üzerinde çalışıyor.
+
+265
+00:20:16.983 --> 00:20:19.303
+7 yıl ICT Cluster'ın yönetim kurulunda yer aldım,
+
+266
+00:20:19.303 --> 00:20:22.663
+bunu orada kurduk. Bunların 120'si,
+
+267
+00:20:22.663 --> 00:20:27.585
+bugün kontrol ettim, Varna'da bu makineler için iş birliği
+
+268
+00:20:27.585 --> 00:20:32.065
+yazılımı üzerinde çalışıyor. Bulgaristan için bir diğer önemli unsur da
+
+269
+00:20:32.065 --> 00:20:34.385
+tabii ki kritik mineraller.
+
+270
+00:20:34.385 --> 00:20:35.705
+Sanırım burada çok bakır var.
+
+271
+00:20:35.705 --> 00:20:38.025
+Siz muhtemelen benden çok daha iyi biliyorsunuz.
+
+272
+00:20:38.025 --> 00:20:43.985
+Yani bence Bulgaristan odanın dışında değil.
+
+273
+00:20:43.985 --> 00:20:45.905
+Bulgaristan zaten odanın içinde.
+
+274
+00:20:45.905 --> 00:20:49.385
+Ama siz bunu bilmemekte gerçekten çok iyisiniz.
+
+275
+00:20:49.385 --> 00:20:52.945
+Bence müzakere masasında
+
+276
+00:20:52.945 --> 00:20:56.065
+farklı bir duruşunuz olmalı, diyelim,
+
+277
+00:20:56.065 --> 00:20:59.575
+özgüvenli, çünkü zaten buna sahipsiniz.
+
+278
+00:21:01.025 --> 00:21:04.855
+Daha da iyi hâle getirmek için bir şey eklemek isterim:
+
+279
+00:21:05.385 --> 00:21:09.705
+Eindhoven'da, en iyi yüksek teknoloji sektöründe,
+
+280
+00:21:09.705 --> 00:21:14.665
+Brainport'ta, çok sayıda Bulgar yaşıyor ve
+
+281
+00:21:14.665 --> 00:21:18.935
+ASML gibi şirketlerde, ASML ekosisteminde çalışıyor.
+
+282
+00:21:19.625 --> 00:21:21.865
+Yani çok fazla bilgi birikimi var ve bilirsiniz,
+
+283
+00:21:21.865 --> 00:21:23.655
+bu insanların hepsi bizim dostumuz.
+
+284
+00:21:24.105 --> 00:21:25.295
+Dolayısıyla Bulgaristan için zaten
+
+285
+00:21:26.425 --> 00:21:29.135
+çok fırsat ve ulaşılabilir çok bilgi
+
+286
+00:21:29.745 --> 00:21:35.775
+var. Güzel. Demek ki kendimizi biraz hafife alıyoruz.
+
+287
+00:21:36.345 --> 00:21:41.095
+Biraz. Ivan, buna bir yanıtın var mı?
+
+288
+00:21:41.585 --> 00:21:45.215
+Evet, kesinlikle kendimizi hafife alıyoruz.
+
+289
+00:21:45.665 --> 00:21:47.095
+Başka ülkelerden birçok
+
+290
+00:21:48.145 --> 00:21:53.745
+meslektaşla çalıştım, onlar Bulgar meslektaşlarımızdan
+
+291
+00:21:53.745 --> 00:21:56.855
+çok daha fazla kazanıyor.
+
+292
+00:21:57.585 --> 00:22:02.585
+Özgüven gerçekten üzerinde çalışmamız gereken bir şey, çünkü
+
+293
+00:22:02.585 --> 00:22:05.225
+aslında hiçbir şeyde çok geride değiliz.
+
+294
+00:22:05.225 --> 00:22:10.385
+Şu anda bu yapay zekâ yarışında lider olma fırsatımız var,
+
+295
+00:22:10.385 --> 00:22:13.535
+hiç değilse Balkanlar'da.
+
+296
+00:22:13.945 --> 00:22:15.265
+Hiç değilse Balkanlar'da.
+
+297
+00:22:15.265 --> 00:22:22.215
+Jeroen'in dediği gibi,
+
+298
+00:22:22.745 --> 00:22:28.026
+müzakere ederken masada biraz daha dik durmalıyız,
+
+299
+00:22:28.026 --> 00:22:29.136
+kesinlikle, hiç şüphesiz.
+
+300
+00:22:32.186 --> 00:22:33.746
+Stoyan, mikrofonun sende olduğunu görüyorum.
+
+301
+00:22:33.746 --> 00:22:37.706
+İstiyor musun... Bir ölçüde buna tamamen katılıyorum,
+
+302
+00:22:37.706 --> 00:22:41.586
+çünkü bir şeyi başarmak istediğinizde kendinizi hafife almak iyidir,
+
+303
+00:22:41.586 --> 00:22:45.496
+bilirsiniz, çünkü kendinizi daha çok zorlarsınız.
+
+304
+00:22:45.906 --> 00:22:48.586
+Ama değerinizi bilme açısından,
+
+305
+00:22:48.586 --> 00:22:52.456
+evet, kesinlikle. Bence gerçekten iyi mühendislerimiz var.
+
+306
+00:22:53.626 --> 00:22:59.456
+Daha önce yazılım evlerinde çalıştım ve yani
+
+307
+00:23:00.146 --> 00:23:06.826
+çoğu zaman şöyle oluyor:
+
+308
+00:23:06.826 --> 00:23:11.336
+odaya girersiniz ve birden nasıl olduğunu görürsünüz,
+
+309
+00:23:12.306 --> 00:23:16.346
+teknolojiden, mesela koddan söz ederken,
+
+310
+00:23:16.346 --> 00:23:18.936
+bugünlerde pek değil, ama
+
+311
+00:23:20.866 --> 00:23:26.016
+biz yönlendiririz, başkaları dinler, çünkü o zaman kalite konuşur.
+
+312
+00:23:27.746 --> 00:23:31.026
+Ama yine de fark edilmeye
+
+313
+00:23:31.026 --> 00:23:33.146
+yardımcı olmuyor. Oldukça önemli.
+
+314
+00:23:33.146 --> 00:23:39.856
+Evet. Hepsi bu. Bilirsiniz, diğer yönler üzerinde
+
+315
+00:23:41.066 --> 00:23:43.416
+çalışmalıyız, mesela
+
+316
+00:23:44.986 --> 00:23:47.226
+olanak sağlamak ve sonuç.
+
+317
+00:23:47.226 --> 00:23:50.136
+Her şeyden önce elimizdeki iyi olanı elde tutmalıyız,
+
+318
+00:23:50.586 --> 00:23:53.986
+yetenekleri, mühendisleri vb.
+
+319
+00:23:53.986 --> 00:23:56.666
+çünkü birçoğunun Hollanda'da olduğunu söylediniz.
+
+320
+00:23:56.666 --> 00:23:57.906
+Hollanda'da ne yapıyorlar?
+
+321
+00:23:57.906 --> 00:24:00.016
+Neden Bulgaristan'da değiller?
+
+322
+00:24:00.946 --> 00:24:03.456
+Ya da neden ABD'deler vb.?
+
+323
+00:24:04.146 --> 00:24:08.626
+Bunu politikalarla, eğitim gibi şeylerle
+
+324
+00:24:08.626 --> 00:24:11.706
+ve daha fazlasıyla yapabiliriz. Odaklanmamız gereken bunlar,
+
+325
+00:24:11.706 --> 00:24:14.696
+bence. Evet.
+
+326
+00:24:15.826 --> 00:24:19.826
+Çok teşekkürler. Sizin için başka sorular da hazırlamıştım,
+
+327
+00:24:19.826 --> 00:24:24.826
+ama birkaç dakikamız kaldığı için mikrofonu
+
+328
+00:24:24.826 --> 00:24:28.417
+seyirciye vermek istiyorum. Sorusu olan varsa,
+
+329
+00:24:30.227 --> 00:24:34.187
+buyurun. İlgilenen var mı?
+
+330
+00:24:34.187 --> 00:24:40.867
+Evet, tamam. Merhaba.
+
+331
+00:24:40.867 --> 00:24:46.268
+Teşekkürler. Öncelikle ben eski bir yarı iletken mühendisiyim ve
+
+332
+00:24:46.268 --> 00:24:50.057
+sizin de belirttiğiniz gibi bir şeyi anlamadım.
+
+333
+00:24:50.467 --> 00:24:55.187
+Çiplerinizi 5 yıl sonra yeniden almanız gerektiğini söylediniz.
+
+334
+00:24:55.187 --> 00:24:58.467
+Kiralıyor musunuz? Yoksa eskiyorlar mı?
+
+335
+00:24:58.467 --> 00:25:02.668
+Satın mı alıyorsunuz? Biraz metafordu ve sanırım
+
+336
+00:25:02.668 --> 00:25:05.987
+iyi anlaşılmadı. Bunun için özür dilerim.
+
+337
+00:25:05.987 --> 00:25:10.827
+Hayır, demek istediğim, bugün her şeyin değişme hızıyla
+
+338
+00:25:10.827 --> 00:25:13.707
+bir anlamda muhtemelen eskimiş olacaklar.
+
+339
+00:25:13.707 --> 00:25:16.467
+Yani muhtemelen piyasadaki en rekabetçi
+
+340
+00:25:16.467 --> 00:25:22.547
+ürünler olmayacaklar. Evet, 5 yıl sonra bile muhtemelen hâlâ bir değerleri ve
+
+341
+00:25:22.547 --> 00:25:24.537
+kullanım alanları olacak.
+
+342
+00:25:24.947 --> 00:25:28.987
+Örneğin Sofia Tech Park'ta hâlihazırda kurulu olan süper bilgisayar
+
+343
+00:25:28.987 --> 00:25:33.067
+Discoverer, resmî olarak kâğıt üzerinde
+
+344
+00:25:33.067 --> 00:25:34.507
+ömrünün sonuna yaklaşıyor.
+
+345
+00:25:34.507 --> 00:25:37.617
+Gerçekte ise hâlâ birçok iş için kullanılabilir.
+
+346
+00:25:38.587 --> 00:25:40.987
+Demek istediğim buydu.
+
+347
+00:25:40.987 --> 00:25:43.668
+5 yıl içinde muhtemelen yeni çipler olacak,
+
+348
+00:25:43.668 --> 00:25:48.467
+çok daha iyi; ve bunları Avrupa'da üretme yeteneğimiz gibi bir şey değişmezse,
+
+349
+00:25:48.467 --> 00:25:52.268
+geri dönüp yeni çipler almak için yeniden müzakere
+
+350
+00:25:52.268 --> 00:25:54.507
+etmek zorunda kalacağız. Demek istediğim buydu.
+
+351
+00:25:54.507 --> 00:25:57.747
+Hayır, tamam. Mali açıdan öyle olmasa da biraz abonelik gibi,
+
+352
+00:25:57.747 --> 00:26:00.497
+resmen bir finansçıyım.
+
+353
+00:26:01.307 --> 00:26:04.668
+Bunu söylemek için berbat bir yol, ama evet, demek istediğim buydu.
+
+354
+00:26:04.668 --> 00:26:08.218
+Yani sonuçta 5 yıllık bir abonelik değil.
+
+355
+00:26:09.028 --> 00:26:11.627
+Hayır, değil. Satın alınıyorlar.
+
+356
+00:26:11.627 --> 00:26:15.467
+Sadece 5 yıl içinde yarı eskimiş olacaklar.
+
+357
+00:26:15.467 --> 00:26:16.497
+Tamam, teşekkürler.
+
+358
+00:26:21.947 --> 00:26:24.587
+Hakkımı kullanmalı mıydım bilmiyorum, çünkü son panelde
+
+359
+00:26:24.587 --> 00:26:27.947
+konuşuyorum, ama deneyeyim dedim.
+
+360
+00:26:27.947 --> 00:26:30.338
+Yapay zekâ tedarik zincirinde en büyük
+
+361
+00:26:31.507 --> 00:26:35.429
+büyüme potansiyelini nerede görüyorsunuz, bu alanda?
+
+362
+00:26:35.429 --> 00:26:38.509
+Belli ki dünyanın her yerinde bir şeyler kabarıyor ve
+
+363
+00:26:38.509 --> 00:26:43.539
+çok büyük bir para, gelir, talep dalgası var.
+
+364
+00:26:44.229 --> 00:26:47.499
+Ve bu yol boyunca Avrupa nerede?
+
+365
+00:26:47.949 --> 00:26:49.709
+Bulgaristan nerede? Hollanda nerede?
+
+366
+00:26:49.709 --> 00:26:54.429
+Bu katma değerin hangi kısmını nerede elde ediyoruz
+
+367
+00:26:54.429 --> 00:26:58.829
+ve siz bunu nerede görüyorsunuz?
+
+368
+00:26:58.829 --> 00:27:04.219
+Teşekkürler. Şey,
+
+369
+00:27:05.709 --> 00:27:10.389
+Bulgaristan'ın, diyelim ki batıdaki ülkelerin neredeyse hiçbirinde
+
+370
+00:27:10.389 --> 00:27:12.029
+olmayan birkaç şeyi var.
+
+371
+00:27:12.029 --> 00:27:14.219
+Sizde alan var, elektrik var
+
+372
+00:27:15.429 --> 00:27:17.629
+ve tabii ki bakır da.
+
+373
+00:27:17.629 --> 00:27:23.589
+Ben de son birkaç gündür egemenlik üzerine
+
+374
+00:27:23.589 --> 00:27:25.789
+başka seminerlerdeydim.
+
+375
+00:27:25.789 --> 00:27:29.669
+Birçok yatırım yapılacak. Avrupa'daki dostlarım için çipi
+
+376
+00:27:29.669 --> 00:27:34.469
+üretmek biraz zaman alacak.
+
+377
+00:27:34.469 --> 00:27:36.259
+Yani onun müzakere etmesi gerekmiyor.
+
+378
+00:27:36.789 --> 00:27:43.709
+Ama bence bu tedarik zincirinde kesinlikle
+
+379
+00:27:43.709 --> 00:27:46.339
+Bulgaristan büyük bir etki yaratabilir.
+
+380
+00:27:48.829 --> 00:27:51.819
+Evet, yarın bunu nasıl yapacağımızı konuşacağız.
+
+381
+00:27:52.229 --> 00:27:55.909
+O yüzden sırrı şimdilik vermeyeceğim.
+
+382
+00:27:55.909 --> 00:28:01.869
+Ama evet, bence burada çok yetenek var,
+
+383
+00:28:01.869 --> 00:28:04.909
+ki bu çoğu zaman bilirsiniz,
+
+384
+00:28:04.909 --> 00:28:07.259
+başka ülkelerdeki şirketler için de kullanılıyor.
+
+385
+00:28:07.749 --> 00:28:09.229
+Ama çok fazla mühendislik gücü var.
+
+386
+00:28:09.229 --> 00:28:15.069
+Mesele onu yaratıp harekete geçirmek,
+
+387
+00:28:15.069 --> 00:28:19.899
+bütçeyi almak, yetkiyi almak ve ileri itmek.
+
+388
+00:28:20.309 --> 00:28:22.979
+Belki bu konuya bir şey eklemek istersin.
+
+389
+00:28:23.509 --> 00:28:24.979
+Bir şey eklemek isterim.
+
+390
+00:28:25.389 --> 00:28:27.779
+Bana göre mesele itibar.
+
+391
+00:28:28.629 --> 00:28:32.899
+Bulgaristan güvenlik konusunda itibarı üzerinde çalışmalı,
+
+392
+00:28:33.950 --> 00:28:35.180
+anlayış konusunda
+
+393
+00:28:36.430 --> 00:28:37.540
+ve sadece göstermeli ki
+
+394
+00:28:38.510 --> 00:28:44.430
+gelmekte olanın bir parçası olabiliriz ve gelmekte olan şu:
+
+395
+00:28:44.430 --> 00:28:46.180
+yetenek bu
+
+396
+00:28:47.150 --> 00:28:53.980
+değer zincirinin büyük bir parçası, ama çok kolayca
+
+397
+00:28:54.550 --> 00:28:58.110
+yeteneklerden daha yetkin ajanlar tarafından yerinden edilebilir.
+
+398
+00:28:58.110 --> 00:29:02.860
+Burada gösterebileceğimiz tek şey itibar.
+
+399
+00:29:03.550 --> 00:29:08.380
+Düğmeye basıp bu repoyu gönderdiğimde ve commit yaptığımda,
+
+400
+00:29:08.790 --> 00:29:12.540
+itibarımı ortaya koyuyorum.
+
+401
+00:29:12.990 --> 00:29:18.780
+Ve her küçük parça bütün ülkeye itibarını kazandırıyor.
+
+402
+00:29:19.310 --> 00:29:23.220
+Bireysel geliştiriciler olarak daha fazla para kazanabiliriz,
+
+403
+00:29:23.870 --> 00:29:29.310
+kesinlikle. Ve bu değişimin gerçekleşmesini bekleyen
+
+404
+00:29:29.310 --> 00:29:32.980
+çok harika insanlar var. Yani sonuçta mesele hükümet.
+
+405
+00:29:33.750 --> 00:29:38.260
+Hükümet düzeyinde bir şeyler inşa etmeye başlamalıyız
+
+406
+00:29:38.750 --> 00:29:44.670
+ve küçük şirketlere de bu değişime katılma
+
+407
+00:29:44.670 --> 00:29:46.460
+şansı vermeliyiz. Tamam.
+
+408
+00:29:49.390 --> 00:29:53.500
+Bu yanıtlar için çok teşekkürler.
+
+409
+00:29:54.150 --> 00:29:57.630
+Sizin sakıncanız yoksa zamanında bitirmek istiyorum,
+
+410
+00:29:57.630 --> 00:30:01.230
+sormak istediğim çok daha fazla soru olsa da.
+
+411
+00:30:01.230 --> 00:30:03.460
+Ama evet, sonuç olarak,
+
+412
+00:30:04.470 --> 00:30:09.630
+organizasyonun çok önemli olduğunu konuştuk;
+
+413
+00:30:09.630 --> 00:30:15.140
+yapay zekâ kurarken ve işletmelerde ajan tabanlı yapay zekâ kullanırken.
+
+414
+00:30:15.750 --> 00:30:21.070
+Geleceğin yapay zekâ fabrikasının yeteneklerini
+
+415
+00:30:21.070 --> 00:30:23.500
+ve müşterileriyle çalışırken nasıl
+
+416
+00:30:24.910 --> 00:30:30.990
+gerçek bir ekosistem yaklaşımı benimsediğini konuştuk.
+
+417
+00:30:30.990 --> 00:30:35.470
+Ve çok mutlu olduğum bir şeyden söz ettik: hemfikiriz ki
+
+418
+00:30:35.470 --> 00:30:41.552
+yetenek Bulgaristan'ın güç merkezi ve
+
+419
+00:30:41.552 --> 00:30:48.432
+eğitim sistemimize, öğrencilere müfredatla nasıl yaklaştığımıza
+
+420
+00:30:48.432 --> 00:30:53.102
+her zaman kuşkuyla bakabilsek de,
+
+421
+00:30:54.072 --> 00:30:58.222
+ortak görüşümüz bu yeteneği
+
+422
+00:30:59.231 --> 00:31:02.781
+elimizden gelenin en iyisiyle değerlendirmek ve uluslararası rekabet etmek.
+
+423
+00:31:03.672 --> 00:31:07.942
+Bu noktada tamamen yeterliyiz ve
+
+424
+00:31:09.112 --> 00:31:15.102
+Pax Silica gibi kulüplere katılma hırsına sahip olmalıyız
+
+425
+00:31:15.792 --> 00:31:18.582
+ve uluslararası sahnede rekabet etmeliyiz.
+
+426
+00:31:18.992 --> 00:31:22.142
+Geleceğimiz için bir alkış rica ediyorum!
+
+427
+00:31:24.552 --> 00:31:26.022
+Katılımınız için teşekkürler.

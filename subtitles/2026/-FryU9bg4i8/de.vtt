@@ -1,0 +1,965 @@
+WEBVTT
+
+1
+00:00:00.960 --> 00:00:05.070
+Wenn gestern das Thema des Tages das Warum war,
+
+2
+00:00:05.920 --> 00:00:07.350
+dann ist das heutige Thema das Wie.
+
+3
+00:00:07.920 --> 00:00:11.310
+Ich dachte, wir beginnen damit, wie man es nicht macht.
+
+4
+00:00:11.920 --> 00:00:17.040
+Und zwar: Warum scheitern viele KI-Projekte, wenn Unternehmen
+
+5
+00:00:17.040 --> 00:00:19.630
+sie umsetzen wollen, und was kann man dagegen tun?
+
+6
+00:00:24.760 --> 00:00:25.910
+Das wird nützlich sein.
+
+7
+00:00:26.920 --> 00:00:33.830
+Zuerst ein wenig Statistik.
+
+8
+00:00:34.320 --> 00:00:39.440
+Wir wissen, dass Gartner erklärt hat, dass 85 % der KI-
+
+9
+00:00:39.440 --> 00:00:42.830
+Projekte keinerlei Geschäftswert liefern.
+
+10
+00:00:44.680 --> 00:00:48.480
+Boston Consulting Group sagt, 70 % der Misserfolge liegen an Menschen und
+
+11
+00:00:48.480 --> 00:00:50.030
+Prozessen, nicht einmal an der Technologie.
+
+12
+00:00:51.840 --> 00:00:55.790
+Und Dun & Bradstreet zufolge sind nur etwa 5 % der Unternehmen mit
+
+13
+00:00:56.280 --> 00:01:00.390
+ihren Daten bereit, KI in großem Maßstab auszubauen.
+
+14
+00:01:01.160 --> 00:01:04.470
+All diese Misserfolge haben also nichts mit der Technologie zu tun.
+
+15
+00:01:05.160 --> 00:01:07.440
+Es geht um die Menschen, die Prozesse,
+
+16
+00:01:07.440 --> 00:01:11.630
+das Geschäft. Und sie scheitern an fünf, wie ich finde,
+
+17
+00:01:12.280 --> 00:01:14.760
+konkreten, aber behebbaren Fehlern.
+
+18
+00:01:14.760 --> 00:01:17.960
+Diese fünf Fehler gehen wir in den nächsten
+
+19
+00:01:17.960 --> 00:01:19.870
+Minuten durch und sprechen darüber.
+
+20
+00:01:20.440 --> 00:01:24.110
+Das erste Problem: Sie lösen das falsche Problem.
+
+21
+00:01:24.960 --> 00:01:27.470
+Sie lösen etwas, aber nicht das Richtige.
+
+22
+00:01:28.120 --> 00:01:31.960
+Wenn Sie in eine Organisation gehen und festlegen, was der Anwendungsfall
+
+23
+00:01:31.960 --> 00:01:35.080
+ist, wo man KI einsetzen kann,
+
+24
+00:01:35.080 --> 00:01:36.590
+bekommen Sie oft
+
+25
+00:01:37.880 --> 00:01:42.440
+Ideen, aber es sind die falschen, und sie führen nicht wirklich zu
+
+26
+00:01:42.440 --> 00:01:46.200
+Wert. Zum Beispiel bei Matrix, einem Beratungsunternehmen für
+
+27
+00:01:46.200 --> 00:01:50.190
+KI-Lösungen und Datentransformation, gingen wir zu einem Kunden,
+
+28
+00:01:50.760 --> 00:01:55.920
+einer Personalabteilung, und überlegten gemeinsam, welche
+
+29
+00:01:55.920 --> 00:01:58.760
+KI-Lösungen, welche Herausforderungen sie haben,
+
+30
+00:01:58.760 --> 00:02:01.932
+welche Bedürfnisse, und sie sagten:
+
+31
+00:02:01.932 --> 00:02:03.162
+„Können Sie uns einen Chatbot bauen?
+
+32
+00:02:03.932 --> 00:02:08.212
+Einen HR-Chatbot.“ Das wichtigste Wort im Vokabular eines Umsetzers
+
+33
+00:02:08.212 --> 00:02:10.242
+ist das Wort „Warum“.
+
+34
+00:02:10.852 --> 00:02:13.172
+Die Frage nach dem Warum. Denn als sie kamen und sagten:
+
+35
+00:02:13.172 --> 00:02:15.932
+„Wir wollen einen Chatbot“, fragten wir: „Gut, warum?
+
+36
+00:02:15.932 --> 00:02:19.282
+Welches Problem wollen Sie mit einem Chatbot lösen?“
+
+37
+00:02:20.132 --> 00:02:22.852
+Und sie sagten: „Die Mitarbeiter stellen all diese Fragen zu
+
+38
+00:02:22.852 --> 00:02:25.172
+Urlaub, Gehalt usw.
+
+39
+00:02:25.172 --> 00:02:28.292
+Das sollte im Intranet stehen, aber niemand findet es,
+
+40
+00:02:28.292 --> 00:02:31.922
+also wollen wir ein Gespräch, damit sich das lösen lässt.“
+
+41
+00:02:33.172 --> 00:02:37.012
+Und wir stellten fest, dass das Problem darin lag, dass die Informationen
+
+42
+00:02:37.012 --> 00:02:40.442
+nicht zugänglich waren. Es ging um die Auffindbarkeit von Inhalten.
+
+43
+00:02:41.452 --> 00:02:44.812
+Man musste nicht unbedingt gleich zu einem Chatbot,
+
+44
+00:02:44.812 --> 00:02:48.732
+zu KI greifen. Man musste vielleicht nur das Intranet,
+
+45
+00:02:48.732 --> 00:02:52.602
+die interne Website, reparieren und besser auffindbar machen.
+
+46
+00:02:53.932 --> 00:02:58.132
+Nicht wahr? Der Chatbot war hier also nicht unbedingt die beste
+
+47
+00:02:58.132 --> 00:03:01.772
+Antwort. Tatsächlich stellten wir, als wir mit ihnen die
+
+48
+00:03:01.772 --> 00:03:04.242
+verschiedenen Anwendungsfälle und Herausforderungen besprachen,
+
+49
+00:03:04.692 --> 00:03:10.212
+fest, dass es viel wertvollere Anwendungsfälle gab,
+
+50
+00:03:10.212 --> 00:03:12.612
+die der Organisation mehr Nutzen bringen würden.
+
+51
+00:03:12.612 --> 00:03:16.452
+Wenn wir solche Anwendungsfälle identifizieren, bewerten wir sie in einem
+
+52
+00:03:16.452 --> 00:03:19.042
+strukturierten Prozess.
+
+53
+00:03:20.212 --> 00:03:26.132
+Wir schauen auf die Machbarkeit, wie einfach man sie
+
+54
+00:03:26.132 --> 00:03:28.692
+umsetzen kann. Aber auch auf ihren Geschäftswert.
+
+55
+00:03:28.692 --> 00:03:30.812
+Bewegen sie etwas für das Unternehmen?
+
+56
+00:03:30.812 --> 00:03:33.132
+Haben sie überhaupt eine Wirkung auf das Geschäft?
+
+57
+00:03:33.132 --> 00:03:36.852
+Einer der Anwendungsfälle war, dass die Mitarbeiter der
+
+58
+00:03:36.852 --> 00:03:41.082
+Personalabteilung jeden Monat Hunderte Briefe erstellen mussten.
+
+59
+00:03:41.492 --> 00:03:45.442
+Ob es um Positionswechsel, Statusänderungen,
+
+60
+00:03:46.532 --> 00:03:52.372
+Kündigung, Gehaltserhöhung, vielleicht eine Änderung des
+
+61
+00:03:52.372 --> 00:03:54.692
+Titels ging. Und all das geschah manuell.
+
+62
+00:03:54.692 --> 00:03:57.212
+Sie mussten all diese Informationen aus den verschiedenen
+
+63
+00:03:57.212 --> 00:04:00.052
+Systemen holen, in einen Brief setzen, den Brief schreiben.
+
+64
+00:04:00.052 --> 00:04:02.534
+Alles war manuell. Er musste zur Genehmigung
+
+65
+00:04:02.534 --> 00:04:06.284
+und zurück. Es gab viele Fehler, verständlicherweise menschliche.
+
+66
+00:04:06.814 --> 00:04:10.014
+Und wir erkannten, dass die beste Lösung für sie
+
+67
+00:04:10.014 --> 00:04:13.414
+– die sinnvollste und wertvollste – darin bestand,
+
+68
+00:04:13.414 --> 00:04:17.294
+ein KI-basiertes Tool zur Brieferstellung zu bauen,
+
+69
+00:04:17.294 --> 00:04:21.364
+das den ersten Entwurf erstellt.
+
+70
+00:04:22.294 --> 00:04:25.054
+Statt Tage dauert es Minuten,
+
+71
+00:04:25.054 --> 00:04:26.364
+und sie können damit weiterarbeiten.
+
+72
+00:04:27.374 --> 00:04:30.254
+Es ist also zuallererst sehr wichtig, das richtige
+
+73
+00:04:30.254 --> 00:04:34.364
+Problem zu finden, bei dem KI wirklich Wert schaffen kann.
+
+74
+00:04:36.414 --> 00:04:38.654
+Angenommen, Sie haben das richtige Problem gefunden.
+
+75
+00:04:38.654 --> 00:04:42.814
+Das zweite Problem, der zweite Grund für gescheiterte Projekte, ist, dass
+
+76
+00:04:42.814 --> 00:04:43.804
+Sie die falsche Lösung liefern.
+
+77
+00:04:44.854 --> 00:04:47.164
+Vielleicht ist es das falsche Tool oder die falsche Architektur.
+
+78
+00:04:52.334 --> 00:04:57.014
+Organisationen haben unterschiedliche Beweggründe für die Lösungen,
+
+79
+00:04:57.014 --> 00:05:01.974
+die sie wollen. Ein Kunde wartete 18 Monate auf die KI-Roadmap
+
+80
+00:05:01.974 --> 00:05:04.884
+seines ERP-Anbieters. Dort stand eine Funktion,
+
+81
+00:05:06.374 --> 00:05:11.294
+auf die er wartete, statt ein eigenes Tool zu bauen.
+
+82
+00:05:11.294 --> 00:05:16.574
+Und wir brauchten mit KI-Tools 4 Wochen, um eine Lösung zu bauen, die
+
+83
+00:05:16.574 --> 00:05:18.364
+70 % dessen abdeckte, was er brauchte.
+
+84
+00:05:18.894 --> 00:05:20.654
+Das war der Gedanke dahinter.
+
+85
+00:05:20.654 --> 00:05:26.414
+Dass die Innovation – man sagt ja, das Perfekte sei
+
+86
+00:05:26.414 --> 00:05:29.894
+der Feind des Guten. Man bekommt keine 100 %,
+
+87
+00:05:29.894 --> 00:05:32.894
+aber wenn man 70 % erreicht und sofort starten kann,
+
+88
+00:05:32.894 --> 00:05:36.204
+lohnt sich das Risiko, es zu tun und voranzukommen.
+
+89
+00:05:36.974 --> 00:05:41.974
+Einige Fehler, die Organisationen bei solchen
+
+90
+00:05:41.974 --> 00:05:45.454
+KI-Projekten machen: Warten auf das perfekte Anbieter-Tool.
+
+91
+00:05:45.454 --> 00:05:49.974
+Nicht wahr? Steht Q3 in der Roadmap und das Problem besteht heute,
+
+92
+00:05:49.974 --> 00:05:53.204
+lohnt es sich vielleicht, das Tool heute zu bauen.
+
+93
+00:05:53.734 --> 00:05:55.404
+Es gibt auch das umgekehrte Problem:
+
+94
+00:05:56.654 --> 00:06:00.124
+Man baut hastig etwas, das man einfach kaufen könnte.
+
+95
+00:06:00.934 --> 00:06:03.804
+Wenn man etwas baut, dann zur Differenzierung.
+
+96
+00:06:04.334 --> 00:06:08.375
+Bei einem spezifischen Anwendungsfall, einer spezifischen Situation, die Ihre
+
+97
+00:06:08.375 --> 00:06:13.205
+Organisation braucht. Bei einer Standardware, einem Tool, das es
+
+98
+00:06:14.135 --> 00:06:19.575
+von Drittanbietern fertig zu kaufen gibt, ist Kaufen oft besser, als
+
+99
+00:06:19.575 --> 00:06:22.365
+Zeit und Geld in den Eigenbau zu stecken.
+
+100
+00:06:24.255 --> 00:06:29.015
+Das Dritte, was wir bei Unternehmen sehen: Sie stürzen sich
+
+101
+00:06:29.015 --> 00:06:33.615
+auf die coolen Lösungen. Zum Beispiel generative KI, wo man
+
+102
+00:06:33.615 --> 00:06:37.845
+genauso gut eine Regelengine oder einen Filter einsetzen könnte.
+
+103
+00:06:39.175 --> 00:06:42.205
+Einer unserer Kunden, ein Bauunternehmen, ein großes Bauunternehmen
+
+104
+00:06:42.855 --> 00:06:44.285
+in den Vereinigten Staaten,
+
+105
+00:06:45.375 --> 00:06:49.615
+schreibt Ausschreibungen an Anbieter aus, an Subunternehmer, die
+
+106
+00:06:49.615 --> 00:06:51.775
+die Arbeit in den Projekten ausführen.
+
+107
+00:06:51.775 --> 00:06:56.375
+Und sie wollten diese Anbieter anhand ihres bisherigen
+
+108
+00:06:56.375 --> 00:07:00.375
+Verhaltens bewerten. War man pünktlich?
+
+109
+00:07:00.375 --> 00:07:03.375
+Im Budget? Gab es Sicherheitsprobleme?
+
+110
+00:07:03.375 --> 00:07:05.565
+Gab es Versicherungsfälle,
+
+111
+00:07:07.015 --> 00:07:10.255
+die damit verbunden waren? All das wollte man in
+
+112
+00:07:10.255 --> 00:07:15.415
+eine Bewertung einfließen lassen, die zeigt, wie gut der Anbieter
+
+113
+00:07:15.415 --> 00:07:19.935
+arbeitet, um sie bei der Auswahl von Anbietern für neue
+
+114
+00:07:19.935 --> 00:07:25.455
+Projekte zu nutzen. Und sie wollten ein KI-Tool, das Anbieter bewertet und
+
+115
+00:07:25.455 --> 00:07:26.565
+Empfehlungen gibt.
+
+116
+00:07:27.975 --> 00:07:31.055
+Als wir mit ihnen saßen und die verschiedenen Daten verstanden,
+
+117
+00:07:31.055 --> 00:07:33.935
+die in die Bewertung einfließen sollten,
+
+118
+00:07:33.935 --> 00:07:36.135
+erkannten wir, dass eine einfache Regelengine genügt.
+
+119
+00:07:36.135 --> 00:07:39.815
+An ihrer Bewertungsweise war nichts übermäßig Anspruchsvolles,
+
+120
+00:07:39.815 --> 00:07:42.215
+was für sie auch sinnvoll war.
+
+121
+00:07:42.215 --> 00:07:44.285
+Deshalb empfahlen wir eine
+
+122
+00:07:45.655 --> 00:07:49.975
+einfachere Lösung und setzten KI für die Prognose und die
+
+123
+00:07:49.975 --> 00:07:54.215
+Vorhersage ein. Wir erkannten, dass wir für einen gegebenen Anbieter
+
+124
+00:07:54.215 --> 00:07:58.295
+vorhersagen können, wie gut er bei diesem neuen Projekt voraussichtlich
+
+125
+00:07:58.295 --> 00:08:02.485
+abschneiden würde, angesichts aller Details.
+
+126
+00:08:03.535 --> 00:08:08.897
+Und der letzte Fehler, den Organisationen machen, betrifft
+
+127
+00:08:08.897 --> 00:08:13.537
+den Datenschutz. Öffentliche KI-Tools wie Claude,
+
+128
+00:08:13.537 --> 00:08:17.567
+ChatGPT usw. und vertrauliche Daten im Unternehmen
+
+129
+00:08:18.057 --> 00:08:19.767
+sind ein Rezept für eine Katastrophe.
+
+130
+00:08:20.337 --> 00:08:23.777
+Das ist ein rechtliches Problem, das nur darauf wartet, einzutreten.
+
+131
+00:08:23.777 --> 00:08:28.977
+Daten- und KI-Governance ist hier ein Muss, um genau zu verstehen
+
+132
+00:08:28.977 --> 00:08:32.897
+und Leitplanken zu setzen: welche Daten, wie,
+
+133
+00:08:32.897 --> 00:08:37.537
+in welchen Tools, wo diese Tools stehen,
+
+134
+00:08:37.537 --> 00:08:39.967
+ob sie innerhalb der Organisation und in der Sandbox laufen.
+
+135
+00:08:43.217 --> 00:08:45.647
+Das dritte Problem ist eine gescheiterte Umsetzung.
+
+136
+00:08:46.297 --> 00:08:47.417
+Die Lösung funktionierte.
+
+137
+00:08:47.417 --> 00:08:49.577
+Sie haben das richtige Problem, die richtige Lösung.
+
+138
+00:08:49.577 --> 00:08:50.767
+Niemand nutzt sie.
+
+139
+00:08:52.777 --> 00:08:57.007
+Nicht wahr? Ihr Modell kann zu 94 % genau sein, aber niemand setzt es ein.
+
+140
+00:08:57.737 --> 00:09:01.327
+Weil es irgendwo in einem Portal vergraben war, das niemand öffnete.
+
+141
+00:09:01.937 --> 00:09:05.407
+Dass es technisch funktioniert, ist also nur ein Teil der Geschichte.
+
+142
+00:09:05.897 --> 00:09:08.247
+Wir müssen auch dafür sorgen, dass die Menschen es nutzen.
+
+143
+00:09:09.057 --> 00:09:12.417
+Ich behaupte, Akzeptanz ist die einzige Kennzahl, die zählt,
+
+144
+00:09:12.417 --> 00:09:15.647
+nicht wahr? Ein perfektes, ungenutztes Modell ist ein perfekter Fehlschlag.
+
+145
+00:09:16.337 --> 00:09:19.097
+Die Leute müssen wissen, wo es ist, sie müssen es nutzen,
+
+146
+00:09:19.097 --> 00:09:22.047
+und es muss in den Arbeitsablauf eingebettet sein,
+
+147
+00:09:23.897 --> 00:09:25.537
+den die Leute ohnehin schon haben.
+
+148
+00:09:25.537 --> 00:09:29.777
+Wenn sie viel umstellen müssen, vor allem wenn sie
+
+149
+00:09:29.777 --> 00:09:33.847
+mehr Klicks brauchen, um die Lösung zu nutzen, werden sie es nicht tun.
+
+150
+00:09:34.337 --> 00:09:38.817
+Nicht wahr? Es muss so reibungslos wie möglich in ihren
+
+151
+00:09:38.817 --> 00:09:43.297
+Arbeitsablauf passen. Ein Problem, auf das wir oft stoßen, ist,
+
+152
+00:09:43.297 --> 00:09:47.137
+dass die Geschäftsprozesse selbst kaputt sind.
+
+153
+00:09:47.137 --> 00:09:51.257
+Sie sind nicht effizient. Wenn man KI einfach auf diesen Ablauf wirft,
+
+154
+00:09:51.257 --> 00:09:54.247
+läuft der kaputte Prozess nur schneller.
+
+155
+00:09:55.457 --> 00:09:57.657
+Aber die Lösung kann sein, den Arbeitsablauf zu ändern,
+
+156
+00:09:57.657 --> 00:10:01.417
+und hier können Sie innovativ sein und etwas bewirken, indem Sie
+
+157
+00:10:01.417 --> 00:10:05.177
+nicht nur die technische Lösung betrachten, die nötig sein mag,
+
+158
+00:10:05.177 --> 00:10:08.817
+sondern das Problem als Ganzes, das Team, und prüfen, ob sich vielleicht
+
+159
+00:10:08.817 --> 00:10:13.658
+der gesamte Prozess ändern lässt, neu gedacht mit KI-Tools, die ihn
+
+160
+00:10:13.658 --> 00:10:14.568
+reibungslos machen.
+
+161
+00:10:16.258 --> 00:10:18.458
+Und die Idee „Gut, wir haben es eingeschaltet“
+
+162
+00:10:18.458 --> 00:10:21.138
+ist kein Go-live. Nicht wahr?
+
+163
+00:10:21.138 --> 00:10:23.888
+Go-live ist, wenn die Leute beginnen, das Tool zu nutzen.
+
+164
+00:10:24.578 --> 00:10:27.898
+Wenn man sieht, dass sich die Organisation verändert und die Tools
+
+165
+00:10:27.898 --> 00:10:30.128
+tatsächlich nutzt.
+
+166
+00:10:31.978 --> 00:10:34.328
+Das vierte Problem ist fehlende Wertmessung.
+
+167
+00:10:35.138 --> 00:10:38.618
+Sie haben ein gutes Problem gefunden, gelöst, es funktioniert,
+
+168
+00:10:38.618 --> 00:10:40.858
+Sie haben es ausgeliefert. Sie glauben, es bewirkt etwas in der
+
+169
+00:10:40.858 --> 00:10:42.488
+Organisation, haben aber keine Ahnung.
+
+170
+00:10:43.298 --> 00:10:46.978
+Denn die eine Frage, die die Führung Ihnen stellen wird, lautet:
+
+171
+00:10:46.978 --> 00:10:49.658
+„Was hat sich seit dem Start verändert?“
+
+172
+00:10:49.658 --> 00:10:53.538
+Nicht wahr? 6 Monate nach dem Go-live haben Sie keine Ausgangsbasis
+
+173
+00:10:53.538 --> 00:10:55.178
+und können diese Frage nicht beantworten.
+
+174
+00:10:55.178 --> 00:10:58.578
+Deshalb ist es wichtig, bei diesen KI-Projekten wie
+
+175
+00:10:58.578 --> 00:11:02.408
+Produktmanager zu denken. Das heißt, wir müssen zuerst
+
+176
+00:11:03.178 --> 00:11:05.058
+eine Erfolgskennzahl festlegen.
+
+177
+00:11:05.058 --> 00:11:07.168
+Sobald wir diese KI-Lösung umgesetzt haben,
+
+178
+00:11:08.218 --> 00:11:09.528
+woher wissen wir, dass sie erfolgreich ist?
+
+179
+00:11:09.938 --> 00:11:12.938
+Hat sie den Umsatz gesteigert? Die Kosten gesenkt?
+
+180
+00:11:12.938 --> 00:11:16.448
+Das Risiko gesenkt? Die Kundenzufriedenheit erhöht?
+
+181
+00:11:17.218 --> 00:11:18.448
+Vielleicht die Mitarbeiterzufriedenheit?
+
+182
+00:11:19.458 --> 00:11:22.898
+Es gibt viele mögliche Kennzahlen, für die Sie sich entscheiden können,
+
+183
+00:11:22.898 --> 00:11:26.178
+aber legen Sie eine fest und messen Sie dann die Ausgangsbasis.
+
+184
+00:11:26.178 --> 00:11:28.088
+Wie ist der Ist-Zustand vor der KI?
+
+185
+00:11:28.778 --> 00:11:30.498
+Dauert eine Aufgabe 45 Minuten?
+
+186
+00:11:30.498 --> 00:11:33.338
+So wie beim Tool zur Brieferstellung, über das ich sprach.
+
+187
+00:11:33.338 --> 00:11:35.538
+Sie brauchten Tage, um einen Brief zu erstellen.
+
+188
+00:11:35.538 --> 00:11:37.618
+Es gab viele menschliche Fehler.
+
+189
+00:11:37.618 --> 00:11:40.688
+Vielleicht möchten Sie also die Fehlerquote senken.
+
+190
+00:11:41.418 --> 00:11:43.178
+Und dann denken Sie an einen Schwellenwert.
+
+191
+00:11:43.178 --> 00:11:45.818
+Was bedeutet es eigentlich, dass etwas funktioniert?
+
+192
+00:11:45.818 --> 00:11:46.718
+Was ist Erfolg?
+
+193
+00:11:47.658 --> 00:11:52.258
+Wenn wir die Zeit für die Erstellung dieser
+
+194
+00:11:52.258 --> 00:11:57.458
+HR-Briefe um 80 % senken, ist das eine enorme Reduktion mit Wirkung auf das
+
+195
+00:11:57.458 --> 00:12:02.258
+Geschäft. Denn diese HR-Mitarbeiter haben nun 80 % dieser Zeit,
+
+196
+00:12:02.258 --> 00:12:04.448
+um etwas anderes, Effizienteres zu tun.
+
+197
+00:12:06.338 --> 00:12:10.768
+Und das letzte Problem ist die gescheiterte Kommunikation.
+
+198
+00:12:11.818 --> 00:12:15.139
+Sie haben das richtige Problem gewählt, die richtige Lösung gebaut,
+
+199
+00:12:15.139 --> 00:12:19.419
+sie funktionierte, Sie haben sie umgesetzt, den Wert gemessen,
+
+200
+00:12:19.419 --> 00:12:20.769
+und der Wert ist real.
+
+201
+00:12:22.139 --> 00:12:26.299
+Niemand hat davon gehört. Niemand in der Organisation weiß, was für
+
+202
+00:12:26.299 --> 00:12:27.729
+eine großartige Arbeit Sie geleistet haben.
+
+203
+00:12:28.779 --> 00:12:32.979
+Nicht wahr? Es ist also sehr wichtig zu verstehen, wie man
+
+204
+00:12:32.979 --> 00:12:37.259
+Erfolg kommuniziert. Der VP will einen Satz.
+
+205
+00:12:37.259 --> 00:12:40.819
+Ist der Umsatz gestiegen? Die Fehler, die wir machen,
+
+206
+00:12:40.819 --> 00:12:44.019
+was in unserer Kommunikation schiefläuft, sind Dinge wie: Wir
+
+207
+00:12:44.019 --> 00:12:48.419
+präsentieren Genauigkeit statt Ergebnisse, ohne die Wirkung
+
+208
+00:12:48.419 --> 00:12:50.089
+unserer Änderungen zu verstehen.
+
+209
+00:12:51.019 --> 00:12:55.099
+Oder wir verwenden Fachsprache vor einem Businesspublikum.
+
+210
+00:12:55.099 --> 00:12:58.379
+Es interessiert sie nicht, wie gut das Modell war,
+
+211
+00:12:58.379 --> 00:13:02.329
+die AUC, die Präzision und so weiter.
+
+212
+00:13:03.699 --> 00:13:06.779
+Wir zeigen keinen Vorher-nachher-Vergleich, der zeigt, was
+
+213
+00:13:06.779 --> 00:13:09.529
+die Wirkung tatsächlich bewirkt hat.
+
+214
+00:13:10.179 --> 00:13:13.339
+Und wir liefern keine Details über die Tatsache hinaus, dass das Modell
+
+215
+00:13:13.339 --> 00:13:14.329
+Dinge verbessert hat.
+
+216
+00:13:15.979 --> 00:13:19.019
+Und schließlich schicken wir vielleicht nur einen Bericht mit Zahlen, statt
+
+217
+00:13:19.019 --> 00:13:21.859
+wirklich eine Geschichte zu erzählen und eine Erzählung aufzubauen.
+
+218
+00:13:21.859 --> 00:13:27.499
+Wir gehen die Kommunikation rund um KI-
+
+219
+00:13:27.499 --> 00:13:30.009
+Projekte deshalb so an, dass wir eine Geschichte haben.
+
+220
+00:13:30.699 --> 00:13:33.059
+Und zuerst sagen: Was war das Problem?
+
+221
+00:13:33.059 --> 00:13:35.899
+Das Problem: Unser Analyst verbrachte 3 Stunden pro Woche damit,
+
+222
+00:13:35.899 --> 00:13:39.819
+diesen Bericht manuell zu erstellen. Dann bauten wir ein Tool, das die
+
+223
+00:13:39.819 --> 00:13:44.329
+Extraktion automatisiert und Anomalien im Dokument markiert.
+
+224
+00:13:44.819 --> 00:13:49.099
+Das Ergebnis: 2,5 Stunden Ersparnis pro Analyst und
+
+225
+00:13:49.099 --> 00:13:51.489
+Woche, und die Fehler gingen um 40 % zurück.
+
+226
+00:13:53.139 --> 00:13:55.219
+Und deshalb nutzt Maria, unsere Betriebsleiterin,
+
+227
+00:13:55.219 --> 00:13:58.899
+– geben Sie ihm einen Namen, machen Sie es persönlich – es jeden Montag um
+
+228
+00:13:58.899 --> 00:14:04.059
+8:00 Uhr. Als Nächstes weiten wir es im kommenden Quartal auf zwei
+
+229
+00:14:04.059 --> 00:14:07.819
+weitere Teams aus. Wenn Sie eine Geschichte und ein Narrativ darum
+
+230
+00:14:07.819 --> 00:14:12.059
+aufbauen, fällt es den Menschen leichter, den Wert zu verstehen,
+
+231
+00:14:12.059 --> 00:14:13.529
+den diese Projekte bringen.
+
+232
+00:14:15.099 --> 00:14:18.251
+Um erfolgreich zu sein, müssen wir zuerst das richtige Problem lösen.
+
+233
+00:14:19.181 --> 00:14:22.341
+Sie müssen das richtige Werkzeug wählen, nicht nur das glänzendste oder
+
+234
+00:14:22.341 --> 00:14:25.701
+bequemste. Change-Management ist keine Phase.
+
+235
+00:14:25.701 --> 00:14:26.611
+Es ist das Produkt.
+
+236
+00:14:28.141 --> 00:14:32.091
+Definieren Sie den Wert vor dem Bau und messen Sie ihn danach.
+
+237
+00:14:32.941 --> 00:14:36.701
+Und Sie sollten Ihre Ergebnisse in eine Geschichte verwandeln, die man
+
+238
+00:14:36.701 --> 00:14:42.221
+weitererzählen kann. Nun geben wir das Wort an unsere Panelisten und
+
+239
+00:14:42.221 --> 00:14:44.621
+hören diese Geschichten. Wir beginnen mit einem kurzen Rückblick,
+
+240
+00:14:44.621 --> 00:14:49.101
+wo wir angefangen haben und wo wir heute stehen,
+
+241
+00:14:49.101 --> 00:14:52.491
+und hören dann Erfolgsgeschichten aus verschiedenen

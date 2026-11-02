@@ -1,0 +1,477 @@
+WEBVTT
+
+1
+00:00:01.360 --> 00:00:04.880
+Okay. All right. So, we'll take a few questions.
+
+2
+00:00:04.880 --> 00:00:07.909
+Thanks for sending in the questions.
+
+3
+00:00:08.400 --> 00:00:12.069
+And my first question here, I'm going to start with Martin.
+
+4
+00:00:12.559 --> 00:00:16.149
+Having been involved in several waves of innovation,
+
+5
+00:00:16.800 --> 00:00:19.669
+looking at the patterns that you've seen across those cycles,
+
+6
+00:00:20.080 --> 00:00:24.080
+what do you think we are overestimating or ignoring in the next 5
+
+7
+00:00:24.080 --> 00:00:29.760
+years? So I think that specifically with AI, as this is the first
+
+8
+00:00:29.760 --> 00:00:33.760
+technology that actually can start taking humans' jobs,
+
+9
+00:00:33.760 --> 00:00:38.399
+first it was totally ignored and underestimated, and right now I
+
+10
+00:00:38.399 --> 00:00:42.320
+feel, and I see, that there are even people who are
+
+11
+00:00:42.320 --> 00:00:46.000
+overestimating it, even giving it, like, because it's an amazing
+
+12
+00:00:46.000 --> 00:00:50.960
+technology, it can do, I would say, 95% of the job that people are
+
+13
+00:00:50.960 --> 00:00:56.079
+doing on a computer, but still the last 5% is the things that
+
+14
+00:00:56.079 --> 00:01:01.359
+people need, and I feel that right now they're overestimating it.
+
+15
+00:01:01.359 --> 00:01:04.720
+They're putting too much trust into it for some of the tasks
+
+16
+00:01:04.720 --> 00:01:09.119
+which are being done, and for the next 5 years I think that this
+
+17
+00:01:09.119 --> 00:01:12.240
+is going to happen also with the robots. There are going to be people to
+
+18
+00:01:12.240 --> 00:01:16.000
+say, okay, robots are going to totally take your job, they're going to
+
+19
+00:01:16.000 --> 00:01:20.080
+start working in manufacturing, in... even if you go for a
+
+20
+00:01:20.080 --> 00:01:25.840
+junior after a hard night in Varna, and if there is a
+
+21
+00:01:25.840 --> 00:01:29.360
+robot, people are going to say this one is going to be better at
+
+22
+00:01:29.360 --> 00:01:32.640
+just doing the job for you, but maybe it's not going to be. We're
+
+23
+00:01:32.640 --> 00:01:35.759
+going to see. And I think that there's going to be the next thing
+
+24
+00:01:35.759 --> 00:01:38.470
+which is going to be overestimated.
+
+25
+00:01:39.600 --> 00:01:44.000
+And something that should not be ignored is the privacy of
+
+26
+00:01:44.000 --> 00:01:47.200
+information, because people right now are totally ignoring it.
+
+27
+00:01:47.200 --> 00:01:52.399
+I would say that about two weeks ago we got a huge data set which
+
+28
+00:01:52.399 --> 00:01:56.799
+was tested for training, for the credit score of
+
+29
+00:01:56.799 --> 00:02:01.040
+people, and we saw information which was even taken out of chat
+
+30
+00:02:01.040 --> 00:02:03.280
+applications, which was crazy.
+
+31
+00:02:03.280 --> 00:02:06.560
+I said to the client that we're not going to be working on this, but
+
+32
+00:02:06.560 --> 00:02:11.920
+yeah, keep your data private. Always put a second thought into giving
+
+33
+00:02:11.920 --> 00:02:14.630
+access to something on your data.
+
+34
+00:02:15.680 --> 00:02:18.480
+Yeah, it's definitely true that our personal data is really becoming
+
+35
+00:02:18.480 --> 00:02:20.869
+the most important commodity
+
+36
+00:02:21.280 --> 00:02:25.590
+in the business. The next question is for Todor.
+
+37
+00:02:26.239 --> 00:02:31.040
+When you're building the platform so fast,
+
+38
+00:02:31.040 --> 00:02:34.959
+how do you balance pressure to move quickly with the need for guard
+
+39
+00:02:34.959 --> 00:02:37.830
+rails such as governance and data quality monitoring?
+
+40
+00:02:38.800 --> 00:02:41.350
+And also, how do you handle security?
+
+41
+00:02:42.959 --> 00:02:44.230
+The easy one for me.
+
+42
+00:02:45.200 --> 00:02:51.280
+Okay, look, we are a relatively small team, you know, we have like 60
+
+43
+00:02:51.280 --> 00:02:55.040
+people, about 70 probably now, half of them are in the factory,
+
+44
+00:02:55.040 --> 00:02:57.590
+half of them are business people.
+
+45
+00:02:59.040 --> 00:03:03.680
+Most of our people have access to most of our data because they
+
+46
+00:03:03.680 --> 00:03:07.590
+work with the clients and with the orders on a daily basis.
+
+47
+00:03:08.319 --> 00:03:12.069
+And when we're building the platform,
+
+48
+00:03:13.599 --> 00:03:18.879
+frankly, when we plan something I just discuss with the AI agent
+
+49
+00:03:18.879 --> 00:03:22.480
+directly to recommend to me what the infrastructure should be, what
+
+50
+00:03:22.480 --> 00:03:26.159
+should be, you know, protected. There are a few basics like, hey,
+
+51
+00:03:26.159 --> 00:03:29.990
+make sure you set up your database in the EU, ours is in Frankfurt,
+
+52
+00:03:30.560 --> 00:03:34.159
+and then make sure that, you know, only a few people have access to
+
+53
+00:03:34.159 --> 00:03:36.879
+the sensitive stuff, with two-factor authentication and all the
+
+54
+00:03:36.879 --> 00:03:38.959
+security protocols in place.
+
+55
+00:03:38.959 --> 00:03:44.230
+In terms of the actual correctness of the data,
+
+56
+00:03:44.720 --> 00:03:48.720
+I actually don't worry too much about it
+
+57
+00:03:48.720 --> 00:03:55.360
+because we are not a data-driven company. In our case
+
+58
+00:03:55.360 --> 00:03:59.680
+we don't have millions and millions of data units
+
+59
+00:03:59.680 --> 00:04:02.239
+to build some models, to train models on our data.
+
+60
+00:04:02.239 --> 00:04:05.439
+For us, what's important is that the correct clients get
+
+61
+00:04:05.439 --> 00:04:08.799
+the correct boots, and then we account the revenue properly and
+
+62
+00:04:08.799 --> 00:04:12.720
+things like that, which become very obvious very quickly.
+
+63
+00:04:12.720 --> 00:04:18.959
+But having said that, in the process of developing new apps we
+
+64
+00:04:18.959 --> 00:04:21.759
+would usually come across limitations of our database.
+
+65
+00:04:21.759 --> 00:04:25.440
+So I'll give you an example. When we were initially building
+
+66
+00:04:25.440 --> 00:04:30.080
+the sales tool, I didn't explicitly ask the AI to give me the ability
+
+67
+00:04:30.080 --> 00:04:33.520
+to run cohort analysis, and later in that process, when I wanted to
+
+68
+00:04:33.520 --> 00:04:36.560
+build this report, it tells me, hey, by the way, we can't do that
+
+69
+00:04:36.560 --> 00:04:39.440
+because you did not record data in the correct way, and then it's a
+
+70
+00:04:39.440 --> 00:04:42.960
+bit of a process: okay, what can we do now to make sure that we either,
+
+71
+00:04:42.960 --> 00:04:47.120
+if possible, retrospectively fill in the data gaps, or if not, from now
+
+72
+00:04:47.120 --> 00:04:51.040
+on, for the future, we start to record the correct data, time stamps
+
+73
+00:04:51.040 --> 00:04:53.040
+and whatever we needed to run cohort analysis.
+
+74
+00:04:53.040 --> 00:04:54.479
+So, it's a bit of a process.
+
+75
+00:04:54.479 --> 00:04:57.759
+Make sure you get the basics right in terms of data access and
+
+76
+00:04:57.759 --> 00:04:59.430
+kind of database location.
+
+77
+00:04:59.840 --> 00:05:04.720
+Make sure that the people who have access to this data have their
+
+78
+00:05:04.720 --> 00:05:10.240
+devices secured with 2FA. And then in the process, if you
+
+79
+00:05:10.240 --> 00:05:12.390
+discover something that's missing, build on it.
+
+80
+00:05:13.520 --> 00:05:16.639
+Okay. Well, it looks like we are out of time for questions.
+
+81
+00:05:16.639 --> 00:05:18.240
+So, thank you to the panelists.
+
+82
+00:05:18.240 --> 00:05:21.440
+If we didn't get to your questions, feel free to ambush the
+
+83
+00:05:21.440 --> 00:05:23.840
+panelists outside and ask them.
+
+84
+00:05:23.840 --> 00:05:27.029
+And we'll go on to summarize
+
+85
+00:05:28.240 --> 00:05:34.630
+this track. So in summary, after everything that we've talked about,
+
+86
+00:05:35.759 --> 00:05:39.759
+the recommendation before you build anything is to try to answer these
+
+87
+00:05:39.759 --> 00:05:43.520
+10 questions that you see, and if you can't answer these questions, if
+
+88
+00:05:43.520 --> 00:05:47.120
+you want to actually implement AI, these are the places that you want
+
+89
+00:05:47.120 --> 00:05:51.520
+to start. Number one: is this problem worth solving, and does
+
+90
+00:05:51.520 --> 00:05:54.800
+leadership even care? That's going to be very important to get buy-in
+
+91
+00:05:54.800 --> 00:05:58.880
+from leadership. Is the outcome measurable, and can I define success
+
+92
+00:05:58.880 --> 00:06:02.160
+in one sentence? Is the data accessible?
+
+93
+00:06:02.160 --> 00:06:06.000
+Is it trustworthy? Do you have the data that you can use in order to
+
+94
+00:06:06.000 --> 00:06:10.319
+solve the problem? Is AI even the right tool, or would a
+
+95
+00:06:10.319 --> 00:06:12.550
+rule or a dashboard do the job?
+
+96
+00:06:12.960 --> 00:06:15.990
+Don't overcomplicate things and go for the most simple solution.
+
+97
+00:06:16.880 --> 00:06:19.670
+Do I have a named sponsor who will champion this?
+
+98
+00:06:20.080 --> 00:06:23.360
+Somebody that you can always go to, that will socialize it in the
+
+99
+00:06:23.360 --> 00:06:25.510
+organization, that will help with adoption.
+
+100
+00:06:26.080 --> 00:06:30.880
+Is the output embedded where users actually work? And that is starred
+
+101
+00:06:30.880 --> 00:06:33.600
+because maybe the workflow needs to change.
+
+102
+00:06:33.600 --> 00:06:36.240
+Maybe the way that they work today isn't the best way.
+
+103
+00:06:36.240 --> 00:06:40.070
+And this is an opportunity to take a step back in an organization
+
+104
+00:06:40.479 --> 00:06:44.790
+and figure out a better workflow that will integrate AI into it.
+
+105
+00:06:45.360 --> 00:06:48.800
+It's important to ask what is my baseline and how will I measure
+
+106
+00:06:48.800 --> 00:06:51.670
+improvement. How do I know that it's going to make an impact?
+
+107
+00:06:52.400 --> 00:06:57.029
+Who's going to be responsible for tracking this value after go-live?
+
+108
+00:06:58.560 --> 00:07:02.720
+Ask, can I explain the result in three sentences to a non-technical
+
+109
+00:07:02.720 --> 00:07:06.880
+leader? I always like to have an elevator pitch ready, so that if I have
+
+110
+00:07:06.880 --> 00:07:10.630
+one minute to explain to somebody, especially in leadership,
+
+111
+00:07:11.039 --> 00:07:14.479
+what the purpose of the project is and what the impact is,
+
+112
+00:07:14.479 --> 00:07:18.319
+I can do that. And have I socialized this with the right
+
+113
+00:07:18.319 --> 00:07:20.319
+stakeholders after the demo?
+
+114
+00:07:20.319 --> 00:07:23.759
+The change management, like we said, is this very important piece of
+
+115
+00:07:23.759 --> 00:07:27.680
+it. How do people get to know about it and are convinced to start
+
+116
+00:07:27.680 --> 00:07:31.919
+using it and create a sea change in the organization where everybody
+
+117
+00:07:31.919 --> 00:07:34.880
+starts using it? So those are the lessons.
+
+118
+00:07:34.880 --> 00:07:36.400
+Thank you to the panelists.
+
+119
+00:07:36.400 --> 00:07:38.869
+Thank you to everybody, and we'll go to

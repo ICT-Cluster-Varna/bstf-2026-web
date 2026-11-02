@@ -1,0 +1,1085 @@
+WEBVTT
+
+1
+00:00:02.560 --> 00:00:06.470
+As you heard, I'll talk about the dark ages.
+
+2
+00:00:08.880 --> 00:00:13.350
+And for me, the beginning of the dark ages was one
+
+3
+00:00:14.639 --> 00:00:17.030
+morning in September '92
+
+4
+00:00:18.560 --> 00:00:22.550
+when I joined the University of Delaware as a new postdoc.
+
+5
+00:00:24.240 --> 00:00:27.829
+The initial idea had nothing to do with AI
+
+6
+00:00:29.119 --> 00:00:32.069
+and it was the biggest chance in my life.
+
+7
+00:00:32.800 --> 00:00:39.200
+It turned out that the university I was joining was working very
+
+8
+00:00:39.200 --> 00:00:42.629
+closely with the chemical giant DuPont.
+
+9
+00:00:43.840 --> 00:00:44.949
+And at that time
+
+10
+00:00:46.480 --> 00:00:53.120
+that large US enterprise decided that the future is in
+
+11
+00:00:53.120 --> 00:00:58.800
+this new unknown area. At that time even the name was not AI,
+
+12
+00:00:58.800 --> 00:01:01.030
+it was intelligent systems.
+
+13
+00:01:02.399 --> 00:01:05.109
+And I was offered, by the professor who
+
+14
+00:01:06.400 --> 00:01:09.349
+offered me the job, to
+
+15
+00:01:10.320 --> 00:01:17.280
+begin the training at their key technical lab at
+
+16
+00:01:17.280 --> 00:01:21.590
+DuPont. That opened the dark ages.
+
+17
+00:01:22.640 --> 00:01:27.840
+From there I realized that it's very new, even the research area,
+
+18
+00:01:27.840 --> 00:01:33.270
+even the scientific topics were very fuzzy, unknown,
+
+19
+00:01:34.240 --> 00:01:40.950
+unproven, but what happened later is more interesting.
+
+20
+00:01:42.000 --> 00:01:43.669
+Even not knowing well
+
+21
+00:01:44.720 --> 00:01:50.150
+what the terms artificial neural nets or genetic algorithms mean,
+
+22
+00:01:52.399 --> 00:01:58.230
+we found, my professor and myself, one visionary business leader.
+
+23
+00:01:59.920 --> 00:02:05.040
+A visionary leader from the closest refinery to the university.
+
+24
+00:02:05.040 --> 00:02:07.510
+A refinery of Texaco.
+
+25
+00:02:09.119 --> 00:02:12.869
+He came to the university sharing one big problem.
+
+26
+00:02:13.599 --> 00:02:18.959
+There were a lot of complaints about bad orders released from the
+
+27
+00:02:18.959 --> 00:02:25.920
+refinery, and he shared with pain: we tested
+
+28
+00:02:25.920 --> 00:02:28.400
+all the statistics, it didn't work.
+
+29
+00:02:28.400 --> 00:02:31.509
+Let's see if this new voodoo will help us.
+
+30
+00:02:33.440 --> 00:02:39.429
+And then in '93 we began exploring
+
+31
+00:02:40.000 --> 00:02:45.120
+the new rising star of this almost unknown technology called
+
+32
+00:02:45.120 --> 00:02:49.910
+neural nets. The software was very
+
+33
+00:02:51.360 --> 00:02:54.950
+limited. Let's put it in a very mild way.
+
+34
+00:02:56.160 --> 00:02:59.350
+No solid technical background.
+
+35
+00:02:59.840 --> 00:03:04.640
+Later we realized that the fundamental algorithm of how
+
+36
+00:03:04.640 --> 00:03:09.519
+this technology works was developed in '86, a couple of years before
+
+37
+00:03:09.519 --> 00:03:14.310
+that. But early in those dark ages,
+
+38
+00:03:15.680 --> 00:03:20.149
+what drove all of this was this visionary
+
+39
+00:03:21.440 --> 00:03:23.190
+business leader.
+
+40
+00:03:24.640 --> 00:03:30.709
+Later, communicating with hundreds of business leaders,
+
+41
+00:03:32.400 --> 00:03:35.429
+I found out that this is the
+
+42
+00:03:36.480 --> 00:03:42.149
+most limited capability of business leaders.
+
+43
+00:03:43.840 --> 00:03:46.869
+Unfortunately, especially with time,
+
+44
+00:03:48.239 --> 00:03:53.270
+I find very few of them with this passion
+
+45
+00:03:55.280 --> 00:04:01.920
+and lacking any fear to jump into the abyss and try
+
+46
+00:04:01.920 --> 00:04:03.429
+an entirely new technology.
+
+47
+00:04:04.159 --> 00:04:09.280
+And here I'll begin: the first application is this pioneer
+
+48
+00:04:09.280 --> 00:04:15.110
+application of using neural nets in industry, maybe one of the first.
+
+49
+00:04:16.160 --> 00:04:20.390
+Well, we succeeded and we reduced the complaints
+
+50
+00:04:21.600 --> 00:04:25.029
+five, six times.
+
+51
+00:04:26.080 --> 00:04:29.029
+The lesson I learned was that:
+
+52
+00:04:30.400 --> 00:04:35.440
+please jump. Don't wait too much.
+
+53
+00:04:35.440 --> 00:04:41.199
+Even if the technology is incomplete, even if the software is very
+
+54
+00:04:41.199 --> 00:04:44.870
+limited, you compensate for these initial
+
+55
+00:04:46.000 --> 00:04:50.390
+limitations of the technology with a desire, with a vision.
+
+56
+00:04:51.520 --> 00:04:57.830
+And this is one of the recommendations I could give to everybody,
+
+57
+00:04:58.240 --> 00:05:00.630
+especially to the business leaders.
+
+58
+00:05:01.360 --> 00:05:08.080
+I can share my disappointment that I tried to share my
+
+59
+00:05:08.080 --> 00:05:13.199
+American experience in Bulgaria for more than 10 years, and one of
+
+60
+00:05:13.199 --> 00:05:19.270
+the biggest obstacles I find is the lack of visionary leaders.
+
+61
+00:05:20.240 --> 00:05:24.800
+That's why I highly appreciate yesterday's presentation of
+
+62
+00:05:24.800 --> 00:05:31.759
+Mr. Topalov, which I would strongly recommend everybody to listen to
+
+63
+00:05:31.759 --> 00:05:35.120
+again and to use his experience.
+
+64
+00:05:35.120 --> 00:05:37.029
+It has to be leveraged.
+
+65
+00:05:39.120 --> 00:05:41.510
+But then I moved to Dow Chemical,
+
+66
+00:05:42.560 --> 00:05:44.950
+the largest chemical company
+
+67
+00:05:45.919 --> 00:05:49.830
+in the United States. And here my real
+
+68
+00:05:51.840 --> 00:05:56.230
+fight, maybe, and growth
+
+69
+00:05:57.360 --> 00:06:04.070
+to real serious productive implementation of AI began,
+
+70
+00:06:04.800 --> 00:06:09.440
+and I'll illustrate it with my first project, and it was a very
+
+71
+00:06:09.440 --> 00:06:13.990
+important project. Epoxy, as you know, is a very widely used
+
+72
+00:06:15.039 --> 00:06:16.950
+chemical material worldwide.
+
+73
+00:06:18.880 --> 00:06:25.350
+But if some bad things happen in the epoxidizer,
+
+74
+00:06:27.039 --> 00:06:30.880
+it's really, really bad. You don't have an alarm.
+
+75
+00:06:30.880 --> 00:06:32.639
+You have an avalanche of alarms.
+
+76
+00:06:32.639 --> 00:06:34.309
+You have literally milliseconds
+
+77
+00:06:35.919 --> 00:06:42.230
+for dozens of operators to respond in the control room.
+
+78
+00:06:43.680 --> 00:06:47.840
+And that's why the idea: let's capture the intelligence of the
+
+79
+00:06:47.840 --> 00:06:51.830
+experts and make the decision making
+
+80
+00:06:53.280 --> 00:06:55.350
+automatic and intelligent.
+
+81
+00:06:56.960 --> 00:07:02.720
+And so how we built this intelligent system for alarm
+
+82
+00:07:02.720 --> 00:07:05.189
+handling, it took one year.
+
+83
+00:07:05.840 --> 00:07:12.400
+And in fact the most difficult part was to
+
+84
+00:07:12.400 --> 00:07:14.149
+extract the knowledge.
+
+85
+00:07:15.199 --> 00:07:20.550
+And here another recommendation, another initial failure.
+
+86
+00:07:24.000 --> 00:07:25.910
+The project leader
+
+87
+00:07:26.880 --> 00:07:31.270
+recommended that the source of knowledge be
+
+88
+00:07:32.400 --> 00:07:34.710
+the manager of the unit.
+
+89
+00:07:35.680 --> 00:07:42.319
+And he was very explicit,
+
+90
+00:07:42.319 --> 00:07:48.560
+very confident in defining a lot of rules, and here is an example of
+
+91
+00:07:48.560 --> 00:07:54.710
+one rule. When we went to operators, to the people who really
+
+92
+00:07:55.680 --> 00:07:59.589
+save the plant, the response was:
+
+93
+00:08:00.879 --> 00:08:06.319
+It's not correct. I don't know who told you this knowledge, but it's
+
+94
+00:08:06.319 --> 00:08:11.510
+not knowledge, it is not working. And here is one of the lessons:
+
+95
+00:08:12.800 --> 00:08:15.990
+when you try to capture intelligence,
+
+96
+00:08:18.080 --> 00:08:23.039
+spend some time to find out and to validate the real source of
+
+97
+00:08:23.039 --> 00:08:28.309
+intelligence, and usually it's not in the upper part of the hierarchy.
+
+98
+00:08:32.640 --> 00:08:35.029
+The next example
+
+99
+00:08:36.159 --> 00:08:39.910
+is very important and it happened after the great recession.
+
+100
+00:08:41.279 --> 00:08:43.430
+Dow was very heavily hit
+
+101
+00:08:44.880 --> 00:08:48.470
+with this recession in 2008, 2009.
+
+102
+00:08:50.080 --> 00:08:54.150
+Here I can show you the dynamics of the
+
+103
+00:08:55.360 --> 00:08:58.630
+cost of raw materials. Dow was a
+
+104
+00:09:00.560 --> 00:09:05.430
+$30 billion company at the time, and the cost of the raw materials
+
+105
+00:09:05.839 --> 00:09:12.399
+was $5 billion. As you saw, it jumped more than two times, and
+
+106
+00:09:12.399 --> 00:09:15.430
+the request was we have to do something.
+
+107
+00:09:15.920 --> 00:09:19.990
+And the request was let's see how AI can help us.
+
+108
+00:09:20.880 --> 00:09:24.790
+And here we have demonstrated the tremendous
+
+109
+00:09:25.839 --> 00:09:32.080
+potential of business forecasting, but not the statistical business
+
+110
+00:09:32.080 --> 00:09:35.990
+forecasting that everybody else had used.
+
+111
+00:09:36.959 --> 00:09:41.350
+Here we introduce the AI component, the nonlinear
+
+112
+00:09:45.360 --> 00:09:51.680
+forecasting of dependence between the raw material we try to predict
+
+113
+00:09:51.680 --> 00:09:56.150
+and a wide range of potential economic, macroeconomic,
+
+114
+00:09:56.640 --> 00:10:02.240
+microeconomic and special factors we need to take into account.
+
+115
+00:10:02.240 --> 00:10:06.949
+And here the nonlinearity is a critical point,
+
+116
+00:10:08.720 --> 00:10:12.069
+because if the price of ethylene
+
+117
+00:10:13.040 --> 00:10:19.120
+does not depend in a normal linear way on, for example, the price of
+
+118
+00:10:19.120 --> 00:10:24.150
+sugar or the price of iron.
+
+119
+00:10:25.519 --> 00:10:29.190
+I'm not talking about real economic relationships,
+
+120
+00:10:30.160 --> 00:10:36.399
+but it can depend nonlinearly on the square root of the price of sugar,
+
+121
+00:10:36.399 --> 00:10:41.839
+on the logarithm of the price of sugar and on the price of iron to the power
+
+122
+00:10:41.839 --> 00:10:46.710
+three. And capturing the nonlinearity was
+
+123
+00:10:47.920 --> 00:10:52.069
+really the golden key, the golden key.
+
+124
+00:10:52.560 --> 00:10:56.550
+And at the end we built 51
+
+125
+00:10:57.519 --> 00:11:02.470
+models of the most expensive raw materials.
+
+126
+00:11:03.200 --> 00:11:04.959
+The final result is here.
+
+127
+00:11:04.959 --> 00:11:08.310
+And the truth is here. You can barely find in literature
+
+128
+00:11:09.760 --> 00:11:11.509
+a spreadsheet like this
+
+129
+00:11:13.040 --> 00:11:18.949
+about what is the reality after one year of real forecasting.
+
+130
+00:11:20.240 --> 00:11:24.160
+As you can see here with the green color, this is the forecast
+
+131
+00:11:24.160 --> 00:11:30.240
+that's below 5% error. This is a really almost ideal forecast.
+
+132
+00:11:30.240 --> 00:11:32.870
+We're not losing money at all.
+
+133
+00:11:33.600 --> 00:11:37.920
+Then part of the models are not so good, the yellow ones.
+
+134
+00:11:37.920 --> 00:11:39.190
+And we have some
+
+135
+00:11:41.040 --> 00:11:44.629
+models that are really bad, but on average
+
+136
+00:11:46.000 --> 00:11:50.310
+we gain money. We gain on average $125
+
+137
+00:11:51.920 --> 00:11:55.670
+million savings a year. Another
+
+138
+00:11:56.720 --> 00:12:02.880
+story around here: this project didn't begin flawlessly, and the
+
+139
+00:12:02.880 --> 00:12:05.350
+biggest obstacle was the accountant
+
+140
+00:12:06.959 --> 00:12:11.350
+because in order to implement this very
+
+141
+00:12:12.320 --> 00:12:15.670
+demanding type of forecast
+
+142
+00:12:16.959 --> 00:12:21.600
+we needed to invest in software of the SAS Institute, which is the
+
+143
+00:12:21.600 --> 00:12:25.360
+most powerful and reliable vendor
+
+144
+00:12:25.360 --> 00:12:29.590
+of industrial AI software, but
+
+145
+00:12:30.560 --> 00:12:32.470
+we needed to invest $400,000
+
+146
+00:12:34.399 --> 00:12:37.750
+and this accountant refused.
+
+147
+00:12:39.600 --> 00:12:44.629
+Only after the intervention of the VP of purchasing of the company
+
+148
+00:12:45.040 --> 00:12:49.590
+we continued, but you see the result, you see that sometimes
+
+149
+00:12:51.120 --> 00:12:58.160
+stopping by some seemingly expensive
+
+150
+00:12:58.160 --> 00:13:03.829
+initial cost can prevent us from a breakthrough type
+
+151
+00:13:05.040 --> 00:13:07.760
+of gain, as was the case here.
+
+152
+00:13:07.760 --> 00:13:10.310
+It was the project with the highest
+
+153
+00:13:12.079 --> 00:13:17.189
+return on investment that I had in my 30-plus years career.
+
+154
+00:13:21.120 --> 00:13:27.590
+The fourth example I give is from another giant, the largest
+
+155
+00:13:28.000 --> 00:13:34.160
+vendor of pulp and paper in the United States, it's Georgia-
+
+156
+00:13:34.160 --> 00:13:40.629
+Pacific, another, I think, 35, 36 billion dollar company, and here
+
+157
+00:13:41.200 --> 00:13:47.120
+the problem was very, very clear: that all their business or most of
+
+158
+00:13:47.120 --> 00:13:51.270
+their business was based on producing paper.
+
+159
+00:13:51.680 --> 00:13:55.360
+Paper machines are big, as you can see in this slide.
+
+160
+00:13:55.360 --> 00:13:58.870
+But when it breaks,
+
+161
+00:14:00.079 --> 00:14:02.480
+the mess is big as well.
+
+162
+00:14:02.480 --> 00:14:07.990
+The loss is big as well, and statistics doesn't help.
+
+163
+00:14:08.720 --> 00:14:13.749
+We need to build an intelligent, we call it a doctor,
+
+164
+00:14:14.880 --> 00:14:18.949
+or usually they call it predictive maintenance.
+
+165
+00:14:20.399 --> 00:14:26.639
+And here is the final result, what the operators see, and this is a
+
+166
+00:14:26.639 --> 00:14:28.550
+combination of statistics,
+
+167
+00:14:29.519 --> 00:14:34.710
+deep neural networks, genetic programming, of several technologies.
+
+168
+00:14:35.519 --> 00:14:41.509
+The final result is important: if you see in this slide
+
+169
+00:14:42.240 --> 00:14:48.800
+on the left side the number of breaks before the doctor, we
+
+170
+00:14:48.800 --> 00:14:50.389
+put the doctor in action.
+
+171
+00:14:51.040 --> 00:14:57.199
+Then you can see in the last version of that slide that this
+
+172
+00:14:57.199 --> 00:14:59.590
+number has decreased significantly.
+
+173
+00:15:01.040 --> 00:15:07.760
+And here the one-time version, the proof of concept as you call it,
+
+174
+00:15:07.760 --> 00:15:13.509
+was about $3 million for these three, four months of exploratory
+
+175
+00:15:14.160 --> 00:15:20.079
+proof of concept. We have 26 machines where it has been leveraged.
+
+176
+00:15:20.079 --> 00:15:21.749
+As a result of this
+
+177
+00:15:22.720 --> 00:15:28.710
+PoC, a new department was created and 30 people were
+
+178
+00:15:29.760 --> 00:15:36.320
+hired. Yesterday there was a discussion about AI will reduce
+
+179
+00:15:36.320 --> 00:15:42.959
+jobs. Now guys, in my career, in all of my projects,
+
+180
+00:15:42.959 --> 00:15:45.430
+we only added jobs.
+
+181
+00:15:46.639 --> 00:15:48.470
+When I began at Georgia-Pacific,
+
+182
+00:15:49.519 --> 00:15:55.519
+it was zero efforts. When I left, there were three departments and a
+
+183
+00:15:55.519 --> 00:16:00.069
+lot of people added into the enterprise,
+
+184
+00:16:02.079 --> 00:16:08.309
+and above all a running engine for value creation
+
+185
+00:16:08.720 --> 00:16:14.389
+that creates value of more than $100 million a year.
+
+186
+00:16:15.519 --> 00:16:19.350
+That's AI in action,
+
+187
+00:16:21.040 --> 00:16:24.230
+not words, but dollars.
+
+188
+00:16:28.480 --> 00:16:33.110
+At the end, we have to move from specific projects.
+
+189
+00:16:34.160 --> 00:16:37.749
+Problem here, problem there, that yeah, there is a big
+
+190
+00:16:39.040 --> 00:16:40.949
+return on investment. But
+
+191
+00:16:42.000 --> 00:16:46.240
+what we found out, especially at Georgia-Pacific, is that there is a
+
+192
+00:16:46.240 --> 00:16:52.560
+fundamental gap between what we try to do, what problems we try to
+
+193
+00:16:52.560 --> 00:16:54.230
+solve in manufacturing
+
+194
+00:16:55.279 --> 00:16:59.110
+and all the other efforts in the business.
+
+195
+00:17:00.399 --> 00:17:06.150
+All the planning, financial stuff, etc., is done absolutely separately.
+
+196
+00:17:07.039 --> 00:17:13.600
+There is silo thinking, and the idea: can we create a digital brain
+
+197
+00:17:13.600 --> 00:17:18.880
+of the enterprise? Now, at that time, I'm talking about
+
+198
+00:17:18.880 --> 00:17:25.520
+2021, when ChatGPT was still unavailable, when there
+
+199
+00:17:25.520 --> 00:17:32.080
+was only one kid on the block, BERT, and
+
+200
+00:17:32.080 --> 00:17:37.760
+we began this project where we succeeded in integrating the
+
+201
+00:17:37.760 --> 00:17:40.870
+business domain knowledge, the business data,
+
+202
+00:17:41.600 --> 00:17:47.120
+with knowledge graphs, and above all, and this is a critical
+
+203
+00:17:47.120 --> 00:17:48.390
+fundamental difference,
+
+204
+00:17:49.760 --> 00:17:55.360
+jump out of statistics and go to causal models.
+
+205
+00:17:55.360 --> 00:17:56.870
+If we don't understand
+
+206
+00:17:58.559 --> 00:18:00.469
+the causality of the process,
+
+207
+00:18:02.480 --> 00:18:06.550
+statistics gives us the illusion of control.
+
+208
+00:18:07.679 --> 00:18:13.760
+Without understanding there is no control, and here is another
+
+209
+00:18:13.760 --> 00:18:20.240
+purely R&D-based shift which we need to do in the near future, and we
+
+210
+00:18:20.240 --> 00:18:24.880
+succeeded in one application when we increased the touchless
+
+211
+00:18:24.880 --> 00:18:30.960
+processing 10 times, and this is a quote from the Forbes
+
+212
+00:18:30.960 --> 00:18:33.990
+magazine from last year.
+
+213
+00:18:36.720 --> 00:18:38.630
+What are the key lessons I learned?
+
+214
+00:18:40.720 --> 00:18:45.919
+First, that the top management vision is the key.
+
+215
+00:18:45.919 --> 00:18:50.950
+If there is no top management vision, I'm not talking about the CEO.
+
+216
+00:18:51.360 --> 00:18:57.600
+I'm talking about a person with decision-making rights to move
+
+217
+00:18:57.600 --> 00:18:59.349
+ahead, to take the responsibility
+
+218
+00:19:01.120 --> 00:19:05.270
+to move AI ahead, to be the AI CEO.
+
+219
+00:19:07.600 --> 00:19:14.469
+My opinion is that each serious business must have a position of
+
+220
+00:19:14.880 --> 00:19:20.950
+an AICO. If it doesn't have it, it's not a serious business.
+
+221
+00:19:22.160 --> 00:19:28.000
+Then another thing: technology is changing fast, but what we found:
+
+222
+00:19:28.000 --> 00:19:32.320
+every five years we try to predict what we will do in the next five years.
+
+223
+00:19:32.320 --> 00:19:36.960
+We missed the next big technologies every time, but what
+
+224
+00:19:36.960 --> 00:19:40.469
+remained the same all the time were the key problems.
+
+225
+00:19:41.600 --> 00:19:45.679
+And this is very important to know, because as we will see on the next
+
+226
+00:19:45.679 --> 00:19:49.430
+slide, we can move to a mode of very fast
+
+227
+00:19:50.480 --> 00:19:53.750
+response, a very fast operation.
+
+228
+00:19:54.400 --> 00:19:57.830
+We need to have something which is stable.
+
+229
+00:19:58.240 --> 00:20:02.310
+The problems are stable, they will not change.
+
+230
+00:20:04.799 --> 00:20:05.990
+Including the employees
+
+231
+00:20:07.760 --> 00:20:09.830
+who use the applications
+
+232
+00:20:11.200 --> 00:20:13.589
+in the development is the key.
+
+233
+00:20:14.000 --> 00:20:20.559
+If the AI solution is not their baby, they'll throw it away.
+
+234
+00:20:20.559 --> 00:20:26.799
+It's not their baby. So that's why include them at the beginning,
+
+235
+00:20:26.799 --> 00:20:31.510
+even in the discussion, in the brainstorming on the need for the project.
+
+236
+00:20:32.000 --> 00:20:36.150
+Include them all the time, and
+
+237
+00:20:37.440 --> 00:20:41.349
+this last one is especially true now.
+
+238
+00:20:42.960 --> 00:20:47.750
+What I found is that deep expert knowledge cannot be reproduced
+
+239
+00:20:49.039 --> 00:20:52.390
+by a silicon entity.
+
+240
+00:20:53.600 --> 00:20:57.750
+This paranoia with Claude is very profitable.
+
+241
+00:20:58.640 --> 00:21:02.709
+It's a real route to the future, but
+
+242
+00:21:04.159 --> 00:21:05.910
+it has to be combined
+
+243
+00:21:07.120 --> 00:21:12.550
+with the most important
+
+244
+00:21:14.320 --> 00:21:15.840
+direction of the future.
+
+245
+00:21:15.840 --> 00:21:17.190
+This is my last project,
+
+246
+00:21:19.120 --> 00:21:24.070
+answering the question of how Georgia-Pacific will operate in 2030.
+
+247
+00:21:25.280 --> 00:21:28.000
+Agents are available. Everybody is talking about agents.
+
+248
+00:21:28.000 --> 00:21:28.900
+This is paranoia.
+
+249
+00:21:30.480 --> 00:21:37.109
+But the business leaders told us, our dream is not an
+
+250
+00:21:37.600 --> 00:21:42.310
+autonomous plant for producing paper.
+
+251
+00:21:42.880 --> 00:21:48.310
+Our dream is an optimal combination
+
+252
+00:21:50.080 --> 00:21:55.679
+between people, who become smarter and smarter and more
+
+253
+00:21:55.679 --> 00:21:58.630
+capable with AI, and
+
+254
+00:22:00.080 --> 00:22:06.080
+maybe an increasing share of more and more capable agents, and this
+
+255
+00:22:06.080 --> 00:22:09.270
+to be one organic entity:
+
+256
+00:22:10.159 --> 00:22:15.200
+the organic interaction between agents and people.
+
+257
+00:22:15.200 --> 00:22:18.960
+That's to me the key message for the future.
+
+258
+00:22:18.960 --> 00:22:20.870
+And tomorrow I'll have
+
+259
+00:22:21.919 --> 00:22:25.830
+two hours to talk in more detail about this future.
+
+260
+00:22:26.240 --> 00:22:31.440
+In fact, I call it the 10X engine for business productivity
+
+261
+00:22:31.440 --> 00:22:37.109
+growth. It's like the Raptor 3 engine of the SpaceX rocket.
+
+262
+00:22:37.520 --> 00:22:44.229
+Now we have all the components: the investment component worldwide,
+
+263
+00:22:44.720 --> 00:22:51.280
+plus the AI automatic code generation
+
+264
+00:22:51.280 --> 00:22:56.880
+component by Claude, plus the agents, which give us universal
+
+265
+00:22:56.880 --> 00:23:03.360
+acceptability and capability, and GenAI. For God's sake, we have five
+
+266
+00:23:03.360 --> 00:23:08.390
+billion potential customers. This combination is unique.
+
+267
+00:23:08.960 --> 00:23:14.950
+But from the relatively small reality of now,
+
+268
+00:23:15.840 --> 00:23:18.390
+we have to jump to the accelerated
+
+269
+00:23:19.520 --> 00:23:23.190
+reality of the exponential of tomorrow.
+
+270
+00:23:24.880 --> 00:23:28.240
+Welcome on the road, the new road.
+
+271
+00:23:28.240 --> 00:23:32.550
+Welcome to the flight. Welcome to my workshop tomorrow.

@@ -1,0 +1,1133 @@
+WEBVTT
+
+1
+00:00:10.400 --> 00:00:14.200
+Herkese hoş geldiniz, CONNEXUS Forum'a hoş geldiniz.
+
+2
+00:00:14.200 --> 00:00:18.990
+Ben Alexander Minchev, AbilikSoft'un kurucu ortağı ve CEO'suyum.
+
+3
+00:00:19.760 --> 00:00:24.920
+Fiziksel güvenlikle askerlik görevimden beri ilgileniyorum,
+
+4
+00:00:24.920 --> 00:00:31.760
+o zaman askeri cezaevini korumam ve mahkumların
+
+5
+00:00:31.760 --> 00:00:34.190
+kaçmamasına dikkat etmem gerekiyordu.
+
+6
+00:00:34.640 --> 00:00:40.830
+Ve son 30 yıldır
+
+7
+00:00:41.560 --> 00:00:46.360
+sunucular üzerinde çalışıyorum. Sunucular gerçekten
+
+8
+00:00:46.360 --> 00:00:51.360
+internete bağlandığında başladım ve bugün de devam ediyorum.
+
+9
+00:00:51.360 --> 00:00:55.360
+Şu anda AbilikSoft ülke genelinde üç veri merkezinde
+
+10
+00:00:55.360 --> 00:00:59.880
+bulunuyor ve Londra'da kendi operatör-bağımsız
+
+11
+00:00:59.880 --> 00:01:06.440
+veri merkezimiz var; bu bana neyin yapılabileceği konusunda
+
+12
+00:01:06.440 --> 00:01:12.280
+çok geniş bir bakış açısı veriyor; kariyerimde işlerin, diyelim ki,
+
+13
+00:01:12.280 --> 00:01:16.510
+düzgün yapıldığını da, çok şüpheli biçimde yapıldığını da gördüm.
+
+14
+00:01:16.960 --> 00:01:21.710
+Bu yüzden öncelikle sorumluluk üzerine düşünmemiz gerekiyor.
+
+15
+00:01:22.640 --> 00:01:25.800
+Bu sunumun tamamında fiziksel
+
+16
+00:01:25.800 --> 00:01:31.560
+katmandan, geminin dibinden söz edeceğiz; üst kısım kadar ilginç değil,
+
+17
+00:01:31.560 --> 00:01:36.750
+ama dipteki sorunlar gemiyi çok hızlı batırır.
+
+18
+00:01:37.200 --> 00:01:40.230
+O yüzden kimin sorumlu olduğunu bilmemiz gerekiyor.
+
+19
+00:01:40.720 --> 00:01:44.960
+Verileriniz bir bulutta ise, ki bulut derken her türlü
+
+20
+00:01:44.960 --> 00:01:50.040
+bulut hizmetini, hizmet olarak yazılımı kastediyorum, verileriniz
+
+21
+00:01:50.040 --> 00:01:55.440
+iş ortağınızın veya tedarikçinizin tesislerinde ise riski devretmişsiniz
+
+22
+00:01:55.440 --> 00:01:59.932
+demektir; riskleri sonra konuşacağız, riskleri tedarikçi
+
+23
+00:01:59.932 --> 00:02:03.052
+üstlenir. Tedarikçi seçerken dikkatli olmalısınız,
+
+24
+00:02:03.052 --> 00:02:06.042
+ama yine de bu riskleri devretmiş oldunuz.
+
+25
+00:02:06.772 --> 00:02:11.172
+Verileriniz veya verilerinizin bir kısmı kendi tesislerinizdeyse,
+
+26
+00:02:11.172 --> 00:02:15.372
+elbette riski siz taşırsınız ve verilerinize ne olacağından tamamen
+
+27
+00:02:15.372 --> 00:02:18.732
+siz sorumlusunuz; bunun işinizi ve
+
+28
+00:02:18.732 --> 00:02:25.972
+müşterilerinizi nasıl etkileyeceğinden de. Harici veri merkezi seçerseniz,
+
+29
+00:02:25.972 --> 00:02:30.972
+riski paylaşırsınız. Veri merkezi elbette
+
+30
+00:02:30.972 --> 00:02:35.172
+enerjiyle, fiziksel güvenlikle, yangın söndürme sistemiyle ve çok daha
+
+31
+00:02:35.172 --> 00:02:39.132
+fazlasıyla ilgilenir. Ama kendi sunucularınızdan,
+
+32
+00:02:39.132 --> 00:02:42.252
+yedekleme stratejinizden, altyapınızdan ve tabii ki tesise girebilecek
+
+33
+00:02:42.252 --> 00:02:44.442
+kişilerin listesinden siz sorumlusunuz.
+
+34
+00:02:45.052 --> 00:02:49.252
+Riskler konusunda konuşursak, sonuçta ilgilenmeniz gereken
+
+35
+00:02:49.252 --> 00:02:52.252
+yalnızca üç tür risk var.
+
+36
+00:02:52.252 --> 00:02:55.492
+İlk risk veri sızıntısıdır.
+
+37
+00:02:55.492 --> 00:03:01.492
+Bu senaryoda biri verilerinizin bir kopyasını ele geçirir; bu tek
+
+38
+00:03:01.492 --> 00:03:04.052
+seferlik olabilir ya da sürekli olabilir.
+
+39
+00:03:04.052 --> 00:03:08.492
+En kötü durumlarda verilere sürekli erişilebilir,
+
+40
+00:03:08.492 --> 00:03:09.442
+diyelim ki, yıllarca.
+
+41
+00:03:10.532 --> 00:03:12.242
+İkinci risk,
+
+42
+00:03:13.572 --> 00:03:17.482
+birinin ya da bir şeyin verilerinizi yok etmesi veya değiştirmesi.
+
+43
+00:03:17.892 --> 00:03:22.882
+Bu durumda bu kaza yüzünden tüm verilerinizi
+
+44
+00:03:23.452 --> 00:03:25.242
+ve aslında işinizi kaybedebilirsiniz.
+
+45
+00:03:25.892 --> 00:03:32.772
+Ve pardon, üçüncü risk
+
+46
+00:03:32.772 --> 00:03:36.692
+verilerinizden kopmak.
+
+47
+00:03:36.692 --> 00:03:40.052
+Bu senaryoda hiçbir veri değiştirilmez veya silinmez,
+
+48
+00:03:40.052 --> 00:03:44.852
+ama belirli bir süre verilerinize erişemezsiniz
+
+49
+00:03:44.852 --> 00:03:47.082
+ve büyük olasılıkla çalışamazsınız.
+
+50
+00:03:47.612 --> 00:03:53.852
+Bugün konuştuğumuz her şey bu üç riskle ilgili ve sürekli yeni
+
+51
+00:03:53.852 --> 00:03:58.442
+yasal gerekliliklerin olduğu bir dönemde, iş sahipleri olarak
+
+52
+00:03:59.172 --> 00:04:01.402
+emin olmaya özen göstermeliyiz,
+
+53
+00:04:02.494 --> 00:04:07.294
+bütün bu riskleri kapsadığımızdan ve hazır olduğumuzdan.
+
+54
+00:04:07.294 --> 00:04:11.334
+Riskler demişken, dışarıdan başlayalım.
+
+55
+00:04:11.334 --> 00:04:15.564
+Ivaylo. Teşekkürler Alexander, herkese hoş geldiniz.
+
+56
+00:04:16.014 --> 00:04:20.014
+Ben Ivaylo Konev, sunucu, depolama ve ağ altyapısında 20 yılı aşkın
+
+57
+00:04:20.014 --> 00:04:23.054
+deneyime sahip bir satış öncesi mühendisiyim.
+
+58
+00:04:23.054 --> 00:04:27.414
+Yıllar içinde teknolojinin evrimini gördüm:
+
+59
+00:04:27.414 --> 00:04:32.574
+geleneksel fiziksel ve kurumsal altyapıdan
+
+60
+00:04:32.574 --> 00:04:36.884
+bugünün yüksek bağlantılı ve giderek daha talepkâr
+
+61
+00:04:38.294 --> 00:04:39.964
+veri merkezi operasyonlarına.
+
+62
+00:04:40.694 --> 00:04:44.294
+Bugün Bulgaristan'da dört veri merkezi bulunan bir veri merkezi
+
+63
+00:04:44.294 --> 00:04:48.844
+operatöründe çalışıyorum ve bakış açım şu:
+
+64
+00:04:49.974 --> 00:04:51.764
+teknolojiyi
+
+65
+00:04:52.734 --> 00:04:55.614
+ve zorlukları yalnızca teknoloji tarafından değil,
+
+66
+00:04:55.614 --> 00:04:59.774
+bu kritik altyapıyı işleten şirketin açısından da
+
+67
+00:04:59.774 --> 00:05:05.134
+görebiliyorum. Bugün sizinle paylaşmak istediğim de bu.
+
+68
+00:05:05.134 --> 00:05:09.894
+Normalde sıradan saydığımız bir şey, yani
+
+69
+00:05:09.894 --> 00:05:13.894
+enerji, bağlantı ya da fiziksel altyapı,
+
+70
+00:05:13.894 --> 00:05:18.894
+birden ortadan kalkarsa ne olur? Çok basit bir senaryoyla
+
+71
+00:05:18.894 --> 00:05:21.974
+ya da soruyla başlayayım. Biri kabloyu keserse ne olur?
+
+72
+00:05:21.974 --> 00:05:24.414
+Ofisinizi bağlayan kabloyu kastetmiyorum.
+
+73
+00:05:24.414 --> 00:05:31.254
+Ülkeleri birbirine bağlayan kabloyu kastediyorum,
+
+74
+00:05:31.254 --> 00:05:35.174
+bazen binlerce ya da yüzlerce kilometre uzunlukta,
+
+75
+00:05:35.174 --> 00:05:36.884
+ve büyük kısmı deniz tabanında yatıyor.
+
+76
+00:05:37.614 --> 00:05:44.174
+İnterneti bulutta var olan bir şey olarak düşünmeyi seviyoruz,
+
+77
+00:05:44.174 --> 00:05:46.684
+ama bulut fiziksel.
+
+78
+00:05:47.134 --> 00:05:52.694
+Her bulut hizmeti, görüntülü görüşme, video konferans,
+
+79
+00:05:52.694 --> 00:05:59.214
+yapay zekâ iş yükü, finansal işlem, fiziksel bir
+
+80
+00:05:59.214 --> 00:06:03.974
+altyapıya sahip ve önemli bir kısmı denizin altında.
+
+81
+00:06:03.974 --> 00:06:07.085
+Ve bu altyapı arızalandığında,
+
+82
+00:06:08.335 --> 00:06:11.895
+sonuçlar hasarın oluştuğu noktadan
+
+83
+00:06:11.895 --> 00:06:13.885
+çok daha büyük olabilir.
+
+84
+00:06:15.135 --> 00:06:18.685
+Size Baltık dersiyle bir örnek vereyim,
+
+85
+00:06:19.415 --> 00:06:23.645
+2024 ve 2025'te yaşananları da hatırlatarak.
+
+86
+00:06:24.175 --> 00:06:28.015
+Baltık Denizi'nde denizaltı kabloları ve diğer
+
+87
+00:06:28.015 --> 00:06:31.245
+kritik altyapıyı içeren birkaç olay gördük.
+
+88
+00:06:31.855 --> 00:06:36.255
+Bazıları kaza olarak soruşturuldu, bazıları ise kasıtlı müdahale
+
+89
+00:06:36.255 --> 00:06:38.495
+endişesi yarattı.
+
+90
+00:06:38.495 --> 00:06:41.725
+Ama neden ne olursa olsun, önemli bir ders var:
+
+91
+00:06:42.135 --> 00:06:45.725
+dijital altyapımızın fiziksel arıza noktaları var.
+
+92
+00:06:46.335 --> 00:06:50.805
+Bir çapa, balıkçılık faaliyeti,
+
+93
+00:06:51.855 --> 00:06:56.175
+bir kaza ya da kasıtlı hasar kritik bir bağlantıyı
+
+94
+00:06:56.175 --> 00:07:02.015
+kesebilir. Ve bir denizaltı kablosunu değiştirmek bir
+
+95
+00:07:02.015 --> 00:07:03.935
+ağ anahtarını değiştirmek gibi değildir.
+
+96
+00:07:03.935 --> 00:07:06.965
+Arızayı bulmanız, bir gemi görevlendirmeniz,
+
+97
+00:07:07.695 --> 00:07:10.015
+bölgeye gitmeniz, kabloyu onarmanız gerekir.
+
+98
+00:07:10.015 --> 00:07:13.765
+Bu da zaman alır ve muhtemelen bildiğiniz gibi çok para.
+
+99
+00:07:14.695 --> 00:07:16.565
+Bu Karadeniz için ne anlama geliyor?
+
+100
+00:07:17.335 --> 00:07:22.175
+Karadeniz, önemli bir bağlantı güzergâhı;
+
+101
+00:07:22.175 --> 00:07:24.805
+Avrupa, Türkiye ve Kafkasya arasında.
+
+102
+00:07:25.535 --> 00:07:29.735
+Peki o güzergâh çökerse ne olur?
+
+103
+00:07:29.735 --> 00:07:35.975
+Terabit bant genişliğiniz olabilir, ama bunların hepsi
+
+104
+00:07:35.975 --> 00:07:38.975
+aynı fiziksel koridoru kullanıyorsa,
+
+105
+00:07:38.975 --> 00:07:40.335
+bu dayanıklılık değildir.
+
+106
+00:07:40.335 --> 00:07:43.575
+O halde burada üç önemli soru sormalıyız.
+
+107
+00:07:43.575 --> 00:07:45.415
+Kablo nereden geçiyor?
+
+108
+00:07:45.415 --> 00:07:47.015
+Arızalanırsa ne olur?
+
+109
+00:07:47.015 --> 00:07:49.975
+Ve ne kadar hızlı onarabiliriz?
+
+110
+00:07:49.975 --> 00:07:53.735
+Çünkü ikinci bir fiber gerçek yedeklilik demek değildir.
+
+111
+00:07:53.735 --> 00:07:57.565
+Gerçek yedeklilik, başka bir fiziksel yol demektir.
+
+112
+00:07:58.015 --> 00:08:02.855
+Yedekli enerji, soğutma ya da başka bir yedekli ağ olabilir,
+
+113
+00:08:02.855 --> 00:08:07.777
+ama en zayıf halka yine binlerce kilometre deniz
+
+114
+00:08:07.777 --> 00:08:11.897
+tabanının altında. Yani ne kadar bant genişliğimiz olduğu
+
+115
+00:08:11.897 --> 00:08:16.297
+soru değil. Asıl soru şu: Bu güzergâh çökerse
+
+116
+00:08:16.297 --> 00:08:19.697
+sırada ne var? Ve oraya nasıl ulaşırdınız?
+
+117
+00:08:19.697 --> 00:08:22.457
+Çünkü bazen biri kabloyu keser.
+
+118
+00:08:22.457 --> 00:08:24.527
+Ve bununla, Alexander, söz sende.
+
+119
+00:08:25.897 --> 00:08:29.977
+Teşekkürler Ivo. Sıradaki konu, biri içeri girerse
+
+120
+00:08:29.977 --> 00:08:32.417
+ne olacağı.
+
+121
+00:08:32.417 --> 00:08:36.417
+Verilerimizin nerede olduğuna bağlı olarak çok farklı
+
+122
+00:08:36.417 --> 00:08:40.657
+senaryolar var. Verilerinizi saklamayı birine emanet ettiyseniz,
+
+123
+00:08:40.657 --> 00:08:43.367
+ve bulut ile hizmet olarak yazılımdan söz ediyoruz,
+
+124
+00:08:43.777 --> 00:08:48.857
+biri içeri girme riskini onların karşılaması gerekir.
+
+125
+00:08:48.857 --> 00:08:51.657
+Bunu yapmak zorundalar, ama bu sizin sorumluluğunuz değil
+
+126
+00:08:51.657 --> 00:08:53.617
+ve bunu kontrol edemezsiniz.
+
+127
+00:08:53.617 --> 00:08:57.287
+Verileriniz başkasının tesislerindeyse,
+
+128
+00:08:57.777 --> 00:09:00.497
+en çok önemli olan elbette ne paylaştığınız
+
+129
+00:09:00.497 --> 00:09:04.887
+ve kendi cihazlarınızın fiziksel güvenliğidir.
+
+130
+00:09:05.417 --> 00:09:09.897
+Kilidi açık bir dizüstü bilgisayara erişimi olan biri için
+
+131
+00:09:09.897 --> 00:09:14.057
+çok zarar vermek yalnızca 30 saniye sürebilir.
+
+132
+00:09:14.057 --> 00:09:16.687
+Bulut sağlayıcılarının kendileri kesintisiz çalışır.
+
+133
+00:09:17.257 --> 00:09:20.977
+Güçlü şifrelerimiz, iki faktörlü kimlik doğrulamamız,
+
+134
+00:09:20.977 --> 00:09:25.697
+parola cümlelerimiz var, ama yine de belirli bir süre
+
+135
+00:09:25.697 --> 00:09:29.097
+boyunca dizüstü bilgisayarınız ya da telefonunuz sizsiniz.
+
+136
+00:09:29.097 --> 00:09:35.657
+Sıradaki senaryo, kendi sunucularınızı içeride tutması için
+
+137
+00:09:35.657 --> 00:09:37.447
+bir veri merkezine güvendiğiniz durum.
+
+138
+00:09:37.857 --> 00:09:41.807
+Veri merkezlerinde erişim tasarım gereği zahmetlidir.
+
+139
+00:09:42.257 --> 00:09:45.167
+Rahatlıktan güvenlik için ödün veriyoruz.
+
+140
+00:09:45.657 --> 00:09:49.017
+Önceden ziyaret talep etmeniz gerekir, kimliğiniz
+
+141
+00:09:49.017 --> 00:09:53.457
+kontrol edilir, fotoğrafınız önceden kayıtlı olanla karşılaştırılır,
+
+142
+00:09:53.457 --> 00:09:57.257
+size eşlik edilir, geçiş kabinleri, kameralar var
+
+143
+00:09:57.257 --> 00:10:02.807
+ve benzeri. Yani bu senaryoda fiziksel güvenlik
+
+144
+00:10:03.337 --> 00:10:05.377
+genellikle yüksek seviyededir.
+
+145
+00:10:05.377 --> 00:10:09.617
+Ana sorumluluğunuz ise tesise girebilecek kişilerin
+
+146
+00:10:09.617 --> 00:10:14.698
+listesidir. 2 yıl önce şirketten ayrılan bir meslektaşınız hâlâ
+
+147
+00:10:14.698 --> 00:10:16.768
+o listedeyse, sorun yaşayabilirsiniz.
+
+148
+00:10:17.298 --> 00:10:21.738
+Biri içeri girme senaryosunda fiziksel güvenlik için
+
+149
+00:10:21.738 --> 00:10:24.978
+genellikle en büyük sorun ofistir.
+
+150
+00:10:24.978 --> 00:10:26.698
+Yani ofisler çok farklıdır.
+
+151
+00:10:26.698 --> 00:10:30.618
+Bazıları banka gibidir, ama çoğu o kadar
+
+152
+00:10:30.618 --> 00:10:35.898
+güvenli değildir. Ofisin, diyelim ki, özel bir sunucu odası
+
+153
+00:10:35.898 --> 00:10:41.538
+olsa bile genellikle önlemler ve kontroller daha azdır ve
+
+154
+00:10:41.538 --> 00:10:43.368
+insanlar aslında
+
+155
+00:10:44.338 --> 00:10:46.498
+nispeten kolay girebilir.
+
+156
+00:10:46.498 --> 00:10:51.728
+Genellikle kilitler çalışır ama prosedürler başarısız olur.
+
+157
+00:10:52.218 --> 00:10:58.018
+Ve fiziksel güvenlik büyük ölçüde bununla ilgili.
+
+158
+00:10:58.018 --> 00:11:01.178
+Şimdi Ivaylo, diğer risklerden bahset.
+
+159
+00:11:01.178 --> 00:11:03.288
+Teşekkürler Alexander. Evet,
+
+160
+00:11:04.338 --> 00:11:07.138
+şimdi çok basit bir senaryoyla başlayayım.
+
+161
+00:11:07.138 --> 00:11:08.968
+Biri saati durdurdu.
+
+162
+00:11:09.698 --> 00:11:11.088
+Ve bu sıradaki slayt.
+
+163
+00:11:11.658 --> 00:11:13.568
+Tamam, belki elektrik kesildi.
+
+164
+00:11:14.098 --> 00:11:16.138
+Belki soğutma sistemi duruyor.
+
+165
+00:11:16.138 --> 00:11:17.538
+Birden bir sorunumuz var.
+
+166
+00:11:17.538 --> 00:11:20.578
+Sırada ne var? Dakika dakika takip edelim.
+
+167
+00:11:20.578 --> 00:11:23.858
+Ama saati önümde görüyorum, o yüzden konuşmamın bu bölümünde
+
+168
+00:11:23.858 --> 00:11:26.448
+sunumu biraz kısaltmaya çalışacağım.
+
+169
+00:11:26.978 --> 00:11:29.128
+Yani sıfırıncı dakika, muhtemelen
+
+170
+00:11:30.098 --> 00:11:34.618
+hiçbir şey olmadı. Elektrik kesiliyor ama her şey
+
+171
+00:11:34.618 --> 00:11:38.098
+doğru tasarlanmış. Sunucular hemen kapanmıyor.
+
+172
+00:11:38.098 --> 00:11:43.058
+UPS devralmalı, UPS'lerin işi de bu.
+
+173
+00:11:43.058 --> 00:11:47.818
+Ama şunu bilmek önemli: UPS çözüm değildir.
+
+174
+00:11:47.818 --> 00:11:49.778
+UPS çözüme giden köprüdür.
+
+175
+00:11:49.778 --> 00:11:53.858
+İlk dakikalarda UPS BT yükünü taşır, ama
+
+176
+00:11:53.858 --> 00:11:55.688
+jeneratörler devreye girmeli.
+
+177
+00:11:56.138 --> 00:12:02.418
+Ve şimdi ne olacağını sormaya başlamak
+
+178
+00:12:02.418 --> 00:12:07.458
+için zamanımız var. 5. ile 15. dakikalar arasında jeneratörler devrede,
+
+179
+00:12:07.458 --> 00:12:11.098
+ama müşteriyseniz muhtemelen bir şey fark etmezsiniz,
+
+180
+00:12:11.098 --> 00:12:13.899
+çünkü sunucunuz, uygulamanız,
+
+181
+00:12:13.899 --> 00:12:15.609
+ağınız hâlâ çalışıyor.
+
+182
+00:12:16.059 --> 00:12:20.179
+İşte tesis tasarımının önem kazandığı nokta burası.
+
+183
+00:12:20.179 --> 00:12:26.459
+Tasarım kötü yapılmışsa belki her şey
+
+184
+00:12:26.459 --> 00:12:30.579
+dağılmaya başlayabilir. UPS BT yükünü taşıyabilir,
+
+185
+00:12:30.579 --> 00:12:33.929
+soğutma durur ve bir noktada her şey biter.
+
+186
+00:12:34.499 --> 00:12:39.059
+Ama tasarım iyi yapılmışsa durum farklıdır.
+
+187
+00:12:39.059 --> 00:12:42.899
+Yedek sistem çalışıyor, soğutma sistemi hâlâ çalışıyor,
+
+188
+00:12:42.899 --> 00:12:44.619
+jeneratörler kararlı.
+
+189
+00:12:44.619 --> 00:12:47.579
+Ve en önemlisi, tepki verecek zamanımız var.
+
+190
+00:12:47.579 --> 00:12:50.739
+Sorunu bulmak ve gidermek için zamanımız var.
+
+191
+00:12:50.739 --> 00:12:56.059
+Ana elektrik geri gelene kadar tesisi çalışır tutmak için
+
+192
+00:12:56.059 --> 00:13:00.659
+zamanımız var. Artık soru, UPS çalıştı mı, değil.
+
+193
+00:13:00.659 --> 00:13:05.739
+Soru, tüm tesis tasarımının bize tepki vermek için yeterli
+
+194
+00:13:05.739 --> 00:13:08.859
+zaman tanıyıp tanımadığı. Sonra tehlikeli kısım geliyor.
+
+195
+00:13:08.859 --> 00:13:12.779
+Jeneratörler ve UPS'in sağlam olduğunu düşünün,
+
+196
+00:13:12.779 --> 00:13:15.979
+ama soğutma duruyor. Sunucular çalışmaya devam edebilir,
+
+197
+00:13:15.979 --> 00:13:21.299
+ama ısı artmaya devam eder ve çok hızlı yükselir.
+
+198
+00:13:21.299 --> 00:13:27.659
+Bugünün yapay zekâ GPU iş yükleriyle bu ısı çok
+
+199
+00:13:27.659 --> 00:13:31.739
+hızlı birikiyor. Soru bir kez daha değişiyor.
+
+200
+00:13:31.739 --> 00:13:35.579
+Artık UPS bataryalarının ne kadar dayanacağı değil,
+
+201
+00:13:35.579 --> 00:13:38.569
+ısının ne zaman sorun olacağı.
+
+202
+00:13:39.459 --> 00:13:45.299
+Şimdi tesisten sorumlu kişi olduğunuzu
+
+203
+00:13:45.299 --> 00:13:48.699
+hayal edin. Elektrik gitti ama UPS devraldı,
+
+204
+00:13:48.699 --> 00:13:52.219
+yani oturup rahatlamak, sırada ne olduğunu düşünmek,
+
+205
+00:13:52.219 --> 00:13:55.899
+sorunu bulup gidermek için zamanınız var.
+
+206
+00:13:55.899 --> 00:13:59.299
+Gerçek dayanıklılık da tam olarak bu.
+
+207
+00:13:59.299 --> 00:14:03.569
+Her arızadan kaçınmak değil, tepki verecek yeterli zamana sahip olmak.
+
+208
+00:14:04.259 --> 00:14:08.259
+Çünkü er ya da geç biri fişi çeker.
+
+209
+00:14:08.259 --> 00:14:11.339
+Alex, söz sende. Teşekkürler.
+
+210
+00:14:11.339 --> 00:14:14.739
+Evet, sıradaki soru oldukça önemli.
+
+211
+00:14:14.739 --> 00:14:16.371
+Verileriniz aslında nerede?
+
+212
+00:14:16.861 --> 00:14:20.211
+Hangi uygulamada, hangi hizmette değil,
+
+213
+00:14:20.661 --> 00:14:25.301
+sonuçta bilgileriniz bir yerlerde,
+
+214
+00:14:25.301 --> 00:14:31.421
+genellikle bazı sunucularda, bir diskte, bir tür yedeklilik
+
+215
+00:14:31.421 --> 00:14:32.331
+altyapısında.
+
+216
+00:14:33.381 --> 00:14:40.301
+Yani bütün geminin elimizde olduğunu varsaysak da, tamam,
+
+217
+00:14:40.301 --> 00:14:45.701
+kablolar ayakta kalsa, kimse içeri girmese ve saire,
+
+218
+00:14:45.701 --> 00:14:48.731
+yine de verilerinizi düşünmemiz gerekiyor.
+
+219
+00:14:50.101 --> 00:14:53.571
+Veriler genellikle yayılır.
+
+220
+00:14:54.341 --> 00:15:00.661
+Veriler genellikle başta amaçladığımızdan daha fazla yere
+
+221
+00:15:00.661 --> 00:15:04.661
+yayılır. Mesela sunucu ve yedeği,
+
+222
+00:15:04.661 --> 00:15:08.421
+verinin önbelleğe alınmış kopyasına sahip tüm bilgisayarlar,
+
+223
+00:15:08.421 --> 00:15:12.781
+sürekli senkronize olan telefonlar, birinin işini bitirmek için
+
+224
+00:15:12.781 --> 00:15:15.781
+eve götürdüğü veritabanı dökümü.
+
+225
+00:15:15.781 --> 00:15:20.061
+Veriler aslında yayılma eğilimindedir; bu da
+
+226
+00:15:20.061 --> 00:15:23.941
+verinizin bir kopyasını birine vermenin riski açısından önemlidir.
+
+227
+00:15:23.941 --> 00:15:29.381
+Bu ilk risk: verinizin çok fazla kopyasının
+
+228
+00:15:29.381 --> 00:15:34.181
+çok fazla yerde olması. İkinci risk ise çok az
+
+229
+00:15:34.181 --> 00:15:37.021
+kopyaya sahip olmak. Diyelim ki tek bir sunucumuz var,
+
+230
+00:15:37.021 --> 00:15:40.901
+diyelim ki kendi tesisinizde, ofisinizde.
+
+231
+00:15:40.901 --> 00:15:44.501
+Ve bu sunucunun yanında tek bir yedekleme cihazı var.
+
+232
+00:15:44.501 --> 00:15:47.021
+Düşündüğünüzden çok daha yaygın.
+
+233
+00:15:47.021 --> 00:15:50.581
+Ve sonra bir şey sunucuyu ve yedeği aynı anda
+
+234
+00:15:50.581 --> 00:15:54.981
+yok edebilir. Ve muhtemelen tüm verinizi
+
+235
+00:15:54.981 --> 00:16:00.221
+sonsuza dek kaybedersiniz. Soru, olabildiğince çok kopya tutmak değil,
+
+236
+00:16:00.221 --> 00:16:04.251
+kesinlikle olabildiğince az kopya tutmak da değil,
+
+237
+00:16:04.941 --> 00:16:09.941
+asıl mesele gereken sayıda kopyaya sahip olmak,
+
+238
+00:16:09.941 --> 00:16:15.861
+iş hedeflerinize uygun olarak, ve bu kopyaların neden ve nerede
+
+239
+00:16:15.861 --> 00:16:21.422
+olduğunu bilmek. Ama bunu bir yönden daha düşünmek önemli
+
+240
+00:16:21.422 --> 00:16:27.182
+ve birçok şirket bu konuyu düşünmüyor:
+
+241
+00:16:27.182 --> 00:16:30.692
+Bu kopyalar nerede?
+
+242
+00:16:32.022 --> 00:16:34.652
+Tamam. Ve son bölüm, söz veriyorum.
+
+243
+00:16:35.662 --> 00:16:38.982
+Şimdi yedekli güç, yedekli soğutma
+
+244
+00:16:38.982 --> 00:16:42.212
+ve yedekli ağ bağlantısı olan bir tesisimiz olduğunu düşünün.
+
+245
+00:16:42.782 --> 00:16:46.942
+Dayanıklı mı? Belki. Ama bir şeyi değiştireyim.
+
+246
+00:16:46.942 --> 00:16:50.932
+Ya tüm bu yedeklilik aynı binanın içindeyse?
+
+247
+00:16:51.902 --> 00:16:55.502
+Alex? Tüm bu veri aynı binadaysa,
+
+248
+00:16:55.502 --> 00:17:00.142
+en az iki riskin gerçekleşmesi nispeten kolaydır.
+
+249
+00:17:00.142 --> 00:17:04.422
+Her şeyden önce, tüm binaya bir şey olabilir,
+
+250
+00:17:04.422 --> 00:17:07.142
+mesela yangın.
+
+251
+00:17:07.142 --> 00:17:11.942
+İkincisi, bu binaya giden bağlantı,
+
+252
+00:17:11.942 --> 00:17:17.822
+tek bir yol üzerinden geçiyorsa kesilebilir.
+
+253
+00:17:17.822 --> 00:17:24.422
+O yüzden sunucularınız için tek bir bina ya da
+
+254
+00:17:24.422 --> 00:17:27.782
+bulut hizmetleriniz için tek bir erişilebilirlik bölgesi
+
+255
+00:17:27.782 --> 00:17:31.022
+birçok senaryo için yeterli değildir.
+
+256
+00:17:31.022 --> 00:17:33.062
+Tabii neyi riske attığınıza
+
+257
+00:17:33.062 --> 00:17:34.702
+ve hedeflerinizin ne olduğuna bağlı.
+
+258
+00:17:34.702 --> 00:17:40.222
+Ve çoğu zaman bunu birden fazla
+
+259
+00:17:40.222 --> 00:17:43.812
+açıdan düşünmeniz gerekir. Mesele coğrafi dayanıklılık.
+
+260
+00:17:44.342 --> 00:17:48.982
+Kesinlikle. Ve kritik altyapı tasarlarken
+
+261
+00:17:48.982 --> 00:17:50.452
+bunu bazen unutuyoruz.
+
+262
+00:17:50.942 --> 00:17:52.942
+Bileşenler üzerinden düşünüyoruz.
+
+263
+00:17:52.942 --> 00:17:55.382
+İki UPS sistemi, iki soğutma sistemi,
+
+264
+00:17:55.382 --> 00:17:57.822
+iki güç hattı vb.
+
+265
+00:17:57.822 --> 00:18:01.182
+Ama dayanıklılık, bir şeyden sadece iki tane olması değildir.
+
+266
+00:18:01.182 --> 00:18:06.062
+Dayanıklılık, aynı olayın ikisini birden
+
+267
+00:18:06.062 --> 00:18:09.582
+devre dışı bırakamamasını sağlamaktır. Evet.
+
+268
+00:18:09.582 --> 00:18:14.622
+İdeal olarak önemli verileriniz ve uygulamalarınız için
+
+269
+00:18:14.622 --> 00:18:16.492
+en az iki yeriniz olmalı.
+
+270
+00:18:17.102 --> 00:18:21.303
+Ve ideal olarak bu yerler coğrafi olarak dağıtılmış olmalı;
+
+271
+00:18:21.303 --> 00:18:24.933
+farklı deprem bölgeleri, farklı elektrik sağlayıcıları,
+
+272
+00:18:25.743 --> 00:18:27.663
+farklı fiziksel erişim kuralları.
+
+273
+00:18:27.663 --> 00:18:30.623
+Önemli işletmelerin kesintisiz işleyişinin
+
+274
+00:18:30.623 --> 00:18:33.863
+gerçek anahtarı budur. Ya da elektriği ele alalım.
+
+275
+00:18:33.863 --> 00:18:35.693
+Bağımsız
+
+276
+00:18:36.743 --> 00:18:40.533
+elektrik beslemeleri mükemmel bir yedeklilik gibi görünebilir,
+
+277
+00:18:41.023 --> 00:18:43.653
+ama ikisi de sonunda
+
+278
+00:18:45.703 --> 00:18:49.693
+aynı trafo merkezinde, aynı fiziksel koridorda veya aynı binada bitiyorsa,
+
+279
+00:18:50.223 --> 00:18:54.343
+belki bu yalnızca mantıksal yedeklilik olur,
+
+280
+00:18:54.343 --> 00:18:56.333
+ama coğrafi yedeklilik değil.
+
+281
+00:18:58.503 --> 00:19:01.223
+Zaman ayırdığınız için hepinize teşekkürler.
+
+282
+00:19:01.223 --> 00:19:02.893
+Sorulara daha sonra yanıt verebiliriz.
+
+283
+00:19:03.383 --> 00:19:04.283
+Teşekkürler.

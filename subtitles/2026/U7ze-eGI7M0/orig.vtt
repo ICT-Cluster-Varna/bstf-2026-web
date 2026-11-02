@@ -1,0 +1,733 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.000
+on the data protection topic.
+
+2
+00:00:03.000 --> 00:00:06.880
+Thank you. Good morning, everyone.
+
+3
+00:00:06.880 --> 00:00:09.550
+It is a pleasure to be with all of you here today.
+
+4
+00:00:10.040 --> 00:00:15.080
+My name is Yoana Koleva and I'm part of GATE Institute, where I'm
+
+5
+00:00:15.080 --> 00:00:20.710
+responsible for data and AI management and their protection.
+
+6
+00:00:21.920 --> 00:00:27.200
+So today I'm going to talk to you about how data governance and data
+
+7
+00:00:27.200 --> 00:00:33.630
+management are the foundation for data security and cyber defense.
+
+8
+00:00:35.120 --> 00:00:37.590
+But let's start with a few
+
+9
+00:00:39.400 --> 00:00:41.350
+words about who we are first.
+
+10
+00:00:41.760 --> 00:00:43.590
+GATE was founded in 2019
+
+11
+00:00:44.920 --> 00:00:49.640
+as the first center of excellence for big data and AI in Eastern
+
+12
+00:00:49.640 --> 00:00:54.520
+Europe, in a strategic collaboration with
+
+13
+00:00:54.520 --> 00:00:58.150
+Sofia University and Chalmers University in Sweden.
+
+14
+00:01:00.200 --> 00:01:04.030
+Together with government, industry and startups, we work
+
+15
+00:01:05.480 --> 00:01:12.000
+on big data and AI research, innovation and education within three
+
+16
+00:01:12.000 --> 00:01:16.800
+key domains, and these are future cities, digital health and
+
+17
+00:01:16.800 --> 00:01:18.750
+information environment analysis.
+
+18
+00:01:20.040 --> 00:01:24.240
+We are the Bulgarian hub for the International Data Spaces
+
+19
+00:01:24.240 --> 00:01:29.760
+Association, which works on secure and trusted data sharing between
+
+20
+00:01:29.760 --> 00:01:35.000
+organizations. We are also an accredited test center within NATO
+
+21
+00:01:35.000 --> 00:01:39.710
+DIANA, where we test and validate dual-use technologies
+
+22
+00:01:40.760 --> 00:01:44.110
+that serve both civilian and defense needs.
+
+23
+00:01:44.920 --> 00:01:48.350
+So you can see that we work with quite a lot of
+
+24
+00:01:49.520 --> 00:01:55.800
+sensitive data, from city sensor data through health data to
+
+25
+00:01:55.800 --> 00:01:57.870
+technologies with defense applications.
+
+26
+00:01:58.840 --> 00:02:05.332
+And what we have learned is that usually the data that is most
+
+27
+00:02:05.332 --> 00:02:08.082
+useful to us is also the most sensitive.
+
+28
+00:02:08.572 --> 00:02:15.172
+Therefore, we treat data governance and data security as one task.
+
+29
+00:02:15.172 --> 00:02:18.122
+And I'm going to show you how we do that in more detail,
+
+30
+00:02:18.652 --> 00:02:21.322
+but let's look into a few numbers first.
+
+31
+00:02:21.892 --> 00:02:27.612
+In 53% of the breaches, customers' personal data has been
+
+32
+00:02:27.612 --> 00:02:32.652
+exposed. And this is the type of data that organizations lose most
+
+33
+00:02:32.652 --> 00:02:38.412
+often. The second figure shows us that when the data is scattered
+
+34
+00:02:38.412 --> 00:02:42.772
+across different environments, for example, on premises,
+
+35
+00:02:42.772 --> 00:02:47.972
+in the cloud, in different systems, a breach costs on average about
+
+36
+00:02:47.972 --> 00:02:50.042
+$5 million. The third figure says that it takes approximately
+
+37
+00:02:53.772 --> 00:02:59.482
+241 days, or 8 months, to find and contain a breach.
+
+38
+00:03:00.372 --> 00:03:05.492
+Also, about 40% of employees say that they share companies'
+
+39
+00:03:05.492 --> 00:03:11.202
+sensitive data with AI tools that are not approved by their employer.
+
+40
+00:03:11.692 --> 00:03:14.692
+And this is what people admit in a survey.
+
+41
+00:03:14.692 --> 00:03:17.402
+In reality, that number is probably a lot higher.
+
+42
+00:03:18.212 --> 00:03:22.212
+So, you can see that none of these numbers is about failures of
+
+43
+00:03:22.212 --> 00:03:27.332
+technologies. They're failures of knowing what data we have,
+
+44
+00:03:27.332 --> 00:03:30.642
+who owns the data, and who has access to it.
+
+45
+00:03:31.492 --> 00:03:36.482
+In most companies, data grows faster than anyone can keep up.
+
+46
+00:03:37.572 --> 00:03:42.122
+We still store data in old systems.
+
+47
+00:03:42.572 --> 00:03:46.722
+We don't assign owners, or we don't classify it as sensitive.
+
+48
+00:03:47.612 --> 00:03:51.492
+These are patterns that, on their own, look like everyday
+
+49
+00:03:51.492 --> 00:03:56.532
+inconveniences, but I'm going to show you a few examples of what
+
+50
+00:03:56.532 --> 00:03:59.962
+happens when these patterns meet an attacker.
+
+51
+00:04:00.532 --> 00:04:04.654
+So, we are going to look into three simple scenarios that are based
+
+52
+00:04:04.654 --> 00:04:08.244
+on those patterns and that result in incidents.
+
+53
+00:04:09.374 --> 00:04:12.004
+The first one is an online retailer.
+
+54
+00:04:12.734 --> 00:04:17.774
+Now, I'm going to use an example, Ivan Petrov,
+
+55
+00:04:17.774 --> 00:04:19.884
+who is one of their best customers.
+
+56
+00:04:20.454 --> 00:04:25.014
+And as you can see, his data lives in four different
+
+57
+00:04:25.014 --> 00:04:28.844
+systems. And in each system, there is different data.
+
+58
+00:04:29.254 --> 00:04:33.204
+So, for example, the marketing knows him with his personal email,
+
+59
+00:04:33.654 --> 00:04:38.204
+the sales team with his mobile number, the product team knows his
+
+60
+00:04:39.414 --> 00:04:43.804
+user credentials, and finance knows him with his company's name.
+
+61
+00:04:44.534 --> 00:04:47.964
+Now, none of these systems is connected to one another.
+
+62
+00:04:48.614 --> 00:04:52.374
+And also you can see that the data is not consistent,
+
+63
+00:04:52.374 --> 00:04:54.084
+and that will be a challenging task.
+
+64
+00:04:54.974 --> 00:05:00.214
+But what happens is an attacker sends a phishing email to someone
+
+65
+00:05:00.214 --> 00:05:04.734
+in the marketing team. And they manage to get hold of Ivan's email
+
+66
+00:05:04.734 --> 00:05:07.164
+address. And then they send him an email.
+
+67
+00:05:07.894 --> 00:05:12.574
+Then, in that email, there is a fake login page where he enters
+
+68
+00:05:12.574 --> 00:05:17.134
+his password. And from there, they can go to the product and see
+
+69
+00:05:17.134 --> 00:05:21.854
+all his invoices. Now, after that, they will reach out to the
+
+70
+00:05:21.854 --> 00:05:27.604
+finance team as Ivan and ask for a refund of one of his invoices
+
+71
+00:05:28.654 --> 00:05:30.604
+to a new bank account.
+
+72
+00:05:31.014 --> 00:05:35.294
+Now, because the data is so
+
+73
+00:05:35.294 --> 00:05:40.044
+fragmented, the finance team has no way of cross-referencing
+
+74
+00:05:40.694 --> 00:05:42.684
+that against the other systems.
+
+75
+00:05:43.254 --> 00:05:46.974
+So, what they can see is the invoice number is the same,
+
+76
+00:05:46.974 --> 00:05:50.814
+the name matches, the amount is also correct.
+
+77
+00:05:50.814 --> 00:05:55.534
+So, there is a likelihood that they're going to send the refund
+
+78
+00:05:55.534 --> 00:05:58.814
+to the attacker. Also, when the breach happens,
+
+79
+00:05:58.814 --> 00:06:02.124
+the regulator will ask how many customers have been affected.
+
+80
+00:06:02.694 --> 00:06:06.575
+Now, there is no way for them to know that, because only for Ivan you
+
+81
+00:06:06.575 --> 00:06:11.015
+can see he exists as four different customers across the
+
+82
+00:06:11.015 --> 00:06:15.245
+systems. The second example is an example of a municipality.
+
+83
+00:06:16.175 --> 00:06:20.375
+Now, there is a project and a vendor has been given a temporary
+
+84
+00:06:20.375 --> 00:06:25.245
+access through a shared account to the citizens' complaints database.
+
+85
+00:06:26.215 --> 00:06:30.135
+Now, in that database there is a lot of personal data,
+
+86
+00:06:30.135 --> 00:06:35.135
+the citizens' names, their addresses, who they complained about,
+
+87
+00:06:35.135 --> 00:06:37.805
+personal ID numbers, and so on.
+
+88
+00:06:38.255 --> 00:06:39.525
+So, after the project
+
+89
+00:06:41.215 --> 00:06:46.535
+ends, nobody closed the access of the vendor to the
+
+90
+00:06:46.535 --> 00:06:52.175
+account. After a few months, the vendor was
+
+91
+00:06:52.175 --> 00:06:57.175
+breached. So, now the attacker got hold of the account that was
+
+92
+00:06:57.175 --> 00:06:59.965
+forgotten and now they have access to the database.
+
+93
+00:07:01.695 --> 00:07:07.015
+So, you can see, with the amount of personal
+
+94
+00:07:07.015 --> 00:07:10.855
+data that there is in the database, you can only imagine the scale
+
+95
+00:07:10.855 --> 00:07:13.085
+of the breach and the fraud that can happen.
+
+96
+00:07:13.615 --> 00:07:19.215
+And also the city has no way of figuring out what was
+
+97
+00:07:19.215 --> 00:07:21.485
+affected because the account was shared.
+
+98
+00:07:22.335 --> 00:07:25.725
+And the third example is an example of an AI.
+
+99
+00:07:26.255 --> 00:07:29.605
+So, a company is rolling out an AI assistant across
+
+100
+00:07:30.575 --> 00:07:34.135
+all their employees that is connected to the email addresses,
+
+101
+00:07:34.135 --> 00:07:37.365
+to the shared drives, to all the company's data.
+
+102
+00:07:38.495 --> 00:07:41.575
+Now, imagine an employee is asking the question,
+
+103
+00:07:41.575 --> 00:07:44.655
+what are the salaries of the management team?
+
+104
+00:07:44.655 --> 00:07:46.815
+And the assistant is going to answer.
+
+105
+00:07:46.815 --> 00:07:52.775
+Why? Because there is a payroll file that is lying around in
+
+106
+00:07:52.775 --> 00:07:56.695
+one of the shared folders that is shared with the whole company,
+
+107
+00:07:56.695 --> 00:08:00.205
+but nobody has classified that data as confidential.
+
+108
+00:08:01.135 --> 00:08:08.257
+Now, also imagine an attacker with a stolen password who manages to
+
+109
+00:08:08.257 --> 00:08:10.577
+get hold of that assistant?
+
+110
+00:08:10.577 --> 00:08:15.217
+Now, what used to take them days to find information is now
+
+111
+00:08:15.217 --> 00:08:19.897
+within a couple of questions if the company has deployed AI.
+
+112
+00:08:19.897 --> 00:08:23.897
+So, you can see three different examples, three different types of
+
+113
+00:08:23.897 --> 00:08:27.407
+attacks, but the overarching theme is data management.
+
+114
+00:08:28.097 --> 00:08:32.737
+How we manage our data can determine how much damage we're going to
+
+115
+00:08:32.737 --> 00:08:36.247
+go through. Most organizations
+
+116
+00:08:37.337 --> 00:08:42.897
+implement their security at the end of the data process,
+
+117
+00:08:42.897 --> 00:08:47.497
+when we add monitoring, alerts, firewalls, and watch if something
+
+118
+00:08:47.497 --> 00:08:52.417
+wrong happens. Well, at that point, the risk has already been
+
+119
+00:08:52.417 --> 00:08:57.937
+created. And that is why data governance should always be the first
+
+120
+00:08:57.937 --> 00:09:01.737
+step towards that. So, how do we start the data governance?
+
+121
+00:09:01.737 --> 00:09:04.607
+Here are a few simple steps from where to start.
+
+122
+00:09:05.057 --> 00:09:08.287
+Firstly, it's data inventory.
+
+123
+00:09:08.817 --> 00:09:13.617
+Now, this is not the most glamorous task, but it is your baseline.
+
+124
+00:09:13.617 --> 00:09:14.687
+It is the foundation.
+
+125
+00:09:15.737 --> 00:09:17.727
+Firstly, what data do we have?
+
+126
+00:09:18.137 --> 00:09:20.047
+Where is the data stored?
+
+127
+00:09:20.777 --> 00:09:25.767
+Who actually uses the data as opposed to who has access to it?
+
+128
+00:09:26.297 --> 00:09:28.647
+Once we have the answers to those questions,
+
+129
+00:09:29.137 --> 00:09:34.697
+we have to evaluate all our data sets against how much value and how
+
+130
+00:09:34.697 --> 00:09:37.207
+much risk they bring to the business.
+
+131
+00:09:37.617 --> 00:09:39.287
+And depending on where
+
+132
+00:09:41.137 --> 00:09:46.697
+in the assessment scale these data sets land,
+
+133
+00:09:46.697 --> 00:09:49.847
+you can map them against the matrix you see on the right.
+
+134
+00:09:50.377 --> 00:09:57.177
+So, for example, the top right corner says that the data is
+
+135
+00:09:57.177 --> 00:09:58.937
+high-value, high-risk data.
+
+136
+00:09:58.937 --> 00:10:02.137
+This is the most critical data of the business.
+
+137
+00:10:02.137 --> 00:10:06.337
+These are the customer transactions, the payment data,
+
+138
+00:10:06.337 --> 00:10:10.498
+contracts. So, most of your security efforts should be focused
+
+139
+00:10:10.498 --> 00:10:16.538
+there. Then we have the top left quadrant, which is high-value low
+
+140
+00:10:16.538 --> 00:10:22.578
+risk data. Now, these are the product catalogs,
+
+141
+00:10:22.578 --> 00:10:24.888
+prices, internal reports.
+
+142
+00:10:25.498 --> 00:10:28.858
+This is important information, but it's not a secret.
+
+143
+00:10:28.858 --> 00:10:33.138
+So, the risk here is not that the data is going to be stolen,
+
+144
+00:10:33.138 --> 00:10:35.328
+it is that it's going to be changed incorrectly.
+
+145
+00:10:36.018 --> 00:10:41.698
+So, therefore, the focus here should be on data quality checks and
+
+146
+00:10:41.698 --> 00:10:44.768
+controls over who can change the data.
+
+147
+00:10:45.378 --> 00:10:48.738
+Then we have the low-risk low-value data.
+
+148
+00:10:48.738 --> 00:10:52.938
+These are your old logs, forgotten CSV files and exports,
+
+149
+00:10:52.938 --> 00:10:59.528
+test data, etc. This data on its own is harmless,
+
+150
+00:11:00.138 --> 00:11:04.538
+but it piles up and companies pay each month for that data to be
+
+151
+00:11:04.538 --> 00:11:09.418
+stored. Also, if we start really digging into that data,
+
+152
+00:11:09.418 --> 00:11:12.768
+this data very often holds surprises.
+
+153
+00:11:13.818 --> 00:11:19.418
+And for example, very often if you look into your testing
+
+154
+00:11:19.418 --> 00:11:23.698
+data, you see that there are high chances of actual customer
+
+155
+00:11:23.698 --> 00:11:28.138
+data being there. So, here the recommendation is set retention rules
+
+156
+00:11:28.138 --> 00:11:31.058
+and delete the data when the time is up.
+
+157
+00:11:31.058 --> 00:11:35.738
+Lastly, we have the low-value but high-risk data.
+
+158
+00:11:35.738 --> 00:11:37.928
+Now, this is the one I would like you to remember.
+
+159
+00:11:38.698 --> 00:11:45.338
+These are your old HR records, customer data that sits
+
+160
+00:11:45.338 --> 00:11:51.168
+in old systems. These are files from projects that ended ages ago.
+
+161
+00:11:51.858 --> 00:11:55.648
+Now, this data brings to the business almost nothing,
+
+162
+00:11:56.258 --> 00:12:00.698
+but very often it is stored in legacy systems that are poorly
+
+163
+00:12:00.698 --> 00:12:04.648
+protected. Now, this is the easiest target for the attackers.
+
+164
+00:12:05.538 --> 00:12:10.698
+And if the data leaks, that comes with all the fines,
+
+165
+00:12:10.698 --> 00:12:15.139
+notifications, and regulatory and reputational damage that come with
+
+166
+00:12:15.139 --> 00:12:20.379
+it. So, here the advice is delete what you legally can and encrypt
+
+167
+00:12:20.379 --> 00:12:22.289
+the data that you must keep.
+
+168
+00:12:23.179 --> 00:12:27.819
+Now, because I'm conscious of time, if there are just three
+
+169
+00:12:27.819 --> 00:12:30.579
+things to remember from this presentation today,
+
+170
+00:12:30.579 --> 00:12:35.619
+let it be these. Firstly, know your data, do the inventory of the
+
+171
+00:12:35.619 --> 00:12:41.899
+data. Go through the matrix of how valuable and how risky the
+
+172
+00:12:41.899 --> 00:12:45.139
+data is. Then, it's the human element.
+
+173
+00:12:45.139 --> 00:12:48.819
+Your employees are working and manipulating the data.
+
+174
+00:12:48.819 --> 00:12:53.099
+So, give them clear instructions on how to use the data and which
+
+175
+00:12:53.099 --> 00:12:54.659
+tools they're allowed to use.
+
+176
+00:12:54.659 --> 00:12:58.259
+And also, for example, what type of data they're not allowed
+
+177
+00:12:58.259 --> 00:13:03.859
+to put in AI. And lastly, be prepared when things go wrong because
+
+178
+00:13:03.859 --> 00:13:06.819
+most probably things will go wrong.
+
+179
+00:13:06.819 --> 00:13:10.859
+And at that point, if your data governance is intact,
+
+180
+00:13:10.859 --> 00:13:14.459
+if your critical data is properly locked, then you'll be in a
+
+181
+00:13:14.459 --> 00:13:18.659
+position to answer all the questions that come up your way and come
+
+182
+00:13:18.659 --> 00:13:21.459
+up with the appropriate next actions.
+
+183
+00:13:21.459 --> 00:13:22.489
+Thank you very much.

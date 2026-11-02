@@ -1,0 +1,1489 @@
+WEBVTT
+
+1
+00:00:00.320 --> 00:00:04.799
+also about how we build smart solutions for critical
+
+2
+00:00:04.799 --> 00:00:05.990
+infrastructure protection.
+
+3
+00:00:06.879 --> 00:00:11.360
+We discussed a lot about cyber resilience, and we juxtaposed the
+
+4
+00:00:11.360 --> 00:00:15.280
+concepts of robustness and resilience, and what this means
+
+5
+00:00:15.280 --> 00:00:17.990
+and what the implications are for different organizations.
+
+6
+00:00:18.560 --> 00:00:22.320
+So the purpose of this final panel for this morning really is to try
+
+7
+00:00:22.320 --> 00:00:27.359
+to be as practical as possible and to map where public
+
+8
+00:00:27.359 --> 00:00:28.310
+private cooperation
+
+9
+00:00:29.279 --> 00:00:30.800
+comes into the picture.
+
+10
+00:00:30.800 --> 00:00:32.310
+How do we build these partnerships?
+
+11
+00:00:33.200 --> 00:00:38.879
+How do we work across silos, across sectors,
+
+12
+00:00:38.879 --> 00:00:44.000
+across borders even, if you wish, and how do we contribute to
+
+13
+00:00:44.000 --> 00:00:48.160
+the sustainability of all those practical solutions that we can
+
+14
+00:00:48.160 --> 00:00:53.520
+implement? So, without any further ado, I would like to delve right
+
+15
+00:00:53.520 --> 00:00:55.510
+straight into the discussion.
+
+16
+00:00:56.079 --> 00:00:59.680
+We are a bit short of time.
+
+17
+00:00:59.680 --> 00:01:02.719
+Nevertheless, I would like to make sure that our speakers have
+
+18
+00:01:02.719 --> 00:01:07.029
+sufficient opportunity to speak and develop their thoughts.
+
+19
+00:01:07.680 --> 00:01:10.159
+So my first question is to Mr.
+
+20
+00:01:10.159 --> 00:01:11.910
+van Hertum.
+
+21
+00:01:12.960 --> 00:01:17.920
+So for Bulgaria, for public services and critical infrastructure,
+
+22
+00:01:17.920 --> 00:01:21.680
+we discussed a lot, and we mentioned ports,
+
+23
+00:01:21.680 --> 00:01:24.390
+we mentioned administration,
+
+24
+00:01:25.600 --> 00:01:30.320
+we spoke about public service providers, both yesterday and
+
+25
+00:01:30.320 --> 00:01:35.600
+today as well. But from your perspective, as somebody who already
+
+26
+00:01:35.600 --> 00:01:39.280
+knows the Bulgarian context as well, which are the two cybersecurity
+
+27
+00:01:39.280 --> 00:01:45.360
+tasks that you feel would benefit most from joint work
+
+28
+00:01:45.360 --> 00:01:48.230
+between private and public cooperation?
+
+29
+00:01:48.880 --> 00:01:51.830
+What would be those priorities?
+
+30
+00:01:52.960 --> 00:01:56.159
+Mindful of the fact that there are different risk perspectives,
+
+31
+00:01:56.159 --> 00:02:01.600
+threat perspectives, and people view a lot of those issues
+
+32
+00:02:01.600 --> 00:02:06.719
+differently, and where is the role of companies, where is the role of
+
+33
+00:02:06.719 --> 00:02:10.229
+the private sector in this picture best realized?
+
+34
+00:02:12.400 --> 00:02:15.750
+Thank you for the question, or questions.
+
+35
+00:02:16.239 --> 00:02:19.910
+So, the not very Dutch answer.
+
+36
+00:02:20.879 --> 00:02:27.200
+So I would not start with, let's say, information
+
+37
+00:02:27.200 --> 00:02:31.040
+sharing. If you look at, so recently there was this report
+
+38
+00:02:31.040 --> 00:02:35.760
+from ENISA, the European cybersecurity agency,
+
+39
+00:02:35.760 --> 00:02:41.040
+the NIS360 report, and for example if you look
+
+40
+00:02:41.040 --> 00:02:46.310
+at the water utilities, about 30% never did the risk assessment.
+
+41
+00:02:47.200 --> 00:02:53.440
+Then there is also a Dutch national research, and they looked
+
+42
+00:02:53.440 --> 00:02:57.120
+at things that they say are about basic hygiene. So what's basic
+
+43
+00:02:57.120 --> 00:02:59.840
+hygiene is, do people actually fill in this
+
+44
+00:02:59.840 --> 00:03:05.360
+checklist? And also the port of Rotterdam.
+
+45
+00:03:05.360 --> 00:03:10.000
+We talked already a lot about the port of Rotterdam, but out of
+
+46
+00:03:10.000 --> 00:03:15.599
+like 80 companies they found like 15 systems with
+
+47
+00:03:15.599 --> 00:03:16.550
+critical vulnerabilities.
+
+48
+00:03:17.120 --> 00:03:23.509
+And I read that they have two serious adversaries
+
+49
+00:03:24.000 --> 00:03:27.440
+per week. So there's a lot happening.
+
+50
+00:03:27.440 --> 00:03:32.470
+So then water. So I would say,
+
+51
+00:03:33.519 --> 00:03:36.149
+make it very practical.
+
+52
+00:03:36.720 --> 00:03:38.550
+So look at this basic hygiene.
+
+53
+00:03:39.040 --> 00:03:44.640
+So if in your controls, for example, there
+
+54
+00:03:44.640 --> 00:03:46.550
+should be someone available at 11:00,
+
+55
+00:03:47.599 --> 00:03:50.959
+pick up the phone and check if this person is actually there.
+
+56
+00:03:50.959 --> 00:03:55.760
+That's basic hygiene. And so that's incident response.
+
+57
+00:03:55.760 --> 00:03:58.310
+So make sure that this works.
+
+58
+00:03:58.799 --> 00:04:03.120
+Do people actually know what they should do if there's
+
+59
+00:04:03.120 --> 00:04:05.360
+an incident? Who should they call?
+
+60
+00:04:05.360 --> 00:04:09.040
+Check this with people. It's really so basic, and of course it's
+
+61
+00:04:09.040 --> 00:04:13.519
+skills, and skills is something that the region can also
+
+62
+00:04:13.519 --> 00:04:18.959
+very easily fix. So then your questions were about
+
+63
+00:04:18.959 --> 00:04:21.509
+companies and the public institutions.
+
+64
+00:04:22.320 --> 00:04:25.990
+So what can they add to the equation?
+
+65
+00:04:26.400 --> 00:04:31.590
+So for companies, I like to keep things very pragmatic.
+
+66
+00:04:32.160 --> 00:04:37.270
+So for companies, it's time to actually share incidents.
+
+67
+00:04:38.080 --> 00:04:43.840
+It's scary to tell the world that you had
+
+68
+00:04:43.840 --> 00:04:48.400
+an incident. That's very important,
+
+69
+00:04:48.400 --> 00:04:52.550
+and then the harder part is for the public institutions.
+
+70
+00:04:53.440 --> 00:04:59.360
+So if we want companies to share their vulnerabilities, or if there's
+
+71
+00:04:59.360 --> 00:05:02.550
+an incident, there should be like a legal protection.
+
+72
+00:05:03.040 --> 00:05:06.479
+So it's not like, yeah, I finally share there was an incident, and
+
+73
+00:05:06.479 --> 00:05:10.710
+then the public sector comes with a lawsuit.
+
+74
+00:05:11.120 --> 00:05:13.120
+So that should be protected.
+
+75
+00:05:13.120 --> 00:05:19.039
+And of course, one of the complaints about, now you have
+
+76
+00:05:19.039 --> 00:05:23.680
+these information sharing hubs everywhere, is that so
+
+77
+00:05:23.680 --> 00:05:27.280
+companies should also have a single point of contact, but the
+
+78
+00:05:27.280 --> 00:05:31.919
+governments also, and the big complaint that you see in
+
+79
+00:05:31.919 --> 00:05:35.280
+the Netherlands is that they change every 18 months, generally.
+
+80
+00:05:35.280 --> 00:05:38.800
+So it's very hard for companies to find the right people in the
+
+81
+00:05:38.800 --> 00:05:41.840
+public sector. So that's something that should be fixed, and also
+
+82
+00:05:41.840 --> 00:05:47.280
+that often somehow things are leaked before you know it's
+
+83
+00:05:47.280 --> 00:05:51.199
+already public, before you know the companies even share it, almost.
+
+84
+00:05:51.199 --> 00:05:55.680
+So these are things that, so for the public institutions it will
+
+85
+00:05:55.680 --> 00:06:00.240
+be a bit hard to fix this, but it's very important they sort of have
+
+86
+00:06:00.240 --> 00:06:01.910
+this single point of contact.
+
+87
+00:06:03.759 --> 00:06:07.759
+Thank you so much. And so if I have to sum up,
+
+88
+00:06:07.759 --> 00:06:12.560
+you mentioned a couple of very key concepts here.
+
+89
+00:06:12.560 --> 00:06:16.800
+So one was awareness raising, that we need to know about our policies,
+
+90
+00:06:16.800 --> 00:06:19.199
+that we need to know who we can call.
+
+91
+00:06:19.199 --> 00:06:22.160
+We need to know what the response management plan is, as long as
+
+92
+00:06:22.160 --> 00:06:26.319
+that exists. And then the precondition of that is that such a
+
+93
+00:06:26.319 --> 00:06:30.720
+plan should exist. You mentioned skills, and I think that that's
+
+94
+00:06:30.720 --> 00:06:35.120
+very important both for the private and public sector, and we'll
+
+95
+00:06:35.120 --> 00:06:39.520
+try to delve into that a little bit, provided we have
+
+96
+00:06:39.520 --> 00:06:41.189
+sufficient time during the panel.
+
+97
+00:06:41.680 --> 00:06:45.440
+You've mentioned the private companies and the single point
+
+98
+00:06:45.440 --> 00:06:49.840
+of contact. Would you say that it would work the same way if a
+
+99
+00:06:49.840 --> 00:06:55.360
+public sector institution experiences a cybersecurity risk and
+
+100
+00:06:55.360 --> 00:07:00.710
+it has a private company helping it with its cybersecurity?
+
+101
+00:07:01.360 --> 00:07:05.199
+Would it work the same way with regard to the data
+
+102
+00:07:05.199 --> 00:07:06.390
+sharing and the vulnerabilities?
+
+103
+00:07:09.520 --> 00:07:15.599
+So, good question. At the end it's all about trust.
+
+104
+00:07:15.599 --> 00:07:20.950
+Yeah. And about building trust.
+
+105
+00:07:22.160 --> 00:07:25.599
+So how can you do that?
+
+106
+00:07:25.599 --> 00:07:29.759
+Is this maybe part of the next question you're also going to
+
+107
+00:07:29.759 --> 00:07:33.110
+ask me? But
+
+108
+00:07:34.639 --> 00:07:38.880
+yeah, I think it's a single point of contact that's very important,
+
+109
+00:07:38.880 --> 00:07:43.280
+that the right people are in the room, that there is shared
+
+110
+00:07:43.280 --> 00:07:45.589
+responsibility.
+
+111
+00:07:46.720 --> 00:07:52.560
+I think the reason why I move away from information sharing,
+
+112
+00:07:52.560 --> 00:07:55.589
+where it stays very conceptual,
+
+113
+00:07:56.720 --> 00:08:02.240
+you know, if you put, for example, a big company in the room with
+
+114
+00:08:02.240 --> 00:08:05.919
+a small company, and let's say a bank has 40 people in this arena, and
+
+115
+00:08:05.919 --> 00:08:08.560
+then for example a government is one person, at some point the big
+
+116
+00:08:08.560 --> 00:08:11.840
+company will not show up anymore. It's really hard to build up.
+
+117
+00:08:11.840 --> 00:08:16.080
+And in the Netherlands it kind of worked, because in the sectors a
+
+118
+00:08:16.080 --> 00:08:19.360
+lot of companies and organizations were already for years
+
+119
+00:08:19.360 --> 00:08:22.879
+collaborating on all kinds of stuff, and there was already a base of
+
+120
+00:08:22.879 --> 00:08:29.440
+trust. But there are other ways to build this
+
+121
+00:08:29.440 --> 00:08:32.880
+in the sector. Thank you.
+
+122
+00:08:32.880 --> 00:08:34.479
+We'll return to this point.
+
+123
+00:08:34.479 --> 00:08:36.800
+Yes. Now turning to Mr.
+
+124
+00:08:36.800 --> 00:08:42.080
+Kirilov. And yesterday we heard on a number of occasions about
+
+125
+00:08:42.080 --> 00:08:46.160
+the BRAIN++ AI Factory and this wonderful initiative that you have on
+
+126
+00:08:46.160 --> 00:08:50.959
+your premises, and we heard a lot about the strengths and
+
+127
+00:08:50.959 --> 00:08:55.920
+the benefits and also how this would enhance our national
+
+128
+00:08:55.920 --> 00:08:57.350
+computing capabilities.
+
+129
+00:08:58.240 --> 00:09:01.440
+But let's now turn a little bit and talk about the protection of
+
+130
+00:09:01.440 --> 00:09:06.150
+this very key infrastructure that is being established
+
+131
+00:09:06.640 --> 00:09:12.240
+in Bulgaria, and what is your
+
+132
+00:09:12.240 --> 00:09:17.440
+perspective on that? How should the work around the protection
+
+133
+00:09:17.440 --> 00:09:23.519
+of the factory go about, and would that be dependent
+
+134
+00:09:23.519 --> 00:09:25.920
+on collaboration with whom?
+
+135
+00:09:25.920 --> 00:09:30.959
+How would this collaboration be established, and where would be
+
+136
+00:09:30.959 --> 00:09:35.600
+the main responsibility for ensuring that nothing bad
+
+137
+00:09:35.600 --> 00:09:38.720
+happens when they have that fully operational and
+
+138
+00:09:38.720 --> 00:09:43.760
+established? Thank you. Thank you very much for the question,
+
+139
+00:09:43.760 --> 00:09:50.480
+and unfortunately the responsibility is on our
+
+140
+00:09:50.480 --> 00:09:53.270
+team, because for the security
+
+141
+00:09:54.399 --> 00:10:00.230
+we cannot share this responsibility, but we
+
+142
+00:10:01.440 --> 00:10:06.640
+cannot achieve better results without security companies,
+
+143
+00:10:06.640 --> 00:10:11.600
+without proper security hardware, without proper security
+
+144
+00:10:11.600 --> 00:10:17.839
+experience, and we cooperate with many leading companies,
+
+145
+00:10:17.839 --> 00:10:24.399
+mostly, unfortunately, US companies, and
+
+146
+00:10:24.399 --> 00:10:30.640
+for me, because I'm an infrastructure guy, the first task
+
+147
+00:10:30.640 --> 00:10:36.310
+is to secure the infrastructure and the data, because
+
+148
+00:10:37.200 --> 00:10:42.880
+what does it mean? We have to physically secure the data center.
+
+149
+00:10:42.880 --> 00:10:44.720
+We have to secure the cooling.
+
+150
+00:10:44.720 --> 00:10:49.270
+We have to secure the networking to avoid
+
+151
+00:10:50.240 --> 00:10:56.230
+single points of failure, to secure all the infrastructure,
+
+152
+00:10:56.800 --> 00:11:03.519
+all the operating systems, and also to secure and encrypt
+
+153
+00:11:03.519 --> 00:11:10.240
+the data. This is the foundation. Also to test
+
+154
+00:11:10.240 --> 00:11:17.040
+the AI applications and AI agents and AI systems is also very
+
+155
+00:11:17.040 --> 00:11:23.760
+crucial, but without this first layer you cannot put on top
+
+156
+00:11:23.760 --> 00:11:27.270
+this is like a building without a stone foundation,
+
+157
+00:11:28.480 --> 00:11:35.120
+all the building will be compromised. For example, if
+
+158
+00:11:35.120 --> 00:11:41.430
+we have a platform and you don't have proper security,
+
+159
+00:11:42.000 --> 00:11:47.040
+now the target is not to stop the business operations; in the
+
+160
+00:11:47.040 --> 00:11:52.959
+new AI world the target is to change the data, to change the
+
+161
+00:11:52.959 --> 00:11:59.040
+training data, to change the inferencing, because this will very fast
+
+162
+00:11:59.040 --> 00:12:05.590
+affect all your clients, and this is
+
+163
+00:12:06.480 --> 00:12:13.040
+the way these groups are acting, because you
+
+164
+00:12:13.040 --> 00:12:18.320
+have to audit all the changes in the infrastructure, in the
+
+165
+00:12:18.320 --> 00:12:24.230
+software, and all the other. For example, I can give you one
+
+166
+00:12:25.839 --> 00:12:32.150
+practical example. Maybe you are aware that
+
+167
+00:12:32.720 --> 00:12:34.880
+about this incident.
+
+168
+00:12:34.880 --> 00:12:41.600
+The agents from OpenAI, they were in an isolated system, they attacked
+
+169
+00:12:41.600 --> 00:12:47.920
+Hugging Face. And this is the new world, because when you use
+
+170
+00:12:47.920 --> 00:12:54.560
+the agents, they can organize themselves and they can find, because even
+
+171
+00:12:54.560 --> 00:13:00.639
+in this environment, you isolate these sandboxes even on
+
+172
+00:13:00.639 --> 00:13:02.790
+network level, but they just
+
+173
+00:13:03.920 --> 00:13:08.800
+succeeded to go to the internet and from the internet to exploit the
+
+174
+00:13:08.800 --> 00:13:13.120
+vulnerabilities. And maybe this is the new world.
+
+175
+00:13:13.120 --> 00:13:20.160
+Maybe you are aware also of Mythos, and because this agent
+
+176
+00:13:20.160 --> 00:13:27.360
+is so powerful that they gave it to 100 companies
+
+177
+00:13:27.360 --> 00:13:31.839
+first to check their important operations and assets for
+
+178
+00:13:31.839 --> 00:13:35.360
+vulnerabilities, and it's not published yet.
+
+179
+00:13:35.360 --> 00:13:42.240
+But unfortunately GLM 5.3, this is the Chinese model,
+
+180
+00:13:42.240 --> 00:13:48.550
+and this model is very, very strong. Maybe it's strong,
+
+181
+00:13:49.760 --> 00:13:56.079
+it's pretty much the same quality as Mythos, but it's public
+
+182
+00:13:56.079 --> 00:14:01.279
+and you can install this model on premise and you can start
+
+183
+00:14:01.279 --> 00:14:06.069
+building exploits end to end without any capabilities.
+
+184
+00:14:07.519 --> 00:14:12.639
+If you have this infrastructure, you can start to attack another
+
+185
+00:14:12.639 --> 00:14:17.990
+critical infrastructure, and this is, unfortunately, a new reality.
+
+186
+00:14:19.120 --> 00:14:20.720
+Absolutely. Well, thank you so much.
+
+187
+00:14:20.720 --> 00:14:23.430
+It is a scary reality.
+
+188
+00:14:24.000 --> 00:14:27.910
+Just to follow on some of the things that you mentioned,
+
+189
+00:14:28.480 --> 00:14:33.760
+and because you spoke a lot about the infrastructure, but
+
+190
+00:14:33.760 --> 00:14:36.800
+what about the operational partnerships? Because let's not forget
+
+191
+00:14:36.800 --> 00:14:41.680
+that the AI factory that we have in Bulgaria is not a single one;
+
+192
+00:14:41.680 --> 00:14:45.920
+I mean, it's part of this family of AI factories that are built around
+
+193
+00:14:45.920 --> 00:14:50.079
+the EU. Do you know if there might be potential for
+
+194
+00:14:50.079 --> 00:14:53.839
+collaboration with those AI factories when it comes to both the
+
+195
+00:14:53.839 --> 00:14:57.430
+operational aspects but also the cybersecurity protection?
+
+196
+00:14:58.880 --> 00:15:03.279
+Yes, we have a lot of projects in this area.
+
+197
+00:15:03.279 --> 00:15:09.910
+We also have the same, we have
+
+198
+00:15:10.320 --> 00:15:14.160
+a security board and a security group which is responsible for all the factories,
+
+199
+00:15:14.160 --> 00:15:20.000
+and as was mentioned, we share the vulnerabilities, we sign the
+
+200
+00:15:20.000 --> 00:15:26.320
+NDAs and we share the threats. If some center is under attack or if
+
+201
+00:15:26.320 --> 00:15:31.680
+there is a new vulnerability, we exchange patches immediately. But
+
+202
+00:15:31.680 --> 00:15:36.870
+about the security, yes, infrastructure security is clear, but
+
+203
+00:15:37.279 --> 00:15:40.310
+unfortunately security is a process.
+
+204
+00:15:40.880 --> 00:15:43.360
+You cannot do it in one shot and that's it.
+
+205
+00:15:43.360 --> 00:15:45.600
+Anyway, this is a process.
+
+206
+00:15:45.600 --> 00:15:48.710
+This is a culture. We have to do it every day,
+
+207
+00:15:49.279 --> 00:15:52.069
+and you have to
+
+208
+00:15:53.040 --> 00:15:54.870
+invest a lot in security,
+
+209
+00:15:55.920 --> 00:16:02.399
+because this is expensive. Every year the prices go
+
+210
+00:16:02.399 --> 00:16:08.710
+up by at least 30%, and now everything is subscription-based.
+
+211
+00:16:09.360 --> 00:16:11.990
+You have to pay every
+
+212
+00:16:13.279 --> 00:16:19.759
+year, otherwise the devices are gone; all your configurations are there. And
+
+213
+00:16:19.759 --> 00:16:26.320
+also colleagues in the previous panel
+
+214
+00:16:26.320 --> 00:16:28.710
+mentioned the humans.
+
+215
+00:16:29.440 --> 00:16:34.240
+This is very important, the human firewall, because without proper
+
+216
+00:16:34.240 --> 00:16:40.150
+education, without proper control and behavior analysis
+
+217
+00:16:41.040 --> 00:16:47.759
+of especially your privileged users and teams, you cannot be
+
+218
+00:16:47.759 --> 00:16:50.480
+secure. Thank you so much.
+
+219
+00:16:50.480 --> 00:16:54.959
+And just touching upon some of the points that you
+
+220
+00:16:54.959 --> 00:16:58.720
+mentioned, I'm also turning to Mr.
+
+221
+00:16:58.720 --> 00:17:03.360
+once again, going back to your point about the trust
+
+222
+00:17:03.360 --> 00:17:08.079
+and I think that we've actually touched upon some of those issues
+
+223
+00:17:08.079 --> 00:17:13.360
+already in the conversation, but thinking about the
+
+224
+00:17:13.360 --> 00:17:18.480
+possibility of transferring good Dutch experience to Bulgaria,
+
+225
+00:17:18.480 --> 00:17:22.720
+we know that for example in the Netherlands one workable concept
+
+226
+00:17:22.720 --> 00:17:27.439
+is the cybersecurity living lab, so could you tell us a little bit
+
+227
+00:17:27.439 --> 00:17:32.960
+more about that and possibly how that may help in building
+
+228
+00:17:32.960 --> 00:17:36.790
+trust and bringing in those different stakeholders
+
+229
+00:17:37.760 --> 00:17:42.799
+together, and what could be some practical
+
+230
+00:17:42.799 --> 00:17:46.320
+recommendations in the immediate term that could be implemented here
+
+231
+00:17:46.320 --> 00:17:49.520
+with a very short horizon, let's say in the next six months? What are
+
+232
+00:17:49.520 --> 00:17:53.280
+some of those practical solutions that could benefit a region
+
+233
+00:17:53.280 --> 00:17:59.760
+like Varna, for example, to boost its potential in this area and
+
+234
+00:17:59.760 --> 00:18:03.919
+foster those partnerships and advance in this field?
+
+235
+00:18:03.919 --> 00:18:06.960
+Thank you. Thank you for the question.
+
+236
+00:18:06.960 --> 00:18:11.830
+So in the Netherlands there are
+
+237
+00:18:12.960 --> 00:18:18.320
+of course a lot of initiatives, and I live in Bulgaria
+
+238
+00:18:18.320 --> 00:18:23.200
+now full-time for 16 years, coming for 20 years, and my observation is
+
+239
+00:18:23.200 --> 00:18:27.200
+that there are a lot of engineers in Bulgaria,
+
+240
+00:18:27.200 --> 00:18:31.440
+so people here are quite pragmatic, in my
+
+241
+00:18:31.440 --> 00:18:36.150
+observation. So what I love in the Netherlands are the living labs.
+
+242
+00:18:36.559 --> 00:18:41.200
+So I already touched a bit on the other parts where people
+
+243
+00:18:41.200 --> 00:18:46.559
+mainly share information, but I think what you can implement quickly
+
+244
+00:18:46.559 --> 00:18:49.679
+especially in this region are living labs.
+
+245
+00:18:49.679 --> 00:18:56.400
+So living labs are a collaboration between,
+
+246
+00:18:56.400 --> 00:19:02.070
+let's say, the government, for example, universities,
+
+247
+00:19:02.720 --> 00:19:05.750
+universities of applied sciences,
+
+248
+00:19:07.120 --> 00:19:10.640
+so you have students on the floor, companies, and they make, and
+
+249
+00:19:10.640 --> 00:19:14.000
+especially Varna is really a good example because there are a lot of
+
+250
+00:19:14.000 --> 00:19:17.679
+real pragmatic cybersecurity issues. For example, in the
+
+251
+00:19:17.679 --> 00:19:21.919
+Netherlands, in a living lab in Zoetermeer, close to The Hague, they even built
+
+252
+00:19:21.919 --> 00:19:26.559
+a model of a bridge, of a real bridge, to see how
+
+253
+00:19:26.559 --> 00:19:29.589
+resilient it was. And
+
+254
+00:19:30.960 --> 00:19:36.070
+in my observation, I think this is because it's relatively
+
+255
+00:19:37.039 --> 00:19:40.880
+easy to organize, and with the power of this computer you can easily
+
+256
+00:19:40.880 --> 00:19:43.430
+make digital twins, for example.
+
+257
+00:19:44.000 --> 00:19:48.870
+So to build these labs, and what's even
+
+258
+00:19:49.840 --> 00:19:54.880
+more important, because we already touched upon this, is if
+
+259
+00:19:54.880 --> 00:20:00.080
+government, universities, companies, students, I see this picture
+
+260
+00:20:00.080 --> 00:20:02.720
+where people are working together, you build trust.
+
+261
+00:20:02.720 --> 00:20:04.469
+So when people start discussing
+
+262
+00:20:05.440 --> 00:20:09.360
+problems, and you have, indeed, researchers, like we have
+
+263
+00:20:09.360 --> 00:20:13.120
+several here in the room, with their view, but students
+
+264
+00:20:13.120 --> 00:20:17.679
+sometimes come with a totally different view on something, you get this
+
+265
+00:20:17.679 --> 00:20:21.840
+really good discussion and you get these pragmatic solutions, which
+
+266
+00:20:21.840 --> 00:20:26.160
+can sometimes, I loved the example that you gave about Houston time
+
+267
+00:20:26.160 --> 00:20:30.240
+okay, so where sometimes, instead of having a
+
+268
+00:20:30.240 --> 00:20:34.709
+multi-million solution, it can be super simple and cheap.
+
+269
+00:20:35.120 --> 00:20:39.039
+So yeah, that would be my recommendation, because also
+
+270
+00:20:39.039 --> 00:20:43.109
+the trust foundation will be there and people will start sharing
+
+271
+00:20:43.600 --> 00:20:46.950
+also. Yeah, in my company we had this incident and
+
+272
+00:20:48.000 --> 00:20:52.559
+let's start from there. Thank you so much, that sounds really
+
+273
+00:20:52.559 --> 00:20:55.919
+very positive, and thank you so much for those reflections as well,
+
+274
+00:20:55.919 --> 00:20:59.039
+because on the other hand it's a simple solution to
+
+275
+00:20:59.039 --> 00:21:02.080
+implement. It's essentially about bringing people together.
+
+276
+00:21:02.080 --> 00:21:05.840
+Something that we are doing now in the course of those three
+
+277
+00:21:05.840 --> 00:21:09.840
+days, but making it a little bit more regular,
+
+278
+00:21:09.840 --> 00:21:12.640
+making it a little bit more organized and making it more
+
+279
+00:21:12.640 --> 00:21:16.880
+routine so that people have dialogue together.
+
+280
+00:21:16.880 --> 00:21:19.200
+I would also like to touch on why Varna.
+
+281
+00:21:19.200 --> 00:21:25.760
+Yeah, because Varna of course has a port, and we heard a lot of
+
+282
+00:21:25.760 --> 00:21:29.760
+explanations why a port is really crucial, and I think, yeah, what I
+
+283
+00:21:29.760 --> 00:21:33.919
+heard over last night is of course it even brings more pressure on this
+
+284
+00:21:33.919 --> 00:21:38.159
+whole thing, but there's the Naval Academy, there are a lot of
+
+285
+00:21:38.159 --> 00:21:42.080
+engineers, and I think what else was created here by the
+
+286
+00:21:42.080 --> 00:21:45.440
+organizers with this event is of course the whole start of the
+
+287
+00:21:45.440 --> 00:21:49.840
+ecosystem. I think an event like this is also a trigger of an
+
+288
+00:21:49.840 --> 00:21:52.640
+ecosystem, that people start to find each other.
+
+289
+00:21:52.640 --> 00:21:55.520
+It will be hopefully again next year.
+
+290
+00:21:55.520 --> 00:22:00.000
+So the conversation has already started and now it's just about
+
+291
+00:22:00.000 --> 00:22:02.720
+implementation. Thank you so much.
+
+292
+00:22:02.720 --> 00:22:05.510
+And bringing in the point of implementation,
+
+293
+00:22:06.720 --> 00:22:08.480
+I'm turning to Mr. Kirilov.
+
+294
+00:22:08.480 --> 00:22:13.200
+So if we are to implement one part of the Dutch experience, in your
+
+295
+00:22:13.200 --> 00:22:16.480
+view, what would be required?
+
+296
+00:22:16.480 --> 00:22:21.760
+What might be necessary here to make it work, to adapt
+
+297
+00:22:21.760 --> 00:22:27.679
+it to our own reality, and what in your view would be really
+
+298
+00:22:27.679 --> 00:22:31.840
+visible, let's say in the immediate term, with a horizon of six
+
+299
+00:22:31.840 --> 00:22:35.679
+months? What could be practically achieved and practically
+
+300
+00:22:35.679 --> 00:22:39.510
+done within a relatively short time span from your perspective?
+
+301
+00:22:41.039 --> 00:22:44.240
+Thank you very much for this question. I think that the
+
+302
+00:22:44.240 --> 00:22:48.960
+timing is right, because if a project in AI
+
+303
+00:22:48.960 --> 00:22:52.070
+is longer than six months, something is wrong.
+
+304
+00:22:53.200 --> 00:22:58.400
+And what we can achieve, we can achieve a very quick win, because here
+
+305
+00:22:58.400 --> 00:23:03.600
+in the room is a professor, he's the leader of BRAIN++, and he has a Dutch
+
+306
+00:23:03.600 --> 00:23:10.480
+passport and can speak Dutch, and what we can do together,
+
+307
+00:23:10.480 --> 00:23:16.320
+we have a supercomputer, we have a budget for education, we have
+
+308
+00:23:16.320 --> 00:23:21.030
+people, and we can start the project immediately.
+
+309
+00:23:21.520 --> 00:23:25.120
+There are some papers, you know, because we are part of Europe.
+
+310
+00:23:25.120 --> 00:23:28.790
+We like papers. You have to fill in some papers.
+
+311
+00:23:29.280 --> 00:23:31.440
+But this is not a joke.
+
+312
+00:23:31.440 --> 00:23:38.240
+We can start a project, and usually this will be a big
+
+313
+00:23:38.240 --> 00:23:41.510
+project. We have a budget of around €300,000
+
+314
+00:23:42.480 --> 00:23:47.039
+per project and we can bring in private companies.
+
+315
+00:23:47.039 --> 00:23:51.760
+We can bring together people from the university, as you mention.
+
+316
+00:23:51.760 --> 00:23:57.679
+We can establish very easily in our infrastructure a digital twin.
+
+317
+00:23:57.679 --> 00:24:02.640
+We can install this Chinese model, because US ones we cannot, but Chinese
+
+318
+00:24:02.640 --> 00:24:08.400
+model we can install, GLM 5.3, and we can start to attack this
+
+319
+00:24:08.400 --> 00:24:12.390
+infrastructure and see what will happen.
+
+320
+00:24:14.799 --> 00:24:20.240
+Wow. Well, I think that is more than we have hoped for, and so
+
+321
+00:24:20.240 --> 00:24:23.600
+we wanted to come up with practical solutions, practical
+
+322
+00:24:23.600 --> 00:24:26.960
+recommendations. Here is an idea for all our projects.
+
+323
+00:24:26.960 --> 00:24:30.720
+So I think that's something really to think about and consider
+
+324
+00:24:30.720 --> 00:24:32.790
+and see how we can make it a reality.
+
+325
+00:24:33.279 --> 00:24:36.000
+Thank you so much for this contribution.
+
+326
+00:24:36.000 --> 00:24:39.679
+It's really great. In the interest of time I would like to turn
+
+327
+00:24:39.679 --> 00:24:41.840
+very quickly to the audience.
+
+328
+00:24:41.840 --> 00:24:44.799
+See if there is anyone with a very burning question.
+
+329
+00:24:44.799 --> 00:24:50.390
+Of course, please keep it short.
+
+330
+00:24:52.799 --> 00:24:55.679
+I don't have a question. I just wanted to thank you and I wanted actually to
+
+331
+00:24:55.679 --> 00:24:58.720
+thank our partners from the Embassy of the Kingdom of the
+
+332
+00:24:58.720 --> 00:25:02.000
+Netherlands for doing this together with us.
+
+333
+00:25:02.000 --> 00:25:03.990
+I think this is a really good crowning
+
+334
+00:25:05.039 --> 00:25:10.960
+ending of this day and a half of work that we've done.
+
+335
+00:25:10.960 --> 00:25:15.360
+But also let me say that I truly believe there is a tremendous
+
+336
+00:25:15.360 --> 00:25:17.840
+opportunity for this public-private cooperation.
+
+337
+00:25:17.840 --> 00:25:22.080
+You know, Bulgaria gets most of its funding from the EU,
+
+338
+00:25:22.080 --> 00:25:23.510
+you know, including in BRAIN++,
+
+339
+00:25:24.559 --> 00:25:28.400
+and we need the business part. You know, we've built good
+
+340
+00:25:28.400 --> 00:25:31.919
+infrastructure, we've built already the underlying
+
+341
+00:25:31.919 --> 00:25:35.430
+research part, but we need the Dutch
+
+342
+00:25:35.919 --> 00:25:39.840
+entrepreneurship. So I think there are really a lot of opportunities
+
+343
+00:25:39.840 --> 00:25:43.679
+out there, and the second thing is security. You know, the Netherlands
+
+344
+00:25:43.679 --> 00:25:49.919
+is, given also the NATO Secretary General, as a
+
+345
+00:25:49.919 --> 00:25:54.880
+trust, that means we all trust you guys in terms of
+
+346
+00:25:54.880 --> 00:25:58.720
+leading in that domain. So I think that Bulgaria needs that, you know,
+
+347
+00:25:58.720 --> 00:26:03.440
+getting on these projects as much as possible would be
+
+348
+00:26:03.440 --> 00:26:07.039
+fantastic, and I think I've done my minute, but again, thanks a
+
+349
+00:26:07.039 --> 00:26:09.349
+lot for that.
+
+350
+00:26:14.880 --> 00:26:19.279
+Thank you so much. With that I would just want to check if
+
+351
+00:26:19.279 --> 00:26:24.159
+our panelists have any final thoughts, any final things
+
+352
+00:26:24.159 --> 00:26:28.480
+that you would like to share, key takeaways, or you would prefer to
+
+353
+00:26:28.480 --> 00:26:31.430
+share those over lunch, over the lunch break.
+
+354
+00:26:32.320 --> 00:26:38.559
+I'll take the mic. I think what I hear here, I mean, it's
+
+355
+00:26:38.559 --> 00:26:42.080
+about taking action, and I think there's the willingness, that's for
+
+356
+00:26:42.080 --> 00:26:46.159
+sure. I think what I already shared earlier in other panels
+
+357
+00:26:46.159 --> 00:26:52.480
+also, I think the means are here. Yeah, it's just, let's say,
+
+358
+00:26:52.480 --> 00:26:57.360
+do it. So just take action, sit together, and I think also a big
+
+359
+00:26:57.360 --> 00:27:00.880
+compliments to the organizers of this event, and thanks for
+
+360
+00:27:00.880 --> 00:27:07.919
+having us. I will add one sentence only
+
+361
+00:27:07.919 --> 00:27:14.880
+will be: we can benefit a lot from Dutch experience
+
+362
+00:27:14.880 --> 00:27:17.270
+in living labs. They have
+
+363
+00:27:18.320 --> 00:27:24.640
+living labs, because I was, and I visited some of their living
+
+364
+00:27:24.640 --> 00:27:29.440
+labs, and they're very great for Bulgaria.
+
+365
+00:27:29.440 --> 00:27:34.720
+We don't have so strong a foundation in this, and we will be very happy to
+
+366
+00:27:34.720 --> 00:27:36.390
+share this experience here.
+
+367
+00:27:38.000 --> 00:27:42.799
+Thank you so much, and I can only thank you for being very
+
+368
+00:27:42.799 --> 00:27:46.400
+succinct, very brief but at the same time very operational and very
+
+369
+00:27:46.400 --> 00:27:50.480
+action-oriented, and thank you so much for being very concrete in your
+
+370
+00:27:50.480 --> 00:27:54.000
+proposals as well. I think we've done a great wrap-up of this
+
+371
+00:27:54.000 --> 00:27:59.360
+morning's session, and please join me in applauding and with
+
+372
+00:27:59.360 --> 00:28:00.709
+gratitude to our speakers.

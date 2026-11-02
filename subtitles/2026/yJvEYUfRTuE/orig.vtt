@@ -1,0 +1,481 @@
+WEBVTT
+
+1
+00:00:01.520 --> 00:00:03.320
+So, good afternoon, ladies and gentlemen.
+
+2
+00:00:03.320 --> 00:00:09.150
+My name is Gerasim Slavov, and I will briefly talk to you about
+
+3
+00:00:09.840 --> 00:00:14.440
+the Bulgarian AI factory and the European Digital
+
+4
+00:00:14.440 --> 00:00:19.680
+Innovation Hub and how these two organizations exist together and
+
+5
+00:00:19.680 --> 00:00:24.070
+how you can use the hub in order to access the factory.
+
+6
+00:00:31.200 --> 00:00:35.600
+You have been hearing about BRAIN++ already a couple of
+
+7
+00:00:35.600 --> 00:00:40.880
+times since yesterday. Our colleagues have delivered a few
+
+8
+00:00:40.880 --> 00:00:45.040
+talks. Tomorrow we will talk again about that.
+
+9
+00:00:45.040 --> 00:00:48.000
+So, the AI factories exist.
+
+10
+00:00:48.000 --> 00:00:52.950
+They're here. In March last year, the European Commission,
+
+11
+00:00:53.520 --> 00:00:57.360
+via its joint undertaking for high-performance computing,
+
+12
+00:00:57.360 --> 00:01:01.870
+the so-called EuroHPC, announced its second wave of AI factories,
+
+13
+00:01:02.280 --> 00:01:06.720
+and Bulgaria was in the second wave, and this is how
+
+14
+00:01:06.720 --> 00:01:11.510
+BRAIN++ was created. But, as you can imagine, small and medium-size
+
+15
+00:01:11.920 --> 00:01:17.110
+enterprises do not wake up every morning thinking about GPU compute.
+
+16
+00:01:18.160 --> 00:01:19.320
+They have other problems.
+
+17
+00:01:19.320 --> 00:01:20.550
+They have real problems.
+
+18
+00:01:21.600 --> 00:01:26.270
+Very often these real problems could be solved by the AI factory.
+
+19
+00:01:26.680 --> 00:01:31.040
+The question is, how to facilitate the access of these small and
+
+20
+00:01:31.040 --> 00:01:33.550
+medium-size enterprises to BRAIN++?
+
+21
+00:01:34.240 --> 00:01:36.470
+We are assuming that the larger companies,
+
+22
+00:01:37.440 --> 00:01:42.600
+they are much better aware of the possibilities of AI factories.
+
+23
+00:01:42.600 --> 00:01:45.760
+So, our focus is on smaller companies, small and medium-size
+
+24
+00:01:45.760 --> 00:01:48.720
+companies. So, how do we provide access?
+
+25
+00:01:48.720 --> 00:01:54.560
+How do we popularize the resources of the AI factory to small and
+
+26
+00:01:54.560 --> 00:01:55.630
+medium-size companies?
+
+27
+00:01:57.480 --> 00:02:03.212
+This is where the European Digital Innovation Hub comes in.
+
+28
+00:02:03.212 --> 00:02:05.762
+Ours is called Innovation Hub.
+
+29
+00:02:06.532 --> 00:02:11.132
+Two partners under one roof, two organizations within Sofia Tech
+
+30
+00:02:11.132 --> 00:02:16.612
+Park. The Innovation Hub consists of 10 partners.
+
+31
+00:02:16.612 --> 00:02:18.892
+You can see them here on the wall.
+
+32
+00:02:18.892 --> 00:02:24.692
+I would like to point out a couple of leading universities.
+
+33
+00:02:24.692 --> 00:02:29.172
+This is Sofia University with the GATE Institute and the Technical
+
+34
+00:02:29.172 --> 00:02:32.402
+University of Sofia. We've got the Sofia Municipality,
+
+35
+00:02:32.892 --> 00:02:37.122
+which offers services to other municipalities in the country.
+
+36
+00:02:37.812 --> 00:02:40.002
+We have an investment fund, NEVEK.
+
+37
+00:02:40.852 --> 00:02:43.162
+We have the Strategic Center for Artificial Intelligence.
+
+38
+00:02:44.132 --> 00:02:47.202
+We have Digitex ICT Cluster.
+
+39
+00:02:48.572 --> 00:02:53.642
+Three units of Sofia Tech Park, Sofia Tech Park itself.
+
+40
+00:02:54.372 --> 00:02:57.482
+The laboratory complex of Sofia Tech Park, Sofia Tech Labs.
+
+41
+00:02:58.012 --> 00:03:00.252
+And of course, the supercomputer Discoverer,
+
+42
+00:03:00.252 --> 00:03:05.492
+which is also the basis, the infrastructure for the BRAIN++
+
+43
+00:03:05.492 --> 00:03:08.932
+Factory. And of course, I think I mentioned the Strategic Center for
+
+44
+00:03:08.932 --> 00:03:10.002
+Artificial Intelligence.
+
+45
+00:03:13.532 --> 00:03:18.562
+The Innovation Hub provides digital maturity assessment,
+
+46
+00:03:19.012 --> 00:03:21.762
+trainings, testing before invest.
+
+47
+00:03:22.212 --> 00:03:26.852
+But the one thing I would really be very happy if you remember from
+
+48
+00:03:26.852 --> 00:03:31.052
+this slide is that all these services are absolutely free for
+
+49
+00:03:31.052 --> 00:03:32.882
+small and medium-sized enterprises.
+
+50
+00:03:33.812 --> 00:03:36.882
+The partners providing the services are paid
+
+51
+00:03:37.892 --> 00:03:43.052
+by the European Union budget, part of which is Innovation Hub.
+
+52
+00:03:43.052 --> 00:03:46.362
+So, the SMEs receiving the services pay nothing.
+
+53
+00:03:50.452 --> 00:03:55.292
+BRAIN++: I will just repeat a few key facts which
+
+54
+00:03:55.292 --> 00:03:57.642
+have already been mentioned in these
+
+55
+00:03:58.772 --> 00:04:04.854
+last two days. BRAIN++ started technically in December
+
+56
+00:04:04.854 --> 00:04:10.444
+last year. It is one of the 13 AI factories in Europe.
+
+57
+00:04:12.214 --> 00:04:13.334
+Oh, sorry. That's wrong.
+
+58
+00:04:13.334 --> 00:04:16.814
+It's one of the 19 AI factories in Europe,
+
+59
+00:04:16.814 --> 00:04:18.724
+not 13. 13 are the antennas.
+
+60
+00:04:20.494 --> 00:04:25.774
+It's a 19 million euro project, which is split between the European
+
+61
+00:04:25.774 --> 00:04:29.244
+Commission, via EuroHPC, and the Bulgarian state.
+
+62
+00:04:31.134 --> 00:04:34.244
+And it provides
+
+63
+00:04:36.134 --> 00:04:39.764
+a very broad spectrum of AI infrastructure,
+
+64
+00:04:40.774 --> 00:04:47.254
+training, and compute power for anyone who might be willing to use
+
+65
+00:04:47.254 --> 00:04:52.054
+it. We do not have any limitation on the size of the company or the
+
+66
+00:04:52.054 --> 00:04:55.884
+type of the company using the resources of the AI factory.
+
+67
+00:04:59.094 --> 00:05:00.684
+How do we get to the AI factory?
+
+68
+00:05:01.854 --> 00:05:07.814
+Five simple steps. First two are provided by the hub, by Innovation
+
+69
+00:05:07.814 --> 00:05:12.724
+Hub. The third one is a joint activity by the hub and the factory.
+
+70
+00:05:13.734 --> 00:05:16.644
+The fourth step is provided by BRAIN++,
+
+71
+00:05:17.374 --> 00:05:23.174
+and the fifth one is again a joint activity by the hub and the
+
+72
+00:05:23.174 --> 00:05:24.564
+factory. So, basically,
+
+73
+00:05:25.934 --> 00:05:27.444
+the hub diagnoses
+
+74
+00:05:28.534 --> 00:05:30.804
+the company, the digital maturity
+
+75
+00:05:31.814 --> 00:05:33.364
+status of the company.
+
+76
+00:05:35.774 --> 00:05:40.404
+Then, it can provide specific training to this company.
+
+77
+00:05:42.654 --> 00:05:43.884
+Together with BRAIN++,
+
+78
+00:05:45.054 --> 00:05:48.774
+the hub does the prototyping and provides access to the
+
+79
+00:05:48.774 --> 00:05:53.734
+playground and the sandbox with the expert help provided by
+
+80
+00:05:53.734 --> 00:05:58.414
+BRAIN++. Then, depending on the type of the project,
+
+81
+00:05:58.414 --> 00:06:02.454
+it goes either through the fast lane or towards the
+
+82
+00:06:02.454 --> 00:06:04.124
+larger projects of the factory.
+
+83
+00:06:05.375 --> 00:06:09.885
+And finally, after a period of between 6 and 9 months,
+
+84
+00:06:10.455 --> 00:06:15.015
+this project could be directed towards various investment
+
+85
+00:06:15.015 --> 00:06:17.125
+types, various financing types.
+
+86
+00:06:23.575 --> 00:06:28.015
+I think I will not go into very big detail on
+
+87
+00:06:28.015 --> 00:06:32.405
+this slide, which describes in a little bit
+
+88
+00:06:34.135 --> 00:06:38.325
+more precision what the hub does and what BRAIN++ does.
+
+89
+00:06:39.015 --> 00:06:45.085
+What I would like to stress here is that you can very easily,
+
+90
+00:06:45.895 --> 00:06:51.535
+without any limitations, use the hub as your entrance to the AI
+
+91
+00:06:51.535 --> 00:06:56.375
+factory. Use the hub to assess the status of your company,
+
+92
+00:06:56.375 --> 00:06:59.085
+to assess the digital needs of your business,
+
+93
+00:06:59.855 --> 00:07:02.605
+and then the hub can direct you to BRAIN++.
+
+94
+00:07:03.375 --> 00:07:06.535
+Certain elements of the digital transformation could also be
+
+95
+00:07:06.535 --> 00:07:08.085
+provided by the hub itself.
+
+96
+00:07:08.775 --> 00:07:11.735
+Remember that Discoverer, the supercomputer which is part of
+
+97
+00:07:11.735 --> 00:07:15.535
+BRAIN++, is also a founding partner of Innovation Hub.
+
+98
+00:07:15.535 --> 00:07:18.815
+So, if you have a relatively, I don't like the word small,
+
+99
+00:07:18.815 --> 00:07:21.655
+but this is, I mean, what it is.
+
+100
+00:07:21.655 --> 00:07:22.645
+If you have a relatively
+
+101
+00:07:23.655 --> 00:07:25.445
+less resource-intensive
+
+102
+00:07:27.175 --> 00:07:33.245
+AI need or AI project, this could be served by Discoverer via
+
+103
+00:07:33.895 --> 00:07:40.925
+Innovation Hub. BRAIN++
+
+104
+00:07:42.615 --> 00:07:45.895
+is not limited only to Bulgaria.
+
+105
+00:07:45.895 --> 00:07:48.365
+It can provide services
+
+106
+00:07:49.615 --> 00:07:53.615
+across the European Union, and it can provide services to
+
+107
+00:07:53.615 --> 00:07:56.055
+companies outside of the European Union.
+
+108
+00:07:56.055 --> 00:08:02.085
+So, do not be deterred by the name European AI Factory.
+
+109
+00:08:03.335 --> 00:08:08.497
+You could absolutely access the services of BRAIN++
+
+110
+00:08:08.497 --> 00:08:11.407
+anytime and anywhere.
+
+111
+00:08:14.497 --> 00:08:19.537
+Regionally, I mean, BRAIN++ does not specialize in any
+
+112
+00:08:19.537 --> 00:08:25.377
+particular sector. It services any possible sector, using
+
+113
+00:08:25.377 --> 00:08:28.247
+the fact that we are in Varna: maritime,
+
+114
+00:08:28.657 --> 00:08:32.687
+logistics, tourism. This is something which can very
+
+115
+00:08:34.617 --> 00:08:37.777
+easily benefit from BRAIN++.
+
+116
+00:08:37.777 --> 00:08:41.577
+So, do not hesitate, give us a call, try us,
+
+117
+00:08:41.577 --> 00:08:47.617
+and we can provide a number of services towards the digital
+
+118
+00:08:47.617 --> 00:08:49.087
+transformation of your business.
+
+119
+00:08:50.217 --> 00:08:56.777
+Basically, the AI Factory is the engine, and the Innovation Hub
+
+120
+00:08:56.777 --> 00:08:59.767
+is the easiest access to this engine.

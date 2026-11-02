@@ -1,0 +1,1993 @@
+WEBVTT
+
+1
+00:00:01.800 --> 00:00:07.510
+Grazie per essere con noi per il prossimo tema, le soluzioni intelligenti.
+
+2
+00:00:08.400 --> 00:00:15.080
+Qui andremo un po' oltre e parleremo
+
+3
+00:00:15.080 --> 00:00:19.670
+degli aspetti tecnologici e anche organizzativi
+
+4
+00:00:20.840 --> 00:00:24.030
+della realizzazione e
+
+5
+00:00:25.320 --> 00:00:27.150
+dell'implementazione dell'innovazione.
+
+6
+00:00:28.000 --> 00:00:31.030
+E ancora una volta abbiamo preparato
+
+7
+00:00:32.520 --> 00:00:33.800
+un paio di giri di domande.
+
+8
+00:00:33.800 --> 00:00:37.430
+Poi apriremo al pubblico, ovviamente, per le domande.
+
+9
+00:00:38.040 --> 00:00:43.630
+E cercheremo di
+
+10
+00:00:44.640 --> 00:00:48.080
+Siete liberi di presentare quanto volete.
+
+11
+00:00:48.080 --> 00:00:51.990
+Dobbiamo rispettare i tempi, ma in questo panel, avendo due relatori,
+
+12
+00:00:52.680 --> 00:00:54.830
+avremo più tempo per scambiarci idee.
+
+13
+00:00:55.280 --> 00:00:58.960
+Ora, dottor Leijten, comincio da lei.
+
+14
+00:00:58.960 --> 00:01:04.199
+Il processo di transizione tecnologica è spesso ostacolato meno dai
+
+15
+00:01:04.199 --> 00:01:10.120
+limiti tecnici che da ciò che circonda la
+
+16
+00:01:10.120 --> 00:01:13.080
+tecnologia: quadri istituzionali e normativi,
+
+17
+00:01:13.080 --> 00:01:17.920
+catene di fornitura, un mercato stabile, un gruppo stabile di utenti. Vale questo
+
+18
+00:01:17.920 --> 00:01:21.310
+per le tecnologie di protezione delle infrastrutture critiche?
+
+19
+00:01:22.240 --> 00:01:26.200
+Quale di questi quattro – il quadro, le catene di fornitura,
+
+20
+00:01:26.200 --> 00:01:30.160
+i mercati e il gruppo di utenti – è oggi il vincolo principale?
+
+21
+00:01:30.160 --> 00:01:31.990
+Qual è la sua opinione?
+
+22
+00:01:33.080 --> 00:01:36.550
+Beh, lo sono tutti. È una brutta storia.
+
+23
+00:01:37.000 --> 00:01:40.440
+Ma dipende dal caso, suppongo.
+
+24
+00:01:40.440 --> 00:01:42.520
+E c'è anche un fattore tempo, credo.
+
+25
+00:01:42.520 --> 00:01:47.120
+È un processo, e nelle diverse fasi del processo
+
+26
+00:01:47.120 --> 00:01:49.470
+prevale un vincolo diverso.
+
+27
+00:01:50.080 --> 00:01:56.280
+Quindi, se si avvia una nuova tecnologia in una nuova regione,
+
+28
+00:01:56.280 --> 00:02:00.332
+magari, spesso mancano i quadri normativi o istituzionali.
+
+29
+00:02:00.332 --> 00:02:06.652
+E questo è già un motivo per cui, ad esempio,
+
+30
+00:02:06.652 --> 00:02:08.522
+gli investitori rimandano.
+
+31
+00:02:08.972 --> 00:02:15.372
+Non vogliono accollarsi alcuna incertezza, e
+
+32
+00:02:15.372 --> 00:02:20.012
+la mancanza di un quadro istituzionale o normativo è un
+
+33
+00:02:20.012 --> 00:02:25.412
+vincolo in questo caso. Fondamentalmente lo sviluppo di
+
+34
+00:02:25.412 --> 00:02:28.372
+una nuova tecnologia non avviene nel vuoto.
+
+35
+00:02:28.372 --> 00:02:30.492
+La tecnologia non finisce nel vuoto.
+
+36
+00:02:30.492 --> 00:02:33.602
+Una volta che si useranno i sistemi,
+
+37
+00:02:34.572 --> 00:02:37.452
+si avrà a che fare con potenziali utenti.
+
+38
+00:02:37.452 --> 00:02:39.092
+Ci deve essere un mercato.
+
+39
+00:02:39.092 --> 00:02:41.042
+Altrimenti la tecnologia non atterrerà da nessuna parte.
+
+40
+00:02:41.732 --> 00:02:45.962
+E quindi comporta ogni tipo di incertezza.
+
+41
+00:02:46.772 --> 00:02:49.412
+E come ho detto, dipende dal caso.
+
+42
+00:02:49.412 --> 00:02:54.692
+Posso immaginare, ad esempio, che la mancanza di un mercato
+
+43
+00:02:54.692 --> 00:02:56.362
+possa essere un problema qui in Bulgaria.
+
+44
+00:02:56.972 --> 00:03:01.612
+È stato un problema in molti processi di transizione nei
+
+45
+00:03:01.612 --> 00:03:06.052
+Paesi Bassi, in particolare ora, in questo processo di
+
+46
+00:03:06.052 --> 00:03:10.652
+transizione energetica. Ci sono nuove tecnologie.
+
+47
+00:03:10.652 --> 00:03:13.362
+Beh, non tutte nuove, ma nuove applicazioni.
+
+48
+00:03:14.132 --> 00:03:16.852
+C'è molta incertezza, ad esempio nella transizione energetica:
+
+49
+00:03:16.852 --> 00:03:20.012
+diventerà tutto elettrico o useremo
+
+50
+00:03:20.012 --> 00:03:25.172
+l'idrogeno? Il mio collega dell'Erasmus University
+
+51
+00:03:25.172 --> 00:03:26.962
+parlava del porto di Rotterdam.
+
+52
+00:03:27.492 --> 00:03:31.812
+Shell sta costruendo un enorme impianto a idrogeno nel porto di
+
+53
+00:03:31.812 --> 00:03:32.842
+Rotterdam in questo momento.
+
+54
+00:03:33.572 --> 00:03:36.722
+E questo ha comportato tutte le incertezze che abbiamo appena citato.
+
+55
+00:03:37.772 --> 00:03:40.842
+Non erano certi che ci sarebbe stato un mercato per l'idrogeno,
+
+56
+00:03:41.252 --> 00:03:43.172
+anche se l'Autorità portuale di Rotterdam
+
+57
+00:03:43.172 --> 00:03:47.052
+sta investendo molto in questa transizione dai
+
+58
+00:03:47.052 --> 00:03:48.402
+combustibili fossili all'idrogeno.
+
+59
+00:03:48.972 --> 00:03:51.132
+Ma comportava comunque molte incertezze.
+
+60
+00:03:51.132 --> 00:03:54.852
+E il motivo per cui Shell ha osato fare questo enorme investimento,
+
+61
+00:03:54.852 --> 00:03:59.892
+che è di 1 miliardo di euro, è che se non riescono a
+
+62
+00:03:59.892 --> 00:04:02.444
+vendere l'idrogeno, possono comunque usarlo loro stessi.
+
+63
+00:04:03.774 --> 00:04:08.764
+Perché hanno una raffineria nel porto di Rotterdam,
+
+64
+00:04:09.174 --> 00:04:12.854
+quindi se non riescono a venderlo, possono comunque ridurre la loro
+
+65
+00:04:12.854 --> 00:04:14.844
+impronta di carbonio, il che è altrettanto positivo.
+
+66
+00:04:15.254 --> 00:04:18.054
+Quindi, il motivo per cui hanno potuto fare questo passo,
+
+67
+00:04:18.054 --> 00:04:21.894
+questo passo molto rischioso, è che c'è un ambiente solido per
+
+68
+00:04:21.894 --> 00:04:25.334
+il loro investimento. Ed è questo che si cerca.
+
+69
+00:04:25.334 --> 00:04:31.094
+E un ambiente solido si può creare costruendo una
+
+70
+00:04:31.094 --> 00:04:36.054
+comunità con soggetti del mercato che possano alla fine comprare il vostro
+
+71
+00:04:36.054 --> 00:04:38.084
+prodotto, fornitori,
+
+72
+00:04:39.574 --> 00:04:41.044
+il governo dovrebbe essere coinvolto.
+
+73
+00:04:41.614 --> 00:04:44.524
+Se si tratta di tecnologia all'avanguardia,
+
+74
+00:04:45.014 --> 00:04:48.534
+probabilmente dovrebbero essere coinvolte università o istituti di ricerca.
+
+75
+00:04:48.534 --> 00:04:52.894
+E più è varia quella comunità,
+
+76
+00:04:52.894 --> 00:04:57.334
+più è solida, e migliori sono il contesto e
+
+77
+00:04:57.334 --> 00:04:59.324
+l'ambiente per investimenti così rischiosi.
+
+78
+00:05:01.094 --> 00:05:03.524
+Grazie. Signor Vatkov,
+
+79
+00:05:05.534 --> 00:05:09.254
+com'è il mercato delle soluzioni intelligenti qui in Bulgaria,
+
+80
+00:05:09.254 --> 00:05:10.644
+e in particolare a Varna?
+
+81
+00:05:12.654 --> 00:05:17.054
+E magari sono collegate alle infrastrutture critiche?
+
+82
+00:05:17.054 --> 00:05:20.854
+C'è un mercato per il loro uso nella protezione di
+
+83
+00:05:20.854 --> 00:05:22.524
+porti, infrastrutture energetiche,
+
+84
+00:05:24.174 --> 00:05:27.374
+per la cybersicurezza in diversi ambiti?
+
+85
+00:05:27.374 --> 00:05:28.644
+Com'è il mercato?
+
+86
+00:05:30.214 --> 00:05:35.014
+Beh, penso che esista il mercato locale, e in particolare il
+
+87
+00:05:35.014 --> 00:05:39.364
+mercato di Varna non è molto diverso da quello globale.
+
+88
+00:05:40.094 --> 00:05:44.804
+E naturalmente, quando parliamo di infrastrutture intelligenti,
+
+89
+00:05:45.974 --> 00:05:52.644
+abbiamo naturalmente molti dispositivi smart in queste infrastrutture
+
+90
+00:05:53.774 --> 00:06:00.814
+che aumentano in modo significativo la superficie di attacco e offrono
+
+91
+00:06:00.814 --> 00:06:07.815
+l'opportunità a soluzioni di sicurezza intelligenti di controllare e di
+
+92
+00:06:07.815 --> 00:06:14.335
+adottare misure di sicurezza adeguate in una parte
+
+93
+00:06:14.335 --> 00:06:16.805
+di tali infrastrutture.
+
+94
+00:06:17.695 --> 00:06:21.575
+Ad essere onesti, non è una tendenza nuova.
+
+95
+00:06:21.575 --> 00:06:28.855
+Probabilmente si sta sviluppando a una nuova velocità
+
+96
+00:06:28.855 --> 00:06:35.535
+a causa delle innovazioni tecnologiche e
+
+97
+00:06:35.535 --> 00:06:37.525
+dei rapidi cambiamenti nel panorama delle minacce.
+
+98
+00:06:38.335 --> 00:06:42.535
+Ma come ho detto, non è una specificità locale.
+
+99
+00:06:42.535 --> 00:06:44.205
+È più un fenomeno globale.
+
+100
+00:06:44.815 --> 00:06:49.925
+Quando parliamo dei cambiamenti nel panorama delle minacce,
+
+101
+00:06:50.535 --> 00:06:54.245
+il mio collega ha citato le incertezze.
+
+102
+00:06:57.135 --> 00:06:59.335
+Non è una cosa nuova, giusto?
+
+103
+00:06:59.335 --> 00:07:02.925
+Probabilmente sono
+
+104
+00:07:04.095 --> 00:07:07.725
+di qualità e quantità diverse.
+
+105
+00:07:08.735 --> 00:07:11.525
+Ma non è nuovo,
+
+106
+00:07:13.135 --> 00:07:17.535
+è un attributo che dobbiamo considerare quando pianifichiamo tali
+
+107
+00:07:17.535 --> 00:07:21.415
+infrastrutture. Che si parli di logistica o del
+
+108
+00:07:21.415 --> 00:07:25.845
+settore energetico, le infrastrutture critiche
+
+109
+00:07:27.135 --> 00:07:30.015
+hanno un impatto significativo sulla società,
+
+110
+00:07:30.015 --> 00:07:34.045
+giusto?
+
+111
+00:07:35.495 --> 00:07:41.285
+Grazie. Quindi, se
+
+112
+00:07:42.575 --> 00:07:45.775
+andiamo un po' oltre, signor
+
+113
+00:07:45.775 --> 00:07:49.535
+Vatkov, un porto connesso si basa sia sulla tecnologia operativa sia sui
+
+114
+00:07:49.535 --> 00:07:54.255
+sistemi aziendali: attrezzature dei terminal, traffico navale,
+
+115
+00:07:54.255 --> 00:07:58.855
+piattaforme di carico. In questo ambito, da dove dovrebbe partire la sicurezza
+
+116
+00:07:58.855 --> 00:08:03.695
+fin dalla progettazione, e in che misura i quadri normativi
+
+117
+00:08:03.695 --> 00:08:07.735
+come la direttiva NIS 2 o il Cybersecurity Act possono
+
+118
+00:08:07.735 --> 00:08:12.697
+servire da incentivo per gli operatori delle infrastrutture a
+
+119
+00:08:12.697 --> 00:08:15.297
+modernizzarsi tramite la cybersicurezza? Bellissima domanda.
+
+120
+00:08:15.297 --> 00:08:17.137
+Questa mi piace molto.
+
+121
+00:08:17.137 --> 00:08:23.777
+Da architetto: la sicurezza fin dalla progettazione, come concetto, è
+
+122
+00:08:23.777 --> 00:08:28.897
+nata negli anni Ottanta e viene
+
+123
+00:08:28.897 --> 00:08:31.527
+dall'industria dello sviluppo software.
+
+124
+00:08:32.417 --> 00:08:35.927
+E fondamentalmente
+
+125
+00:08:37.937 --> 00:08:44.767
+parte dal fatto che se si individuano lacune
+
+126
+00:08:45.377 --> 00:08:46.767
+in una progettazione
+
+127
+00:08:47.897 --> 00:08:52.447
+all'inizio, è molto più facile correggerle che più tardi.
+
+128
+00:08:53.297 --> 00:09:00.417
+Quindi, se si porta questo principio alle tecnologie OT e IT,
+
+129
+00:09:00.417 --> 00:09:04.767
+ci sono certe tendenze che non sono nemmeno del tutto nuove.
+
+130
+00:09:05.217 --> 00:09:10.327
+C'è una convergenza piuttosto ampia tra OT e IT.
+
+131
+00:09:10.977 --> 00:09:16.087
+Conosciamo le sfide nell'ambito OT, con la più lunga
+
+132
+00:09:17.017 --> 00:09:23.697
+vita utile delle apparecchiature, con una probabilmente più lunga vita
+
+133
+00:09:23.697 --> 00:09:29.977
+delle vulnerabilità che non si possono correggere facilmente perché
+
+134
+00:09:29.977 --> 00:09:32.607
+c'è un legame molto forte con le operazioni.
+
+135
+00:09:33.497 --> 00:09:37.767
+E allo stesso tempo vogliamo trarre vantaggio dai
+
+136
+00:09:38.617 --> 00:09:44.937
+servizi IT alla moda e renderli più
+
+137
+00:09:44.937 --> 00:09:48.617
+facili da usare e più efficienti dal punto di vista aziendale.
+
+138
+00:09:48.617 --> 00:09:52.007
+Questa tendenza alla convergenza di IT e OT,
+
+139
+00:09:52.857 --> 00:09:55.817
+come ho detto, non è nuova.
+
+140
+00:09:55.817 --> 00:10:00.057
+Quindi, quando applichiamo il concetto di sicurezza fin dalla progettazione,
+
+141
+00:10:00.057 --> 00:10:04.297
+dobbiamo ovviamente partire dalla progettazione
+
+142
+00:10:04.297 --> 00:10:07.177
+dell'infrastruttura. Ovviamente non possiamo riprogettare l'OT,
+
+143
+00:10:07.177 --> 00:10:10.978
+giusto? Non è facile. Alcune cose sono lì per restare e per
+
+144
+00:10:10.978 --> 00:10:13.448
+restare per un lungo periodo di tempo.
+
+145
+00:10:14.178 --> 00:10:20.898
+Ma è per questo che dobbiamo essere molto chiari su quali siano gli
+
+146
+00:10:20.898 --> 00:10:26.018
+aspetti critici della nostra tecnologia operativa nel contesto in cui
+
+147
+00:10:26.018 --> 00:10:30.778
+la usiamo. Questo significa che dobbiamo seguire un
+
+148
+00:10:30.778 --> 00:10:34.018
+approccio basato sul rischio. Dobbiamo sapere quali sono i nostri asset critici,
+
+149
+00:10:34.018 --> 00:10:37.808
+quali i processi critici, dove sono i confini di fiducia.
+
+150
+00:10:38.618 --> 00:10:44.098
+Perché li attraversiamo: perché sono attraversamenti voluti.
+
+151
+00:10:44.098 --> 00:10:47.008
+Come ho detto, la convergenza tra spazio IT e OT.
+
+152
+00:10:47.698 --> 00:10:53.378
+E seguire un approccio basato sul rischio per ottenere un equilibrio ottimale
+
+153
+00:10:53.378 --> 00:10:57.608
+tra le esigenze aziendali che abbiamo nel contesto
+
+154
+00:10:58.738 --> 00:11:01.488
+e, dall'altro lato, le minacce rilevanti per il business.
+
+155
+00:11:02.298 --> 00:11:08.328
+E naturalmente il costo della loro mitigazione, a un livello adeguato
+
+156
+00:11:10.738 --> 00:11:13.248
+Grazie. Quindi
+
+157
+00:11:14.378 --> 00:11:17.978
+andando un po' oltre, dottor
+
+158
+00:11:17.978 --> 00:11:23.408
+Leijten, in base alla sua ricerca, cosa serve perché un sistema
+
+159
+00:11:23.818 --> 00:11:26.728
+o un'infrastruttura critica stessa sia robusta?
+
+160
+00:11:27.538 --> 00:11:32.288
+Perché è importante e in cosa si differenzia dalla resilienza?
+
+161
+00:11:34.298 --> 00:11:36.738
+Sono diverse domande.
+
+162
+00:11:36.738 --> 00:11:43.048
+Allora cominciamo: un sistema robusto è uno che
+
+163
+00:11:43.538 --> 00:11:50.378
+è già molto stabile prima di
+
+164
+00:11:50.378 --> 00:11:55.698
+essere minacciato. Un sistema resiliente è uno che si riprende se
+
+165
+00:11:55.698 --> 00:11:57.978
+riceve un colpo: si riprende.
+
+166
+00:11:57.978 --> 00:12:03.568
+Un sistema robusto invece non crolla affatto.
+
+167
+00:12:04.098 --> 00:12:06.378
+Un sistema resiliente prima riceve un colpo,
+
+168
+00:12:06.378 --> 00:12:12.768
+crolla, si rialza e poi funziona di nuovo.
+
+169
+00:12:13.578 --> 00:12:16.699
+Il che va bene, ma sarebbe meglio se non crollasse
+
+170
+00:12:16.699 --> 00:12:22.659
+affatto. Un sistema robusto invece è uno che è
+
+171
+00:12:22.659 --> 00:12:28.579
+ad esempio ridondante. Quindi non è vulnerabile per aver scelto una sola
+
+172
+00:12:28.579 --> 00:12:31.259
+opzione e poi scoprire che l'opzione non
+
+173
+00:12:31.259 --> 00:12:33.689
+funziona o che l'opzione è minacciata.
+
+174
+00:12:34.099 --> 00:12:38.219
+Quindi hai sempre un piano B.
+
+175
+00:12:38.219 --> 00:12:39.939
+Questa è fondamentalmente l'idea.
+
+176
+00:12:39.939 --> 00:12:45.449
+E più eterogenea è la comunità che lavora con il sistema,
+
+177
+00:12:45.939 --> 00:12:47.929
+maggiore è la probabilità che sia robusto.
+
+178
+00:12:48.979 --> 00:12:53.329
+Perché ci sono più opzioni del tipo piano B.
+
+179
+00:12:54.659 --> 00:12:58.099
+Allora, come si costruisce una cosa simile?
+
+180
+00:12:58.099 --> 00:13:04.409
+Beh, un buon punto di partenza è, direi, il sistema esistente.
+
+181
+00:13:05.019 --> 00:13:08.459
+Se si progetta un sistema completamente nuovo, in genere si cerca di
+
+182
+00:13:08.459 --> 00:13:14.019
+ottimizzare. E qui vorrei citare il lavoro del biologo
+
+183
+00:13:14.019 --> 00:13:16.849
+francese Olivier Hamant, che
+
+184
+00:13:17.819 --> 00:13:22.499
+ha pubblicato di recente parecchio su questo tema, come la
+
+185
+00:13:22.499 --> 00:13:25.089
+differenza tra resilienza e
+
+186
+00:13:26.059 --> 00:13:32.619
+robustezza. La resilienza non è più considerata un modo molto
+
+187
+00:13:32.619 --> 00:13:34.619
+efficiente per... Beh, è molto efficiente,
+
+188
+00:13:34.619 --> 00:13:39.179
+ma l'efficienza non è il modo migliore per costruire questi sistemi.
+
+189
+00:13:39.179 --> 00:13:43.009
+Quindi non dovremmo progettare per un'unica soluzione ottimale,
+
+190
+00:13:43.579 --> 00:13:48.179
+dovremmo progettare un sistema che magari più avanti possa passare a
+
+191
+00:13:48.179 --> 00:13:51.859
+uno scenario diverso. Ho colleghi che lavorano su quelli che
+
+192
+00:13:51.859 --> 00:13:52.889
+chiamano
+
+193
+00:13:54.579 --> 00:14:01.139
+percorsi adattivi. Perché il futuro è intrinsecamente
+
+194
+00:14:01.139 --> 00:14:05.379
+incerto in questa tecnologia all'avanguardia, non sappiamo esattamente
+
+195
+00:14:05.379 --> 00:14:08.579
+dove saremo tra 40 o 50 anni.
+
+196
+00:14:08.579 --> 00:14:10.459
+Che aspetto avrà la tecnologia.
+
+197
+00:14:10.459 --> 00:14:15.051
+Che aspetto avranno le tecnologie che usiamo, che sia l'IA o
+
+198
+00:14:16.021 --> 00:14:17.651
+i sistemi energetici o altro.
+
+199
+00:14:18.101 --> 00:14:21.291
+Quindi puntare su un solo cavallo è molto rischioso.
+
+200
+00:14:21.901 --> 00:14:26.901
+Invece si possono sviluppare vari scenari in cui ancora
+
+201
+00:14:26.901 --> 00:14:29.581
+non si sa quale sia il punto all'orizzonte verso cui ci si muove,
+
+202
+00:14:29.581 --> 00:14:35.821
+ma si possono individuare magari alcuni bivi in cui
+
+203
+00:14:35.821 --> 00:14:41.141
+si potrebbe cambiare rotta. Se questo accade, dobbiamo passare a
+
+204
+00:14:41.141 --> 00:14:42.571
+un altro scenario.
+
+205
+00:14:43.581 --> 00:14:46.451
+E questo è ciò che chiamerei un sistema robusto.
+
+206
+00:14:47.581 --> 00:14:48.651
+Se ha senso.
+
+207
+00:14:49.781 --> 00:14:53.741
+E potrebbe fare un esempio più pratico di questi
+
+208
+00:14:53.741 --> 00:14:58.741
+sistemi, magari nei Paesi Bassi? Dove
+
+209
+00:14:58.741 --> 00:15:00.581
+esistono? Dove sono inseriti?
+
+210
+00:15:00.581 --> 00:15:04.261
+Come vengono implementati? Nel settore privato e in quello pubblico.
+
+211
+00:15:04.261 --> 00:15:06.541
+Ne parleremo più avanti.
+
+212
+00:15:06.541 --> 00:15:11.621
+Beh, se mi permette, ho un esempio interessante, non dai
+
+213
+00:15:11.621 --> 00:15:15.731
+Paesi Bassi, ma da Houston, negli Stati Uniti.
+
+214
+00:15:16.461 --> 00:15:21.461
+Vado a Houston abbastanza spesso, una volta anche con un gruppo di
+
+215
+00:15:21.461 --> 00:15:26.381
+miei studenti, e Houston ha problemi di alluvioni.
+
+216
+00:15:26.381 --> 00:15:28.461
+Un problema che abbiamo avuto anche nei Paesi Bassi.
+
+217
+00:15:28.461 --> 00:15:30.171
+Ecco dov'è il collegamento.
+
+218
+00:15:30.701 --> 00:15:34.061
+E ogni tanto c'è un uragano,
+
+219
+00:15:34.061 --> 00:15:38.221
+piove moltissimo e praticamente tutta la città si allaga
+
+220
+00:15:38.221 --> 00:15:40.571
+perché è tutta cemento e asfalto.
+
+221
+00:15:41.781 --> 00:15:46.221
+Ora ci sono due università che sviluppano piani estremamente costosi
+
+222
+00:15:46.221 --> 00:15:50.261
+per costruire ogni tipo di sistema di dighe, e non so cosa
+
+223
+00:15:50.261 --> 00:15:53.611
+intendano fare. Costerà miliardi di dollari,
+
+224
+00:15:54.101 --> 00:15:56.421
+e vi garantisco che non li otterranno mai,
+
+225
+00:15:56.421 --> 00:15:59.171
+soprattutto non sotto l'attuale governo federale.
+
+226
+00:16:00.141 --> 00:16:04.091
+Poi, un po' più tardi, abbiamo visitato
+
+227
+00:16:05.061 --> 00:16:09.261
+un luogo nel centro di Houston con un problema acuto:
+
+228
+00:16:09.261 --> 00:16:12.291
+a ogni pioggia la strada si allagava.
+
+229
+00:16:13.421 --> 00:16:16.181
+E la gente dell'amministrazione cittadina semplicemente chiese:
+
+230
+00:16:16.181 --> 00:16:19.062
+cosa possiamo farci? E qua e là
+
+231
+00:16:19.062 --> 00:16:23.622
+ruppero la pavimentazione e
+
+232
+00:16:23.622 --> 00:16:26.212
+costruirono solo un piccolo bacino.
+
+233
+00:16:27.142 --> 00:16:30.742
+Il problema era che la rete fognaria non reggeva
+
+234
+00:16:30.742 --> 00:16:33.732
+una pioggia di quell'entità in così poco tempo.
+
+235
+00:16:34.822 --> 00:16:39.382
+Così costruirono un bacino con accesso alla rete fognaria,
+
+236
+00:16:39.382 --> 00:16:43.062
+ma rialzato, in modo che la pioggia avesse prima la possibilità di
+
+237
+00:16:43.062 --> 00:16:44.172
+penetrare nel terreno.
+
+238
+00:16:45.222 --> 00:16:48.782
+Solo quando trabocca, l'acqua defluisce nella rete fognaria
+
+239
+00:16:48.782 --> 00:16:52.052
+e a quel punto la capacità è improvvisamente sufficiente.
+
+240
+00:16:52.982 --> 00:16:56.262
+Ci piantarono qualche cespuglio, così la gente pensò che fosse
+
+241
+00:16:56.262 --> 00:16:58.702
+un progetto di abbellimento.
+
+242
+00:16:58.702 --> 00:17:05.222
+Non lo era. Ma la soluzione funzionò, e molto meglio
+
+243
+00:17:05.222 --> 00:17:09.182
+dei piani da miliardi delle università, perché era
+
+244
+00:17:09.182 --> 00:17:10.892
+molto piccola e scalabile.
+
+245
+00:17:12.422 --> 00:17:16.942
+Così hanno potuto provarla prima in una strada e vedere se funzionava.
+
+246
+00:17:16.942 --> 00:17:20.582
+La soglia d'ingresso era molto bassa: costava forse qualche migliaio di
+
+247
+00:17:20.582 --> 00:17:23.582
+dollari. E quando hanno visto che funzionava,
+
+248
+00:17:23.582 --> 00:17:25.452
+l'hanno estesa ad altre strade.
+
+249
+00:17:26.622 --> 00:17:31.902
+Ed è così che stanno cambiando l'ambiente di
+
+250
+00:17:31.902 --> 00:17:35.692
+Houston per un futuro diverso, con molta più pioggia.
+
+251
+00:17:36.422 --> 00:17:38.052
+E questa è una soluzione robusta,
+
+252
+00:17:39.702 --> 00:17:42.702
+perché si può scalare in su o in giù.
+
+253
+00:17:42.702 --> 00:17:45.852
+Se non funziona, la si scarta e si cerca qualcos'altro.
+
+254
+00:17:46.462 --> 00:17:49.612
+È anche molto facile da implementare.
+
+255
+00:17:50.582 --> 00:17:54.972
+Queste sono le soluzioni che funzionano nelle situazioni di stress.
+
+256
+00:17:57.302 --> 00:18:02.942
+Grazie, signor Vatkov. Le ricorda qualche soluzione nel suo
+
+257
+00:18:02.942 --> 00:18:06.942
+ambito, applicata anche in Bulgaria, che
+
+258
+00:18:06.942 --> 00:18:11.542
+potrebbe essere trasposta come buon esempio, magari anche nella
+
+259
+00:18:11.542 --> 00:18:13.092
+cybersicurezza?
+
+260
+00:18:14.342 --> 00:18:19.823
+Beh, non ho osservazioni sul settore IT bulgaro e di Varna,
+
+261
+00:18:19.823 --> 00:18:26.693
+ma il tema robustezza contro resilienza -
+
+262
+00:18:27.503 --> 00:18:29.893
+alla fine servono entrambe.
+
+263
+00:18:30.543 --> 00:18:35.063
+Si collega anche al tema della sicurezza fin dalla progettazione.
+
+264
+00:18:35.063 --> 00:18:41.013
+Non ci si può sempre permettere di costruire sistemi davvero
+
+265
+00:18:41.903 --> 00:18:47.183
+robusti, perché hanno un prezzo,
+
+266
+00:18:47.183 --> 00:18:53.103
+giusto? Quindi sì, si può essere intelligenti e trovare
+
+267
+00:18:53.103 --> 00:18:56.573
+una soluzione pragmatica come l'esempio citato.
+
+268
+00:18:57.383 --> 00:19:04.183
+Si può anche cercare di individuare i percorsi critici che devono essere
+
+269
+00:19:04.183 --> 00:19:06.373
+robusti nel proprio ambiente.
+
+270
+00:19:07.343 --> 00:19:10.423
+Ma alla fine bisogna anche prepararsi a essere
+
+271
+00:19:10.423 --> 00:19:14.423
+resilienti perché, siamo onesti,
+
+272
+00:19:14.423 --> 00:19:18.423
+non è questione di se un incidente accadrà, se
+
+273
+00:19:18.423 --> 00:19:20.093
+accadrà qualcosa di brutto.
+
+274
+00:19:21.023 --> 00:19:25.183
+La questione è quando accadrà, e alla fine
+
+275
+00:19:25.183 --> 00:19:29.983
+un'altra domanda molto importante a cui un'organizzazione deve
+
+276
+00:19:29.983 --> 00:19:36.893
+rispondere è: con che rapidità possiamo individuare un incidente?
+
+277
+00:19:37.583 --> 00:19:43.383
+Siamo pronti ad attenuarlo, a contenerlo e a riprenderci
+
+278
+00:19:43.383 --> 00:19:49.653
+da esso? E sono aspetti che appartengono al più ampio
+
+279
+00:19:50.463 --> 00:19:53.573
+progetto di robustezza, direi.
+
+280
+00:19:55.463 --> 00:20:01.973
+Grazie. Vorrei che parlassimo un po' della
+
+281
+00:20:02.383 --> 00:20:04.813
+parte di gestione
+
+282
+00:20:06.103 --> 00:20:10.493
+dell'avanzamento dell'innovazione e della creazione di
+
+283
+00:20:11.983 --> 00:20:13.213
+prodotti e soluzioni intelligenti di successo.
+
+284
+00:20:13.823 --> 00:20:20.423
+Ieri, in uno dei panel politici di apertura, uno
+
+285
+00:20:20.423 --> 00:20:24.785
+dei relatori ha detto che le aziende bulgare devono
+
+286
+00:20:24.785 --> 00:20:28.505
+migliorare notevolmente le proprie pratiche di gestione per
+
+287
+00:20:28.505 --> 00:20:34.785
+crescere e scalare. Quindi è una domanda di seguito
+
+288
+00:20:34.785 --> 00:20:39.745
+per entrambi, riguardo alla gestione, nel
+
+289
+00:20:39.745 --> 00:20:41.975
+settore privato ma anche in quello pubblico.
+
+290
+00:20:42.505 --> 00:20:46.535
+Cosa dobbiamo cambiare per adottare la tecnologia
+
+291
+00:20:47.865 --> 00:20:48.935
+in modo più competitivo?
+
+292
+00:20:50.105 --> 00:20:56.705
+E signor Vatkov, vorrei anche che commentasse
+
+293
+00:20:56.705 --> 00:21:00.425
+se secondo lei la gestione è un problema anche
+
+294
+00:21:00.425 --> 00:21:03.295
+nel settore privato bulgaro e
+
+295
+00:21:05.465 --> 00:21:09.655
+come possiamo affrontarlo, se lo è.
+
+296
+00:21:11.185 --> 00:21:16.465
+Posso dirlo dal mio punto di vista, mi occupo
+
+297
+00:21:16.465 --> 00:21:18.335
+soprattutto di cybersicurezza.
+
+298
+00:21:19.105 --> 00:21:25.705
+Guardando alle normative che
+
+299
+00:21:25.705 --> 00:21:29.615
+stanno emergendo negli ultimi anni
+
+300
+00:21:30.665 --> 00:21:35.945
+e che insistono su una governance aggiuntiva
+
+301
+00:21:35.945 --> 00:21:41.265
+nelle organizzazioni a cui siamo associati,
+
+302
+00:21:41.265 --> 00:21:47.945
+rendendo la governance un tema manageriale,
+
+303
+00:21:47.945 --> 00:21:53.745
+ma anche spostando i temi di responsabilità, di responsabilità personale,
+
+304
+00:21:53.745 --> 00:21:54.985
+sul management.
+
+305
+00:21:54.985 --> 00:21:57.495
+Penso quindi che un cambiamento significativo
+
+306
+00:21:58.865 --> 00:22:02.665
+che deve avvenire per primo sia rendersi conto
+
+307
+00:22:02.665 --> 00:22:03.615
+di questi cambiamenti.
+
+308
+00:22:04.785 --> 00:22:07.985
+Questo è il primo punto.
+
+309
+00:22:07.985 --> 00:22:10.815
+E poi, naturalmente,
+
+310
+00:22:12.025 --> 00:22:17.505
+iniziare a chiedersi come tale normativa si applichi al
+
+311
+00:22:17.505 --> 00:22:22.505
+nostro contesto organizzativo, o come tali cambiamenti dell'
+
+312
+00:22:22.505 --> 00:22:26.176
+ambiente si applichino al contesto dell'organizzazione.
+
+313
+00:22:26.826 --> 00:22:31.896
+Non credo che abbiamo un'efficienza sufficiente.
+
+314
+00:22:33.266 --> 00:22:36.936
+L'azienda è lì per concentrarsi sul business.
+
+315
+00:22:38.346 --> 00:22:40.536
+Penso tuttavia
+
+316
+00:22:41.506 --> 00:22:45.216
+che dobbiamo iniziare a bilanciare meglio le cose,
+
+317
+00:22:46.706 --> 00:22:50.776
+a non puntare a soluzioni
+
+318
+00:22:51.826 --> 00:22:55.216
+puntuali, ma a pensare alla
+
+319
+00:22:56.466 --> 00:23:02.386
+strategia, perché la strategia determina la tecnologia e
+
+320
+00:23:02.386 --> 00:23:09.066
+non viceversa. La tecnologia plasma il contesto
+
+321
+00:23:09.066 --> 00:23:10.856
+in cui abbiamo le nostre opportunità.
+
+322
+00:23:12.026 --> 00:23:15.706
+Ma alla fine, se un'organizzazione non ha una
+
+323
+00:23:15.706 --> 00:23:22.586
+strategia chiara, è più probabile che finiamo
+
+324
+00:23:22.586 --> 00:23:25.936
+per prendere decisioni gestionali inefficienti.
+
+325
+00:23:27.186 --> 00:23:31.226
+Grazie, dottor Leijten. Il suo punto di vista su strategia e gestione e su come
+
+326
+00:23:31.226 --> 00:23:37.186
+costruiscono l'innovazione. Beh, sono d'accordo con il mio
+
+327
+00:23:37.186 --> 00:23:40.176
+collega. Penso che uno dei problemi,
+
+328
+00:23:40.866 --> 00:23:43.306
+e forse è un po' controverso che lo dica io,
+
+329
+00:23:43.306 --> 00:23:46.136
+sia che non dovremmo organizzare tutto in progetti.
+
+330
+00:23:47.106 --> 00:23:49.986
+Ed è un po' delicato per me dirlo, perché insegno in effetti
+
+331
+00:23:49.986 --> 00:23:52.136
+un corso di project management alla TU Delft.
+
+332
+00:23:52.706 --> 00:23:56.096
+Ma il problema di un progetto è che è un'attività una tantum.
+
+333
+00:23:56.906 --> 00:24:01.546
+E quando è finito, chi lo ha realizzato
+
+334
+00:24:01.546 --> 00:24:04.696
+consegna le chiavi al proprietario, e basta.
+
+335
+00:24:05.346 --> 00:24:08.536
+E ciò che succede dopo non è affar suo,
+
+336
+00:24:08.946 --> 00:24:10.546
+e invece dovrebbe esserlo.
+
+337
+00:24:10.546 --> 00:24:16.826
+Invece si possono organizzare le cose più come un
+
+338
+00:24:16.826 --> 00:24:21.386
+processo, in cui chi costruisce il sistema ha anche
+
+339
+00:24:21.386 --> 00:24:23.616
+una certa responsabilità sul suo funzionamento.
+
+340
+00:24:24.386 --> 00:24:28.827
+In questo modo ha l'incentivo a costruirlo in modo più robusto.
+
+341
+00:24:28.827 --> 00:24:34.587
+Ma si possono anche gestire così, dal punto di vista
+
+342
+00:24:34.587 --> 00:24:38.417
+del management e della governance.
+
+343
+00:24:38.908 --> 00:24:43.067
+Gli indicatori chiave di prestazione con cui li si valuta
+
+344
+00:24:43.067 --> 00:24:45.137
+non sono tanto che consegnino ciò che hanno promesso,
+
+345
+00:24:45.547 --> 00:24:49.707
+cioè il manufatto fisico, ma anche se fa ciò che
+
+346
+00:24:49.707 --> 00:24:53.017
+doveva fare. Quindi:
+
+347
+00:24:54.107 --> 00:24:55.297
+il servizio è disponibile?
+
+348
+00:24:56.427 --> 00:24:59.218
+Se c'è un'interruzione, con che rapidità viene risolta?
+
+349
+00:25:00.307 --> 00:25:04.017
+In questo modo si dà loro un incentivo diverso.
+
+350
+00:25:05.067 --> 00:25:08.268
+E la mia esperienza è che inventano ogni genere di
+
+351
+00:25:08.268 --> 00:25:11.908
+soluzioni intelligenti che non avrebbero mai ideato se fosse stato un
+
+352
+00:25:11.908 --> 00:25:14.537
+progetto con la semplice consegna delle chiavi.
+
+353
+00:25:15.587 --> 00:25:19.908
+Quindi si sposta la responsabilità, e posso farvi degli esempi.
+
+354
+00:25:19.908 --> 00:25:23.668
+Non so, considerando il tema della cybersicurezza e dell'IA
+
+355
+00:25:23.668 --> 00:25:26.668
+di cui parleremo, forse non è molto importante per il pubblico,
+
+356
+00:25:26.668 --> 00:25:32.187
+ma è così che è organizzata la manutenzione della rete ferroviaria
+
+357
+00:25:32.187 --> 00:25:34.897
+nei Paesi Bassi negli ultimi 20 anni.
+
+358
+00:25:35.307 --> 00:25:37.827
+Prima era sempre un progetto una tantum.
+
+359
+00:25:37.827 --> 00:25:40.867
+Bisognava sostituire quello scambio, verniciare quel ponte o
+
+360
+00:25:40.867 --> 00:25:44.377
+altro. Il lavoro era fatto, e quando finiva,
+
+361
+00:25:44.908 --> 00:25:48.268
+si consegnavano le chiavi, per così dire, e finiva lì.
+
+362
+00:25:48.268 --> 00:25:52.107
+Che lo scambio funzionasse o che ci fossero interruzioni non
+
+363
+00:25:52.107 --> 00:25:53.218
+aveva importanza.
+
+364
+00:25:54.268 --> 00:25:58.227
+Poi sono passati a un modo di lavorare in cui un appaltatore certificato
+
+365
+00:25:58.227 --> 00:26:01.388
+ottiene la responsabilità di una parte della rete ferroviaria per
+
+366
+00:26:01.388 --> 00:26:06.177
+5 anni. E viene valutato su
+
+367
+00:26:07.148 --> 00:26:09.377
+quale percentuale del tempo la ferrovia è stata disponibile.
+
+368
+00:26:10.227 --> 00:26:12.388
+Quanto sono durate le interruzioni?
+
+369
+00:26:12.388 --> 00:26:14.297
+Cioè con che rapidità le avete risolte?
+
+370
+00:26:14.707 --> 00:26:21.668
+Quanto tempo richiedono
+
+371
+00:26:21.668 --> 00:26:25.028
+i lavori di manutenzione? C'era quindi un incentivo a lavorare
+
+372
+00:26:25.028 --> 00:26:27.148
+di notte e nei fine settimana piuttosto che
+
+373
+00:26:27.148 --> 00:26:32.749
+nelle ore di punta. Gli appaltatori hanno proposto soluzioni
+
+374
+00:26:32.749 --> 00:26:36.579
+come acciaio più resistente, per ridurre l'usura.
+
+375
+00:26:37.309 --> 00:26:41.509
+Hanno creato depositi di lavoro aggiuntivi per accedere alla ferrovia
+
+376
+00:26:41.509 --> 00:26:44.469
+molto più rapidamente che da un solo punto.
+
+377
+00:26:44.469 --> 00:26:47.069
+Tutte cose mai accadute prima, perché
+
+378
+00:26:47.069 --> 00:26:48.819
+tutto era organizzato in progetti.
+
+379
+00:26:49.749 --> 00:26:51.059
+Quindi si era davvero
+
+380
+00:26:52.069 --> 00:26:55.949
+sviluppato un modo di lavorare ottimale grazie a questo
+
+381
+00:26:55.949 --> 00:26:59.509
+diverso modo di organizzare la governance
+
+382
+00:26:59.509 --> 00:27:02.709
+dell'infrastruttura. Beh, è davvero illuminante.
+
+383
+00:27:02.709 --> 00:27:08.029
+Penso che sia anche un'ottima raccomandazione per il nostro caso
+
+384
+00:27:08.029 --> 00:27:11.859
+in Bulgaria e in tanti, tanti
+
+385
+00:27:12.909 --> 00:27:19.469
+settori. Vorrei chiedere al pubblico se avete
+
+386
+00:27:19.469 --> 00:27:23.219
+domande da porre ai nostri relatori.
+
+387
+00:27:24.909 --> 00:27:31.669
+Sì. Grazie mille per
+
+388
+00:27:31.669 --> 00:27:33.269
+la discussione molto istruttiva.
+
+389
+00:27:33.269 --> 00:27:38.789
+È davvero ottima e vorrei soffermarmi su
+
+390
+00:27:38.789 --> 00:27:42.429
+quest'ultimo punto che è stato citato, perché penso che sia
+
+391
+00:27:42.429 --> 00:27:46.109
+un ottimo esempio quello che avete descritto, riguardo al
+
+392
+00:27:46.109 --> 00:27:50.629
+passaggio da una gestione per progetti a una più basata sulla responsabilità,
+
+393
+00:27:50.629 --> 00:27:53.859
+per così dire, se posso chiamarla così.
+
+394
+00:27:54.309 --> 00:27:58.949
+E riprendo anche un punto citato da Georgi,
+
+395
+00:27:58.949 --> 00:28:03.029
+che forse è qualcosa che dovremmo attuare
+
+396
+00:28:03.029 --> 00:28:04.949
+qui come raccomandazione.
+
+397
+00:28:04.949 --> 00:28:08.949
+Quindi vi metterei un po' alla prova, entrambi, perché
+
+398
+00:28:08.949 --> 00:28:13.789
+ieri abbiamo sentito molto che Varna ha un grande potenziale e che
+
+399
+00:28:13.789 --> 00:28:20.109
+qui ci sono le precondizioni per avere soluzioni
+
+400
+00:28:20.109 --> 00:28:23.669
+intelligenti, per avere innovazione e per essere un polo
+
+401
+00:28:23.669 --> 00:28:28.869
+innovativo. Se dovessimo attuare un quadro simile,
+
+402
+00:28:28.869 --> 00:28:34.510
+passando dalla sola gestione per progetti a una
+
+403
+00:28:34.510 --> 00:28:39.470
+basata sulla responsabilità, diciamo a livello di ecosistema,
+
+404
+00:28:39.470 --> 00:28:46.300
+regionale: come potrebbe essere, che cosa comporterebbe e
+
+405
+00:28:46.830 --> 00:28:53.390
+quanto in fretta pensate che potrebbe accadere,
+
+406
+00:28:53.390 --> 00:28:57.910
+se poteste ragionare per fasi o per un possibile
+
+407
+00:28:57.910 --> 00:29:00.470
+arco di tempo. Penso che sarebbe molto utile
+
+408
+00:29:00.470 --> 00:29:01.980
+e sarebbe fantastico.
+
+409
+00:29:02.590 --> 00:29:04.990
+Grazie mille. Mi dispiace molto metterla in difficoltà con
+
+410
+00:29:04.990 --> 00:29:06.790
+questa domanda. So che è molto delicata,
+
+411
+00:29:06.790 --> 00:29:09.270
+ma sono molto curioso di sapere cosa ne pensate.
+
+412
+00:29:09.270 --> 00:29:12.900
+Grazie. Comincio io?
+
+413
+00:29:14.630 --> 00:29:19.070
+Non sono del tutto sicuro del punto da cui si parte,
+
+414
+00:29:19.070 --> 00:29:21.660
+quindi è difficile dire quanto tempo ci vorrebbe.
+
+415
+00:29:22.150 --> 00:29:26.830
+Probabilmente assomiglierebbe di nuovo allo sviluppo di
+
+416
+00:29:26.830 --> 00:29:30.980
+una comunità. Una comunità variegata.
+
+417
+00:29:32.070 --> 00:29:35.910
+Perché le nuove idee emergono tipicamente nelle comunità
+
+418
+00:29:35.910 --> 00:29:40.460
+più variegate, non in una in cui tutti la pensano allo stesso modo.
+
+419
+00:29:41.350 --> 00:29:43.500
+Questo sarebbe un aspetto.
+
+420
+00:29:43.990 --> 00:29:46.940
+E un'altra cosa è
+
+421
+00:29:48.830 --> 00:29:55.550
+beh, lasciate che vi racconti
+
+422
+00:29:55.550 --> 00:29:59.110
+uno dei problemi riscontrati nei Paesi Bassi
+
+423
+00:29:59.110 --> 00:30:00.300
+con questo modo di lavorare.
+
+424
+00:30:01.110 --> 00:30:05.950
+Onestamente, e non l'ho detto nella mia risposta precedente,
+
+425
+00:30:05.950 --> 00:30:09.550
+forse avrei dovuto: nei Paesi Bassi
+
+426
+00:30:09.550 --> 00:30:12.060
+stiamo purtroppo abbandonando di nuovo questo sistema.
+
+427
+00:30:13.230 --> 00:30:16.430
+Il gestore delle ferrovie nei Paesi Bassi
+
+428
+00:30:16.430 --> 00:30:18.540
+sta riconsiderando questo modo di lavorare.
+
+429
+00:30:19.150 --> 00:30:22.470
+E il motivo è che non hanno più
+
+430
+00:30:22.470 --> 00:30:24.380
+il controllo sui dati.
+
+431
+00:30:25.870 --> 00:30:30.790
+Hanno informazioni limitate sullo stato delle ferrovie,
+
+432
+00:30:30.790 --> 00:30:32.540
+il che li mette a disagio.
+
+433
+00:30:33.470 --> 00:30:35.510
+Cosa del tutto comprensibile, naturalmente.
+
+434
+00:30:35.510 --> 00:30:38.102
+Sono responsabili dello stato delle ferrovie.
+
+435
+00:30:39.032 --> 00:30:42.952
+Se solo gli appaltatori hanno queste
+
+436
+00:30:42.952 --> 00:30:45.582
+informazioni, non si sentono in controllo.
+
+437
+00:30:46.992 --> 00:30:50.712
+La mia risposta, quando l'ho saputo e
+
+438
+00:30:50.712 --> 00:30:53.072
+ho parlato con persone di questa organizzazione, è stata:
+
+439
+00:30:53.072 --> 00:30:55.542
+"Allora non l'avete organizzata nel modo giusto."
+
+440
+00:30:56.032 --> 00:30:59.552
+Perché avete lasciato tutta la responsabilità sui dati e
+
+441
+00:30:59.552 --> 00:31:01.152
+le informazioni agli appaltatori?
+
+442
+00:31:01.152 --> 00:31:02.742
+Si poteva impostare in modo diverso.
+
+443
+00:31:03.592 --> 00:31:06.752
+Probabilmente, con il senno di poi,
+
+444
+00:31:06.752 --> 00:31:08.862
+se lo avessero saputo 20 anni prima,
+
+445
+00:31:09.592 --> 00:31:11.262
+l'avrebbero fatto così.
+
+446
+00:31:12.392 --> 00:31:14.351
+Quindi ora devono rimediare.
+
+447
+00:31:14.351 --> 00:31:17.072
+E la cosa positiva per voi è che non dovete farlo,
+
+448
+00:31:17.072 --> 00:31:20.472
+perché potete organizzare tutto nel modo giusto fin dall'inizio.
+
+449
+00:31:20.472 --> 00:31:25.992
+Serve una forma di collaborazione in cui
+
+450
+00:31:25.992 --> 00:31:27.912
+si concordano questi aspetti.
+
+451
+00:31:27.912 --> 00:31:30.312
+Ad esempio, qual è la conoscenza condivisa?
+
+452
+00:31:30.312 --> 00:31:33.182
+La conoscenza che condividiamo gli uni con gli altri.
+
+453
+00:31:33.632 --> 00:31:37.872
+Gran parte di questa conoscenza può avere importanza strategica
+
+454
+00:31:37.872 --> 00:31:41.872
+per i singoli attori, quindi non sono naturalmente disposti a
+
+455
+00:31:41.872 --> 00:31:45.152
+condividerla. Ma se si raggiunge un accordo,
+
+456
+00:31:45.152 --> 00:31:49.032
+sulla base della reciprocità o comunque sia il processo,
+
+457
+00:31:49.032 --> 00:31:53.352
+si può trovare una soluzione intelligente.
+
+458
+00:31:53.352 --> 00:31:56.862
+E non si dovrebbe tornare ai vecchi tempi.
+
+459
+00:32:00.192 --> 00:32:04.502
+Lasciatemi rispondere alla domanda da architetto.
+
+460
+00:32:07.832 --> 00:32:11.912
+Che cosa serve? Serve una visione comune.
+
+461
+00:32:11.912 --> 00:32:13.742
+Credo che questo sia il primo punto.
+
+462
+00:32:14.512 --> 00:32:17.392
+E una visione comune non solo dell'industria,
+
+463
+00:32:17.392 --> 00:32:21.862
+ma anche degli enti pubblici, dell'amministrazione locale,
+
+464
+00:32:23.112 --> 00:32:26.862
+con il sostegno dell'amministrazione bulgara,
+
+465
+00:32:27.632 --> 00:32:31.062
+con il sostegno della più ampia comunità europea,
+
+466
+00:32:31.632 --> 00:32:34.662
+allineati alla fine su questa visione comune.
+
+467
+00:32:35.312 --> 00:32:38.302
+Da qui si parte.
+
+468
+00:32:38.792 --> 00:32:44.233
+Poi la seconda cosa è sviluppare una strategia comune per avvicinarci
+
+469
+00:32:44.233 --> 00:32:47.273
+a questa visione.
+
+470
+00:32:47.273 --> 00:32:51.033
+Che cosa serve? Qual è l'obiettivo, alla fine?
+
+471
+00:32:51.033 --> 00:32:56.593
+Perché vogliamo essere là dove immaginiamo di essere, in un
+
+472
+00:32:56.593 --> 00:33:00.553
+certo periodo di tempo? La questione del tempo è sempre
+
+473
+00:33:00.553 --> 00:33:05.113
+difficile da affrontare in queste situazioni, perché
+
+474
+00:33:05.113 --> 00:33:08.263
+di solito si può rispondere solo dopo.
+
+475
+00:33:08.953 --> 00:33:12.033
+Ma si può avere un obiettivo, svilupparlo e allinearsi
+
+476
+00:33:12.033 --> 00:33:18.143
+su obiettivi comuni, e, beh, io credo
+
+477
+00:33:19.113 --> 00:33:20.013
+nella sostenibilità.
+
+478
+00:33:21.673 --> 00:33:25.463
+Per questo non vi consiglierei
+
+479
+00:33:26.593 --> 00:33:32.543
+di concentrarvi sulle mode, ma di pensare a quali sono i vantaggi
+
+480
+00:33:33.593 --> 00:33:38.063
+della regione. Ieri ne sono stati citati tantissimi.
+
+481
+00:33:38.753 --> 00:33:43.063
+Quattro università, credo, il porto, l'aeroporto,
+
+482
+00:33:43.593 --> 00:33:45.663
+l'infrastruttura sta migliorando.
+
+483
+00:33:46.273 --> 00:33:49.193
+Certo, non tutto è perfetto,
+
+484
+00:33:49.193 --> 00:33:54.793
+ma credo che siano solo puntini non ancora
+
+485
+00:33:54.793 --> 00:33:58.223
+identificati o collegati in questa visione comune.
+
+486
+00:33:58.753 --> 00:34:03.153
+Sì. Dal mio punto di vista, è così che
+
+487
+00:34:03.153 --> 00:34:04.583
+dovremmo puntare a questo.
+
+488
+00:34:08.353 --> 00:34:09.753
+Grazie per queste risposte.
+
+489
+00:34:09.753 --> 00:34:13.793
+Se non ci sono altre domande, siamo giusto in orario,
+
+490
+00:34:13.793 --> 00:34:15.263
+quindi possiamo concludere la discussione.
+
+491
+00:34:15.873 --> 00:34:19.593
+Penso che nel complesso abbiamo trattato bene il tema.
+
+492
+00:34:19.593 --> 00:34:23.713
+Abbiamo parlato della tecnologia in sé, dei diversi approcci
+
+493
+00:34:23.713 --> 00:34:28.393
+alla costruzione dei sistemi, ma anche della gestione e della
+
+494
+00:34:28.393 --> 00:34:33.793
+strategia necessarie per far progredire tali innovazioni nella protezione
+
+495
+00:34:33.793 --> 00:34:39.433
+delle infrastrutture critiche, un altro aspetto cruciale, così come
+
+496
+00:34:39.433 --> 00:34:45.354
+della differenza su come andare oltre il progetto e avere
+
+497
+00:34:45.354 --> 00:34:49.864
+un approccio più sistematico.
+
+498
+00:34:50.274 --> 00:34:53.264
+Un applauso al nostro relatore, grazie.

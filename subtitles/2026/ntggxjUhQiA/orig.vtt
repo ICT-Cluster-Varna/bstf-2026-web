@@ -1,0 +1,749 @@
+WEBVTT
+
+1
+00:00:00.960 --> 00:00:02.080
+So, thank you very much.
+
+2
+00:00:02.080 --> 00:00:04.310
+I'm conscious of the time, so I'm starting right away.
+
+3
+00:00:05.000 --> 00:00:08.840
+While waiting for the slides to load, with gratitude for being here
+
+4
+00:00:08.840 --> 00:00:10.910
+and being able to speak in front of you.
+
+5
+00:00:11.440 --> 00:00:14.360
+It's a good day to speak about identity wallets.
+
+6
+00:00:14.360 --> 00:00:18.680
+They're at the bottom of the hype curve, which is good,
+
+7
+00:00:18.680 --> 00:00:22.280
+simply because I'm not going to hype things that I'm
+
+8
+00:00:22.280 --> 00:00:24.520
+going to sell you. I'm not going to sell you anything.
+
+9
+00:00:24.520 --> 00:00:29.040
+But it's also good because the closer to the bottom you are,
+
+10
+00:00:29.040 --> 00:00:31.400
+the closer to production you are.
+
+11
+00:00:31.400 --> 00:00:34.920
+So, there are fancy things like post-quantum authentication I would
+
+12
+00:00:34.920 --> 00:00:38.200
+have been able to speak about if I wanted to make a fancy speech,
+
+13
+00:00:38.200 --> 00:00:43.480
+but identity wallets are today's hot topic because earlier today, in
+
+14
+00:00:43.480 --> 00:00:47.880
+the morning, the government published the draft law about the
+
+15
+00:00:47.880 --> 00:00:52.240
+implementation of the Bulgarian European digital identity wallet.
+
+16
+00:00:52.240 --> 00:00:56.960
+It's a topic that is no longer very hot and hyped,
+
+17
+00:00:56.960 --> 00:01:00.320
+simply because it went through this curve.
+
+18
+00:01:00.320 --> 00:01:05.360
+As you see, things have been under development for almost two decades on
+
+19
+00:01:05.360 --> 00:01:09.480
+the financial, I would say, path,
+
+20
+00:01:09.480 --> 00:01:15.320
+going back to PayPal and its innovation in the late '90s.
+
+21
+00:01:15.320 --> 00:01:18.070
+And also on the identity path, we have
+
+22
+00:01:19.120 --> 00:01:23.030
+I would say very expansive development, especially
+
+23
+00:01:23.640 --> 00:01:27.510
+towards self-sovereign identity, thanks to
+
+24
+00:01:28.480 --> 00:01:31.280
+many other innovators, but also the development of blockchain
+
+25
+00:01:31.280 --> 00:01:33.840
+technologies a couple of years back.
+
+26
+00:01:33.840 --> 00:01:37.120
+So, blockchain was not able to deliver self-sovereign identity,
+
+27
+00:01:37.120 --> 00:01:41.840
+but the concept actually inspired the European Commission to think
+
+28
+00:01:41.840 --> 00:01:44.120
+towards self-sovereign identity.
+
+29
+00:01:44.120 --> 00:01:47.960
+And the European digital identity wallet for citizens and
+
+30
+00:01:47.960 --> 00:01:51.320
+European business wallets for companies come very close to
+
+31
+00:01:51.320 --> 00:01:52.510
+self-sovereign identity.
+
+32
+00:01:53.160 --> 00:01:56.320
+Now, as I said, there are many innovators on the market,
+
+33
+00:01:56.320 --> 00:01:59.320
+but without the legal framework they are not wallets.
+
+34
+00:01:59.320 --> 00:02:01.812
+And I'm speaking today about wallets because, as I said,
+
+35
+00:02:01.812 --> 00:02:05.292
+in just a couple of months, the Bulgarian government is going to be
+
+36
+00:02:05.292 --> 00:02:09.012
+obliged to offer you a Bulgarian digital identity wallet,
+
+37
+00:02:09.012 --> 00:02:12.692
+which you can use to authenticate yourself whenever you do business
+
+38
+00:02:12.692 --> 00:02:16.252
+online or you actually want to do business with the government.
+
+39
+00:02:16.252 --> 00:02:21.452
+And, you know, execute many things that are going to save you
+
+40
+00:02:21.452 --> 00:02:26.172
+time and paper. This is the important date.
+
+41
+00:02:26.172 --> 00:02:28.132
+We are right now... December is the deadline.
+
+42
+00:02:28.132 --> 00:02:31.132
+Of course, our government is going to be a bit slow because we
+
+43
+00:02:31.132 --> 00:02:34.332
+were writing a draft law a couple of months back and then the new
+
+44
+00:02:34.332 --> 00:02:37.492
+cabinet just threw it into the bin and now it's going to write a new
+
+45
+00:02:37.492 --> 00:02:42.012
+law, but it's also important to know for those of you that
+
+46
+00:02:42.012 --> 00:02:46.252
+are software developers working for companies
+
+47
+00:02:46.252 --> 00:02:50.052
+that are going to be obliged to rely on the data from the digital
+
+48
+00:02:50.052 --> 00:02:53.972
+identity wallets. And these are banks, these are other
+
+49
+00:02:53.972 --> 00:02:57.322
+financial institutions, these are couriers,
+
+50
+00:02:57.772 --> 00:03:03.052
+these are very large online platforms such as online shops and
+
+51
+00:03:03.052 --> 00:03:06.292
+whatnot. So, if you are a part of their supply chain,
+
+52
+00:03:06.292 --> 00:03:12.492
+you need to know that they would need to have a form of, I
+
+53
+00:03:12.492 --> 00:03:18.012
+would say, a proxy towards the wallet that can actually read data
+
+54
+00:03:18.012 --> 00:03:21.972
+from the wallet and feed this data into the corporate system.
+
+55
+00:03:21.972 --> 00:03:24.652
+So, when you go into a bank and you want to authenticate with the
+
+56
+00:03:24.652 --> 00:03:28.012
+wallet, it's going to be a requirement for the bank to acknowledge
+
+57
+00:03:28.012 --> 00:03:33.012
+your wallet and take identity proofs about you through this
+
+58
+00:03:33.012 --> 00:03:35.492
+wallet even if the bank has another system.
+
+59
+00:03:35.492 --> 00:03:38.252
+And this obligation is going to kick in next year,
+
+60
+00:03:38.252 --> 00:03:42.332
+so less than 12 months for all these relying parties to prepare
+
+61
+00:03:42.332 --> 00:03:47.372
+themselves and be able to get data from the individual
+
+62
+00:03:47.372 --> 00:03:50.652
+person's wallet. By the way, individuals are not going to be obliged
+
+63
+00:03:50.652 --> 00:03:53.452
+to have a wallet. It's going to be a choice on their end,
+
+64
+00:03:53.452 --> 00:03:56.732
+but it's going to be a requirement on the end of the relying parties
+
+65
+00:03:56.732 --> 00:04:00.852
+that, per national law or international law, are required to
+
+66
+00:04:00.852 --> 00:04:05.774
+execute strong user authentication or strong customer authentication
+
+67
+00:04:05.774 --> 00:04:10.334
+in the financial world. I already spoke about some of the use
+
+68
+00:04:10.334 --> 00:04:15.734
+cases. As I mentioned, all the government services would need to
+
+69
+00:04:15.734 --> 00:04:18.774
+implement it. Banking would need to implement it.
+
+70
+00:04:18.774 --> 00:04:22.364
+Businesses would need to actually provide controlled access.
+
+71
+00:04:22.814 --> 00:04:25.574
+No more free social media for children.
+
+72
+00:04:25.574 --> 00:04:27.454
+It doesn't matter whether you think it's good or not.
+
+73
+00:04:27.454 --> 00:04:29.814
+It's not going to happen anymore.
+
+74
+00:04:29.814 --> 00:04:32.694
+I mean, it's decided at international level.
+
+75
+00:04:32.694 --> 00:04:36.764
+So, the European digital identity wallets would also be provided to
+
+76
+00:04:37.454 --> 00:04:43.454
+under 18s and even under 15s, with of course parental control and
+
+77
+00:04:43.454 --> 00:04:47.204
+involvement across the European Union, not only in Bulgaria.
+
+78
+00:04:47.734 --> 00:04:51.694
+And on education, I'm a big enthusiast about it because we are not
+
+79
+00:04:51.694 --> 00:04:56.054
+going to anymore wait months if not years for our diploma from
+
+80
+00:04:56.054 --> 00:05:00.684
+another country to be recognized, verified, authorized by whomever.
+
+81
+00:05:01.494 --> 00:05:06.694
+We're going to just share our bachelor degree with a click on our
+
+82
+00:05:06.694 --> 00:05:10.694
+smartphone with a university where we apply for master degree.
+
+83
+00:05:10.694 --> 00:05:14.014
+And the university is going to be required to recognize this
+
+84
+00:05:14.014 --> 00:05:18.294
+approach. And as long as of course this credential is signed by
+
+85
+00:05:18.294 --> 00:05:23.294
+the issuer, which is the university or the state that has issued this
+
+86
+00:05:23.294 --> 00:05:27.734
+diploma, it's going to bypass all the checks that can take
+
+87
+00:05:27.734 --> 00:05:30.974
+months if not years. Why am I saying this?
+
+88
+00:05:30.974 --> 00:05:35.534
+Because it's very practical for those that have businesses in the
+
+89
+00:05:35.534 --> 00:05:39.414
+field of tourism or develop applications in the field of tourism,
+
+90
+00:05:39.414 --> 00:05:41.244
+also in the field of travel.
+
+91
+00:05:41.774 --> 00:05:44.604
+Doesn't matter if it's maritime or
+
+92
+00:05:45.654 --> 00:05:51.404
+any other form of travel or cargo, flights.
+
+93
+00:05:52.054 --> 00:05:56.614
+What is important is that all of these industries will benefit from
+
+94
+00:05:56.614 --> 00:06:01.414
+numerous use cases which are elaborated over the last couple of
+
+95
+00:06:01.414 --> 00:06:04.254
+years within these large-scale pilots.
+
+96
+00:06:04.254 --> 00:06:08.135
+I took part in one of these together with Google and Amazon.
+
+97
+00:06:08.135 --> 00:06:12.975
+It is still ongoing. So, you can see a couple of Varna-specific
+
+98
+00:06:12.975 --> 00:06:15.495
+cases over here.
+
+99
+00:06:15.495 --> 00:06:19.335
+Now, how the entire trust framework is going to look like, as I
+
+100
+00:06:19.335 --> 00:06:22.935
+mentioned, earlier today the cabinet published a law.
+
+101
+00:06:22.935 --> 00:06:26.685
+So, all of these that you see is going to be elaborated in Bulgarian
+
+102
+00:06:27.815 --> 00:06:31.575
+and the security requirements are already elaborated by ENISA.
+
+103
+00:06:31.575 --> 00:06:34.335
+So, you can also check the two publications that are shared on the
+
+104
+00:06:34.335 --> 00:06:38.095
+slide. I'm not going to get into that much detail because I have 3
+
+105
+00:06:38.095 --> 00:06:42.375
+minutes remaining. I just want to assure you that for more than a
+
+106
+00:06:42.375 --> 00:06:47.655
+decade before the introduction of eIDAS, which is the European law
+
+107
+00:06:47.655 --> 00:06:49.205
+regulating digital identity,
+
+108
+00:06:50.535 --> 00:06:53.615
+there have been hundreds of experts working on the applicable
+
+109
+00:06:53.615 --> 00:06:55.325
+standards providing security
+
+110
+00:06:56.415 --> 00:07:01.855
+of this innovation. And for example, we have standards such as this
+
+111
+00:07:01.855 --> 00:07:05.965
+one, which basically is about injection attack detection.
+
+112
+00:07:06.375 --> 00:07:10.055
+We have standards from other series related to presentation attack
+
+113
+00:07:10.055 --> 00:07:14.175
+detection. And all of these, including zero-knowledge
+
+114
+00:07:14.175 --> 00:07:20.495
+proof implementations, are trying to enable citizens to protect their
+
+115
+00:07:20.495 --> 00:07:24.615
+identity, to have a self-sovereign identity without disclosing too
+
+116
+00:07:24.615 --> 00:07:26.295
+many facts, just statements.
+
+117
+00:07:26.295 --> 00:07:29.335
+So, if I want to register in a casino, I'm not going to provide any
+
+118
+00:07:29.335 --> 00:07:33.335
+data to the casino apart from a pure statement that, based on the
+
+119
+00:07:33.335 --> 00:07:36.495
+data in the credentials in my wallet, I am above 18.
+
+120
+00:07:36.495 --> 00:07:40.095
+Nothing else is needed for the casino owner to know and accept me
+
+121
+00:07:40.095 --> 00:07:42.685
+into his platform or into his premises.
+
+122
+00:07:43.775 --> 00:07:48.285
+Now, my conclusions about the risks, including in cybersecurity
+
+123
+00:07:48.815 --> 00:07:53.535
+related areas. I'm also working in a special task force under the
+
+124
+00:07:53.535 --> 00:07:58.735
+European Commission that is about to present the best practices in
+
+125
+00:07:58.735 --> 00:08:03.015
+the field of DNS security for the obliged entities under NIS 2.
+
+126
+00:08:03.015 --> 00:08:06.095
+So, I took two examples from this special task force.
+
+127
+00:08:06.095 --> 00:08:11.817
+One example is the so-called DNS camel, which means that whenever on
+
+128
+00:08:11.817 --> 00:08:15.207
+the red curve new requirements for security are presented,
+
+129
+00:08:15.697 --> 00:08:17.857
+actually the level of security drops down.
+
+130
+00:08:17.857 --> 00:08:21.297
+So, it becomes like a camel simply because we lose people.
+
+131
+00:08:21.297 --> 00:08:24.737
+We lose people, competent people working for good companies
+
+132
+00:08:24.737 --> 00:08:29.857
+who simply cannot provide the additional burden of ensuring and
+
+133
+00:08:29.857 --> 00:08:32.577
+securing and double and triple checking.
+
+134
+00:08:32.577 --> 00:08:36.777
+But then again, the curve goes up when the market,
+
+135
+00:08:36.777 --> 00:08:40.497
+you know, finds its way towards the new requirement.
+
+136
+00:08:40.497 --> 00:08:43.657
+And then again, a new requirement kicks in and then the curve goes
+
+137
+00:08:43.657 --> 00:08:48.377
+back. So, the more measures you provide to secure a system does not
+
+138
+00:08:48.377 --> 00:08:51.137
+mean that the system would be more secure.
+
+139
+00:08:51.137 --> 00:08:55.297
+Many times the system actually gets less secure because fewer
+
+140
+00:08:55.297 --> 00:08:59.057
+companies remain in the production, in the delivery pipeline.
+
+141
+00:08:59.057 --> 00:09:03.297
+So, you have vendor lock-in, which is never too good,
+
+142
+00:09:03.297 --> 00:09:08.257
+especially if we are evangelizing open innovation and free market
+
+143
+00:09:08.257 --> 00:09:12.577
+principles. And the second concept with which I'm concluding
+
+144
+00:09:12.577 --> 00:09:16.417
+is also related with my work in the DNS working group.
+
+145
+00:09:16.417 --> 00:09:20.417
+So, we have good practices and standards in the field of DNS
+
+146
+00:09:20.417 --> 00:09:22.257
+security. For those of you who are not aware,
+
+147
+00:09:22.257 --> 00:09:26.777
+DNS is basically what brings the IP address to a human-readable
+
+148
+00:09:26.777 --> 00:09:30.297
+format, our domain, so we know what is the digital identity of our
+
+149
+00:09:30.297 --> 00:09:35.297
+websites. And DNS security, DNSSEC, is actually what authenticates
+
+150
+00:09:35.297 --> 00:09:38.017
+this relation by signing the DNS records.
+
+151
+00:09:38.017 --> 00:09:40.567
+Now, this exists from 2005.
+
+152
+00:09:41.537 --> 00:09:43.937
+And the current uptake in the European Union,
+
+153
+00:09:43.937 --> 00:09:47.297
+which is one of the greatest across the world,
+
+154
+00:09:47.297 --> 00:09:49.327
+is actually less than 30%.
+
+155
+00:09:49.937 --> 00:09:55.657
+So, less than 35% have a validation opportunity to check DNS
+
+156
+00:09:55.657 --> 00:10:00.977
+records. And less than 10% in Bulgaria of websites have actually DNS
+
+157
+00:10:00.977 --> 00:10:03.777
+security they can validate, but the validation shows there is no
+
+158
+00:10:03.777 --> 00:10:08.337
+such record. What I'm trying to say here is that sometimes if these
+
+159
+00:10:08.337 --> 00:10:11.978
+things are not enforced, they're just good practices and in the
+
+160
+00:10:11.978 --> 00:10:14.498
+field of wallets, this is the greatest risk.
+
+161
+00:10:14.498 --> 00:10:18.538
+So, there would be an option for you when coming to Varna to
+
+162
+00:10:18.538 --> 00:10:23.138
+actually rent a boat, basically identify yourself towards the
+
+163
+00:10:23.138 --> 00:10:27.258
+merchant, if you have a captain's license, to even present the
+
+164
+00:10:27.258 --> 00:10:30.658
+captain's license together with authenticating the payment for
+
+165
+00:10:30.658 --> 00:10:35.378
+renting the boat, and then with a simple biometric step to
+
+166
+00:10:35.378 --> 00:10:39.298
+validate that you're the authenticated person who owns the
+
+167
+00:10:39.298 --> 00:10:42.378
+wallet, who has the captain's license, who's doing the payment
+
+168
+00:10:42.378 --> 00:10:45.298
+towards the bank, actually complete the process.
+
+169
+00:10:45.298 --> 00:10:48.658
+Everything what I'm just showing you is going to be enabled by the
+
+170
+00:10:48.658 --> 00:10:54.338
+wallets if actually this is enforced, because currently none of
+
+171
+00:10:54.338 --> 00:10:58.218
+the existing documentation that I showed you on previous slides is
+
+172
+00:10:58.218 --> 00:11:01.458
+enforcing the fact that the Bulgarian national digital identity
+
+173
+00:11:01.458 --> 00:11:05.538
+wallet will need to be able to work with this type of strong
+
+174
+00:11:05.538 --> 00:11:08.618
+customer authentication credentials coming from the banking, from the
+
+175
+00:11:08.618 --> 00:11:13.178
+finance world. So, this would be a very nice presentation on paper
+
+176
+00:11:13.178 --> 00:11:16.298
+and it can exist in France, in Germany, but in Bulgaria,
+
+177
+00:11:16.298 --> 00:11:20.938
+it can be basically just a mirage simply because it's not enforced.
+
+178
+00:11:20.938 --> 00:11:24.498
+So, too many security measures, over-security,
+
+179
+00:11:24.498 --> 00:11:27.378
+overcomplicating things can be bad for business,
+
+180
+00:11:27.378 --> 00:11:31.818
+but just producing opportunities, producing additional features
+
+181
+00:11:31.818 --> 00:11:34.818
+which are not enforced can also be equally bad.
+
+182
+00:11:34.818 --> 00:11:38.578
+With this, I'm leaving you with an open mind.
+
+183
+00:11:38.578 --> 00:11:41.808
+Be aware that apart from the digital identity wallets for citizens,
+
+184
+00:11:42.218 --> 00:11:46.538
+in 12 to 24 months, we'll also have the same wallets but for
+
+185
+00:11:46.538 --> 00:11:50.218
+businesses, and start developing applications for your clients right
+
+186
+00:11:50.218 --> 00:11:52.138
+now if you want to be among the first on the market.
+
+187
+00:11:52.138 --> 00:11:53.038
+Thank you.

@@ -1,0 +1,477 @@
+WEBVTT
+
+1
+00:00:01.360 --> 00:00:04.880
+Bene. Allora, prenderemo qualche domanda.
+
+2
+00:00:04.880 --> 00:00:07.909
+Grazie per aver inviato le domande.
+
+3
+00:00:08.400 --> 00:00:12.069
+La mia prima domanda è per Martin.
+
+4
+00:00:12.559 --> 00:00:16.149
+Lei ha vissuto diverse ondate di innovazione.
+
+5
+00:00:16.800 --> 00:00:19.669
+Guardando agli schemi che ha visto in questi cicli,
+
+6
+00:00:20.080 --> 00:00:24.080
+che cosa pensa che stiamo sopravvalutando o ignorando nei prossimi 5
+
+7
+00:00:24.080 --> 00:00:29.760
+anni? Penso che, soprattutto con l'IA, la prima tecnologia
+
+8
+00:00:29.760 --> 00:00:33.760
+che può davvero iniziare a prendere il lavoro delle persone,
+
+9
+00:00:33.760 --> 00:00:38.399
+all'inizio sia stata del tutto ignorata e sottovalutata, e adesso
+
+10
+00:00:38.399 --> 00:00:42.320
+sento e vedo che c'è anche chi
+
+11
+00:00:42.320 --> 00:00:46.000
+la sopravvaluta. Perché è una tecnologia
+
+12
+00:00:46.000 --> 00:00:50.960
+straordinaria, può fare circa il 95% del lavoro che le persone fanno
+
+13
+00:00:50.960 --> 00:00:56.079
+al computer, ma l'ultimo 5% è ciò di cui
+
+14
+00:00:56.079 --> 00:01:01.359
+le persone hanno bisogno. E sento che ora la stanno sopravvalutando.
+
+15
+00:01:01.359 --> 00:01:04.720
+Ripongono troppa fiducia in essa per alcuni dei compiti
+
+16
+00:01:04.720 --> 00:01:09.119
+che vengono svolti, e nei prossimi 5 anni penso che
+
+17
+00:01:09.119 --> 00:01:12.240
+succederà anche con i robot. Ci sarà chi
+
+18
+00:01:12.240 --> 00:01:16.000
+dirà: i robot vi toglieranno del tutto il lavoro, inizieranno a
+
+19
+00:01:16.000 --> 00:01:20.080
+lavorare nella produzione. Anche se assumete
+
+20
+00:01:20.080 --> 00:01:25.840
+un junior dopo una dura notte a Varna, e c'è un
+
+21
+00:01:25.840 --> 00:01:29.360
+robot, la gente dirà che sarà più bravo
+
+22
+00:01:29.360 --> 00:01:32.640
+a fare il lavoro al posto vostro, ma forse non sarà così. Vedremo.
+
+23
+00:01:32.640 --> 00:01:35.759
+E penso che sarà la prossima cosa
+
+24
+00:01:35.759 --> 00:01:38.470
+a essere sopravvalutata.
+
+25
+00:01:39.600 --> 00:01:44.000
+E ciò che non va ignorato è la privacy delle
+
+26
+00:01:44.000 --> 00:01:47.200
+informazioni, perché in questo momento le persone la ignorano del tutto.
+
+27
+00:01:47.200 --> 00:01:52.399
+Circa due settimane fa abbiamo ricevuto un enorme set di dati
+
+28
+00:01:52.399 --> 00:01:56.799
+testato per addestrare un modello di credit scoring
+
+29
+00:01:56.799 --> 00:02:01.040
+delle persone, e abbiamo visto informazioni prelevate perfino da
+
+30
+00:02:01.040 --> 00:02:03.280
+applicazioni di chat, una cosa folle.
+
+31
+00:02:03.280 --> 00:02:06.560
+Ho detto al cliente che non lavoreremo a questo, ma
+
+32
+00:02:06.560 --> 00:02:11.920
+sì: tenete privati i vostri dati. Pensateci sempre due volte prima di dare
+
+33
+00:02:11.920 --> 00:02:14.630
+accesso a qualcosa che riguarda i vostri dati.
+
+34
+00:02:15.680 --> 00:02:18.480
+Sì, è vero: i nostri dati personali stanno diventando
+
+35
+00:02:18.480 --> 00:02:20.869
+la merce più importante
+
+36
+00:02:21.280 --> 00:02:25.590
+nel business. La prossima domanda è per Todor.
+
+37
+00:02:26.239 --> 00:02:31.040
+Quando costruite la piattaforma così in fretta,
+
+38
+00:02:31.040 --> 00:02:34.959
+come bilanciate la pressione a muovervi velocemente con la necessità di
+
+39
+00:02:34.959 --> 00:02:37.830
+garanzie come governance e monitoraggio della qualità dei dati?
+
+40
+00:02:38.800 --> 00:02:41.350
+E come gestite la sicurezza?
+
+41
+00:02:42.959 --> 00:02:44.230
+Questa per me è facile.
+
+42
+00:02:45.200 --> 00:02:51.280
+Allora, guardi, siamo un team relativamente piccolo, abbiamo circa 60
+
+43
+00:02:51.280 --> 00:02:55.040
+persone, ora forse 70, metà in fabbrica,
+
+44
+00:02:55.040 --> 00:02:57.590
+l'altra metà sono persone del business.
+
+45
+00:02:59.040 --> 00:03:03.680
+La maggior parte di noi ha accesso a gran parte dei dati, perché
+
+46
+00:03:03.680 --> 00:03:07.590
+lavora ogni giorno con i clienti e con gli ordini.
+
+47
+00:03:08.319 --> 00:03:12.069
+E quando costruiamo la piattaforma,
+
+48
+00:03:13.599 --> 00:03:18.879
+francamente, quando pianifico qualcosa ne parlo direttamente con l'agente IA
+
+49
+00:03:18.879 --> 00:03:22.480
+e mi faccio consigliare quale infrastruttura serva e
+
+50
+00:03:22.480 --> 00:03:26.159
+che cosa vada protetto. Ci sono alcune basi, tipo:
+
+51
+00:03:26.159 --> 00:03:29.990
+configurare il database nell'UE, il nostro è a Francoforte,
+
+52
+00:03:30.560 --> 00:03:34.159
+e far sì che solo poche persone abbiano accesso ai
+
+53
+00:03:34.159 --> 00:03:36.879
+dati sensibili, con autenticazione a due fattori e tutti i
+
+54
+00:03:36.879 --> 00:03:38.959
+protocolli di sicurezza al loro posto.
+
+55
+00:03:38.959 --> 00:03:44.230
+Quanto alla correttezza effettiva dei dati,
+
+56
+00:03:44.720 --> 00:03:48.720
+in realtà non me ne preoccupo troppo,
+
+57
+00:03:48.720 --> 00:03:55.360
+perché non siamo un'azienda data-driven. Nel nostro caso
+
+58
+00:03:55.360 --> 00:03:59.680
+non abbiamo milioni e milioni di unità di dati
+
+59
+00:03:59.680 --> 00:04:02.239
+per costruire modelli o addestrarli sui nostri dati.
+
+60
+00:04:02.239 --> 00:04:05.439
+Per noi è importante che i clienti giusti ricevano
+
+61
+00:04:05.439 --> 00:04:08.799
+gli stivali giusti e che il fatturato sia contabilizzato bene, e
+
+62
+00:04:08.799 --> 00:04:12.720
+cose così emergono molto in fretta.
+
+63
+00:04:12.720 --> 00:04:18.959
+Detto questo, nello sviluppo di nuove app
+
+64
+00:04:18.959 --> 00:04:21.759
+di solito incontriamo i limiti del nostro database.
+
+65
+00:04:21.759 --> 00:04:25.440
+Faccio un esempio. Quando all'inizio costruivamo
+
+66
+00:04:25.440 --> 00:04:30.080
+lo strumento di vendita, non ho chiesto esplicitamente all'IA di poter
+
+67
+00:04:30.080 --> 00:04:33.520
+fare analisi di coorte, e più tardi, quando volevo
+
+68
+00:04:33.520 --> 00:04:36.560
+creare questo report, mi dice: a proposito, non si può fare,
+
+69
+00:04:36.560 --> 00:04:39.440
+perché non avete registrato i dati nel modo giusto. Allora è un
+
+70
+00:04:39.440 --> 00:04:42.960
+processo: cosa possiamo fare ora per, se possibile,
+
+71
+00:04:42.960 --> 00:04:47.120
+colmare retroattivamente le lacune nei dati o, se no, da
+
+72
+00:04:47.120 --> 00:04:51.040
+adesso in poi registrare i dati giusti, i timestamp
+
+73
+00:04:51.040 --> 00:04:53.040
+e tutto ciò che serviva per l'analisi di coorte.
+
+74
+00:04:53.040 --> 00:04:54.479
+Quindi è un processo.
+
+75
+00:04:54.479 --> 00:04:57.759
+Assicuratevi che le basi siano giuste: accesso ai dati e
+
+76
+00:04:57.759 --> 00:04:59.430
+ubicazione del database.
+
+77
+00:04:59.840 --> 00:05:04.720
+Assicuratevi che le persone con accesso a questi dati abbiano i
+
+78
+00:05:04.720 --> 00:05:10.240
+dispositivi protetti con 2FA. E se, lungo il percorso,
+
+79
+00:05:10.240 --> 00:05:12.390
+scoprite qualcosa che manca, costruiteci sopra.
+
+80
+00:05:13.520 --> 00:05:16.639
+Bene. Sembra che il tempo per le domande sia finito.
+
+81
+00:05:16.639 --> 00:05:18.240
+Quindi grazie ai relatori.
+
+82
+00:05:18.240 --> 00:05:21.440
+Se non siamo arrivati alle vostre domande, sentitevi liberi di
+
+83
+00:05:21.440 --> 00:05:23.840
+braccare i relatori fuori e chiedere a loro.
+
+84
+00:05:23.840 --> 00:05:27.029
+E ora passiamo a riassumere
+
+85
+00:05:28.240 --> 00:05:34.630
+questo track. In sintesi, dopo tutto ciò di cui abbiamo parlato,
+
+86
+00:05:35.759 --> 00:05:39.759
+la raccomandazione è, prima di costruire qualsiasi cosa, di rispondere a queste
+
+87
+00:05:39.759 --> 00:05:43.520
+10 domande. Se non riuscite a rispondere, e
+
+88
+00:05:43.520 --> 00:05:47.120
+volete davvero implementare l'IA, è da qui che dovete partire.
+
+89
+00:05:47.120 --> 00:05:51.520
+Primo: vale la pena risolvere questo problema, e
+
+90
+00:05:51.520 --> 00:05:54.800
+alla dirigenza interessa davvero? È molto importante per ottenere il sostegno
+
+91
+00:05:54.800 --> 00:05:58.880
+della dirigenza. Il risultato è misurabile e so definire il successo
+
+92
+00:05:58.880 --> 00:06:02.160
+in una frase? I dati sono accessibili?
+
+93
+00:06:02.160 --> 00:06:06.000
+Sono affidabili? Avete i dati che servono per
+
+94
+00:06:06.000 --> 00:06:10.319
+risolvere il problema? L'IA è davvero lo strumento giusto, o
+
+95
+00:06:10.319 --> 00:06:12.550
+basterebbe una regola o una dashboard?
+
+96
+00:06:12.960 --> 00:06:15.990
+Non complicate le cose e scegliete la soluzione più semplice.
+
+97
+00:06:16.880 --> 00:06:19.670
+Ho uno sponsor designato che sostenga il progetto?
+
+98
+00:06:20.080 --> 00:06:23.360
+Qualcuno a cui potete sempre rivolgervi, che lo faccia conoscere in
+
+99
+00:06:23.360 --> 00:06:25.510
+azienda e favorisca l'adozione.
+
+100
+00:06:26.080 --> 00:06:30.880
+Il risultato è integrato dove lavorano gli utenti? È contrassegnato da asterisco
+
+101
+00:06:30.880 --> 00:06:33.600
+perché forse il flusso di lavoro deve cambiare.
+
+102
+00:06:33.600 --> 00:06:36.240
+Forse il modo in cui lavorano oggi non è il migliore.
+
+103
+00:06:36.240 --> 00:06:40.070
+È un'occasione per fare un passo indietro in un'organizzazione
+
+104
+00:06:40.479 --> 00:06:44.790
+e trovare un flusso di lavoro migliore che integri l'IA.
+
+105
+00:06:45.360 --> 00:06:48.800
+È importante chiedersi qual è la mia baseline e come misurerò
+
+106
+00:06:48.800 --> 00:06:51.670
+il miglioramento. Come so che avrà un impatto?
+
+107
+00:06:52.400 --> 00:06:57.029
+Chi sarà responsabile di monitorare questo valore dopo il go-live?
+
+108
+00:06:58.560 --> 00:07:02.720
+Chiedetevi: so spiegare il risultato in tre frasi a un dirigente non
+
+109
+00:07:02.720 --> 00:07:06.880
+tecnico? Mi piace avere sempre pronto un elevator pitch, così se ho
+
+110
+00:07:06.880 --> 00:07:10.630
+un minuto per spiegare a qualcuno, soprattutto ai vertici,
+
+111
+00:07:11.039 --> 00:07:14.479
+qual è lo scopo del progetto e qual è l'impatto,
+
+112
+00:07:14.479 --> 00:07:18.319
+posso farlo. E ne ho parlato con gli stakeholder giusti
+
+113
+00:07:18.319 --> 00:07:20.319
+dopo la demo?
+
+114
+00:07:20.319 --> 00:07:23.759
+Il change management, come abbiamo detto, è una parte molto importante
+
+115
+00:07:23.759 --> 00:07:27.680
+di tutto questo. Come fanno le persone a saperlo ed essere convinte a
+
+116
+00:07:27.680 --> 00:07:31.919
+usarlo, creando un vero cambiamento nell'organizzazione in cui tutti
+
+117
+00:07:31.919 --> 00:07:34.880
+lo usano? Queste sono le lezioni.
+
+118
+00:07:34.880 --> 00:07:36.400
+Grazie ai relatori.
+
+119
+00:07:36.400 --> 00:07:38.869
+Grazie a tutti, e passiamo a

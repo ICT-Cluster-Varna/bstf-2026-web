@@ -1,0 +1,481 @@
+WEBVTT
+
+1
+00:00:01.520 --> 00:00:03.320
+İyi günler, değerli hanımefendiler ve beyefendiler.
+
+2
+00:00:03.320 --> 00:00:09.150
+Adım Gerasim Slavov, size kısaca Bulgaristan'daki yapay zekâ fabrikasından ve
+
+3
+00:00:09.840 --> 00:00:14.440
+Avrupa Dijital İnovasyon Hub'ından
+
+4
+00:00:14.440 --> 00:00:19.680
+ve bu iki kuruluşun birlikte nasıl var olduğundan söz edeceğim;
+
+5
+00:00:19.680 --> 00:00:24.070
+fabrikaya erişmek için hub'ı nasıl kullanabileceğinizi de anlatacağım.
+
+6
+00:00:31.200 --> 00:00:35.600
+Dünden beri BRAIN++'ı birkaç kez duydunuz.
+
+7
+00:00:35.600 --> 00:00:40.880
+Meslektaşlarımız birkaç
+
+8
+00:00:40.880 --> 00:00:45.040
+konuşma yaptı. Yarın yine bu konuyu konuşacağız.
+
+9
+00:00:45.040 --> 00:00:48.000
+Yani yapay zekâ fabrikaları var.
+
+10
+00:00:48.000 --> 00:00:52.950
+Buradalar. Geçen Mart'ta Avrupa Komisyonu,
+
+11
+00:00:53.520 --> 00:00:57.360
+yüksek performanslı bilişim ortak girişimi aracılığıyla,
+
+12
+00:00:57.360 --> 00:01:01.870
+yani EuroHPC ile, yapay zekâ fabrikalarının ikinci dalgasını duyurdu,
+
+13
+00:01:02.280 --> 00:01:06.720
+ve Bulgaristan ikinci dalgadaydı, BRAIN++
+
+14
+00:01:06.720 --> 00:01:11.510
+de böyle kuruldu. Ancak tahmin edebileceğiniz gibi, küçük ve orta ölçekli
+
+15
+00:01:11.920 --> 00:01:17.110
+işletmeler her sabah GPU hesaplama gücünü düşünerek uyanmaz.
+
+16
+00:01:18.160 --> 00:01:19.320
+Başka sorunları var.
+
+17
+00:01:19.320 --> 00:01:20.550
+Gerçek sorunları var.
+
+18
+00:01:21.600 --> 00:01:26.270
+Çoğu zaman bu gerçek sorunlar yapay zekâ fabrikasıyla çözülebilir.
+
+19
+00:01:26.680 --> 00:01:31.040
+Soru şu: Bu küçük ve orta ölçekli işletmelerin
+
+20
+00:01:31.040 --> 00:01:33.550
+BRAIN++'a erişimini nasıl kolaylaştırırız?
+
+21
+00:01:34.240 --> 00:01:36.470
+Daha büyük şirketlerin
+
+22
+00:01:37.440 --> 00:01:42.600
+yapay zekâ fabrikalarının olanaklarını çok daha iyi bildiğini varsayıyoruz.
+
+23
+00:01:42.600 --> 00:01:45.760
+Bu yüzden odağımız daha küçük şirketler, küçük ve orta ölçekli
+
+24
+00:01:45.760 --> 00:01:48.720
+şirketler. Peki erişimi nasıl sağlıyoruz?
+
+25
+00:01:48.720 --> 00:01:54.560
+Yapay zekâ fabrikasının kaynaklarını küçük ve orta ölçekli
+
+26
+00:01:54.560 --> 00:01:55.630
+şirketlere nasıl tanıtıyoruz?
+
+27
+00:01:57.480 --> 00:02:03.212
+İşte burada Avrupa Dijital İnovasyon Hub'ı devreye giriyor.
+
+28
+00:02:03.212 --> 00:02:05.762
+Bizimkinin adı Innovation Hub.
+
+29
+00:02:06.532 --> 00:02:11.132
+Tek çatı altında iki ortak, Sofia Tech Park içinde iki kuruluş.
+
+30
+00:02:11.132 --> 00:02:16.612
+Innovation Hub 10 ortaktan oluşuyor.
+
+31
+00:02:16.612 --> 00:02:18.892
+Onları burada duvarda görebilirsiniz.
+
+32
+00:02:18.892 --> 00:02:24.692
+Önde gelen birkaç üniversiteyi belirtmek isterim.
+
+33
+00:02:24.692 --> 00:02:29.172
+Bunlar GATE Enstitüsü ile Sofya Üniversitesi ve Sofya Teknik
+
+34
+00:02:29.172 --> 00:02:32.402
+Üniversitesi. Sofya Belediyesi de var,
+
+35
+00:02:32.892 --> 00:02:37.122
+ülkedeki diğer belediyelere hizmet sunuyor.
+
+36
+00:02:37.812 --> 00:02:40.002
+Bir yatırım fonumuz var, NEVEK.
+
+37
+00:02:40.852 --> 00:02:43.162
+Strategic Center for Artificial Intelligence var.
+
+38
+00:02:44.132 --> 00:02:47.202
+Digitex ICT Cluster var.
+
+39
+00:02:48.572 --> 00:02:53.642
+Sofia Tech Park'ın üç birimi, Sofia Tech Park'ın kendisi.
+
+40
+00:02:54.372 --> 00:02:57.482
+Sofia Tech Park'ın laboratuvar kompleksi, Sofia Tech Labs.
+
+41
+00:02:58.012 --> 00:03:00.252
+Ve tabii ki süper bilgisayar Discoverer,
+
+42
+00:03:00.252 --> 00:03:05.492
+aynı zamanda BRAIN++ Fabrikası'nın
+
+43
+00:03:05.492 --> 00:03:08.932
+temeli, altyapısı. Ve sanırım Strategic Center for
+
+44
+00:03:08.932 --> 00:03:10.002
+Artificial Intelligence'tan da bahsettim.
+
+45
+00:03:13.532 --> 00:03:18.562
+Innovation Hub dijital olgunluk değerlendirmesi,
+
+46
+00:03:19.012 --> 00:03:21.762
+eğitimler, yatırımdan önce test imkânı sunuyor.
+
+47
+00:03:22.212 --> 00:03:26.852
+Ama bu slayttan hatırlamanızı gerçekten çok isteyeceğim tek şey,
+
+48
+00:03:26.852 --> 00:03:31.052
+tüm bu hizmetlerin küçük ve orta ölçekli
+
+49
+00:03:31.052 --> 00:03:32.882
+işletmeler için tamamen ücretsiz olduğu.
+
+50
+00:03:33.812 --> 00:03:36.882
+Hizmetleri sağlayan ortaklar
+
+51
+00:03:37.892 --> 00:03:43.052
+Avrupa Birliği bütçesinden ödeniyor, Innovation Hub da bunun bir parçası.
+
+52
+00:03:43.052 --> 00:03:46.362
+Yani hizmetleri alan KOBİ'ler hiçbir şey ödemiyor.
+
+53
+00:03:50.452 --> 00:03:55.292
+BRAIN++ ile ilgili, zaten anılmış birkaç temel gerçeği
+
+54
+00:03:55.292 --> 00:03:57.642
+sadece tekrarlayacağım; bunlar son
+
+55
+00:03:58.772 --> 00:04:04.854
+iki günde söylendi. BRAIN++ teknik olarak geçen yıl Aralık'ta
+
+56
+00:04:04.854 --> 00:04:10.444
+başladı. Avrupa'daki 13 yapay zekâ fabrikasından biri.
+
+57
+00:04:12.214 --> 00:04:13.334
+Ah, pardon. Bu yanlış.
+
+58
+00:04:13.334 --> 00:04:16.814
+Avrupa'daki 19 yapay zekâ fabrikasından biri,
+
+59
+00:04:16.814 --> 00:04:18.724
+13 değil. 13'ü anten.
+
+60
+00:04:20.494 --> 00:04:25.774
+19 milyon euroluk bir proje; Avrupa Komisyonu, EuroHPC aracılığıyla, ve
+
+61
+00:04:25.774 --> 00:04:29.244
+Bulgaristan devleti arasında paylaşılıyor.
+
+62
+00:04:31.134 --> 00:04:34.244
+Ve şunları sağlıyor:
+
+63
+00:04:36.134 --> 00:04:39.764
+çok geniş bir yapay zekâ altyapısı yelpazesi,
+
+64
+00:04:40.774 --> 00:04:47.254
+eğitim ve hesaplama gücü, kullanmak isteyen herkese.
+
+65
+00:04:47.254 --> 00:04:52.054
+Fabrikanın kaynaklarını kullanan şirketin büyüklüğü ya da türü
+
+66
+00:04:52.054 --> 00:04:55.884
+konusunda hiçbir sınırlamamız yok.
+
+67
+00:04:59.094 --> 00:05:00.684
+Yapay zekâ fabrikasına nasıl ulaşırız?
+
+68
+00:05:01.854 --> 00:05:07.814
+Beş basit adım. İlk ikisini hub, yani Innovation
+
+69
+00:05:07.814 --> 00:05:12.724
+Hub sağlıyor. Üçüncüsü hub ile fabrikanın ortak faaliyeti.
+
+70
+00:05:13.734 --> 00:05:16.644
+Dördüncü adımı BRAIN++ sağlıyor,
+
+71
+00:05:17.374 --> 00:05:23.174
+beşincisi ise yine hub ile
+
+72
+00:05:23.174 --> 00:05:24.564
+fabrikanın ortak faaliyeti. Yani temel olarak
+
+73
+00:05:25.934 --> 00:05:27.444
+hub şirketi,
+
+74
+00:05:28.534 --> 00:05:30.804
+şirketin dijital olgunluk
+
+75
+00:05:31.814 --> 00:05:33.364
+durumunu teşhis ediyor.
+
+76
+00:05:35.774 --> 00:05:40.404
+Sonra bu şirkete özel eğitim verebilir.
+
+77
+00:05:42.654 --> 00:05:43.884
+BRAIN++ ile birlikte
+
+78
+00:05:45.054 --> 00:05:48.774
+hub prototipleme yapar ve
+
+79
+00:05:48.774 --> 00:05:53.734
+BRAIN++'ın uzman desteğiyle playground ve sandbox'a erişim sağlar.
+
+80
+00:05:53.734 --> 00:05:58.414
+Sonra projenin türüne göre
+
+81
+00:05:58.414 --> 00:06:02.454
+ya hızlı şeritten ya da fabrikanın
+
+82
+00:06:02.454 --> 00:06:04.124
+daha büyük projelerine doğru ilerler.
+
+83
+00:06:05.375 --> 00:06:09.885
+Son olarak 6 ila 9 aylık bir sürenin ardından
+
+84
+00:06:10.455 --> 00:06:15.015
+bu proje çeşitli yatırım türlerine,
+
+85
+00:06:15.015 --> 00:06:17.125
+çeşitli finansman türlerine yönlendirilebilir.
+
+86
+00:06:23.575 --> 00:06:28.015
+Bu slaytta çok ayrıntıya girmeyeceğim;
+
+87
+00:06:28.015 --> 00:06:32.405
+slayt hub'ın ve BRAIN++'ın
+
+88
+00:06:34.135 --> 00:06:38.325
+ne yaptığını biraz daha kesin biçimde anlatıyor.
+
+89
+00:06:39.015 --> 00:06:45.085
+Burada vurgulamak istediğim şey şu: hub'ı çok kolay biçimde,
+
+90
+00:06:45.895 --> 00:06:51.535
+hiçbir sınırlama olmadan yapay zekâ fabrikasına
+
+91
+00:06:51.535 --> 00:06:56.375
+giriş kapınız olarak kullanabilirsiniz. Şirketinizin durumunu değerlendirin,
+
+92
+00:06:56.375 --> 00:06:59.085
+işinizin dijital ihtiyaçlarını belirleyin,
+
+93
+00:06:59.855 --> 00:07:02.605
+sonra hub sizi BRAIN++'a yönlendirebilir.
+
+94
+00:07:03.375 --> 00:07:06.535
+Dijital dönüşümün bazı unsurlarını
+
+95
+00:07:06.535 --> 00:07:08.085
+hub'ın kendisi de sağlayabilir.
+
+96
+00:07:08.775 --> 00:07:11.735
+Unutmayın, BRAIN++'ın parçası olan süper bilgisayar Discoverer
+
+97
+00:07:11.735 --> 00:07:15.535
+aynı zamanda Innovation Hub'ın kurucu ortağıdır.
+
+98
+00:07:15.535 --> 00:07:18.815
+Yani nispeten – "küçük" kelimesini sevmiyorum,
+
+99
+00:07:18.815 --> 00:07:21.655
+ama gerçek bu.
+
+100
+00:07:21.655 --> 00:07:22.645
+Nispeten
+
+101
+00:07:23.655 --> 00:07:25.445
+daha az kaynak gerektiren
+
+102
+00:07:27.175 --> 00:07:33.245
+bir yapay zekâ ihtiyacınız ya da projeniz varsa, bunu Discoverer
+
+103
+00:07:33.895 --> 00:07:40.925
+Innovation Hub üzerinden karşılayabilir. BRAIN++
+
+104
+00:07:42.615 --> 00:07:45.895
+yalnızca Bulgaristan'la sınırlı değil.
+
+105
+00:07:45.895 --> 00:07:48.365
+Hizmetleri
+
+106
+00:07:49.615 --> 00:07:53.615
+Avrupa Birliği genelinde sunabilir ve Avrupa Birliği dışındaki
+
+107
+00:07:53.615 --> 00:07:56.055
+şirketlere de hizmet verebilir.
+
+108
+00:07:56.055 --> 00:08:02.085
+Bu yüzden Avrupa Yapay Zekâ Fabrikası adından çekinmeyin.
+
+109
+00:08:03.335 --> 00:08:08.497
+BRAIN++ hizmetlerine kesinlikle
+
+110
+00:08:08.497 --> 00:08:11.407
+her zaman ve her yerden erişebilirsiniz.
+
+111
+00:08:14.497 --> 00:08:19.537
+Bölgesel olarak BRAIN++ belirli bir
+
+112
+00:08:19.537 --> 00:08:25.377
+sektörde uzmanlaşmıyor. Her sektöre hizmet veriyor ve
+
+113
+00:08:25.377 --> 00:08:28.247
+Varna'da olmamızdan yararlanıyor: denizcilik,
+
+114
+00:08:28.657 --> 00:08:32.687
+lojistik, turizm. Bunlar
+
+115
+00:08:34.617 --> 00:08:37.777
+BRAIN++'tan çok kolay yararlanabilir.
+
+116
+00:08:37.777 --> 00:08:41.577
+Bu yüzden çekinmeyin, bizi arayın, bizi deneyin,
+
+117
+00:08:41.577 --> 00:08:47.617
+ve işletmenizin dijital dönüşümüne yönelik
+
+118
+00:08:47.617 --> 00:08:49.087
+bir dizi hizmet sunabiliriz.
+
+119
+00:08:50.217 --> 00:08:56.777
+Özetle yapay zekâ fabrikası motor, Innovation Hub ise
+
+120
+00:08:56.777 --> 00:08:59.767
+bu motora en kolay erişim yolu.

@@ -1,0 +1,1221 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.950
+Ich bin Todor, Mitgründer von Meavo – wir bauen Büro-Telefonkabinen.
+
+2
+00:00:05.320 --> 00:00:09.080
+Zunächst möchte ich nicht gratulieren,
+
+3
+00:00:09.080 --> 00:00:12.960
+sondern den Organisatoren danken für die Hartnäckigkeit,
+
+4
+00:00:12.960 --> 00:00:17.320
+daran zu glauben, dass sie eine so großartige Veranstaltung
+
+5
+00:00:17.320 --> 00:00:20.520
+in dieser Größe in Varna organisieren können. Bravo, und hoffentlich ist es
+
+6
+00:00:20.520 --> 00:00:22.430
+die erste von vielen in den kommenden Jahren.
+
+7
+00:00:23.480 --> 00:00:29.880
+Nun ganz kurz: Wer wir sind.
+
+8
+00:00:29.880 --> 00:00:34.920
+Meavo baut Büro-Telefonkabinen wie diese auf dem Bildschirm
+
+9
+00:00:34.920 --> 00:00:40.320
+und Meetingkabinen. Wir fertigen sie in Werken in ganz Bulgarien.
+
+10
+00:00:40.320 --> 00:00:43.640
+Unser größtes, unser eigener Standort, ist in Aksakovo,
+
+11
+00:00:43.640 --> 00:00:48.360
+gleich neben Varna. Wir verkaufen und liefern sie in ganz
+
+12
+00:00:48.360 --> 00:00:51.880
+Europa und in die USA, zu sehen bei Unternehmen wie Google,
+
+13
+00:00:51.880 --> 00:00:54.960
+Amazon, Adidas und den auf der Folie genannten
+
+14
+00:00:54.960 --> 00:00:56.310
+und bei Tausenden weiteren Unternehmen.
+
+15
+00:00:58.920 --> 00:01:01.270
+Ich erzähle Ihnen, wie
+
+16
+00:01:02.480 --> 00:01:05.640
+ein kleines Team, im Grunde ich und ein Kollege,
+
+17
+00:01:05.640 --> 00:01:11.880
+mit KI-Tools die Prozesse bei
+
+18
+00:01:11.880 --> 00:01:17.200
+Meavo in wenigen Monaten komplett neu aufgestellt und eine Plattform aus Apps
+
+19
+00:01:17.200 --> 00:01:20.920
+gebaut hat, eine Unternehmensplattform, die das ganze Team heute nutzt, um
+
+20
+00:01:20.920 --> 00:01:26.040
+alles bei Meavo zu steuern. Bevor ich beginne: Handzeichen bitte, wie
+
+21
+00:01:26.040 --> 00:01:28.840
+viele von Ihnen sind Web... nein, nicht Web,
+
+22
+00:01:28.840 --> 00:01:30.630
+sondern Entwickler, Programmierer?
+
+23
+00:01:32.120 --> 00:01:37.200
+Okay. Das wird für mich wohl peinlich,
+
+24
+00:01:37.200 --> 00:01:39.590
+und Sie werden wahrscheinlich denken, ich bin ein Idiot,
+
+25
+00:01:40.080 --> 00:01:43.880
+weil ich nicht all die Ratschläge befolge, die
+
+26
+00:01:43.880 --> 00:01:46.280
+manche Leute auf der Bühne heute geben.
+
+27
+00:01:46.280 --> 00:01:50.480
+Bei uns gibt es keinen KI-Spezialisten,
+
+28
+00:01:50.480 --> 00:01:52.350
+wir haben keine Ingenieure, keine Entwickler.
+
+29
+00:01:52.760 --> 00:01:54.320
+Ich komme nicht aus einem technischen Umfeld.
+
+30
+00:01:54.320 --> 00:01:57.240
+Vor Meavo war ich im digitalen Marketing.
+
+31
+00:01:57.240 --> 00:02:01.640
+15 Jahre lang in London und anderen westeuropäischen
+
+32
+00:02:01.640 --> 00:02:04.760
+Ländern, um Marketing zu leiten und den Umsatz zu optimieren.
+
+33
+00:02:04.760 --> 00:02:06.560
+Ich bin also kein technischer Mensch.
+
+34
+00:02:06.560 --> 00:02:10.280
+Und vor einem Jahr habe ich keine KI genutzt.
+
+35
+00:02:10.280 --> 00:02:13.760
+Wir haben für unser Team in Valencia sogar einen Workshop organisiert.
+
+36
+00:02:13.760 --> 00:02:17.680
+Wir luden einen KI-Spezialisten ein, der uns zeigen sollte,
+
+37
+00:02:17.680 --> 00:02:19.280
+„Was ist dieses KI-Ding?
+
+38
+00:02:19.280 --> 00:02:21.550
+Wie nutzt man KI? So nutzt man KI im Unternehmen.“
+
+39
+00:02:22.200 --> 00:02:24.360
+Und, raten Sie mal: Es hat nicht wirklich funktioniert.
+
+40
+00:02:24.360 --> 00:02:27.840
+Monate später nutzten wir KI noch dazu, meine E-Mails ein bisschen zu
+
+41
+00:02:27.840 --> 00:02:29.790
+verbessern, als wäre ich Muttersprachler.
+
+42
+00:02:30.200 --> 00:02:32.760
+Und ähnlich sinnlose Dinge.
+
+43
+00:02:32.760 --> 00:02:35.390
+Aber in den letzten 6 Monaten hat sich das geändert.
+
+44
+00:02:36.320 --> 00:02:39.430
+Und ich glaube, dass
+
+45
+00:02:42.040 --> 00:02:45.640
+die Spitzenmodelle, die wir heute haben,
+
+46
+00:02:45.640 --> 00:02:48.800
+die Anthropic-Modelle wie Fable und Astra von GPT,
+
+47
+00:02:48.800 --> 00:02:50.720
+die nutze ich seit ein paar Monaten.
+
+48
+00:02:50.720 --> 00:02:55.000
+Ich glaube, diese Modelle sind schlauer als ich und wohl schlauer
+
+49
+00:02:55.000 --> 00:02:59.640
+als 99,9 % der Menschen. Wenn Sie sie nicht täglich in Ihrem
+
+50
+00:02:59.640 --> 00:03:02.000
+Unternehmen nutzen, verpassen Sie wohl etwas, denn Ihre
+
+51
+00:03:02.000 --> 00:03:03.800
+Konkurrenz wird sie nutzen.
+
+52
+00:03:03.800 --> 00:03:07.680
+Aber das reicht, glaube ich, als Vorrede.
+
+53
+00:03:07.680 --> 00:03:08.760
+Kommen wir zu dem, was wir getan haben.
+
+54
+00:03:08.760 --> 00:03:15.080
+Bei Meavo durchläuft jede Kabine eine Reise. Wir machen das
+
+55
+00:03:15.080 --> 00:03:18.800
+Ganze: Lieferkette, Materialbeschaffung,
+
+56
+00:03:18.800 --> 00:03:21.800
+wir beziehen Materialien aus Asien und Europa.
+
+57
+00:03:21.800 --> 00:03:25.080
+Wir bringen alles nach Europa, nach Bulgarien.
+
+58
+00:03:25.080 --> 00:03:27.080
+Hier bauen wir die Kabinen von Grund auf.
+
+59
+00:03:27.080 --> 00:03:29.480
+Dann versenden wir sie international in Containern,
+
+60
+00:03:29.480 --> 00:03:30.840
+auf großen Lkw.
+
+61
+00:03:30.840 --> 00:03:33.640
+Die letzte Meile liefern wir in Städten wie London und New York.
+
+62
+00:03:33.640 --> 00:03:35.840
+Wir haben Montageteams, Hunderte von Montageteams,
+
+63
+00:03:35.840 --> 00:03:37.840
+in ganz Europa, die uns helfen.
+
+64
+00:03:37.840 --> 00:03:39.959
+Wir haben ein Kundensupport-Team, ein Vertriebsteam,
+
+65
+00:03:39.959 --> 00:03:41.680
+ein Marketingteam, das ganze Programm.
+
+66
+00:03:41.680 --> 00:03:45.270
+Und bis vor wenigen Monaten
+
+67
+00:03:46.959 --> 00:03:50.959
+nutzte jeder einzelne Prozess und jedes Team ein eigenes Tool.
+
+68
+00:03:50.959 --> 00:03:53.750
+Wir hatten mehrere große Google-Tabellen.
+
+69
+00:03:54.880 --> 00:03:57.960
+Damals hielten wir sie für clever aufgesetzte Tabellen.
+
+70
+00:03:57.960 --> 00:03:59.880
+Sie waren verbunden. Wir nutzten Formeln,
+
+71
+00:03:59.880 --> 00:04:01.800
+sie fütterten sich gegenseitig mit Daten.
+
+72
+00:04:01.800 --> 00:04:04.590
+Alles, was sich automatisieren ließ, war automatisiert.
+
+73
+00:04:05.160 --> 00:04:06.400
+Aber es bleibt eine Tabelle.
+
+74
+00:04:06.400 --> 00:04:09.520
+Und bei Tausenden von Bestellungen und Dutzenden
+
+75
+00:04:09.520 --> 00:04:12.400
+Mitarbeitern, die in diesen Tabellen arbeiten und trotzdem Daten kopieren
+
+76
+00:04:12.400 --> 00:04:17.359
+und manuelle Aufgaben erledigen müssen, passieren Fehler, und es wird
+
+77
+00:04:17.359 --> 00:04:22.120
+lästig. Dazu externe Tools für Rechnungen,
+
+78
+00:04:22.120 --> 00:04:23.440
+für den Vertrieb, für all das.
+
+79
+00:04:23.440 --> 00:04:26.800
+Ein ganzes Ökosystem von Tools, die nicht wirklich miteinander
+
+80
+00:04:26.800 --> 00:04:33.280
+redeten. Nein. Das haben wir eigentlich nicht getan.
+
+81
+00:04:33.280 --> 00:04:37.880
+Es gab keinen Moment, in dem ich mich hinsetzte und dachte:
+
+82
+00:04:37.880 --> 00:04:40.910
+„Was, wenn wir das alles mit KI bauen?“
+
+83
+00:04:41.360 --> 00:04:46.320
+Nein, ich wusste es nicht. Ich war ahnungslos und wusste nicht, dass es
+
+84
+00:04:46.320 --> 00:04:49.350
+möglich ist. Und ehrlich gesagt wäre es vor 6 Monaten wohl
+
+85
+00:04:49.840 --> 00:04:52.040
+gar nicht möglich gewesen.
+
+86
+00:04:52.040 --> 00:04:53.360
+Wir haben aber klein angefangen.
+
+87
+00:04:53.360 --> 00:04:55.560
+Wir begannen, einzelne Probleme anzugehen.
+
+88
+00:04:55.560 --> 00:04:59.200
+Das Erste, was wir taten, war im Mai:
+
+89
+00:04:59.200 --> 00:05:02.919
+Wir bauten einen einfachen Rechnungsscanner.
+
+90
+00:05:02.919 --> 00:05:06.030
+Wir hatten in Bulgarien noch Papierrechnungen,
+
+91
+00:05:06.440 --> 00:05:13.000
+und wenn unsere Lagerleute Bestellungen
+
+92
+00:05:13.000 --> 00:05:15.360
+und erhaltenes Material in unser Buchhaltungssystem übertrugen,
+
+93
+00:05:15.360 --> 00:05:16.390
+machten sie Fehler.
+
+94
+00:05:17.040 --> 00:05:19.240
+Also dachten wir: „Bauen wir mit KI
+
+95
+00:05:19.240 --> 00:05:22.480
+einen Rechnungsscanner.“ Daraus wurde schnell ein ganzes System zur
+
+96
+00:05:22.480 --> 00:05:24.000
+Materialressourcenplanung.
+
+97
+00:05:24.000 --> 00:05:28.600
+Ich setzte mich mit einem Kollegen hin, und wir fragten einfach
+
+98
+00:05:28.600 --> 00:05:32.320
+den KI-Agenten: „Kannst du mir ein Tool zur Verwaltung meines
+
+99
+00:05:32.320 --> 00:05:35.550
+Lagerbestands bauen?“ Und witzigerweise tat er es.
+
+100
+00:05:36.040 --> 00:05:40.880
+Und er baute es viel besser, als ich es mir je vorstellen oder
+
+101
+00:05:40.880 --> 00:05:43.950
+selbst nur ansatzweise verstehen konnte.
+
+102
+00:05:44.480 --> 00:05:45.800
+Und der Rest ist Geschichte.
+
+103
+00:05:45.800 --> 00:05:48.790
+Wir fingen einfach an zu programmieren. Ich saß jeden Tag Stunden dran,
+
+104
+00:05:49.200 --> 00:05:52.320
+jeden Abend Stunden. Es macht ein bisschen... wie heißt das Wort?
+
+105
+00:05:52.320 --> 00:05:55.680
+Süchtig. Zum ersten Mal seit Jahren langweilte mich die Arbeit nicht,
+
+106
+00:05:55.680 --> 00:05:59.800
+sondern ich freute mich, mich hinzusetzen und mit
+
+107
+00:05:59.800 --> 00:06:04.560
+meinen eigenen Händen zu bauen. Das Schöne: Wir haben jahrelang versucht,
+
+108
+00:06:04.560 --> 00:06:06.670
+mit Beratern
+
+109
+00:06:07.640 --> 00:06:11.960
+und Softwarefirmen zu arbeiten, damit sie uns Tools bauen.
+
+110
+00:06:11.960 --> 00:06:15.360
+Das klappt nie, weil sie unseren Prozess nicht wirklich verstehen
+
+111
+00:06:15.360 --> 00:06:18.440
+oder wir ihn ihnen schlecht erklärt haben.
+
+112
+00:06:18.440 --> 00:06:21.680
+Und zum ersten Mal konnte ich genau das bauen, was ich wollte.
+
+113
+00:06:21.680 --> 00:06:24.040
+Ich musste es niemand anderem erklären.
+
+114
+00:06:24.040 --> 00:06:27.320
+Es war mein Tool, mein Prozess, und ich baute es so gut ich konnte
+
+115
+00:06:27.320 --> 00:06:28.910
+für das Unternehmen.
+
+116
+00:06:30.360 --> 00:06:35.640
+Heute haben wir über 15 Apps in einem Ökosystem, und wir steuern
+
+117
+00:06:35.640 --> 00:06:38.800
+alles, von der Lieferkette über die Fertigung über
+
+118
+00:06:38.800 --> 00:06:41.320
+den Vertrieb und die Logistik bis zur Montage.
+
+119
+00:06:41.320 --> 00:06:43.760
+Wir haben externe Portale für unsere Partner.
+
+120
+00:06:43.760 --> 00:06:48.880
+Alles gebaut von nur zwei Personen ohne Programmiererfahrung
+
+121
+00:06:48.880 --> 00:06:52.400
+oder -kenntnisse. Wir haben keine einzige Zeile Quellcode gelesen,
+
+122
+00:06:52.400 --> 00:06:55.680
+und das gesamte Unternehmen nutzt es heute.
+
+123
+00:06:55.680 --> 00:06:59.350
+Es gab auf diesem Weg ein paar wichtige Meilensteine.
+
+124
+00:07:00.320 --> 00:07:03.640
+Einer war im Juli, als wir merkten, dass die Tools, die wir
+
+125
+00:07:03.640 --> 00:07:07.360
+bauten, voneinander getrennt waren, also mussten wir sie auf eine
+
+126
+00:07:07.360 --> 00:07:10.430
+zentrale Datenbank legen, damit sie alles teilen können.
+
+127
+00:07:11.360 --> 00:07:15.919
+Ich hatte etwas Angst, aber die KI nicht, und sie hat es einfach getan.
+
+128
+00:07:15.919 --> 00:07:17.600
+Ich weiß nicht, wie. Sie hat es einfach getan.
+
+129
+00:07:17.600 --> 00:07:20.440
+Und im August merkten wir:
+
+130
+00:07:20.440 --> 00:07:23.120
+Jetzt nutzen 60 Leute diese Tools.
+
+131
+00:07:23.120 --> 00:07:26.400
+Und dummerweise spielen wir weiter alles direkt in main ein,
+
+132
+00:07:26.400 --> 00:07:27.400
+alles, was wir bauen.
+
+133
+00:07:27.400 --> 00:07:30.760
+Die Agenten pushen auf die Live-Websites, und
+
+134
+00:07:30.760 --> 00:07:34.360
+diese gehen gelegentlich kaputt. Also musste ich lernen, Staging-
+
+135
+00:07:34.360 --> 00:07:37.000
+Umgebungen und Pull Requests einzurichten und all den Entwicklerkram,
+
+136
+00:07:37.000 --> 00:07:41.640
+den ich nicht gelernt habe, aber die KIs haben ihn für uns erledigt.
+
+137
+00:07:41.640 --> 00:07:43.550
+Heute haben wir also ein ordentliches Setup.
+
+138
+00:07:44.200 --> 00:07:47.920
+Dann kam der September, letzten Monat, als wir wirklich anfingen,
+
+139
+00:07:47.920 --> 00:07:51.920
+KI in die Tools einzubauen, weil alle unsere Daten
+
+140
+00:07:51.920 --> 00:07:55.080
+sehr schön strukturiert waren. Sie lagen nativ in den Apps,
+
+141
+00:07:55.080 --> 00:07:59.320
+und wir begannen, die KI-Modelle in unseren
+
+142
+00:07:59.320 --> 00:08:00.800
+Workflow einzubinden. Was heißt das?
+
+143
+00:08:00.800 --> 00:08:04.560
+Wenn unsere Vertriebsleute morgens aufwachen
+
+144
+00:08:04.560 --> 00:08:08.760
+und ihren Bildschirm öffnen, gibt es KI-Empfehlungen, die
+
+145
+00:08:08.760 --> 00:08:10.960
+alle E-Mails und alles, was wir im Unternehmen tun, durchsuchen
+
+146
+00:08:10.960 --> 00:08:14.760
+und ihnen Empfehlungen geben, bei welchen Deals sie
+
+147
+00:08:14.760 --> 00:08:17.750
+aktiv werden sollten, welche Deals wahrscheinlich abgeschlossen werden,
+
+148
+00:08:18.200 --> 00:08:19.430
+ob sie etwas übersehen haben.
+
+149
+00:08:20.040 --> 00:08:23.800
+Auch uns als Fertigungsteam geben sie Empfehlungen:
+
+150
+00:08:23.800 --> 00:08:26.720
+„In der Pipeline haben wir so viele Angebote für diese Kabinenmodelle,
+
+151
+00:08:26.720 --> 00:08:29.280
+also müssen Sie in der Fabrik den Plan ändern,
+
+152
+00:08:29.280 --> 00:08:32.919
+diese Charge hierhin und jene dorthin verschieben, damit Sie bei Abschluss
+
+153
+00:08:32.919 --> 00:08:36.919
+dieser Deals die erwarteten und zugesagten
+
+154
+00:08:36.919 --> 00:08:40.029
+Liefertermine einhalten können.“ Und das ist jetzt alles in der App.
+
+155
+00:08:43.320 --> 00:08:46.389
+Ich habe Ihnen schon von der einen Datenbank erzählt.
+
+156
+00:08:47.160 --> 00:08:50.560
+Heute haben wir offenbar 191 Tabellen in der Datenbank,
+
+157
+00:08:50.560 --> 00:08:54.630
+und alle diese Apps sind mit dieser einen Datenbank verbunden.
+
+158
+00:08:55.120 --> 00:08:56.600
+Wir haben Apps für alles.
+
+159
+00:08:56.600 --> 00:08:57.790
+Wir haben Apps für
+
+160
+00:08:59.160 --> 00:09:01.510
+einfache Dinge wie Urlaubsplaner,
+
+161
+00:09:02.240 --> 00:09:05.550
+dann für den Vertrieb, den Lagerbestand, die Ressourcenplanung,
+
+162
+00:09:06.120 --> 00:09:09.600
+für die Fabrik – die gesamte Produktion wird von einem
+
+163
+00:09:09.600 --> 00:09:13.240
+KI-Tool gesteuert. Früher hatten wir eine Person, die
+
+164
+00:09:13.240 --> 00:09:16.160
+jeden Tag den Plan erstellte für
+
+165
+00:09:16.160 --> 00:09:18.990
+die 35 oder 40 Leute in unserer Fabrik.
+
+166
+00:09:19.520 --> 00:09:21.200
+Du baust heute Regale,
+
+167
+00:09:21.200 --> 00:09:23.520
+du machst Seitenteile, du machst Türen,
+
+168
+00:09:23.520 --> 00:09:24.880
+und oh, das haben wir vergessen.
+
+169
+00:09:24.880 --> 00:09:27.760
+Und wenn jemand mit seiner Aufgabe fertig ist,
+
+170
+00:09:27.760 --> 00:09:30.160
+muss er losgehen und jemanden fragen, was er tun soll.
+
+171
+00:09:30.160 --> 00:09:34.950
+Heute nutzen und erweitern wir bereits eine vollständig KI-gesteuerte
+
+172
+00:09:35.680 --> 00:09:38.070
+Priorisierungssoftware.
+
+173
+00:09:38.920 --> 00:09:41.640
+Derzeit installieren wir Touchscreens
+
+174
+00:09:41.640 --> 00:09:45.760
+an jedem Arbeitsplatz in der Fabrik, und die KI
+
+175
+00:09:45.760 --> 00:09:47.960
+priorisiert die Arbeit für jede einzelne Person.
+
+176
+00:09:47.960 --> 00:09:51.680
+So geht ihnen nie die Warteschlange aus,
+
+177
+00:09:51.680 --> 00:09:56.640
+die sie abarbeiten müssen. Das ist viel effizienter und viel weniger
+
+178
+00:09:56.640 --> 00:10:02.640
+fehleranfällig. Ich achte auf die Zeit und überspringe einige
+
+179
+00:10:02.640 --> 00:10:05.750
+Folien, damit wir zügig fertig werden.
+
+180
+00:10:06.640 --> 00:10:10.310
+Das sind einige der Tools, die wir haben.
+
+181
+00:10:12.560 --> 00:10:16.960
+Etwas, das wir jetzt auch tun und von dem ich wieder nicht glaubte, dass es
+
+182
+00:10:16.960 --> 00:10:23.680
+möglich ist, was aber sehr einfach wurde: Unsere Vertriebs-App
+
+183
+00:10:23.680 --> 00:10:27.760
+spricht hier auch mit vielen externen Tools.
+
+184
+00:10:27.760 --> 00:10:30.920
+Sie verbindet sich per API mit externen Tools.
+
+185
+00:10:30.920 --> 00:10:37.560
+Daher sparen wir jetzt wohl etwa 50 bis 60 % Zeit bei
+
+186
+00:10:37.560 --> 00:10:40.960
+der Prüfung und dem Abgleich von Zahlungen, dem Schreiben von Rechnungen,
+
+187
+00:10:40.960 --> 00:10:45.240
+dem Nachfassen bei Zahlungen, der Prüfung, wie viele Forderungen
+
+188
+00:10:45.240 --> 00:10:47.200
+überfällig sind, und Ähnlichem.
+
+189
+00:10:47.200 --> 00:10:51.960
+Sobald wir in unserer Vertriebs-App ein Angebot oder eine Rechnung erstellen,
+
+190
+00:10:51.960 --> 00:10:55.920
+wird sie sofort mit unserer britischen Buchhaltungssoftware synchronisiert,
+
+191
+00:10:55.920 --> 00:11:00.190
+mit HubSpot, mit unserer US-Buchhaltungssoftware,
+
+192
+00:11:01.040 --> 00:11:05.040
+mit unseren alten Tabellen, und das ist wirklich entscheidend.
+
+193
+00:11:05.040 --> 00:11:09.040
+Die Migration war für uns nicht beängstigend, denn als ich
+
+194
+00:11:09.040 --> 00:11:13.839
+diese Tools mit meinem Kollegen baute, sorgten wir dafür, dass sie auch mit
+
+195
+00:11:13.839 --> 00:11:15.360
+unseren Altsystemen funktionieren.
+
+196
+00:11:15.360 --> 00:11:19.720
+Nicht nur ist alles nativ in den Apps, sie tragen auch
+
+197
+00:11:19.720 --> 00:11:22.960
+genau dieselben Angaben in unsere alten Tabellen ein, die wir seit
+
+198
+00:11:22.960 --> 00:11:27.080
+Jahren nutzen. Es gibt also keine Angst, was passiert, wenn etwas ausfällt,
+
+199
+00:11:27.080 --> 00:11:28.600
+oder dass wir nicht wissen, was los ist.
+
+200
+00:11:28.600 --> 00:11:32.590
+Alles wird rückwirkend auch in unseren alten Systemen ausgefüllt.
+
+201
+00:11:33.600 --> 00:11:37.080
+Und wie gesagt, es synchronisiert sich auch mit unseren Fabrik-Apps,
+
+202
+00:11:37.080 --> 00:11:38.910
+damit unsere Planung stimmt.
+
+203
+00:11:43.120 --> 00:11:47.560
+Super. Wiederholen wir das: Jetzt, da wir die
+
+204
+00:11:47.560 --> 00:11:52.680
+Daten durchgängig haben, können wir uns Dinge leisten wie: Wenn bei der
+
+205
+00:11:52.680 --> 00:11:57.200
+Montage das Team in London oder New York, zum Beispiel,
+
+206
+00:11:57.200 --> 00:12:00.510
+einen Fehler macht und das Glas bei der Montage bricht,
+
+207
+00:12:00.960 --> 00:12:04.480
+müssen sie uns in der alten Welt per WhatsApp schreiben:
+
+208
+00:12:04.480 --> 00:12:07.280
+„Leute, wir haben die Tür für diesen Kunden kaputt gemacht.“
+
+209
+00:12:07.280 --> 00:12:09.920
+Und das Team sucht in unseren Tabellen:
+
+210
+00:12:09.920 --> 00:12:12.320
+„Okay, dieser Kunde, welche Kabinen hat er?
+
+211
+00:12:12.320 --> 00:12:14.440
+Welche Charge? Wann wurde sie gefertigt?“
+
+212
+00:12:14.440 --> 00:12:16.240
+Und dann müssen sie mit anderen Leuten in der Fabrik sprechen:
+
+213
+00:12:16.240 --> 00:12:18.200
+„Diese Charge, was sind die Spezifikationen?
+
+214
+00:12:18.200 --> 00:12:20.800
+Bauen wir die Tür, damit wir Ersatz schicken können.“
+
+215
+00:12:20.800 --> 00:12:24.600
+Heute drücken sie bei der Montage einfach einen Knopf in ihrem
+
+216
+00:12:24.600 --> 00:12:27.640
+Portal, das für jeden Montagepartner einzigartig ist,
+
+217
+00:12:27.640 --> 00:12:30.240
+und sagen: „Wir haben dieses Glas zerbrochen.“
+
+218
+00:12:30.240 --> 00:12:32.160
+Das ganze System weiß genau, welches Modell es ist,
+
+219
+00:12:32.160 --> 00:12:34.600
+wann es gefertigt wurde, es geht zurück an die Fabrik,
+
+220
+00:12:34.600 --> 00:12:38.839
+und es ist schon eingeplant, gebaut zu werden, ohne dass
+
+221
+00:12:38.839 --> 00:12:40.630
+mit irgendjemandem sprechen zu müssen.
+
+222
+00:12:43.680 --> 00:12:46.510
+Das ist das Live-Dashboard der Fabrik.
+
+223
+00:12:46.960 --> 00:12:49.600
+Gleichzeitig haben wir heute etwas, das wir nie zuvor hatten,
+
+224
+00:12:49.600 --> 00:12:53.310
+weil die Fabrik digitalisiert und automatisiert ist:
+
+225
+00:12:53.880 --> 00:12:58.320
+Unser ganzes Team und ausgewählte Premium-Partner, etwa
+
+226
+00:12:58.320 --> 00:13:03.040
+Reseller, sehen in Echtzeit, was in der
+
+227
+00:13:03.040 --> 00:13:06.680
+Fabrik passiert. Früher mussten sie uns fragen: „Hey, wann sind unsere Kabinen
+
+228
+00:13:06.680 --> 00:13:09.230
+fertig? Sie hatten September versprochen.
+
+229
+00:13:09.680 --> 00:13:11.350
+Liegt ihr noch im Zeitplan?“
+
+230
+00:13:11.800 --> 00:13:14.800
+Und der Verkäufer muss jemanden in der Fabrik fragen,
+
+231
+00:13:14.800 --> 00:13:16.839
+muss hingehen und mit jemandem in der Fabrik sprechen.
+
+232
+00:13:16.839 --> 00:13:19.760
+Heute gibt Ihnen die Echtzeitansicht sofort alle Antworten.
+
+233
+00:13:19.760 --> 00:13:22.400
+Sie öffnen die Plattform und sehen, wo die Kabinen in der Warteschlange
+
+234
+00:13:22.400 --> 00:13:24.070
+stehen oder ob sie noch im Zeitplan sind.
+
+235
+00:13:26.839 --> 00:13:28.670
+Das ist das Partnerportal, von dem ich gesprochen habe.
+
+236
+00:13:29.320 --> 00:13:35.400
+Wir haben ein Gateway, wie wir es nennen, in dem alle Apps liegen,
+
+237
+00:13:35.400 --> 00:13:40.120
+mit Benutzerverwaltung und mit unseren HR-
+
+238
+00:13:40.120 --> 00:13:43.200
+Systemen, über das wir Zugriff auf die Apps geben.
+
+239
+00:13:43.200 --> 00:13:45.950
+Alles läuft über ein einziges Google-Sign-on.
+
+240
+00:13:46.400 --> 00:13:49.190
+Alle Apps haben Zwei-Faktor-Authentifizierung.
+
+241
+00:13:49.800 --> 00:13:52.760
+Sie sind sicher, stabil und werden von einer einzigen
+
+242
+00:13:52.760 --> 00:13:56.000
+Stelle aus verwaltet, und sie sind für jeden im
+
+243
+00:13:56.000 --> 00:13:59.550
+Unternehmen sehr einfach zu nutzen. Was die Redner vor mir über Akzeptanz
+
+244
+00:14:00.160 --> 00:14:03.600
+und Kommunikation gesagt haben, geht bei uns sehr einfach und sehr schnell.
+
+245
+00:14:03.600 --> 00:14:05.800
+Das ganze Team nutzt die Apps, es liebt sie,
+
+246
+00:14:05.800 --> 00:14:07.030
+und ist sehr, sehr zufrieden.
+
+247
+00:14:11.320 --> 00:14:15.800
+In weniger als 6 Monaten haben wir tatsächlich 12 Apps im Einsatz.
+
+248
+00:14:15.800 --> 00:14:18.070
+Drei weitere entwickeln wir gerade.
+
+249
+00:14:18.640 --> 00:14:21.950
+Wir haben über 600 Releases durchgeführt und
+
+250
+00:14:23.480 --> 00:14:27.920
+natürlich 240.000 Codezeilen, wenn die Präsentation
+
+251
+00:14:27.920 --> 00:14:31.640
+recht hat. Was wir gewonnen haben: Teameffizienz,
+
+252
+00:14:31.640 --> 00:14:35.360
+wir sind schneller, wir können mit weniger
+
+253
+00:14:35.360 --> 00:14:37.480
+Leuten mehr Arbeit leisten. Das Team ist wirklich zufrieden.
+
+254
+00:14:37.480 --> 00:14:40.640
+Es verbringt keine 40 % seiner Zeit mit manueller Dateneingabe auf
+
+255
+00:14:40.640 --> 00:14:42.910
+verschiedenen Plattformen. Es macht weniger Fehler.
+
+256
+00:14:43.520 --> 00:14:47.040
+Wie gesagt, wir haben Informationen demokratisiert, nicht nur für unser
+
+257
+00:14:47.040 --> 00:14:49.190
+Team, sondern auch für externe Partner.
+
+258
+00:14:49.600 --> 00:14:54.000
+Und wir können jetzt auf unsere Expansion und unser Wachstum in
+
+259
+00:14:54.000 --> 00:14:56.960
+den USA blicken. Wenn wir dieses oder nächstes Jahr
+
+260
+00:14:56.960 --> 00:15:00.240
+doppelt so viele Kabinen bauen, müssen wir eigentlich nicht doppelt
+
+261
+00:15:00.240 --> 00:15:03.960
+so viele Leute einstellen. Wir können wohl 10 % mehr Leute einstellen und
+
+262
+00:15:03.960 --> 00:15:06.670
+schaffen es trotzdem, diese Aufträge zu erfüllen und die Kabinen zu verkaufen.
+
+263
+00:15:10.720 --> 00:15:12.720
+Das wissen Sie besser als ich, Alex.
+
+264
+00:15:12.720 --> 00:15:13.960
+Das ist nur ein kleiner Teil des Prozesses.
+
+265
+00:15:13.960 --> 00:15:17.360
+Eines ist wichtig: Während wir die KI alles für uns schreiben
+
+266
+00:15:17.360 --> 00:15:21.280
+lassen, prüfen Menschen es, bevor wir es veröffentlichen,
+
+267
+00:15:21.280 --> 00:15:23.590
+damit es funktioniert und alles passt.
+
+268
+00:15:24.120 --> 00:15:28.920
+Eine Sache habe ich gelernt, und das ist wohl die letzte Folie.
+
+269
+00:15:28.920 --> 00:15:33.230
+Wenn ich am Anfang,
+
+270
+00:15:34.360 --> 00:15:36.910
+vor ein paar Monaten, dagesessen hätte
+
+271
+00:15:37.880 --> 00:15:41.280
+und gedacht hätte: „Ich will mit KI diese eine Plattform für das
+
+272
+00:15:41.280 --> 00:15:44.640
+ganze Unternehmen bauen, von der Lieferkette bis zur
+
+273
+00:15:44.640 --> 00:15:46.750
+Installation und zum Kundendienst“,
+
+274
+00:15:47.320 --> 00:15:51.600
+und wenn ich das in einem Dokument beschrieben und der KI gesagt hätte:
+
+275
+00:15:51.600 --> 00:15:52.910
+„Schreib mir alles“,
+
+276
+00:15:54.560 --> 00:15:56.760
+hätte es wahrscheinlich nicht funktioniert.
+
+277
+00:15:56.760 --> 00:15:59.320
+Vielleicht würde es heute, ich weiß nicht, die sind ja so schlau jetzt.
+
+278
+00:15:59.320 --> 00:16:04.840
+Aber wir haben eine Aufgabe nach der anderen angepackt, Schritt für Schritt,
+
+279
+00:16:04.840 --> 00:16:06.950
+und dann hat es fantastisch funktioniert.
+
+280
+00:16:07.440 --> 00:16:10.160
+Wenn ich also jetzt noch einmal bei null anfangen müsste,
+
+281
+00:16:10.160 --> 00:16:12.240
+würde ich es so machen. Ich würde mit kleinen Problemen anfangen,
+
+282
+00:16:12.240 --> 00:16:14.280
+sie angehen und von dort aus weitermachen.
+
+283
+00:16:14.280 --> 00:16:16.470
+Vereinheitlichen Sie Ihre Daten und lassen Sie dann Menschen
+
+284
+00:16:17.640 --> 00:16:22.190
+prüfen. Meine Empfehlung an Sie ist:
+
+285
+00:16:23.480 --> 00:16:26.240
+Probieren Sie Agenten aus, falls Sie das noch nicht getan haben.
+
+286
+00:16:26.240 --> 00:16:31.720
+Ich nutze heute KI für absolut alles.
+
+287
+00:16:31.720 --> 00:16:32.620
+Diese ganze Präsentation.
+
+288
+00:16:34.360 --> 00:16:36.510
+Wissen Sie, wie lange ich für diese Präsentation gebraucht habe?
+
+289
+00:16:37.600 --> 00:16:42.320
+10 Sekunden. Eine One-Shot-Präsentation, ein Prompt.
+
+290
+00:16:42.320 --> 00:16:45.760
+Ich bin zu Claude gegangen. Claude hat Zugriff auf unser Repo mit allen Apps,
+
+291
+00:16:45.760 --> 00:16:48.640
+die wir entwickelt haben, und ich sagte: „Hey Claude,
+
+292
+00:16:48.640 --> 00:16:50.350
+ich spreche auf der CONNEXUS-Konferenz.
+
+293
+00:16:51.800 --> 00:16:54.280
+Amal hat mir diese Vorlage mit dem Branding geschickt.
+
+294
+00:16:54.280 --> 00:16:55.750
+Hier ist eine Vorlage für das Branding.
+
+295
+00:16:57.000 --> 00:17:00.080
+Erstelle mir eine Präsentation über unsere Apps.“
+
+296
+00:17:00.080 --> 00:17:01.320
+Ich habe nichts geändert.
+
+297
+00:17:01.320 --> 00:17:04.079
+Ich habe wohl letzte Nacht zwei Wörter in dieser Präsentation geändert.
+
+298
+00:17:04.079 --> 00:17:06.110
+10 Sekunden für diese Präsentation.
+
+299
+00:17:06.520 --> 00:17:11.160
+Und ich nutze KI auch zu Hause, um meinem Kind Dinge beizubringen,
+
+300
+00:17:11.160 --> 00:17:12.319
+um ihm zu zeigen, wie sie funktioniert.
+
+301
+00:17:12.319 --> 00:17:14.600
+Sie ist unglaublich schlau. Wenn Sie sie noch nicht nutzen,
+
+302
+00:17:14.600 --> 00:17:16.839
+probieren Sie es aus. Es wird Ihr Leben verändern.
+
+303
+00:17:16.839 --> 00:17:20.360
+Vielen Dank. Wenn Sie Fragen haben oder unsere Apps live sehen wollen,
+
+304
+00:17:20.360 --> 00:17:22.560
+zeige ich sie gerne allen.
+
+305
+00:17:22.560 --> 00:17:26.470
+Wenn Sie nicht glauben, wie gut sie laufen, melden Sie sich bei mir und

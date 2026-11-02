@@ -1,0 +1,445 @@
+WEBVTT
+
+1
+00:00:01.199 --> 00:00:04.880
+Dear organizers, dear panelists, speakers,
+
+2
+00:00:04.880 --> 00:00:09.360
+dear guests, it's a true privilege for me to be on the stage of this
+
+3
+00:00:09.360 --> 00:00:13.120
+forum. For many years I have been chairman of the Digital Innovation
+
+4
+00:00:13.120 --> 00:00:16.640
+Cluster, which is based in Plovdiv, the industrial powerhouse of
+
+5
+00:00:16.640 --> 00:00:21.119
+the country, but I have not been to a better and more warmly
+
+6
+00:00:21.119 --> 00:00:22.880
+organized event than this one.
+
+7
+00:00:22.880 --> 00:00:25.439
+So it's really a privilege to be here.
+
+8
+00:00:25.439 --> 00:00:29.760
+I'm going to present a particular project which demonstrates
+
+9
+00:00:29.760 --> 00:00:35.680
+partnership in the ICT sector between Bulgaria and Turkey, and the
+
+10
+00:00:35.680 --> 00:00:39.360
+relation to the previous speaker is that he presented a good
+
+11
+00:00:39.360 --> 00:00:44.079
+practice coming from the public sector, while this is a good public-
+
+12
+00:00:44.079 --> 00:00:46.320
+private partnership example.
+
+13
+00:00:46.320 --> 00:00:50.719
+So within the project I'm going to mention, it's an ongoing 36-
+
+14
+00:00:50.719 --> 00:00:56.079
+month project. We have the coordinating role of Sabancı
+
+15
+00:00:56.079 --> 00:00:59.680
+University, a private university from Istanbul, but we also have a
+
+16
+00:00:59.680 --> 00:01:05.920
+leading consultancy from Ankara. We also have the office, the
+
+17
+00:01:05.920 --> 00:01:10.320
+public institution in the project for digital transformation under
+
+18
+00:01:10.320 --> 00:01:15.439
+the President of Turkey. Now, halfway in the project it
+
+19
+00:01:15.439 --> 00:01:19.360
+changed its name institutionally, and it's called Cyber Security
+
+20
+00:01:19.360 --> 00:01:22.150
+Presidency of Turkey,
+
+21
+00:01:23.200 --> 00:01:29.040
+if I may correctly and in a diplomatic manner
+
+22
+00:01:29.040 --> 00:01:34.400
+express myself. We also have leading companies such as Arçelik and
+
+23
+00:01:34.400 --> 00:01:39.119
+Brisa, the latter being a partnership between Sabancı and
+
+24
+00:01:39.119 --> 00:01:45.430
+Bridgestone. Arçelik is one of the leading providers of
+
+25
+00:01:45.840 --> 00:01:50.000
+equipment, household electronics and whatnot.
+
+26
+00:01:50.000 --> 00:01:55.520
+And others. And to be, I would say, an even better example of
+
+27
+00:01:55.520 --> 00:01:58.799
+cooperation and partnership, we also have partners from Greece
+
+28
+00:01:58.799 --> 00:02:02.479
+because we also have this initiative in the context of the Three
+
+29
+00:02:02.479 --> 00:02:09.200
+Seas, in the context of Southeast Europe partnership, to extend
+
+30
+00:02:09.200 --> 00:02:12.640
+cooperation not only between the two countries but also with other
+
+31
+00:02:12.640 --> 00:02:16.400
+regional partners. The purpose of the project is very, very, very
+
+32
+00:02:16.400 --> 00:02:21.520
+simple, which is basically to provide training in a particular
+
+33
+00:02:21.520 --> 00:02:25.190
+niche of cyber security, which is OT security.
+
+34
+00:02:25.599 --> 00:02:29.840
+So the difference between operational technology and information
+
+35
+00:02:29.840 --> 00:02:31.680
+technology is the following.
+
+36
+00:02:31.680 --> 00:02:35.280
+It has a broader expansion into the digital world.
+
+37
+00:02:35.280 --> 00:02:38.319
+It cannot function without it. You cannot separate one from the other.
+
+38
+00:02:38.319 --> 00:02:41.270
+While OT is intended to have a
+
+39
+00:02:42.239 --> 00:02:45.670
+less broad scope, I would say, a very narrow scope.
+
+40
+00:02:46.400 --> 00:02:49.360
+Operational technology serves the manufacturing,
+
+41
+00:02:49.360 --> 00:02:52.400
+the production facilities, equipment.
+
+42
+00:02:52.400 --> 00:02:56.869
+If you are a hospital worker, for your operational technologies,
+
+43
+00:02:57.519 --> 00:03:03.920
+all the supplies that run within the infrastructure of the
+
+44
+00:03:03.920 --> 00:03:08.080
+hospital, all the utilities that you need to manage, and the
+
+45
+00:03:08.080 --> 00:03:12.800
+relationship between the utilities equipment on site and such
+
+46
+00:03:12.800 --> 00:03:17.200
+equipment that is on the site of the provider of the service.
+
+47
+00:03:17.200 --> 00:03:21.440
+If you are working in a production line, then OT for you are the
+
+48
+00:03:21.440 --> 00:03:25.760
+machines, the embedded software that runs these machines. The more
+
+49
+00:03:25.760 --> 00:03:30.319
+automated they are, the more software. The problem comes now that
+
+50
+00:03:30.319 --> 00:03:34.550
+operational technology basically merges into information
+
+51
+00:03:35.440 --> 00:03:39.280
+technology, and you cannot separate them. You try to separate them
+
+52
+00:03:39.280 --> 00:03:44.000
+but you can't. For this you need a skilled workforce, skilled
+
+53
+00:03:44.000 --> 00:03:47.040
+cyber security experts, and it doesn't matter if you're a leading
+
+54
+00:03:47.040 --> 00:03:50.560
+producer in Turkey, as you saw on the previous slide we have such
+
+55
+00:03:50.560 --> 00:03:54.720
+partners, or you are a small company in Bulgaria, you struggle, or a
+
+56
+00:03:54.720 --> 00:03:58.879
+hospital in Varna, you struggle with the same issues. You need to
+
+57
+00:03:58.879 --> 00:04:03.200
+basically provide training for your employees on how to run
+
+58
+00:04:03.200 --> 00:04:07.519
+operational technology and also how to secure information technology,
+
+59
+00:04:07.519 --> 00:04:12.400
+as these are now merging into one concept. The summary of the
+
+60
+00:04:12.400 --> 00:04:16.720
+activities I'm not going to go through, because the aim is to
+
+61
+00:04:16.720 --> 00:04:20.710
+provide you with an opportunity to join, and this opportunity
+
+62
+00:04:21.199 --> 00:04:26.800
+arises, actually a couple of slides ahead, from the fact that we are
+
+63
+00:04:26.800 --> 00:04:30.240
+now after many months of preparation of these trainings.
+
+64
+00:04:30.240 --> 00:04:34.240
+So we worked on scouting the needs of businesses in Turkey,
+
+65
+00:04:34.240 --> 00:04:38.479
+scouting the needs of administrations that are supervising
+
+66
+00:04:38.479 --> 00:04:43.040
+manufacturers in Bulgaria, scouting the needs of hospitals and
+
+67
+00:04:43.040 --> 00:04:45.840
+other public bodies in Greece.
+
+68
+00:04:45.840 --> 00:04:51.759
+Now we have scouted what OT means for them, where the gaps in OT
+
+69
+00:04:51.759 --> 00:04:54.720
+security are, and we are starting to provide trainings which are
+
+70
+00:04:54.720 --> 00:05:00.320
+absolutely free. We have basically focused also on train the
+
+71
+00:05:00.320 --> 00:05:04.800
+trainers. So if you are representatives of your own companies or
+
+72
+00:05:04.800 --> 00:05:08.320
+companies where you work and you would like to be a trainer to
+
+73
+00:05:08.320 --> 00:05:12.080
+deliver trainings in operational technology security that we have
+
+74
+00:05:12.080 --> 00:05:15.120
+basically developed, we'll be happy to train you in order for you to
+
+75
+00:05:15.120 --> 00:05:17.680
+become an ambassador of this training program.
+
+76
+00:05:17.680 --> 00:05:21.280
+Here are the particular aspects that we cover.
+
+77
+00:05:21.280 --> 00:05:27.840
+Of course, you know that ransomware is among the most
+
+78
+00:05:27.840 --> 00:05:31.919
+common, the deadliest, and at the same time can be a very
+
+79
+00:05:31.919 --> 00:05:37.029
+sophisticated attack. But you are not going to become a malware
+
+80
+00:05:37.440 --> 00:05:42.000
+analyst specialist. There are other, you know, very basic
+
+81
+00:05:42.000 --> 00:05:44.800
+things you can do to protect your company, for example, from a
+
+82
+00:05:44.800 --> 00:05:46.390
+business email compromise.
+
+83
+00:05:47.199 --> 00:05:52.479
+Because if you tap into someone's electronic email, into some
+
+84
+00:05:52.479 --> 00:05:55.759
+company's electronic email, then from there you can harvest
+
+85
+00:05:55.759 --> 00:06:00.160
+credentials, and with these credentials you can go into a certain
+
+86
+00:06:00.160 --> 00:06:04.479
+operational technology system, but you can also simply change
+
+87
+00:06:04.479 --> 00:06:10.400
+someone's IBAN on an invoice and make your company send
+
+88
+00:06:10.400 --> 00:06:11.840
+money to the wrong person.
+
+89
+00:06:11.840 --> 00:06:14.469
+So what I'm trying to say is we're not only preparing
+
+90
+00:06:15.440 --> 00:06:18.319
+dedicated, trained experts.
+
+91
+00:06:18.319 --> 00:06:20.150
+We are also evangelizing
+
+92
+00:06:21.120 --> 00:06:23.589
+cyber security awareness and hygiene.
+
+93
+00:06:24.080 --> 00:06:29.039
+So basic steps, which cover cyber forensics when an incident
+
+94
+00:06:29.039 --> 00:06:35.759
+occurs, to very deeply, I would say, focused training such as
+
+95
+00:06:35.759 --> 00:06:38.800
+secure coding, are covered.
+
+96
+00:06:38.800 --> 00:06:43.600
+Again, 17 modules were developed with our partners, with Sabancı
+
+97
+00:06:43.600 --> 00:06:47.440
+University in charge and with the participation of the Cyber
+
+98
+00:06:47.440 --> 00:06:51.110
+Security Presidency under the President of Turkey.
+
+99
+00:06:51.680 --> 00:06:57.680
+We are going to start now in October. Actually, it's a coincidence
+
+100
+00:06:57.680 --> 00:07:02.080
+that the forum happens now, after almost 18 months in development of
+
+101
+00:07:02.080 --> 00:07:04.880
+these trainings, and we can announce that they're already open for
+
+102
+00:07:04.880 --> 00:07:09.759
+you. You can reach out. You can find us at our website, and you
+
+103
+00:07:09.759 --> 00:07:13.039
+can sign up for any one of these without any bureaucracy.
+
+104
+00:07:13.039 --> 00:07:17.680
+No need to apply. Of course you need to sign up in
+
+105
+00:07:17.680 --> 00:07:20.960
+advance of this happening, but the sooner the better,
+
+106
+00:07:20.960 --> 00:07:24.710
+right? And the train-the-trainers are also available.
+
+107
+00:07:25.280 --> 00:07:27.759
+And that's about all. I want to keep it short.
+
+108
+00:07:27.759 --> 00:07:32.560
+Again, very simple, I would say not that clever and, you
+
+109
+00:07:32.560 --> 00:07:38.639
+know, life-changing project, but we identified that we share the
+
+110
+00:07:38.639 --> 00:07:43.520
+same common needs, common problems, and we came up with a joint
+
+111
+00:07:43.520 --> 00:07:45.189
+training program to resolve this.

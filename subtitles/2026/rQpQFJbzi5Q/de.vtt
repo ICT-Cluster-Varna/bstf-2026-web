@@ -1,0 +1,1709 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.470
+Okay. Können Sie uns hören? Ja.
+
+2
+00:00:04.120 --> 00:00:08.840
+Danke, dass Sie heute dabei sind – bei einem, wie ich glaube, sehr aktuellen
+
+3
+00:00:08.840 --> 00:00:15.520
+und spannenden Thema, über das, nun ja, alle reden: KI,
+
+4
+00:00:15.520 --> 00:00:21.200
+digitale Transformation. Dies ist ein Business-Austausch, bei dem
+
+5
+00:00:21.200 --> 00:00:27.400
+wir Ihre Ideen zum Thema digitale Transformation teilen möchten,
+
+6
+00:00:27.400 --> 00:00:32.840
+zu sicheren Lieferketten. Wir möchten aber auch Einblicke aus
+
+7
+00:00:32.840 --> 00:00:38.880
+dem Privatsektor, wie wir Ihre Ideen und Ihr Wissen nutzen können,
+
+8
+00:00:38.880 --> 00:00:42.750
+um die Politikgestaltung in diesem Bereich künftig zu verbessern.
+
+9
+00:00:43.720 --> 00:00:49.000
+Ich möchte zunächst kurz die Session vorstellen.
+
+10
+00:00:49.000 --> 00:00:52.800
+Wir sprechen über digitale und KI-Transformation in ihren verschiedenen
+
+11
+00:00:52.800 --> 00:00:59.120
+Bereichen – von der Sicherheit ihrer Lieferketten über
+
+12
+00:00:59.120 --> 00:01:05.720
+die Talente, die KI entwickeln, und deren Interessen bis hin zur
+
+13
+00:01:05.720 --> 00:01:08.150
+Einführung von KI im privaten Sektor
+
+14
+00:01:09.120 --> 00:01:13.680
+und einigen strategischen Initiativen, die wir derzeit für
+
+15
+00:01:13.680 --> 00:01:17.190
+fortgeschrittene KI haben. Ich möchte diese Fragerunde
+
+16
+00:01:18.400 --> 00:01:21.670
+mit Stoyan beginnen,
+
+17
+00:01:23.520 --> 00:01:28.710
+der uns viel über die BRAIN++-Fabrik erzählen kann, die
+
+18
+00:01:29.920 --> 00:01:34.440
+derzeit eines der bedeutendsten KI-Projekte
+
+19
+00:01:34.440 --> 00:01:40.630
+des Landes wird. KI ist, was die Rechenleistung angeht,
+
+20
+00:01:41.040 --> 00:01:42.230
+etwas, das
+
+21
+00:01:43.640 --> 00:01:45.350
+Wirtschaftswachstum und Wettbewerbsfähigkeit bestimmt.
+
+22
+00:01:46.000 --> 00:01:50.480
+Aber sie unterliegt auch erheblichen Engpässen
+
+23
+00:01:50.480 --> 00:01:52.310
+entlang ihrer Lieferkette.
+
+24
+00:01:53.320 --> 00:01:58.230
+Auf Grundlage der aktuellen Arbeit der Fabrik sowie
+
+25
+00:01:59.640 --> 00:02:04.802
+der Position Bulgariens als Volkswirtschaft: Was sind die größten
+
+26
+00:02:05.812 --> 00:02:09.562
+Risiken entlang der Lieferketten, und
+
+27
+00:02:11.572 --> 00:02:14.642
+wo liegt die Sicherheitsherausforderung entlang der Lieferkette?
+
+28
+00:02:17.732 --> 00:02:19.452
+Mal sehen, das ist eine schwierige Frage.
+
+29
+00:02:19.452 --> 00:02:23.322
+Die Antwort ist einfach nicht erfreulich.
+
+30
+00:02:25.972 --> 00:02:28.642
+Die Abhängigkeiten bestehen auf vielen Ebenen.
+
+31
+00:02:29.852 --> 00:02:34.002
+Es gibt europäische und dann vor allem nationale.
+
+32
+00:02:35.972 --> 00:02:40.482
+Wenn ich auf europäischer Ebene beginne, also,
+
+33
+00:02:42.452 --> 00:02:46.842
+fangen wir einfach entlang der Lieferkette an.
+
+34
+00:02:47.652 --> 00:02:50.772
+Die Hardware, alles davon, plus die Software, die sie betreibt, das sind
+
+35
+00:02:50.772 --> 00:02:54.202
+die GPUs, die Netzwerk-
+
+36
+00:02:55.212 --> 00:02:57.562
+systeme, der Speicher und so weiter.
+
+37
+00:02:58.612 --> 00:02:59.802
+Das kommt alles aus dem Ausland.
+
+38
+00:03:00.892 --> 00:03:03.962
+Ja, ziemlich genau. USA, Korea, Taiwan.
+
+39
+00:03:04.692 --> 00:03:09.132
+Und es ist nicht einmal eine einmalige Sache.
+
+40
+00:03:09.132 --> 00:03:10.562
+Es ist eher ein Abonnement.
+
+41
+00:03:11.332 --> 00:03:15.322
+Wir kaufen es jetzt und müssen es in 5 Jahren erneut kaufen.
+
+42
+00:03:15.932 --> 00:03:18.122
+Das ist also eine harte Nuss.
+
+43
+00:03:20.212 --> 00:03:25.892
+Das ist eine Abhängigkeit, an der wir derzeit nichts oder
+
+44
+00:03:25.892 --> 00:03:30.732
+kaum etwas ändern können. Zweitens, auf nationaler Ebene: Bulgarien
+
+45
+00:03:30.732 --> 00:03:32.842
+– ich spreche speziell über Bulgarien.
+
+46
+00:03:33.892 --> 00:03:38.892
+Uns fehlt die Größe. Es wäre schwierig, diese
+
+47
+00:03:38.892 --> 00:03:43.772
+KI-Fabrik allein zu bekommen. Obwohl kürzlich, ich glaube für kurze
+
+48
+00:03:43.772 --> 00:03:45.842
+Zeit, denn erst kürzlich
+
+49
+00:03:47.692 --> 00:03:52.362
+wurde Bulgarien von den USA als Land zweiter Stufe eingestuft,
+
+50
+00:03:53.572 --> 00:03:59.642
+was die Fähigkeit angeht, sich in die Schlange einzureihen für
+
+51
+00:04:00.972 --> 00:04:04.254
+Hardware, GPUs von Nvidia usw.
+
+52
+00:04:04.254 --> 00:04:10.804
+Das wurde zum Glück aufgehoben, aber es weist trotzdem auf dieselbe
+
+53
+00:04:11.214 --> 00:04:14.964
+Idee hin: Allein wäre
+
+54
+00:04:16.094 --> 00:04:18.654
+das wohl nicht möglich gewesen, BRAIN++,
+
+55
+00:04:18.654 --> 00:04:23.324
+aber gemeinsam, als gesamte EU, ja, das lässt sich machen.
+
+56
+00:04:23.734 --> 00:04:26.094
+So machen wir das.
+
+57
+00:04:26.094 --> 00:04:30.694
+So wird die Hardware, die gesamte Infrastruktur,
+
+58
+00:04:30.694 --> 00:04:31.844
+beschafft werden.
+
+59
+00:04:32.494 --> 00:04:34.924
+Und dann, also,
+
+60
+00:04:35.894 --> 00:04:42.444
+das betrifft die Hardware, aber dann der Betrieb – ich meine die Talente und die
+
+61
+00:04:42.974 --> 00:04:47.124
+Nachfrage, aus dem Metall etwas zu machen.
+
+62
+00:04:49.174 --> 00:04:50.494
+Ich würde sagen, die gibt es.
+
+63
+00:04:50.494 --> 00:04:54.374
+Aber die gibt es auch überall sonst,
+
+64
+00:04:54.374 --> 00:04:58.134
+also nicht unbedingt: „Okay, wir sind von niemandem abhängig.
+
+65
+00:04:58.134 --> 00:05:00.804
+Wir können das liefern.“ Aber
+
+66
+00:05:01.854 --> 00:05:06.044
+ja, wir müssen sie halten, denn sie können gehen.
+
+67
+00:05:07.174 --> 00:05:14.374
+Das sind also die wichtigsten Abhängigkeiten
+
+68
+00:05:14.374 --> 00:05:18.534
+und die Risiken: Ja, wir ermöglichen es jetzt,
+
+69
+00:05:18.534 --> 00:05:21.724
+aber was passiert in 5 Jahren, wenn wir erneuern müssen?
+
+70
+00:05:23.934 --> 00:05:30.644
+Okay, wenn Sie also damit begonnen haben, dass es viele
+
+71
+00:05:31.574 --> 00:05:33.494
+Schwierigkeiten gibt, die von unserer Seite kommen.
+
+72
+00:05:33.494 --> 00:05:39.364
+Mhm. Und Bulgarien ist,
+
+73
+00:05:40.654 --> 00:05:44.654
+sagen wir, weit davon entfernt, international mitzuhalten,
+
+74
+00:05:44.654 --> 00:05:48.324
+aber wir sind in diesem Rennen dabei.
+
+75
+00:05:48.894 --> 00:05:54.454
+Und was für uns, glaube ich, als Ökosystem sehr interessant
+
+76
+00:05:54.454 --> 00:06:01.094
+ist, sind auch die Talente, die
+
+77
+00:06:01.094 --> 00:06:07.695
+in dieses KI-Rennen gehen, und
+
+78
+00:06:07.695 --> 00:06:12.445
+im Gespräch heißt es immer, wir haben die Universitäten,
+
+79
+00:06:13.615 --> 00:06:16.535
+aber sie beteiligen sich nicht sinnvoll durch Technologietransfer
+
+80
+00:06:16.535 --> 00:06:21.565
+am Aufbau von Spitzentechnologie.
+
+81
+00:06:21.975 --> 00:06:27.815
+Und ich möchte mich an Philip wenden, der viel mit Talenten
+
+82
+00:06:27.815 --> 00:06:28.765
+und mit Ingenieuren arbeitet
+
+83
+00:06:29.815 --> 00:06:35.365
+und der weiß, welche Fähigkeiten erforderlich sind,
+
+84
+00:06:36.615 --> 00:06:38.365
+um Spitzenprodukte zu bauen.
+
+85
+00:06:39.175 --> 00:06:42.135
+Wo stehen wir im Rennen um Talente?
+
+86
+00:06:42.135 --> 00:06:45.925
+Nun, danke, Georgi. Zunächst einmal bin ich etwas praxisnäher.
+
+87
+00:06:46.375 --> 00:06:53.015
+Was ich aus meiner Sicht sehe, ist, dass sich der Vertrag
+
+88
+00:06:53.015 --> 00:06:58.575
+geändert hat. Und dieser jahrhundertealte Vertrag, den wir seit der
+
+89
+00:06:58.575 --> 00:07:03.415
+Erfindung der Turmuhr haben, verändert jetzt den Wert,
+
+90
+00:07:03.415 --> 00:07:06.085
+den ein einzelner Ingenieur für ein Unternehmen haben kann.
+
+91
+00:07:06.815 --> 00:07:10.085
+Was wir jetzt anstreben, ist nicht,
+
+92
+00:07:11.055 --> 00:07:17.575
+Menschen nach Zeit oder pro Zeile
+
+93
+00:07:17.575 --> 00:07:23.175
+geschriebenem Code zu bezahlen, sondern ein anderes Maß an
+
+94
+00:07:23.175 --> 00:07:25.735
+Einsatz, den wir hier erreichen wollen,
+
+95
+00:07:25.735 --> 00:07:31.695
+und bei KI-Agenten ist dieses Maß heute die Fähigkeit des
+
+96
+00:07:31.695 --> 00:07:35.845
+Ingenieurs, zu genehmigen und
+
+97
+00:07:36.815 --> 00:07:43.285
+wie soll ich sagen, sein ganzes Wissen und seine Expertise einzubringen
+
+98
+00:07:43.855 --> 00:07:49.925
+und hinter dieser Entscheidung zu stehen, die er für die KI
+
+99
+00:07:50.415 --> 00:07:52.735
+selbst getroffen hat. Wir setzen jetzt Agenten ein.
+
+100
+00:07:52.735 --> 00:07:58.365
+Alles hat sich verändert. Wie bewerten wir die Arbeit eines einzelnen
+
+101
+00:07:59.015 --> 00:08:00.965
+Mitarbeiters? Das ist unmöglich.
+
+102
+00:08:01.455 --> 00:08:05.655
+Heute wird alles in Minuten erledigt, was früher
+
+103
+00:08:05.655 --> 00:08:10.607
+Tage oder sogar Wochen dauerte. Wir müssen also wirklich darüber nachdenken,
+
+104
+00:08:11.777 --> 00:08:16.537
+wie man Arbeit messbar macht, und das ist die größte
+
+105
+00:08:16.537 --> 00:08:23.017
+Frage. Ich denke, das kommt mit Governance und besseren Werkzeugen, die
+
+106
+00:08:23.017 --> 00:08:26.247
+uns ergebnisorientierte
+
+107
+00:08:28.217 --> 00:08:33.297
+Ansätze liefern, die zeigen, was dieser Ingenieur
+
+108
+00:08:33.297 --> 00:08:39.247
+geleistet hat. Geht es also darum, dass wir mit diesen neuen KI-Agenten,
+
+109
+00:08:39.937 --> 00:08:44.417
+die die Ingenieure und Mitarbeiter eines Unternehmens haben, viel mehr mit viel
+
+110
+00:08:44.417 --> 00:08:48.497
+weniger erreichen? Wir werden also als Wirtschaftseinheiten langfristig
+
+111
+00:08:48.497 --> 00:08:52.457
+wettbewerbsfähiger. Ja, wir können viel mehr erreichen, aber auch viel
+
+112
+00:08:52.457 --> 00:08:57.727
+weniger mit KI. Wir können viel mehr bei den Kosten erreichen,
+
+113
+00:08:58.737 --> 00:09:03.777
+aber auch viel weniger sinnvoll geleistete Arbeit
+
+114
+00:09:03.777 --> 00:09:05.927
+für diese bestimmte Aufgabe.
+
+115
+00:09:06.497 --> 00:09:10.407
+Es geht also nicht darum, wie viele Agenten wir einsetzen.
+
+116
+00:09:11.097 --> 00:09:15.127
+Es geht darum, dass die Organisation selbst das Modell ist.
+
+117
+00:09:15.697 --> 00:09:21.537
+Denken Sie darüber nach. Wir fragen jetzt nicht mehr
+
+118
+00:09:21.537 --> 00:09:23.687
+danach, welche Modelle Sie verwenden.
+
+119
+00:09:24.297 --> 00:09:28.887
+Mit kleinen LLMs kann man zum Beispiel schon viel erreichen,
+
+120
+00:09:29.617 --> 00:09:34.247
+aber sinnvoll verteilt in der gesamten Organisation.
+
+121
+00:09:35.057 --> 00:09:40.737
+Es liegt also an der Organisation, diesen Workflow zu schaffen
+
+122
+00:09:40.737 --> 00:09:46.297
+und diese Schleife und den Schwarm einzusetzen, der den
+
+123
+00:09:46.297 --> 00:09:51.337
+Ingenieuren hilft, bessere Entscheidungen zu treffen und die neue Turmuhr
+
+124
+00:09:51.337 --> 00:09:56.127
+zu steuern, wie wir sie nennen, damit sie wirklich zum System beitragen.
+
+125
+00:09:56.817 --> 00:09:59.567
+Es geht nicht mehr darum, wie viele Codezeilen Sie schreiben.
+
+126
+00:10:00.857 --> 00:10:05.217
+Danke. Wenn ich darum bitten darf, reichen Sie das Mikrofon an
+
+127
+00:10:05.217 --> 00:10:11.168
+Jeroen weiter. Der organisatorische Aspekt ist also entscheidend, neben
+
+128
+00:10:12.218 --> 00:10:17.458
+dem KI-Einsatz und dem Aufbau von KI, damit sie dadurch nicht
+
+129
+00:10:17.458 --> 00:10:19.938
+unproduktiv werden.
+
+130
+00:10:19.938 --> 00:10:25.938
+Damit möchte ich die Diskussion in Richtung
+
+131
+00:10:25.938 --> 00:10:30.808
+KI-Einführung lenken. Laut den neuesten Daten von Eurostat
+
+132
+00:10:31.498 --> 00:10:36.808
+liegt die KI-Nutzung in Unternehmen in den Niederlanden bei 33 %.
+
+133
+00:10:37.898 --> 00:10:42.248
+In Bulgarien bei neun. Wenn man also
+
+134
+00:10:43.258 --> 00:10:48.778
+diese Daten, diese Statistik hat, was ist nach Ihrer Erfahrung,
+
+135
+00:10:48.778 --> 00:10:52.058
+Sie haben mit vielen Unternehmen aus den Niederlanden und
+
+136
+00:10:52.058 --> 00:10:57.328
+Bulgarien gearbeitet, was hindert Unternehmen an der Einführung von KI?
+
+137
+00:10:57.858 --> 00:11:01.898
+Was sind die Engpässe, und vielleicht auch, welche Gründe sind übertrieben
+
+138
+00:11:01.898 --> 00:11:04.488
+und gelten gar nicht mehr?
+
+139
+00:11:06.938 --> 00:11:11.048
+Danke. Am meisten übertrieben
+
+140
+00:11:12.018 --> 00:11:17.218
+sind die Vorschriften. Wenn man sich das neue Omnibus-Paket zum AI Act ansieht,
+
+141
+00:11:17.218 --> 00:11:22.248
+sind die Verbote für Hochrisiko-Systeme verschoben.
+
+142
+00:11:22.938 --> 00:11:28.338
+Für ein durchschnittliches Unternehmen genügt es also, auf die
+
+143
+00:11:28.338 --> 00:11:30.658
+Verbote zu schauen, was verboten ist, die Transparenz,
+
+144
+00:11:30.658 --> 00:11:34.658
+und das gilt für alle Unternehmen, wie die Regeln für
+
+145
+00:11:34.658 --> 00:11:36.448
+ein Modell. Also,
+
+146
+00:11:37.978 --> 00:11:41.698
+meiner Meinung nach ist das kein Hindernis für die
+
+147
+00:11:41.698 --> 00:11:48.338
+Unternehmen. Die unbequeme Wahrheit sind
+
+148
+00:11:48.338 --> 00:11:52.738
+die Daten. Viele CEOs kommen zu mir und denken,
+
+149
+00:11:52.738 --> 00:11:55.888
+sie sehen KI als eine Art Magie.
+
+150
+00:11:56.538 --> 00:12:00.218
+Und sie erwarten, dass, wenn sie KI in ihre Plattform integrieren,
+
+151
+00:12:00.218 --> 00:12:01.888
+sie auf magische Weise alles weiß.
+
+152
+00:12:02.458 --> 00:12:07.938
+Aber die Realität ist, dass viele Daten dieser Unternehmen nicht in
+
+153
+00:12:07.938 --> 00:12:10.608
+gutem Zustand sind. Und um Vorhersagen zu treffen,
+
+154
+00:12:11.018 --> 00:12:13.779
+muss man diese Daten verbessern, und solche Projekte können
+
+155
+00:12:13.779 --> 00:12:16.889
+vielleicht 2 Jahre dauern. Das ist nicht einfach.
+
+156
+00:12:17.339 --> 00:12:20.299
+Aber niemand will die Kosten tragen.
+
+157
+00:12:20.299 --> 00:12:23.139
+Und dann gibt es diese Lücke zwischen Betrieb, Finanzen
+
+158
+00:12:23.139 --> 00:12:26.459
+und dem CEO, der denkt, dass es im Unternehmen immer jemanden gibt,
+
+159
+00:12:26.459 --> 00:12:30.459
+der mit Lovable supercoole
+
+160
+00:12:30.459 --> 00:12:34.849
+Sachen in einer Minute baut. Und das sieht der CEO.
+
+161
+00:12:35.299 --> 00:12:39.619
+Das ist der schwierige Teil.
+
+162
+00:12:39.619 --> 00:12:46.139
+Die Daten wirklich in Ordnung zu bringen, um mit KI oder
+
+163
+00:12:46.139 --> 00:12:47.039
+maschinellem Lernen Vorhersagen zu treffen.
+
+164
+00:12:49.059 --> 00:12:55.579
+Und offensichtlich sind die Niederlande in diesem Bereich besser, was das Ordnen
+
+165
+00:12:55.579 --> 00:13:01.259
+der Daten angeht. Stimmt das? Gibt es Empfehlungen für
+
+166
+00:13:01.259 --> 00:13:04.249
+bulgarische Unternehmen, wie sie dieses Problem lösen können?
+
+167
+00:13:04.819 --> 00:13:07.579
+Nun, ist es die Kultur im Umgang mit Daten?
+
+168
+00:13:07.579 --> 00:13:12.379
+Ist es der technische oder der organisatorische Aspekt? Wie können wir
+
+169
+00:13:12.379 --> 00:13:14.529
+Es ist organisatorisch.
+
+170
+00:13:15.299 --> 00:13:19.939
+Ich denke, in Bulgarien fehlt es absolut nicht an Wissen.
+
+171
+00:13:19.939 --> 00:13:21.849
+Es gibt erstaunliche Ingenieure.
+
+172
+00:13:22.579 --> 00:13:27.729
+Es geht nur um das Bewusstsein und darum, das Budget bereitzustellen.
+
+173
+00:13:28.259 --> 00:13:30.899
+Und es dann auch zu tun.
+
+174
+00:13:30.899 --> 00:13:32.249
+Es gibt also viel Zögern,
+
+175
+00:13:33.219 --> 00:13:38.179
+tatsächlich loszulegen. Und ich denke, wie Nike sagt:
+
+176
+00:13:38.179 --> 00:13:40.289
+„Just do it.“ Und das Budget bereitstellen.
+
+177
+00:13:43.779 --> 00:13:50.179
+Stoyan, wenn ich das höre: Als wir vor dieser Session sprachen,
+
+178
+00:13:50.179 --> 00:13:55.659
+sagten Sie, dass die KI-Fabrik viel Ökosystemarbeit leistet,
+
+179
+00:13:55.659 --> 00:14:00.129
+die Unternehmen organisatorisch helfen kann.
+
+180
+00:14:01.259 --> 00:14:06.369
+Auf welche Weise können Sie
+
+181
+00:14:07.419 --> 00:14:10.499
+Unternehmen unterstützen, die Teil dieser Lieferkette sein wollen und
+
+182
+00:14:10.499 --> 00:14:15.019
+KI-Arbeit leisten, über Rechenleistung hinaus?
+
+183
+00:14:15.019 --> 00:14:18.461
+Welche Ansätze gibt es derzeit oder werden erwartet?
+
+184
+00:14:18.461 --> 00:14:22.501
+Es gibt eine Antwort nach Lehrbuch und eine etwas
+
+185
+00:14:22.501 --> 00:14:28.701
+breitere. Ich beginne mit der breiteren, und das ist teils meine
+
+186
+00:14:28.701 --> 00:14:32.781
+Rolle bei BRAIN, denn ich bin Director Business Development bzw.
+
+187
+00:14:32.781 --> 00:14:36.291
+AI Ecosystem Architect, was schick klingt, aber nicht ist.
+
+188
+00:14:36.901 --> 00:14:42.291
+Im Grunde wollen wir auf jede erdenkliche Weise helfen.
+
+189
+00:14:42.781 --> 00:14:46.291
+Das ist die breite Antwort, und sie ist absichtlich sehr vage,
+
+190
+00:14:46.901 --> 00:14:52.731
+denn je breiter die Einführung, desto besser haben wir es gemacht.
+
+191
+00:14:53.821 --> 00:14:59.941
+Auf der Projektseite, also die konkretere Programmhilfe
+
+192
+00:14:59.941 --> 00:15:03.611
+nach Lehrbuch, die wir bieten: Jeder kann sich mit einem Projekt bewerben.
+
+193
+00:15:04.621 --> 00:15:09.571
+Natürlich werden sie geprüft, weil Rechenleistung und
+
+194
+00:15:10.861 --> 00:15:15.381
+Ressourcen allgemein begrenzt sind, und wir wollen das
+
+195
+00:15:15.381 --> 00:15:20.861
+Ergebnis maximieren. Aber wenn ein Unternehmen einen guten Anwendungsfall hat
+
+196
+00:15:20.861 --> 00:15:26.101
+und sich bewirbt, kann es kostenlose Ressourcen erhalten,
+
+197
+00:15:26.101 --> 00:15:28.101
+die Sie bereits erwähnt haben.
+
+198
+00:15:28.101 --> 00:15:31.341
+Kostenlose Ressourcen, damit meinen wir Rechenleistung.
+
+199
+00:15:31.341 --> 00:15:37.501
+Sie können also zum Beispiel ihr Modell auf der Infrastruktur laufen lassen.
+
+200
+00:15:37.501 --> 00:15:41.701
+Oder wenn dieses Modell bereits läuft,
+
+201
+00:15:41.701 --> 00:15:43.221
+können sie es als Mandant nutzen.
+
+202
+00:15:43.221 --> 00:15:48.861
+Also Docker. Das ist der einfachste Teil.
+
+203
+00:15:48.861 --> 00:15:54.341
+Außerdem, wenn das Modell den Standards noch nicht ganz entspricht,
+
+204
+00:15:54.341 --> 00:15:57.701
+die wir setzen, und wir setzen sie nicht allein,
+
+205
+00:15:57.701 --> 00:16:00.451
+haben wir
+
+206
+00:16:01.421 --> 00:16:05.661
+eine Art Jury mit Experten aus dem Fachgebiet geschaffen.
+
+207
+00:16:05.661 --> 00:16:11.021
+KI-Experten, Experten aus der Branche, in der das Projekt angesiedelt ist,
+
+208
+00:16:11.021 --> 00:16:15.861
+dann Finanzexperten, die prüfen, ob das Projekt selbst
+
+209
+00:16:15.861 --> 00:16:19.772
+solide, tragfähig usw. ist.
+
+210
+00:16:20.222 --> 00:16:26.102
+Und dann ein rein interner Finanzexperte, der sicherstellt, dass
+
+211
+00:16:26.102 --> 00:16:29.692
+alles korrekt nachverfolgt wird.
+
+212
+00:16:30.422 --> 00:16:34.782
+All das dient dem Ziel, dass wir, wenn ein Unternehmen
+
+213
+00:16:34.782 --> 00:16:38.892
+zu uns kommt, zunächst das Projekt startklar machen.
+
+214
+00:16:39.462 --> 00:16:43.342
+Und wenn es startklar ist, die Ressourcen bestmöglich
+
+215
+00:16:43.342 --> 00:16:46.932
+einzusetzen, für das bestmögliche Ergebnis.
+
+216
+00:16:47.702 --> 00:16:52.902
+Und das bestmögliche Ergebnis ist, dass es langfristig tragfähig wird.
+
+217
+00:16:52.902 --> 00:16:55.462
+Sie nutzen also nicht nur die Kapazität,
+
+218
+00:16:55.462 --> 00:16:59.412
+die Ressourcen, die wir bereitstellen, und danach ist es tot,
+
+219
+00:17:00.502 --> 00:17:05.342
+sondern es baut einfach auf
+
+220
+00:17:05.342 --> 00:17:10.102
+bestehenden Unternehmen auf oder ermöglicht Menschen, ganz neu zu starten,
+
+221
+00:17:10.102 --> 00:17:14.462
+Unternehmen von Grund auf, die, wissen Sie,
+
+222
+00:17:14.462 --> 00:17:19.452
+KI im Kern haben. So wollen wir helfen.
+
+223
+00:17:20.582 --> 00:17:26.742
+Gut. Ich denke, in der Diskussion haben wir bisher ein wenig angerissen,
+
+224
+00:17:26.742 --> 00:17:30.942
+was wir tun und was wir bisher erreicht haben,
+
+225
+00:17:30.942 --> 00:17:32.132
+und einige der Herausforderungen.
+
+226
+00:17:32.862 --> 00:17:36.062
+Der zweite Teil der Diskussion soll etwas
+
+227
+00:17:36.062 --> 00:17:41.902
+zukunftsorientierter sein: künftige Initiativen,
+
+228
+00:17:41.902 --> 00:17:47.502
+künftige Ansätze, um diese Technologie voranzubringen und
+
+229
+00:17:47.502 --> 00:17:50.572
+einzusetzen. Und
+
+230
+00:17:51.662 --> 00:17:55.492
+wie Sie alle gesehen haben,
+
+231
+00:17:56.582 --> 00:18:00.262
+hat zu Beginn der Veranstaltung der Staatsminister erwähnt,
+
+232
+00:18:00.262 --> 00:18:06.142
+dass Bulgarien bereit für Pax Silica ist, die Initiative für die
+
+233
+00:18:06.142 --> 00:18:12.222
+Sicherheit der Lieferketten, der die EU und
+
+234
+00:18:12.222 --> 00:18:14.412
+andere europäische Länder, darunter die Niederlande,
+
+235
+00:18:15.022 --> 00:18:19.982
+beigetreten sind. Ich beginne mit Jeroen und frage Sie
+
+236
+00:18:19.982 --> 00:18:25.333
+zuerst aus der Perspektive der Niederlande:
+
+237
+00:18:25.943 --> 00:18:28.733
+Was würde Pax Silica diesem Land bringen,
+
+238
+00:18:30.183 --> 00:18:33.053
+als entscheidendem Akteur beim Aufbau dieser Technologie?
+
+239
+00:18:33.623 --> 00:18:37.893
+Und wenn Bulgarien künftig beitritt,
+
+240
+00:18:39.103 --> 00:18:43.223
+welche Art von Investitionen würde das ins Land bringen
+
+241
+00:18:43.223 --> 00:18:44.253
+und welche Chancen?
+
+242
+00:18:46.583 --> 00:18:50.943
+Nun, ein schönes Thema, denn wir haben ASML in den
+
+243
+00:18:50.943 --> 00:18:53.733
+Niederlanden; es stellt Lithografiemaschinen her.
+
+244
+00:18:54.423 --> 00:18:58.373
+Pax Silica ist eine Erklärung.
+
+245
+00:18:58.783 --> 00:19:00.903
+Also kein rechtlicher Rahmen.
+
+246
+00:19:00.903 --> 00:19:06.183
+Im Grunde fangen die Länder an, darauf zu schauen,
+
+247
+00:19:06.183 --> 00:19:09.653
+sagen wir, wie das Exportprogramm gesteuert wird,
+
+248
+00:19:10.223 --> 00:19:14.743
+dass Investitionen geprüft werden und so weiter.
+
+249
+00:19:14.743 --> 00:19:18.373
+Meine niederländische Antwort lautet:
+
+250
+00:19:19.503 --> 00:19:23.943
+Ich denke, für Bulgarien ist es nicht so beängstigend,
+
+251
+00:19:23.943 --> 00:19:27.423
+denn die Niederlande haben dieses Abkommen unterzeichnet und waren zugleich
+
+252
+00:19:27.423 --> 00:19:30.583
+noch mit dem MATCH Act beschäftigt, bei dem es um den Verkauf von
+
+253
+00:19:30.583 --> 00:19:33.183
+Lithografiemaschinen nach China geht, zum Beispiel.
+
+254
+00:19:33.183 --> 00:19:35.893
+Wir hatten also auch keine Angst.
+
+255
+00:19:36.583 --> 00:19:39.693
+Und wenn man auf Bulgarien schaut
+
+256
+00:19:40.783 --> 00:19:44.173
+und zu diesem Teil der Fragen kommt:
+
+257
+00:19:46.343 --> 00:19:48.823
+Wenn man unterzeichnet, gehört man zum Pakt.
+
+258
+00:19:48.823 --> 00:19:51.703
+Wenn nicht, ist man eher Kunde.
+
+259
+00:19:51.703 --> 00:19:55.383
+Auch wenn die Europäische Union unterzeichnet hat, ist man drin, aber nicht
+
+260
+00:19:55.383 --> 00:19:58.173
+ganz. Es geht um kritische Rohstoffe.
+
+261
+00:19:58.663 --> 00:20:01.413
+Es geht um Arbeitskräfte. Es gibt viele Investitionen.
+
+262
+00:20:02.303 --> 00:20:06.493
+Und das bestgehütete Geheimnis Bulgariens ist vielleicht,
+
+263
+00:20:07.503 --> 00:20:13.143
+dass derzeit 650 Menschen in Bulgarien tatsächlich
+
+264
+00:20:13.143 --> 00:20:16.573
+für ASML arbeiten, an den Lithografiemaschinen.
+
+265
+00:20:16.983 --> 00:20:19.303
+Ich war 7 Jahre im Vorstand des ICT Cluster,
+
+266
+00:20:19.303 --> 00:20:22.663
+wo wir das aufgebaut haben. Und 120 davon,
+
+267
+00:20:22.663 --> 00:20:27.585
+habe ich heute geprüft, sind in Varna und arbeiten an Kollaborationssoftware für
+
+268
+00:20:27.585 --> 00:20:32.065
+diese Maschinen. Ein weiterer wichtiger Aspekt für Bulgarien sind
+
+269
+00:20:32.065 --> 00:20:34.385
+natürlich die kritischen Rohstoffe.
+
+270
+00:20:34.385 --> 00:20:35.705
+Und ich glaube, hier gibt es viel Kupfer.
+
+271
+00:20:35.705 --> 00:20:38.025
+Das wissen Sie wahrscheinlich viel besser als ich.
+
+272
+00:20:38.025 --> 00:20:43.985
+Ich denke also, Bulgarien ist nicht außerhalb des Raums.
+
+273
+00:20:43.985 --> 00:20:45.905
+Bulgarien ist bereits im Raum.
+
+274
+00:20:45.905 --> 00:20:49.385
+Aber Sie sind richtig gut darin, das nicht zu wissen.
+
+275
+00:20:49.385 --> 00:20:52.945
+Deshalb sollten Sie am Verhandlungstisch
+
+276
+00:20:52.945 --> 00:20:56.065
+eine andere Haltung haben, sagen wir,
+
+277
+00:20:56.065 --> 00:20:59.575
+selbstbewusst, denn Sie haben es ja bereits.
+
+278
+00:21:01.025 --> 00:21:04.855
+Noch etwas, damit es noch besser wird:
+
+279
+00:21:05.385 --> 00:21:09.705
+In Eindhoven, im besten Hightech-Sektor,
+
+280
+00:21:09.705 --> 00:21:14.665
+dem Brainport, leben viele Bulgaren
+
+281
+00:21:14.665 --> 00:21:18.935
+und arbeiten für Firmen wie ASML, im ASML-Ökosystem.
+
+282
+00:21:19.625 --> 00:21:21.865
+Es gibt also viel Wissen, und, wissen Sie,
+
+283
+00:21:21.865 --> 00:21:23.655
+all diese Leute sind unsere Freunde.
+
+284
+00:21:24.105 --> 00:21:25.295
+Und so gibt es schon
+
+285
+00:21:26.425 --> 00:21:29.135
+viele Chancen für Bulgarien und viel Wissen,
+
+286
+00:21:29.745 --> 00:21:35.775
+das verfügbar ist. Gut. Wir unterschätzen uns also ein wenig.
+
+287
+00:21:36.345 --> 00:21:41.095
+Ein wenig. Ivan, möchten Sie darauf antworten?
+
+288
+00:21:41.585 --> 00:21:45.215
+Ja, definitiv, wir unterschätzen uns.
+
+289
+00:21:45.665 --> 00:21:47.095
+Ich habe mit vielen
+
+290
+00:21:48.145 --> 00:21:53.745
+Kollegen aus anderen Ländern gearbeitet, die viel besser
+
+291
+00:21:53.745 --> 00:21:56.855
+bezahlt werden als ihre bulgarischen Kollegen.
+
+292
+00:21:57.585 --> 00:22:02.585
+Am Selbstvertrauen müssen wir wirklich arbeiten, denn
+
+293
+00:22:02.585 --> 00:22:05.225
+wir liegen nicht weit hinter allem zurück, wirklich.
+
+294
+00:22:05.225 --> 00:22:10.385
+Wir haben jetzt die Chance, in diesem KI-
+
+295
+00:22:10.385 --> 00:22:13.535
+Rennen Vorreiter zu werden, zumindest auf dem Balkan.
+
+296
+00:22:13.945 --> 00:22:15.265
+Zumindest auf dem Balkan.
+
+297
+00:22:15.265 --> 00:22:22.215
+Und wie Jeroen sagte,
+
+298
+00:22:22.745 --> 00:22:28.026
+sollten wir am Verhandlungstisch etwas selbstbewusster auftreten,
+
+299
+00:22:28.026 --> 00:22:29.136
+auf jeden Fall, definitiv.
+
+300
+00:22:32.186 --> 00:22:33.746
+Stoyan, ich sehe, Sie haben das Mikrofon.
+
+301
+00:22:33.746 --> 00:22:37.706
+Möchten Sie – ich stimme dem weitgehend zu,
+
+302
+00:22:37.706 --> 00:22:41.586
+denn es ist gut, sich zu unterschätzen, wenn man etwas
+
+303
+00:22:41.586 --> 00:22:45.496
+erreichen will, weil man sich dann mehr antreibt.
+
+304
+00:22:45.906 --> 00:22:48.586
+Aber was den Wert betrifft, den man kennt,
+
+305
+00:22:48.586 --> 00:22:52.456
+ja, absolut. Wir haben richtig gute Ingenieure.
+
+306
+00:22:53.626 --> 00:22:59.456
+Ich habe früher in Softwarehäusern gearbeitet und
+
+307
+00:23:00.146 --> 00:23:06.826
+es ist oft so,
+
+308
+00:23:06.826 --> 00:23:11.336
+dass man in den Raum kommt und plötzlich sieht, wie
+
+309
+00:23:12.306 --> 00:23:16.346
+man, wenn man über Technik spricht, etwa über Code,
+
+310
+00:23:16.346 --> 00:23:18.936
+heute nicht mehr so sehr, aber
+
+311
+00:23:20.866 --> 00:23:26.016
+wir führen und andere hören zu, weil dann Qualität spricht.
+
+312
+00:23:27.746 --> 00:23:31.026
+Aber es hilft trotzdem nicht dabei, dass man
+
+313
+00:23:31.026 --> 00:23:33.146
+wahrgenommen wird. Ziemlich wichtig.
+
+314
+00:23:33.146 --> 00:23:39.856
+Ja. Das war's. Wir sollten, wissen Sie,
+
+315
+00:23:41.066 --> 00:23:43.416
+an anderen Aspekten arbeiten, wie
+
+316
+00:23:44.986 --> 00:23:47.226
+Befähigung – und das Ergebnis.
+
+317
+00:23:47.226 --> 00:23:50.136
+Zuallererst das Gute behalten, das wir haben,
+
+318
+00:23:50.586 --> 00:23:53.986
+die Talente, die Ingenieure usw.,
+
+319
+00:23:53.986 --> 00:23:56.666
+denn Sie sagten, viele von ihnen sind in den Niederlanden.
+
+320
+00:23:56.666 --> 00:23:57.906
+Was machen sie in den Niederlanden?
+
+321
+00:23:57.906 --> 00:24:00.016
+Warum sind sie nicht in Bulgarien?
+
+322
+00:24:00.946 --> 00:24:03.456
+Oder warum sind sie in den USA usw.?
+
+323
+00:24:04.146 --> 00:24:08.626
+Das können wir mit Politik tun, mit Dingen wie Weiterbildung
+
+324
+00:24:08.626 --> 00:24:11.706
+und mehr. Darauf sollten wir uns konzentrieren,
+
+325
+00:24:11.706 --> 00:24:14.696
+denke ich. Ja.
+
+326
+00:24:15.826 --> 00:24:19.826
+Vielen Dank. Ich habe noch weitere Fragen vorbereitet,
+
+327
+00:24:19.826 --> 00:24:24.826
+aber ich gebe das Mikrofon ans Publikum, da uns nur wenige Minuten
+
+328
+00:24:24.826 --> 00:24:28.417
+bleiben. Wenn Sie eine Frage haben,
+
+329
+00:24:30.227 --> 00:24:34.187
+bitte. Hat jemand Interesse?
+
+330
+00:24:34.187 --> 00:24:40.867
+Ja, okay. Hallo.
+
+331
+00:24:40.867 --> 00:24:46.268
+Danke. Zunächst: Ich bin ehemaliger Halbleiteringenieur und,
+
+332
+00:24:46.268 --> 00:24:50.057
+wie Sie erwähnten, habe ich etwas nicht verstanden.
+
+333
+00:24:50.467 --> 00:24:55.187
+Sie sagten, man müsse seine Chips nach 5 Jahren neu kaufen.
+
+334
+00:24:55.187 --> 00:24:58.467
+Mietet man sie? Oder veralten sie?
+
+335
+00:24:58.467 --> 00:25:02.668
+Kauft man sie? Das war eine Art Metapher, und ich glaube,
+
+336
+00:25:02.668 --> 00:25:05.987
+sie kam nicht gut an. Dafür entschuldige ich mich.
+
+337
+00:25:05.987 --> 00:25:10.827
+Nein, ich meinte, dass bei dem Tempo, in dem sich heute alles ändert,
+
+338
+00:25:10.827 --> 00:25:13.707
+sie in gewissem Sinne wahrscheinlich veraltet sein werden.
+
+339
+00:25:13.707 --> 00:25:16.467
+Das heißt, sie werden wahrscheinlich nicht die wettbewerbsfähigsten
+
+340
+00:25:16.467 --> 00:25:22.547
+auf dem Markt sein. Ja, sie haben wohl auch in 5 Jahren noch einen Wert und
+
+341
+00:25:22.547 --> 00:25:24.537
+eine Anwendung.
+
+342
+00:25:24.947 --> 00:25:28.987
+Zum Beispiel Discoverer, der Supercomputer, der bereits im
+
+343
+00:25:28.987 --> 00:25:33.067
+Sofia Tech Park steht, ist offiziell laut Buch
+
+344
+00:25:33.067 --> 00:25:34.507
+am Ende seiner Lebensdauer.
+
+345
+00:25:34.507 --> 00:25:37.617
+In Wirklichkeit kann man ihn noch für vieles nutzen.
+
+346
+00:25:38.587 --> 00:25:40.987
+Das meinte ich.
+
+347
+00:25:40.987 --> 00:25:43.668
+In 5 Jahren wird es wahrscheinlich neue Chips geben,
+
+348
+00:25:43.668 --> 00:25:48.467
+viel bessere, und wenn sich nichts ändert, etwa unsere Fähigkeit, sie
+
+349
+00:25:48.467 --> 00:25:52.268
+in Europa zu bauen, müssen wir wieder hingehen und neu verhandeln,
+
+350
+00:25:52.268 --> 00:25:54.507
+um neue zu kaufen. Das meinte ich.
+
+351
+00:25:54.507 --> 00:25:57.747
+Nein, okay. Es ist ein bisschen wie ein Abo, auch wenn es finanziell
+
+352
+00:25:57.747 --> 00:26:00.497
+gesehen – ich bin offiziell Finanzmann – nicht ganz eins ist.
+
+353
+00:26:01.307 --> 00:26:04.668
+Eine furchtbare Formulierung, aber ja, das meinte ich.
+
+354
+00:26:04.668 --> 00:26:08.218
+Am Ende ist es also kein Abo über 5 Jahre.
+
+355
+00:26:09.028 --> 00:26:11.627
+Nein, ist es nicht. Sie werden gekauft.
+
+356
+00:26:11.627 --> 00:26:15.467
+Sie werden nur nach 5 Jahren halb veraltet sein.
+
+357
+00:26:15.467 --> 00:26:16.497
+Okay, danke.
+
+358
+00:26:21.947 --> 00:26:24.587
+Ich weiß nicht, ob ich mein Recht nutzen sollte, da ich im
+
+359
+00:26:24.587 --> 00:26:27.947
+letzten Panel spreche, aber ich probiere es einfach.
+
+360
+00:26:27.947 --> 00:26:30.338
+Wo sehen Sie das größte
+
+361
+00:26:31.507 --> 00:26:35.429
+Wachstumspotenzial in der KI-Lieferkette in diesem Bereich?
+
+362
+00:26:35.429 --> 00:26:38.509
+Es brodelt offensichtlich überall auf der Welt, und es gibt
+
+363
+00:26:38.509 --> 00:26:43.539
+eine riesige Welle an Geld, an Einnahmen, an Nachfrage.
+
+364
+00:26:44.229 --> 00:26:47.499
+Und wo steht auf diesem ganzen Weg Europa?
+
+365
+00:26:47.949 --> 00:26:49.709
+Wo steht Bulgarien? Wo die Niederlande?
+
+366
+00:26:49.709 --> 00:26:54.429
+Wo bekommen wir welchen Teil dieser Wertschöpfung
+
+367
+00:26:54.429 --> 00:26:58.829
+und wo sehen Sie das?
+
+368
+00:26:58.829 --> 00:27:04.219
+Danke. Nun,
+
+369
+00:27:05.709 --> 00:27:10.389
+Bulgarien hat einige Dinge, die fast kein anderes, sagen wir,
+
+370
+00:27:10.389 --> 00:27:12.029
+westliches Land hat.
+
+371
+00:27:12.029 --> 00:27:14.219
+Sie haben Platz, Strom
+
+372
+00:27:15.429 --> 00:27:17.629
+und natürlich auch Kupfer.
+
+373
+00:27:17.629 --> 00:27:23.589
+Ich war auch in den letzten Tagen bei anderen Seminaren
+
+374
+00:27:23.589 --> 00:27:25.789
+zum Thema Souveränität.
+
+375
+00:27:25.789 --> 00:27:29.669
+Es werden viele Investitionen getätigt. Es wird
+
+376
+00:27:29.669 --> 00:27:34.469
+einige Zeit dauern, den Chip für meine Freunde in
+
+377
+00:27:34.469 --> 00:27:36.259
+Europa herzustellen. Er muss also nicht verhandeln.
+
+378
+00:27:36.789 --> 00:27:43.709
+Aber ich denke, in dieser Lieferkette ist das der Punkt, wo
+
+379
+00:27:43.709 --> 00:27:46.339
+Bulgarien ganz sicher große Wirkung haben kann.
+
+380
+00:27:48.829 --> 00:27:51.819
+Ja, morgen sprechen wir darüber, wie das gehen kann.
+
+381
+00:27:52.229 --> 00:27:55.909
+Ich verrate also noch nichts.
+
+382
+00:27:55.909 --> 00:28:01.869
+Aber ja, ich denke, es gibt hier viele Talente,
+
+383
+00:28:01.869 --> 00:28:04.909
+die oft auch für, wissen Sie,
+
+384
+00:28:04.909 --> 00:28:07.259
+Firmen in anderen Ländern eingesetzt werden.
+
+385
+00:28:07.749 --> 00:28:09.229
+Aber es gibt viel Ingenieurskraft.
+
+386
+00:28:09.229 --> 00:28:15.069
+Es geht nur darum, sie zu schaffen und in Bewegung zu setzen,
+
+387
+00:28:15.069 --> 00:28:19.899
+Budget zu bekommen, ein Mandat zu bekommen und voranzutreiben.
+
+388
+00:28:20.309 --> 00:28:22.979
+Vielleicht möchten Sie zu diesem Thema etwas ergänzen.
+
+389
+00:28:23.509 --> 00:28:24.979
+Ich möchte etwas ergänzen.
+
+390
+00:28:25.389 --> 00:28:27.779
+Für mich geht es um Reputation.
+
+391
+00:28:28.629 --> 00:28:32.899
+Bulgarien sollte an seiner Reputation arbeiten, was Sicherheit betrifft,
+
+392
+00:28:33.950 --> 00:28:35.180
+was Verständnis betrifft
+
+393
+00:28:36.430 --> 00:28:37.540
+und einfach zeigen,
+
+394
+00:28:38.510 --> 00:28:44.430
+dass wir Teil dessen sein können, was kommt, und was kommt, ist, dass
+
+395
+00:28:44.430 --> 00:28:46.180
+Talent ein großer Teil
+
+396
+00:28:47.150 --> 00:28:53.980
+dieser Wertschöpfungskette ist, aber sehr leicht verdrängt werden kann
+
+397
+00:28:54.550 --> 00:28:58.110
+von Agenten, die fähiger sind als das Talent.
+
+398
+00:28:58.110 --> 00:29:02.860
+Und das Einzige, womit wir hier punkten können, ist Reputation.
+
+399
+00:29:03.550 --> 00:29:08.380
+Wenn ich auf den Button drücke, das Repo pushe und committe,
+
+400
+00:29:08.790 --> 00:29:12.540
+setze ich meine Reputation aufs Spiel.
+
+401
+00:29:12.990 --> 00:29:18.780
+Und jeder kleine Teil gibt dem ganzen Land seine Reputation.
+
+402
+00:29:19.310 --> 00:29:23.220
+Als einzelne Entwickler können wir mehr Geld verdienen,
+
+403
+00:29:23.870 --> 00:29:29.310
+ganz sicher. Und viele großartige Leute warten darauf, dass diese
+
+404
+00:29:29.310 --> 00:29:32.980
+Veränderung geschieht. Am Ende ist es also die Regierung.
+
+405
+00:29:33.750 --> 00:29:38.260
+Wir müssen einfach auf Regierungsebene anfangen, etwas aufzubauen,
+
+406
+00:29:38.750 --> 00:29:44.670
+und auch kleineren Unternehmen die Chance geben, an
+
+407
+00:29:44.670 --> 00:29:46.460
+diesem Wandel teilzuhaben. Okay.
+
+408
+00:29:49.390 --> 00:29:53.500
+Vielen Dank für diese Antworten.
+
+409
+00:29:54.150 --> 00:29:57.630
+Ich möchte pünktlich enden, wenn Sie nichts dagegen haben,
+
+410
+00:29:57.630 --> 00:30:01.230
+obwohl ich noch viele weitere Fragen hätte.
+
+411
+00:30:01.230 --> 00:30:03.460
+Aber zum Abschluss:
+
+412
+00:30:04.470 --> 00:30:09.630
+Wir haben besprochen, dass Organisation entscheidend ist, wenn
+
+413
+00:30:09.630 --> 00:30:15.140
+man KI aufbaut und agentische KI in Unternehmen einsetzt.
+
+414
+00:30:15.750 --> 00:30:21.070
+Wir haben die Fähigkeiten der künftigen KI-
+
+415
+00:30:21.070 --> 00:30:23.500
+Fabrik besprochen und wie sie
+
+416
+00:30:24.910 --> 00:30:30.990
+bei der Arbeit mit ihren Kunden einen echten Ökosystemansatz verfolgt.
+
+417
+00:30:30.990 --> 00:30:35.470
+Wir haben erwähnt, und das freut mich sehr, dass wir uns einig sind,
+
+418
+00:30:35.470 --> 00:30:41.552
+dass Talent das Kraftpaket Bulgariens ist. Und obwohl wir
+
+419
+00:30:41.552 --> 00:30:48.432
+unser Bildungssystem immer kritisch sehen können,
+
+420
+00:30:48.432 --> 00:30:53.102
+den Umgang mit Studierenden und Lehrplan, ist
+
+421
+00:30:54.072 --> 00:30:58.222
+unsere gemeinsame Meinung, dass wir dieses Talent nutzen sollten,
+
+422
+00:30:59.231 --> 00:31:02.781
+so gut wir können, und international konkurrieren.
+
+423
+00:31:03.672 --> 00:31:07.942
+Vor diesem Hintergrund sind wir voll fähig und
+
+424
+00:31:09.112 --> 00:31:15.102
+sollten den Ehrgeiz haben, Clubs wie Pax Silica beizutreten
+
+425
+00:31:15.792 --> 00:31:18.582
+und auf der internationalen Bühne zu konkurrieren.
+
+426
+00:31:18.992 --> 00:31:22.142
+Einen Applaus bitte für unsere Zukunft!
+
+427
+00:31:24.552 --> 00:31:26.022
+Vielen Dank für Ihre Teilnahme.

@@ -1,0 +1,1133 @@
+WEBVTT
+
+1
+00:00:10.400 --> 00:00:14.200
+Benvenuti a tutti al CONNEXUS Forum.
+
+2
+00:00:14.200 --> 00:00:18.990
+Sono Alexander Minchev, cofondatore e CEO di AbilikSoft.
+
+3
+00:00:19.760 --> 00:00:24.920
+Mi occupo di sicurezza fisica fin dal servizio militare,
+
+4
+00:00:24.920 --> 00:00:31.760
+quando dovevo proteggere il carcere militare e fare in modo
+
+5
+00:00:31.760 --> 00:00:34.190
+che i detenuti non evadessero.
+
+6
+00:00:34.640 --> 00:00:40.830
+E negli ultimi 30 anni
+
+7
+00:00:41.560 --> 00:00:46.360
+lavoro con i server. Ho iniziato quando i server erano
+
+8
+00:00:46.360 --> 00:00:51.360
+davvero collegati a internet, e continuo ancora oggi.
+
+9
+00:00:51.360 --> 00:00:55.360
+Attualmente AbilikSoft è presente in tre data center
+
+10
+00:00:55.360 --> 00:00:59.880
+in tutto il paese e abbiamo un nostro data center carrier-neutral a
+
+11
+00:00:59.880 --> 00:01:06.440
+Londra, che mi dà una grande visione di
+
+12
+00:01:06.440 --> 00:01:12.280
+ciò che si può fare; nella mia carriera ho visto cose fatte, diciamo,
+
+13
+00:01:12.280 --> 00:01:16.510
+in modo corretto e altre fatte in modo molto discutibile.
+
+14
+00:01:16.960 --> 00:01:21.710
+Quindi, prima di tutto, dobbiamo pensare alla responsabilità.
+
+15
+00:01:22.640 --> 00:01:25.800
+In tutta questa presentazione parleremo del livello
+
+16
+00:01:25.800 --> 00:01:31.560
+fisico, il fondo della nave, che non è interessante come
+
+17
+00:01:31.560 --> 00:01:36.750
+la cima, ma i problemi sul fondo affondano la nave molto in fretta.
+
+18
+00:01:37.200 --> 00:01:40.230
+Quindi dobbiamo sapere chi è responsabile.
+
+19
+00:01:40.720 --> 00:01:44.960
+Se i vostri dati sono in un cloud, e per cloud intendo qualsiasi tipo di
+
+20
+00:01:44.960 --> 00:01:50.040
+servizio cloud, software as a service, se i vostri dati sono presso
+
+21
+00:01:50.040 --> 00:01:55.440
+il vostro partner o fornitore, avete delegato il rischio e
+
+22
+00:01:55.440 --> 00:01:59.932
+i rischi, ne parleremo più avanti, sono gestiti da un
+
+23
+00:01:59.932 --> 00:02:03.052
+fornitore. Dovete essere attenti nello scegliere il fornitore,
+
+24
+00:02:03.052 --> 00:02:06.042
+ma comunque avete delegato questi rischi.
+
+25
+00:02:06.772 --> 00:02:11.172
+Se avete i dati nei vostri locali, o parte dei dati,
+
+26
+00:02:11.172 --> 00:02:15.372
+naturalmente mantenete il rischio e siete pienamente responsabili di ciò che
+
+27
+00:02:15.372 --> 00:02:18.732
+accade ai vostri dati e di come questo influisce sulla vostra attività e sui
+
+28
+00:02:18.732 --> 00:02:25.972
+vostri clienti. E se scegliete un data center esterno,
+
+29
+00:02:25.972 --> 00:02:30.972
+condividete il rischio. Il data center si occupa ovviamente di
+
+30
+00:02:30.972 --> 00:02:35.172
+alimentazione, sicurezza fisica, antincendio e molto,
+
+31
+00:02:35.172 --> 00:02:39.132
+molto altro. Ma siete comunque responsabili dei vostri server,
+
+32
+00:02:39.132 --> 00:02:42.252
+della strategia di backup, dell'infrastruttura e ovviamente dell'elenco delle
+
+33
+00:02:42.252 --> 00:02:44.442
+persone che possono entrare nella struttura.
+
+34
+00:02:45.052 --> 00:02:49.252
+E parlando di rischi, alla fine ce ne sono solo tre tipi
+
+35
+00:02:49.252 --> 00:02:52.252
+di cui dovete occuparvi.
+
+36
+00:02:52.252 --> 00:02:55.492
+Il primo rischio è la fuga di dati.
+
+37
+00:02:55.492 --> 00:03:01.492
+In questo scenario qualcuno ottiene una copia dei vostri dati, e può essere un
+
+38
+00:03:01.492 --> 00:03:04.052
+evento singolo oppure continuo.
+
+39
+00:03:04.052 --> 00:03:08.492
+Nei casi peggiori si può accedere ai dati in modo continuo per,
+
+40
+00:03:08.492 --> 00:03:09.442
+diciamo, anni.
+
+41
+00:03:10.532 --> 00:03:12.242
+Il secondo rischio è che
+
+42
+00:03:13.572 --> 00:03:17.482
+qualcuno o qualcosa distrugga o modifichi i vostri dati.
+
+43
+00:03:17.892 --> 00:03:22.882
+E in questo caso potete perdere tutti i vostri dati e la vostra attività
+
+44
+00:03:23.452 --> 00:03:25.242
+proprio a causa di questo incidente.
+
+45
+00:03:25.892 --> 00:03:32.772
+E, scusate, il terzo rischio
+
+46
+00:03:32.772 --> 00:03:36.692
+è essere tagliati fuori dai propri dati.
+
+47
+00:03:36.692 --> 00:03:40.052
+In questo scenario nessun dato viene modificato o cancellato,
+
+48
+00:03:40.052 --> 00:03:44.852
+ma per un certo periodo non avete accesso ai vostri dati
+
+49
+00:03:44.852 --> 00:03:47.082
+e probabilmente non potete operare.
+
+50
+00:03:47.612 --> 00:03:53.852
+Tutto ciò di cui parliamo oggi riguarda questi tre rischi, e in un periodo
+
+51
+00:03:53.852 --> 00:03:58.442
+di requisiti legali sempre nuovi, noi imprenditori dobbiamo
+
+52
+00:03:59.172 --> 00:04:01.402
+fare in modo di essere sicuri di
+
+53
+00:04:02.494 --> 00:04:07.294
+coprire tutti questi rischi e di essere preparati.
+
+54
+00:04:07.294 --> 00:04:11.334
+E parlando di rischi, cominciamo dall'esterno.
+
+55
+00:04:11.334 --> 00:04:15.564
+Ivaylo. Grazie, Alexander, e benvenuti a tutti.
+
+56
+00:04:16.014 --> 00:04:20.014
+Sono Ivaylo Konev, ingegnere pre-sales con più di 20 anni di
+
+57
+00:04:20.014 --> 00:04:23.054
+esperienza con infrastrutture di server, storage e
+
+58
+00:04:23.054 --> 00:04:27.414
+rete. Negli anni ho visto la tecnologia evolversi dalla
+
+59
+00:04:27.414 --> 00:04:32.574
+tradizionale infrastruttura fisica e aziendale alle odierne
+
+60
+00:04:32.574 --> 00:04:36.884
+operazioni, molto connesse e sempre più esigenti,
+
+61
+00:04:38.294 --> 00:04:39.964
+dei data center.
+
+62
+00:04:40.694 --> 00:04:44.294
+Oggi lavoro per un operatore di data center con quattro
+
+63
+00:04:44.294 --> 00:04:48.844
+data center in Bulgaria e ho la prospettiva
+
+64
+00:04:49.974 --> 00:04:51.764
+di vedere la tecnologia
+
+65
+00:04:52.734 --> 00:04:55.614
+e le sfide non solo dal lato tecnologico,
+
+66
+00:04:55.614 --> 00:04:59.774
+ma anche dal lato dell'azienda che gestisce questa
+
+67
+00:04:59.774 --> 00:05:05.134
+infrastruttura critica. Ed è ciò che voglio condividere con voi
+
+68
+00:05:05.134 --> 00:05:09.894
+oggi. Cosa succede quando qualcosa che normalmente diamo per
+
+69
+00:05:09.894 --> 00:05:13.894
+scontato, energia, connettività o infrastruttura fisica,
+
+70
+00:05:13.894 --> 00:05:18.894
+scompare all'improvviso? Parto da uno scenario, o una domanda,
+
+71
+00:05:18.894 --> 00:05:21.974
+molto semplice. Cosa succede se qualcuno taglia il cavo?
+
+72
+00:05:21.974 --> 00:05:24.414
+Non intendo il cavo che collega il vostro ufficio.
+
+73
+00:05:24.414 --> 00:05:31.254
+Intendo il cavo che collega i paesi,
+
+74
+00:05:31.254 --> 00:05:35.174
+lungo a volte migliaia o centinaia di chilometri,
+
+75
+00:05:35.174 --> 00:05:36.884
+e in gran parte posato sul fondale marino.
+
+76
+00:05:37.614 --> 00:05:44.174
+Ci piace pensare a internet come a qualcosa
+
+77
+00:05:44.174 --> 00:05:46.684
+che esiste nel cloud, ma il cloud è fisico.
+
+78
+00:05:47.134 --> 00:05:52.694
+Ogni servizio cloud, videochiamata, videoconferenza,
+
+79
+00:05:52.694 --> 00:05:59.214
+carico di lavoro AI, transazione finanziaria ha un'infrastruttura
+
+80
+00:05:59.214 --> 00:06:03.974
+fisica, e una parte significativa si trova sotto il mare.
+
+81
+00:06:03.974 --> 00:06:07.085
+E quando questa infrastruttura si guasta,
+
+82
+00:06:08.335 --> 00:06:11.895
+le conseguenze possono essere molto più grandi del
+
+83
+00:06:11.895 --> 00:06:13.885
+punto in cui si verifica il danno.
+
+84
+00:06:15.135 --> 00:06:18.685
+Lasciate che vi faccia un esempio, la lezione del Baltico,
+
+85
+00:06:19.415 --> 00:06:23.645
+ricordandovi anche cosa è successo nel 2024 e nel 2025.
+
+86
+00:06:24.175 --> 00:06:28.015
+Abbiamo visto diversi incidenti che hanno coinvolto cavi sottomarini e altre
+
+87
+00:06:28.015 --> 00:06:31.245
+infrastrutture critiche nel Mar Baltico.
+
+88
+00:06:31.855 --> 00:06:36.255
+Alcuni sono stati indagati come incidenti, altri hanno fatto temere
+
+89
+00:06:36.255 --> 00:06:38.495
+interferenze deliberate.
+
+90
+00:06:38.495 --> 00:06:41.725
+Ma qualunque sia la causa, c'è una lezione importante:
+
+91
+00:06:42.135 --> 00:06:45.725
+la nostra infrastruttura digitale ha punti di guasto fisici.
+
+92
+00:06:46.335 --> 00:06:50.805
+Un'ancora, l'attività di pesca,
+
+93
+00:06:51.855 --> 00:06:56.175
+un incidente o un danno deliberato possono interrompere un collegamento
+
+94
+00:06:56.175 --> 00:07:02.015
+critico. E sostituire un cavo sottomarino non è come
+
+95
+00:07:02.015 --> 00:07:03.935
+cambiare uno switch di rete.
+
+96
+00:07:03.935 --> 00:07:06.965
+Bisogna individuare il guasto, mobilitare una nave,
+
+97
+00:07:07.695 --> 00:07:10.015
+andare sul posto, riparare il cavo.
+
+98
+00:07:10.015 --> 00:07:13.765
+E ci vuole tempo e, probabilmente lo sapete, molti soldi.
+
+99
+00:07:14.695 --> 00:07:16.565
+Cosa significa questo per il Mar Nero?
+
+100
+00:07:17.335 --> 00:07:22.175
+Il Mar Nero è un'importante rotta di connettività
+
+101
+00:07:22.175 --> 00:07:24.805
+tra Europa, Turchia e Caucaso.
+
+102
+00:07:25.535 --> 00:07:29.735
+Ma cosa succede se quella rotta si interrompe?
+
+103
+00:07:29.735 --> 00:07:35.975
+Si possono avere terabit di banda, ma se tutta
+
+104
+00:07:35.975 --> 00:07:38.975
+questa banda usa lo stesso corridoio fisico,
+
+105
+00:07:38.975 --> 00:07:40.335
+non è resilienza.
+
+106
+00:07:40.335 --> 00:07:43.575
+Quindi dobbiamo porci tre domande importanti.
+
+107
+00:07:43.575 --> 00:07:45.415
+Dove passa il cavo?
+
+108
+00:07:45.415 --> 00:07:47.015
+Cosa succede se si guasta?
+
+109
+00:07:47.015 --> 00:07:49.975
+E quanto in fretta possiamo ripararlo?
+
+110
+00:07:49.975 --> 00:07:53.735
+Perché una seconda fibra non significa vera ridondanza.
+
+111
+00:07:53.735 --> 00:07:57.565
+La vera ridondanza significa avere un altro percorso fisico.
+
+112
+00:07:58.015 --> 00:08:02.855
+Possiamo avere alimentazione, raffreddamento o rete ridondanti,
+
+113
+00:08:02.855 --> 00:08:07.777
+ma l'anello più debole resta a migliaia di chilometri sotto il
+
+114
+00:08:07.777 --> 00:08:11.897
+fondale. Quindi quanta banda abbiamo non è la
+
+115
+00:08:11.897 --> 00:08:16.297
+domanda. La domanda, più importante, è: se questa rotta si interrompe,
+
+116
+00:08:16.297 --> 00:08:19.697
+cosa succede dopo? E come ci arrivereste?
+
+117
+00:08:19.697 --> 00:08:22.457
+Perché a volte qualcuno taglia il cavo.
+
+118
+00:08:22.457 --> 00:08:24.527
+E con questo, Alexander, a te la parola.
+
+119
+00:08:25.897 --> 00:08:29.977
+Grazie, Ivo. La prossima cosa da discutere è cosa succede
+
+120
+00:08:29.977 --> 00:08:32.417
+se qualcuno entra.
+
+121
+00:08:32.417 --> 00:08:36.417
+Ci sono scenari molto diversi a seconda di dove si trovano i nostri
+
+122
+00:08:36.417 --> 00:08:40.657
+dati. Ovviamente, se avete affidato a qualcuno la custodia dei dati,
+
+123
+00:08:40.657 --> 00:08:43.367
+e parliamo di cloud e software as a service,
+
+124
+00:08:43.777 --> 00:08:48.857
+spetta a loro coprire il rischio che qualcuno entri.
+
+125
+00:08:48.857 --> 00:08:51.657
+Devono farlo, ma non è una vostra responsabilità
+
+126
+00:08:51.657 --> 00:08:53.617
+e non potete controllarlo.
+
+127
+00:08:53.617 --> 00:08:57.287
+E nel caso in cui i dati siano nei locali di qualcun altro,
+
+128
+00:08:57.777 --> 00:09:00.497
+la cosa che conta di più è cosa condividete
+
+129
+00:09:00.497 --> 00:09:04.887
+e, naturalmente, la sicurezza fisica dei vostri dispositivi.
+
+130
+00:09:05.417 --> 00:09:09.897
+Bastano circa 30 secondi perché qualcuno con accesso a un
+
+131
+00:09:09.897 --> 00:09:14.057
+laptop sbloccato faccia molti danni.
+
+132
+00:09:14.057 --> 00:09:16.687
+I fornitori cloud stessi lavorano in modo continuo.
+
+133
+00:09:17.257 --> 00:09:20.977
+Abbiamo password robuste, autenticazione a due fattori,
+
+134
+00:09:20.977 --> 00:09:25.697
+passphrase, ma comunque per un certo periodo
+
+135
+00:09:25.697 --> 00:09:29.097
+di tempo il vostro laptop o il vostro cellulare siete voi.
+
+136
+00:09:29.097 --> 00:09:35.657
+Lo scenario successivo è se avete affidato a un data center
+
+137
+00:09:35.657 --> 00:09:37.447
+i vostri server.
+
+138
+00:09:37.857 --> 00:09:41.807
+Nei data center l'accesso è scomodo per progetto.
+
+139
+00:09:42.257 --> 00:09:45.167
+Scambiamo comodità con sicurezza.
+
+140
+00:09:45.657 --> 00:09:49.017
+Quindi dovete richiedere una visita in anticipo, la vostra identità viene
+
+141
+00:09:49.017 --> 00:09:53.457
+verificata, la vostra foto è confrontata con una già archiviata,
+
+142
+00:09:53.457 --> 00:09:57.257
+siete accompagnati, ci sono bussole d'ingresso, telecamere
+
+143
+00:09:57.257 --> 00:10:02.807
+e così via. In sostanza, in questo scenario la sicurezza fisica è
+
+144
+00:10:03.337 --> 00:10:05.377
+di solito a un livello alto.
+
+145
+00:10:05.377 --> 00:10:09.617
+E la vostra responsabilità principale è l'elenco delle persone che possono
+
+146
+00:10:09.617 --> 00:10:14.698
+entrare nella struttura. Se un collega andato via 2 anni fa è ancora
+
+147
+00:10:14.698 --> 00:10:16.768
+in quell'elenco, potreste avere un problema.
+
+148
+00:10:17.298 --> 00:10:21.738
+E di solito il problema più grande per la sicurezza fisica nello
+
+149
+00:10:21.738 --> 00:10:24.978
+scenario di qualcuno che entra è l'ufficio.
+
+150
+00:10:24.978 --> 00:10:26.698
+Gli uffici sono molto diversi.
+
+151
+00:10:26.698 --> 00:10:30.618
+Alcuni sono come banche, ma la maggior parte non è così
+
+152
+00:10:30.618 --> 00:10:35.898
+sicura. E anche se l'ufficio ha una sala server dedicata, diciamo,
+
+153
+00:10:35.898 --> 00:10:41.538
+di solito ci sono comunque meno misure e meno controlli, e
+
+154
+00:10:41.538 --> 00:10:43.368
+le persone possono di fatto
+
+155
+00:10:44.338 --> 00:10:46.498
+entrare con relativa facilità.
+
+156
+00:10:46.498 --> 00:10:51.728
+Di solito le serrature funzionano, ma le procedure falliscono.
+
+157
+00:10:52.218 --> 00:10:58.018
+E questo riguarda per lo più la sicurezza fisica.
+
+158
+00:10:58.018 --> 00:11:01.178
+Ora, Ivaylo, parlaci degli altri rischi.
+
+159
+00:11:01.178 --> 00:11:03.288
+Grazie, Alexander. Allora,
+
+160
+00:11:04.338 --> 00:11:07.138
+parto ora da uno scenario molto semplice.
+
+161
+00:11:07.138 --> 00:11:08.968
+Qualcuno ha fermato l'orologio.
+
+162
+00:11:09.698 --> 00:11:11.088
+E questa è la prossima slide.
+
+163
+00:11:11.658 --> 00:11:13.568
+Ok, forse manca la corrente.
+
+164
+00:11:14.098 --> 00:11:16.138
+Forse il sistema di raffreddamento si ferma.
+
+165
+00:11:16.138 --> 00:11:17.538
+All'improvviso abbiamo un problema.
+
+166
+00:11:17.538 --> 00:11:20.578
+Cosa succede dopo? Seguiamolo minuto per minuto.
+
+167
+00:11:20.578 --> 00:11:23.858
+Ma vedo l'orologio davanti a me, quindi cerco di accorciare un po' la
+
+168
+00:11:23.858 --> 00:11:26.448
+presentazione in questa parte del mio intervento.
+
+169
+00:11:26.978 --> 00:11:29.128
+Allora, minuto zero, probabilmente
+
+170
+00:11:30.098 --> 00:11:34.618
+non è successo niente. L'alimentazione sparisce, ma tutto è
+
+171
+00:11:34.618 --> 00:11:38.098
+progettato correttamente. I server non vanno subito giù.
+
+172
+00:11:38.098 --> 00:11:43.058
+L'UPS dovrebbe subentrare, ed è ciò che gli UPS devono
+
+173
+00:11:43.058 --> 00:11:47.818
+fare. Ma è importante sapere che l'UPS non è la soluzione.
+
+174
+00:11:47.818 --> 00:11:49.778
+È il ponte verso la soluzione.
+
+175
+00:11:49.778 --> 00:11:53.858
+Nei primi minuti l'UPS sostiene il carico IT, ma
+
+176
+00:11:53.858 --> 00:11:55.688
+i generatori dovrebbero avviarsi.
+
+177
+00:11:56.138 --> 00:12:02.418
+E ora abbiamo il tempo di iniziare a chiederci cosa
+
+178
+00:12:02.418 --> 00:12:07.458
+succede. Dal 5° al 15° minuto i generatori sono attivi,
+
+179
+00:12:07.458 --> 00:12:11.098
+ma se siete il cliente, probabilmente non noterete
+
+180
+00:12:11.098 --> 00:12:13.899
+nulla perché il vostro server, la vostra applicazione,
+
+181
+00:12:13.899 --> 00:12:15.609
+la vostra rete funzionano ancora.
+
+182
+00:12:16.059 --> 00:12:20.179
+Qui è il punto in cui conta la progettazione della struttura.
+
+183
+00:12:20.179 --> 00:12:26.459
+Se la progettazione è fatta male, forse tutto può iniziare
+
+184
+00:12:26.459 --> 00:12:30.579
+a crollare. L'UPS può sostenere il carico IT,
+
+185
+00:12:30.579 --> 00:12:33.929
+il raffreddamento si ferma e a un certo punto tutto finisce.
+
+186
+00:12:34.499 --> 00:12:39.059
+Ma se la struttura è progettata bene, è diverso.
+
+187
+00:12:39.059 --> 00:12:42.899
+Il sistema di backup funziona, il raffreddamento funziona ancora,
+
+188
+00:12:42.899 --> 00:12:44.619
+i generatori sono stabili.
+
+189
+00:12:44.619 --> 00:12:47.579
+E soprattutto abbiamo il tempo di reagire.
+
+190
+00:12:47.579 --> 00:12:50.739
+Abbiamo il tempo di trovare il problema e risolverlo.
+
+191
+00:12:50.739 --> 00:12:56.059
+Abbiamo il tempo di tenere in funzione la struttura finché l'alimentazione
+
+192
+00:12:56.059 --> 00:13:00.659
+principale non viene ripristinata. Ora la domanda non è se l'UPS ha funzionato.
+
+193
+00:13:00.659 --> 00:13:05.739
+La domanda è se la progettazione dell'intera struttura ci ha dato tempo
+
+194
+00:13:05.739 --> 00:13:08.859
+per reagire. E poi arriva la parte pericolosa.
+
+195
+00:13:08.859 --> 00:13:12.779
+Immaginate che generatori e UPS siano a posto,
+
+196
+00:13:12.779 --> 00:13:15.979
+ma il raffreddamento si ferma. I server possono continuare a funzionare,
+
+197
+00:13:15.979 --> 00:13:21.299
+ma il calore continua e sale molto in fretta.
+
+198
+00:13:21.299 --> 00:13:27.659
+Con i carichi di lavoro GPU per l'AI di oggi, questo calore si accumula molto
+
+199
+00:13:27.659 --> 00:13:31.739
+in fretta. Quindi la domanda cambia ancora una volta.
+
+200
+00:13:31.739 --> 00:13:35.579
+Non è più quanto durano le batterie dell'UPS,
+
+201
+00:13:35.579 --> 00:13:38.569
+ma quanto manca prima che il calore diventi il problema.
+
+202
+00:13:39.459 --> 00:13:45.299
+E ora immaginate di essere la persona responsabile della
+
+203
+00:13:45.299 --> 00:13:48.699
+struttura. L'energia è saltata, ma l'UPS è subentrato,
+
+204
+00:13:48.699 --> 00:13:52.219
+quindi avete il tempo di sedervi, rilassarvi e pensare a cosa
+
+205
+00:13:52.219 --> 00:13:55.899
+succede dopo, a trovare il problema e a risolverlo.
+
+206
+00:13:55.899 --> 00:13:59.299
+Ed è questo che significa vera resilienza.
+
+207
+00:13:59.299 --> 00:14:03.569
+Non è evitare ogni guasto, ma avere abbastanza tempo per reagire.
+
+208
+00:14:04.259 --> 00:14:08.259
+Perché prima o poi qualcuno stacca la spina.
+
+209
+00:14:08.259 --> 00:14:11.339
+Alex, a te la parola. Grazie.
+
+210
+00:14:11.339 --> 00:14:14.739
+Bene, la prossima domanda è piuttosto importante.
+
+211
+00:14:14.739 --> 00:14:16.371
+Dove sono davvero i vostri dati?
+
+212
+00:14:16.861 --> 00:14:20.211
+Non in quale applicazione, non in quale servizio,
+
+213
+00:14:20.661 --> 00:14:25.301
+ma alla fine le vostre informazioni si trovano da qualche parte
+
+214
+00:14:25.301 --> 00:14:31.421
+su dei server, su qualche disco, in una qualche infrastruttura
+
+215
+00:14:31.421 --> 00:14:32.331
+di ridondanza.
+
+216
+00:14:33.381 --> 00:14:40.301
+Quindi, anche se abbiamo tutta la nostra nave, ok,
+
+217
+00:14:40.301 --> 00:14:45.701
+se i cavi sono sopravvissuti, se nessuno entra e così via,
+
+218
+00:14:45.701 --> 00:14:48.731
+dobbiamo comunque pensare ai vostri dati.
+
+219
+00:14:50.101 --> 00:14:53.571
+I dati di solito si diffondono.
+
+220
+00:14:54.341 --> 00:15:00.661
+I dati di solito vanno in più posti di quanti inizialmente
+
+221
+00:15:00.661 --> 00:15:04.661
+intendiamo. È come il server e il suo backup,
+
+222
+00:15:04.661 --> 00:15:08.421
+tutti i computer che hanno una copia in cache dei dati,
+
+223
+00:15:08.421 --> 00:15:12.781
+questi telefoni che si sincronizzano di continuo, questo dump del database
+
+224
+00:15:12.781 --> 00:15:15.781
+che qualcuno si è portato a casa per finire il proprio lavoro.
+
+225
+00:15:15.781 --> 00:15:20.061
+I dati tendono davvero a diffondersi, e questo è importante per il
+
+226
+00:15:20.061 --> 00:15:23.941
+rischio di dare a qualcuno una copia dei vostri dati.
+
+227
+00:15:23.941 --> 00:15:29.381
+E questo è il primo rischio: avere troppe copie dei vostri dati
+
+228
+00:15:29.381 --> 00:15:34.181
+in troppi posti. Ma il secondo rischio è averne troppo
+
+229
+00:15:34.181 --> 00:15:37.021
+poche. Diciamo che abbiamo un solo server,
+
+230
+00:15:37.021 --> 00:15:40.901
+diciamo nella vostra sede, nel vostro ufficio.
+
+231
+00:15:40.901 --> 00:15:44.501
+E accanto a questo server c'è un solo dispositivo di backup.
+
+232
+00:15:44.501 --> 00:15:47.021
+È più comune di quanto possiate immaginare.
+
+233
+00:15:47.021 --> 00:15:50.581
+E poi qualcosa può distruggere il server e il backup nello stesso
+
+234
+00:15:50.581 --> 00:15:54.981
+momento. E probabilmente perderete tutti i vostri
+
+235
+00:15:54.981 --> 00:16:00.221
+dati per sempre. Quindi la domanda non è avere più copie possibili,
+
+236
+00:16:00.221 --> 00:16:04.251
+e di certo non è avere meno copie possibili,
+
+237
+00:16:04.941 --> 00:16:09.941
+ma avere il numero di copie necessario
+
+238
+00:16:09.941 --> 00:16:15.861
+per gli obiettivi della vostra azienda, e sapere perché e dove
+
+239
+00:16:15.861 --> 00:16:21.422
+si trovano queste copie. Ma è importante pensare a questo
+
+240
+00:16:21.422 --> 00:16:27.182
+aspetto delle copie in un altro modo, a cui molte aziende non pensano:
+
+241
+00:16:27.182 --> 00:16:30.692
+dove si trovano queste copie?
+
+242
+00:16:32.022 --> 00:16:34.652
+Ok. E l'ultima parte, lo prometto.
+
+243
+00:16:35.662 --> 00:16:38.982
+Ora immaginate di avere una struttura con alimentazione ridondante,
+
+244
+00:16:38.982 --> 00:16:42.212
+raffreddamento ridondante e connettività di rete ridondante.
+
+245
+00:16:42.782 --> 00:16:46.942
+È resiliente? Forse. Ma cambio una cosa.
+
+246
+00:16:46.942 --> 00:16:50.932
+E se tutta quella ridondanza si trovasse nello stesso edificio?
+
+247
+00:16:51.902 --> 00:16:55.502
+Alex? Se abbiamo tutti questi dati nello stesso edificio,
+
+248
+00:16:55.502 --> 00:17:00.142
+è relativamente facile che si verifichino almeno due dei rischi.
+
+249
+00:17:00.142 --> 00:17:04.422
+Prima di tutto, può succedere qualcosa
+
+250
+00:17:04.422 --> 00:17:07.142
+a tutto l'edificio, come un incendio.
+
+251
+00:17:07.142 --> 00:17:11.942
+E in secondo luogo, la connettività verso questo edificio può essere
+
+252
+00:17:11.942 --> 00:17:17.822
+interrotta se passa per un solo percorso.
+
+253
+00:17:17.822 --> 00:17:24.422
+Quindi è importante capire che avere un solo edificio per i vostri server
+
+254
+00:17:24.422 --> 00:17:27.782
+o una sola zona di disponibilità per i vostri
+
+255
+00:17:27.782 --> 00:17:31.022
+servizi cloud non basta in molti scenari.
+
+256
+00:17:31.022 --> 00:17:33.062
+Dipende da cosa si rischia, ovviamente,
+
+257
+00:17:33.062 --> 00:17:34.702
+e da quali sono i vostri obiettivi.
+
+258
+00:17:34.702 --> 00:17:40.222
+E spesso bisogna pensarci in più di un
+
+259
+00:17:40.222 --> 00:17:43.812
+modo. Si tratta di resilienza geografica.
+
+260
+00:17:44.342 --> 00:17:48.982
+Esatto. E a volte ce ne dimentichiamo
+
+261
+00:17:48.982 --> 00:17:50.452
+quando progettiamo un'infrastruttura critica.
+
+262
+00:17:50.942 --> 00:17:52.942
+Pensiamo in termini di componenti.
+
+263
+00:17:52.942 --> 00:17:55.382
+Due sistemi UPS, due sistemi di raffreddamento,
+
+264
+00:17:55.382 --> 00:17:57.822
+due linee di alimentazione, ecc.
+
+265
+00:17:57.822 --> 00:18:01.182
+Ma resilienza non significa solo averne due di qualcosa.
+
+266
+00:18:01.182 --> 00:18:06.062
+Resilienza significa fare in modo che lo stesso evento non possa
+
+267
+00:18:06.062 --> 00:18:09.582
+metterli fuori uso entrambi. Sì.
+
+268
+00:18:09.582 --> 00:18:14.622
+Idealmente servono almeno due luoghi per i vostri
+
+269
+00:18:14.622 --> 00:18:16.492
+dati e applicazioni importanti.
+
+270
+00:18:17.102 --> 00:18:21.303
+E idealmente questi luoghi dovrebbero essere distribuiti geograficamente,
+
+271
+00:18:21.303 --> 00:18:24.933
+in zone sismiche diverse, con fornitori di elettricità diversi,
+
+272
+00:18:25.743 --> 00:18:27.663
+con regole di accesso fisico diverse.
+
+273
+00:18:27.663 --> 00:18:30.623
+Questa è la vera chiave per la continuità operativa delle aziende
+
+274
+00:18:30.623 --> 00:18:33.863
+importanti. Oppure prendiamo l'alimentazione.
+
+275
+00:18:33.863 --> 00:18:35.693
+Se linee elettriche
+
+276
+00:18:36.743 --> 00:18:40.533
+indipendenti possono sembrare un'ottima ridondanza,
+
+277
+00:18:41.023 --> 00:18:43.653
+ma se entrambe finiscono
+
+278
+00:18:45.703 --> 00:18:49.693
+nella stessa sottostazione, nello stesso corridoio fisico o nello stesso edificio,
+
+279
+00:18:50.223 --> 00:18:54.343
+allora forse è solo ridondanza logica,
+
+280
+00:18:54.343 --> 00:18:56.333
+ma non ridondanza geografica.
+
+281
+00:18:58.503 --> 00:19:01.223
+Grazie a tutti per il vostro tempo.
+
+282
+00:19:01.223 --> 00:19:02.893
+Alle domande possiamo rispondere più tardi.
+
+283
+00:19:03.383 --> 00:19:04.283
+Grazie.
