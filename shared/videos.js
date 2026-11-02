@@ -20,6 +20,7 @@
       prev: 'Предишно', next: 'Следващо', play: 'Пусни',
       subs: 'Субтитри', subsOff: 'Без субтитри', subsOrig: 'Оригинален език', subsTo: 'Превод на',
       subsNote: 'Автоматични субтитри и превод от YouTube',
+      subsHint: 'Ако преводът не се появи, изберете „Оригинален език“.', subsLoading: 'Зарежда се превод…',
       upNext: 'Следва', slides: 'Презентация (PDF)', profile: 'Профил на лектора',
       days: 'Дни на форума', halls: 'Зали', empty: 'Няма записи за тази година.'
     },
@@ -29,14 +30,19 @@
       prev: 'Previous', next: 'Next', play: 'Play',
       subs: 'Subtitles', subsOff: 'No subtitles', subsOrig: 'Original language', subsTo: 'Translate to',
       subsNote: 'Automatic captions and translation by YouTube',
+      subsHint: 'If the translation does not appear, choose “Original language”.', subsLoading: 'Loading translation…',
       upNext: 'Up next', slides: 'Slides (PDF)', profile: 'Speaker profile',
       days: 'Forum days', halls: 'Halls', empty: 'No recordings for this year.'
     }
   };
 
-  // Subtitles (user 2026-10-29): YouTube's auto-captions of the talk, machine-
-  // translated by YouTube into the chosen language. 'orig' = the talk's own
-  // language. The choice is remembered for every next video.
+  // Subtitles (user 2026-10-29; YouTube only, reviewer 2026-11-02): YouTube's
+  // auto-captions of the talk, machine-translated by YouTube into the chosen
+  // language - no files of our own to maintain, and YouTube Studio counts the
+  // views per subtitle language. 'orig' = the talk's own language. The choice
+  // is remembered for every next video.
+  // A translation (timedtext &tlang=) answers HTTP 429 on a network YouTube
+  // takes for automated, so every choice is asked for ONCE (see applySubs).
   var SUB_LANGS = [
     ['bg', 'Български'], ['en', 'English'], ['de', 'Deutsch'], ['it', 'Italiano'], ['fr', 'Français'],
     ['es', 'Español'], ['tr', 'Türkçe'], ['ru', 'Русский'], ['uk', 'Українська'], ['el', 'Ελληνικά'],
@@ -44,7 +50,15 @@
     ['zh-Hans', '中文'], ['ja', '日本語']
   ];
   var SUB_KEY = 'cx-video-subtitles';
-  function subPref() { try { return localStorage.getItem(SUB_KEY) || 'off'; } catch (e) { return 'off'; } }
+  function subPref() {
+    var v = 'off';
+    try { v = localStorage.getItem(SUB_KEY) || 'off'; } catch (e) {}
+    return v === 'orig' || SUB_LANGS.some(function (l) { return l[0] === v; }) ? v : 'off';
+  }
+  function langName(code) {
+    var hit = SUB_LANGS.filter(function (l) { return l[0] === code; })[0];
+    return hit ? hit[1] : '';
+  }
   function setSubPref(v) { try { localStorage.setItem(SUB_KEY, v); } catch (e) {} }
 
   // The YouTube IFrame API (needed to switch subtitles) is loaded on the first
@@ -237,36 +251,88 @@
 
     // ---- YouTube player ----
     // the YT.Player on screen (null until ready); ytInst = the one being built,
-    // destroyed properly when the player is removed
-    var yt = null, ytInst = null;
+    // destroyed properly when the player is removed; curV = the open video
+    var yt = null, ytInst = null, curV = null;
     function dropPlayer() {
-      if (ytInst) { try { ytInst.destroy(); } catch (e) {} }
+      if (ytInst) { quiet(ytInst); try { ytInst.destroy(); } catch (e) {} }
       ytInst = yt = null;
     }
-    // Show the remembered subtitle choice. The base track is the talk's own
-    // auto-captions; any other language is YouTube's translation of it.
+    // Before the player leaves a video: YouTube's captions off (no request) and nothing of
+    // ours pending. Left on, YouTube re-applies the last language by itself on the next
+    // video (measured on the Bulgarian talks: 2 translation requests before ours).
+    function quiet(p) {
+      clearTimeout(p.cxT);
+      p.cxGo = null;
+      if (p.cxMod && p.cxKey) { try { p.setOption('captions', 'track', {}); } catch (e) {} }
+      p.cxKey = '';
+    }
+    // YouTube needs 1-2.5 s to translate (measured): the CC menu says so meanwhile
+    // (nothing of ours is drawn over the player, and its iframe cannot be read)
+    var busyT = 0;
+    function showLoading() {
+      var lb = info.querySelector('.cx-vid-subs-label');
+      if (!lb) return;
+      clearTimeout(busyT);
+      lb.textContent = t.subsLoading;
+      busyT = setTimeout(function () { lb.textContent = subLabel(menuVal(curV)); }, 2500);
+    }
+    // Show the remembered subtitle choice: the talk's own auto-captions, or
+    // YouTube's translation of them.
+    // One choice = ONE request to YouTube (measured 2026-11-02: every setOption of an
+    // existing track is exactly one timedtext request, loadModule sends none, the same
+    // choice twice is two requests - nothing is cached). So the same choice is never
+    // sent twice, a run of quick clicks sends only the last one (at most one request
+    // per 1.2 s), and nothing is retried or repeated on state/API changes. Whether it
+    // worked cannot be told from here: getOption('captions', ...) reads back empty and
+    // the iframe is cross-origin.
     function applySubs() {
-      var cur = yt;
-      if (!cur || !cur.setOption) return;
-      var want = subPref();
-      if (want === 'off') { try { cur.unloadModule('captions'); } catch (e) {} cur.cxDone = true; return; }
+      var cur = yt, v = curV, want = subPref();
+      if (!cur || !cur.setOption || !v) return;
+      cur.cxDone = true;
+      clearTimeout(cur.cxT);
+      if (want === 'off') {
+        // a loaded module is switched off with an empty track (no request); unloading it
+        // would make YouTube re-apply the last language on the next load = one more request
+        if (cur.cxMod) { try { cur.setOption('captions', 'track', {}); } catch (e) {} }
+        else { try { cur.unloadModule('captions'); } catch (e) {} }
+        cur.cxKey = ''; cur.cxGo = null;
+        return;
+      }
+      var key = v.id + '|' + want;
+      if (cur.cxKey === key) return;
+      // A checked video (v.track = the language of its YouTube track): ONE track is asked
+      // for. A new one (v.track empty): every language - a track that does not exist is
+      // ignored for free (measured: 0 requests), so only the real one is fetched and a new
+      // upload in any language works (measured: 1 translation request + 2 plain ones).
+      var codes = v.track ? [v.track] : SUB_LANGS.map(function (l) { return l[0]; });
+      var tracks = codes.map(function (c) {
+        var one = { languageCode: c, kind: 'asr' };
+        // without languageName YouTube's own label reads "undefined"
+        if (want !== 'orig' && want !== c) one.translationLanguage = { languageCode: want, languageName: langName(want) };
+        return one;
+      });
+      function set() {
+        if (cur !== yt || curV !== v) return;
+        cur.cxKey = key;
+        cur.cxLast = Date.now();
+        tracks.forEach(function (one) { try { cur.setOption('captions', 'track', one); } catch (e) {} });
+        if (want !== 'orig' && want !== v.track) showLoading();
+      }
+      function send() { cur.cxT = setTimeout(set, Math.max(0, (cur.cxLast || 0) + 1200 - Date.now())); }
+      if (cur.cxMod) { send(); return; }
+      cur.cxMod = true;
       try { cur.loadModule('captions'); } catch (e) {}
-      var tries = 0;
-      (function wait() {
-        if (cur !== yt) return;
-        var tr = {};
-        try { tr = cur.getOption('captions', 'track') || {}; } catch (e) {}
-        if (!tr.languageCode) { if (++tries < 24) setTimeout(wait, 250); return; }
-        var track = { languageCode: tr.languageCode };
-        if (want !== 'orig' && want !== tr.languageCode) track.translationLanguage = { languageCode: want };
-        cur.setOption('captions', 'track', track);
-        cur.cxDone = true;
-      })();
+      // go when the module reports in (onApiChange), at the latest after 900 ms (measured:
+      // with cc_load_policy 0 it does not report, so the first choice goes after 900 ms)
+      cur.cxGo = function () { cur.cxGo = null; send(); };
+      setTimeout(function () { if (cur.cxGo) cur.cxGo(); }, 900);
     }
     function startPlayer(v) {
       // Another video reuses the player already on screen (loadVideoById):
       // a second player built on the same page never got its captions back.
       if (yt && yt.getIframe && player.contains(yt.getIframe())) {
+        // the remembered choice is asked for once this video plays (onStateChange)
+        quiet(yt);
         yt.cxDone = false;
         yt.loadVideoById(v.id);
         try { yt.getIframe().title = v[lang]; } catch (e) {}
@@ -283,14 +349,16 @@
         var inst = ytInst = new window.YT.Player(holder, {
           host: 'https://www.youtube-nocookie.com',
           videoId: v.id,
-          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, hl: lang, cc_load_policy: subPref() === 'off' ? 0 : 1 },
+          // cc_load_policy 0: captions are not forced on; the page loads the module and
+          // asks for the one track it wants (see applySubs)
+          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, hl: lang, cc_load_policy: 0 },
           events: {
             onReady: function () {
               yt = inst;
               try { inst.getIframe().title = v[lang]; } catch (e) {}
-              applySubs();
             },
-            onApiChange: function () { if (yt === inst && !inst.cxDone) applySubs(); },
+            onApiChange: function () { if (yt === inst && inst.cxGo) inst.cxGo(); },
+            // once per video, when it plays: nothing is asked for a video nobody watches
             onStateChange: function (e) { if (e.data === 1 && yt === inst && !inst.cxDone) applySubs(); }
           }
         });
@@ -348,11 +416,15 @@
     // ---- subtitle menu (styled popover instead of the native <select>) ----
     var CHECK = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     var CARET = '<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+    // what the menu shows as chosen for this video (the talk's own language counts as 'orig')
+    function menuVal(v) {
+      var p = subPref();
+      return v && p === v.cc ? 'orig' : p;
+    }
     function subLabel(val) {
       if (val === 'off') return t.subsOff;
       if (val === 'orig') return t.subsOrig;
-      var hit = SUB_LANGS.filter(function (l) { return l[0] === val; })[0];
-      return hit ? hit[1] : t.subsOff;
+      return langName(val) || t.subsOff;
     }
     function closeMenus() {
       root.querySelectorAll('.cx-vid-subs.is-open').forEach(function (m) {
@@ -360,14 +432,15 @@
         m.querySelector('.cx-vid-subs-btn').setAttribute('aria-expanded', 'false');
       });
     }
-    function subsMenu() {
-      var wrap = el('div', 'cx-vid-subs' + (subPref() === 'off' ? '' : ' is-on'));
+    function subsMenu(v) {
+      var cur = menuVal(v);
+      var wrap = el('div', 'cx-vid-subs' + (cur === 'off' ? '' : ' is-on'));
       var trig = button('cx-vid-subs-btn');
       trig.setAttribute('aria-haspopup', 'menu');
       trig.setAttribute('aria-expanded', 'false');
       trig.title = t.subs;
       trig.appendChild(el('span', 'cx-vid-subs-cc', 'CC'));
-      var lbl = el('span', 'cx-vid-subs-label', subLabel(subPref()));
+      var lbl = el('span', 'cx-vid-subs-label', subLabel(cur));
       trig.appendChild(lbl);
       var caret = el('span', 'cx-vid-subs-caret');
       caret.innerHTML = CARET;
@@ -378,7 +451,7 @@
       menu.setAttribute('role', 'menu');
       menu.setAttribute('aria-label', t.subs);
       function option(val, text, code) {
-        var on = subPref() === val;
+        var on = cur === val;
         var o = button('cx-vid-subs-opt' + (on ? ' is-on' : ''));
         o.setAttribute('role', 'menuitemradio');
         o.setAttribute('aria-checked', on ? 'true' : 'false');
@@ -390,6 +463,7 @@
         o.addEventListener('click', function () {
           setSubPref(val);
           closeMenus();
+          clearTimeout(busyT);
           lbl.textContent = subLabel(val);
           wrap.classList.toggle('is-on', val !== 'off');
           menu.querySelectorAll('.cx-vid-subs-opt').forEach(function (b) {
@@ -397,19 +471,20 @@
             b.setAttribute('aria-checked', b === o ? 'true' : 'false');
           });
           trig.focus({ preventScroll: true });
-          if (yt) { yt.cxDone = false; applySubs(); }
+          applySubs();
         });
         return o;
       }
       var main = el('div', 'cx-vid-subs-main');
       main.appendChild(option('off', t.subsOff));
-      main.appendChild(option('orig', t.subsOrig));
+      main.appendChild(option('orig', t.subsOrig, v.cc ? v.cc.toUpperCase() : ''));
       menu.appendChild(main);
       menu.appendChild(el('p', 'cx-vid-subs-head', t.subsTo));
       var langs = el('div', 'cx-vid-subs-langs');
-      SUB_LANGS.forEach(function (l) { langs.appendChild(option(l[0], l[1], l[0].split('-')[0].toUpperCase())); });
+      // the talk's own language is 'orig', not a translation
+      SUB_LANGS.forEach(function (l) { if (l[0] !== v.cc) langs.appendChild(option(l[0], l[1], l[0].split('-')[0].toUpperCase())); });
       menu.appendChild(langs);
-      menu.appendChild(el('p', 'cx-vid-subs-note', t.subsNote));
+      menu.appendChild(el('p', 'cx-vid-subs-note', t.subsNote + '. ' + t.subsHint));
       wrap.appendChild(menu);
 
       trig.addEventListener('click', function (e) {
@@ -445,6 +520,7 @@
     function drawWatch(play) {
       var x = byId[st.cur];
       var v = x.v;
+      curV = v;
       var items = list();
       if (items.indexOf(x) < 0) { st.day = 'all'; st.hall = 'all'; st.q = ''; search.value = ''; items = list(); drawFilters(); }
       var pos = items.indexOf(x);
@@ -477,7 +553,7 @@
       head.appendChild(el('span', 'cx-vid-meta', meta(x) + ' · ' + x.s[lang]));
       topRow.appendChild(head);
       var nav = el('div', 'cx-vid-nav');
-      nav.appendChild(subsMenu());
+      nav.appendChild(subsMenu(v));
       var p = button('cx-vid-step', '←'), n = button('cx-vid-step', '→');
       p.setAttribute('aria-label', t.prev);
       n.setAttribute('aria-label', t.next);
@@ -548,7 +624,14 @@
       watch.hidden = !watching;
       back.hidden = !watching;
       if (watching) drawWatch(play);
-      else { dropPlayer(); player.innerHTML = ''; drawGrid(); }
+      else {
+        // The player stays (stopped, hidden) and the next video reuses it (loadVideoById):
+        // a NEW player of a Bulgarian talk gets YouTube's remembered translation from
+        // YouTube itself (measured: 2 requests, whatever the page does).
+        if (yt) { quiet(yt); try { yt.stopVideo(); } catch (e) {} }
+        else { dropPlayer(); player.innerHTML = ''; }
+        drawGrid();
+      }
     }
 
     function open(id, play) {
