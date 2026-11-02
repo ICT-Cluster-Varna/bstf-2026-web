@@ -8,7 +8,10 @@
    one session here (Day 1 13:00, Day 2 Bulgaria 09:00, Day 2 Varna 09:10).
    Thumbnails are self-hosted: images/video/{year}/{id}.jpg (YouTube's
    maxresdefault, fetched once), so the page loads nothing from YouTube
-   until someone presses play. `thumbs` is their ?v= stamp. */
+   until someone presses play. `thumbs` is their ?v= stamp.
+   Subtitles are YouTube's own (auto-captions + YouTube's translation); the
+   page only needs to know which caption track a video has: v.cc / v.track,
+   set from CAPTIONS / CHECKED / TRACKS below. */
 (function () {
   function P(bg, en, slug) { return slug ? { bg: bg, en: en, slug: slug } : { bg: bg, en: en }; }
   function V(id, dur, bg, en, speakers) { return { id: id, dur: dur, bg: bg, en: en, speakers: speakers || [] }; }
@@ -28,7 +31,7 @@
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261029',
+      thumbs: '20261102',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -107,9 +110,38 @@
                     V('n0Fn9edO5l8', '16:08', 'Основите имат значение', 'Foundations Matter', [P('Paul Lambert', 'Paul Lambert', 'paul-lambert')])
                   ]
                 },
-                { time: '13:15', bg: 'Блок 3: Автоматизация: Роботика + Смарт земеделие', en: 'Block 3: Automation: Robotics + Smart Agriculture' },
+                {
+                  time: '13:15', bg: 'Блок 3: Автоматизация: Роботика + Смарт земеделие', en: 'Block 3: Automation: Robotics + Smart Agriculture',
+                  playlist: 'PLSwsTQ7uwTxk',
+                  videos: [
+                    V('48PXXUKU9RA', '19:19', 'Откриваща лекция (keynote): Интеграция на интелигентни системи', 'Opening Keynote: Smart System Integration',
+                      [P('проф. Teade Punter', 'Prof. Teade Punter', 'teade-punter')]),
+                    V('eNbUUmv1JJ4', '10:34', 'Примерът на Renesas', 'The Renesas Example', [P('д-р Георги Николов', 'Dr. Georgi Nikolov', 'georgi-nikolov')]),
+                    V('CQBwskZEw1Y', '10:10', 'Подходът на Япония, основан на концепцията „Общество 5.0“', 'Japan’s Approach: The Society 5.0 Concept',
+                      [P('Mitsuru Horinouchi', 'Mitsuru Horinouchi', 'mitsuru-horinouchi')]),
+                    V('Zu_QqCmjxv8', '9:57', 'Примерът на Robotoplus', 'The Robotoplus Example', [P('Константин Динев', 'Konstantin Dinev', 'konstantin-dinev')]),
+                    // panelists not named by the program: confirm with the organizers
+                    V('ixgNMlIWgBo', '7:00', 'Панел: Автоматизация: Роботика + Смарт земеделие', 'Panel: Automation: Robotics + Smart Agriculture'),
+                    V('hZKaJVmu8bo', '10:00', 'Технологии в земеделието — внедряване на AI', 'Technologies in Agriculture — AI Adoption', [P('Илия Йорданов', 'Ilia Iordanov', 'ilia-iordanov')])
+                  ]
+                },
                 { time: '15:00', bg: 'Блок 4: Финансиране, износ, нови пазари, венчърни фондове', en: 'Block 4: Financing, Export, New Markets, Venture Funds' },
-                { time: '16:40', bg: 'Блок 5: Морски технологии', en: 'Block 5: Maritime Technologies' }
+                {
+                  time: '16:40', bg: 'Блок 5: Морски технологии', en: 'Block 5: Maritime Technologies',
+                  playlist: 'PLfYmTyLkqUyg',
+                  videos: [
+                    V('qEhzLaSOI3I', '10:04', 'AI в корабостроенето', 'AI in Shipbuilding', [P('Светлин Стоянов', 'Svetlin Stoyanov', 'svetlin-stoyanov')]),
+                    V('AFNz7HkalRc', '14:20', 'Морска аналитика: данните като основа за по-умни, по-зелени и по-устойчиви операции',
+                      'Maritime Intelligence: Transforming Data into Smarter, Greener and More Resilient Operations', [P('Cemile Köseler Usta', 'Cemile Köseler Usta', 'cemile-usta')]),
+                    V('fY0pLxvxz_Q', '12:19', 'Иновативното образование като основа за развитие на морските технологии',
+                      'Innovative Education as a Foundation for the Development of Maritime Technologies', [P('проф. двн Боян Медникаров', 'Prof. Boyan Mednikarov, DSc', 'boyan-mednikarov')]),
+                    V('UFBXWegr8RE', '10:13', 'Технологична трансформация на данните', 'Technology Data Transform', [P('Григор Кънчев', 'Grigor Kanchev', 'grigor-kanchev')]),
+                    V('Zpo0xDiSKlc', '7:44', 'Автономни морски системи за реални мисии', 'Autonomous Maritime Systems Build for Real-World Missions', [P('Борислав Теберов', 'Borislav Teberov', 'borislav-teberov')]),
+                    V('XGvVwA0mynE', '17:48', 'Навигация към бъдещето с автономни кораби', 'Navigating the Future with Autonomous Ships', [P('доц. Ismail Bayezit', 'Assoc. Prof. Ismail Bayezit', 'ismail-bayezit')]),
+                    // panelists not named by the program: confirm with the organizers
+                    V('_oilDnsgWHE', '5:40', 'Панел: Морски технологии', 'Panel: Maritime Technologies')
+                  ]
+                }
               ]
             },
             {
@@ -218,12 +250,36 @@
     '46bcYATEWHU': 'bultisad', 'w0MwW5B-428': 'erguner', 'LGfQfUfnPMY': 'daskalov-cybersec', 'iYiNvq7-Wr8': 'leijten',
     'wOdPj4MNOaM': 'cemile-ici', 'kiw7RMuv6Nk': 'sanli', 'IQPodPQPCig': 'hertum', 'yJvEYUfRTuE': 'slavov',
     'JQjDgdFyaF4': 'hristo-daskalov', 'lzIUK59X8sc': 'ozbek-cambro', 'BT7aUjsbjbk': 'lilov', '5eMf1ZPUDXY': 'stoilova',
-    'DmbDTQ97jsw': 'hristov', 'bAvsmqxgQkk': 'yankova', 'oZtoJQdzTKY': 'kostadinov', 'ETah7M2Ncz8': 'ayrakova'
+    'DmbDTQ97jsw': 'hristov', 'bAvsmqxgQkk': 'yankova', 'oZtoJQdzTKY': 'kostadinov', 'ETah7M2Ncz8': 'ayrakova',
+    '48PXXUKU9RA': 'punter', 'eNbUUmv1JJ4': 'nikolov', 'CQBwskZEw1Y': 'horinouchi', 'Zu_QqCmjxv8': 'dinev',
+    'qEhzLaSOI3I': 'svetlin', 'AFNz7HkalRc': 'cemile-maritime', 'fY0pLxvxz_Q': 'mednikarov', 'UFBXWegr8RE': 'kanchev',
+    'Zpo0xDiSKlc': 'teberov', 'XGvVwA0mynE': 'bayezit'
   };
+  // video id -> language of the talk when it is not English (checked on the
+  // transcript, 2026-10-30).
+  // w0MwW5B-428 and kiw7RMuv6Nk carry a Turkish track in YouTube but are spoken
+  // in English by Turkish speakers: that track is garbage, so they are not 'tr'.
+  var CAPTIONS = {
+    'ro1V_PgaBXM': 'bg', 'FIaVzUTvnec': 'bg', 'DmbDTQ97jsw': 'bg',
+    'qdMHyRzuUUI': 'bg', 'ETah7M2Ncz8': 'bg', '1PuXVAy94j4': 'bg'
+  };
+  // ids whose spoken language was checked on the transcript (2026-11-02). A video NOT listed here is new:
+  // v.cc / v.track stay empty and the page asks YouTube for every language (see applySubs). After checking a
+  // new video, add it here (and to CAPTIONS if it is not English).
+  var CHECKED = {};
+  ('IuKq4JjeJMw IYOgAlwKaDY ro1V_PgaBXM FIaVzUTvnec 0knzVVoLv70 nKnoQsbmODk rQpQFJbzi5Q XwoW_PcZ2J4 F8z7lGcBExw -FryU9bg4i8 8cHpY5-CoTA AJCirgcO5KA oBG1QahzUk4 SZXTSm_zAug HxDkxEk9z6s iMpZPnTptCI wM4fqSuhSDA vobHOoMmbvc MN4XdPyRIx8 U7ze-eGI7M0 ntggxjUhQiA b4mYnIO2uoI n0Fn9edO5l8 HOyewd_mc78 y0d-xa-fK58 S6K8e0lVbM0 CQpnY4jfVyE 46bcYATEWHU w0MwW5B-428 LGfQfUfnPMY iYiNvq7-Wr8 wOdPj4MNOaM JItXcLu6dcI kiw7RMuv6Nk IQPodPQPCig yJvEYUfRTuE rWA-6Mm3qPk JQjDgdFyaF4 lzIUK59X8sc 3bSxtWB4y_M FUuInUaw1AY BT7aUjsbjbk 5eMf1ZPUDXY DmbDTQ97jsw bAvsmqxgQkk oZtoJQdzTKY xT7BwuJJSBU qdMHyRzuUUI ETah7M2Ncz8 1PuXVAy94j4').split(' ').forEach(function (id) { CHECKED[id] = 1; });
+  // video id -> language of the track YouTube holds when it differs from the spoken
+  // language (the Turkish ASR of the two English talks): the base for YouTube's own
+  // translation.
+  var TRACKS = { 'w0MwW5B-428': 'tr', 'kiw7RMuv6Nk': 'tr' };
   window.CONNEXUS_VIDEOS[2026].days.forEach(function (d) {
     d.halls.forEach(function (h) {
       h.sessions.forEach(function (s) {
         (s.videos || []).forEach(function (v) {
+          if (v.id) {
+            v.cc = CAPTIONS[v.id] || (CHECKED[v.id] ? 'en' : '');
+            v.track = TRACKS[v.id] || v.cc;
+          }
           if (DECKS[v.id]) v.deck = DECKS[v.id];
           if (!v.id && /Kisimov/.test(v.speakers[0].en)) v.deck = 'kisimov';
         });
