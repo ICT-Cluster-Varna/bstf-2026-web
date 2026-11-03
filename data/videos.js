@@ -38,7 +38,7 @@
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261103-4',
+      thumbs: '20261103-5',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -89,9 +89,9 @@
                   time: '18:00', bg: 'Техностарт Мотиватор', en: 'Technostart Motivator',
                   playlist: 'PLdKw6AniT-CY',
                   videos: [
-                    V('RtHMCPdATHI', '16:03', 'Как AI ме направи свръхчовек', 'How AI Made Me Superhuman', [P('Християн Христов', 'Hristiyan Hristov')]),
-                    V('UZy9w_AGo9M', '12:18', 'Какво AI няма да замени', 'What AI Won’t Replace', [P('Анна Палазова', 'Anna Palazova')]),
-                    V('X2u59ndJX8g', '18:40', 'Как да НЕ си безработен в ерата на AI', 'How NOT to Be Unemployed in the Age of AI', [P('Мартин Куванджиев', 'Martin Kuvandzhiev', 'martin-kuvandzhiev')])
+                    V('RtHMCPdATHI', '16:03', 'Техностарт: Как AI ме направи свръхчовек', 'Technostart: How AI Made Me Superhuman', [P('Християн Христов', 'Hristiyan Hristov')]),
+                    V('UZy9w_AGo9M', '12:18', 'Техностарт: Какво AI няма да замени', 'Technostart: What AI Won’t Replace', [P('Анна Палазова', 'Anna Palazova')]),
+                    V('X2u59ndJX8g', '18:40', 'Техностарт: Как да НЕ си безработен в ерата на AI', 'Technostart: How NOT to Be Unemployed in the Age of AI', [P('Мартин Куванджиев', 'Martin Kuvandzhiev', 'martin-kuvandzhiev')])
                   ]
                 }
               ]
