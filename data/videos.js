@@ -38,7 +38,7 @@
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261103',
+      thumbs: '20261103-1',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -211,9 +211,8 @@
                     V('DmbDTQ97jsw', '9:48', 'Бъдещето на мобилността: от притежанието към достъпа', 'The Future of Mobility: From Ownership to Access', [P('Христо Христов', 'Hristo Hristov', 'hristo-hristov')]),
                     V('bAvsmqxgQkk', '9:10', 'Интелигентният град Дубай през очите на жител', 'Smart City Dubai Through the Eyes of a Resident', [P('д-р Веселина Янкова', 'Dr. Veselina Yankova', 'veselina-yankova')]),
                     V('oZtoJQdzTKY', '7:54', 'От данни към решения: цифровият близнак на София и City Living Lab на практика', 'From Data to Decisions: Sofia’s Digital Twin and City Living Lab in Practice', [P('Калин Костадинов', 'Kalin Kostadinov', 'kalin-kostadinov')]),
-                    // announced by the organizers 2026-10-29, not in the playlist yet — add its id when it is uploaded
-                    { bg: 'Дигитализация на икономиката в среда на големите данни', en: 'Digitalization of the Economy in a Big Data Environment', speakers: [P('проф. Валентин Кисимов', 'Prof. Valentin Kisimov', 'valentin-kisimov')] },
-                    V('xT7BwuJJSBU', '10:54', 'Въпроси и отговори: Туризъм и умен град', 'Q&A: Tourism and Smart City', [S_IVANOV])
+                    V('xT7BwuJJSBU', '10:54', 'Въпроси и отговори: Туризъм и умен град', 'Q&A: Tourism and Smart City', [S_IVANOV]),
+                    V('O0wKpeyitj8', '7:27', 'Дигитализация на икономиката в среда на големите данни', 'Digitalization of the Economy in a Big Data Environment', [P('проф. Валентин Кисимов', 'Prof. Valentin Kisimov', 'valentin-kisimov')])
                   ]
                 }
               ]
@@ -226,8 +225,23 @@
             {
               hall: 'bulgaria',
               sessions: [
-                { time: '09:00', bg: 'Откриване и обобщение от Ден 2', en: 'Opening and Day 2 Recap' },
-                { time: '09:10', bg: 'Блок 1: Оптимизация на бизнес процеси: геймификация, AI и още', en: 'Block 1: Business Process Optimisation: Gamification, AI and More' },
+                {
+                  time: '09:00', bg: 'Откриване и обобщение от Ден 2', en: 'Opening and Day 2 Recap',
+                  videos: [
+                    V('sWs_k1mJftU', '10:12', 'Откриване и обобщение от Ден 2', 'Opening and Summary of Day 2', [STAMENOV, TSANKOV])
+                  ]
+                },
+                {
+                  time: '09:10', bg: 'Блок 1: Оптимизация на бизнес процеси: геймификация, AI и още', en: 'Block 1: Business Process Optimisation: Gamification, AI and More',
+                  playlist: 'PLUHPYu9no7CE',
+                  videos: [
+                    V('xPw6puE2xcg', '15:40', 'AI може да го създаде. Но кой ще го поиска?', 'AI Can Build It. Who Will Want It?', [P('Цветан Русимов', 'Tsvetan Rusimov', 'cvetan-rusimov')]),
+                    V('5C3ybdsqDWA', '15:41', 'AI агенти в снабдяването', 'AI Agents in Procurement', [P('Dominik Petek', 'Dominik Petek', 'dominik-petek')]),
+                    V('ufjACfnkvFg', '15:15', 'CHAIN++: федерирано езеро от данни за AI', 'Federated AI Data Lake CHAIN++', [P('Звезделин Борисов', 'Zvezdelin Borisov', 'zvezdelin-borisov')]),
+                    V('NR4jlNrgGlU', '14:19', 'AI не се намира просто на едно място', 'AI Is Not Found in Just One Place', [P('Теодор Ставров', 'Teodor Stavrov', 'teodor-stavrov')]),
+                    V('2Qg3OYsdh8E', '12:50', 'Панел: Оптимизация на бизнес процеси: геймификация, AI и още', 'Panel: Business Process Optimisation: Gamification, AI and More', [STAMENOV])
+                  ]
+                },
                 {
                   time: '10:55', bg: 'Блок 2: AI в дигиталния маркетинг и още', en: 'Block 2: AI in Digital Marketing and More',
                   playlist: 'PLY-Un9CUSpGw',
@@ -302,7 +316,8 @@
     'qEhzLaSOI3I': 'svetlin', 'AFNz7HkalRc': 'cemile-maritime', 'fY0pLxvxz_Q': 'mednikarov', 'UFBXWegr8RE': 'kanchev',
     'Zpo0xDiSKlc': 'teberov', 'XGvVwA0mynE': 'bayezit', 'ZXiHOqQ0POQ': 'vasileva', 'I4u0Uw9JU7Y': 'petkanov',
     'Kej_nJgzoMs': 'valev', 'q0wJgbGW6ps': 'goshev', 'pN_nGYd-OxI': 'brzoska', 'NkLGKuwWDY8': 'fotev',
-    'V9762TfAIe8': 'todorova', 'WAU3NSd-zUw': 'simeon-ahead', 'LCsMnptWXeQ': 'pavlov', 'rUhvpomzADM': 'kordon-workshop'
+    'V9762TfAIe8': 'todorova', 'WAU3NSd-zUw': 'simeon-ahead', 'LCsMnptWXeQ': 'pavlov', 'rUhvpomzADM': 'kordon-workshop',
+    'xPw6puE2xcg': 'rusimov', '5C3ybdsqDWA': 'petek', 'ufjACfnkvFg': 'borisov', 'NR4jlNrgGlU': 'stavrov', 'O0wKpeyitj8': 'kisimov'
   };
   // video id -> language of the talk when it is not English (checked on the
   // transcript, 2026-10-30).
@@ -330,7 +345,6 @@
             v.track = TRACKS[v.id] || v.cc;
           }
           if (DECKS[v.id]) v.deck = DECKS[v.id];
-          if (!v.id && /Kisimov/.test(v.speakers[0].en)) v.deck = 'kisimov';
         });
       });
     });
