@@ -38,7 +38,7 @@
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261103-2',
+      thumbs: '20261103-3',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -63,15 +63,47 @@
                       [P('Lars Frølund', 'Lars Frølund', 'lars-frolund'), P('Невен Дилков', 'Neven Dilkov', 'neven-dilkov'), P('Светослава Георгиева', 'Svetoslava Georgieva', 'svetoslava-georgieva'), STEFANOV])
                   ]
                 },
-                { time: '14:25', bg: 'Блок 1: Дигитална трансформация', en: 'Block 1: Digital Transformation' },
-                { time: '16:10', bg: 'Блок 2: История на проглеждането: приложен изкуствен интелект – от възможност до оперативни резултати', en: 'Block 2: A Story of Seeing Clearly: Applied AI – from Opportunity to Operational Results' },
+                {
+                  time: '14:25', bg: 'Блок 1: Дигитална трансформация', en: 'Block 1: Digital Transformation',
+                  playlist: 'PLXG7dcJRPGFU',
+                  videos: [
+                    V('1VqRFENmrno', '35:28', 'Иновационната и геоикономическата сила на Европейския съюз в Черноморския регион', 'The European Union’s Innovation and Geoeconomic Power in the Black Sea Region',
+                      [P('Marie Dumoulin', 'Marie Dumoulin', 'marie-dumoulin'), P('Paul Lambert', 'Paul Lambert', 'paul-lambert'), P('Robin Peeters', 'Robin Peeters', 'robin-peeters'), P('Калина Цолова', 'Kalina Tsolova', 'kalina-tsolova')]),
+                    V('t5Pd-82pHIQ', '40:30', 'От стратегия към изпълнение: ефективни политики за дигитална трансформация на регионите на Европа', 'From Strategy to Delivery: Effective Policymaking for Digital Transformation of Europe’s Regions',
+                      [P('Aurel-Cătălin Giulescu', 'Aurel-Cătălin Giulescu'), P('Иво Зимбилев', 'Ivo Zimbilev', 'ivo-zimbilev'), P('Stefan Muntoiu', 'Stefan Muntoiu', 'stefan-muntoiu'), P('д-р Татяна Новосьолова', 'Dr. Tatyana Novossiolova')])
+                  ]
+                },
+                {
+                  time: '16:10', bg: 'Блок 2: История на проглеждането: приложен изкуствен интелект – от възможност до оперативни резултати', en: 'Block 2: A Story of Seeing Clearly: Applied AI – from Opportunity to Operational Results',
+                  playlist: 'PLT4NcUzWPBeE',
+                  videos: [
+                    V('BLv0UyhCouo', '17:58', 'Основен доклад: Катализатор на възможности: българската AI фабрика BRAIN++ – защо, какво и как', 'Keynote: Enabler for Opportunities: Bulgarian AI BRAIN++ Factory – Why/What & How', [S_STOYANOV]),
+                    V('vwlDBtfJN1g', '7:54', 'AI инструменти', 'AI Tools', [P('Надежда Денишева', 'Nadezhda Denisheva')]),
+                    V('SH5VXadZP2c', '9:39', 'Ако енергията можеше да мисли? AI – от прогнозиране до автономни енергийни решения', 'What If Energy Could Think? AI – From Forecasting to Autonomous Energy Decisions', [P('Илия Желязков', 'Iliya Zhelyazkov')]),
+                    V('_HRcarxk1v8', '9:00', 'Интелигентно управление в енергията: от данните към решенията', 'Intelligent Energy Management – From Data to Decisions', [P('Борислав Лазаров', 'Borislav Lazarov', 'borislav-lazarov')]),
+                    V('_hPP-sGhYfY', '13:52', 'AI трансформация на практика: какво научих след 10 месеца', 'AI Transformation in Practice: What I Learned After 10 Months', [P('Петър Топалов', 'Petar Topalov', 'petar-topalov')]),
+                    V('7_2Tyw0yUfc', '14:20', 'Панел: История на проглеждането', 'Panel: The Story of Seeing Clearly', [S_STOYANOV])
+                  ]
+                },
                 { time: '18:00', bg: 'Техностарт Мотиватор', en: 'Technostart Motivator' }
               ]
             },
             {
               hall: 'varna',
               sessions: [
-                { time: '14:25', bg: 'Биотехнологии, здраве и устойчиви индустрии', en: 'Biotechnology, Health and Sustainable Industries' },
+                {
+                  time: '14:25', bg: 'Биотехнологии, здраве и устойчиви индустрии', en: 'Biotechnology, Health and Sustainable Industries',
+                  playlist: 'PLLgKl1P7eORI',
+                  videos: [
+                    V('NGfEQmaj2FQ', '21:02', 'Бъдещето на здравеопазването и науките за живота: от научни постижения към мащабируеми иновации', 'Future of Health & Life Sciences: From Research Excellence to Scalable Innovation', [P('Кристина Ескенази', 'Kristina Eskenazi', 'kristina-eskenazi')]),
+                    V('OSt6ype77m4', '8:35', 'Практически пример – митохондриите като Ци: да пребъде Силата с теб', 'Practical Use Case: Mitochondria as Chi: May the Force Be with You', [P('Димитър Карловски', 'Dimitar Karlovski', 'dimitar-karlovski')]),
+                    V('VAKIu90Z5HY', '9:14', 'Образна диагностика на тумори както никога досега', 'Imaging Tumor Like Never Before', [P('проф. Елица Енчева', 'Prof. Elitsa Encheva', 'elitsa-encheva')]),
+                    V('m_7lkeysbEw', '8:44', 'Поглед в микросвета и отвъд него', 'Zoom into the Micro-World, and Beyond', [P('проф. Антон Тончев', 'Prof. Anton Tonchev', 'anton-tonchev')]),
+                    V('lwGPCw72AJM', '7:49', 'Ранен скрининг за рак на гърдата', 'Early Screening of Breast Cancer', [P('проф. Кристина Близнакова', 'Prof. Kristina Bliznakova', 'kristina-bliznakova')]),
+                    V('J3wHwyMO6bU', '6:29', 'Изкуствен интелект в подкрепа на детското хранене: от научните данни до персонализираните препоръки', 'AI in Support of Child Nutrition: From Scientific Data to Personalized Recommendations', [P('проф. Ружа Панчева', 'Prof. Ruzha Pancheva', 'ruzha-pancheva')]),
+                    V('wR7faNWpCSU', '7:33', 'WineX – повече от вино', 'WineX – More Than Wine', [P('доц. Оскан Тасинов', 'Assoc. Prof. Oskan Tasinov', 'oskan-tasinov')])
+                  ]
+                },
                 {
                   time: '16:10', bg: 'Обмен между България и Нидерландия', en: 'Exchange Between Bulgaria and the Netherlands',
                   playlist: 'PLUSr0I33E998',
@@ -320,7 +352,10 @@
     'Zpo0xDiSKlc': 'teberov', 'XGvVwA0mynE': 'bayezit', 'ZXiHOqQ0POQ': 'vasileva', 'I4u0Uw9JU7Y': 'petkanov',
     'Kej_nJgzoMs': 'valev', 'q0wJgbGW6ps': 'goshev', 'pN_nGYd-OxI': 'brzoska', 'NkLGKuwWDY8': 'fotev',
     'V9762TfAIe8': 'todorova', 'WAU3NSd-zUw': 'simeon-ahead', 'LCsMnptWXeQ': 'pavlov', 'rUhvpomzADM': 'kordon-workshop',
-    'xPw6puE2xcg': 'rusimov', '5C3ybdsqDWA': 'petek', 'ufjACfnkvFg': 'borisov', 'NR4jlNrgGlU': 'stavrov', 'O0wKpeyitj8': 'kisimov'
+    'xPw6puE2xcg': 'rusimov', '5C3ybdsqDWA': 'petek', 'ufjACfnkvFg': 'borisov', 'NR4jlNrgGlU': 'stavrov', 'O0wKpeyitj8': 'kisimov',
+    'BLv0UyhCouo': 'simeon-keynote', 'SH5VXadZP2c': 'zhelyazkov', '_HRcarxk1v8': 'lazarov', '_hPP-sGhYfY': 'topalov',
+    'NGfEQmaj2FQ': 'eskenazi', 'OSt6ype77m4': 'karlovski', 'VAKIu90Z5HY': 'encheva', 'm_7lkeysbEw': 'tonchev',
+    'lwGPCw72AJM': 'bliznakova', 'J3wHwyMO6bU': 'pancheva', 'wR7faNWpCSU': 'tasinov'
   };
   // video id -> language of the talk when it is not English (checked on the
   // transcript, 2026-10-30).
