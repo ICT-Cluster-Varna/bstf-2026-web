@@ -5,7 +5,9 @@
    program, `speakers` [{bg, en, slug?}] — slug links the speaker's profile
    page. A video without `id` is announced but not uploaded yet ("скоро").
    Where the organizers put two program sessions in one playlist, they are
-   one session here (Day 1 13:00, Day 2 Bulgaria 09:00, Day 2 Varna 09:10).
+   one session here (Day 1 13:00, Day 2 Bulgaria 09:00, Day 2 Varna 09:10,
+   Day 3 Bulgaria 15:00 + the closing). A session the organizers uploaded as
+   one video has no `playlist`.
    Thumbnails are self-hosted: images/video/{year}/{id}.jpg (YouTube's
    maxresdefault, fetched once), so the page loads nothing from YouTube
    until someone presses play. `thumbs` is their ?v= stamp.
@@ -28,10 +30,15 @@
   var S_IVANOV = P('проф. Станислав Иванов', 'Prof. Stanislav Ivanov', 'stanislav-ivanov');
   var H_DASKALOV = P('Християн Даскалов', 'Hristiyan Daskalov', 'hristian-daskalov');
   var AYRAKOVA = P('Розалина Айракова', 'Rozalina Ayrakova', 'rozalina-ayrakova');
+  var KORDON = P('д-р Артур Кордон', 'Dr Arthur Kordon', 'arthur-kordon');
+  var TSANKOV = P('Емил Цанков', 'Emil Tsankov');
+  var TODOROVA = P('доц. д-р Марияна Тодорова', 'Assoc. Prof. Dr. Mariyana Todorova', 'mariyana-todorova');
+  var S_STOYANOV = P('проф. Симеон Стоянов', 'Prof. Simeon Stoyanov', 'simeon-stoyanov');
+  var PETKANOV = P('Николай Петканов', 'Nikolay Petkanov', 'nikolay-petkanov');
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261102',
+      thumbs: '20261103',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -88,7 +95,7 @@
                   videos: [
                     V('F8z7lGcBExw', '6:26', 'Откриване и обобщение от Ден 1', 'Opening and Summary of Day 1'),
                     V('-FryU9bg4i8', '15:02', 'Основен доклад: Как компаниите внедряват изкуствен интелект устойчиво', 'Keynote: How Companies Implement AI Sustainably', [BARASH]),
-                    V('8cHpY5-CoTA', '23:42', 'Приложен бизнес AI – от Тъмните векове към агентното бъдеще', 'Applied Business AI — From the Dark Ages to the Agentic Future', [P('д-р Артур Кордон', 'Dr Arthur Kordon', 'arthur-kordon')]),
+                    V('8cHpY5-CoTA', '23:42', 'Приложен бизнес AI – от Тъмните векове към агентното бъдеще', 'Applied Business AI — From the Dark Ages to the Agentic Future', [KORDON]),
                     V('AJCirgcO5KA', '8:49', 'Блокчейн, финтех и изкуствен интелект: следващата вълна от иновации', 'Blockchain, Fintech, and AI: The Next Wave of Innovation', [P('Мартин Куванджиев', 'Martin Kuvandzhiev', 'martin-kuvandzhiev')]),
                     V('oBG1QahzUk4', '17:36', 'AI пътят на MEAVO – единна корпоративна платформа за 6 месеца', 'MEAVO’s AI Journey: Building a Unified Enterprise Platform in 6 Months', [P('Тодор Маджаров', 'Todor Madzharov', 'todor-madzharov')]),
                     V('SZXTSm_zAug', '9:51', 'AI в лабораторията – от заданието до готовия модел', 'AI in the Laboratory – From Brief to Finished Model', [P('Олександър Сивак', 'Oleksandr Syvak', 'oleksandr-syvak'), P('Ксения Середяк', 'Kseniia Serediak')]),
@@ -125,7 +132,14 @@
                     V('hZKaJVmu8bo', '10:00', 'Технологии в земеделието — внедряване на AI', 'Technologies in Agriculture — AI Adoption', [P('Илия Йорданов', 'Ilia Iordanov', 'ilia-iordanov')])
                   ]
                 },
-                { time: '15:00', bg: 'Блок 4: Финансиране, износ, нови пазари, венчърни фондове', en: 'Block 4: Financing, Export, New Markets, Venture Funds' },
+                {
+                  time: '15:00', bg: 'Блок 4: Финансиране, износ, нови пазари, венчърни фондове', en: 'Block 4: Financing, Export, New Markets, Venture Funds',
+                  videos: [
+                    V('ZXiHOqQ0POQ', '1:16:24', 'Финансиране, износ, нови пазари, венчърни фондове', 'Financing, Exports, New Markets, Venture Funds',
+                      [P('Антон Тодоров', 'Anton Todorov', 'anton-todorov'), P('Габриела Горанова-Димчева', 'Gabriela Goranova-Dimcheva'),
+                        P('д-р Дочка Василева', 'Dr. Dochka Vasileva', 'dochka-vasileva'), P('д-р Бойко Таков', 'Dr. Boyko Takov')])
+                  ]
+                },
                 {
                   time: '16:40', bg: 'Блок 5: Морски технологии', en: 'Block 5: Maritime Technologies',
                   playlist: 'PLfYmTyLkqUyg',
@@ -214,16 +228,49 @@
               sessions: [
                 { time: '09:00', bg: 'Откриване и обобщение от Ден 2', en: 'Opening and Day 2 Recap' },
                 { time: '09:10', bg: 'Блок 1: Оптимизация на бизнес процеси: геймификация, AI и още', en: 'Block 1: Business Process Optimisation: Gamification, AI and More' },
-                { time: '10:55', bg: 'Блок 2: AI в дигиталния маркетинг и още', en: 'Block 2: AI in Digital Marketing and More' },
-                { time: '13:15', bg: 'Блок 3: Нови хоризонти… Какво следва?', en: 'Block 3: New Horizons… What Comes Next?' },
-                { time: '15:00', bg: 'Блок 4: Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', en: 'Block 4: Recommendations and a Roadmap for the Digital Transformation of Business' },
-                { time: '16:00', bg: 'Закриване на форума', en: 'Closing of the Forum' }
+                {
+                  time: '10:55', bg: 'Блок 2: AI в дигиталния маркетинг и още', en: 'Block 2: AI in Digital Marketing and More',
+                  playlist: 'PLY-Un9CUSpGw',
+                  videos: [
+                    V('I4u0Uw9JU7Y', '8:26', 'Основен доклад: От внимание към възможност. Как бизнесът печели доверие и бива избран в ерата на AI', 'Keynote: From Attention to Opportunity. How Businesses Earn Trust and Get Chosen in the Age of AI', [PETKANOV]),
+                    V('Kej_nJgzoMs', '9:53', 'Как модерните бизнеси ще използват AI през следващите 5 години', 'How Modern Businesses Will Use AI Over the Next 5 Years', [P('Николай Вълев', 'Nikolay Valev', 'nikolay-valev')]),
+                    V('q0wJgbGW6ps', '15:04', 'От съдържание към действие – как AI променя маркетинга', 'From Content to Action – How AI Is Changing Marketing', [P('Александър Гошев', 'Alexander Goshev', 'alexander-goshev')]),
+                    V('pN_nGYd-OxI', '16:08', 'Предимството LinkedIn – дигиталната ви репутация започва в LinkedIn', 'The LinkedIn Advantage – Your Digital Reputation Starts on LinkedIn', [P('Малгоржата Бржоска', 'Małgorzata Brzoska', 'megan-brzoska')]),
+                    V('NkLGKuwWDY8', '9:28', 'Вътрешно предприемачество', 'Intrapreneurship', [P('Станислав Фотев', 'Stanislav Fotev', 'stanislav-fotev')]),
+                    V('2FwNXM6KAdI', '16:44', 'Панел: AI в дигиталния маркетинг и още', 'Panel: AI in Digital Marketing and More', [PETKANOV])
+                  ]
+                },
+                {
+                  time: '13:15', bg: 'Блок 3: Нови хоризонти… Какво следва?', en: 'Block 3: New Horizons… What Comes Next?',
+                  playlist: 'PLTsv_IPU7SuE',
+                  videos: [
+                    V('V9762TfAIe8', '31:07', 'Какво предстои?!', 'What’s Coming?!', [TODOROVA]),
+                    V('WAU3NSd-zUw', '19:08', 'Какво предстои?!', 'What’s Coming?!', [S_STOYANOV]),
+                    V('LCsMnptWXeQ', '12:55', 'Опитът на Швейцария в дигитализацията', 'Switzerland’s Experience in Digitalization', [P('Радой Павлов', 'Radoy Pavlov', 'radoy-pavlov')]),
+                    V('XlD7zO4S5Kc', '9:24', 'Какво предстои?!', 'What’s Coming?!', [KORDON]),
+                    V('tZ5QyTdi-L8', '16:21', 'Дискусия: Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', 'Discussion: Formulating Recommendations and a Roadmap for the Digital Transformation of Business', [TSANKOV])
+                  ]
+                },
+                {
+                  time: '15:00', bg: 'Блок 4: Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', en: 'Block 4: Recommendations and a Roadmap for the Digital Transformation of Business',
+                  playlist: 'PLTN3BhmrT1wM',
+                  videos: [
+                    V('qdbmEO4XtYs', '1:27:01', 'Формулиране на препоръки и пътна карта за дигиталната трансформация на бизнеса', 'Formulating Recommendations and a Roadmap for the Digital Transformation of Business',
+                      [TODOROVA, P('инж. Пламен Китипов', 'Eng. Plamen Kitipov'), STEFANOV, S_STOYANOV, P('проф. д-р Йордан Сивков', 'Prof. Dr. Yordan Sivkov'), STAMENOV, TSANKOV]),
+                    V('tEd6S3gqEOw', '1:59', 'Закриване на Черноморски технологичен форум Варна 2026', 'Closing of the Black Sea Technology Forum Varna 2026')
+                  ]
+                }
               ]
             },
             {
               hall: 'varna',
               sessions: [
-                { time: '09:10', bg: 'AI работилница', en: 'AI Workshop' },
+                {
+                  time: '09:10', bg: 'AI работилница', en: 'AI Workshop',
+                  videos: [
+                    V('rUhvpomzADM', '1:36:28', 'AI работилница: Адаптиране на бизнеса към модерен начин на работа, задвижван от AI', 'AI Workshop: Adjusting the Business towards a Modern AI-driven Mode of Operation', [KORDON])
+                  ]
+                },
                 {
                   time: '13:15', bg: 'Търговски възможности в България и Обединеното кралство', en: 'Trade Opportunities in Bulgaria and the UK',
                   playlist: 'PLf0OgVjw5xuQ',
@@ -253,7 +300,9 @@
     'DmbDTQ97jsw': 'hristov', 'bAvsmqxgQkk': 'yankova', 'oZtoJQdzTKY': 'kostadinov', 'ETah7M2Ncz8': 'ayrakova',
     '48PXXUKU9RA': 'punter', 'eNbUUmv1JJ4': 'nikolov', 'CQBwskZEw1Y': 'horinouchi', 'Zu_QqCmjxv8': 'dinev',
     'qEhzLaSOI3I': 'svetlin', 'AFNz7HkalRc': 'cemile-maritime', 'fY0pLxvxz_Q': 'mednikarov', 'UFBXWegr8RE': 'kanchev',
-    'Zpo0xDiSKlc': 'teberov', 'XGvVwA0mynE': 'bayezit'
+    'Zpo0xDiSKlc': 'teberov', 'XGvVwA0mynE': 'bayezit', 'ZXiHOqQ0POQ': 'vasileva', 'I4u0Uw9JU7Y': 'petkanov',
+    'Kej_nJgzoMs': 'valev', 'q0wJgbGW6ps': 'goshev', 'pN_nGYd-OxI': 'brzoska', 'NkLGKuwWDY8': 'fotev',
+    'V9762TfAIe8': 'todorova', 'WAU3NSd-zUw': 'simeon-ahead', 'LCsMnptWXeQ': 'pavlov', 'rUhvpomzADM': 'kordon-workshop'
   };
   // video id -> language of the talk when it is not English (checked on the
   // transcript, 2026-10-30).
