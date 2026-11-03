@@ -38,7 +38,7 @@
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261103-4',
+      thumbs: '20261103-6',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -89,9 +89,10 @@
                   time: '18:00', bg: 'Техностарт Мотиватор', en: 'Technostart Motivator',
                   playlist: 'PLdKw6AniT-CY',
                   videos: [
-                    V('RtHMCPdATHI', '16:03', 'Как AI ме направи свръхчовек', 'How AI Made Me Superhuman', [P('Християн Христов', 'Hristiyan Hristov')]),
-                    V('UZy9w_AGo9M', '12:18', 'Какво AI няма да замени', 'What AI Won’t Replace', [P('Анна Палазова', 'Anna Palazova')]),
-                    V('X2u59ndJX8g', '18:40', 'Как да НЕ си безработен в ерата на AI', 'How NOT to Be Unemployed in the Age of AI', [P('Мартин Куванджиев', 'Martin Kuvandzhiev', 'martin-kuvandzhiev')])
+                    V('jqGhK3kLQwM', '12:09', 'ТЕХНОСТАРТ Мотиватор: Откриване', 'TechnoStart Motivator: Opening'),
+                    V('RtHMCPdATHI', '16:03', 'ТЕХНОСТАРТ Мотиватор: Как AI ме направи свръхчовек', 'TechnoStart Motivator: How AI Made Me Superhuman', [P('Християн Христов', 'Hristiyan Hristov')]),
+                    V('UZy9w_AGo9M', '12:18', 'ТЕХНОСТАРТ Мотиватор: Какво AI няма да замени', 'TechnoStart Motivator: What AI Won’t Replace', [P('Анна Палазова', 'Anna Palazova')]),
+                    V('X2u59ndJX8g', '18:40', 'ТЕХНОСТАРТ Мотиватор: Как да НЕ си безработен в ерата на AI', 'TechnoStart Motivator: How NOT to Be Unemployed in the Age of AI', [P('Мартин Куванджиев', 'Martin Kuvandzhiev', 'martin-kuvandzhiev')])
                   ]
                 }
               ]
