@@ -654,7 +654,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="shared/gallery.css?v=20261013">
+  <link rel="stylesheet" href="shared/gallery.css?v=20261103">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -731,6 +731,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="cx-gal-credit"><span data-bg="Снимки:" data-en="Photos:">Снимки:</span> <a href="https://visionimpress.bg/" target="_blank" rel="noopener">Vision Impress</a></p>
         <nav class="cx-gal-tabs"></nav>
         <div class="cx-gal-actions">
+          <button type="button" class="cx-gal-icon-btn" data-gal-faces aria-pressed="false" aria-label="Търси по лице" title="Търси по лице" hidden><span data-gal-icon="search"></span></button>
           <a class="cx-gal-icon-btn" data-gal-drive target="_blank" rel="noopener" aria-label="Всички снимки в Google Drive" title="Всички снимки в Google Drive"><span data-gal-icon="download"></span></a>
           <button type="button" class="cx-gal-icon-btn" data-gal-fav-toggle aria-pressed="false" aria-label="Любими" title="Любими"><span data-gal-icon="heart"></span><span class="cx-gal-count" data-gal-fav-count hidden></span></button>
           <button type="button" class="cx-gal-icon-btn" data-gal-share aria-label="Сподели" title="Сподели"><span data-gal-icon="share"></span></button>
@@ -745,6 +746,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Phone: floating actions (the bar's icons are hidden under 769px) -->
   <div class="cx-gal-pill">
+    <button type="button" data-gal-faces aria-pressed="false" hidden><span data-gal-icon="search"></span><span data-bg="Лица" data-en="Faces">Лица</span></button>
     <a data-gal-drive target="_blank" rel="noopener"><span data-gal-icon="download"></span><span data-bg="Изтегли" data-en="Download">Изтегли</span></a>
     <button type="button" data-gal-share><span data-gal-icon="share"></span><span data-bg="Сподели" data-en="Share">Сподели</span></button>
     <button type="button" data-gal-fav-toggle aria-pressed="false"><span data-gal-icon="heart"></span><span data-bg="Любими" data-en="Favourites">Любими</span><span class="cx-gal-count" data-gal-fav-count hidden></span></button>
@@ -850,7 +852,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener('pageshow', function (e) { if (e.persisted) window.location.reload(); });
   </script>
   <script src="data/gallery-data.js?v=20261013"></script>
-  <script src="shared/gallery.js?v=20261013-2"></script>
+  <script src="data/gallery-faces.js?v=20261103"></script>
+  <script src="shared/gallery.js?v=20261103"></script>
   <script>Gallery.init({ lang: 'bg' });</script>
 </body>
 

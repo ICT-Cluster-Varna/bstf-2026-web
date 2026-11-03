@@ -1,6 +1,7 @@
 /* CONNEXUS 2026 photo gallery (gallery.html, en/gallery.html).
    Renders window.GALLERY_DATA (data/gallery-data.js) into the page:
-   cover, sticky category bar, per-scene photo grids, lightbox, favourites.
+   cover, sticky category bar, per-scene photo grids, lightbox, favourites,
+   and "find by face" from window.GALLERY_FACES (data/gallery-faces.js).
    Photos are served from Google Drive by file id; see data/gallery-data.js.
 
    Grid rules, measured on the photographer's gallery:
@@ -37,7 +38,19 @@ window.Gallery = (function () {
       dl: 'Изтегли',
       favShort: 'Любими',
       shareShort: 'Сподели',
-      categories: 'Категории'
+      categories: 'Категории',
+      faceSearch: 'Търси по лице',
+      faceShort: 'Лица',
+      faceTitle: 'Изберете хора',
+      faceHint: 'Изберете себе си или някой друг. Ако се виждате на няколко места, изберете всички.',
+      facePerson: 'Човек ',
+      photosOne: ' снимка',
+      photosMany: ' снимки',
+      faceShow: 'Покажи снимките',
+      faceShowN: 'Покажи ',
+      faceClear: 'Изчисти',
+      faceEdit: 'Промени',
+      faceResult: ' с избраните хора'
     },
     en: {
       dates: 'October 5–7, 2026',
@@ -60,7 +73,19 @@ window.Gallery = (function () {
       dl: 'Download',
       favShort: 'Favourites',
       shareShort: 'Share',
-      categories: 'Categories'
+      categories: 'Categories',
+      faceSearch: 'Find by face',
+      faceShort: 'Faces',
+      faceTitle: 'Select people',
+      faceHint: 'Pick yourself or anyone else. If you appear more than once, pick every one.',
+      facePerson: 'Person ',
+      photosOne: ' photo',
+      photosMany: ' photos',
+      faceShow: 'Show photos',
+      faceShowN: 'Show ',
+      faceClear: 'Clear',
+      faceEdit: 'Change',
+      faceResult: ' of the selected people'
     }
   };
 
@@ -71,16 +96,21 @@ window.Gallery = (function () {
     close: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 1.5l13 13M14.5 1.5l-13 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
     prev: '<svg width="10" height="18" viewBox="0 0 10 18" fill="none" aria-hidden="true"><path d="M9 1 1 9l8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     next: '<svg width="10" height="18" viewBox="0 0 10 18" fill="none" aria-hidden="true"><path d="m1 1 8 8-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    down: '<svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><path d="m1 1 6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    down: '<svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><path d="m1 1 6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    search: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.6" cy="7.6" r="6" stroke="currentColor" stroke-width="1.4"/><path d="m12 12 4.6 4.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>'
   };
 
   var data, t, lang;
   var scenesEl, lb, lbImg, lbCaption, lbCount, lbPrev, lbNext, lbFav, lbDl, toastEl;
   var flat = [];          // every photo object, in page order
-  var shown = [];         // photos currently in the grid (all, or favourites only)
+  var shown = [];         // photos currently in the grid (all, favourites or face search)
   var grids = [];         // { el, photos } per rendered scene
   var favs = loadFavs();
   var favMode = false;
+  var faces = [];         // { n, keys: {'day-num': 1}, count } per person
+  var faceOn = [];        // face indices the grid is filtered by (empty = no face search)
+  var facePick = {};      // face indices ticked in the picker
+  var faceDlg, faceGo;
   var lbIndex = -1;
   var lastFocus = null;
   var lastWidth = 0;
@@ -278,6 +308,12 @@ window.Gallery = (function () {
     var list;
     if (favMode) {
       list = [{ id: 'favourites', title: t.favTitle + ' (' + favCount() + ')', photos: flat.filter(function (p) { return favs[p.id]; }) }];
+    } else if (faceOn.length) {
+      // a photo matches if any selected person is in it; scenes keep their order
+      list = data.scenes.map(function (s) {
+        return { id: s.id, title: s[lang], photos: s.photos.filter(inFaceSearch) };
+      }).filter(function (s) { return s.photos.length; });
+      scenesEl.appendChild(faceResultBar(list.reduce(function (a, s) { return a + s.photos.length; }, 0)));
     } else {
       list = data.scenes.map(function (s) { return { id: s.id, title: s[lang], photos: s.photos }; });
     }
@@ -301,16 +337,156 @@ window.Gallery = (function () {
       scenesEl.appendChild(sec);
     });
     document.querySelectorAll('.cx-gal-tabs').forEach(function (tabs) { tabs.hidden = favMode; });
+    document.querySelectorAll('.cx-gal-tab').forEach(function (tab) {
+      tab.hidden = !document.getElementById(tab.getAttribute('data-scene'));
+    });
     layoutAll();
     observeScenes();
   }
 
-  function toggleFavMode() {
-    favMode = !favMode;
-    renderScenes();
-    updateFavCounts();
+  function scrollToBar() {
     var top = document.querySelector('.cx-gal-bar');
     window.scrollTo({ top: top.getBoundingClientRect().top + window.scrollY - navH(), behavior: 'instant' });
+  }
+
+  function toggleFavMode() {
+    favMode = !favMode;
+    if (favMode) faceOn = [];
+    renderScenes();
+    updateFavCounts();
+    updateFaceButtons();
+    scrollToBar();
+  }
+
+  // ---------- find by face ----------
+  function photoKey(p) { return p.day + '-' + p.num; }
+  function photosLabel(n) { return n + (n === 1 ? t.photosOne : t.photosMany); }
+  function faceImg(f) { return '/images/gallery-faces/' + ('00' + f.n).slice(-3) + '.jpg'; }
+
+  function inFaceSearch(p) {
+    var k = photoKey(p);
+    for (var i = 0; i < faceOn.length; i++) if (faces[faceOn[i]].keys[k]) return true;
+    return false;
+  }
+
+  function pickedCount() {
+    var seen = {}, n = 0;
+    Object.keys(facePick).forEach(function (i) {
+      Object.keys(faces[i].keys).forEach(function (k) { if (!seen[k]) { seen[k] = 1; n++; } });
+    });
+    return n;
+  }
+
+  function faceThumb(i, cls) {
+    var im = el('img', cls);
+    im.src = faceImg(faces[i]);
+    im.alt = '';
+    im.loading = 'lazy';
+    im.decoding = 'async';
+    return im;
+  }
+
+  function faceResultBar(total) {
+    var bar = el('div', 'cx-gal-faces-result');
+    var who = el('div', 'cx-gal-faces-chosen');
+    faceOn.forEach(function (i) { who.appendChild(faceThumb(i, '')); });
+    bar.appendChild(who);
+    var txt = el('p', 'cx-gal-faces-total');
+    txt.textContent = photosLabel(total) + t.faceResult;
+    bar.appendChild(txt);
+    var btns = el('div', 'cx-gal-faces-btns');
+    var edit = el('button', 'cx-gal-faces-link');
+    edit.type = 'button'; edit.textContent = t.faceEdit;
+    edit.addEventListener('click', openFacePicker);
+    var clear = el('button', 'cx-gal-faces-link');
+    clear.type = 'button'; clear.textContent = t.faceClear;
+    clear.addEventListener('click', function () { applyFaces([]); });
+    btns.appendChild(edit); btns.appendChild(clear);
+    bar.appendChild(btns);
+    return bar;
+  }
+
+  function buildFacePicker() {
+    faceDlg = el('dialog', 'cx-gal-faces');
+    faceDlg.setAttribute('aria-labelledby', 'cx-gal-faces-h');
+    faceDlg.innerHTML =
+      '<div class="cx-gal-faces-head">' +
+        '<h2 id="cx-gal-faces-h">' + t.faceTitle + '</h2>' +
+        '<button type="button" class="cx-gal-faces-x" aria-label="' + t.close + '" title="' + t.close + '">' + ICON.close + '</button>' +
+      '</div>' +
+      '<p class="cx-gal-faces-hint">' + t.faceHint + '</p>' +
+      '<div class="cx-gal-faces-grid"></div>' +
+      '<div class="cx-gal-faces-foot">' +
+        '<button type="button" class="cx-gal-faces-link" data-face-clear>' + t.faceClear + '</button>' +
+        '<button type="button" class="cx-gal-faces-go" disabled>' + t.faceShow + '</button>' +
+      '</div>';
+    var grid = faceDlg.querySelector('.cx-gal-faces-grid');
+    faces.forEach(function (f, i) {
+      var b = el('button', 'cx-gal-face');
+      b.type = 'button';
+      b.setAttribute('data-face', i);
+      b.setAttribute('aria-pressed', 'false');
+      b.setAttribute('aria-label', t.facePerson + f.n + ', ' + photosLabel(f.count));
+      b.title = photosLabel(f.count);
+      b.appendChild(faceThumb(i, ''));
+      grid.appendChild(b);
+    });
+    grid.addEventListener('click', function (e) {
+      var b = e.target.closest('.cx-gal-face');
+      if (!b) return;
+      var i = b.getAttribute('data-face');
+      if (facePick[i]) delete facePick[i]; else facePick[i] = 1;
+      syncFacePicker();
+    });
+    faceGo = faceDlg.querySelector('.cx-gal-faces-go');
+    faceGo.addEventListener('click', function () {
+      faceDlg.close();
+      applyFaces(Object.keys(facePick).map(Number).sort(function (a, b) { return a - b; }));
+    });
+    faceDlg.querySelector('[data-face-clear]').addEventListener('click', function () { facePick = {}; syncFacePicker(); });
+    faceDlg.querySelector('.cx-gal-faces-x').addEventListener('click', function () { faceDlg.close(); });
+    // a click on the backdrop lands on the <dialog> itself
+    faceDlg.addEventListener('click', function (e) { if (e.target === faceDlg) faceDlg.close(); });
+    faceDlg.addEventListener('close', function () { document.body.classList.remove('cx-gal-lock'); });
+    document.body.appendChild(faceDlg);
+  }
+
+  function syncFacePicker() {
+    faceDlg.querySelectorAll('.cx-gal-face').forEach(function (b) {
+      var on = !!facePick[b.getAttribute('data-face')];
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    var n = pickedCount();
+    faceGo.disabled = n === 0;
+    faceGo.textContent = n ? t.faceShowN + photosLabel(n) : t.faceShow;
+  }
+
+  function openFacePicker() {
+    if (!faces.length) return;
+    if (!faceDlg) buildFacePicker();
+    facePick = {};
+    faceOn.forEach(function (i) { facePick[i] = 1; });
+    syncFacePicker();
+    document.body.classList.add('cx-gal-lock');
+    faceDlg.showModal();
+  }
+
+  function applyFaces(list) {
+    faceOn = list;
+    if (faceOn.length) favMode = false;
+    renderScenes();
+    updateFavCounts();
+    updateFaceButtons();
+    scrollToBar();
+  }
+
+  function updateFaceButtons() {
+    document.querySelectorAll('[data-gal-faces]').forEach(function (b) {
+      b.hidden = !faces.length;
+      b.classList.toggle('on', faceOn.length > 0);
+      b.setAttribute('aria-pressed', faceOn.length ? 'true' : 'false');
+    });
   }
 
   function navH() {
@@ -372,6 +548,9 @@ window.Gallery = (function () {
     });
     root.querySelectorAll('[data-gal-fav-toggle]').forEach(function (b) {
       b.addEventListener('click', toggleFavMode);
+    });
+    root.querySelectorAll('[data-gal-faces]').forEach(function (b) {
+      b.addEventListener('click', openFacePicker);
     });
     root.querySelectorAll('[data-gal-drive]').forEach(function (a) { a.href = data.driveFolder; });
   }
@@ -527,6 +706,11 @@ window.Gallery = (function () {
         return p;
       });
     });
+    faces = (window.GALLERY_FACES || []).map(function (list, i) {
+      var keys = {};
+      list.forEach(function (k) { keys[k] = 1; });
+      return { n: i + 1, keys: keys, count: list.length };
+    });
 
     var hero = document.querySelector('.cx-gal-hero');
     if (hero) {
@@ -552,6 +736,7 @@ window.Gallery = (function () {
     buildLightbox();
     renderScenes();
     updateFavCounts();
+    updateFaceButtons();
     openFromHash();
     // a plain #day-2 style link: the grids are built now, so jump to it
     if (lbIndex < 0 && location.hash) {

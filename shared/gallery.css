@@ -493,6 +493,194 @@
 
 body.cx-gal-lock { overflow: hidden; }
 
+/* ---------- Find by face (people picker + result bar) ---------- */
+[data-gal-faces][hidden] { display: none; }
+/* a magnifier has nothing to fill like the heart does, so "on" gets a disc */
+.cx-gal-icon-btn[data-gal-faces].on { background: rgba(0, 0, 0, 0.08); }
+.cx-gal-pill [data-gal-faces].on svg { border-radius: 50%; box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.08); background: rgba(0, 0, 0, 0.08); }
+
+.cx-gal-faces {
+  /* the site's reset zeroes margins, which un-centres a modal <dialog> */
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(760px, calc(100dvh - 48px));
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--g-ink);
+  font-family: var(--g-font);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.cx-gal-faces[open] { display: flex; flex-direction: column; }
+.cx-gal-faces::backdrop { background: rgba(0, 0, 0, 0.45); }
+
+.cx-gal-faces-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 0 28px;
+}
+
+.cx-gal-faces-head h2 {
+  margin: 0;
+  font-family: var(--g-font);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: var(--g-ink);
+}
+
+.cx-gal-faces-x {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--g-ink);
+}
+
+.cx-gal-faces-x:hover { background: rgba(0, 0, 0, 0.05); }
+
+.cx-gal-faces-hint {
+  margin: 6px 28px 0;
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: 0.7;
+}
+
+.cx-gal-faces-grid {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 14px 10px;
+  padding: 20px 28px;
+  overscroll-behavior: contain;
+}
+
+.cx-gal-face {
+  position: relative;
+  justify-self: center;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--g-ph);
+  box-shadow: 0 0 0 0 var(--g-ink);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.cx-gal-face img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cx-gal-face:hover { transform: scale(1.05); }
+.cx-gal-face.on { box-shadow: 0 0 0 3px var(--g-ink); }
+
+.cx-gal-face.on::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: var(--g-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='m1 5 3.2 3L11 1.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / 11px;
+}
+
+.cx-gal-faces-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 28px;
+  border-top: 1px solid var(--g-line);
+}
+
+.cx-gal-faces-go {
+  padding: 11px 22px;
+  border-radius: 40px;
+  background: var(--g-ink);
+  color: #fff;
+  font-family: var(--g-font);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cx-gal-faces-go[disabled] { opacity: 0.35; cursor: default; }
+
+.cx-gal-faces-link {
+  padding: 6px 0;
+  font-family: var(--g-font);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--g-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cx-gal-faces-link:hover { color: var(--g-black); }
+
+.cx-gal-faces-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 20px;
+  padding: 40px 24px 0;
+}
+
+.cx-gal-faces-chosen { display: flex; }
+
+.cx-gal-faces-chosen img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--g-bg);
+  object-fit: cover;
+}
+
+.cx-gal-faces-chosen img + img { margin-left: -10px; }
+
+.cx-gal-faces-total {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cx-gal-faces-btns { display: flex; gap: 20px; }
+
+.cx-gal-face:focus-visible,
+.cx-gal-faces-x:focus-visible,
+.cx-gal-faces-go:focus-visible,
+.cx-gal-faces-link:focus-visible {
+  outline: 2px solid var(--g-ink);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .cx-gal-faces-head { padding: 14px 12px 0 18px; }
+  .cx-gal-faces-hint { margin: 4px 18px 0; font-size: 13px; }
+  .cx-gal-faces-grid { grid-template-columns: repeat(auto-fill, minmax(66px, 1fr)); gap: 12px 6px; padding: 16px 18px; }
+  .cx-gal-face { width: 62px; height: 62px; }
+  .cx-gal-faces-foot { padding: 12px 18px; }
+  .cx-gal-faces-result { padding-top: 28px; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1023px) {
   .cx-gal-grid { margin: 0 8px; }
@@ -562,5 +750,6 @@ body.cx-gal-lock { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .cx-gal-tile img,
   .cx-gal-tile-actions,
-  .cx-gal-toast { transition: none; }
+  .cx-gal-toast,
+  .cx-gal-face { transition: none; }
 }
