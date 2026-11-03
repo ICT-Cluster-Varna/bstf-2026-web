@@ -316,6 +316,7 @@ window.Gallery = (function () {
       scenesEl.appendChild(faceResultBar(list.reduce(function (a, s) { return a + s.photos.length; }, 0)));
     } else {
       list = data.scenes.map(function (s) { return { id: s.id, title: s[lang], photos: s.photos }; });
+      if (faces.length) scenesEl.appendChild(faceStrip());
     }
     shown = [];
     list.forEach(function (s) {
@@ -397,13 +398,37 @@ window.Gallery = (function () {
     var btns = el('div', 'cx-gal-faces-btns');
     var edit = el('button', 'cx-gal-faces-link');
     edit.type = 'button'; edit.textContent = t.faceEdit;
-    edit.addEventListener('click', openFacePicker);
+    edit.addEventListener('click', function () { openFacePicker(); });
     var clear = el('button', 'cx-gal-faces-link');
     clear.type = 'button'; clear.textContent = t.faceClear;
     clear.addEventListener('click', function () { applyFaces([]); });
     btns.appendChild(edit); btns.appendChild(clear);
     bar.appendChild(btns);
     return bar;
+  }
+
+  // Row of overlapping faces above the first scene, as on the photographer's
+  // gallery: the first 5 people (3 on phones) and a "+N" disc. Any of them
+  // opens the picker; a face opens it with that person already ticked.
+  function faceStrip() {
+    var row = el('div', 'cx-gal-faces-row');
+    faces.slice(0, 5).forEach(function (f, i) {
+      var b = el('button', 'cx-gal-faces-row-face' + (i >= 3 ? ' cx-gal-wide-only' : ''));
+      b.type = 'button';
+      b.setAttribute('aria-label', t.faceSearch + ': ' + t.facePerson + f.n);
+      b.appendChild(faceThumb(i, ''));
+      b.addEventListener('click', function () { openFacePicker(i); });
+      row.appendChild(b);
+    });
+    [[5, 'cx-gal-wide-only'], [3, 'cx-gal-narrow-only']].forEach(function (m) {
+      var more = el('button', 'cx-gal-faces-row-more ' + m[1]);
+      more.type = 'button';
+      more.textContent = '+' + (faces.length - m[0]);
+      more.setAttribute('aria-label', t.faceSearch);
+      more.addEventListener('click', function () { openFacePicker(); });
+      row.appendChild(more);
+    });
+    return row;
   }
 
   function buildFacePicker() {
@@ -462,11 +487,12 @@ window.Gallery = (function () {
     faceGo.textContent = n ? t.faceShowN + photosLabel(n) : t.faceShow;
   }
 
-  function openFacePicker() {
+  function openFacePicker(pre) {
     if (!faces.length) return;
     if (!faceDlg) buildFacePicker();
     facePick = {};
     faceOn.forEach(function (i) { facePick[i] = 1; });
+    if (typeof pre === 'number') facePick[pre] = 1;
     syncFacePicker();
     document.body.classList.add('cx-gal-lock');
     faceDlg.showModal();
@@ -550,7 +576,7 @@ window.Gallery = (function () {
       b.addEventListener('click', toggleFavMode);
     });
     root.querySelectorAll('[data-gal-faces]').forEach(function (b) {
-      b.addEventListener('click', openFacePicker);
+      b.addEventListener('click', function () { openFacePicker(); });
     });
     root.querySelectorAll('[data-gal-drive]').forEach(function (a) { a.href = data.driveFolder; });
   }
