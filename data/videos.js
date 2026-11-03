@@ -38,7 +38,7 @@
 
   window.CONNEXUS_VIDEOS = {
     2026: {
-      thumbs: '20261103',
+      thumbs: '20261103-2',
       days: [
         {
           key: 'den-1', title: { bg: 'Ден 1', en: 'Day 1' }, date: { bg: '5 октомври', en: '5 October' },
@@ -48,13 +48,16 @@
               sessions: [
                 {
                   time: '13:00', bg: 'Официално откриване и приветствия', en: 'Official Opening and Welcome Addresses',
-                  playlist: 'PLMv35F1RV44o',
+                  playlist: 'PLJXR8VtTBQIs',
                   videos: [
-                    V('IuKq4JjeJMw', '6:47', 'Официално откриване', 'Official Opening', [STAMENOV]),
-                    V('IYOgAlwKaDY', '11:50', 'Откриване: решаващ момент за европейските иновации', 'Opening: A Pivotal Moment for European Innovation',
-                      [P('Емил Цанков', 'Emil Tsankov'), P('д-р Бойко Таков', 'Dr. Boyko Takov'), P('инж. Пламен Китипов', 'Eng. Plamen Kitipov')]),
-                    V('ro1V_PgaBXM', '27:03', 'Приветствия', 'Welcome Addresses', [P('Иван Василев', 'Ivan Vasilev'), P('Илин Димитров', 'Ilin Dimitrov')]),
-                    V('FIaVzUTvnec', '16:07', 'Основен доклад: Черноморските полюси на растеж', 'Keynote Address: Black Sea Growth Poles', [P('Илияна Йотова', 'Iliana Iotova')]),
+                    V('KEvlS2AmFi0', '2:47', 'Технологиите без граници започват с хора без граници', 'Borderless Technologies Begin with Borderless People', [STAMENOV]),
+                    V('qbS5Kl99PC8', '2:26', 'Откриване: решаващ момент за европейските иновации', 'Opening: A Pivotal Moment for European Innovation', [TSANKOV]),
+                    V('OBDyRGMhChU', '3:05', 'Откриване: решаващ момент за европейските иновации', 'Opening: A Pivotal Moment for European Innovation', [P('д-р Бойко Таков', 'Dr. Boyko Takov')]),
+                    V('Kfs0cHrvoh4', '5:41', 'Приветствие', 'Welcome Address', [P('инж. Пламен Китипов', 'Eng. Plamen Kitipov')]),
+                    V('uWEjL5y8n3s', '15:36', 'Основен доклад: Черноморските полюси на растеж', 'Keynote Address: Black Sea Growth Poles', [P('Илияна Йотова', 'Iliana Iotova')]),
+                    V('Qx7qoE0ha5Q', '2:29', 'Музикален флашмоб', 'Musical Flash Mob'),
+                    V('qep2Ua3dN1s', '11:43', 'Приветствие', 'Welcome Address', [P('Илин Димитров', 'Ilin Dimitrov')]),
+                    V('Nwhn9BiEiWg', '14:52', 'Приветствие', 'Welcome Address', [P('Иван Василев', 'Ivan Vasilev')]),
                     V('0knzVVoLv70', '3:11', 'Какво сме предвидили в Connexus “Black Sea Forum Varna”', 'What We Have Planned at Connexus “Black Sea Forum Varna”'),
                     V('nKnoQsbmODk', '18:26', 'Към европейска иновационна екосистема: как Европа може да се конкурира и да си сътрудничи със САЩ и Китай', 'Towards a European Innovation Ecosystem: How Can Europe Compete and Collaborate with the US and China',
                       [P('Lars Frølund', 'Lars Frølund', 'lars-frolund'), P('Невен Дилков', 'Neven Dilkov', 'neven-dilkov'), P('Светослава Георгиева', 'Svetoslava Georgieva', 'svetoslava-georgieva'), STEFANOV])
@@ -309,14 +312,14 @@
   // w0MwW5B-428 and kiw7RMuv6Nk carry a Turkish track in YouTube but are spoken
   // in English by Turkish speakers: that track is garbage, so they are not 'tr'.
   var CAPTIONS = {
-    'ro1V_PgaBXM': 'bg', 'FIaVzUTvnec': 'bg', 'DmbDTQ97jsw': 'bg',
+    'uWEjL5y8n3s': 'bg', 'qep2Ua3dN1s': 'bg', 'Nwhn9BiEiWg': 'bg', 'DmbDTQ97jsw': 'bg',
     'qdMHyRzuUUI': 'bg', 'ETah7M2Ncz8': 'bg', '1PuXVAy94j4': 'bg'
   };
   // ids whose spoken language was checked on the transcript (2026-11-02). A video NOT listed here is new:
   // v.cc / v.track stay empty and the page asks YouTube for every language (see applySubs). After checking a
   // new video, add it here (and to CAPTIONS if it is not English).
   var CHECKED = {};
-  ('IuKq4JjeJMw IYOgAlwKaDY ro1V_PgaBXM FIaVzUTvnec 0knzVVoLv70 nKnoQsbmODk rQpQFJbzi5Q XwoW_PcZ2J4 F8z7lGcBExw -FryU9bg4i8 8cHpY5-CoTA AJCirgcO5KA oBG1QahzUk4 SZXTSm_zAug HxDkxEk9z6s iMpZPnTptCI wM4fqSuhSDA vobHOoMmbvc MN4XdPyRIx8 U7ze-eGI7M0 ntggxjUhQiA b4mYnIO2uoI n0Fn9edO5l8 HOyewd_mc78 y0d-xa-fK58 S6K8e0lVbM0 CQpnY4jfVyE 46bcYATEWHU w0MwW5B-428 LGfQfUfnPMY iYiNvq7-Wr8 wOdPj4MNOaM JItXcLu6dcI kiw7RMuv6Nk IQPodPQPCig yJvEYUfRTuE rWA-6Mm3qPk JQjDgdFyaF4 lzIUK59X8sc 3bSxtWB4y_M FUuInUaw1AY BT7aUjsbjbk 5eMf1ZPUDXY DmbDTQ97jsw bAvsmqxgQkk oZtoJQdzTKY xT7BwuJJSBU qdMHyRzuUUI ETah7M2Ncz8 1PuXVAy94j4').split(' ').forEach(function (id) { CHECKED[id] = 1; });
+  ('KEvlS2AmFi0 qbS5Kl99PC8 OBDyRGMhChU Kfs0cHrvoh4 uWEjL5y8n3s qep2Ua3dN1s Nwhn9BiEiWg 0knzVVoLv70 nKnoQsbmODk rQpQFJbzi5Q XwoW_PcZ2J4 F8z7lGcBExw -FryU9bg4i8 8cHpY5-CoTA AJCirgcO5KA oBG1QahzUk4 SZXTSm_zAug HxDkxEk9z6s iMpZPnTptCI wM4fqSuhSDA vobHOoMmbvc MN4XdPyRIx8 U7ze-eGI7M0 ntggxjUhQiA b4mYnIO2uoI n0Fn9edO5l8 HOyewd_mc78 y0d-xa-fK58 S6K8e0lVbM0 CQpnY4jfVyE 46bcYATEWHU w0MwW5B-428 LGfQfUfnPMY iYiNvq7-Wr8 wOdPj4MNOaM JItXcLu6dcI kiw7RMuv6Nk IQPodPQPCig yJvEYUfRTuE rWA-6Mm3qPk JQjDgdFyaF4 lzIUK59X8sc 3bSxtWB4y_M FUuInUaw1AY BT7aUjsbjbk 5eMf1ZPUDXY DmbDTQ97jsw bAvsmqxgQkk oZtoJQdzTKY xT7BwuJJSBU qdMHyRzuUUI ETah7M2Ncz8 1PuXVAy94j4').split(' ').forEach(function (id) { CHECKED[id] = 1; });
   // video id -> language of the track YouTube holds when it differs from the spoken
   // language (the Turkish ASR of the two English talks): the base for YouTube's own
   // translation.
