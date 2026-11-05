@@ -1226,6 +1226,8 @@
     if (window.CX_EMPTY_HALL) {
       window.STANDS_DATA.exhibitors = {};
       Object.keys(window).forEach(function (k) { if (/_LOGO_SRC$/.test(k)) window[k] = ''; });
+      // 2027 price list: an Expo booth is €2,500 (the 2026 archive hall keeps €1,700 from stands.js).
+      Object.values(window.STANDS_DATA.stand_info).forEach(function (s) { if (s.tier === 'Expo') s.price = 2500; });
     }
   </script>
   <script>
