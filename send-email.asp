@@ -80,7 +80,7 @@ function formatCompanyType(raw) {
   return COMPANY_TYPE_LABELS.hasOwnProperty(raw) ? COMPANY_TYPE_LABELS[raw] : raw;
 }
 var PACKAGE_PRICE_RULES = [
-  { test: /^expo\b/i, label: "Expo", price: "€1,700" },
+  { test: /^expo\b/i, label: "Expo", price: "€2,500" },
   { test: /^silver\b/i, label: "Silver", price: "€7,500" },
   { test: /^gold\b/i, label: "Gold", price: "€12,000" },
   { test: /^stage\b/i, label: "Stage", price: "€18,000" },
