@@ -592,7 +592,7 @@
     {
       id: 'borislav-lazarov', track: 'ai',
       decks: ['lazarov'],
-      img: '/images/speakers/borislav-lazarov.jpg?v=20261030', alt: 'Borislav Lazarov',
+      img: '/images/speakers/borislav-lazarov.jpg?v=20261105', alt: 'Borislav Lazarov',
       objectPosition: 'center top',
       name: 'Борислав Лазаров',
       nameEn: 'Borislav Lazarov',
@@ -607,7 +607,7 @@
     {
       id: 'petar-topalov', track: 'ai',
       decks: ['topalov'],
-      img: '/images/speakers/petar-topalov.jpg?v=20261030', alt: 'Petar Topalov',
+      img: '/images/speakers/petar-topalov.jpg?v=20261105', alt: 'Petar Topalov',
       objectPosition: 'center top',
       name: 'Петър Топалов',
       nameEn: 'Petar Topalov',
@@ -622,7 +622,7 @@
     {
       id: 'stanislav-fotev', track: 'ai',
       decks: ['fotev'],
-      img: '/images/speakers/stanislav-fotev.jpg?v=20261030', alt: 'Stanislav Fotev',
+      img: '/images/speakers/stanislav-fotev.jpg?v=20261105', alt: 'Stanislav Fotev',
       objectPosition: 'center top',
       name: 'Станислав Фотев',
       nameEn: 'Stanislav Fotev',
@@ -637,7 +637,7 @@
     {
       id: 'mariyana-todorova', track: 'ai',
       decks: ['todorova'],
-      img: '/images/speakers/mariyana-todorova.jpg?v=20261030', alt: 'Mariyana Todorova',
+      img: '/images/speakers/mariyana-todorova.jpg?v=20261105', alt: 'Mariyana Todorova',
       objectPosition: 'center top',
       name: 'доц. д-р Марияна Тодорова',
       nameEn: 'Assoc. Prof. Dr. Mariyana Todorova',
@@ -652,7 +652,7 @@
     {
       id: 'radoy-pavlov', track: 'ai',
       decks: ['pavlov'],
-      img: '/images/speakers/radoy-pavlov.jpg?v=20261030', alt: 'Radoy Pavlov',
+      img: '/images/speakers/radoy-pavlov.jpg?v=20261105', alt: 'Radoy Pavlov',
       objectPosition: 'center top',
       name: 'Радой Павлов',
       nameEn: 'Radoy Pavlov',
@@ -772,7 +772,7 @@
     {
       id: 'konstantin-dinev', track: 'automation',
       decks: ['dinev'],
-      img: '/images/speakers/konstantin-dinev.jpg?v=20261030', alt: 'Konstantin Dinev',
+      img: '/images/speakers/konstantin-dinev.jpg?v=20261105', alt: 'Konstantin Dinev',
       objectPosition: 'center top',
       name: 'Константин Динев',
       nameEn: 'Konstantin Dinev',
@@ -1300,7 +1300,7 @@
     {
       id: 'boyan-mednikarov', track: 'marine',
       decks: ['mednikarov'],
-      img: '/images/speakers/boyan-mednikarov.jpg?v=20261030', alt: 'Boyan Mednikarov',
+      img: '/images/speakers/boyan-mednikarov.jpg?v=20261105', alt: 'Boyan Mednikarov',
       objectPosition: 'center top',
       name: 'проф. двн Боян Медникаров',
       nameEn: 'Prof. Boyan Mednikarov, DSc',
