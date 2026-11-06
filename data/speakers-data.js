@@ -661,8 +661,16 @@
       roleEn: 'Head of Digital Architecture @ University Hospital Zurich',
       topicBg: 'Опитът на Швейцария в дигитализацията',
       topicEn: 'Switzerland’s Experience in Digitalization',
-      bioBg: [],
-      bioEn: []
+      bioBg: [
+        'Радой Павлов работи в Университетската болница в Цюрих – едно от най-големите здравни заведения в Швейцария, където отговаря за дигиталната и корпоративната архитектура. Като част от мениджърския екип участва в планирането на дигитализацията на болницата и прилежащите към нея 44 специализирани клиники.',
+        'Преди това е директор, програмен и платформен мениджър в банка UBS, а по-рано заема старши консултантски позиции в Infosys Consulting, Lodestone и Capco. Освен в корпоративната архитектура, има опит и с облачни технологии и инфраструктура.',
+        'Завършил е компютърни технологии в Техническия университет в Берлин. Почетен член е на Българския клъстер за дигитални решения и иновации в здравеопазването.'
+      ],
+      bioEn: [
+        'Radoy Pavlov works at University Hospital Zurich, one of the largest healthcare institutions in Switzerland, where he is responsible for digital and enterprise architecture. As part of the management team, he helps plan the digitalisation of the hospital and its 44 specialised clinics.',
+        'Before that, he was a director, programme and platform manager at UBS, and earlier held senior consulting roles at Infosys Consulting, Lodestone and Capco. Besides enterprise architecture, he has experience in cloud technologies and infrastructure.',
+        'He holds a degree in computer engineering from the Technical University of Berlin and is an honorary member of the Bulgarian Cluster for Digital Solutions and Innovation in Healthcare.'
+      ]
     },
     {
       id: 'kalin-kostadinov', track: 'smart-city',
@@ -1309,8 +1317,16 @@
       roleEn: 'Assistant Rector for Strategic Affairs @ "Nikola Vaptsarov" Naval Academy',
       topicBg: 'Иновативното образование като основа за развитие на морските технологии',
       topicEn: 'Innovative Education as a Foundation for the Development of Maritime Technologies',
-      bioBg: [],
-      bioEn: []
+      bioBg: [
+        'Флотилен адмирал о.р. проф. д.в.н. Боян Медникаров е помощник-ректор по стратегическите въпроси на ВВМУ „Никола Йонков Вапцаров“. Ръководил е училището като негов началник от 2011 г., а преди това, от 2001 до 2011 г., е заместник-началник по учебната и научната част.',
+        'Завършва ВВМУ „Н. Й. Вапцаров“ като първенец на випуска през 1984 г., магистратура във Военноморската академия „Адмирал Кузнецов“ и магистърска програма във Военна академия „Г. С. Раковски“, отново като първенец на випуска. Защитава докторат във ВВМУ. Служи като офицер във Военноморските сили, а от средата на 90-те години преподава във ВВМУ, където е доцент от 2001 г. и професор от 2009 г.',
+        'Ръководил е докторанти и участва в международни научни проекти, сред които DivSea и DECOMAR. Владее английски и руски език.'
+      ],
+      bioEn: [
+        'Flotilla Admiral (ret.) Prof. Boyan Mednikarov, DSc, is Assistant Rector for Strategic Affairs at the "Nikola Vaptsarov" Naval Academy. He led the Academy as its Commandant from 2011, and before that, from 2001 to 2011, served as its Deputy Commandant for Education and Research.',
+        'He graduated from the "Nikola Vaptsarov" Naval Academy top of his class in 1984, earned a master\'s degree at the "Admiral Kuznetsov" Naval Academy and completed a master\'s programme at the "G. S. Rakovski" Military Academy, again top of his class. He holds a doctorate from the Naval Academy. After serving as an officer in the Bulgarian Navy, he has taught at the Naval Academy since the mid-1990s, becoming Associate Professor in 2001 and Professor in 2009.',
+        'He has supervised doctoral students and taken part in international research projects including DivSea and DECOMAR. He speaks English and Russian.'
+      ]
     },
 
     // ── Tourism ──
