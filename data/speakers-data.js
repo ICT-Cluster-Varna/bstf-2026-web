@@ -652,7 +652,7 @@
     {
       id: 'radoy-pavlov', track: 'ai',
       decks: ['pavlov'],
-      img: '/images/speakers/radoy-pavlov.jpg?v=20261030', alt: 'Radoy Pavlov',
+      img: '/images/speakers/radoy-pavlov.jpg?v=20261106', alt: 'Radoy Pavlov',
       objectPosition: 'center top',
       name: 'Радой Павлов',
       nameEn: 'Radoy Pavlov',
@@ -1300,7 +1300,7 @@
     {
       id: 'boyan-mednikarov', track: 'marine',
       decks: ['mednikarov'],
-      img: '/images/speakers/boyan-mednikarov.jpg?v=20261030', alt: 'Boyan Mednikarov',
+      img: '/images/speakers/boyan-mednikarov.jpg?v=20261106', alt: 'Boyan Mednikarov',
       objectPosition: 'center top',
       name: 'проф. двн Боян Медникаров',
       nameEn: 'Prof. Boyan Mednikarov, DSc',
