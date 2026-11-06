@@ -652,7 +652,7 @@
     {
       id: 'radoy-pavlov', track: 'ai',
       decks: ['pavlov'],
-      img: '/images/speakers/radoy-pavlov.jpg?v=20261106-1', alt: 'Radoy Pavlov',
+      img: '/images/speakers/radoy-pavlov.jpg?v=20261106-2', alt: 'Radoy Pavlov',
       objectPosition: 'center top',
       name: 'Радой Павлов',
       nameEn: 'Radoy Pavlov',
