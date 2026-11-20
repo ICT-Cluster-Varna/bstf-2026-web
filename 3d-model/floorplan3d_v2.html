@@ -934,13 +934,13 @@
     // stays Bulgarian, it's a build tool, not a visitor feature.
     //
     // Two independent signals, in priority order:
-    // 1. ?lang= on THIS file's own URL (set by sponsors.html/en/sponsors.html
+    // 1. ?lang= on THIS file's own URL (set by partners.html/en/partners.html
     //    when they create the iframe).
     // 2. document.referrer — the parent page's actual address as the browser
     //    itself recorded it when it navigated into this iframe. This does NOT
     //    depend on the parent's <script> having the &lang= fix — it stays
     //    correct even if the browser is showing a stale cached copy of
-    //    sponsors.html/en/sponsors.html whose JS still builds the old,
+    //    partners.html/en/partners.html whose JS still builds the old,
     //    lang-less iframe src.
     window.LANG = (function () {
       try {
@@ -952,9 +952,9 @@
       } catch (e) {}
       return 'bg';
     })();
-    // ?edition=2027 (sponsors.html since 2026-10-22): the next edition has no
+    // ?edition=2027 (partners.html, ex sponsors.html, since 2026-10-22): the next edition has no
     // exhibitors yet, so every stand is shown free, without logos, and can be
-    // reserved. Without it (sponsors-2026.html) the 2026 hall stays as it was.
+    // reserved. Without it (partners-2026.html) the 2026 hall stays as it was.
     // The parent also sends it as #edition=2027: servers with clean URLs
     // (npx serve) redirect floorplan3d_v2.html?... to /floorplan3d_v2 and drop
     // the query, but the browser keeps the fragment across that redirect.
