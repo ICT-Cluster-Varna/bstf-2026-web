@@ -1,5 +1,5 @@
 /*
- * Logo wall balancing — index.html partner rows + sponsors.html exhibitors table.
+ * Logo wall balancing — index.html partner rows + partners.html exhibitors table.
  *
  * Every logo sits in an equal-size tile (CSS). Two things make logos look
  * uneven in equal tiles, and both are corrected here:

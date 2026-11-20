@@ -25,11 +25,11 @@
     home: 'index.html',
     speakers: 'speakers.html',
     speaker: 'speaker.html',
-    sponsors: 'sponsors.html',
+    sponsors: 'partners.html',
     archive: 'archive/2026/',
     program2026: 'program-2026.html',
     speakers2026: 'speakers-2026.html',
-    sponsors2026: 'sponsors-2026.html',
+    sponsors2026: 'partners-2026.html',
     workshops: 'workshops.html',
     gallery: 'gallery.html',
     media: 'media/2026/'
@@ -94,7 +94,7 @@
 
   function navLinksHtml(cfg, lang) {
     var links = [
-      { key: 'sponsors', href: 'sponsors.html', bg: 'Изложители', en: 'Exhibitors' },
+      { key: 'sponsors', href: 'partners.html', bg: 'Изложители', en: 'Exhibitors' },
       { key: 'speakers', href: 'speakers.html', bg: 'Лектори', en: 'Speakers' },
       { key: 'archive', href: 'archive/2026/', bg: 'Архив 2026', en: 'Archive 2026' }
     ];
@@ -181,7 +181,7 @@
       '</div>' +
       '<div class="footer-col">' +
       '<h4 data-bg="Събитие" data-en="Event">' + pick('Събитие', 'Event', lang) + '</h4>' +
-      '<a href="sponsors.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
+      '<a href="partners.html" data-bg="Изложители" data-en="Exhibitors">' + pick('Изложители', 'Exhibitors', lang) + '</a>' +
       '<a href="speakers.html" data-bg="Лектори" data-en="Speakers">' + pick('Лектори', 'Speakers', lang) + '</a>' +
       '<a href="archive/2026/" data-bg="Архив 2026" data-en="Archive 2026">' + pick('Архив 2026', 'Archive 2026', lang) + '</a>' +
       '</div>' +
